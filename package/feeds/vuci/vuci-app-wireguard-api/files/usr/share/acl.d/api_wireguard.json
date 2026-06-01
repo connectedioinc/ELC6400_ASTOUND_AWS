@@ -1,0 +1,11 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "network.interface": {
+      "methods": ["down", "up"]
+    },
+    "network": {
+      "methods": ["reload"]
+    }
+  }
+}

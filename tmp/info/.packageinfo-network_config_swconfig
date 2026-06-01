@@ -1,0 +1,23 @@
+Source-Makefile: package/network/config/swconfig/Makefile
+
+Package: swconfig
+Version: 17
+Depends: +libc +libuci +libnl-tiny
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Switch configuration utility
+Maintainer: Felix Fietkau <nbd@nbd.name>
+FileAttributes: /sbin/swconfig::::cap_net_admin=ei
+Source: 
+License: GPL-2.0-only
+Type: ipkg
+Detail-Description: Switch configuration utility
+Description: Switch configuration utility
+Felix Fietkau <nbd@nbd.name>
+@@
+
+

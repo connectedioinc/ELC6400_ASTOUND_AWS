@@ -1,0 +1,4 @@
+./dnstype.go
+./dnstype_clone.go
+./dnstype_view.go
+./messagetypes-string.go

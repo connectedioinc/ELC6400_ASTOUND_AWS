@@ -1,0 +1,24 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/luci/modules/luci-base'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luci-base/.prepared7322fa20eae5df3ed8104742bbc394d4_6664517399ebbbc92a37c5bb081b5c53
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luci-base/.configured
+make -C src/ clean po2lmo jsmin
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/luci/modules/luci-base/src'
+rm -f contrib/lemon po2lmo parser.so version.lua plural_formula.c plural_formula.h *.o
+cc    -DNDEBUG -c -o po2lmo.o po2lmo.c
+cc -o contrib/lemon contrib/lemon.c
+./contrib/lemon -q plural_formula.y
+cc    -DNDEBUG -c -o template_lmo.o template_lmo.c
+cc    -DNDEBUG -c -o plural_formula.o plural_formula.c
+cc  -o po2lmo po2lmo.o template_lmo.o plural_formula.o
+cc    -DNDEBUG -c -o jsmin.o jsmin.c
+cc  -o jsmin jsmin.o
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/luci/modules/luci-base/src'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luci-base/.built
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin
+install -m0755 src/po2lmo /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin/po2lmo
+install -m0755 src/jsmin /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin/jsmin
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/stamp
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luci-base/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/stamp/.luci-base_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/luci/modules/luci-base'
+time: package/feeds/luci/luci-base/host-compile#1.55#0.60#2.11

@@ -1,0 +1,23 @@
+Source-Makefile: package/kernel/pulse-counter/Makefile
+
+Package: kmod-tlt-pulse-counter
+Submenu: Other modules
+Version: <LINUX_VERSION>-2
+Depends: 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Teltonika pulse counter module
+Maintainer: 
+Source: 
+License: GPL-2.0-only
+LicenseFiles: LICENSE/GPL-2.0
+Type: ipkg
+Detail-Description: Teltonika pulse counter module
+Description: Teltonika pulse counter module
+
+@@
+
+

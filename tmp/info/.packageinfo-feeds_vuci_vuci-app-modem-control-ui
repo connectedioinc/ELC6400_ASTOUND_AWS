@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-modem-control-ui/Makefile
+
+Package: vuci-app-modem-control-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-modem-control-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI Support for RS modem application
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI Support for RS modem application
+Description: VuCI Support for RS modem application
+
+@@
+
+

@@ -1,0 +1,11 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "rpc-format": {
+      "methods": [
+        "format",
+        "sme"
+      ]
+    }
+  }
+}

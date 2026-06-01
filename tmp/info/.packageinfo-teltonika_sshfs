@@ -1,0 +1,28 @@
+Source-Makefile: package/teltonika/sshfs/Makefile
+Build-Depends: ninja/host
+Build-Depends/host: ninja/host
+
+Package: sshfs
+Submenu: Filesystem
+Version: 3.7.1-4
+Depends: +libc +fuse3-utils +glib2 +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: SSHFS service for Teltonika package manager
+Maintainer: Zoltan HERPAI <wigyori@uid0.hu>
+Require-User: sshfs:sshfs
+FileAttributes: /usr/bin/fusermount3:root::y:
+Source: sshfs-3.7.1.tar.xz
+License: GPL-2.0-only
+Type: ipkg
+Detail-Description: SSHFS service for Teltonika package manager
+Description: 	Simple application to mount and interact with directories and files located on a remote server or workstation over SFTP.
+https://github.com/libfuse/sshfs
+Zoltan HERPAI <wigyori@uid0.hu>
+@@
+
+

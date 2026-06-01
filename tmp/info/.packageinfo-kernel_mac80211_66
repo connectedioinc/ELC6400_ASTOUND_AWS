@@ -1,0 +1,696 @@
+Source-Makefile: package/kernel/mac80211_66/Makefile
+
+Package: kmod-mac80211-hwsim_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-mac80211_66 +@DRIVER_11BE_SUPPORT +@DRIVER_11AX_SUPPORT +@DRIVER_11AC_SUPPORT
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: mac80211 HW simulation device
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: mac80211 HW simulation device
+Description: mac80211 HW simulation device
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-mt7601u_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-mac80211_66 @USB_SUPPORT +kmod-usb-core +mt7601u-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: MT7601U-based USB dongles Wireless Driver
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: MT7601U-based USB dongles Wireless Driver
+Description: MT7601U-based USB dongles Wireless Driver
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-rsi91x_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-mac80211_66 +rs9113-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Redpine Signals Inc 91x WLAN driver support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Redpine Signals Inc 91x WLAN driver support
+Description: Redpine Signals Inc 91x WLAN driver support
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-rsi91x-usb_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @USB_SUPPORT +kmod-usb-core +kmod-mac80211_66 +kmod-rsi91x_66 +rs9113-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Redpine Signals USB bus support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Redpine Signals USB bus support
+Description: Redpine Signals USB bus support
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-rsi91x-sdio_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-mac80211_66 +kmod-mmc +kmod-rsi91x_66 +rs9113-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Redpine Signals SDIO bus support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Redpine Signals SDIO bus support
+Description: Redpine Signals SDIO bus support
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-wlcore_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-mmc +kmod-mac80211_66
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: TI common driver part
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: TI common driver part
+Description:  This module contains some common parts needed by TI Wireless drivers.
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-wl12xx_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-wlcore_66 +wl12xx-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Driver for TI WL12xx
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Driver for TI WL12xx
+Description:  Kernel modules for TI WL12xx
+https://wireless.wiki.kernel.org/en/users/drivers/wl12xx
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-wl18xx_66
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-wlcore_66 +wl18xx-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Driver for TI WL18xx
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Driver for TI WL18xx
+Description:  Kernel modules for TI WL18xx
+https://wireless.wiki.kernel.org/en/users/drivers/wl18xx
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-ath_66
+Menu: 1
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @PCI_SUPPORT||USB_SUPPORT||TARGET_ath79 +kmod-mac80211_66
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Atheros common driver part
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Atheros common driver part
+Description:  This module contains some common parts needed by Atheros Wireless drivers.
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+  if PACKAGE_kmod-ath_66
+	config ATH_USER_REGD
+		bool "Force Atheros drivers to respect the user's regdomain settings"
+		default y
+		help
+		  Atheros' idea of regulatory handling is that the EEPROM of the card defines
+		  the regulatory limits and the user is only allowed to restrict the settings
+		  even further, even if the country allows frequencies or power levels that
+		  are forbidden by the EEPROM settings.
+
+		  Select this option if you want the driver to respect the user's decision about
+		  regulatory settings.
+
+	config PACKAGE_ATH_DEBUG
+		bool "Atheros wireless debugging"
+		help
+		  Say Y, if you want to debug atheros wireless drivers.
+		  Only ath9k & ath10k & ath11k make use of this.
+
+	config PACKAGE_ATH_DFS
+		bool "Enable DFS support"
+		default y
+		help
+		  Dynamic frequency selection (DFS) is required for most of the 5 GHz band
+		  channels in Europe, US, and Japan.
+
+		  Select this option if you want to use such channels.
+
+	config PACKAGE_ATH_SPECTRAL
+		bool "Atheros spectral scan support"
+		depends on PACKAGE_ATH_DEBUG
+		select KERNEL_RELAY
+		help
+		  Say Y to enable access to the FFT/spectral data via debugfs.
+
+	config PACKAGE_ATH_DYNACK
+		bool "Enable Dynack support"
+		depends on PACKAGE_kmod-ath9k-common
+		help
+		  Enables support for Dynamic ACK estimation, which allows the fastest possible speed
+		  at any distance automatically by increasing/decreasing the max frame ACK time for
+		  the most remote station detected.  It can be enabled by using iw (iw phy0 set distance auto),
+		  or by sending the NL80211_ATTR_WIPHY_DYN_ACK flag to mac80211 driver using netlink.
+
+		  Select this option if you want to enable this feature
+
+  endif
+@@
+
+Package: kmod-ath5k_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @PCI_SUPPORT +kmod-ath_66
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Atheros 5xxx wireless cards support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Atheros 5xxx wireless cards support
+Description:  This module adds support for wireless adapters based on
+ Atheros 5xxx chipset.
+https://wireless.wiki.kernel.org/en/users/drivers/ath5k
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-ath6kl_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-ath_66
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Atheros FullMAC wireless devices (common code for ath6kl_sdio and ath6kl_usb)
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Hidden: 1
+Detail-Description: Atheros FullMAC wireless devices (common code for ath6kl_sdio and ath6kl_usb)
+Description: Atheros FullMAC wireless devices (common code for ath6kl_sdio and ath6kl_usb)
+https://wireless.wiki.kernel.org/en/users/drivers/ath6kl
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-ath6kl-sdio_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-mmc +kmod-ath6kl_66
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Atheros 802.11n SDIO wireless cards support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Atheros 802.11n SDIO wireless cards support
+Description: This module adds support for wireless adapters based on
+Atheros IEEE 802.11n AR6003 and AR6004 family of chipsets.
+https://wireless.wiki.kernel.org/en/users/drivers/ath6kl
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-ath6kl-usb_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @USB_SUPPORT +kmod-usb-core +kmod-ath6kl_66
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Atheros 802.11n USB wireless cards support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Atheros 802.11n USB wireless cards support
+Description: Atheros 802.11n USB wireless cards support
+https://wireless.wiki.kernel.org/en/users/drivers/ath6kl
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-ath9k_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @PCI_SUPPORT||TARGET_ath79 +kmod-ath9k-common_66
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Atheros 802.11n PCI wireless cards support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Atheros 802.11n PCI wireless cards support
+Description: This module adds support for wireless adapters based on
+Atheros IEEE 802.11n AR5008 and AR9001 family of chipsets.
+https://wireless.wiki.kernel.org/en/users/drivers/ath9k
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+
+	config ATH9K_HWRNG
+		bool "Add wireless noise as source of randomness to kernel entropy pool"
+		depends on PACKAGE_kmod-ath9k_66
+		select PACKAGE_kmod-random-core
+		default y
+
+	config ATH9K_SUPPORT_PCOEM
+		bool "Support chips used in PC OEM cards"
+		depends on PACKAGE_kmod-ath9k_66
+		default y if (x86_64 || i386)
+
+       config ATH9K_TX99
+               bool "Enable TX99 support (WARNING: testing only, breaks normal operation!)"
+               depends on PACKAGE_kmod-ath9k_66
+
+	config ATH9K_UBNTHSR
+		bool "Support for Ubiquiti UniFi Outdoor+ access point"
+		depends on PACKAGE_kmod-ath9k_66 && TARGET_ath79
+		default y
+
+@@
+
+Package: kmod-ath9k-common_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @PCI_SUPPORT||USB_SUPPORT||TARGET_ath79 +kmod-ath_66 +kmod-random-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Atheros 802.11n wireless devices (common code for ath9k and ath9k_htc)
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Hidden: 1
+Detail-Description: Atheros 802.11n wireless devices (common code for ath9k and ath9k_htc)
+Description: Atheros 802.11n wireless devices (common code for ath9k and ath9k_htc)
+https://wireless.wiki.kernel.org/en/users/drivers/ath9k
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-ath9k-htc_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @USB_SUPPORT +kmod-ath9k-common_66 +kmod-usb-core +ath9k-htc-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Atheros 802.11n USB device support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Atheros 802.11n USB device support
+Description: This module adds support for wireless adapters based on
+Atheros USB AR9271 and AR7010 family of chipsets.
+https://wireless.wiki.kernel.org/en/users/drivers/ath9k
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-ath10k_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @PCI_SUPPORT +kmod-ath_66 +@DRIVER_11AC_SUPPORT +ATH10K_THERMAL:kmod-hwmon-core +ATH10K_THERMAL:kmod-thermal
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: regular
+Section: kernel
+Category: Kernel modules
+Title: Atheros 802.11ac wireless cards support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Atheros 802.11ac wireless cards support
+Description: This module adds support for wireless adapters based on
+Atheros IEEE 802.11ac family of chipsets. For now only
+PCI is supported.
+https://wireless.wiki.kernel.org/en/users/drivers/ath10k
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+
+       config ATH10K_LEDS
+               bool "Enable LED support"
+               default y
+               depends on PACKAGE_kmod-ath10k_66 || PACKAGE_kmod-ath10k-smallbuffers_66
+
+       config ATH10K_THERMAL
+               bool "Enable thermal sensors and throttling support"
+               depends on PACKAGE_kmod-ath10k_66 || PACKAGE_kmod-ath10k-smallbuffers_66
+
+@@
+
+Package: kmod-ath10k-smallbuffers_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @PCI_SUPPORT +kmod-ath_66 +@DRIVER_11AC_SUPPORT +ATH10K_THERMAL:kmod-hwmon-core +ATH10K_THERMAL:kmod-thermal
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: smallbuffers
+Section: kernel
+Category: Kernel modules
+Title: Atheros 802.11ac wireless cards support (small buffers for low-RAM devices)
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Atheros 802.11ac wireless cards support (small buffers for low-RAM devices)
+Description: Atheros 802.11ac wireless cards support (small buffers for low-RAM devices)
+https://wireless.wiki.kernel.org/en/users/drivers/ath10k
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-ath11k_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-ath_66 +@DRIVER_11AC_SUPPORT +@DRIVER_11AX_SUPPORT +kmod-crypto-michael-mic +ATH11K_THERMAL:kmod-hwmon-core +ATH11K_THERMAL:kmod-thermal +kmod-qcom-qmi-helpers_66
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Qualcomm 802.11ax wireless chipset support (common code)
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Qualcomm 802.11ax wireless chipset support (common code)
+Description: This module adds support for Qualcomm Technologies 802.11ax family of
+chipsets.
+https://wireless.wiki.kernel.org/en/users/drivers/ath11k
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+
+       config ATH11K_THERMAL
+               bool "Enable thermal sensors and throttling support"
+               depends on PACKAGE_kmod-ath11k_66
+               default y if TARGET_qualcommax
+
+@@
+
+Package: kmod-carl9170_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @USB_SUPPORT +kmod-mac80211_66 +kmod-ath_66 +kmod-usb-core +kmod-input-core +carl9170-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Driver for Atheros AR9170 USB sticks
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Driver for Atheros AR9170 USB sticks
+Description: Driver for Atheros AR9170 USB sticks
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-owl-loader_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @PCI_SUPPORT +kmod-ath9k_66
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Owl loader for initializing Atheros PCI(e) Wifi chips
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Owl loader for initializing Atheros PCI(e) Wifi chips
+Description:   Kernel module that helps to initialize certain Qualcomm
+  Atheros' PCI(e) Wifi chips, which have the init data
+  (which contains the PCI device ID for example) stored
+  together with the calibration data in the file system.
+
+  This is necessary for devices like the Cisco Meraki Z1.
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-ar5523_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @USB_SUPPORT +kmod-mac80211_66 +kmod-ath_66 +kmod-usb-core +kmod-input-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Driver for Atheros AR5523 USB sticks
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Driver for Atheros AR5523 USB sticks
+Description: Driver for Atheros AR5523 USB sticks
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-wil6210_66
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: @PCI_SUPPORT +kmod-mac80211_66 +wil6210-firmware
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: QCA/Wilocity 60g WiFi card wil6210 support
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: QCA/Wilocity 60g WiFi card wil6210 support
+Description: QCA/Wilocity 60g WiFi card wil6210 support
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-qcom-qmi-helpers_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Qualcomm QMI backports helpers
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Hidden: 1
+Detail-Description: Qualcomm QMI backports helpers
+Description: Qualcomm QMI backports helpers
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: kmod-cfg80211_66
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +iw-66 +iwinfo +wifi-scripts +wireless-regdb +USE_RFKILL:kmod-rfkill
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: cfg80211 - wireless configuration API
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: cfg80211 - wireless configuration API
+Description: cfg80211 is the Linux wireless LAN (802.11) configuration API.
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+  if PACKAGE_kmod-cfg80211_66
+
+	config PACKAGE_CFG80211_TESTMODE
+		bool "Enable testmode command support"
+		default n
+		help
+		  This is typically used for tests and calibration during
+		  manufacturing, or vendor specific debugging features
+
+  endif
+@@
+
+Package: kmod-mac80211_66
+Menu: 1
+Submenu: Wireless Drivers
+Version: <LINUX_VERSION>+6.12.6-1
+Depends: +kmod-cfg80211_66 +kmod-crypto-cmac +kmod-crypto-ccm +kmod-crypto-gcm +hostapd-common
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Linux 802.11 Wireless Networking Stack
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: backports-6.12.6.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Kernel-Config: CONFIG_AVERAGE=y
+Detail-Description: Linux 802.11 Wireless Networking Stack
+Description: Generic IEEE 802.11 Networking Stack (mac80211)
+https://wireless.wiki.kernel.org/
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+  if PACKAGE_kmod-mac80211_66
+
+	config PACKAGE_MAC80211_DEBUGFS
+		bool "Export mac80211 internals in DebugFS"
+		select KERNEL_DEBUG_FS
+		default y
+		help
+		  Select this to see extensive information about
+		  the internal state of mac80211 in debugfs.
+
+	config PACKAGE_MAC80211_TRACING
+		bool "Enable tracing (mac80211 and supported drivers)"
+		select KERNEL_FTRACE
+		select KERNEL_ENABLE_DEFAULT_TRACERS
+		default n
+		help
+		  Select this to enable tracing of mac80211 and
+		  related wifi drivers (using trace-cmd).
+
+	config PACKAGE_MAC80211_MESH
+		bool "Enable 802.11s mesh support"
+		default y
+
+  endif
+@@
+
+

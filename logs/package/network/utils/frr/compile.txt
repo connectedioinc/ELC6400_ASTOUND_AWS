@@ -1,0 +1,44 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/utils/frr'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr_installed
+echo "frr" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/frr.default.install
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-libfrr/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-libfrr_installed
+echo "frr-libfrr" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/frr.default.install
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-zebra/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-zebra_installed
+echo "frr-zebra" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/frr.default.install
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-vtysh/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-vtysh_installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-bfdd/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-bfdd_installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-bgpd/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-bgpd_installed
+echo "frr-bgpd" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/frr.default.install
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-eigrpd/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-eigrpd_installed
+echo "frr-eigrpd" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/frr.default.install
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-ldpd/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-ldpd_installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-nhrp/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-nhrp_installed
+echo "frr-nhrp" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/frr.default.install
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-ospfd/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-ospfd_installed
+echo "frr-ospfd" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/frr.default.install
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/frr-8.4.2/.pkgdir/frr-ripd/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.frr-ripd_installed
+echo "frr-ripd" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/frr.default.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/utils/frr'
+time: package/network/utils/frr/compile#0.27#0.32#0.52

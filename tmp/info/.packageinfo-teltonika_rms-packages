@@ -1,0 +1,44 @@
+Source-Makefile: package/teltonika/rms-packages/Makefile
+
+Package: rms_mqtt
+Submenu: RMS
+Version: 2026-02-11-1
+Depends: +libc +libmosquitto +libmnfinfo +libopenssl +libuci +MOBILE_SUPPORT:libgsm +libblobmsg-json +libubox +libubus +libpthread +libtlt_uci +libboardjson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: MQTT application for RMS by Teltonika
+Maintainer: 
+Require-User: rms=552:rms=552
+Source: rms-packages-3.26-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: MQTT application for RMS by Teltonika
+Description: MQTT application for RMS by Teltonika
+
+@@
+
+Package: librms
+Submenu: RMS
+Version: 2026-02-11-1
+Depends: +libc +libubus +libubox +libblobmsg-json
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Library for handling rms information
+Maintainer: 
+Source: rms-packages-3.26-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Library for handling rms information
+Description: Library for handling rms information
+
+@@
+
+

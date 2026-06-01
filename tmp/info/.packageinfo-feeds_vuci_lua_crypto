@@ -1,0 +1,22 @@
+Source-Makefile: package/feeds/vuci/lua_crypto/Makefile
+
+Package: lua_crypto
+Version: 1.0-1
+Depends: +libc +liblua +openssl-util +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: vuci
+Title: A library for exposing OpenSSL cryptographic functions to LUA.
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: A library for exposing OpenSSL cryptographic functions to LUA.
+Description: 	A simple lib that exposes OpenSSL cryptographic function for use in LUA.
+
+@@
+
+

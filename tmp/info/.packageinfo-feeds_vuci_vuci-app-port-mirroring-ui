@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-port-mirroring-ui/Makefile
+
+Package: vuci-app-port-mirroring-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Port mirroring
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Port mirroring
+Description: VuCI UI Support for Port mirroring
+
+@@
+
+

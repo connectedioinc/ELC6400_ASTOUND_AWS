@@ -1,0 +1,10 @@
+{
+    "user": "uhttpd",
+    "access": {
+       "date_time": {
+            "methods": [
+               "set_time"
+            ]
+        }
+    }
+}

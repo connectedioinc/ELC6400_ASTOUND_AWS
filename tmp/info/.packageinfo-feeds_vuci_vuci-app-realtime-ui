@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-realtime-ui/Makefile
+
+Package: vuci-app-realtime-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-realtime-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Realtime Graphs
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Realtime Graphs
+Description: VuCI UI Support for Realtime Graphs
+
+@@
+
+

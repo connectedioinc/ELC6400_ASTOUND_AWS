@@ -1,0 +1,26 @@
+Source-Makefile: package/teltonika/ntpclient/Makefile
+
+Package: ntpclient
+Submenu: Time Synchronization
+Version: 2026-02-11-1
+Depends: +libc +librt +libubus +libubox +libblobmsg-json +libuci +MOBILE_SUPPORT:libgsm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: NTP (Network Time Protocol) client
+Maintainer: 
+Require-User: ntpclient=529:ntpclient=529
+FileAttributes: /usr/sbin/ntpclient::::cap_sys_time=ep
+Source: ntpclient_2015_365.tar.gz
+License: GPL-2.0-only
+LicenseFiles: README
+Type: ipkg
+Detail-Description: NTP (Network Time Protocol) client
+Description: 	NTP client for setting system time from NTP servers.
+
+@@
+
+

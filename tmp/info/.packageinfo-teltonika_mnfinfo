@@ -1,0 +1,60 @@
+Source-Makefile: package/teltonika/mnfinfo/Makefile
+
+Package: mnfinfo
+Version: 2.30
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Device mnf-info command line interface
+Maintainer: 
+Source: mnfinfo-2.30-2.30.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Device mnf-info command line interface
+Description: Device mnf-info command line interface
+
+@@
+
+Package: libmnfinfo
+Version: 2.30
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Device mnf-info API library
+Maintainer: 
+Source: mnfinfo-2.30-2.30.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Device mnf-info API library
+Description: Device mnf-info API library
+
+@@
+
+Package: rpcd-mod-mnfinfo
+Version: 2.30
+Depends: +libc +rpcd +libmnfinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: mnfinfo rpcd module
+Maintainer: 
+Source: mnfinfo-2.30-2.30.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: mnfinfo rpcd module
+Description: mnfinfo rpcd module
+
+@@
+
+

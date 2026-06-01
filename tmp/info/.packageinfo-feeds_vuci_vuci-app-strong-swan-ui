@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-strong-swan-ui/Makefile
+
+Package: vuci-app-strong-swan-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-strong-swan-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for strongSwan
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for strongSwan
+Description: VuCI UI Support for strongSwan
+
+@@
+
+

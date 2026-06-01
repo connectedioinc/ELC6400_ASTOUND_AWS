@@ -1,0 +1,15 @@
+{
+  "services/vpn/eoip": {
+    "description": "EoIP configuration",
+    "read": {
+      "api": {
+        "/eoip/*": ["*"],
+        "/basic/network/devices/bridge/status/*": ["description", "name", "id"]
+
+      }
+    },
+    "write": {
+      "api": ["/eoip/*"]
+    }
+  }
+}

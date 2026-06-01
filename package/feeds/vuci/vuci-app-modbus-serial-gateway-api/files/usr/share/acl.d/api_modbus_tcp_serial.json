@@ -1,0 +1,10 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "modbus-tcp-over-serial*": {
+      "methods": [
+        "status"
+      ]
+    }
+  }
+}

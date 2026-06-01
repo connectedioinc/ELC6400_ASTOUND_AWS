@@ -1,0 +1,33 @@
+{
+  "network/dynamic_routes": {
+    "title": "Dynamic Routes",
+    "index": 80
+  },
+  "network/dynamic_routes/proto_rip": {
+    "title": "RIP",
+    "index": 20,
+    "view": "network/ProtoRip",
+    "acls": ["network/dynamic_routes/proto_rip"],
+    "main_page": true,
+    "depends": {
+      "packages": {
+        "anyOf": ["frr-ripd"]
+      }
+    }
+  },
+  "status/network/dynamic": {
+    "title": "Dynamic Routes",
+    "index": 20
+  },
+  "status/network/dynamic/rip": {
+    "title": "RIP",
+    "index": 20,
+    "view": "status/ProtoRip",
+    "acls": ["status/network/dynamic/rip"],
+    "depends": {
+      "packages": {
+        "anyOf": ["frr-ripd"]
+      }
+    }
+  }
+}

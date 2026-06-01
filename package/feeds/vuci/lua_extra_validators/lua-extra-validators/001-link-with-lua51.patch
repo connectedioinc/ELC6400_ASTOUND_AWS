@@ -1,0 +1,11 @@
+--- a/Makefile  2024-11-08 10:05:09.545149408 +0200
++++ b/Makefile  2024-11-08 10:05:20.141623036 +0200
+Upstream-Status: Inappropriate [local build fix]
+@@ -1,6 +1,6 @@
+ WFLAGS=-Wall -Wextra -Wno-unused-parameter
+ INCLUDES=-I$(STAGING_DIR)/usr/include/lua5.1 -I/usr/include/lua5.1 -I$(STAGING_DIR)/usr/include
+-LLUA=-llua
++LLUA=-llua5.1
+ 
+ LIBNAME=lua_extra_validators.so
+ 

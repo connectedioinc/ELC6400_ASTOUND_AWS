@@ -1,0 +1,19 @@
+sequenceDiagram
+    autonumber
+    opt multiActions.length > 0
+        opt on check all
+            VuciTypedSectionApi->>TltTable: _onCheckAll()
+            TltTable->>TltTable: _updateSelected()
+            TltTable-->>VuciTypedSection: selected sections
+        end
+        opt on single check
+            VuciTypedSectionApi->>TltTable: _onCheck(data=)
+            TltTable->>TltTable: _updateSelected()
+            TltTable-->>VuciTypedSection: selected section
+        end
+        opt on uncheck
+            VuciTypedSectionApi->>TltTable: _onUncheck(data=)
+            TltTable->>TltTable: _updateSelected()
+            TltTable-->>VuciTypedSection: unselected section
+        end
+    end

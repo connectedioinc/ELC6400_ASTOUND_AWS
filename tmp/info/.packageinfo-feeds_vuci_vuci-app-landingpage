@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-landingpage/Makefile
+Build-Types: host
+
+Package: vuci-app-landingpage
+Submenu: Applications
+Version: 2021-02-19-1
+Depends: +libc +liblua +vuci-app-coovachilli-themes-ui
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: webui
+Category: WebUI
+Repository: vuci
+Title: Hotspot landingpage core files
+Maintainer: 
+Source: 
+License: Apache-2.0
+Type: ipkg
+Detail-Description: Hotspot landingpage core files
+Description: Hotspot landingpage core files
+
+@@
+
+

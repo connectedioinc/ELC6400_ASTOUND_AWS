@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/libs/libcfg/Makefile
+
+Package: libcfg
+Version: 2026-02-11-1.5
+Depends: +libc +libuci +libubus +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A helper library for UCI config parsing
+Maintainer: 
+Source: libcfg-2026-02-11-1.5-1.5.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A helper library for UCI config parsing
+Description: A helper library for UCI config parsing
+
+@@
+
+

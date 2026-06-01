@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-pptp-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-pptp-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +pptpd +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for PPTP
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for PPTP
+Description: VuCI API Support for PPTP
+
+@@
+
+

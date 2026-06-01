@@ -1,0 +1,28 @@
+Source-Makefile: package/libs/glib2/Makefile
+Build-Depends: meson/host ninja/host
+Build-Depends/host: meson/host pcre2/host libffi/host libiconv-full/host ninja/host
+Build-Types: host
+
+Package: glib2
+Version: 2.80.5-4
+Depends: +libc +BUILD_NLS:libiconv-full +BUILD_NLS:libintl-full +zlib +libpthread +libffi +libattr +libpcre2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: glib 2.0
+Maintainer: Peter Wagner <tripolar@gmx.at>
+CPE-ID: cpe:/a:gnome:glib
+Source: glib-2.80.5.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: glib 2.0
+Description:   The GLib library of C routines
+http://www.gtk.org/
+Peter Wagner <tripolar@gmx.at>
+@@
+
+

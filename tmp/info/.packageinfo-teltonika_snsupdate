@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/snsupdate/Makefile
+
+Package: snsupdate
+Submenu: IP Addresses and Names
+Version: 1.3
+Depends: +libc +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: small dynamic DNS client
+Maintainer: 
+Source: snsupdate-1.3-1.3.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: small dynamic DNS client
+Description: 	Small nsupdate clone.
+
+@@
+
+

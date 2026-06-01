@@ -1,0 +1,15 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/teltonika/mctl'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/mctl-4.14/.pkgdir/modem_trackd/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.modem_trackd_installed
+echo "modem_trackd" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/mctl.default.install
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/mctl-4.14/.pkgdir/libmctl/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.libmctl_installed
+echo "libmctl" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/mctl.default.install
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/mctl-4.14/.pkgdir/mctl/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.mctl_installed
+echo "mctl" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/mctl.default.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/teltonika/mctl'
+time: package/teltonika/mctl/compile#0.11#0.14#0.23

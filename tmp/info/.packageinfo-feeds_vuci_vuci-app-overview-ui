@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-overview-ui/Makefile
+
+Package: vuci-app-overview-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-overview-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Overview
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Overview
+Description: VuCI UI Support for Overview
+
+@@
+
+

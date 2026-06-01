@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-iec60870-server-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-iec60870-server-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +iec60870_server +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for IEC 60870-5 Server
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for IEC 60870-5 Server
+Description: VuCI API Support for IEC 60870-5 Server
+
+@@
+
+

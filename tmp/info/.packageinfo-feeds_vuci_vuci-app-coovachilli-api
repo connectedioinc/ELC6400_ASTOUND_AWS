@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-coovachilli-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-coovachilli-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +coova-chilli +tlt_hs_theme_default +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for Coova Chilli
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for Coova Chilli
+Description: VuCI API Support for Coova Chilli
+
+@@
+
+

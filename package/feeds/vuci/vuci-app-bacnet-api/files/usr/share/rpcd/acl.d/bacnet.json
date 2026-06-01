@@ -1,0 +1,15 @@
+{
+  "services/bacnet": {
+    "description": "BACnet configuration",
+    "read": {
+      "api": {
+        "/bacnet/*": ["*"],
+        "/basic/network/devices/status/*": ["name", "up"],
+        "/serial/status/*": ["*"]
+      }
+    },
+    "write": {
+      "api": ["/bacnet/*"]
+    }
+  }
+}

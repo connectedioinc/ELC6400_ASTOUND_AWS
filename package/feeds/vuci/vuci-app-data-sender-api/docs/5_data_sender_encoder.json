@@ -1,0 +1,53 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+      "/data_to_server/encoder/options": {
+        "get": {
+          "summary": "Returns Data to Server all available encoder plugin names",
+          "tags": ["Encoder"],
+          "responses": {
+            "200": {
+              "$ref": "#/components/responses/200_data_sender_available_encoder_plugin_names"
+            }
+          }
+        },
+        "x-web": {
+          "menu": ["Services", "Data to Server", "Encoder"],
+          "hw_tags": {
+            "is_access_point": false,
+            "is_switch": false
+          }
+        }
+      }
+    },
+    "components": {
+      "responses": {
+        "200_data_sender_available_encoder_plugin_names": {
+          "description": "Example response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "success": {
+                    "type": "boolean",
+                    "description": "Operation status"
+                  },
+                  "data": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "items": {
+                      "type": "string",
+                      "enum": ["base64"]
+                    }
+                  }
+                },
+                "required": ["success", "data"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  

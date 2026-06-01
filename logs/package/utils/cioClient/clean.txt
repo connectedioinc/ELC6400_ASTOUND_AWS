@@ -1,0 +1,8 @@
+make[2]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/utils/cioClient'
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/cioClient
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-remove cioClient /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/cioClient_1_arm_cortex-a7_neon-vfpv4.ipk
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/cioClient_1_arm_cortex-a7_neon-vfpv4.ipk'
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.cioClient_installed
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/cioClient.list
+make[2]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/utils/cioClient'
+time: package/utils/cioClient/clean#0.27#0.36#0.68

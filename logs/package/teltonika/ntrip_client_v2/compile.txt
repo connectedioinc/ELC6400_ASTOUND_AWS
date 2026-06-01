@@ -1,0 +1,227 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/teltonika/ntrip_client_v2'
+ntrip_client_v2-2025-08-26-647cae59ee687216180a475d38fdf32ba90a1a25.tar.xz: Download from https://github.com/hail-linda/pi_ublox-ntrip.git failed
+ntrip_client_v2-2025-08-26-647cae59ee687216180a475d38fdf32ba90a1a25.tar.xz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'ntrip_client_v2-2025-08-26-647cae59ee687216180a475d38fdf32ba90a1a25'...
+Note: switching to '647cae59ee687216180a475d38fdf32ba90a1a25'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 647cae5 fixed 4G & com conflict
+Packing checkout...
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.prepared_00fbeb7ff4fd40cf126f77a229af8e11_6664517399ebbbc92a37c5bb081b5c53_check
+
+Applying ./patches/000_tlt.patch using plaintext: 
+patching file .gitignore
+patching file .gitlab-ci.yml
+patching file .gitmodules
+patching file .semgrepignore
+patching file CMakeLists.txt
+patching file CMakeSettings.json
+patching file Makefile
+patching file README.md
+patching file dox/ntrip.md
+patching file dox/ntrip_packet.md
+patching file examples/CMakeLists.txt
+patching file examples/ntrip_caster.cc
+patching file examples/ntrip_client.cc
+patching file examples/ntrip_server.cc
+patching file files/ntrip.json
+patching file files/rs_ntrip.conf
+patching file files/rs_ntrip.init
+patching file files/rs_ntrip.permtab
+patching file get.sh
+patching file include/debug.h
+patching file include/mount_point.h
+patching file include/ntrip_caster.h
+patching file include/ntrip_client.h
+patching file include/ntrip_server.h
+patching file include/ntrip_types.h
+patching file include/ntrip_user.h
+patching file include/ntrip_util.h
+patching file include/ubus.h
+patching file ntripinit.sh
+patching file project.yml
+patching file send.sh
+patching file sendNema.py
+patching file sendNema2.py
+patching file src/CMakeLists.txt
+patching file src/main.cc
+patching file src/mount_point.h
+patching file src/ntrip_caster.cc
+patching file src/ntrip_caster.h
+patching file src/ntrip_client.cc
+patching file src/ntrip_client.h
+patching file src/ntrip_server.cc
+patching file src/ntrip_server.h
+patching file src/ntrip_util.cc
+patching file src/ntrip_util.h
+patching file src/ubus.c
+patching file test/support/.git
+patching file test/support/README.md
+patching file test/support/stub_blob.h
+patching file test/support/stub_blobmsg.h
+patching file test/support/stub_libubus.h
+patching file test/support/stub_stat.h
+patching file test/support/stub_stdio.h
+patching file test/support/stub_sysinfo.h
+patching file test/support/stub_uci.h
+patching file test/support/stub_uloop.h
+patching file test.py
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.prepared_00fbeb7ff4fd40cf126f77a229af8e11_6664517399ebbbc92a37c5bb081b5c53
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.configured_*
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.ntrip_client_v2_installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26; CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26=ntrip_client_v2-2025-08-26 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -DRUTX_PLATFORM=1 -DTLT_PLATFORM_NAME=RUTX" CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26=ntrip_client_v2-2025-08-26 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " cmake -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_VERSION=1 -DCMAKE_SYSTEM_PROCESSOR=arm -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS_RELEASE="-DNDEBUG" -DCMAKE_CXX_FLAGS_RELEASE="-DNDEBUG" -DCMAKE_C_COMPILER_LAUNCHER="" -DCMAKE_C_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc" -DCMAKE_CXX_COMPILER_LAUNCHER="" -DCMAKE_CXX_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-g++" -DCMAKE_ASM_COMPILER_LAUNCHER="" -DCMAKE_ASM_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc" -DCMAKE_EXE_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro" -DCMAKE_MODULE_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro -Wl,-Bsymbolic-functions" -DCMAKE_SHARED_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro -Wl,-Bsymbolic-functions" -DCMAKE_AR="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-ar" -DCMAKE_NM="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-nm" -DCMAKE_RANLIB="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-ranlib" -DCMAKE_FIND_ROOT_PATH="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr;/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi" -DCMAKE_FIND_ROOT_PATH_MODE_PROGRAM=BOTH -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY -DCMAKE_STRIP=: -DCMAKE_INSTALL_PREFIX=/usr -DDL_LIBRARY=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi -DCMAKE_PREFIX_PATH=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_EXPORT_PACKAGE_REGISTRY=FALSE -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=TRUE -DCMAKE_FIND_USE_PACKAGE_REGISTRY=FALSE -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=TRUE -DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=FALSE -DCMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY=TRUE -DCMAKE_POLICY_DEFAULT_CMP0054=NEW  /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26 )
+[33mCMake Warning (dev) in CMakeLists.txt:
+  No project() command is present.  The top-level CMakeLists.txt file must
+  contain a literal, direct call to the project() command.  Add a line of
+  code such as
+
+    project(ProjectName)
+
+  near the top of the file, but after cmake_minimum_required().
+
+  CMake is pretending there is a "project(Project)" command on the first
+  line.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+-- The C compiler identification is GNU 8.4.0
+-- The CXX compiler identification is GNU 8.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+[33mCMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_COMPILER
+    CMAKE_ASM_COMPILER_LAUNCHER
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_EXPORT_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY
+    CMAKE_FIND_ROOT_PATH_MODE_LIBRARY
+    CMAKE_FIND_USE_PACKAGE_REGISTRY
+    CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_POLICY_DEFAULT_CMP0054
+    CMAKE_SHARED_LINKER_FLAGS
+    DL_LIBRARY
+
+[0m
+-- Build files have been written to: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.built_check
+printf "%s\n" "• ntrip_client_v2 is rebuilt"
+• ntrip_client_v2 is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "ntrip_client_v2" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26=ntrip_client_v2-2025-08-26 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26=ntrip_client_v2-2025-08-26 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26=ntrip_client_v2-2025-08-26 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" CMAKE_COMMAND='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/cmake' CMAKE_DISABLE_cmake_check_build_system=1 ; 
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+[ 20%] [32mBuilding CXX object CMakeFiles/ntrip_client.dir/src/main.cc.o[0m
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/src/main.cc: In function 'void validate_configuration()':
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/src/main.cc:691:23: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+   g_config.username = "";
+                       ^~
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/src/main.cc:695:23: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+   g_config.password = "";
+                       ^~
+[ 40%] [32mBuilding CXX object CMakeFiles/ntrip_client.dir/src/ntrip_client.cc.o[0m
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/src/ntrip_client.cc:31:
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/src/ntrip_client.cc: In member function 'void libntrip::NtripClient::TheradHandler()':
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/src/ntrip_client.cc:358:12: warning: format '%d' expects argument of type 'int', but argument 3 has type 'std::chrono::duration<long long int, std::ratio<1, 1000> >::rep' {aka 'long long int'} [-Wformat=]
+   DEBUG(9, "intv:[%d], current:[%d]\n", intv_ms,
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+         std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() -
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+              start_tp)
+              ~~~~~~~~~
+          .count());
+          ~~~~~~~~
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/./include/debug.h:4:66: note: in definition of macro 'DEBUG'
+ #define DEBUG(level, args...) if (g_debug_level >= level) printf(args);
+                                                                  ^~~~
+[ 60%] [32mBuilding CXX object CMakeFiles/ntrip_client.dir/src/ntrip_util.cc.o[0m
+[ 80%] [32mBuilding C object CMakeFiles/ntrip_client.dir/src/ubus.c.o[0m
+[100%] [32m[1mLinking CXX executable ntrip_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+[100%] Built target ntrip_client
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26=ntrip_client_v2-2025-08-26 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26=ntrip_client_v2-2025-08-26 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26=ntrip_client_v2-2025-08-26 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" CMAKE_COMMAND='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/cmake' CMAKE_DISABLE_cmake_check_build_system=1 DESTDIR="/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-install"  install;
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+[35m[1mConsolidate compiler generated dependencies of target ntrip_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+[100%] Built target ntrip_client
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+[36mInstall the project...[0m
+-- Install configuration: "Release"
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-install/usr/bin/ntrip_client
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2.installed /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/usr/sbin /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/etc/init.d /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/etc/config /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/usr/share/acl.d /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/etc/permtab.d
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ntrip_client /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/usr/sbin/
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/files/rs_ntrip.init /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/etc/init.d/rs_ntrip
+install -m0600 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/files/rs_ntrip.conf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/etc/config/rs_ntrip
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/files/ntrip.json /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/usr/share/acl.d/ntrip.json
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/files/rs_ntrip.permtab /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/etc/permtab.d/rs_ntrip
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2.installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/.pkgdir/ntrip_client_v2/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.ntrip_client_v2_installed
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/ntrip_client_v2_2025-08-26_arm_cortex-a7_neon-vfpv4.ipk'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/CONTROL /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/usr/sbin /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/etc/init.d /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/etc/config /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/usr/share/acl.d /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/etc/permtab.d
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ntrip_client /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/usr/sbin/
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/files/rs_ntrip.init /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/etc/init.d/rs_ntrip
+install -m0600 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/files/rs_ntrip.conf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/etc/config/rs_ntrip
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/files/ntrip.json /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/usr/share/acl.d/ntrip.json
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/files/rs_ntrip.permtab /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/etc/permtab.d/rs_ntrip
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2 -name 'CVS' -o -name '.svn' -o -name '.#*' -o -name '*~'| xargs -r rm -rf
+export CROSS="arm-openwrt-linux-muslgnueabi-"  NO_RENAME=1 ; NM="arm-openwrt-linux-muslgnueabi-nm" STRIP="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sstrip -z" STRIP_KMOD="/media/home/FIRMWARES1/RUTX11/sdk2/scripts/strip-kmod.sh" PATCHELF="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/patchelf" /media/home/FIRMWARES1/RUTX11/sdk2/scripts/rstrip.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/usr/sbin/ntrip_client: executable
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2/CONTROL; ( echo "$CONTROL"; printf "Description: "; echo "$DESCRIPTION" | sed -e 's,^[[:space:]]*, ,g'; ) > control; chmod 644 control; ( echo "#!/bin/sh"; echo "[ \"\${IPKG_NO_SCRIPT}\" = \"1\" ] && exit 0"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_postinst \$0 \$@"; ) > postinst; ( echo "#!/bin/sh"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_prerm \$0 \$@"; ) > prerm; chmod 0755 postinst prerm; echo "$V_Package_ntrip_client_v2_conffiles" > conffiles;  )
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-build -m "" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+Packaged contents of /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-arm_cortex-a7_neon-vfpv4/ntrip_client_v2 into /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/ntrip_client_v2_2025-08-26_arm_cortex-a7_neon-vfpv4.ipk
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2/host /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ntrip_client_v2-2025-08-26/ipkg-install/* /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2/
+find /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2 -name '*.la' | xargs -r rm -f; 
+if [ -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/ntrip_client_v2.list ]; then /media/home/FIRMWARES1/RUTX11/sdk2/scripts/clean-package.sh "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/ntrip_client_v2.list" "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi"; fi
+if [ -d /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2 ]; then (cd /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2; find ./ > /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2.files); 	SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.staging-dir.flock -c ' mv /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2.files /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/ntrip_client_v2.list && cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2/* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ '; fi
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ntrip_client_v2
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.ntrip_client_v2_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/teltonika/ntrip_client_v2'
+time: package/teltonika/ntrip_client_v2/compile#2.53#0.93#4.75

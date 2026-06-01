@@ -1,0 +1,33 @@
+#!/usr/bin/lua
+
+local ubus = require("ubus")
+local uloop = require("uloop")
+local fs = require("nixio.fs")
+local json = require("luci.jsonc")
+
+local CHECK_INTERVAL = 2000
+local DIR = "/tmp/vuci"
+
+uloop.init()
+
+local con = ubus.connect()
+if not con then error("[ERROR] Failed to connect to ubus") end
+
+local timer
+timer = uloop.timer(function ()
+	if fs.access(DIR) then
+		for file in fs.glob(DIR.."/*") do
+			local content = fs.readfile(file) or ""
+			con:send("vuci.notify", {
+				event = file:match("^.*/(.*)$"),
+				data = json.parse(content) or content
+			})
+			fs.remove(file)
+		end
+	end
+	timer:set(CHECK_INTERVAL)
+end)
+timer:set(CHECK_INTERVAL)
+
+uloop.run()
+con:close()

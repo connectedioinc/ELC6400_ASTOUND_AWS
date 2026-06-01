@@ -1,0 +1,6 @@
+   ERROR: package/utils/cioClient failed to build.
+   ERROR: package/utils/cioClient failed to build.
+   ERROR: package/utils/cioClient failed to build.
+   ERROR: package/utils/cioClient failed to build.
+   ERROR: package/teltonika/pam_radius failed to build.
+   ERROR: package/teltonika/shellinabox failed to build.

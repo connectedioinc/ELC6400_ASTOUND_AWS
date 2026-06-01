@@ -1,0 +1,72 @@
+Source-Makefile: package/teltonika/mobutils/Makefile
+
+Package: mobutils
+Menu: 1
+Version: 3.20-1
+Depends: +libc +libuci +libtlt_uci +libubus +libubox +libtlt-logger +libmnfinfo +libgsm +liblog +libboardjson +CALL_UTILS_HANDLER_IO:iomand +libparam +MOBILE_SUPPORT:libmdcollect +SMS_UTILS_HANDLER_IO:iomand +SMS_UTILS_HANDLER_GPS:libgps +libcurl +@LIBCURL_SMTP +SMS_UTILS_HANDLER_RMS:librms +SMS_UTILS_HANDLER_API:libapi +libuacl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Mobile utilities
+Maintainer: 
+Require-User: mobutils=513:mobutils=513
+FileAttributes: /usr/sbin/mobutils::::cap_net_raw,cap_setuid,cap_setgid+eip
+Source: mobutils-3.20-3.20.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Mobile utilities
+Description: Mobile utilities
+
+@@
+Config:
+	source "package/teltonika/mobutils/Config.in"
+@@
+
+Package: mobutils-call_utilities
+Version: 3.20-1
+Depends: +libc mobutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Call utilities
+Maintainer: 
+Source: mobutils-3.20-3.20.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Call utilities
+Description: Call utilities
+
+@@
+Config:
+	source "package/teltonika/mobutils/Config-call-utils.in"
+@@
+
+Package: mobutils-sms_utilities
+Version: 3.20-1
+Depends: +libc mobutils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SMS utilities
+Maintainer: 
+Source: mobutils-3.20-3.20.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SMS utilities
+Description: SMS utilities
+
+@@
+Config:
+	source "package/teltonika/mobutils/Config-sms-utils.in"
+@@
+
+

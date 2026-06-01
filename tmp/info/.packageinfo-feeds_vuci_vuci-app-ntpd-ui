@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-ntpd-ui/Makefile
+
+Package: vuci-app-ntpd-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-ntpd-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for NTPD time synchronisation configuration module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for NTPD time synchronisation configuration module
+Description: VuCI UI Support for NTPD time synchronisation configuration module
+
+@@
+
+

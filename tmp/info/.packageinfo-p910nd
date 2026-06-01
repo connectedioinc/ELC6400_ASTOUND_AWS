@@ -1,0 +1,32 @@
+Source-Makefile: package/p910nd/Makefile
+
+Package: p910nd
+Submenu: Printing
+Version: 0.97-9
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A small non-spooling printer server
+Maintainer: Philipp Kerling <pkerling@casix.org>
+Require-User: p910nd=585:p910nd=585
+Source: 0.97.tar.gz
+License: GPL-2.0-only
+LicenseFiles: LICENSE.md
+Type: ipkg
+Detail-Description: A small non-spooling printer server
+Description:  p910nd is a small daemon that copies any data received on
+ the port it is listening on to the corresponding printer
+ port. It is primarily intended for diskless Linux hosts
+ running as printer drivers but there is no reason why it
+ could not be used on diskful hosts. Port 9100 is copied
+ to /dev/lp0, 9101 to /dev/lp1 and 9102 to /dev/lp2. The
+ default is port 9100 to /dev/lp0.
+https://github.com/kenyapcomau/p910nd
+Philipp Kerling <pkerling@casix.org>
+@@
+
+

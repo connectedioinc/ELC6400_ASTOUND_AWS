@@ -1,0 +1,10 @@
+{
+    "user": "uhttpd",
+    "access": {
+        "mobifd": {
+            "methods": [
+                "reload"
+            ]
+        }
+    }
+}

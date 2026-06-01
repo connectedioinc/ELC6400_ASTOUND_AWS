@@ -1,0 +1,6 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/config/qos-scripts'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/qos-scripts-1.3.1/.pkgdir/qos-scripts/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.qos-scripts_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/config/qos-scripts'
+time: package/network/config/qos-scripts/compile#0.08#0.12#0.19

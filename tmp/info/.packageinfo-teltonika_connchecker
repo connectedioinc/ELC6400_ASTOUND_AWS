@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/connchecker/Makefile
+
+Package: connchecker
+Version: 2025-01-15-1
+Depends: +libc +libubox +libubus +liblog
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Connection checker
+Maintainer: 
+Require-User: connchecker:connchecker
+FileAttributes: /usr/local/usr/sbin/connchecker::::cap_net_raw=ep
+Source: connchecker-2025-01-15-7.11.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Connection checker
+Description: 	Daemon for continuous monitoring of network connectity and DNS resolution.
+
+@@
+
+

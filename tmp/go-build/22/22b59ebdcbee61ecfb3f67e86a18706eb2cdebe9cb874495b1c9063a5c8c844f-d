@@ -1,0 +1,3 @@
+./clientupdate.go
+./clientupdate_downloads.go
+./clientupdate_notwindows.go

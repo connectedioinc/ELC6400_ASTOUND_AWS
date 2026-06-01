@@ -1,0 +1,10 @@
+{
+  "packages": [
+      "sim_idle_protection.tar.gz"
+  ],
+  "excludedDevices": [
+    "RUTX08",
+    "RUTX10",
+    "RUTX12"
+  ]
+}

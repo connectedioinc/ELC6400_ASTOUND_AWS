@@ -1,0 +1,2802 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/openvpn/config": {
+      "put": {
+        "summary": "Updates specified openvpn configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpenvpnMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "$ref": "#/components/schemas/openvpn_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      },
+      "delete": {
+        "summary": "Deletes specified openvpn child configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      },
+      "get": {
+        "summary": "Returns all openvpn configuration sections",
+        "description": "Returns all sections with their parameters from openvpn configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpenvpnMulti"
+          }
+        },
+        "tags": ["General"],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates openvpn section",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200Openvpn"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/openvpn_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenVPN"],
+        "hw_tags": {
+          "has_openvpn": true
+        },
+        "name": "OpenVPN"
+      }
+    },
+    "/openvpn/config/{id}": {
+      "put": {
+        "summary": "Updates specified openvpn configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200Openvpn"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/openvpn_single_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      },
+      "delete": {
+        "summary": "Deletes specified openvpn configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["General"]
+      },
+      "get": {
+        "summary": "Returns specified openvpn section",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200Openvpn"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["General"],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Uci configuration openvpn section identifier"
+        }
+      ],
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenVPN"],
+        "hw_tags": {
+          "has_openvpn": true
+        },
+        "name": "OpenVPN"
+      },
+      "post": {
+        "summary": "Uploads custom configuration file",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["General"],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "Parameter to upload the file to.",
+                    "enum": ["config", "tls_auth", "tls_crypt", "ca", "cert", "key", "secret", "userpass", "dh", "crl_verify", "pkcs12"]
+                  },
+                  "file": {
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openvpn/status": {
+      "get": {
+        "summary": "Returns all openvpn configuration sections statuses",
+        "description": "Returns all sections statuses",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "x-examples": {
+                    "example-1": {
+                      "success": true,
+                      "data": {
+                        "cli": {
+                          "type": "0",
+                          "protocol": "tun",
+                          "updated": "2023-03-29 09:10:47",
+                          "rx": "0",
+                          "tx": "660",
+                          "status": "0",
+                          "ipaddress_remote": "10.1.0.2",
+                          "ipaddress": "10.1.0.1",
+                          "server": "1.1.1.1"
+                        },
+                        "srv": {
+                          "type": "1",
+                          "protocol": "tun",
+                          "tx": "110130",
+                          "updated": "2023-03-29 09:10:52",
+                          "rx": "109907",
+                          "uptime": "02h 20m 51s",
+                          "clients_conected": "2",
+                          "status": "2",
+                          "clients": [
+                            [
+                              {
+                                "tx": "55037",
+                                "uptime": "2023-03-29 06:52:04",
+                                "vpn_ip": "10.0.0.8",
+                                "last_ref": "2023-03-29 06:52:05",
+                                "name": "client2",
+                                "rx": "54840",
+                                "ip": "192.168.10.2:35302"
+                              },
+                              {
+                                "tx": "55093",
+                                "uptime": "2023-03-29 06:52:04",
+                                "vpn_ip": "10.0.0.6",
+                                "last_ref": "2023-03-29 06:52:04",
+                                "name": "client1",
+                                "rx": "55067",
+                                "ip": "192.168.10.119:44884"
+                              }
+                            ]
+                          ],
+                          "clients_all": "2",
+                          "ipaddress": "10.0.0.1"
+                        }
+                      }
+                    }
+                  },
+                  "oneOf": [
+                    {
+                      "properties": {
+                        "success": {
+                          "type": "boolean",
+                          "description": "Operation status"
+                        },
+                        "data": {
+                          "type": "object",
+                          "properties": {
+                            "instance_id": {
+                              "$ref": "#/components/schemas/openvpn_status_options"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "properties": {
+                        "success": {
+                          "type": "boolean",
+                          "description": "Operation status"
+                        },
+                        "data": {
+                          "type": "array",
+                          "items": {
+                            "allOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "string",
+                                    "description": "Configuration ID"
+                                  }
+                                }
+                              },
+                              {
+                                "$ref": "#/components/schemas/openvpn_status_options"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "x-web": {
+                        "pretty": "",
+                        "hidden_documentation_page": true
+                      }
+                    }
+                  ],
+                  "type": "object",
+                  "properties": {}
+                },
+                "examples": {
+                  "example": {
+                    "value": {
+                      "success": true,
+                      "data": {
+                        "client": {
+                          "type": "0",
+                          "protocol": "tun",
+                          "ip6address_remote": "",
+                          "ip6address": "",
+                          "logs": "Fri May  3 11:07:41 2024 daemon.notice openvpn(client)[14439]: Initialization Sequence Completed\n",
+                          "tx": "6154",
+                          "rx": "6380",
+                          "updated": "2024-05-03 11:10:06",
+                          "status": "0",
+                          "ipaddress_remote": "192.0.2.5",
+                          "ipaddress": "192.0.2.6",
+                          "server": "127.0.0.1"
+                        },
+                        "server": {
+                          "type": "1",
+                          "ipaddress": "192.0.2.1",
+                          "ip6address": "",
+                          "rx": "6082",
+                          "tx": "6308",
+                          "logs": "Fri May  3 11:07:41 2024 daemon.notice openvpn(server)[12897]: Client1/127.0.0.1:47954 Incoming Data Channel: Using 160 bit message hash 'SHA1' for HMAC authentication\nFri May  3 11:07:41 2024 daemon.notice openvpn(server)[12897]: Client1/127.0.0.1:47954 SENT CONTROL [Client1]: 'PUSH_REPLY,route 192.0.2.1,topology net30,ping 10,ping-restart 120,ifconfig 192.0.2.6 192.0.2.5,peer-id 0,cipher AES-256-CBC' (status=1)\n",
+                          "uptime": "00h 07m 23s",
+                          "clients_connected": "1",
+                          "status": "2",
+                          "clients": [
+                            {
+                              "tx": "6308",
+                              "vpn_ip6": "",
+                              "uptime": "00h 02m 29s",
+                              "vpn_ip": "192.0.2.6",
+                              "last_ref": "2024-05-03 11:07:41",
+                              "name": "Client1",
+                              "rx": "6082",
+                              "ip": "127.0.0.1:47954"
+                            }
+                          ],
+                          "clients_all": "1",
+                          "protocol": "tun"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      },
+      "parameters": [
+        {
+          "x-web": {
+            "hidden_documentation_page": true
+          },
+          "name": "array",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "number"
+          },
+          "description": "For returning array instead of object"
+        }
+      ],
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenVPN"],
+        "hw_tags": {
+          "has_openvpn": true
+        },
+        "name": "OpenVPN"
+      }
+    },
+    "/openvpn/status/{id}": {
+      "get": {
+        "summary": "Returns single openvpn configuration instance status",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/openvpn_status_options"
+                    }
+                  }
+                },
+                "examples": {
+                  "client": {
+                    "value": {
+                      "success": true,
+                      "data": {
+                        "type": "0",
+                        "protocol": "tun",
+                        "ip6address_remote": "",
+                        "ip6address": "",
+                        "logs": "Fri May  3 11:07:41 2024 daemon.notice openvpn(client)[14439]: Initialization Sequence Completed\n",
+                        "tx": "6154",
+                        "rx": "6380",
+                        "updated": "2024-05-03 11:10:06",
+                        "status": "0",
+                        "ipaddress_remote": "192.0.2.5",
+                        "ipaddress": "192.0.2.6",
+                        "server": "127.0.0.1"
+                      }
+                    }
+                  },
+                  "server": {
+                    "value": {
+                      "success": true,
+                      "data": {
+                        "type": "1",
+                        "ipaddress": "192.0.2.1",
+                        "ip6address": "",
+                        "rx": "6082",
+                        "tx": "6308",
+                        "logs": "Fri May  3 11:07:41 2024 daemon.notice openvpn(server)[12897]: Client1/127.0.0.1:47954 Incoming Data Channel: Using 160 bit message hash 'SHA1' for HMAC authentication\nFri May  3 11:07:41 2024 daemon.notice openvpn(server)[12897]: Client1/127.0.0.1:47954 SENT CONTROL [Client1]: 'PUSH_REPLY,route 192.0.2.1,topology net30,ping 10,ping-restart 120,ifconfig 192.0.2.6 192.0.2.5,peer-id 0,cipher AES-256-CBC' (status=1)\n",
+                        "uptime": "00h 07m 23s",
+                        "clients_connected": "1",
+                        "status": "2",
+                        "clients": [
+                          {
+                            "tx": "6308",
+                            "vpn_ip6": "",
+                            "uptime": "00h 02m 29s",
+                            "vpn_ip": "192.0.2.6",
+                            "last_ref": "2024-05-03 11:07:41",
+                            "name": "Client1",
+                            "rx": "6082",
+                            "ip": "127.0.0.1:47954"
+                          }
+                        ],
+                        "clients_all": "1",
+                        "protocol": "tun"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["General"]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenVPN"],
+        "hw_tags": {
+          "has_openvpn": true
+        },
+        "name": "OpenVPN"
+      }
+    },
+    "/openvpn/{id}/actions/download": {
+      "post": {
+        "summary": "Downloads specified configuration file",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_download"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "ID of the OpenVPN instance that you want to export"
+        }
+      ],
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenVPN"],
+        "hw_tags": {
+          "has_openvpn": true
+        }
+      }
+    },
+    "/openvpn/{id}/actions/generate": {
+      "post": {
+        "summary": "Generate client configuration file",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_download"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "remote": {
+                        "x-web": {
+                          "pretty": "Remote host/IP address",
+                          "input-type": "input"
+                        },
+                        "type": "string",
+                        "description": "IP address or domain name of the OpenVPN server.",
+                        "format": "host"
+                      },
+                      "ca": {
+                        "x-web": {
+                          "pretty": "Certificate authority",
+                          "input-type": "input"
+                        },
+                        "type": "string",
+                        "description": "The certificate will be added to the generated client configuration file",
+                        "format": "binary"
+                      },
+                      "cert": {
+                        "x-web": {
+                          "pretty": "Client certificate",
+                          "input-type": "input"
+                        },
+                        "type": "string",
+                        "description": "The certificate will be added to the generated client configuration file",
+                        "format": "binary"
+                      },
+                      "key": {
+                        "x-web": {
+                          "pretty": "Private key",
+                          "input-type": "input"
+                        },
+                        "type": "string",
+                        "description": "The private key will be added to the generated client configuration file",
+                        "format": "binary"
+                      },
+                      "user": {
+                        "x-web": {
+                          "pretty": "Username",
+                          "input-type": "input"
+                        },
+                        "type": "string",
+                        "description": "VPN client username. When 'none' is selected, the credentials will be excluded from the configuration file.",
+                        "enum": ["none", "username"]
+                      }
+                    },
+                    "required": ["remote"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "ID of the OpenVPN instance for generating client configuration file"
+        }
+      ],
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenVPN"],
+        "hw_tags": {
+          "has_openvpn": true
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200Openvpn": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/openvpn_single_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200OpenvpnMulti": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/openvpn_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "openvpn_single_options": {
+        "type": "object",
+        "properties": {
+          "enable": {
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Enable current configuration"
+          },
+          "type": {
+            "x-web": {
+              "pretty": "Role",
+              "input-type": "select",
+              "enum-pretty": {
+                "client": "Client",
+                "server": "Server"
+              }
+            },
+            "enum": ["client", "server"],
+            "type": "string",
+            "description": "Type of tunnel instance"
+          },
+          "name": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Name"
+            },
+            "type": "string",
+            "description": "Name of the OpenVPN instance.",
+            "maxLength": 64
+          },
+          "configuration": {
+            "x-web": {
+              "input-type": "select",
+              "pretty": "Configuration type",
+              "enum-pretty": {
+                "manual": "Manual",
+                "custom": "Upload config file",
+                "external": "External services"
+              }
+            },
+            "type": "string",
+            "description": "Configuration type.",
+            "enum": ["manual", "custom", "external"]
+          },
+          "auth_mode": {
+            "type": "string",
+            "description": "Authentication mode used to secure data session",
+            "enum": ["skey", "tls", "tls/pass", "pass"],
+            "x-web": {
+              "pretty": "Authentication",
+              "enum-pretty": {
+                "skey": "Static key",
+                "tls": "TLS",
+                "tls/pass": "TLS/Password",
+                "pass": "Password"
+              },
+              "input-type": "select",
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ]
+            }
+          },
+          "dev": {
+            "type": "string",
+            "description": "Virtual VPN interface type",
+            "x-web": {
+              "enum-pretty": {
+                "tun": "TUN (tunnel)",
+                "tap": "TAP (bridged)"
+              },
+              "pretty": "TUN/TAP",
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ]
+            },
+            "enum": ["tun", "tap"]
+          },
+          "topology": {
+            "x-web": {
+              "input-type": "select",
+              "pretty": "Topology",
+              "enum-pretty": {
+                "net30": "NET30",
+                "p2p": "P2P",
+                "subnet": "SUBNET"
+              }
+            },
+            "type": "string",
+            "description": "Virtual addressing topology determines how IP addressing and routing are handled between the server and clients.",
+            "enum": ["net30", "p2p", "subnet"]
+          },
+          "proto": {
+            "x-web": {
+              "pretty": "Protocol",
+              "enum-pretty": {
+                "udp": "UDP",
+                "udp6": "UDP6",
+                "tcp-client": "TCP client",
+                "tcp-server": "TCP server",
+                "tcp6-client": "TCP6 client",
+                "tcp6-server": "TCP6 server"
+              },
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ]
+            },
+            "enum": ["udp", "udp6", "tcp-client", "tcp-server", "tcp6-client", "tcp6-server"],
+            "type": "string",
+            "description": "A transport protocol used for connection. You can choose here between TCP and UDP"
+          },
+          "port": {
+            "x-web": {
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ],
+              "pretty": "Port",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "TCP/UDP port for both local and remote endpoint. Make sure that this port is open in firewall"
+          },
+          "push": {
+            "x-web": {
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls",
+                  "type": "server"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass",
+                  "type": "server"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass",
+                  "type": "server"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls",
+                  "type": "server"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass",
+                  "type": "server"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass",
+                  "type": "server"
+                }
+              ],
+              "pretty": "Push option",
+              "input-type": "input"
+            },
+            "type": "array",
+            "description": "Push a configuration option back to the client for remote execution",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extra": {
+            "x-web": {
+              "pretty": "Extra options",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ]
+            },
+            "type": "array",
+            "description": "Enter any additional options to be added to the OpenVPN configuration.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "remote": {
+            "x-web": {
+              "pretty": "Remote host/IP address",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enable": "1"
+                }
+              ]
+            },
+            "type": "array",
+            "description": "IP address or domain name of OpenVPN server",
+            "items": {
+              "type": "string"
+            }
+          },
+          "to_bridge": {
+            "x-web": {
+              "pretty": "Bridge",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "dev": "tap"
+                },
+                {
+                  "config_parsed": "1",
+                  "dev": "tap"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Assign a TAP interface to a bridge."
+          },
+          "server_ip": {
+            "x-web": {
+              "pretty": "Virtual network IP address",
+              "input-type": "input",
+              "depends": [
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "auth_mode": "tls",
+                  "dev": "tun"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass",
+                  "dev": "tun"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "auth_mode": "pass",
+                  "dev": "tun"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "auth_mode": "tls",
+                  "dev": "tun"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass",
+                  "dev": "tun"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "auth_mode": "pass",
+                  "dev": "tun"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "IP address used for virtual network"
+          },
+          "server_netmask": {
+            "type": "string",
+            "x-web": {
+              "depends": [
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                }
+              ],
+              "pretty": "Virtual network netmask",
+              "input-type": "input"
+            },
+            "description": "Subnet mask used for virtual network",
+            "format": "netmask"
+          },
+          "network": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Remote network",
+              "depends": [
+                {
+                  "type": "client",
+                  "configuration": "manual",
+                  "dev": "tun"
+                },
+                {
+                  "type": "client",
+                  "config_parsed": "1",
+                  "dev": "tun"
+                }
+              ]
+            },
+            "type": "array",
+            "description": "IP address of the remote LAN.",
+            "items": {
+              "type": "string",
+              "format": "cidr4, cidr6"
+            }
+          },
+          "ifconfig_pool_start": {
+            "type": "string",
+            "description": "Assign IP addresses starting from a pool of subnets to be dynamically allocated to connecting clients.",
+            "format": "ipv4",
+            "x-web": {
+              "depends": [
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                }
+              ],
+              "pretty": "Assign IP start",
+              "input-type": "input"
+            }
+          },
+          "ifconfig_pool_end": {
+            "type": "string",
+            "description": "Assign IP addresses ending at a pool of subnets to be dynamically allocated to connecting clients.",
+            "format": "ipv4",
+            "x-web": {
+              "depends": [
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                }
+              ],
+              "pretty": "Assign IP end",
+              "input-type": "input"
+            }
+          },
+          "server_ipv6": {
+            "x-web": {
+              "depends": [
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                }
+              ],
+              "pretty": "Virtual network IPv6 address",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "IPv6 address used for virtual network"
+          },
+          "ifconfig_ipv6_pool": {
+            "type": "string",
+            "description": "Specify an IPv6 address pool for dynamic assignment to clients.",
+            "format": "ipmask6",
+            "x-web": {
+              "depends": [
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "type": "server",
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "pass"
+                }
+              ],
+              "pretty": "Assign IPv6 address",
+              "input-type": "input"
+            }
+          },
+          "comp_lzo": {
+            "type": "string",
+            "x-web": {
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ],
+              "pretty": "LZO",
+              "input-type": "select",
+              "enum-pretty": {
+                "yes": "Yes",
+                "no": "No",
+                "": "None"
+              }
+            },
+            "enum": ["yes", "no", "", "adaptive"],
+            "description": "Use fast LZO compression. With LZO compression your VPN connection will generate less network traffic"
+          },
+          "client_to_client": {
+            "x-web": {
+              "pretty": "Client to client",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "type": "server",
+                  "auth_mode": "tls"
+                },
+                {
+                  "configuration": "manual",
+                  "type": "server",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "configuration": "manual",
+                  "type": "server",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "type": "server",
+                  "auth_mode": "tls"
+                },
+                {
+                  "config_parsed": "1",
+                  "type": "server",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "type": "server",
+                  "auth_mode": "pass"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Allow client"
+          },
+          "resolv_retry": {
+            "x-web": {
+              "pretty": "Resolve retry",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Try to resolve server hostname for x seconds before giving up"
+          },
+          "keepalive": {
+            "x-web": {
+              "pretty": "Keep alive",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Try to keep a connection alive. Two values are required: ping_interval and ping_restart, e.g. 10 120"
+          },
+          "user": {
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "type": "client",
+                  "auth_mode": "pass"
+                },
+                {
+                  "configuration": "manual",
+                  "type": "client",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "type": "client",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "type": "client",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "configuration": "external"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enable": "1"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "VPN client user name"
+          },
+          "pass": {
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "type": "client",
+                  "auth_mode": "pass"
+                },
+                {
+                  "configuration": "manual",
+                  "type": "client",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "type": "client",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "type": "client",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "configuration": "external"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enable": "1"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "VPN client password"
+          },
+          "userpass": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "Usernames & Passwords",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "type": "server",
+                  "auth_mode": "pass"
+                },
+                {
+                  "configuration": "manual",
+                  "type": "server",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "type": "server",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "type": "server",
+                  "auth_mode": "tls/pass"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enable": "1"
+                }
+              ]
+            },
+            "format": "binary",
+            "description": "File containing usernames and passwords against which the server can authenticate clients. Each username and password pair should be placed on a single line and separated by a space.",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "cipher": {
+            "x-web": {
+              "enum-pretty": {
+                "DES-CBC": "DES-CBC 64",
+                "RC2-CBC": "RC2-CBC 128",
+                "DES-EDE-CBC": "DES-EDE-CBC 128",
+                "DES-EDE3-CBC": "DES-EDE3-CBC 192",
+                "DESX-CBC": "DESX-CBC 192",
+                "BF-CBC": "BF-CBC 128",
+                "RC2-40-CBC": "RC2-40-CBC 40",
+                "CAST5-CBC": "CAST5-CBC 128",
+                "RC2-64-CBC": "RC2-64-CBC 64",
+                "AES-128-CBC": "AES-128-CBC 128",
+                "AES-128-CFB": "AES-128-CFB 128",
+                "AES-128-CFB1": "AES-128-CFB1 128",
+                "AES-128-CFB8": "AES-128-CFB8 128",
+                "AES-128-OFB": "AES-128-OFB 128",
+                "AES-128-GCM": "AES-128-GCM 128",
+                "AES-192-CFB": "AES-192-CFB 192",
+                "AES-192-CFB1": "AES-192-CFB1 192",
+                "AES-192-CFB8": "AES-192-CFB8 192",
+                "AES-192-OFB": "AES-192-OFB 192",
+                "AES-192-CBC": "AES-192-CBC 192",
+                "AES-192-GCM": "AES-192-GCM 192",
+                "AES-256-GCM": "AES-256-GCM 256",
+                "AES-256-CFB": "AES-256-CFB 256",
+                "AES-256-CFB1": "AES-256-CFB1 256",
+                "AES-256-CFB8": "AES-256-CFB8 256",
+                "AES-256-OFB": "AES-256-OFB 256",
+                "AES-256-CBC": "AES-256-CBC 256 (default)",
+                "none": "None"
+              },
+              "pretty": "Encryption",
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ],
+              "input-type": "select"
+            },
+            "type": "string",
+            "description": "Packet encryption algorithm (cipher)",
+            "enum": [
+              "DES-CBC",
+              "RC2-CBC",
+              "DES-EDE-CBC",
+              "DES-EDE3-CBC",
+              "DESX-CBC",
+              "BF-CBC",
+              "RC2-40-CBC",
+              "CAST5-CBC",
+              "RC2-64-CBC",
+              "AES-128-CBC",
+              "AES-128-CFB",
+              "AES-128-CFB1",
+              "AES-128-CFB8",
+              "AES-128-OFB",
+              "AES-128-GCM",
+              "AES-192-CFB",
+              "AES-192-CFB1",
+              "AES-192-CFB8",
+              "AES-192-OFB",
+              "AES-192-CBC",
+              "AES-192-GCM",
+              "AES-256-GCM",
+              "AES-256-CFB",
+              "AES-256-CFB1",
+              "AES-256-CFB8",
+              "AES-256-OFB",
+              "AES-256-CBC",
+              "none"
+            ]
+          },
+          "data_ciphers": {
+            "x-web": {
+              "pretty": "Data ciphers",
+              "input-type": "multiselect",
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ]
+            },
+            "type": "array",
+            "description": "Data ciphers",
+            "items": {
+              "type": "string"
+            }
+          },
+          "duplicate_cn": {
+            "x-web": {
+              "pretty": "Allow duplicate certificates",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls",
+                  "type": "server"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass",
+                  "type": "server"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass",
+                  "type": "server"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls",
+                  "type": "server"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass",
+                  "type": "server"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass",
+                  "type": "server"
+                }
+              ],
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Allow duplicate certificates. All clients can have same certificates"
+          },
+          "auth": {
+            "x-web": {
+              "pretty": "Authentication algorithm",
+              "input-type": "select",
+              "enum-pretty": {
+                "none": "None",
+                "md5": "MD5",
+                "sha1": "SHA1",
+                "sha256": "SHA256 (default)",
+                "sha384": "SHA384",
+                "sha512": "SHA512"
+              },
+              "depends": [
+                {
+                  "configuration": "manual"
+                },
+                {
+                  "config_parsed": "1"
+                }
+              ]
+            },
+            "enum": ["none", "md5", "sha1", "sha256", "sha384", "sha512"],
+            "type": "string",
+            "description": "Authentication algorithm"
+          },
+          "tls_security": {
+            "x-web": {
+              "pretty": "Additional HMAC authentication",
+              "input-type": "select",
+              "enum-pretty": {
+                "none": "None",
+                "tls-auth": "Authentication only (tls-auth)",
+                "tls-crypt": "Authentication and encryption (tls-crypt)"
+              },
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass"
+                }
+              ]
+            },
+            "enum": ["none", "tls-auth", "tls-crypt"],
+            "type": "string",
+            "description": "Add an additional layer of HMAC authentication on top of the TLS control channel to protect against DoS attacks."
+          },
+          "key_direction": {
+            "x-web": {
+              "pretty": "HMAC key direction",
+              "input-type": "select",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "tls"
+                },
+                {
+                  "configuration": "manual",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "configuration": "manual",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "tls"
+                },
+                {
+                  "config_parsed": "1",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "pass"
+                }
+              ]
+            },
+            "enum": ["0", "1"],
+            "type": "string",
+            "description": "HMAC authentication key direction value is arbitrary and must be opposite between communicating parties (or omitted entirely"
+          },
+          "use_pkcs": {
+            "x-web": {
+              "pretty": "Use PKCS #12 format",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Use PKCS #12 archive file format to bundle all the members of a chain of trust."
+          },
+          "device_files": {
+            "type": "string",
+            "description": "Choose this option if you want to select certificate files from device. Certificate files can be generated in system/administration/certificates"
+          },
+          "use_tpm": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Store keys in TPM",
+              "input-type": "switch",
+              "hw_tags": {
+                "has_tpm": true
+              }
+            },
+            "format": "is_bool",
+            "description": "If enabled, the private key will be stored in TPM2 secure storage, if space is available",
+            "default": 1
+          },
+          "key": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "Key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass",
+                  "use_pkcs": "0"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enable": "1"
+                }
+              ]
+            },
+            "format": "binary",
+            "description": "It has been generated for the same purpose as client certificate",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "cert": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "Certificate",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass",
+                  "use_pkcs": "0"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enable": "1"
+                }
+              ]
+            },
+            "format": "binary",
+            "description": "Identify a client or a user, authenticating the client to the server and establishing precisely who they are",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "ca": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "Certificate authority",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass",
+                  "use_pkcs": "0"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enable": "1"
+                }
+              ]
+            },
+            "format": "binary",
+            "description": "The digital certificate verifies the ownership of a public key by the named subject of the certificate",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "tls_auth": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "HMAC authentication key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "tls"
+                },
+                {
+                  "configuration": "manual",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "configuration": "manual",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "tls"
+                },
+                {
+                  "config_parsed": "1",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "tls_security": "tls-auth",
+                  "auth_mode": "pass"
+                }
+              ]
+            },
+            "format": "binary",
+            "description": "HMAC authentication key",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "tls_crypt": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "HMAC key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "tls_security": "tls-crypt",
+                  "auth_mode": "tls"
+                },
+                {
+                  "configuration": "manual",
+                  "tls_security": "tls-crypt",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "configuration": "manual",
+                  "tls_security": "tls-crypt",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "tls_security": "tls-crypt",
+                  "auth_mode": "tls"
+                },
+                {
+                  "config_parsed": "1",
+                  "tls_security": "tls-crypt",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "tls_security": "tls-crypt",
+                  "auth_mode": "pass"
+                }
+              ]
+            },
+            "description": "HMAC key",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "pkcs12": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "PKCS #12 certificate chain",
+              "input-type": "input",
+              "depends": [
+                {
+                  "use_pkcs": "1",
+                  "configuration": "manual",
+                  "auth_mode": "tls"
+                },
+                {
+                  "use_pkcs": "1",
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "use_pkcs": "1",
+                  "configuration": "manual",
+                  "auth_mode": "pass"
+                },
+                {
+                  "use_pkcs": "1",
+                  "config_parsed": "1",
+                  "auth_mode": "tls"
+                },
+                {
+                  "use_pkcs": "1",
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "use_pkcs": "1",
+                  "config_parsed": "1",
+                  "auth_mode": "pass"
+                }
+              ]
+            },
+            "format": "binary",
+            "description": "Uploads PKCS #12 certificate chain file.",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "dh": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "Diffle Hellman parameters",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls",
+                  "type": "server",
+                  "use_pkcs": "0"
+                }
+              ]
+            },
+            "description": "Diffie-Hellman key exchange is a specific method of exchanging cryptographic keys",
+            "enum": ["none", "dh_file_path"],
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "crl_verify": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "CRL file",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass",
+                  "type": "server",
+                  "use_pkcs": "0"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls",
+                  "type": "server",
+                  "use_pkcs": "0"
+                }
+              ]
+            },
+            "format": "binary",
+            "description": "Revoking a certificate means to invalidate a previously signed certificate so that it can no longer be used for authentication purposes. Upload a .pem revocation file",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "askpass": {
+            "x-web": {
+              "pretty": "Private key/PKCS #12 passphrase",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "pass"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "configuration": "manual",
+                  "auth_mode": "tls"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls/pass"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "tls"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Private key/PKCS #12 passphrase."
+          },
+          "secret": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "Static pre-shared key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "skey"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "skey"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enable": "1"
+                }
+              ]
+            },
+            "format": "binary",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$",
+            "description": "Static pre-shared key"
+          },
+          "parse": {
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "Enable parsing",
+              "depends": [
+                {
+                  "configuration": "custom"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Parse uploaded configuration file. By enabling parsing, you can modify the configuration in the future.",
+            "format": "is_bool",
+            "enum": ["0", "1"]
+          },
+          "config_parsed": {
+            "type": "string",
+            "description": "State of uploaded configuration files parsing.",
+            "enum": ["0", "1", "2"],
+            "readOnly": true
+          },
+          "config": {
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/openvpn/config/{id}",
+              "pretty": "OpenVPN configuration file",
+              "depends": [
+                {
+                  "configuration": "custom"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enable": "1"
+                }
+              ],
+              "input-type": "input"
+            },
+            "format": "binary",
+            "description": "OpenVPN configuration file. Warning! This will overwrite your current configuration.",
+            "pattern": "^[a-zA-Z0-9._@/()%-]+$"
+          },
+          "external_service": {
+            "x-web": {
+              "depends": [
+                {
+                  "configuration": "external"
+                }
+              ],
+              "pretty": "VPN providers",
+              "enum-pretty": {
+                "express": "Express VPN",
+                "nord": "Nord VPN"
+              }
+            },
+            "enum": ["express", "nord"],
+            "type": "string",
+            "description": "Choose from a list of available VPN providers"
+          },
+          "server_list": {
+            "x-web": {
+              "depends": [
+                {
+                  "configuration": "external"
+                }
+              ],
+              "pretty": "VPN servers",
+              "enum-pretty": {
+                "uk": "United Kingdom",
+                "usa": "USA",
+                "aus": "Australia",
+                "sa": "South Africa",
+                "custom": "Custom"
+              }
+            },
+            "enum": ["uk", "usa", "aus", "sa", "custom"],
+            "type": "string",
+            "description": "Choose from a list of available VPN servers"
+          },
+          "local_ip": {
+            "x-web": {
+              "pretty": "Local tunnel endpoint IP",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "skey"
+                },
+                {
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "skey"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "IP address of virtual local network interface"
+          },
+          "remote_ip": {
+            "x-web": {
+              "pretty": "Remote tunnel endpoint IP",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "auth_mode": "skey",
+                  "dev": "tun"
+                },
+                {
+                  "config_parsed": "1",
+                  "auth_mode": "skey",
+                  "dev": "tun"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "IP address of virtual remote network interface"
+          },
+          "local_ipv6": {
+            "x-web": {
+              "pretty": "Local tunnel endpoint IPv6",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "skey"
+                },
+                {
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "skey"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "IPv6 address of virtual local network interface"
+          },
+          "remote_ipv6": {
+            "x-web": {
+              "pretty": "Local tunnel endpoint IPv6",
+              "input-type": "input",
+              "depends": [
+                {
+                  "configuration": "manual",
+                  "dev": "tun",
+                  "auth_mode": "skey"
+                },
+                {
+                  "config_parsed": "1",
+                  "dev": "tun",
+                  "auth_mode": "skey"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "IPv6 address of virtual remote network interface"
+          },
+          "enable_external": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Enable external(deprecated)",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "type": "client",
+                  "configuration": ""
+                }
+              ]
+            },
+            "description": "Enable external VPN services",
+            "deprecated": true
+          },
+          "upload_files": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Upload OpenVPN authentication files(deprecated)",
+              "depends": [
+                {
+                  "enable_custom": "1",
+                  "configuration": ""
+                }
+              ],
+              "input-type": "switch"
+            },
+            "description": "Upload OpenVPN authentication files, which will be automatically included in configuration",
+            "deprecated": true
+          },
+          "tls_cipher_list": {
+            "type": "string",
+            "x-web": {
+              "enum-pretty": {
+                "all": "All",
+                "dhe_rsa": "DHE + RSA",
+                "custom": "Custom"
+              },
+              "pretty": "TLS cipher(deprecated)",
+              "depends": [
+                {
+                  "auth_mode": "tls",
+                  "enable_custom": "0",
+                  "enable_external": "0",
+                  "configuration": ""
+                },
+                {
+                  "auth_mode": "tls/pass",
+                  "enable_custom": "0",
+                  "enable_external": "0",
+                  "configuration": ""
+                },
+                {
+                  "auth_mode": "tls",
+                  "enable_custom": "0",
+                  "enable_external": "",
+                  "configuration": ""
+                },
+                {
+                  "auth_mode": "tls/pass",
+                  "enable_custom": "0",
+                  "enable_external": "",
+                  "configuration": ""
+                }
+              ]
+            },
+            "enum": ["all", "dhe_rsa", "custom"],
+            "description": "Packet encryption algorithm (cipher)",
+            "deprecated": true
+          },
+          "enable_custom": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Enable OpenVPN config from file(deprecated)",
+              "depends": [
+                {
+                  "enable_external": "0",
+                  "configuration": ""
+                },
+                {
+                  "enable_external": "",
+                  "configuration": ""
+                }
+              ],
+              "input-type": "switch"
+            },
+            "description": "Enable custom OpenVPN configuration from file",
+            "deprecated": true
+          },
+          "tls_cipher": {
+            "x-web": {
+              "pretty": "Allowed TLS ciphers(deprecated)",
+              "depends": [
+                {
+                  "tls_cipher_list": "dhe_rsa",
+                  "configuration": ""
+                }
+              ],
+              "input-type": "multiselect"
+            },
+            "enum": [
+              "TLS-DHE-RSA-WITH-AES-256-GCM-SHA384",
+              "TLS-DHE-RSA-WITH-AES-256-CBC-SHA",
+              "TLS-DHE-RSA-WITH-AES-256-CBC-SHA256",
+              "TLS-DHE-RSA-WITH-CAMELLIA-256-CBC-SHA",
+              "TLS-DHE-RSA-WITH-3DES-EDE-CBC-SHA",
+              "TLS-DHE-RSA-WITH-AES-128-GCM-SHA256",
+              "TLS-DHE-RSA-WITH-AES-128-CBC-SHA",
+              "TLS-DHE-RSA-WITH-AES-128-CBC-SHA256",
+              "TLS-DHE-RSA-WITH-SEED-CBC-SHA",
+              "TLS-DHE-RSA-WITH-CAMELLIA-128-CBC-SHA",
+              "TLS-DHE-RSA-WITH-DES-CBC-SHA"
+            ],
+            "type": "array",
+            "description": "Specific cyphers to use. Only 6 can be selected at a time",
+            "items": {
+              "type": "string",
+              "deprecated": true
+            }
+          },
+          "cipher_custom": {
+            "type": "array",
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Allowed TLS ciphers(deprecated)",
+              "depends": [
+                {
+                  "tls_cipher_list": "custom",
+                  "configuration": ""
+                }
+              ]
+            },
+            "description": "Specific cyphers to use. Only 6 can be specified at a time",
+            "deprecated": true,
+            "items": {
+              "type": "string",
+              "deprecated": true
+            }
+          },
+          "network_ip": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Remote network IP address(deprecated)",
+              "input-type": "input",
+              "depends": [
+                {
+                  "type": "server",
+                  "enable_external": "0",
+                  "enable_custom": "0",
+                  "auth_mode": "skey",
+                  "dev": "tun",
+                  "configuration": ""
+                },
+                {
+                  "type": "client",
+                  "enable_external": "0",
+                  "enable_custom": "0",
+                  "dev": "tun",
+                  "configuration": ""
+                },
+                {
+                  "type": "server",
+                  "enable_external": "",
+                  "enable_custom": "0",
+                  "auth_mode": "skey",
+                  "dev": "tun",
+                  "configuration": ""
+                },
+                {
+                  "type": "client",
+                  "enable_external": "",
+                  "enable_custom": "0",
+                  "dev": "tun",
+                  "configuration": ""
+                }
+              ]
+            },
+            "description": "IP address of remote LAN network",
+            "deprecated": true
+          },
+          "network_mask": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Remote network netmask(deprecated)",
+              "input-type": "input",
+              "depends": [
+                {
+                  "type": "server",
+                  "enable_external": "0",
+                  "enable_custom": "0",
+                  "auth_mode": "skey",
+                  "dev": "tun",
+                  "configuration": ""
+                },
+                {
+                  "type": "client",
+                  "enable_external": "0",
+                  "enable_custom": "0",
+                  "dev": "tun",
+                  "configuration": ""
+                },
+                {
+                  "type": "server",
+                  "enable_external": "",
+                  "enable_custom": "0",
+                  "auth_mode": "skey",
+                  "dev": "tun",
+                  "configuration": ""
+                },
+                {
+                  "type": "client",
+                  "enable_external": "",
+                  "enable_custom": "0",
+                  "dev": "tun",
+                  "configuration": ""
+                }
+              ]
+            },
+            "description": "Subnet mask of remote LAN network",
+            "format": "netmask",
+            "deprecated": true
+          },
+          "route_ipv6": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Remote network IPv6 address(deprecated)",
+              "input-type": "input",
+              "depends": [
+                {
+                  "type": "client",
+                  "enable_external": "0",
+                  "enable_custom": "0",
+                  "dev": "tun",
+                  "configuration": ""
+                },
+                {
+                  "type": "client",
+                  "enable_external": "",
+                  "enable_custom": "0",
+                  "dev": "tun",
+                  "configuration": ""
+                }
+              ]
+            },
+            "description": "IPv6 address of the remote network",
+            "deprecated": true
+          },
+          "decrypt": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Private key decryption password(deprecated)",
+              "input-type": "input",
+              "depends": [
+                {
+                  "enable_external": "0",
+                  "enable_custom": "0",
+                  "auth_mode": "tls",
+                  "configuration": ""
+                },
+                {
+                  "enable_external": "0",
+                  "enable_custom": "0",
+                  "auth_mode": "tls/pass",
+                  "configuration": ""
+                },
+                {
+                  "enable_external": "",
+                  "enable_custom": "0",
+                  "auth_mode": "tls",
+                  "configuration": ""
+                },
+                {
+                  "enable_external": "",
+                  "enable_custom": "0",
+                  "auth_mode": "tls/pass",
+                  "configuration": ""
+                },
+                {
+                  "upload_files": "1",
+                  "enable_custom": "1",
+                  "auth_mode": "tls",
+                  "configuration": ""
+                },
+                {
+                  "upload_files": "1",
+                  "enable_custom": "1",
+                  "auth_mode": "tls/pass",
+                  "configuration": ""
+                }
+              ]
+            },
+            "description": "Decrypt private key with password.(Optional)",
+            "deprecated": true
+          }
+        },
+        "required": ["type", "name", "dev"]
+      },
+      "openvpn_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "x-web": {
+                  "pretty": "Configuration ID",
+                  "unique": true,
+                  "input-type": "input"
+                },
+                "type": "string",
+                "description": "Configuration ID"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/openvpn_single_options"
+          }
+        ]
+      },
+      "openvpn_status_options": {
+        "title": "openvpn_status",
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["server", "client"],
+            "description": "Type of instance"
+          },
+          "protocol": {
+            "type": "string",
+            "enum": ["tun", "tap"],
+            "description": "Interface type (tun, tap)"
+          },
+          "updated": {
+            "type": "string",
+            "description": "Last time the status file was updated"
+          },
+          "rx": {
+            "type": "string",
+            "description": "Total bytes received"
+          },
+          "tx": {
+            "type": "string",
+            "description": "Total bytes sent"
+          },
+          "status": {
+            "type": "string",
+            "description": "Status state (0 = disconnected, 1 = connected, 2 = running, 3 = stopped, 4 = disabled)"
+          },
+          "uptime": {
+            "type": "string",
+            "description": "Instance uptime"
+          },
+          "clients_connected": {
+            "type": "string",
+            "description": "Active TLS client count"
+          },
+          "clients": {
+            "type": "array",
+            "description": "Connected client stats (server only)",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uptime": {
+                  "type": "string",
+                  "description": "Client's uptime"
+                },
+                "vpn_ip": {
+                  "type": "string",
+                  "description": "Client ip in vpn"
+                },
+                "last_ref": {
+                  "type": "string",
+                  "description": "Last time the client was seen"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Client name"
+                },
+                "tx": {
+                  "type": "string",
+                  "description": "Bytes sent"
+                },
+                "rx": {
+                  "type": "string",
+                  "description": "Bytes received"
+                },
+                "ip": {
+                  "type": "string",
+                  "description": "Client's ip address"
+                },
+                "vpn_ip6": {
+                  "type": "string",
+                  "description": "Client ipv6 in vpn"
+                },
+                "mac": {
+                  "type": "string",
+                  "description": "Client mac address in vpn"
+                }
+              }
+            }
+          },
+          "clients_all": {
+            "type": "string",
+            "description": "Total TLS client count"
+          },
+          "ipaddress_remote": {
+            "type": "string",
+            "description": "Virtual network ip of the server (client only)"
+          },
+          "ipaddress": {
+            "type": "string",
+            "description": "Virtual network ip address"
+          },
+          "server": {
+            "type": "string",
+            "description": "Server ip address (client only)"
+          },
+          "logs": {
+            "type": "string",
+            "description": "Instance logfile contents"
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the OpenVPN instance"
+          },
+          "device": {
+            "type": "string",
+            "description": "Physical interface name"
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "OpenVPN",
+    "version": "1.0",
+    "description": "OpenVPN api documentation"
+  },
+  "tags": [
+    {
+      "name": "General"
+    }
+  ]
+}

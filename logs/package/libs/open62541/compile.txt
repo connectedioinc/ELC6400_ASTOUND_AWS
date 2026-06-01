@@ -1,0 +1,908 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/open62541'
+open62541-1.4.0-v1.4.0.tar.xz: Download from https://github.com/open62541/open62541.git failed
+open62541-1.4.0-v1.4.0.tar.xz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'open62541-1.4.0-v1.4.0'...
+Note: switching to 'v1.4.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 84347820c Bump the version to 1.4.0
+Submodule 'deps/mdnsd' (https://github.com/Pro/mdnsd.git) registered for path 'deps/mdnsd'
+Submodule 'deps/mqtt-c' (https://github.com/LiamBindle/MQTT-C.git) registered for path 'deps/mqtt-c'
+Submodule 'deps/nodesetLoader' (https://github.com/open62541/nodesetLoader) registered for path 'deps/nodesetLoader'
+Submodule 'deps/ua-nodeset' (https://github.com/OPCFoundation/UA-Nodeset) registered for path 'deps/ua-nodeset'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/open62541-1.4.0-v1.4.0/deps/mdnsd'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/open62541-1.4.0-v1.4.0/deps/mqtt-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/open62541-1.4.0-v1.4.0/deps/nodesetLoader'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/open62541-1.4.0-v1.4.0/deps/ua-nodeset'...
+Submodule path 'deps/mdnsd': checked out '488d24fb9d427aec77df180268f0291eeee7fb8b'
+Submodule path 'deps/mqtt-c': checked out '0f4c34c8cc00b16cfee094745d68b8cdbaecd8e0'
+Submodule path 'deps/nodesetLoader': checked out 'fd603490d7dbf6727a9cfa8ac819657ed6ae4c47'
+Submodule path 'deps/ua-nodeset': checked out 'd1bb6a22125bd7cd986272b1ee98a18a91d76fff'
+Packing checkout...
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.prepared_3beb84697864c06751e26dd0479bd726_6664517399ebbbc92a37c5bb081b5c53_check
+
+Applying ./patches/001_teltonika.patch using plaintext: 
+patching file include/open62541/types.h
+patching file src/ua_types_encoding_json.c
+patching file src/ua_types_encoding_json.h
+
+Applying ./patches/002_openssl3.patch using plaintext: 
+patching file plugins/crypto/openssl/ua_openssl_create_certificate.c
+patching file plugins/crypto/openssl/ua_pki_openssl.c
+
+Applying ./patches/003_supress_warning.patch using plaintext: 
+patching file src/server/ua_services_discovery.c
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.prepared_3beb84697864c06751e26dd0479bd726_6664517399ebbbc92a37c5bb081b5c53
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.configured_*
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.open62541_installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0; CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0=open62541-1.4.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -DRUTX_PLATFORM=1 -DTLT_PLATFORM_NAME=RUTX" CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0=open62541-1.4.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " cmake -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_VERSION=1 -DCMAKE_SYSTEM_PROCESSOR=arm -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS_RELEASE="-DNDEBUG" -DCMAKE_CXX_FLAGS_RELEASE="-DNDEBUG" -DCMAKE_C_COMPILER_LAUNCHER="" -DCMAKE_C_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc" -DCMAKE_CXX_COMPILER_LAUNCHER="" -DCMAKE_CXX_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-g++" -DCMAKE_ASM_COMPILER_LAUNCHER="" -DCMAKE_ASM_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc" -DCMAKE_EXE_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro" -DCMAKE_MODULE_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro -Wl,-Bsymbolic-functions" -DCMAKE_SHARED_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro -Wl,-Bsymbolic-functions" -DCMAKE_AR="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-ar" -DCMAKE_NM="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-nm" -DCMAKE_RANLIB="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-ranlib" -DCMAKE_FIND_ROOT_PATH="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr;/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi" -DCMAKE_FIND_ROOT_PATH_MODE_PROGRAM=BOTH -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY -DCMAKE_STRIP=: -DCMAKE_INSTALL_PREFIX=/usr -DDL_LIBRARY=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi -DCMAKE_PREFIX_PATH=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_EXPORT_PACKAGE_REGISTRY=FALSE -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=TRUE -DCMAKE_FIND_USE_PACKAGE_REGISTRY=FALSE -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=TRUE -DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=FALSE -DCMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY=TRUE -DCMAKE_POLICY_DEFAULT_CMP0054=NEW -DOPEN62541_VERSION=v1.4.0 -DBUILD_SHARED_LIBS=ON -DUA_ENABLE_ENCRYPTION=ON -DUA_ENABLE_ENCRYPTION_OPENSSL=ON -DUA_BUILD_EXAMPLES=ON -DUA_ENABLE_JSON_ENCODING=ON -DUA_LOGLEVEL=0 -DUA_ENABLE_HARDENING=OFF /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0 )
+-- The C compiler identification is GNU 8.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Found Python3: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin/python3 (found version "3.11.7") found components:  Interpreter 
+-- Found Git: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/git (found version "2.34.1") 
+-- open62541 Version: v1.4.0
+-- The selected architecture is: posix
+[0mCMake Deprecation Warning at CMakeLists.txt:171 (message):
+  Set UA_ENABLE_ENCRYPTION to the desired encryption library.
+
+[0m
+-- Found OpenSSL: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/lib/libcrypto.so (found version "3.0.14")  
+-- Test CC flag -std=c99
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wall
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wextra
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wpedantic
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wno-static-in-inline
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wno-overlength-strings
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wno-unused-parameter
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wno-maybe-uninitialized
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wc++-compat
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wformat-security
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wformat-nonliteral
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wmissing-prototypes
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wstrict-prototypes
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wredundant-decls
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wuninitialized
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Winit-self
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wcast-qual
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wstrict-overflow
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wnested-externs
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wmultichar
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -Wundef
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -fno-strict-aliasing
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -fexceptions
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -fPIC
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -pthread
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -ffunction-sections
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -fdata-sections
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -fno-unwind-tables
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -fno-asynchronous-unwind-tables
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Test CC flag -fno-math-errno
+-- Performing Test flag_supported
+-- Performing Test flag_supported - Success
+-- Could NOT find Sphinx (missing: SPHINX_EXECUTABLE) 
+-- Could NOT find LATEX (missing: LATEX_COMPILER) 
+-- Configuring done
+-- Generating done
+[33mCMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_COMPILER
+    CMAKE_ASM_COMPILER_LAUNCHER
+    CMAKE_CXX_COMPILER
+    CMAKE_CXX_FLAGS_RELEASE
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_EXPORT_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_POLICY_DEFAULT_CMP0054
+    DL_LIBRARY
+
+[0m
+-- Build files have been written to: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.built_check
+printf "%s\n" "• open62541 is rebuilt"
+• open62541 is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "open62541" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0=open62541-1.4.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0=open62541-1.4.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0=open62541-1.4.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" CMAKE_COMMAND='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/cmake' CMAKE_DISABLE_cmake_check_build_system=1 ; 
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  1%] [34m[1mGenerating src_generated/open62541/types_generated.c, src_generated/open62541/types_generated.h, src_generated/open62541/types_generated_handling.h[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  1%] Built target open62541-generator-types
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  2%] [34m[1mGenerating src_generated/open62541/namespace0_generated.c, src_generated/open62541/namespace0_generated.h[0m
+INFO:__main__:Preprocessing /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/tools/schema/Opc.Ua.NodeSet2.Reduced.xml
+INFO:__main__:Preprocessing /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/tools/schema/Opc.Ua.NodeSet2.DiagnosticsMinimal.xml
+INFO:__main__:Preprocessing /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/tools/schema/Opc.Ua.NodeSet2.EventsMinimal.xml
+INFO:__main__:Preprocessing /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/tools/schema/Opc.Ua.NodeSet2.HistorizingMinimal.xml
+INFO:__main__:Preprocessing /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/tools/schema/Opc.Ua.NodeSet2.Part8_Subset.xml
+INFO:__main__:Generating Code for Backend: open62541
+INFO:__main__:NodeSet generation code successfully printed
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  2%] Built target open62541-generator-namespace
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  2%] [34m[1mGenerating src_generated/open62541/transport_generated.c, src_generated/open62541/transport_generated.h, src_generated/open62541/transport_generated_handling.h[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  2%] Built target open62541-generator-transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  2%] [34m[1mGenerating src_generated/open62541/nodeids.h[0m
+[  4%] [34m[1mGenerating src_generated/open62541/statuscodes.h, src_generated/open62541/statuscodes.c[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  4%] Built target open62541-generator-statuscode
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  4%] Built target open62541-code-generation
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  5%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/ua_types.c.o[0m
+[  5%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/ua_types_encoding_binary.c.o[0m
+[  6%] [32mBuilding C object CMakeFiles/open62541-object.dir/src_generated/open62541/types_generated.c.o[0m
+[  6%] [32mBuilding C object CMakeFiles/open62541-object.dir/src_generated/open62541/transport_generated.c.o[0m
+[  6%] [32mBuilding C object CMakeFiles/open62541-object.dir/src_generated/open62541/statuscodes.c.o[0m
+[  8%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/ua_util.c.o[0m
+[  8%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/ua_securechannel.c.o[0m
+[  8%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/ua_securechannel_crypto.c.o[0m
+[  9%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_session.c.o[0m
+[  9%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_nodes.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_server.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_server_ns0.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_server_ns0_diagnostics.c.o[0m
+[ 12%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_server_config.c.o[0m
+[ 12%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_server_binary.c.o[0m
+[ 13%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_server_utils.c.o[0m
+[ 13%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_server_async.c.o[0m
+[ 13%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_services_view.c.o[0m
+[ 14%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_services_method.c.o[0m
+[ 14%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_services_session.c.o[0m
+[ 14%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_services_attribute.c.o[0m
+[ 16%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_services_discovery.c.o[0m
+[ 16%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_services_subscription.c.o[0m
+[ 17%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_services_monitoreditem.c.o[0m
+[ 17%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_services_securechannel.c.o[0m
+[ 17%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_services_nodemanagement.c.o[0m
+[ 18%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_networkmessage.c.o[0m
+[ 18%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_eventloop.c.o[0m
+[ 18%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_connection.c.o[0m
+[ 20%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_dataset.c.o[0m
+[ 20%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_writer.c.o[0m
+[ 21%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_writergroup.c.o[0m
+[ 21%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_reader.c.o[0m
+[ 21%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_readergroup.c.o[0m
+[ 22%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_manager.c.o[0m
+[ 22%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_ns0.c.o[0m
+[ 22%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_keystorage.c.o[0m
+[ 24%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_securitygroup.c.o[0m
+[ 24%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/pubsub/ua_pubsub_config.c.o[0m
+[ 25%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/client/ua_client.c.o[0m
+[ 25%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/client/ua_client_connect.c.o[0m
+[ 25%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/client/ua_client_discovery.c.o[0m
+[ 27%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/client/ua_client_highlevel.c.o[0m
+[ 27%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/client/ua_client_subscriptions.c.o[0m
+[ 27%] [32mBuilding C object CMakeFiles/open62541-object.dir/deps/libc_time.c.o[0m
+[ 28%] [32mBuilding C object CMakeFiles/open62541-object.dir/deps/pcg_basic.c.o[0m
+[ 28%] [32mBuilding C object CMakeFiles/open62541-object.dir/deps/base64.c.o[0m
+[ 29%] [32mBuilding C object CMakeFiles/open62541-object.dir/deps/dtoa.c.o[0m
+[ 29%] [32mBuilding C object CMakeFiles/open62541-object.dir/deps/mp_printf.c.o[0m
+[ 29%] [32mBuilding C object CMakeFiles/open62541-object.dir/deps/itoa.c.o[0m
+[ 31%] [32mBuilding C object CMakeFiles/open62541-object.dir/deps/ziptree.c.o[0m
+[ 31%] [32mBuilding C object CMakeFiles/open62541-object.dir/src_generated/open62541/namespace0_generated.c.o[0m
+[ 31%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/ua_types_lex.c.o[0m
+[ 32%] [32mBuilding C object CMakeFiles/open62541-object.dir/deps/cj5.c.o[0m
+[ 32%] [32mBuilding C object CMakeFiles/open62541-object.dir/deps/parse_num.c.o[0m
+[ 33%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/ua_types_encoding_json.c.o[0m
+[ 33%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_subscription.c.o[0m
+[ 33%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_subscription_monitoreditem.c.o[0m
+[ 35%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_subscription_datachange.c.o[0m
+[ 35%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_subscription_events.c.o[0m
+[ 35%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_subscription_events_filter.c.o[0m
+[ 36%] [32mBuilding C object CMakeFiles/open62541-object.dir/src/server/ua_discovery.c.o[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 37%] Built target open62541-object
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 37%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/openssl/securitypolicy_openssl_common.c.o[0m
+[ 39%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/openssl/ua_openssl_basic128rsa15.c.o[0m
+[ 39%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/openssl/ua_openssl_basic256.c.o[0m
+[ 39%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/openssl/ua_openssl_basic256sha256.c.o[0m
+[ 40%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/openssl/ua_openssl_aes128sha256rsaoaep.c.o[0m
+[ 40%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/openssl/ua_openssl_aes256sha256rsapss.c.o[0m
+[ 41%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/openssl/ua_openssl_create_certificate.c.o[0m
+[ 41%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/openssl/ua_pki_openssl.c.o[0m
+[ 41%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/ua_log_stdout.c.o[0m
+[ 43%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/ua_accesscontrol_default.c.o[0m
+[ 43%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/ua_nodestore_ziptree.c.o[0m
+[ 43%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/ua_nodestore_hashmap.c.o[0m
+[ 44%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/ua_config_default.c.o[0m
+[ 44%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/ua_pki_none.c.o[0m
+[ 45%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/crypto/ua_securitypolicy_none.c.o[0m
+[ 45%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/ua_config_json.c.o[0m
+[ 45%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/historydata/ua_history_data_backend_memory.c.o[0m
+[ 47%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/historydata/ua_history_data_gathering_default.c.o[0m
+[ 47%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/historydata/ua_history_database_default.c.o[0m
+[ 47%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/plugins/ua_log_syslog.c.o[0m
+[ 48%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/posix/ua_clock.c.o[0m
+[ 48%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/win32/ua_clock.c.o[0m
+[ 50%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/common/ua_timer.c.o[0m
+[ 50%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/eventloop_common.c.o[0m
+[ 50%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/eventloop_posix.c.o[0m
+[ 51%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/eventloop_posix_select.c.o[0m
+[ 51%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/eventloop_posix_epoll.c.o[0m
+[ 51%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/eventloop_posix_tcp.c.o[0m
+[ 52%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/eventloop_posix_udp.c.o[0m
+[ 52%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/eventloop_posix_interrupt.c.o[0m
+[ 54%] [32mBuilding C object CMakeFiles/open62541-plugins.dir/arch/eventloop_posix_eth.c.o[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 55%] Built target open62541-plugins
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 56%] [32m[1mLinking C shared library bin/libopen62541.so[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 56%] Built target open62541
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 56%] [32mBuilding C object examples/CMakeFiles/tutorial_datatypes.dir/tutorial_datatypes.c.o[0m
+[ 56%] [32m[1mLinking C executable ../bin/examples/tutorial_datatypes[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 56%] Built target tutorial_datatypes
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 56%] [32mBuilding C object examples/CMakeFiles/tutorial_server_firststeps.dir/tutorial_server_firststeps.c.o[0m
+[ 58%] [32m[1mLinking C executable ../bin/examples/tutorial_server_firststeps[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 58%] Built target tutorial_server_firststeps
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 58%] [32mBuilding C object examples/CMakeFiles/tutorial_server_variable.dir/tutorial_server_variable.c.o[0m
+[ 59%] [32m[1mLinking C executable ../bin/examples/tutorial_server_variable[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 59%] Built target tutorial_server_variable
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 60%] [32mBuilding C object examples/CMakeFiles/tutorial_server_datasource.dir/tutorial_server_datasource.c.o[0m
+[ 60%] [32m[1mLinking C executable ../bin/examples/tutorial_server_datasource[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 60%] Built target tutorial_server_datasource
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 62%] [32mBuilding C object examples/CMakeFiles/server_settimestamp.dir/server_settimestamp.c.o[0m
+[ 62%] [32m[1mLinking C executable ../bin/examples/server_settimestamp[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 62%] Built target server_settimestamp
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 62%] [32mBuilding C object examples/CMakeFiles/tutorial_server_monitoreditems.dir/tutorial_server_monitoreditems.c.o[0m
+[ 62%] [32m[1mLinking C executable ../bin/examples/tutorial_server_monitoreditems[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 62%] Built target tutorial_server_monitoreditems
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 62%] [32mBuilding C object examples/CMakeFiles/tutorial_server_variabletype.dir/tutorial_server_variabletype.c.o[0m
+[ 63%] [32m[1mLinking C executable ../bin/examples/tutorial_server_variabletype[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 63%] Built target tutorial_server_variabletype
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 64%] [32mBuilding C object examples/CMakeFiles/tutorial_server_object.dir/tutorial_server_object.c.o[0m
+[ 64%] [32m[1mLinking C executable ../bin/examples/tutorial_server_object[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 64%] Built target tutorial_server_object
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 66%] [32mBuilding C object examples/CMakeFiles/tutorial_server_reverseconnect.dir/tutorial_server_reverseconnect.c.o[0m
+[ 66%] [32m[1mLinking C executable ../bin/examples/tutorial_server_reverseconnect[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 66%] Built target tutorial_server_reverseconnect
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 67%] [32mBuilding C object examples/CMakeFiles/tutorial_server_method.dir/tutorial_server_method.c.o[0m
+[ 67%] [32m[1mLinking C executable ../bin/examples/tutorial_server_method[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 67%] Built target tutorial_server_method
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 67%] [32mBuilding C object examples/CMakeFiles/tutorial_server_method_async.dir/tutorial_server_method_async.c.o[0m
+[ 68%] [32m[1mLinking C executable ../bin/examples/tutorial_server_method_async[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 68%] Built target tutorial_server_method_async
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 68%] [32mBuilding C object examples/CMakeFiles/tutorial_client_firststeps.dir/tutorial_client_firststeps.c.o[0m
+[ 70%] [32m[1mLinking C executable ../bin/examples/tutorial_client_firststeps[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 70%] Built target tutorial_client_firststeps
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 71%] [32mBuilding C object examples/CMakeFiles/tutorial_client_events.dir/tutorial_client_events.c.o[0m
+[ 71%] [32m[1mLinking C executable ../bin/examples/tutorial_client_events[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 71%] Built target tutorial_client_events
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 72%] [32mBuilding C object examples/CMakeFiles/tutorial_server_events.dir/tutorial_server_events.c.o[0m
+[ 72%] [32m[1mLinking C executable ../bin/examples/tutorial_server_events[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 72%] Built target tutorial_server_events
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 74%] [32mBuilding C object examples/CMakeFiles/server_events_random.dir/events/server_random_events.c.o[0m
+[ 74%] [32m[1mLinking C executable ../bin/examples/server_events_random[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 74%] Built target server_events_random
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 75%] [32mBuilding C object examples/CMakeFiles/client_event_filter.dir/events/client_eventfilter.c.o[0m
+[ 75%] [32m[1mLinking C executable ../bin/examples/client_event_filter[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 75%] Built target client_event_filter
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 77%] [32mBuilding C object examples/CMakeFiles/client.dir/client.c.o[0m
+[ 77%] [32m[1mLinking C executable ../bin/examples/client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 77%] Built target client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 77%] [32mBuilding C object examples/CMakeFiles/client_connect.dir/client_connect.c.o[0m
+[ 78%] [32m[1mLinking C executable ../bin/examples/client_connect[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 78%] Built target client_connect
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 78%] [32mBuilding C object examples/CMakeFiles/client_historical.dir/client_historical.c.o[0m
+[ 79%] [32m[1mLinking C executable ../bin/examples/client_historical[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 79%] Built target client_historical
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 81%] [32mBuilding C object examples/CMakeFiles/client_async.dir/client_async.c.o[0m
+[ 81%] [32m[1mLinking C executable ../bin/examples/client_async[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 81%] Built target client_async
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 81%] [32mBuilding C object examples/CMakeFiles/client_method_async.dir/client_method_async.c.o[0m
+[ 81%] [32m[1mLinking C executable ../bin/examples/client_method_async[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 81%] Built target client_method_async
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 81%] [32mBuilding C object examples/CMakeFiles/client_connect_loop.dir/client_connect_loop.c.o[0m
+[ 81%] [32m[1mLinking C executable ../bin/examples/client_connect_loop[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 81%] Built target client_connect_loop
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 82%] [32mBuilding C object examples/CMakeFiles/client_subscription_loop.dir/client_subscription_loop.c.o[0m
+[ 82%] [32m[1mLinking C executable ../bin/examples/client_subscription_loop[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 82%] Built target client_subscription_loop
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 82%] [32mBuilding C object examples/CMakeFiles/ci_server.dir/ci_server.c.o[0m
+[ 83%] [32m[1mLinking C executable ../bin/examples/ci_server[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 83%] Built target ci_server
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 83%] [32mBuilding C object examples/CMakeFiles/server_mainloop.dir/server_mainloop.c.o[0m
+[ 85%] [32m[1mLinking C executable ../bin/examples/server_mainloop[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 85%] Built target server_mainloop
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 85%] [32mBuilding C object examples/CMakeFiles/server_instantiation.dir/server_instantiation.c.o[0m
+[ 85%] [32m[1mLinking C executable ../bin/examples/server_instantiation[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 85%] Built target server_instantiation
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 85%] [32mBuilding C object examples/CMakeFiles/server_repeated_job.dir/server_repeated_job.c.o[0m
+[ 85%] [32m[1mLinking C executable ../bin/examples/server_repeated_job[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 85%] Built target server_repeated_job
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 85%] [32mBuilding C object examples/CMakeFiles/server_inheritance.dir/server_inheritance.c.o[0m
+[ 86%] [32m[1mLinking C executable ../bin/examples/server_inheritance[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 86%] Built target server_inheritance
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 87%] [32mBuilding C object examples/CMakeFiles/server_loglevel.dir/server_loglevel.c.o[0m
+[ 87%] [32m[1mLinking C executable ../bin/examples/server_loglevel[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 87%] Built target server_loglevel
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 87%] [32mBuilding C object examples/CMakeFiles/server_file_based_config.dir/file_based_server/server_file_based_config.c.o[0m
+[ 89%] [32m[1mLinking C executable ../bin/examples/server_file_based_config[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 89%] Built target server_file_based_config
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 89%] [32mBuilding C object examples/CMakeFiles/tutorial_server_historicaldata.dir/tutorial_server_historicaldata.c.o[0m
+[ 89%] [32m[1mLinking C executable ../bin/examples/tutorial_server_historicaldata[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 89%] Built target tutorial_server_historicaldata
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 90%] [32mBuilding C object examples/CMakeFiles/tutorial_server_historicaldata_circular.dir/tutorial_server_historicaldata_circular.c.o[0m
+[ 90%] [32m[1mLinking C executable ../bin/examples/tutorial_server_historicaldata_circular[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 90%] Built target tutorial_server_historicaldata_circular
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 90%] [32mBuilding C object examples/CMakeFiles/server_encryption.dir/encryption/server_encryption.c.o[0m
+[ 90%] [32m[1mLinking C executable ../bin/examples/server_encryption[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 90%] Built target server_encryption
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 91%] [32mBuilding C object examples/CMakeFiles/client_encryption.dir/encryption/client_encryption.c.o[0m
+[ 91%] [32m[1mLinking C executable ../bin/examples/client_encryption[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 91%] Built target client_encryption
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 91%] [32mBuilding C object examples/CMakeFiles/custom_datatype_client.dir/custom_datatype/client_types_custom.c.o[0m
+[ 93%] [32m[1mLinking C executable ../bin/examples/custom_datatype_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 93%] Built target custom_datatype_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 93%] [32mBuilding C object examples/CMakeFiles/custom_datatype_server.dir/custom_datatype/server_types_custom.c.o[0m
+[ 94%] [32m[1mLinking C executable ../bin/examples/custom_datatype_server[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 94%] Built target custom_datatype_server
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 94%] [32mBuilding C object examples/CMakeFiles/access_control_server.dir/access_control/server_access_control.c.o[0m
+[ 95%] [32m[1mLinking C executable ../bin/examples/access_control_server[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 95%] Built target access_control_server
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 95%] [32mBuilding C object examples/CMakeFiles/access_control_client.dir/access_control/client_access_control.c.o[0m
+[ 95%] [32m[1mLinking C executable ../bin/examples/access_control_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 95%] Built target access_control_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] [32mBuilding C object examples/CMakeFiles/access_control_client_encrypt.dir/access_control_encrypt/client_access_control_encrypt.c.o[0m
+[ 97%] [32m[1mLinking C executable ../bin/examples/access_control_client_encrypt[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] Built target access_control_client_encrypt
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] [34m[1mGenerating ../../src_generated/open62541/example_nodeids.h[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] Built target open62541-generator-ids_example
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] [34m[1mGenerating ../../src_generated/open62541/namespace_example_generated.c, ../../src_generated/open62541/namespace_example_generated.h[0m
+INFO:__main__:Preprocessing (existing) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/examples/nodeset/../../tools/schema/Opc.Ua.NodeSet2.Reduced.xml
+INFO:__main__:Preprocessing /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/examples/nodeset/server_nodeset.xml
+INFO:__main__:Generating Code for Backend: open62541
+INFO:__main__:NodeSet generation code successfully printed
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] Built target open62541-generator-ns-example
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] [32mBuilding C object examples/nodeset/CMakeFiles/server_nodeset.dir/server_nodeset.c.o[0m
+[ 97%] [32mBuilding C object examples/nodeset/CMakeFiles/server_nodeset.dir/__/__/src_generated/open62541/namespace_example_generated.c.o[0m
+[ 98%] [32m[1mLinking C executable ../../bin/examples/server_nodeset[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[100%] Built target server_nodeset
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0=open62541-1.4.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0=open62541-1.4.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0=open62541-1.4.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" CMAKE_COMMAND='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/cmake' CMAKE_DISABLE_cmake_check_build_system=1 DESTDIR="/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install"  install;
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  1%] Built target open62541-generator-types
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  2%] Built target open62541-generator-namespace
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  2%] Built target open62541-generator-transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  4%] Built target open62541-generator-statuscode
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[  4%] Built target open62541-code-generation
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target open62541-object[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 37%] Built target open62541-object
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target open62541-plugins[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 55%] Built target open62541-plugins
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 56%] Built target open62541
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_datatypes[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 56%] Built target tutorial_datatypes
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_firststeps[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 58%] Built target tutorial_server_firststeps
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_variable[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 59%] Built target tutorial_server_variable
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_datasource[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 60%] Built target tutorial_server_datasource
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_settimestamp[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 62%] Built target server_settimestamp
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_monitoreditems[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 62%] Built target tutorial_server_monitoreditems
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_variabletype[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 63%] Built target tutorial_server_variabletype
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_object[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 64%] Built target tutorial_server_object
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_reverseconnect[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 66%] Built target tutorial_server_reverseconnect
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_method[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 67%] Built target tutorial_server_method
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_method_async[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 68%] Built target tutorial_server_method_async
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_client_firststeps[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 70%] Built target tutorial_client_firststeps
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_client_events[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 71%] Built target tutorial_client_events
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_events[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 72%] Built target tutorial_server_events
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_events_random[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 74%] Built target server_events_random
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target client_event_filter[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 75%] Built target client_event_filter
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 77%] Built target client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target client_connect[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 78%] Built target client_connect
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target client_historical[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 79%] Built target client_historical
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target client_async[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 81%] Built target client_async
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target client_method_async[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 81%] Built target client_method_async
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target client_connect_loop[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 81%] Built target client_connect_loop
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target client_subscription_loop[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 82%] Built target client_subscription_loop
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target ci_server[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 83%] Built target ci_server
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_mainloop[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 85%] Built target server_mainloop
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_instantiation[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 85%] Built target server_instantiation
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_repeated_job[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 85%] Built target server_repeated_job
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_inheritance[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 86%] Built target server_inheritance
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_loglevel[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 87%] Built target server_loglevel
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_file_based_config[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 89%] Built target server_file_based_config
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_historicaldata[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 89%] Built target tutorial_server_historicaldata
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target tutorial_server_historicaldata_circular[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 90%] Built target tutorial_server_historicaldata_circular
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_encryption[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 90%] Built target server_encryption
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target client_encryption[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 91%] Built target client_encryption
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target custom_datatype_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 93%] Built target custom_datatype_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target custom_datatype_server[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 94%] Built target custom_datatype_server
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target access_control_server[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 95%] Built target access_control_server
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target access_control_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 95%] Built target access_control_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target access_control_client_encrypt[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] Built target access_control_client_encrypt
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] Built target open62541-generator-ids_example
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[ 97%] Built target open62541-generator-ns-example
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[35m[1mConsolidate compiler generated dependencies of target server_nodeset[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[100%] Built target server_nodeset
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+[36mInstall the project...[0m
+-- Install configuration: "Release"
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/lib/libopen62541.so.1.4.0
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/lib/libopen62541.so.1
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/lib/libopen62541.so
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/lib/cmake/open62541/open62541Config.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/lib/cmake/open62541/open62541ConfigVersion.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/lib/cmake/open62541/open62541Targets.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/lib/cmake/open62541/open62541Targets-release.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/lib/pkgconfig/open62541.pc
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/config.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/statuscodes.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/nodeids.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/common.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/types.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/types_generated.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/types_generated_handling.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/util.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/log.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/accesscontrol.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/pki.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/securitypolicy.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/eventloop.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/nodestore.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/historydatabase.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/server_pubsub.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/server.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/client_highlevel.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/client_subscriptions.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/client_highlevel_async.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/accesscontrol_default.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/pki_default.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/log_stdout.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/nodestore_default.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/server_config_default.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/client_config_default.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/securitypolicy_default.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/server_config_file_based.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/historydata/history_data_backend.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/historydata/history_data_gathering.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/historydata/history_database_default.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/historydata/history_data_gathering_default.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/historydata/history_data_backend_memory.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/log_syslog.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/open62541/plugin/create_certificate.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/bin/ua_client
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.pkgdir/open62541.installed /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.pkgdir/open62541
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.pkgdir/open62541
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.pkgdir/open62541/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/bin/*.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.pkgdir/open62541/usr/lib
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.pkgdir/open62541.installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/.pkgdir/open62541/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.open62541_installed
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/open62541_1.4.0_arm_cortex-a7_neon-vfpv4.ipk'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-arm_cortex-a7_neon-vfpv4/open62541/CONTROL /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-arm_cortex-a7_neon-vfpv4/open62541/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/bin/*.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-arm_cortex-a7_neon-vfpv4/open62541/usr/lib
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-arm_cortex-a7_neon-vfpv4/open62541 -name 'CVS' -o -name '.svn' -o -name '.#*' -o -name '*~'| xargs -r rm -rf
+export CROSS="arm-openwrt-linux-muslgnueabi-"  NO_RENAME=1 ; NM="arm-openwrt-linux-muslgnueabi-nm" STRIP="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sstrip -z" STRIP_KMOD="/media/home/FIRMWARES1/RUTX11/sdk2/scripts/strip-kmod.sh" PATCHELF="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/patchelf" /media/home/FIRMWARES1/RUTX11/sdk2/scripts/rstrip.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-arm_cortex-a7_neon-vfpv4/open62541
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-arm_cortex-a7_neon-vfpv4/open62541/usr/lib/libopen62541.so.1.4.0: shared object
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-arm_cortex-a7_neon-vfpv4/open62541/CONTROL; ( echo "$CONTROL"; printf "Description: "; echo "$DESCRIPTION" | sed -e 's,^[[:space:]]*, ,g'; ) > control; chmod 644 control; ( echo "#!/bin/sh"; echo "[ \"\${IPKG_NO_SCRIPT}\" = \"1\" ] && exit 0"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_postinst \$0 \$@"; ) > postinst; ( echo "#!/bin/sh"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_prerm \$0 \$@"; ) > prerm; chmod 0755 postinst prerm;  )
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-build -m "" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-arm_cortex-a7_neon-vfpv4/open62541 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+Packaged contents of /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-arm_cortex-a7_neon-vfpv4/open62541 into /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/open62541_1.4.0_arm_cortex-a7_neon-vfpv4.ipk
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541/host /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541/usr/lib /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541/usr/include
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/bin/*.so* /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/open62541-1.4.0/ipkg-install/usr/include/* /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541/usr/include
+find /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541 -name '*.la' | xargs -r rm -f; 
+if [ -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/open62541.list ]; then /media/home/FIRMWARES1/RUTX11/sdk2/scripts/clean-package.sh "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/open62541.list" "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi"; fi
+if [ -d /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541 ]; then (cd /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541; find ./ > /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541.files); 	SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.staging-dir.flock -c ' mv /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541.files /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/open62541.list && cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541/* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ '; fi
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-open62541
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.open62541_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/open62541'
+time: package/libs/open62541/compile#338.69#16.03#370.93

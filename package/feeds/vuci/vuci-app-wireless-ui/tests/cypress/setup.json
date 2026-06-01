@@ -1,0 +1,10 @@
+{
+    "packages": [
+        "wifi_scanner.tar.gz",
+        "travelmate.tar.gz"
+    ],
+    "excludedDevices": [
+        "RUTX08",
+        "RUTX09"
+    ]
+}

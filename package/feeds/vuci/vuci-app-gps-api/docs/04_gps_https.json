@@ -1,0 +1,359 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "GPS Documentation",
+    "version": "1.0",
+    "contact": {},
+    "description": "GPS Api documentation"
+  },
+  "tags": [
+    {
+      "name": "HTTPS"
+    }
+  ],
+  "paths": {
+    "/gps/https/config": {
+      "get": {
+        "summary": "Get GPS HTTP General configurations",
+        "tags": [
+          "HTTPS"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200gps_https_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update GPS HTTP General configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200gps_https_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/gps_https_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "HTTPS"
+        ]
+      },
+      "x-web": {
+        "name": "GPS",
+        "menu": [
+          "Services",
+          "GPS",
+          "HTTPS"
+        ],
+        "hw_tags": {
+          "gps": true
+        }
+      }
+    },
+    "/gps/https/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "GPS HTTPS identifier (ID)"
+        }
+      ],
+      "get": {
+        "summary": "Get GPS HTTP General configuration",
+        "tags": [
+          "HTTPS"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200gps_https"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update GPS HTTP General configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200gps_https"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/gps_https_single_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "HTTPS"
+        ]
+      },
+      "x-web": {
+        "name": "GPS",
+        "menu": [
+          "Services",
+          "GPS",
+          "HTTPS"
+        ],
+        "hw_tags": {
+          "gps": true
+        }
+      }
+    },
+    "/gps/https/status": {
+      "get": {
+        "summary": "Returns GPS HTTPS status",
+        "tags": [
+          "HTTPS"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200gps_https_status"
+          }
+        }
+      },
+      "x-web": {
+        "name": "GPS",
+        "menu": [
+          "Services",
+          "GPS",
+          "HTTPS"
+        ],
+        "hw_tags": {
+          "gps": true
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "gps_https_single_options": {
+        "description": "HTTPS/HTTP Server Settings",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable NMEA forwarding to remote server in HTTPS protocol",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Enabled",
+              "input-type": "switch"
+            }
+          },
+          "hostname": {
+            "type": "string",
+            "description": "URL of the remote server (ex. example.com/xxxx)",
+            "format": "url",
+            "x-web": {
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ],
+              "pretty": "URL",
+              "input-type": "input"
+            }
+          },
+          "interval": {
+            "type": "string",
+            "description": "Interval on which collected NMEA sentences should be forwarded",
+            "format": "irange(1,4294967296)",
+            "x-web": {
+              "pretty": "Interval",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ],
+              "input-type": "input"
+            }
+          }
+        },
+        "required": [
+          "enabled"
+        ]
+      },
+      "gps_https_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/gps_https_single_options"
+          }
+        ]
+      },
+      "gps_https_status": {
+        "title": "gps_https_status",
+        "type": "object",
+        "properties": {
+          "uptime": {
+            "type": "integer",
+            "description": "Uptime of the application",
+            "x-web": {
+              "pretty": "Uptime"
+            }
+          },
+          "servers": {
+            "type": "array",
+            "description": "Array of servers",
+            "items": {
+              "type": "object",
+              "properties": {
+                "url": {
+                  "type": "string",
+                  "description": "URL of the remote server (ex. example.com/xxxx)",
+                  "format": "url"
+                },
+                "successful_count": {
+                  "type": "integer",
+                  "description": "Number of successful requests"
+                },
+                "failed_count": {
+                  "type": "integer",
+                  "description": "Number of failed requests"
+                }
+              },
+              "required": [
+                "url",
+                "successful_count",
+                "failed_count"
+              ]
+            }
+          }
+        },
+        "required": [
+          "uptime",
+          "servers"
+        ]
+      }
+    },
+    "responses": {
+      "200gps_https": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/gps_https_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200gps_https_multi": {
+        "description": "Returns configurations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/gps_https_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200gps_https_status": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/gps_https_status"
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

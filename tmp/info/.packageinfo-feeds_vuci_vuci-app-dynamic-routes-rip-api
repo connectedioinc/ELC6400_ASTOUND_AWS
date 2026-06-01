@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-dynamic-routes-rip-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-dynamic-routes-rip-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +frr-ripd +frr +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support Dynamic routes rip application
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support Dynamic routes rip application
+Description: VuCI API Support Dynamic routes rip application
+
+@@
+
+

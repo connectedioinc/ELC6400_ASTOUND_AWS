@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/ldpd-frr/Makefile
+
+Package: ldpd-frr
+Version: 2025-11-03-1
+Depends: +libc +frr-ldpd +kmod-mpls
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Configuration template for frr-ldpd service
+Maintainer: 
+Require-User: ldp:frr
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Configuration template for frr-ldpd service
+Description: 	Configuration template for frr-ldpd service
+
+@@
+
+

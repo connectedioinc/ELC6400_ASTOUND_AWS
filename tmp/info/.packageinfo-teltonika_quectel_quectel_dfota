@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/quectel/quectel_dfota/Makefile
+
+Package: dfota
+Version: 2024-08-05-4
+Depends: +libc +curl +gsmctl +ubus +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Quectel DFOTA update script
+Maintainer: Titas Kutavičius
+Require-User: dfota=525:dfota=525
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Quectel DFOTA update script
+Description:  Quectel DFOTA update system
+Titas Kutavičius
+@@
+
+

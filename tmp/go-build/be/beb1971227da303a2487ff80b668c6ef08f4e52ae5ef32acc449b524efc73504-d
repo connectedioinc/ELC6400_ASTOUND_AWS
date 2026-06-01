@@ -1,0 +1,7 @@
+./condregister.go
+./maybe_capture.go
+./maybe_relayserver.go
+./maybe_taildrop.go
+./maybe_tap.go
+./maybe_tpm.go
+./maybe_wakeonlan.go

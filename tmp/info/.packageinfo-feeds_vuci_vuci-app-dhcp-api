@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-dhcp-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-dhcp-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +SWITCH_DEVICE:dnsmasq +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for DHCP
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for DHCP
+Description: VuCI API Support for DHCP
+
+@@
+
+

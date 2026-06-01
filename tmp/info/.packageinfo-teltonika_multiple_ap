@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/multiple_ap/Makefile
+
+Package: multiple_ap
+Version: 2025-07-09-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Multiple Access Points in Station Mode
+Maintainer: 
+Require-User: multiple_ap:multiple_ap
+Source: multiple_ap-2025-07-09.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Multiple Access Points in Station Mode
+Description: Multiple Access Points in Station Mode
+
+@@
+
+

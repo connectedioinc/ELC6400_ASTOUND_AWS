@@ -1,0 +1,286 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/services/vrrpd'
+vrrpd-1.15.tar.gz: Download from https://github.com/fredbcode/Vrrpd.git failed
+vrrpd-1.15.tar.gz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'vrrpd-1.15'...
+Note: switching to 'a318281271973c7430cfa520b540585153454c4b'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at a318281 Rocket is on the launch pad: v1.15
+Packing checkout...
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.prepared_4049bb2346d327029a8bb1dbb3d0c303_6664517399ebbbc92a37c5bb081b5c53_check
+
+Applying ./patches/0100-vrrpd_status_and_fix.patch using plaintext: 
+patching file vrrpd.c
+Hunk #1 succeeded at 400 (offset -3 lines).
+Hunk #2 succeeded at 409 (offset -3 lines).
+Hunk #3 succeeded at 439 (offset -3 lines).
+Hunk #4 succeeded at 623 (offset -3 lines).
+Hunk #5 succeeded at 1344 (offset -3 lines).
+Hunk #6 succeeded at 1377 (offset -3 lines).
+Hunk #7 succeeded at 1449 (offset -3 lines).
+Hunk #8 succeeded at 1470 (offset -3 lines).
+Hunk #9 succeeded at 1510 (offset -3 lines).
+Hunk #10 succeeded at 1529 (offset -3 lines).
+Hunk #11 succeeded at 1542 (offset -3 lines).
+Hunk #12 succeeded at 1604 (offset -3 lines).
+
+Applying ./patches/0101-vrrpd_foreground.patch using plaintext: 
+patching file vrrpd.c
+Hunk #2 succeeded at 855 (offset -2 lines).
+Hunk #3 succeeded at 961 (offset -2 lines).
+Hunk #4 succeeded at 1052 (offset -2 lines).
+Hunk #5 succeeded at 1883 (offset -2 lines).
+
+Applying ./patches/0120-vrrpd-change-event.patch using plaintext: 
+patching file vrrpd.c
+Hunk #1 succeeded at 1456 (offset -2 lines).
+Hunk #2 succeeded at 1481 (offset -2 lines).
+Hunk #3 succeeded at 1545 (offset -2 lines).
+Hunk #4 succeeded at 1562 (offset -2 lines).
+Hunk #5 succeeded at 1633 (offset -2 lines).
+Hunk #6 succeeded at 1664 (offset -2 lines).
+patching file vrrpd.h
+Hunk #1 succeeded at 15 with fuzz 2.
+
+Applying ./patches/0121-vrrpd-update.patch using plaintext: 
+patching file Makefile
+Hunk #1 succeeded at 23 with fuzz 2.
+patching file vrrpd.c
+
+Applying ./patches/0122-vrrpd-h-added-instance-name.patch using plaintext: 
+patching file vrrpd.h
+
+Applying ./patches/0123-vrrpd-c-added-instance-name.patch using plaintext: 
+patching file vrrpd.c
+Hunk #1 succeeded at 965 (offset 2 lines).
+Hunk #2 succeeded at 1028 (offset 2 lines).
+Hunk #3 succeeded at 1496 (offset 2 lines).
+Hunk #4 succeeded at 1587 (offset 2 lines).
+Hunk #5 succeeded at 1698 (offset 2 lines).
+
+Applying ./patches/0124-vrrpd-c-status-log-file-change.patch using plaintext: 
+patching file vrrpd.c
+Hunk #1 succeeded at 1370 (offset 2 lines).
+Hunk #2 succeeded at 1952 (offset 2 lines).
+
+Applying ./patches/0125-vrrpd-h-status-log-file-change.patch using plaintext: 
+patching file vrrpd.h
+
+Applying ./patches/0126-struct-sysinfo-redefinition-fix.patch using plaintext: 
+patching file ipaddr.c
+patching file vrrpd.c
+
+Applying ./patches/0127-vrrpd-new-liblog-support-added using plaintext: 
+patching file vrrpd.c
+Hunk #2 succeeded at 108 (offset 1 line).
+Hunk #3 succeeded at 1442 (offset 2 lines).
+Hunk #4 succeeded at 1486 (offset 2 lines).
+Hunk #5 succeeded at 1514 (offset 2 lines).
+Hunk #6 succeeded at 1577 (offset 2 lines).
+Hunk #7 succeeded at 1605 (offset 2 lines).
+Hunk #8 succeeded at 1627 (offset 2 lines).
+Hunk #9 succeeded at 1646 (offset 2 lines).
+Hunk #10 succeeded at 1668 (offset 2 lines).
+Hunk #11 succeeded at 1677 (offset 2 lines).
+Hunk #12 succeeded at 1716 (offset 2 lines).
+Hunk #13 succeeded at 1808 (offset 2 lines).
+Hunk #14 succeeded at 2068 (offset 2 lines).
+patching file Makefile
+
+Applying ./patches/0128-vrrpd-endianess-fix.patch using plaintext: 
+patching file vrrpd.c
+
+Applying ./patches/0129-bridge-ip-change-fix.patch using plaintext: 
+patching file vrrpd.c
+patching file Makefile
+patching file vrrpd.h
+
+Applying ./patches/0130-bridged-interface-detection.patch using plaintext: 
+patching file vrrpd.c
+
+Applying ./patches/0131-glibc.patch using plaintext: 
+patching file Makefile
+
+Applying ./patches/0132-segfault-fix.patch using plaintext: 
+patching file vrrpd.c
+
+Applying ./patches/901-fix-virtual-ip-parsing.patch using plaintext: 
+patching file vrrpd.c
+
+Applying ./patches/902-drop_root_user.patch using plaintext: 
+patching file vrrpd.h
+patching file vrrpd.c
+
+Applying ./patches/903_fix_255_prio_init.patch using plaintext: 
+patching file vrrpd.c
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.prepared_4049bb2346d327029a8bb1dbb3d0c303_6664517399ebbbc92a37c5bb081b5c53
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.configured_*
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.vrrpd_installed
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/./; if [ -x ./configure ]; then find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ -name config.guess | xargs -r chmod u+w; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ -name config.guess | xargs -r -n1 cp --remove-destination /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.guess; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ -name config.sub | xargs -r chmod u+w; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ -name config.sub | xargs -r -n1 cp --remove-destination /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.sub; AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro "   ./configure --target=arm-openwrt-linux --host=arm-openwrt-linux --build=x86_64-pc-linux-gnu --program-prefix="" --program-suffix="" --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --libexecdir=/usr/lib --sysconfdir=/etc --datadir=/usr/share --localstatedir=/var --mandir=/usr/man --infodir=/usr/info --disable-nls  ; fi; )
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.built_check
+printf "%s\n" "• vrrpd is rebuilt"
+• vrrpd is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "vrrpd" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm"  DBG_OPT="" MAIN_OPT="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" vrrpd ; 
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15'
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro     -Wall    -c -o vrrpd.o vrrpd.c
+vrrpd.c: In function 'check_ips':
+vrrpd.c:565:20: warning: passing argument 1 of 'check_ip' makes integer from pointer without a cast [-Wint-conversion]
+    ret += check_ip(host, ip_char, vsrv);
+                    ^~~~
+vrrpd.c:515:19: note: expected 'char' but argument is of type 'char *'
+ int check_ip(char host, char *ip_char, vrrp_rt *vsrv)
+              ~~~~~^~~~
+vrrpd.c:544:6: warning: unused variable 'family' [-Wunused-variable]
+  int family, s;
+      ^~~~~~
+vrrpd.c: In function 'state_mast':
+vrrpd.c:1825:36: warning: passing argument 2 of 'hwaddr_get' from incompatible pointer type [-Wincompatible-pointer-types]
+   if (hwaddr_get(vsrv->vif.ifname, &current_addr, sizeof(current_addr))) {
+                                    ^~~~~~~~~~~~~
+vrrpd.c:461:43: note: expected 'char *' but argument is of type 'char (*)[6]'
+ static int hwaddr_get(char *ifname, char *addr, int addrlen)
+                                     ~~~~~~^~~~
+vrrpd.c: In function 'event_handle':
+vrrpd.c:2124:30: warning: unused variable 'current' [-Wunused-variable]
+  struct uci_iface_list_node *current;
+                              ^~~~~~~
+vrrpd.c: In function 'sub_to_event':
+vrrpd.c:2177:10: warning: returning 'int' from a function with return type 'void *' makes pointer from integer without a cast [-Wint-conversion]
+   return 1;
+          ^
+vrrpd.c:2183:10: warning: returning 'int' from a function with return type 'void *' makes pointer from integer without a cast [-Wint-conversion]
+   return 1;
+          ^
+vrrpd.c: At top level:
+vrrpd.c:2197:1: warning: return type defaults to 'int' [-Wimplicit-int]
+ reinit(vrrp_rt *vsrv)
+ ^~~~~~
+vrrpd.c: In function 'event_handle':
+vrrpd.c:2141:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+vrrpd.c: In function 'sub_to_event':
+vrrpd.c:2195:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+vrrpd.c: In function 'reinit':
+vrrpd.c:2206:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+In function 'writestate',
+    inlined from 'signal_user' at vrrpd.c:2075:3:
+vrrpd.c:2057:3: warning: argument 1 null where non-null expected [-Wnonnull]
+   fprintf(f,
+   ^~~~~~~~~~
+    "vrrpd: %s atropos information WARNING critical: pid directory is not writable\r\n",
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    vsrv->vif.ifname);
+    ~~~~~~~~~~~~~~~~~
+In file included from vrrpd.c:14:
+vrrpd.c: In function 'signal_user':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/stdio.h:110:5: note: in a call to function 'fprintf' declared here
+ int fprintf(FILE *__restrict, const char *__restrict, ...);
+     ^~~~~~~
+vrrpd.c: In function 'pidfile_rm.constprop':
+vrrpd.c:239:37: warning: '/vrrpd_' directive output may be truncated writing 7 bytes into a region of size between 1 and 4097 [-Wformat-truncation=]
+  snprintf(pidfile, sizeof(pidfile), "%s/" VRRP_PID_FORMAT, PidDir, vsrv->vif.ifname);
+                                     ^~~~~
+vrrpd.c:239:40: note: format string is defined here
+  snprintf(pidfile, sizeof(pidfile), "%s/" VRRP_PID_FORMAT, PidDir, vsrv->vif.ifname);
+vrrpd.c:239:2: note: 'snprintf' output 12 or more bytes (assuming 4108) into a destination of size 4097
+  snprintf(pidfile, sizeof(pidfile), "%s/" VRRP_PID_FORMAT, PidDir, vsrv->vif.ifname);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from vrrpd.c:51:
+vrrpd.c: In function 'state_mast.constprop':
+vrrpd.h:127:61: warning: 'delay' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ #define VRRP_TIMER_SET(val, delta) (val) = VRRP_TIMER_CLK() + (delta)
+                                                             ^
+vrrpd.c:1858:8: note: 'delay' was declared here
+    int delay = 3 * vsrv->adver_int + VRRP_TIMER_SKEW(vsrv);
+        ^~~~~
+vrrpd.c: In function 'main':
+vrrpd.c:239:37: warning: '/vrrpd_' directive output may be truncated writing 7 bytes into a region of size between 1 and 4097 [-Wformat-truncation=]
+  snprintf(pidfile, sizeof(pidfile), "%s/" VRRP_PID_FORMAT, PidDir, vsrv->vif.ifname);
+                                     ^~~~~
+vrrpd.c:239:40: note: format string is defined here
+  snprintf(pidfile, sizeof(pidfile), "%s/" VRRP_PID_FORMAT, PidDir, vsrv->vif.ifname);
+vrrpd.c:239:2: note: 'snprintf' output 12 or more bytes (assuming 4108) into a destination of size 4097
+  snprintf(pidfile, sizeof(pidfile), "%s/" VRRP_PID_FORMAT, PidDir, vsrv->vif.ifname);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+vrrpd.c:239:37: warning: '/vrrpd_' directive output may be truncated writing 7 bytes into a region of size between 1 and 4097 [-Wformat-truncation=]
+  snprintf(pidfile, sizeof(pidfile), "%s/" VRRP_PID_FORMAT, PidDir, vsrv->vif.ifname);
+                                     ^~~~~
+vrrpd.c:239:40: note: format string is defined here
+  snprintf(pidfile, sizeof(pidfile), "%s/" VRRP_PID_FORMAT, PidDir, vsrv->vif.ifname);
+vrrpd.c:239:2: note: 'snprintf' output 12 or more bytes (assuming 4108) into a destination of size 4097
+  snprintf(pidfile, sizeof(pidfile), "%s/" VRRP_PID_FORMAT, PidDir, vsrv->vif.ifname);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro     -Wall    -c -o libnetlink.o libnetlink.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15=vrrpd-1.15 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro     -Wall    -c -o ipaddr.o ipaddr.c
+arm-openwrt-linux-muslgnueabi-gcc -Wl,--copy-dt-needed-entries  -o vrrpd vrrpd.o libnetlink.o ipaddr.o -lrt -llog -lubus -lubox 
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd.installed /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/usr/local/usr/sbin
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/vrrpd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/usr/local/usr/sbin/
+install -m0755 ./files/vrrp_check.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/usr/local/usr/sbin/vrrp_check.sh
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/etc/config
+install -m0660 ./files/vrrpd.config /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/etc/config/vrrpd
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/etc/init.d
+install -m0755 ./files/vrrpd.init /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/etc/init.d/vrrpd
+install -m0755 ./files/vrrp_check.init /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/etc/init.d/vrrp_check
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/etc/uci-defaults/7.6
+install -m0755 ./files/uci-defaults/99_virtual_mac_invert /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/etc/uci-defaults/7.6/
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/usr/share/acl.d/
+install -m0644 ./files/vrrpd_acl.json /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/usr/share/acl.d/vrrpd_acl.json
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/etc/permtab.d
+install -m0644 ./files/vrrpd.permtab /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/etc/permtab.d/vrrpd
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd.installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/.pkgdir/vrrpd/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.vrrpd_installed
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/vrrpd_1.15-6_arm_cortex-a7_neon-vfpv4.ipk'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/CONTROL /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/usr/local/usr/sbin
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/vrrpd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/usr/local/usr/sbin/
+install -m0755 ./files/vrrp_check.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/usr/local/usr/sbin/vrrp_check.sh
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/etc/config
+install -m0660 ./files/vrrpd.config /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/etc/config/vrrpd
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/etc/init.d
+install -m0755 ./files/vrrpd.init /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/etc/init.d/vrrpd
+install -m0755 ./files/vrrp_check.init /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/etc/init.d/vrrp_check
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/etc/uci-defaults/7.6
+install -m0755 ./files/uci-defaults/99_virtual_mac_invert /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/etc/uci-defaults/7.6/
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/usr/share/acl.d/
+install -m0644 ./files/vrrpd_acl.json /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/usr/share/acl.d/vrrpd_acl.json
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/etc/permtab.d
+install -m0644 ./files/vrrpd.permtab /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/etc/permtab.d/vrrpd
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd -name 'CVS' -o -name '.svn' -o -name '.#*' -o -name '*~'| xargs -r rm -rf
+export CROSS="arm-openwrt-linux-muslgnueabi-"  NO_RENAME=1 ; NM="arm-openwrt-linux-muslgnueabi-nm" STRIP="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sstrip -z" STRIP_KMOD="/media/home/FIRMWARES1/RUTX11/sdk2/scripts/strip-kmod.sh" PATCHELF="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/patchelf" /media/home/FIRMWARES1/RUTX11/sdk2/scripts/rstrip.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/usr/local/usr/sbin/vrrpd: executable
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd/CONTROL; ( echo "$CONTROL"; printf "Description: "; echo "$DESCRIPTION" | sed -e 's,^[[:space:]]*, ,g'; ) > control; chmod 644 control; ( echo "#!/bin/sh"; echo "[ \"\${IPKG_NO_SCRIPT}\" = \"1\" ] && exit 0"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_postinst \$0 \$@"; ) > postinst; ( echo "#!/bin/sh"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_prerm \$0 \$@"; ) > prerm; chmod 0755 postinst prerm; echo "$V_Package_vrrpd_conffiles" > conffiles;  )
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-build -m "" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+Packaged contents of /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vrrpd-1.15/ipkg-arm_cortex-a7_neon-vfpv4/vrrpd into /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/vrrpd_1.15-6_arm_cortex-a7_neon-vfpv4.ipk
+echo "vrrpd" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/vrrpd.default.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/services/vrrpd'
+time: package/network/services/vrrpd/compile#1.24#0.59#3.33

@@ -1,0 +1,48 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/ser4cpp'
+ser4cpp-1.0-3c449734dc530a8f465eb0982de29165cc4e23d5.tar.xz: Download from https://github.com/automatak/ser4cpp.git failed
+ser4cpp-1.0-3c449734dc530a8f465eb0982de29165cc4e23d5.tar.xz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'ser4cpp-1.0-3c449734dc530a8f465eb0982de29165cc4e23d5'...
+Note: switching to '3c449734dc530a8f465eb0982de29165cc4e23d5'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 3c44973 Proper 0 handling when serializing.
+Packing checkout...
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/.prepared_4b2fd2f54ee13e12fba8278dac5f70cf_6664517399ebbbc92a37c5bb081b5c53_check
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/.prepared_4b2fd2f54ee13e12fba8278dac5f70cf_6664517399ebbbc92a37c5bb081b5c53
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/.configured_*
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.ser4cpp_installed
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/./; if [ -x ./configure ]; then find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/ -name config.guess | xargs -r chmod u+w; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/ -name config.guess | xargs -r -n1 cp --remove-destination /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.guess; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/ -name config.sub | xargs -r chmod u+w; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/ -name config.sub | xargs -r -n1 cp --remove-destination /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.sub; AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0=ser4cpp-1.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0=ser4cpp-1.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0=ser4cpp-1.0 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro "   ./configure --target=arm-openwrt-linux --host=arm-openwrt-linux --build=x86_64-pc-linux-gnu --program-prefix="" --program-suffix="" --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --libexecdir=/usr/lib --sysconfdir=/etc --datadir=/usr/share --localstatedir=/var --mandir=/usr/man --infodir=/usr/info --disable-nls  ; fi; )
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/.built_check
+printf "%s\n" "• ser4cpp is rebuilt"
+• ser4cpp is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "ser4cpp" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+ser4cpp is header-only
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp/host /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp/usr/include/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ser4cpp-1.0/src/ser4cpp /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp/usr/include/
+find /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp -name '*.la' | xargs -r rm -f; 
+if [ -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/ser4cpp.list ]; then /media/home/FIRMWARES1/RUTX11/sdk2/scripts/clean-package.sh "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/ser4cpp.list" "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi"; fi
+if [ -d /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp ]; then (cd /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp; find ./ > /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp.files); 	SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.staging-dir.flock -c ' mv /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp.files /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/ser4cpp.list && cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp/* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ '; fi
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-ser4cpp
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.ser4cpp_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/ser4cpp'
+time: package/libs/ser4cpp/compile#0.60#0.37#2.15

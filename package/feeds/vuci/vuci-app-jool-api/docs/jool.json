@@ -1,0 +1,503 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "NAT64 (Jool)",
+    "version": "1.0"
+  },
+  "paths": {
+    "/jool/global": {
+      "get": {
+        "summary": "Returns NAT64 global configuration",
+        "tags": ["General"],
+        "operationId": "get-services-nat64-general-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_jool_general"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates NAT64 global configuration",
+        "operationId": "put-services-nat64-general-config",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/jool_general"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_jool_general"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["General"]
+      },
+      "parameters": [],
+      "x-web": {
+        "name": "NAT64",
+        "menu": ["Network", "NAT64", "NAT64"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_gateway": false
+        }
+      }
+    },
+    "/jool/rules/config": {
+      "get": {
+        "summary": "Returns NAT64 rule configurations",
+        "tags": ["Rules"],
+        "operationId": "get-services-nat64-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_jool_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates NAT64 rule configuration",
+        "operationId": "post-services-nat64-config",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_jool_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/jool_rules"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Rules"]
+      },
+      "put": {
+        "summary": "Updates NAT64 rule configurations",
+        "operationId": "put-services-nat64-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_jool_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/jool_req_body_multi"
+              }
+            }
+          }
+        },
+        "tags": ["Rules"]
+      },
+      "delete": {
+        "summary": "Deletes NAT64 rule configurations",
+        "operationId": "delete-services-nat64-id-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": ["data"]
+              }
+            }
+          }
+        },
+        "tags": ["Rules"]
+      },
+      "x-web": {
+        "name": "NAT64",
+        "menu": ["Network", "NAT64", "NAT64"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_gateway": false
+        }
+      }
+    },
+    "/jool/rules/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "The ID of the NAT64 rule configuration."
+        }
+      ],
+      "get": {
+        "summary": "Returns NAT64 rule configuration",
+        "tags": ["Rules"],
+        "operationId": "get-services-nat64-id-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_jool_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates NAT64 rule configuration",
+        "operationId": "put-services-nat64-id-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_jool_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/jool_rules"
+              }
+            }
+          }
+        },
+        "tags": ["Rules"]
+      },
+      "delete": {
+        "summary": "Deletes NAT64 rule configuration",
+        "operationId": "delete-services-nat64-route-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Rules"]
+      },
+      "x-web": {
+        "name": "NAT64",
+        "menu": ["Network", "NAT64", "NAT64"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_gateway": false
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "jool_general": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Turns on NAT64 service.",
+            "enum": ["1", "0"],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "interface": {
+            "type": "string",
+            "description": "IPv6 interface which will be used for the translation.",
+            "x-web": {
+              "pretty": "IPv6 interface",
+              "input-type": "input"
+            }
+          }
+        }
+      },
+      "jool_rules": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Turns the rule on or off."
+          },
+          "name": {
+            "x-web": {
+              "pretty": "Name",
+              "input-type": "input",
+              "unique": true
+            },
+            "type": "string",
+            "description": "Name of the rule. This is only used for easier management purposes."
+          },
+          "proto": {
+            "x-web": {
+              "pretty": "Protocol",
+              "input-type": "input"
+            },
+            "type": "array",
+            "description": "Only match traffic using the given internet communication protocol.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "src": {
+            "x-web": {
+              "pretty": "Source zone",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Only match traffic coming to the given firewall zone."
+          },
+          "src_ipv6": {
+            "x-web": {
+              "pretty": "Source IPv6 address",
+              "input-type": "input"
+            },
+            "description": "Source IPv6 address or network segment from which the traffic will be translated.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "src_port": {
+            "x-web": {
+              "pretty": "Source port",
+              "input-type": "input",
+              "depends": [
+                {
+                  "proto": "tcp"
+                },
+                {
+                  "proto": "udp"
+                }
+              ]
+            },
+            "description": "Only match traffic coming from the given port.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dest_ipv6": {
+            "x-web": {
+              "pretty": "Destination IPv6 address",
+              "input-type": "input"
+            },
+            "type": "array",
+            "description": "Destination IPv6 address or network segment to which the traffic will be translated.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dest_ipv4": {
+            "x-web": {
+              "pretty": "Destination IPv4 address",
+              "input-type": "input"
+            },
+            "description": "Destination IPv4 address or network segment to which the traffic will be translated.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "dest_port": {
+            "x-web": {
+              "pretty": "Destination port",
+              "input-type": "input",
+              "depends": [
+                {
+                  "proto": "tcp"
+                },
+                {
+                  "proto": "udp"
+                }
+              ]
+            },
+            "description": "Only match traffic being forwarded to the given port.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "jool_req_body_multi": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "The ID of the NAT64 rule configuration."
+                    }
+                  },
+                  "required": ["id"]
+                },
+                {
+                  "$ref": "#/components/schemas/jool_rules"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_jool_one": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "The ID of the NAT64 rule configuration."
+                        }
+                      },
+                      "required": ["id"]
+                    },
+                    {
+                      "$ref": "#/components/schemas/jool_rules"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_jool_multi": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "The ID of the NAT64 rule configuration."
+                          }
+                        }
+                      },
+                      {
+                        "$ref": "#/components/schemas/jool_rules"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_jool_general": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/jool_general"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

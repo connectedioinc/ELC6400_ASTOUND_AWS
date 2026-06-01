@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-azure-iothub-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-azure-iothub-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +azure_iothub +vuci-app-data-sender-api-mod-azure +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for Azure IoT Hub
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for Azure IoT Hub
+Description: VuCI API Support for Azure IoT Hub
+
+@@
+
+

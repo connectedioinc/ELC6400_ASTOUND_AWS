@@ -1,0 +1,24 @@
+Source-Makefile: package/libs/libmicroxml/Makefile
+Build-Depends: libgpg-error
+
+Package: libmicroxml
+Version: 2018-06-14-80a15162f3a8318c70e8688d8ecbfc38676bd9a2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: XML library
+Maintainer: 
+Source: libmicroxml-2018-06-14-80a15162f3a8318c70e8688d8ecbfc38676bd9a2.tar.gz
+License: LGPL-2.0-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: XML library
+Description:  A micro sized XML library
+
+@@
+
+

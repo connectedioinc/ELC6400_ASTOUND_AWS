@@ -1,0 +1,6 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libexif'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libexif-0.6.22/.pkgdir/libexif/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.libexif_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libexif'
+time: package/libs/libexif/compile#0.09#0.14#0.22

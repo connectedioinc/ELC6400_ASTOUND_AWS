@@ -1,0 +1,15 @@
+./config.go
+./debian_resolvconf.go
+./direct.go
+./direct_linux.go
+./flush_default.go
+./manager.go
+./manager_linux.go
+./nm.go
+./noop.go
+./openresolv.go
+./osconfig.go
+./resolvconf.go
+./resolvconfpath_default.go
+./resolved.go
+./utf.go

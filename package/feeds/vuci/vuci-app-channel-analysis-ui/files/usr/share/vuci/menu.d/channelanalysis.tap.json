@@ -1,0 +1,8 @@
+{
+  "status/channel_analysis": {
+    "title": "Channel Analysis",
+    "acls": ["status/channel_analysis"],
+    "view": "status/ChannelAnalysis",
+    "index": 20
+  }
+}

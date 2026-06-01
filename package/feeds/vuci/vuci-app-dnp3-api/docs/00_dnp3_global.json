@@ -1,0 +1,294 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "DNP3 client global settings"
+    }
+  ],
+  "paths": {
+    "/dnp3/global": {
+      "get": {
+        "tags": [
+          "dnp3 global settings"
+        ],
+        "summary": "Returns all DNP3 global settings configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200dnp3Global"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "DNP3 global settings"
+        ],
+        "summary": "Updates specified DNP3 global settings configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200dnp3Global"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/dnp3_global_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "DNP3",
+          "DNP3"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/dnp3/database/entries/status": {
+      "get": {
+        "tags": [
+          "dnp3 global settings"
+        ],
+        "summary": "Returns all DNP3 database entries",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200dnp3DatabaseEntries"
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Limit number of items returned"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Number of items to skip from the beginning"
+          },
+          {
+            "name": "db_location",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ram",
+                "flash"
+              ],
+              "default": "ram"
+            },
+            "description": "From which database to list entries"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by ID"
+          },
+          {
+            "name": "data_type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by data type"
+          },
+          {
+            "name": "client_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by client id"
+          },
+          {
+            "name": "client_name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by client name"
+          },
+          {
+            "name": "request_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by request ID"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by request name"
+          }
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "DNP3",
+          "DNP3"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200dnp3Global": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/dnp3_global_single_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200dnp3DatabaseEntries": {
+        "description": "Returns database entries",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/dnp3_database_entry"
+                  }
+                },
+                "metadata": {
+                  "type": "object",
+                  "required": ["total"],
+                  "properties": {
+                    "total": {
+                      "type": "string",
+                      "format": "uinteger"
+                    },
+                    "limit": {
+                      "type": "string",
+                      "format": "uinteger"
+                    },
+                    "offset": {
+                      "type": "string",
+                      "format": "uinteger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "dnp3_global_single_options": {
+        "type": "object",
+        "properties": {
+          "client_enabled": {
+            "type": "string",
+            "description": "Enables/disables DNP3 client functionality.",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ]
+          }
+        }
+      },
+      "dnp3_database_entry": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uinteger"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "uinteger"
+          },
+          "name": {
+            "type": "string"
+          },
+          "request_id": {
+            "type": "string"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "client_name": {
+            "type": "string"
+          },
+          "data_type": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

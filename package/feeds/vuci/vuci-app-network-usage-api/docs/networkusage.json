@@ -1,0 +1,395 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Network usage",
+    "version": "1.0",
+    "description": "Network usage API documentation",
+    "contact": {}
+  },
+  "servers": [],
+  "paths": {
+    "/network_usage/global": {
+      "get": {
+        "summary": "Returns Network Usage global configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_network_usage_global"
+          }
+        },
+        "tags": ["General"]
+      },
+      "put": {
+        "summary": "Updates Network Usage global configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_network_usage_global"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/network_usage_global_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Network usage"],
+        "hw_tags": {
+          "is_access_point": false,
+          "flash16mb": false
+        }
+      }
+    },
+    "/network_usage/transfers/day/status": {
+      "get": {
+        "summary": "Get single day transfer information",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_transfers"
+          }
+        },
+        "tags": ["Transfers"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Network usage"],
+        "hw_tags": {
+          "is_access_point": false,
+          "flash16mb": false
+        }
+      }
+    },
+    "/network_usage/metrics/day/status": {
+      "get": {
+        "summary": "Get single day metrics information",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_metrics"
+          }
+        },
+        "tags": ["Metrics"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Network usage"],
+        "hw_tags": {
+          "is_access_point": false,
+          "flash16mb": false
+        }
+      }
+    },
+    "/network_usage/metrics/week/status": {
+      "get": {
+        "summary": "Get single week metrics information",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_metrics"
+          }
+        },
+        "tags": ["Metrics"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Network usage"],
+        "hw_tags": {
+          "is_access_point": false,
+          "flash16mb": false
+        }
+      }
+    },
+    "/network_usage/metrics/month/status": {
+      "get": {
+        "summary": "Get single month metrics information",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_metrics"
+          }
+        },
+        "tags": ["Metrics"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Network usage"],
+        "hw_tags": {
+          "is_access_point": false,
+          "flash16mb": false
+        }
+      }
+    },
+    "/network_usage/metrics/total/status": {
+      "get": {
+        "summary": "Get total metrics information",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_metrics"
+          }
+        },
+        "tags": ["Metrics"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Network usage"],
+        "hw_tags": {
+          "is_access_point": false,
+          "flash16mb": false
+        }
+      }
+    },
+    "/network_usage/actions/delete_data": {
+      "post": {
+        "summary": "Delete specified data",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_network_usage_delete_data"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/network_usage_delete_data"
+        },
+        "tags": ["General"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Network usage"],
+        "hw_tags": {
+          "is_access_point": false,
+          "flash16mb": false
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "network_usage_global_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enable network usage tracking",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Indicates if network usage tracking is enabled"
+          },
+          "save_history": {
+            "x-web": {
+              "pretty": "Save history",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Indicates if history saving is enabled"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_network_usage_global": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/network_usage_global_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_transfers": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "rx_bytes": { 
+                          "type": "integer",
+                          "description": "Received bytes"
+                        },
+                        "tx_bytes": { 
+                          "type": "integer",
+                          "description": "Transmitted bytes"
+                        },
+                        "conns": { 
+                          "type": "integer",
+                          "description": "Number of connections"
+                        },
+                        "layer7": { 
+                          "type": "string",
+                          "description": "Layer 7 protocol"
+                        },
+                        "src_ip": { 
+                          "type": "string",
+                          "description": "Source IP address"
+                        },
+                        "dst_ip": { 
+                          "type": "string",
+                          "description": "Destination IP address"
+                        },
+                        "rx_pkts": { 
+                          "type": "integer",
+                          "description": "Received packets"
+                        },
+                        "tx_pkts": { 
+                          "type": "integer",
+                          "description": "Transmitted packets"
+                        },
+                        "src_mac": { 
+                          "type": "string",
+                          "description": "Source MAC address"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_metrics": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "rx_bytes": { 
+                          "type": "integer",
+                          "description": "Received bytes"
+                        },
+                        "tx_bytes": { 
+                          "type": "integer",
+                          "description": "Transmitted bytes"
+                        },
+                        "conns": { 
+                          "type": "integer",
+                          "description": "Number of connections"
+                        },
+                        "layer7": { 
+                          "type": "string",
+                          "description": "Layer 7 protocol"
+                        },
+                        "src_ip": { 
+                          "type": "string",
+                          "description": "Source IP address"
+                        },
+                        "rx_pkts": { 
+                          "type": "integer",
+                          "description": "Received packets"
+                        },
+                        "tx_pkts": { 
+                          "type": "integer",
+                          "description": "Transmitted packets"
+                        },
+                        "src_mac": { 
+                          "type": "string",
+                          "description": "Source MAC address"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_network_usage_delete_data": {
+        "description": "Successful response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "network_usage_delete_data": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "description": "Type can be 'metrics', 'transfers' or 'all'",
+                      "x-web": {
+                        "pretty": "Type",
+                        "input-type": "input"
+                      }
+                    }
+                  },
+                  "required": ["type"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "General"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+Source-Makefile: package/utils/sysupgrade-helper/Makefile
+
+Package: sysupgrade-helper
+Version: 1.0-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: boot
+Category: Boot Loaders
+Repository: base
+Title: U-boot images tools (dumpimage, mkimage)
+Maintainer: 
+Source: u-boot-ipq86xx-1.0-1.0.tar.xz
+License: GPL-2.0-or-later
+Type: ipkg
+Detail-Description: U-boot images tools (dumpimage, mkimage)
+Description: U-boot images tools (dumpimage, mkimage)
+
+@@
+
+

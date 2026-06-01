@@ -1,0 +1,473 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Objects"
+    }
+  ],
+  "paths": {
+    "/snmp/agent/objects/config": {
+      "get": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Returns all object configurations. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200SNMPOIDMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Creates a new object configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200SNMPOID"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/snmp_oid_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Updates specified object configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200SNMPOIDMulti"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter configuration",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/snmp_oid_multi_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Deletes specified object configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "SNMP",
+        "menu": [
+          "Services",
+          "SNMP",
+          "Data Sources"
+        ],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    },
+    "/snmp/agent/objects/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Configuration identifier (ID)"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Return object configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200SNMPOID"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Updates the specified object configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200SNMPOID"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter configuration",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/snmp_oid_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+	  "delete": {
+        "tags": [
+          "Objects"
+        ],
+        "summary": "Deletes the specified object configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "OID Configuration identifier (ID)"
+          }
+        ]
+      },
+      "x-web": {
+        "name": "SNMP",
+        "menu": [
+          "Services",
+          "SNMP",
+          "Data Sources"
+        ],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200SNMPOID": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/snmp_oid_multi_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200SNMPOIDMulti": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/snmp_oid_multi_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "snmp_oid_multi_options": {
+        "title": "snmp_oid_multi_options",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "x-web": {
+                  "pretty": "ID",
+                  "input-type": "input"
+                },
+                "description": "OID configuration identifier (ID)"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/snmp_oid_options"
+          }
+        ]
+      },
+      "snmp_oid_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable/disable SNMP object.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "tag_name": {
+            "type": "string",
+            "description": "Display name of configuration.",
+            "format": "uciname",
+            "maxLength": 128,
+            "x-web": {
+              "pretty": "Object name",
+              "input-type": "input",
+              "unique": true,
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_source": {
+            "type": "string",
+            "description": "Client service name.",
+            "enum": [
+              "mbus_client",
+              "modbus_client",
+              "dnp3_client"
+            ],
+            "x-web": {
+              "pretty": "Object source",
+              "input-type": "select",
+              "enum-pretty": {
+                "mbus_client": "M-Bus",
+                "modbus_client": "Modbus Client",
+                "dnp3_client": "DNP3 Client"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_id": {
+            "type": "string",
+            "description": "Value which will be written or read.",
+            "x-web": {
+              "pretty": "Object value",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_type": {
+            "type": "string",
+            "description": "Value data type.",
+            "enum": [
+              "string",
+              "binary",
+              "bool",
+              "int8",
+              "uint8",
+              "int16",
+              "uint16",
+              "int32",
+              "uint32",
+              "int64",
+              "uint64",
+              "float32",
+              "float64"
+            ],
+            "x-web": {
+              "pretty": "Object type",
+              "input-type": "select",
+              "enum-pretty": {
+                "string": "String",
+                "binary": "Binary",
+                "bool": "Bool",
+                "int8": "INT8",
+                "uint8": "UINT8",
+                "int16": "INT16",
+                "uint16": "UINT16",
+                "int32": "INT32",
+                "uint32": "UINT32",
+                "int64": "INT64",
+                "uint64": "UINT64",
+                "float32": "FLOAT32",
+                "float64": "FLOAT64"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_permissions": {
+            "type": "string",
+            "description": "Object read/write permissions",
+            "enum": [
+              "r",
+              "w",
+              "rw"
+            ],
+            "readOnly": true,
+            "x-web": {
+              "pretty": "Object permissions",
+              "input-type": "input",
+              "enum-pretty": {
+                "r": "Read-Only",
+                "w": "Write-Only",
+                "rw": "Read-Write"
+              }
+            }
+          },
+          "tag_start": {
+            "type": "string",
+            "description": "Value subset start index.",
+            "format": "irange(0, 65535)",
+            "x-web": {
+              "pretty": "Value start index",
+              "input-type": "input"
+            }
+          },
+          "tag_count": {
+            "type": "string",
+            "description": "Value subset count.",
+            "format": "irange(1, 65536)",
+            "x-web": {
+              "pretty": "Value subset count",
+              "input-type": "input"
+            }
+          },
+          "snmp_tag_oid": {
+            "type": "string",
+            "description": "OID at which the value will be accessible via SNMP.",
+            "format": "uinteger",
+            "x-web": {
+              "pretty": "SNMP OID",
+              "input-type": "input",
+              "unique": true,
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

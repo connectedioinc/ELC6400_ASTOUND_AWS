@@ -1,0 +1,26 @@
+Source-Makefile: package/utils/bluez/Makefile
+Build-Depends: dbus
+
+Package: bluez-libs
+Version: 5.56-1
+Depends: +libc +libpthread +USB_SUPPORT:kmod-bluetooth +glib2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Bluetooth library
+Maintainer: 
+CPE-ID: cpe:/a:bluez:bluez
+Source: bluez-5.56.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Bluetooth library
+Description: Bluetooth library
+http://www.bluez.org/
+
+@@
+
+

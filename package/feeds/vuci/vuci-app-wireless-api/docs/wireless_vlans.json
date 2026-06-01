@@ -1,0 +1,338 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Wireless VLANs",
+    "version": "1.0",
+    "contact": {},
+    "description": "Wireless VLANs API documentation"
+  },
+  "tags": [
+    {
+      "name": "VLAN"
+    }
+  ],
+  "paths": {
+    "/wireless/vlans/config": {
+      "get": {
+        "tags": ["VLAN"],
+        "summary": "Returns all wireless VLANs",
+        "description": "Returns a list of all configured wireless VLANs.",
+        "responses": {
+          "200": {
+            "description": "A list of wireless VLANs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/wifi_vlan_id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["VLAN"],
+        "summary": "Updates wireless VLANs",
+        "description": "Updates the wireless VLAN configurations.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/wifi_vlan_id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Wireless VLANs updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/wifi_vlan_id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "post": {
+        "tags": ["VLAN"],
+        "summary": "Creates a wireless VLAN configuration",
+        "description": "Creates a new wireless VLAN configuration.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/wifi_vlan"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/wifi_vlan_id"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["VLAN"],
+        "summary": "Deletes wireless VLAN configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Section names of wireless VLANs to delete.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Network", "Wireless", "PPSK"],
+        "hw_tags": {
+          "wifi": true
+        },
+        "hidden_documentation_page": true
+      }
+    },
+    "/wireless/vlans/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The ID of the WiFi VLAN"
+        }
+      ],
+      "get": {
+        "tags": ["VLAN"],
+        "summary": "Return wireless VLAN configuration",
+        "description": "Returns details of a specific WiFi VLAN.",
+        "responses": {
+          "200": {
+            "description": "WiFi VLAN details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/wifi_vlan_id"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates wireless VLAN configuration",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/wifi_vlan_id"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/wifi_vlan"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["VLAN"]
+      },
+      "delete": {
+        "summary": "Deletes wireless VLAN configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["VLAN"]
+      },
+      "x-web": {
+        "menu": ["Network", "Wireless", "PPSK"],
+        "hw_tags": {
+          "wifi": true
+        },
+        "hidden_documentation_page": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "wifi_vlan": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "maxLength": 14,
+            "description": "Name of the VLAN entry.",
+            "x-web": {
+              "pretty": "Name",
+              "group": "Wireless Security",
+              "input-type": "input"
+            }
+          },
+          "network": {
+            "type": "string",
+            "description": "Network interface that this VLAN ID will be assigned.",
+            "x-web": {
+              "pretty": "Network",
+              "group": "Wireless Security",
+              "input-type": "input",
+              "hw_tags": {
+                "is_access_point": false
+              }
+            }
+          },
+          "vid": {
+            "type": "string",
+            "description": "VLAN ID to match against (between 0 and 4094).",
+            "format": "irange(1,4094)",
+            "x-web": {
+              "pretty": "VLAN ID",
+              "group": "Wireless Security",
+              "input-type": "input"
+            }
+          },
+          "iface": {
+            "type": "string",
+            "description": "WiFi interface associated with the VLAN. Must reference an existing interface.",
+            "x-web": {
+              "pretty": "Interface",
+              "group": "Wireless Security",
+              "input-type": "input"
+            }
+          }
+        },
+        "required": ["id", "name", "network", "vid"]
+      },
+      "wifi_vlan_id": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "ID of the WiFi VLAN"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/wifi_vlan"
+          }
+        ]
+      }
+    }
+  }
+}

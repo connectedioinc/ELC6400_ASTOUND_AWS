@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/libs/libtlt_uci/Makefile
+
+Package: libtlt_uci
+Version: 2025-08-07-1
+Depends: +libc +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library with uci function.
+Maintainer: 
+Source: libtlt_uci-7.21-2025-08-07.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A library with uci function.
+Description: 	A simple lib with uci function. Created by Teltonika
+
+@@
+
+

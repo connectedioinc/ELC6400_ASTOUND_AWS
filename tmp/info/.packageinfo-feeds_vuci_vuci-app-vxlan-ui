@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-vxlan-ui/Makefile
+
+Package: vuci-app-vxlan-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-app-network-devices-ui +vuci-ui-core +vuci-app-vxlan-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for VXLAN
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for VXLAN
+Description: 	VXLAN is a tunneling technology used on large Layer 2 networks, and transmits packets over a VXLAN tunnel between source and destination devices.
+
+@@
+
+

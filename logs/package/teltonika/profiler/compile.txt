@@ -1,0 +1,7 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/teltonika/profiler'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/profiler-2.18/.pkgdir/profiler/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.profiler_installed
+echo "profiler" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/profiler.default.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/teltonika/profiler'
+time: package/teltonika/profiler/compile#0.10#0.12#0.20

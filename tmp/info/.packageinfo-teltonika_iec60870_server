@@ -1,0 +1,25 @@
+Source-Makefile: package/teltonika/iec60870_server/Makefile
+
+Package: iec60870_server
+Version: 2025-12-09
+Depends: +libc +libuci +libtlt_uci +libtlt-logger +lib60870 +libtlt_termios +libubus +libboardjson +libmnfinfo +MOBILE_SUPPORT:libmdcollect +MOBILE_SUPPORT:libgsm +GPS_SUPPORT:libgps +IO_SUPPORT:iomand
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: IEC 60870-5 Server by Teltonika
+Maintainer: 
+Require-User: iec60870_server=652:iec60870_server=652
+FileAttributes: /usr/bin/iec60870_server::::cap_net_bind_service=ep
+Source: iec60870_server-2025-12-09-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: IEC 60870-5 Server by Teltonika
+Description: 	Server application implementation intended for router data provision and control using IEC 60870 protocol.
+	Supports both 104 and 101 parts of specification.
+
+@@
+
+

@@ -1,0 +1,26 @@
+Source-Makefile: package/libs/libjson-c/Makefile
+Build-Types: host
+
+Package: libjson-c
+Version: 0.15-2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: javascript object notation
+Maintainer: Felix Fietkau <nbd@nbd.name>
+CPE-ID: cpe:/a:json-c:json-c
+Source: json-c-0.15-nodoc.tar.gz
+License: MIT
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: javascript object notation
+Description:  This package contains a library for javascript object notation backends.
+https://json-c.github.io/json-c/
+Felix Fietkau <nbd@nbd.name>
+@@
+
+

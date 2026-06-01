@@ -1,0 +1,6 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/flac'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/flac-1.3.3/.pkgdir/libflac/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.libflac_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/flac'
+time: package/libs/flac/compile#0.10#0.14#0.21

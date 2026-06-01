@@ -1,0 +1,23 @@
+Source-Makefile: package/kernel/r2ec/Makefile
+
+Package: kmod-r2ec
+Submenu: Other modules
+Version: <LINUX_VERSION>-2
+Depends: 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: STM32 R2EC (Router to Embedded board Communication) Driver
+Maintainer: 
+Source: 
+License: GPL-2.0-only
+LicenseFiles: LICENSE/GPL-2.0
+Type: ipkg
+Detail-Description: STM32 R2EC (Router to Embedded board Communication) Driver
+Description: STM32 R2EC (Router to Embedded board Communication) Driver
+
+@@
+
+

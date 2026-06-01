@@ -1,0 +1,25 @@
+Source-Makefile: package/libs/libsmpp34/Makefile
+
+Package: libsmpp34
+Version: 1.14.1-1
+Depends: +libc +libpthread +librt +zlib +libxml2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: C library for SMPP 3.4
+Maintainer: 
+Source: libsmpp34-1.14.1-09726c1cb1ce191cb2f5a848c3feda0f57755951.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: C library for SMPP 3.4
+Description: This package contains a C-language library implementing the SMPP Protocol version 3.4
+as specified by the SMPP Developers Forum.
+http://git.osmocom.org/libsmpp34
+
+@@
+
+

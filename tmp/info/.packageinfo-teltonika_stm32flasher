@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/stm32flasher/Makefile
+
+Package: stm32flasher
+Version: 2.7
+Depends: +libc +libgpiod
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Flasher utility for STM32
+Maintainer: 
+Source: stm32flasher-2.7-2.7.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Flasher utility for STM32
+Description: Flasher utility for STM32
+
+@@
+
+

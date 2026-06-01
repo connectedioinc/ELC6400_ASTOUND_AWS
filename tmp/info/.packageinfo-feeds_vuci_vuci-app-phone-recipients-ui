@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-phone-recipients-ui/Makefile
+
+Package: vuci-app-phone-recipients-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-phone-recipients-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Phone Recipients
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Phone Recipients
+Description: VuCI UI Support for Phone Recipients
+
+@@
+
+

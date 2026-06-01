@@ -1,0 +1,580 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Impulse counter inputs"
+    }
+  ],
+  "paths": {
+    "/impulse_counter/config": {
+      "get": {
+        "tags": [
+          "Impulse counter inputs"
+        ],
+        "summary": "Returns all Impulse counter inputs configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ImpulseCounterMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Impulse counter inputs"
+        ],
+        "summary": "Creates Impulse counter input configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200ImpulseCounter"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/impulse_counter_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Impulse counter inputs"
+        ],
+        "summary": "Updates specified Impulse counter inputs configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ImpulseCounterMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/impulse_counter_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Impulse counter inputs"
+        ],
+        "summary": "Deletes specified Impulse counter configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/delete_multi"
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Input/Output",
+          "Impulse Counter"
+        ],
+        "hw_tags": {
+          "ios": true
+        }
+      }
+    },
+    "/impulse_counter/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Impulse counter input configuration identifier (ID)"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Impulse counter inputs"
+        ],
+        "summary": "Returns the specified Impulse counter input configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ImpulseCounter"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Impulse counter inputs"
+        ],
+        "summary": "Updates the specified Impulse counter input configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ImpulseCounter"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/impulse_counter_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Impulse counter inputs"
+        ],
+        "summary": "Deletes the specified Impulse counter input configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Input/Output",
+          "Impulse Counter"
+        ],
+        "hw_tags": {
+          "ios": true
+        }
+      }
+    },
+    "/impulse_counter/actions/clear_database": {
+      "post": {
+        "tags": [
+          "Impulse counter inputs"
+        ],
+        "summary": "Clears collected count entries for all pins",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ClearDatabase"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Input/Output",
+          "Impulse Counter"
+        ],
+        "hw_tags": {
+          "ios": true
+        }
+      }
+    },
+    "/impulse_counter/historic/status": {
+      "get": {
+        "tags": [
+          "Impulse counter inputs"
+        ],
+        "summary": "Returns database entries",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200GetDatabaseEntries"
+          }
+        },
+        "parameters": [
+          {
+            "name": "filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "day",
+                "week",
+                "month"
+              ]
+            },
+            "description": "Select filter options, month returns last 30 days, week returns last 7 days, day returns last 24 hours."
+          }
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Input/Output",
+          "Impulse Counter"
+        ],
+        "hw_tags": {
+          "ios": true
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200ClearDatabase": {
+        "description": "Clears collected count entries for all pins",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200ImpulseCounter": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/impulse_counter_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200GetDatabaseEntries": {
+        "description": "Returns database entries",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "Count entry identifier."
+                      },
+                      "pin_name": {
+                        "type": "string",
+                        "description": "GPIO pin name."
+                      },
+                      "timestamp": {
+                        "type": "integer",
+                        "description": "Timestamp when entry was added to the database"
+                      },
+                      "count": {
+                        "type": "integer",
+                        "description": "Pin impulse count."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200ImpulseCounterMulti": {
+        "description": "Returns configurations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/impulse_counter_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "impulse_counter_single_options": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of configuration.",
+            "maxLength": 200,
+            "x-web": {
+              "pretty": "Name of configuration",
+              "input-type": "input"
+            }
+          },
+          "enabled": {
+            "type": "string",
+            "description": "Enable/disable Impulse counter input configuration.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "gpio": {
+            "type": "string",
+            "description": "Which GPIO pin the count will be collected for",
+            "x-web": {
+              "pretty": "GPIO Pin",
+              "input-type": "select",
+              "unique": true,
+              "enum-depends": [
+                {
+                  "hw_tags": {
+                    "din1": true,
+                    "din2": true,
+                    "dio0": false,
+                    "dio1": false,
+                    "dio2": false,
+                    "iio": true,
+                    "iio_counter_support": false
+                  },
+                  "values": [
+                    "din1",
+                    "din2"
+                  ]
+                },
+                {
+                  "hw_tags": {
+                    "din1": true,
+                    "din2": true,
+                    "dio0": false,
+                    "dio1": false,
+                    "dio2": false,
+                    "iio": true,
+                    "iio_counter_support": true
+                  },
+                  "values": [
+                    "din1",
+                    "din2",
+                    "iio"
+                  ]
+                },
+                {
+                  "hw_tags": {
+                    "din1": true,
+                    "din2": false,
+                    "dio0": false,
+                    "dio1": false,
+                    "dio2": false,
+                    "iio": false
+                  },
+                  "values": [
+                    "din1"
+                  ]
+                },
+                {
+                  "hw_tags": {
+                    "din1": false,
+                    "din2": false,
+                    "dio0": true,
+                    "dio1": true,
+                    "dio2": true,
+                    "iio": false
+                  },
+                  "values": [
+                    "dio0",
+                    "dio1",
+                    "dio2"
+                  ]
+                },
+                {
+                  "hw_tags": {
+                    "din1": false,
+                    "din2": false,
+                    "dio0": true,
+                    "dio1": true,
+                    "dio2": false,
+                    "iio": true,
+                    "iio_counter_support": false
+                  },
+                  "values": [
+                    "dio0",
+                    "dio1"
+                  ]
+                },
+                {
+                  "hw_tags": {
+                    "din1": false,
+                    "din2": false,
+                    "dio0": true,
+                    "dio1": true,
+                    "dio2": false,
+                    "iio": true,
+                    "iio_counter_support": true
+                  },
+                  "values": [
+                    "dio0",
+                    "dio1",
+                    "iio"
+                  ]
+                },
+                {
+                  "hw_tags": {
+                    "din1": false,
+                    "din2": false,
+                    "dio0": true,
+                    "dio1": true,
+                    "dio2": false,
+                    "iio": false
+                  },
+                  "values": [
+                    "dio0",
+                    "dio1"
+                  ]
+                }
+              ]
+            }
+          },
+          "edge": {
+            "type": "string",
+            "enum": [
+              "rising",
+              "falling",
+              "both"
+            ],
+            "default": "rising",
+            "description": "Select the edge option to have the impulse counter increment on the signal`s transition from low to high, high to low, or both.",
+            "x-web": {
+              "pretty": "Edge",
+              "input-type": "select",
+              "enum-pretty": {
+                "rising": "Rising",
+                "falling": "Falling",
+                "both": "Both"
+              }
+            }
+          },
+          "debounce": {
+            "type": "string",
+            "description": "Enable to prevent false counts by filtering out rapid, unintended signal fluctuations.",
+            "format": "irange(0, 1000)",
+            "x-web": {
+              "pretty": "Debounce",
+              "input-type": "input"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "gpio",
+          "edge"
+        ]
+      },
+      "impulse_counter_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Impulse counter input configuration identifier (ID)."
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "gpio",
+              "edge"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/impulse_counter_single_options"
+          }
+        ]
+      }
+    }
+  }
+}

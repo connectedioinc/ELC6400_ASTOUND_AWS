@@ -1,0 +1,329 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "BACnet BDT"
+    }
+  ],
+  "paths": {
+    "/bacnet/bdt/config": {
+      "get": {
+        "tags": [
+          "BACnet BDT"
+        ],
+        "summary": "Returns all BACnet BDT configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BACnetBDTMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "BACnet BDT"
+        ],
+        "summary": "Creates BACnet BDT configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200BACnetBDT"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bacnet_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "BACnet BDT"
+        ],
+        "summary": "Updates specified BACnet BDT configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BACnetBDTMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "$ref": "#/components/schemas/bacnet_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BACnet BDT"
+        ],
+        "summary": "Deletes specified BACnet BDT configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "BACnet",
+          "BACnet"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/bacnet/bdt/config/{id}": {
+      "get": {
+        "tags": [
+          "BACnet BDT"
+        ],
+        "summary": "Returns the specified BACnet BDT configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BACnetBDT"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "BACnet BDT configuration identifier (ID)."
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "BACnet BDT"
+        ],
+        "summary": "Updates the specified BACnet BDT configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BACnetBDT"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "BACnet BDT configuration identifier (ID)."
+          }
+        ],
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bacnet_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BACnet BDT"
+        ],
+        "summary": "Deletes the specified BACnet BDT configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "BACnet BDT configuration identifier (ID)."
+          }
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "BACnet",
+          "BACnet"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200BACnetBDT": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/bacnet_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200BACnetBDTMulti": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/bacnet_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "bacnet_single_options": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "string",
+            "description": "IP addresses of the BBMDs in the network.",
+            "format": "ipv4",
+            "x-web": {
+              "pretty": "IP address",
+              "input-type": "input"
+            }
+          },
+          "port": {
+            "type": "string",
+            "description": "Port numbers on which the BBMDs listen for BACnet/IP messages.",
+            "format": "port",
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input"
+            }
+          },
+          "mask": {
+            "type": "string",
+            "description": "Subnet masks used by the BBMDs to determine the range of IP addresses within a subnet.",
+            "format": "netmask",
+            "x-web": {
+              "pretty": "Netmask",
+              "input-type": "input"
+            }
+          }
+        }
+      },
+      "bacnet_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "BACnet BDT Configuration identifier (ID)."
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/bacnet_single_options"
+          }
+        ]
+      }
+    }
+  }
+}

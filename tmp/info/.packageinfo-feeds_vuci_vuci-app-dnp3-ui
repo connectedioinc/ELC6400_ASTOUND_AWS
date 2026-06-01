@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-dnp3-ui/Makefile
+
+Package: vuci-app-dnp3-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-app-universal-gateway-api +vuci-ui-core +vuci-app-dnp3-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for DNP3
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for DNP3
+Description: VuCI UI Support for DNP3
+
+@@
+
+

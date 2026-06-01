@@ -1,0 +1,7 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/luci/libs/luci-lib-ip'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luci-lib-ip/.pkgdir/luci-lib-ip/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.luci-lib-ip_installed
+echo "luci-lib-ip" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/luci-lib-ip.default.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/luci/libs/luci-lib-ip'
+time: package/feeds/luci/luci-lib-ip/compile#1.09#0.29#1.35

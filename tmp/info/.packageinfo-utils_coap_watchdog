@@ -1,0 +1,21 @@
+Source-Makefile: package/utils/coap_watchdog/Makefile
+
+Package: coap_watchdog
+Version: 1.0.0-3
+Depends: +libc +libcoap3 +libopenssl +libjson-c +zlib +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: CoAP watchdog client (libcoap + OpenSSL)
+Maintainer: 
+Source: 
+Type: ipkg
+Detail-Description: CoAP watchdog client (libcoap + OpenSSL)
+Description:  Small DTLS/CoAPS watchdog client using libcoap + OpenSSL.
+
+@@
+
+

@@ -1,0 +1,7 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/teltonika/ledman'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ledman-full/ledman-2.28/.pkgdir/ledman-full/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.ledman-full_installed
+echo "ledman-full" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/ledman.full.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/teltonika/ledman'
+time: package/teltonika/ledman/full/compile#0.10#0.13#0.23

@@ -1,0 +1,26 @@
+Source-Makefile: package/libs/lib60870/Makefile
+
+Package: lib60870
+Version: 63028a9287da3b075d4225effcf1dfaf5ea47ed1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: IEC 60870-5-101/104 protocol stack
+Maintainer: 
+Source: lib60870-63028a9287da3b075d4225effcf1dfaf5ea47ed1-63028a9287da3b075d4225effcf1dfaf5ea47ed1.tar.xz
+License: Commercial-License-Agreement
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: IEC 60870-5-101/104 protocol stack
+Description: 	lib60870 library for IEC 60870-5 based protocols in C
+
+	The current implementation contains code for the IEC 60870-5-101 (application layer and serial link layer) and IEC 60870-5-104 (protocool over TCP/IP) specifications.
+https://github.com/mz-automation/lib60870
+
+@@
+
+

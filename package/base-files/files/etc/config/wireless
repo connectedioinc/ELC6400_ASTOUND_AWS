@@ -1,0 +1,42 @@
+
+config wifi-device 'radio0'
+	option type 'mac80211'
+	option channel 'auto'
+	option hwmode '11g'
+	option path 'platform/soc/a000000.wifi'
+	option htmode 'HT20'
+	option country 'US'
+	option channels '1-13'
+	option ifname_prefix 'wlan0'
+
+config wifi-iface
+	option device 'radio0'
+	option mode 'ap'
+	option wifi_id 'wifi0'
+	option _device_id '1'
+	option encryption 'psk2'
+	option ssid 'ELC6400-1'
+	option network 'wifi'
+	option key 'CIO-000000'
+
+config wifi-device 'radio1'
+	option type 'mac80211'
+	option channel 'auto'
+	option hwmode '11a'
+	option path 'platform/soc/a800000.wifi'
+	option htmode 'VHT80'
+	option country 'US'
+	option channels '36-165'
+	option ifname_prefix 'wlan1'
+	option acs_exclude_dfs '1'
+
+config wifi-iface
+	option device 'radio1'
+	option mode 'ap'
+	option wifi_id 'wifi1'
+	option _device_id '2'
+	option encryption 'psk2'
+	option ssid 'ELC6400-2'
+	option network 'wifi'
+	option key 'CIO-000000'
+

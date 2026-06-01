@@ -1,0 +1,41 @@
+Source-Makefile: package/teltonika/tpm2_importer/Makefile
+
+Package: tpm2_importer
+Version: 7.21
+Depends: +libc +tpm2-tools +openssl-util
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: TPM2 importer
+Maintainer: 
+Source: tpm2_importer-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: TPM2 importer
+Description:   TPM2 key import utility. Works with ecc and rsa keys.
+
+@@
+
+Package: libtpm2_importer
+Version: 7.21
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: RUTOS TPM Importer library
+Maintainer: 
+Source: tpm2_importer-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: RUTOS TPM Importer library
+Description: 	A helper library for key management. It provides helper functions for working with TPM keys.
+
+@@
+
+

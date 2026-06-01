@@ -1,0 +1,51 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux'
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx'
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/localversion
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/kconfig.pl  + /media/home/FIRMWARES1/RUTX11/sdk2/target/linux/generic/config-6.6 /media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx/config-6.6 > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target
+awk '/^(#[[:space:]]+)?CONFIG_KERNEL/{sub("CONFIG_KERNEL_","CONFIG_");print}' /media/home/FIRMWARES1/RUTX11/sdk2/.config >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target
+echo "# CONFIG_KALLSYMS_EXTRA_PASS is not set" >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target
+echo "CONFIG_KALLSYMS_UNCOMPRESSED=y" >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/package-metadata.pl kconfig /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.packageinfo /media/home/FIRMWARES1/RUTX11/sdk2/.config 6.6 > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.override
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/kconfig.pl 'm+' '+' /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target /dev/null /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.override > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set
+mv /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.old
+grep -v INITRAMFS /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.old > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set
+echo 'CONFIG_INITRAMFS_SOURCE=""' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set
+echo '# CONFIG_INITRAMFS_FORCE is not set' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/modules
+cmp -s /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.prev || { cp /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config; cp /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.prev; }
+export MAKEFLAGS= ; [ -d /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/user_headers ] || make -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119 KCFLAGS="-fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi=target-arm_cortex-a7+neon-vfpv4_musl_eabi -fno-caller-saves " HOSTCFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include  -Wall -Wmissing-prototypes -Wstrict-prototypes" CROSS_COMPILE="arm-openwrt-linux-muslgnueabi-" ARCH="arm" KBUILD_HAVE_NLS=no KBUILD_BUILD_USER="" KBUILD_BUILD_HOST="" KBUILD_BUILD_TIMESTAMP="Wed Feb 25 13:58:09 2026" KBUILD_BUILD_VERSION="0" HOST_LOADLIBES="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib" KBUILD_HOSTLDLIBS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib" CONFIG_SHELL="bash" V=''  cmd_syscalls=  KERNELRELEASE=6.6.119 CC="arm-openwrt-linux-muslgnueabi-gcc" INSTALL_HDR_PATH=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/user_headers headers_install
+grep '=[ym]' /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set | LC_ALL=C sort | /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/mkhash md5 > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.vermagic
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.configured
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/vmlinux /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/System.map
+make -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119 KCFLAGS="-fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi=target-arm_cortex-a7+neon-vfpv4_musl_eabi -fno-caller-saves " HOSTCFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include  -Wall -Wmissing-prototypes -Wstrict-prototypes" CROSS_COMPILE="arm-openwrt-linux-muslgnueabi-" ARCH="arm" KBUILD_HAVE_NLS=no KBUILD_BUILD_USER="" KBUILD_BUILD_HOST="" KBUILD_BUILD_TIMESTAMP="Wed Feb 25 13:58:09 2026" KBUILD_BUILD_VERSION="0" HOST_LOADLIBES="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib" KBUILD_HOSTLDLIBS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib" CONFIG_SHELL="bash" V=''  cmd_syscalls=  KERNELRELEASE=6.6.119 CC="arm-openwrt-linux-muslgnueabi-gcc" zImage Image dtbs modules
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119'
+  LD      .tmp_vmlinux.kallsyms1
+  NM      .tmp_vmlinux.kallsyms1.syms
+  KSYMS   .tmp_vmlinux.kallsyms1.S
+  AS      .tmp_vmlinux.kallsyms1.o
+  LD      .tmp_vmlinux.kallsyms2
+  NM      .tmp_vmlinux.kallsyms2.syms
+  KSYMS   .tmp_vmlinux.kallsyms2.S
+  AS      .tmp_vmlinux.kallsyms2.o
+  LD      vmlinux
+  NM      System.map
+  SORTTAB vmlinux
+  OBJCOPY arch/arm/boot/Image
+  Kernel: arch/arm/boot/Image is ready
+  XZKERN  arch/arm/boot/compressed/piggy_data
+  AS      arch/arm/boot/compressed/piggy.o
+  LD      arch/arm/boot/compressed/vmlinux
+  OBJCOPY arch/arm/boot/zImage
+  Kernel: arch/arm/boot/zImage is ready
+make[6]: Nothing to be done for 'Image'.
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119'
+# If .config did not change, use the previous timestamp to avoid package rebuilds
+cmp -s /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.modules.save && mv /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.modules.save /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config; cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.modules.save
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.modules
+make -C image compile TARGET_BUILD=
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx/image'
+make[5]: Nothing to be done for 'compile'.
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx/image'
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx'
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux'
+time: target/linux/compile#19.82#6.15#25.87

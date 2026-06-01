@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-port-security-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-port-security-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +(HAS_DOT1X_SERVER||SWITCH_DEVICE):dsa-dot1x-server +(HAS_DOT1X_SERVER||SWITCH_DEVICE):radius_test +(HAS_DOT1X_CLIENT||SWITCH_DEVICE):dot1x-client +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for 802.1X
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for 802.1X
+Description: VuCI API Support for 802.1X
+
+@@
+
+

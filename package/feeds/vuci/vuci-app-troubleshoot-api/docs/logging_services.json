@@ -1,0 +1,382 @@
+{
+  "openapi": "3.0.0",
+  "tags": [],
+  "paths": {
+    "/logging/services/config": {
+      "get": {
+        "summary": "Returns Logging Services configuration",
+        "tags": ["Logging Services"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200Service"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates Logging configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ServiceSingle"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "$ref": "#/components/schemas/logging_services_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Logging Services"]
+      },
+      "post": {
+        "summary": "Creates Service Logging section",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200loggingMulti"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/logging_services_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Logging Services"]
+      },
+      "delete": {
+        "summary": "Deletes specified service's logging configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "tags": ["Logging Services"]
+      },
+      "x-web": {
+        "menu": [
+          "System",
+          "Maintenance",
+          "Troubleshoot"
+        ]
+      }
+    },
+    "/logging/services/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns Logging configuration",
+        "tags": ["Logging Services"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ServiceSingle"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configuration ID"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates Logging configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ServiceSingle"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configuration ID"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/logging_service_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Logging Services"]
+      },
+      "delete": {
+        "summary": "Deletes specified service's logging configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Logging Services"]
+      },
+      "x-web": {
+        "menu": [
+          "System",
+          "Maintenance",
+          "Troubleshoot"
+        ]
+      }
+    },
+    "/logging/services/status/{id}": {
+      "get": {
+        "summary": "Returns information about log file",
+        "tags": ["Logging Services"],
+        "responses": {
+          "200": {
+            "description": "Returns about logfile if it exists and is not empty",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "service": {
+                          "type": "string",
+                          "description": "Name of the service"
+                        },
+                        "log": {
+                          "type": "string",
+                          "description": "Logs collected from service with all instance logs"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "System",
+          "Maintenance",
+          "Troubleshoot"
+        ]
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Configuration ID"
+        }
+      ]
+    }
+  },
+  "components": {
+    "responses": {
+      "200loggingMulti": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/logging_services_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200Service": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/logging_services_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200ServiceSingle": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/logging_services_options"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "logging_services_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Configuration ID"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/logging_service_options"
+          }
+        ]
+      },
+      "logging_service_options": {
+        "title": "Logging single options",
+        "type": "object",
+        "properties": {
+          "name": {
+            "x-web": {
+              "pretty": "Name of service",
+              "input-type": "input"
+            },
+            "format": "string",
+            "type": "string",
+            "maxLength": 255,
+            "description": "Name of service"
+          },
+          "log_levels": {
+            "x-web": {
+              "pretty": "Log levels allowed to log from service.",
+              "input-type": "select"
+            },
+            "type": "array",
+            "format": "string",
+            "description": "Select one or more log levels to be enabled from the service.",
+            "items": {
+              "type": "string",
+              "enum": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,155 @@
+Source-Makefile: package/teltonika/modem_updater/Makefile
+
+Package: modem_updater-offline
+Version: 7.21
+Depends: +libc +libusb-1.0 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem firmware update tool by Teltonika, all files included
+Maintainer: 
+Source: modem_updater-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem firmware update tool by Teltonika, all files included
+Description: 	Modem firmware update tool for offline use by Teltonika, all files included
+
+@@
+
+Package: modem_updater
+Version: 7.21
+Depends: +libc +libusb-1.0 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem firmware update tool by Teltonika, required files are downloaded automatically
+Maintainer: 
+Source: modem_updater-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem firmware update tool by Teltonika, required files are downloaded automatically
+Description: 	Modem firmware update tool for online use by Teltonika, required files are downloaded automatically
+
+@@
+
+Package: quectel_flash
+Version: 7.21
+Depends: +libc +libusb-1.0 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem firmware update tool for Quectel modems
+Maintainer: 
+Source: modem_updater-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem firmware update tool for Quectel modems
+Description: 	Modem firmware update tool for Quectel modems
+
+@@
+
+Package: Meig_Firehose
+Version: 7.21
+Depends: +libc +libusb-1.0 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem firmware update tool for Meiglink modems
+Maintainer: 
+Source: modem_updater-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem firmware update tool for Meiglink modems
+Description: 	Modem firmware update tool for Meiglink modems
+
+@@
+
+Package: QDLoader
+Version: 7.21
+Depends: +libc +libusb-1.0 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem firmware update tool for Quectel modems
+Maintainer: 
+Source: modem_updater-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem firmware update tool for Quectel modems
+Description: 	Modem firmware update tool for Quectel modems
+
+@@
+
+Package: fbfdownloader
+Version: 7.21
+Depends: +libc +libusb-1.0 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem firmware update tool for Meiglink modems
+Maintainer: 
+Source: modem_updater-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem firmware update tool for Meiglink modems
+Description: 	Modem firmware update tool for Meiglink modems
+
+@@
+
+Package: uxfp
+Version: 7.21
+Depends: +libc +libusb-1.0 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem firmware update tool for Telit modems
+Maintainer: 
+Source: modem_updater-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem firmware update tool for Telit modems
+Description: 	Modem firmware update tool for Telit modems
+
+@@
+
+Package: qdownload
+Version: 7.21
+Depends: +libc +libusb-1.0 +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem firmware update tool for Eigencomm modems
+Maintainer: 
+Source: modem_updater-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem firmware update tool for Eigencomm modems
+Description: 	Modem firmware update tool for Eigencomm modems
+
+@@
+
+

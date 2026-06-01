@@ -1,0 +1,264 @@
+Source-Makefile: package/teltonika/snmp-mod/Makefile
+
+Package: snmp
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +snmpd +snmp-mib +snmp-mod-chilli +snmp-mod-device +GPS_SUPPORT:snmp-mod-gps +MOBILE_SUPPORT:snmp-mod-gsm +IO_SUPPORT:snmp-mod-io +snmp-mod-sqm +snmp-mod-vlan +WIFI_SUPPORT:snmp-mod-wireless +snmp-mod-port +snmp-mod-mwan3 +snmp-mod-universalgwd +snmptrap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP Meta package
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP Meta package
+Description: 	SNMP is an SNMP protocol implementation with custom
+	Teltonika modules, a unique MIB file and SNMP Traps.
+
+@@
+
+Package: snmp-mib
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP teltonika MIBs
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP teltonika MIBs
+Description: SNMP teltonika MIBs
+
+@@
+
+Package: snmp-mod-chilli
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +libuci +libtltchilli
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP coovachilli module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP coovachilli module
+Description: SNMP coovachilli module
+
+@@
+
+Package: snmp-mod-device
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +libuci +libmnfinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP mnf info module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP mnf info module
+Description: SNMP mnf info module
+
+@@
+
+Package: snmp-mod-gps
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +libgps +libgsm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP GPS module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP GPS module
+Description: SNMP GPS module
+
+@@
+
+Package: snmp-mod-gsm
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +libgsm +libmdcollect
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP GSM module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP GSM module
+Description: SNMP GSM module
+
+@@
+
+Package: snmp-mod-io
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +iomand
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP I/O module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP I/O module
+Description: SNMP I/O module
+
+@@
+
+Package: snmp-mod-wireless
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +libuci +libubus +libblobmsg-json +libapi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP wireless module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP wireless module
+Description: SNMP wireless module
+
+@@
+
+Package: snmp-mod-vlan
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP VLAN module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP VLAN module
+Description: SNMP VLAN module
+
+@@
+
+Package: snmp-mod-sqm
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP traffic shaping/SQM module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP traffic shaping/SQM module
+Description: SNMP traffic shaping/SQM module
+
+@@
+
+Package: snmp-mod-port
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +libapi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP Port module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP Port module
+Description: SNMP Port module
+
+@@
+
+Package: snmp-mod-mwan3
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP MultiWAN (MWAN3) module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP MultiWAN (MWAN3) module
+Description: SNMP MultiWAN (MWAN3) module
+
+@@
+
+Package: snmp-mod-universalgwd
+Submenu: SNMP modules
+Version: 2026-01-14-1
+Depends: +libc +libnetsnmp +libubus +libubox +libtag +libblobmsg-json +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SNMP Universal Gateway module
+Maintainer: 
+Source: snmp-mod-3.21-2026-01-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SNMP Universal Gateway module
+Description: SNMP Universal Gateway module
+
+@@
+
+

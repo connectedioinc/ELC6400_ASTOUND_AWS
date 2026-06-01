@@ -1,0 +1,3 @@
+./doc.go
+./hwaddr.go
+./serialnumber_notmacos.go

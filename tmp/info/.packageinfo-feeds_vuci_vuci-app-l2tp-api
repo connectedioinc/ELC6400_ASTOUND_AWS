@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-l2tp-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-l2tp-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +xl2tpd +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for L2TP
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for L2TP
+Description: VuCI API Support for L2TP
+
+@@
+
+

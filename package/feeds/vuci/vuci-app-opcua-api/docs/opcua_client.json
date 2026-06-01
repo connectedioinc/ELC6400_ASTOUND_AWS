@@ -1,0 +1,853 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "OPC UA Client Global Settings"
+    }
+  ],
+  "paths": {
+    "/opcua/global": {
+      "get": {
+        "tags": [
+          "Client Global Settings"
+        ],
+        "summary": "Returns all OPC UA Client Global Settings configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200opcuaGlobal"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Client Global Settings"
+        ],
+        "summary": "Updates specified OPC UA Client Global Settings configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200opcuaGlobal"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/opcua_global_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Client"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/opcua/database/entries/status": {
+      "get": {
+        "tags": [
+          "Client Global Settings"
+        ],
+        "summary": "Returns all OPC UA Client database entries",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OPCUADatabaseEntries"
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Limit number of items returned"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Number of items to skip from the beginning"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by ID"
+          },
+          {
+            "name": "group_name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by group name"
+          },
+          {
+            "name": "group_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by group ID"
+          }
+        ]
+      },
+      "x-web": {
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Client"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/opcua/actions/test_server": {
+      "post": {
+        "tags": [
+          "Client Global Settings"
+        ],
+        "summary": "Test OPC UA Server",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OPCUAGlobalTestResponse"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Test payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/opcua_global_server_test_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "hidden": true,
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Client"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/opcua/actions/test_server_node": {
+      "post": {
+        "tags": [
+          "Client Global Settings"
+        ],
+        "summary": "Test OPC UA Server Node",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OPCUAGlobalTestResponse"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Test payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/opcua_global_server_node_test_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "hidden": true,
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Client"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/opcua/actions/test_group_value": {
+      "post": {
+        "tags": [
+          "Client Global Settings"
+        ],
+        "summary": "Test OPC UA Group Value",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OPCUAGlobalTestResponse"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Test payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/opcua_global_group_value_test_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "hidden": true,
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Client"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/opcua/actions/test_group": {
+      "post": {
+        "tags": [
+          "Client Global Settings"
+        ],
+        "summary": "Test OPC UA Group",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OPCUAGlobalTestResponse"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Test payload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/opcua_global_group_test_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "hidden": true,
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Client"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200opcuaGlobal": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/opcua_global_single_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200OPCUAGlobalTestResponse": {
+        "description": "Returns test results",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "string",
+                      "description": "Test results"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200OPCUADatabaseEntries": {
+        "description": "Database entries result",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/opcua_database_entry"
+                  }
+                },
+                "metadata": {
+                  "type": "object",
+                  "required": ["total"],
+                  "properties": {
+                    "total": {
+                      "type": "string",
+                      "format": "uinteger"
+                    },
+                    "limit": {
+                      "type": "string",
+                      "format": "uinteger"
+                    },
+                    "offset": {
+                      "type": "string",
+                      "format": "uinteger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "opcua_global_server_options": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "OPC UA endpoint URL.",
+            "format": "url",
+            "x-web": {
+              "pretty": "URL",
+              "input-type": "input"
+            }
+          },
+          "timeout": {
+            "type": "string",
+            "description": "Server timeout (ms).",
+            "format": "irange(10, 3600000)",
+            "default": "5000",
+            "x-web": {
+              "pretty": "Timeout",
+              "input-type": "input"
+            }
+          },
+          "identity": {
+            "type": "string",
+            "description": "Client identity",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Identity",
+              "input-type": "select",
+              "enum-pretty": {
+                "0": "Anonymous",
+                "1": "Credentials"
+              }
+            }
+          },
+          "username": {
+            "type": "string",
+            "description": "Client username.",
+            "x-web": {
+              "pretty": "Username",
+              "depends": [
+                {
+                  "identity": "1"
+                }
+              ],
+              "input-type": "input"
+            }
+          },
+          "password": {
+            "type": "string",
+            "description": "Client password",
+            "x-web": {
+              "pretty": "Password",
+              "depends": [
+                {
+                  "identity": "1"
+                }
+              ],
+              "input-type": "input"
+            }
+          },
+          "security_mode": {
+            "x-web": {
+              "pretty": "Security mode",
+              "input-type": "select",
+              "enum-pretty": {
+                "0": "None",
+                "1": "Sign",
+                "2": "Sign & encrypt"
+              }
+            },
+            "type": "string",
+            "description": "OPC UA security mode.",
+            "enum": [
+              "0",
+              "1",
+              "2"
+            ]
+          },
+          "application_uri": {
+            "type": "string",
+            "description": "Should match SubjectAlternativeName in client certificate",
+            "format": "string",
+            "x-web": {
+              "depends": [
+                {
+                  "security_mode": "1"
+                },
+                {
+                  "security_mode": "2"
+                }
+              ],
+              "pretty": "Application URI",
+              "input-type": "input"
+            }
+          },
+          "certificate": {
+            "type": "string",
+            "description": "Upload certificate file",
+            "format": "file_validation",
+            "x-web": {
+              "pretty": "Certificate file",
+              "input-type": "input",
+              "upload_endpoint": "/opcua/server/config/{id}",
+              "depends": [
+                {
+                  "security_mode": "1"
+                },
+                {
+                  "security_mode": "2"
+                }
+              ]
+            }
+          },
+          "key": {
+            "type": "string",
+            "description": "Upload key file",
+            "format": "file_validation",
+            "x-web": {
+              "pretty": "Key file",
+              "input-type": "input",
+              "upload_endpoint": "/opcua/server/config/{id}",
+              "depends": [
+                {
+                  "security_mode": "1"
+                },
+                {
+                  "security_mode": "2"
+                }
+              ]
+            }
+          },
+          "tcl": {
+            "type": "array",
+            "description": "Upload tcl files",
+            "items": {
+              "type": "string",
+              "format": "file_validation"
+            },
+            "x-web": {
+              "pretty": "TCL files",
+              "input-type": "input",
+              "upload_endpoint": "/opcua/server/config/{id}",
+              "depends": [
+                {
+                  "security_mode": "1"
+                },
+                {
+                  "security_mode": "2"
+                }
+              ]
+            }
+          }
+        },
+        "required": ["url", "timeout"]
+      },
+      "opcua_global_server_node_options": {
+        "type": "object",
+        "properties": {
+          "ns": {
+            "type": "string",
+            "description": "Node ID namespace.",
+            "format": "irange(0, 65535)",
+            "x-web": {
+              "pretty": "ID namespace",
+              "input-type": "input"
+            }
+          },
+          "type": {
+            "type": "string",
+            "description": "Node ID type.",
+            "enum": [
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "x-web": {
+              "pretty": "ID type",
+              "input-type": "select",
+              "enum-pretty": {
+                "0": "Numeric",
+                "1": "String",
+                "2": "GUID",
+                "3": "Bytestring"
+              }
+            }
+          },
+          "node_id": {
+            "type": "string",
+            "description": "Node ID",
+            "x-web": {
+              "pretty": "Node ID",
+              "input-type": "input"
+            }
+          }
+        },
+        "required": ["ns", "type", "node_id"]
+      },
+      "opcua_global_group_value_options": {
+        "type": "object",
+        "properties": {
+          "prefix": {
+            "type": "string",
+            "description": "String before the value.",
+            "x-web": {
+              "pretty": "Prefix",
+              "input-type": "input"
+            }
+          },
+          "postfix": {
+            "type": "string",
+            "description": "String after the value.",
+            "x-web": {
+              "pretty": "Postfix",
+              "input-type": "input"
+            }
+          },
+          "replacement": {
+            "type": "string",
+            "description": "String to replace everything in case of failure.",
+            "x-web": {
+              "pretty": "Replacement",
+              "input-type": "input"
+            }
+          }
+        }
+      },
+      "opcua_global_group_options": {
+        "type": "object",
+        "properties": {
+          "fail_mode": {
+            "type": "string",
+            "description": "When to consider retrieval a failure.",
+            "enum": [
+              "0",
+              "1",
+              "2"
+            ],
+            "x-web": {
+              "pretty": "Failure mode",
+              "input-type": "select",
+              "enum-pretty": {
+                "0": "None",
+                "1": "Any",
+                "2": "All"
+              }
+            }
+          },
+          "replacement": {
+            "type": "string",
+            "description": "String to replace results of a failure.",
+            "x-web": {
+              "pretty": "Failure replacement",
+              "input-type": "input"
+            }
+          },
+          "prefix": {
+            "type": "string",
+            "description": "String going before all the values.",
+            "x-web": {
+              "pretty": "Prefix",
+              "input-type": "input"
+            }
+          },
+          "midfix": {
+            "type": "string",
+            "description": "String going between all the values.",
+            "x-web": {
+              "pretty": "Midfix",
+              "input-type": "input"
+            }
+          },
+          "postfix": {
+            "type": "string",
+            "description": "String going after all the values.",
+            "x-web": {
+              "pretty": "Postfix",
+              "input-type": "input"
+            }
+          }
+        }
+      },
+
+      "opcua_global_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enables/disables OPC UA client functionality,",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ]
+          }
+        }
+      },
+      "opcua_global_server_test_options": {
+        "$ref": "#/components/schemas/opcua_global_server_options"
+      },
+      "opcua_global_server_node_test_options": {
+        "type": "object",
+        "properties": {
+          "server": {
+            "$ref": "#/components/schemas/opcua_global_server_options"
+          },
+          "server_node": {
+            "$ref": "#/components/schemas/opcua_global_server_node_options"
+          }
+        }
+      },
+      "opcua_global_group_test_options": {
+        "type": "object",
+        "properties": {
+          "servers": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/opcua_global_server_options"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "OPC UA Server Instance identifier (ID)."
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
+          },
+          "server_nodes": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/opcua_global_server_node_options"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "OPC UA Server Node Configuration identifier (ID)."
+                    },
+                    "server_id": {
+                      "type": "string",
+                      "description": "OPC UA Server Instance identifier (ID)."
+                    }
+                  },
+                  "required": [
+                    "id", "server_id"
+                  ]
+                }
+              ]
+            }
+          },
+          "group_values": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/opcua_global_group_value_options"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "server_node": {
+                      "type": "string",
+                      "description": "OPC UA Server Node Configuration identifier (ID)."
+                    }
+                  },
+                  "required": [
+                    "server_node"
+                  ]
+                }
+              ]
+            }
+          },
+          "group": {
+            "$ref": "#/components/schemas/opcua_global_group_options"
+          }
+        },
+        "required": ["servers", "server_nodes", "group_values", "group"]
+      },
+      "opcua_global_group_value_test_options": {
+        "type": "object",
+        "properties": {
+          "server": {
+            "$ref": "#/components/schemas/opcua_global_server_options"
+          },
+          "server_node": {
+            "$ref": "#/components/schemas/opcua_global_server_node_options"
+          },
+          "group_value": {
+            "$ref": "#/components/schemas/opcua_global_group_value_options"
+          }
+        }
+      },
+      "opcua_database_entry": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uinteger"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "uinteger"
+          },
+          "group_name": {
+            "type": "string"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

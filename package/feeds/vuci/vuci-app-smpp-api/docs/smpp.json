@@ -1,0 +1,459 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/smpp/config": {
+      "x-web": {
+        "menu": ["Services", "Mobile Utilities", "SMS Gateway", "SMPP"],
+        "hw_tags": {
+          "mobile": true,
+          "is_access_point": false
+        },
+        "name": "SMPP"
+      },
+      "get": {
+        "summary": "Returns SMPP configuration in an array",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/smpp_options_resp"
+                      }
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-services-smpp-general-arr",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Uploads SMPP files",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "Uploaded file path."
+                        }
+                      }
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["SMPP"],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "enum": ["tls_ciphers", "tls_crt", "tls_key"]
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": ["option", "file"]
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates SMPP configuration in an array",
+        "operationId": "put-services-smpp-general-arr",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/smpp_options_resp"
+                      }
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/smpp_options"
+                    }
+                  }
+                },
+                "required": ["data"]
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      }
+    },
+    "/smpp/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "x-web": {
+        "menu": ["Services", "Mobile Utilities", "SMS Gateway", "SMPP"],
+        "hw_tags": {
+          "mobile": true,
+          "is_access_point": false
+        },
+        "name": "SMPP"
+      },
+      "get": {
+        "summary": "Returns SMPP configuration",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/smpp_options_resp"
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "operationId": "get-services-smpp-general",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates SMPP configuration",
+        "operationId": "put-services-smpp-general",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/smpp_options_resp"
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/smpp_single_options"
+                  }
+                },
+                "required": ["data"]
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      }
+    }
+  },
+  "components": {
+    "responses": {},
+    "schemas": {
+      "smpp_options": {
+        "title": "smpp_general",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Configuration ID."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/smpp_single_options"
+          }
+        ],
+        "required": ["id"]
+      },
+      "smpp_single_options": {
+        "title": "smpp_general",
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "enum": ["0", "1"],
+            "description": "Enables or disables smpp server",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "username": {
+            "type": "string",
+            "description": "Username for authentication on SMPP server. All characters are allowed except ` and space.",
+            "format": "credentials_validate",
+            "maxLength": 15,
+            "default": "admin",
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input"
+            }
+          },
+          "password": {
+            "type": "string",
+            "description": "Password for authentication on SMPP server. All characters are allowed except ` and space.",
+            "format": "credentials_validate",
+            "maxLength": 8,
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input"
+            }
+          },
+          "port": {
+            "type": "string",
+            "description": "A port that will be used for smpp server communications. Allowed all not used ports (0-65535)",
+            "format": "port",
+            "default": "2775",
+            "x-web": {
+              "pretty": "Server port",
+              "input-type": "input"
+            }
+          },
+          "modem": {
+            "type": "string",
+            "description": "Modem",
+            "x-web": {
+              "pretty": "Modem",
+              "input-type": "select",
+              "hw_tags": {
+                "dual_modem": true
+              },
+              "enum-pretty": {
+                "$ref": "#/x-schemas/modem_names"
+              },
+              "enum-depends": {
+                "$ref": "#/x-schemas/modem_select"
+              }
+            }
+          },
+          "timeout": {
+            "type": "string",
+            "description": "Connection timeout in seconds",
+            "format": "irange(1, 500)",
+            "x-web": {
+              "pretty": "Timeout",
+              "input-type": "input"
+            }
+          },
+          "use_tls_ssl": {
+            "type": "string",
+            "description": "Enable to use TLS/SSL for connection",
+            "enum": ["0", "1"],
+            "format": "is_bool",
+            "x-web": {
+              "pretty": "Use TLS/SSL",
+              "input-type": "switch"
+            }
+          },
+          "device_files": {
+            "type": "string",
+            "enum": ["0", "1"],
+            "format": "is_bool",
+            "description": "Choose this option if you want to select certificate files from device."
+          },
+          "tls_ciphers": {
+            "type": "string",
+            "description": "Upload CA file",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/smpp/config",
+              "pretty": "CA file",
+              "input-type": "input",
+              "depends": [
+                {
+                  "use_tls_ssl": "1"
+                }
+              ]
+            }
+          },
+          "tls_ciphers:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "tls_crt": {
+            "type": "string",
+            "description": "Upload certificate file",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/smpp/config",
+              "pretty": "Certificate file",
+              "input-type": "input",
+              "depends": [
+                {
+                  "use_tls_ssl": "1"
+                }
+              ]
+            }
+          },
+          "tls_crt:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "tls_key": {
+            "type": "string",
+            "description": "Upload key file",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/smpp/config",
+              "pretty": "Key file",
+              "input-type": "input",
+              "depends": [
+                {
+                  "use_tls_ssl": "1"
+                }
+              ]
+            }
+          },
+          "tls_key:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          }
+        }
+      },
+      "smpp_options_resp": {
+        "allOf": [
+          {
+            "title": "smpp_general",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Configuration ID."
+              },
+              "password:set": {
+                "type": "string",
+                "description": "Indicates if 'password' option is set.",
+                "readOnly": true,
+                "enum": ["0", "1"]
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/smpp_single_options"
+          }
+        ],
+        "required": ["id"]
+      }
+    }
+  }
+}

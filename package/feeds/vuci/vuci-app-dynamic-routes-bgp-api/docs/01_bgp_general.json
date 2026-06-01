@@ -1,0 +1,1811 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/bgp/global": {
+      "get": {
+        "operationId": "get-multi-bgp-general-config",
+        "summary": "Returns BGP global configuration",
+        "description": "",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgGe"
+          }
+        },
+        "tags": ["Global Settings"],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "operationId": "put-multi-bgp-general-config",
+        "summary": "Updates BGP global configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgGe"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bgp_general_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Global Settings"]
+      },
+      "post": {
+        "operationId": "post-bgp-general-config",
+        "summary": "Uploads custom BGP configuration file",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/bgpd_custom_conf"
+        },
+        "tags": ["Global Settings"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "BGP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "BGP"
+      }
+    },
+    "/bgp/status": {
+      "get": {
+        "operationId": "get-bgp-status",
+        "summary": "Fetches data about BGP neighbors",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "default": {
+                          "type": "object",
+                          "properties": {
+                            "routerId": {
+                              "type": "string",
+                              "description": "Unique identifier for the router."
+                            },
+                            "vrfName": {
+                              "type": "string",
+                              "description": "Name of the VRF (Virtual Routing and Forwarding)."
+                            },
+                            "vrfId": {
+                              "type": "integer",
+                              "description": "Identifier for the VRF."
+                            },
+                            "routes": {
+                              "type": "object",
+                              "properties": {
+                                "10.65.7.0/24": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "valid": {
+                                        "type": "boolean",
+                                        "description": "Indicates if the route is valid."
+                                      },
+                                      "prefixLen": {
+                                        "type": "integer",
+                                        "description": "Length of the prefix for the route."
+                                      },
+                                      "network": {
+                                        "type": "string",
+                                        "description": "Network address of the route."
+                                      },
+                                      "origin": {
+                                        "type": "string",
+                                        "description": "Origin of the route (e.g., IGP, EGP, or incomplete)."
+                                      },
+                                      "nexthops": {
+                                        "type": "array",
+                                        "description": "List of next hops for the route.",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "used": {
+                                              "type": "boolean",
+                                              "description": "Indicates if the next-hop is currently used."
+                                            },
+                                            "afi": {
+                                              "type": "string",
+                                              "description": "Address Family Identifier (e.g., IPv4 or IPv6)."
+                                            },
+                                            "hostname": {
+                                              "type": "string",
+                                              "description": "Hostname of the next-hop device."
+                                            },
+                                            "ip": {
+                                              "type": "string",
+                                              "description": "IP address of the next-hop."
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "path": {
+                                        "type": "string",
+                                        "description": "AS path information for the route."
+                                      },
+                                      "peerId": {
+                                        "type": "string",
+                                        "description": "Identifier for the peer associated with the route."
+                                      },
+                                      "pathFrom": {
+                                        "type": "string",
+                                        "description": "Source of the path (e.g., external or internal)."
+                                      },
+                                      "prefix": {
+                                        "type": "string",
+                                        "description": "Prefix of the route."
+                                      },
+                                      "weight": {
+                                        "type": "integer",
+                                        "description": "Weight assigned to the route."
+                                      },
+                                      "metric": {
+                                        "type": "integer",
+                                        "description": "Metric value for the route."
+                                      },
+                                      "selectionReason": {
+                                        "type": "string",
+                                        "description": "Reason why this route was selected as the best path."
+                                      },
+                                      "bestpath": {
+                                        "type": "boolean",
+                                        "description": "Indicates whether this route is the best path."
+                                      },
+                                      "version": {
+                                        "type": "integer",
+                                        "description": "Version number of the route, used for tracking updates."
+                                      }
+                                    }
+                                  }
+                                },
+                                "192.168.10.0/24": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "valid": {
+                                        "type": "boolean",
+                                        "description": "Indicates if the route is valid."
+                                      },
+                                      "pathFrom": {
+                                        "type": "string",
+                                        "description": "Source of the path (e.g., external or internal)."
+                                      },
+                                      "network": {
+                                        "type": "string",
+                                        "description": "Network address of the route."
+                                      },
+                                      "origin": {
+                                        "type": "string",
+                                        "description": "Origin of the route (e.g., IGP, EGP, or incomplete)."
+                                      },
+                                      "nexthops": {
+                                        "type": "array",
+                                        "description": "List of next hops for the route.",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "used": {
+                                              "type": "boolean",
+                                              "description": "Indicates if the next-hop is currently used."
+                                            },
+                                            "afi": {
+                                              "type": "string",
+                                              "description": "Address Family Identifier (e.g., IPv4 or IPv6)."
+                                            },
+                                            "hostname": {
+                                              "type": "string",
+                                              "description": "Hostname of the next-hop device."
+                                            },
+                                            "ip": {
+                                              "type": "string",
+                                              "description": "IP address of the next-hop."
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "path": {
+                                        "type": "string",
+                                        "description": "AS path information for the route."
+                                      },
+                                      "version": {
+                                        "type": "integer",
+                                        "description": "Version number of the route, used for tracking updates."
+                                      },
+                                      "weight": {
+                                        "type": "integer",
+                                        "description": "Weight assigned to the route."
+                                      },
+                                      "metric": {
+                                        "type": "integer",
+                                        "description": "Metric value for the route."
+                                      },
+                                      "peerId": {
+                                        "type": "string",
+                                        "description": "Identifier for the peer associated with the route."
+                                      },
+                                      "prefixLen": {
+                                        "type": "integer",
+                                        "description": "Length of the prefix for the route."
+                                      },
+                                      "prefix": {
+                                        "type": "string",
+                                        "description": "Prefix of the route."
+                                      },
+                                      "selectionReason": {
+                                        "type": "string",
+                                        "description": "Reason why this route was selected as the best path."
+                                      },
+                                      "bestpath": {
+                                        "type": "boolean",
+                                        "description": "Indicates whether this route is the best path."
+                                      }
+                                    }
+                                  }
+                                },
+                                "192.168.1.0/24": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "valid": {
+                                        "type": "boolean",
+                                        "description": "Indicates if the route is valid."
+                                      },
+                                      "prefixLen": {
+                                        "type": "integer",
+                                        "description": "Length of the prefix for the route."
+                                      },
+                                      "network": {
+                                        "type": "string",
+                                        "description": "Network address of the route."
+                                      },
+                                      "origin": {
+                                        "type": "string",
+                                        "description": "Origin of the route (e.g., IGP, EGP, or incomplete)."
+                                      },
+                                      "nexthops": {
+                                        "type": "array",
+                                        "description": "List of next hops for the route.",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "used": {
+                                              "type": "boolean",
+                                              "description": "Indicates if the next-hop is currently used."
+                                            },
+                                            "afi": {
+                                              "type": "string",
+                                              "description": "Address Family Identifier (e.g., IPv4 or IPv6)."
+                                            },
+                                            "hostname": {
+                                              "type": "string",
+                                              "description": "Hostname of the next-hop device."
+                                            },
+                                            "ip": {
+                                              "type": "string",
+                                              "description": "IP address of the next-hop."
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "path": {
+                                        "type": "string",
+                                        "description": "AS path information for the route."
+                                      },
+                                      "peerId": {
+                                        "type": "string",
+                                        "description": "Identifier for the peer associated with the route."
+                                      },
+                                      "pathFrom": {
+                                        "type": "string",
+                                        "description": "Source of the path (e.g., external or internal)."
+                                      },
+                                      "prefix": {
+                                        "type": "string",
+                                        "description": "Prefix of the route."
+                                      },
+                                      "weight": {
+                                        "type": "integer",
+                                        "description": "Weight assigned to the route."
+                                      },
+                                      "metric": {
+                                        "type": "integer",
+                                        "description": "Metric value for the route."
+                                      },
+                                      "selectionReason": {
+                                        "type": "string",
+                                        "description": "Reason why this route was selected as the best path."
+                                      },
+                                      "bestpath": {
+                                        "type": "boolean",
+                                        "description": "Indicates whether this route is the best path."
+                                      },
+                                      "version": {
+                                        "type": "integer",
+                                        "description": "Version number of the route, used for tracking updates."
+                                      }
+                                    }
+                                  }
+                                },
+                                "192.168.2.0/24": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "valid": {
+                                        "type": "boolean",
+                                        "description": "Indicates if the route is valid."
+                                      },
+                                      "prefixLen": {
+                                        "type": "integer",
+                                        "description": "Length of the prefix for the route."
+                                      },
+                                      "network": {
+                                        "type": "string",
+                                        "description": "Network address of the route."
+                                      },
+                                      "origin": {
+                                        "type": "string",
+                                        "description": "Origin of the route (e.g., IGP, EGP, or incomplete)."
+                                      },
+                                      "nexthops": {
+                                        "type": "array",
+                                        "description": "List of next hops for the route.",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "used": {
+                                              "type": "boolean",
+                                              "description": "Indicates if the next-hop is currently used."
+                                            },
+                                            "afi": {
+                                              "type": "string",
+                                              "description": "Address Family Identifier (e.g., IPv4 or IPv6)."
+                                            },
+                                            "hostname": {
+                                              "type": "string",
+                                              "description": "Hostname of the next-hop device."
+                                            },
+                                            "ip": {
+                                              "type": "string",
+                                              "description": "IP address of the next-hop."
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "path": {
+                                        "type": "string",
+                                        "description": "AS path information for the route."
+                                      },
+                                      "peerId": {
+                                        "type": "string",
+                                        "description": "Identifier for the peer associated with the route."
+                                      },
+                                      "pathFrom": {
+                                        "type": "string",
+                                        "description": "Source of the path (e.g., external or internal)."
+                                      },
+                                      "locPrf": {
+                                        "type": "integer",
+                                        "description": "Local preference value for the route."
+                                      },
+                                      "prefix": {
+                                        "type": "string",
+                                        "description": "Prefix of the route."
+                                      },
+                                      "weight": {
+                                        "type": "integer",
+                                        "description": "Weight assigned to the route."
+                                      },
+                                      "metric": {
+                                        "type": "integer",
+                                        "description": "Metric value for the route."
+                                      },
+                                      "selectionReason": {
+                                        "type": "string",
+                                        "description": "Reason why this route was selected as the best path."
+                                      },
+                                      "bestpath": {
+                                        "type": "boolean",
+                                        "description": "Indicates whether this route is the best path."
+                                      },
+                                      "version": {
+                                        "type": "integer",
+                                        "description": "Version number of the route, used for tracking updates."
+                                      }
+                                    }
+                                  }
+                                },
+                                "192.168.222.0/24": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "valid": {
+                                        "type": "boolean",
+                                        "description": "Indicates if the route is valid."
+                                      },
+                                      "pathFrom": {
+                                        "type": "string",
+                                        "description": "Source of the path (e.g., external or internal)."
+                                      },
+                                      "network": {
+                                        "type": "string",
+                                        "description": "Network address of the route."
+                                      },
+                                      "origin": {
+                                        "type": "string",
+                                        "description": "Origin of the route (e.g., IGP, EGP, or incomplete)."
+                                      },
+                                      "nexthops": {
+                                        "type": "array",
+                                        "description": "List of next hops for the route.",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "used": {
+                                              "type": "boolean",
+                                              "description": "Indicates if the next-hop is currently used."
+                                            },
+                                            "afi": {
+                                              "type": "string",
+                                              "description": "Address Family Identifier (e.g., IPv4 or IPv6)."
+                                            },
+                                            "hostname": {
+                                              "type": "string",
+                                              "description": "Hostname of the next-hop device."
+                                            },
+                                            "ip": {
+                                              "type": "string",
+                                              "description": "IP address of the next-hop."
+                                            }
+                                          }
+                                        }
+                                      },
+                                      "path": {
+                                        "type": "string",
+                                        "description": "AS path information for the route."
+                                      },
+                                      "peerId": {
+                                        "type": "string",
+                                        "description": "Identifier for the peer associated with the route."
+                                      },
+                                      "version": {
+                                        "type": "integer",
+                                        "description": "Version number of the route, used for tracking updates."
+                                      },
+                                      "weight": {
+                                        "type": "integer",
+                                        "description": "Weight assigned to the route."
+                                      },
+                                      "metric": {
+                                        "type": "integer",
+                                        "description": "Metric value for the route."
+                                      },
+                                      "prefixLen": {
+                                        "type": "integer",
+                                        "description": "Length of the prefix for the route."
+                                      },
+                                      "prefix": {
+                                        "type": "string",
+                                        "description": "Prefix of the route."
+                                      },
+                                      "locPrf": {
+                                        "type": "integer",
+                                        "description": "Local preference value for the route."
+                                      },
+                                      "selectionReason": {
+                                        "type": "string",
+                                        "description": "Reason why this route was selected as the best path."
+                                      },
+                                      "bestpath": {
+                                        "type": "boolean",
+                                        "description": "Indicates whether this route is the best path."
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "defaultLocPrf": {
+                              "type": "integer",
+                              "description": "Default local preference value for the route."
+                            },
+                            "tableVersion": {
+                              "type": "integer",
+                              "description": "Version number of the routing table."
+                            },
+                            "localAS": {
+                              "type": "integer",
+                              "description": "Local Autonomous System (AS) number."
+                            }
+                          }
+                        },
+                        "192.168.25.1": {
+                          "type": "object",
+                          "properties": {
+                            "remoteRole": {
+                              "type": "string",
+                              "description": "Role of the remote BGP neighbor."
+                            },
+                            "localRole": {
+                              "type": "string",
+                              "description": "Role of the local BGP router."
+                            },
+                            "bgpState": {
+                              "type": "string",
+                              "description": "Current state of the BGP session."
+                            },
+                            "bgpTimerConfiguredConditionalAdvertisementsSec": {
+                              "type": "integer",
+                              "description": "Configured timer for conditional advertisements in seconds."
+                            },
+                            "gracefulRestartInfo": {
+                              "type": "object",
+                              "description": "Information about the graceful restart capabilities.",
+                              "properties": {
+                                "endOfRibRecv": {
+                                  "type": "array",
+                                  "description": "End-of-RIB received status.",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {}
+                                  }
+                                },
+                                "remoteGrMode": {
+                                  "type": "string",
+                                  "description": "Graceful restart mode of the remote neighbor."
+                                },
+                                "localGrMode": {
+                                  "type": "string",
+                                  "description": "Graceful restart mode of the local router."
+                                },
+                                "endOfRibSend": {
+                                  "type": "array",
+                                  "description": "End-of-RIB sent status.",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {}
+                                  }
+                                },
+                                "timers": {
+                                  "type": "object",
+                                  "description": "Timers related to graceful restart.",
+                                  "properties": {
+                                    "receivedRestartTimer": {
+                                      "type": "integer",
+                                      "description": "Timer for received restart."
+                                    },
+                                    "configuredRestartTimer": {
+                                      "type": "integer",
+                                      "description": "Configured restart timer."
+                                    }
+                                  }
+                                },
+                                "rBit": {
+                                  "type": "boolean",
+                                  "description": "Indicates if the R-bit is set."
+                                },
+                                "nBit": {
+                                  "type": "boolean",
+                                  "description": "Indicates if the N-bit is set."
+                                }
+                              }
+                            },
+                            "addressFamilyInfo": {
+                              "type": "object",
+                              "description": "Information about address families supported by the BGP neighbor.",
+                              "properties": {
+                                "ipv4Unicast": {
+                                  "type": "object",
+                                  "description": "Details about IPv4 unicast address family.",
+                                  "properties": {
+                                    "acceptedPrefixCounter": {
+                                      "type": "integer",
+                                      "description": "Number of accepted prefixes."
+                                    },
+                                    "commAttriSentToNbr": {
+                                      "type": "string",
+                                      "description": "Community attributes sent to the neighbor."
+                                    },
+                                    "outboundEbgpRequiresPolicy": {
+                                      "type": "string",
+                                      "description": "Policy requirement for outbound EBGP."
+                                    },
+                                    "inboundEbgpRequiresPolicy": {
+                                      "type": "string",
+                                      "description": "Policy requirement for inbound EBGP."
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "extendedOptionalParametersLength": {
+                              "type": "boolean",
+                              "description": "Indicates if extended optional parameters are supported."
+                            },
+                            "minBtwnAdvertisementRunsTimerMsecs": {
+                              "type": "integer",
+                              "description": "Minimum time between advertisement runs in milliseconds."
+                            },
+                            "remoteRouterId": {
+                              "type": "string",
+                              "description": "Router ID of the remote neighbor."
+                            },
+                            "bgpTimerLastWrite": {
+                              "type": "integer",
+                              "description": "Time since the last write operation in milliseconds."
+                            },
+                            "lastResetTimerMsecs": {
+                              "type": "integer",
+                              "description": "Time since the last reset in milliseconds."
+                            },
+                            "portLocal": {
+                              "type": "integer",
+                              "description": "Local port used for the BGP session."
+                            },
+                            "bgpTimerConfiguredHoldTimeMsecs": {
+                              "type": "integer",
+                              "description": "Configured hold time for the BGP session in milliseconds."
+                            },
+                            "messageStats": {
+                              "type": "object",
+                              "description": "Statistics about BGP messages exchanged.",
+                              "properties": {
+                                "updatesRecv": {
+                                  "type": "integer",
+                                  "description": "Number of update messages received."
+                                },
+                                "totalSent": {
+                                  "type": "integer",
+                                  "description": "Total number of messages sent."
+                                },
+                                "capabilityRecv": {
+                                  "type": "integer",
+                                  "description": "Number of capability messages received."
+                                },
+                                "capabilitySent": {
+                                  "type": "integer",
+                                  "description": "Number of capability messages sent."
+                                },
+                                "routeRefreshRecv": {
+                                  "type": "integer",
+                                  "description": "Number of route refresh messages received."
+                                },
+                                "keepalivesSent": {
+                                  "type": "integer",
+                                  "description": "Number of keepalive messages sent."
+                                },
+                                "depthInq": {
+                                  "type": "integer",
+                                  "description": "Depth of the input queue."
+                                },
+                                "routeRefreshSent": {
+                                  "type": "integer",
+                                  "description": "Number of route refresh messages sent."
+                                },
+                                "keepalivesRecv": {
+                                  "type": "integer",
+                                  "description": "Number of keepalive messages received."
+                                },
+                                "totalRecv": {
+                                  "type": "integer",
+                                  "description": "Total number of messages received."
+                                },
+                                "opensSent": {
+                                  "type": "integer",
+                                  "description": "Number of open messages sent."
+                                },
+                                "notificationsSent": {
+                                  "type": "integer",
+                                  "description": "Number of notification messages sent."
+                                },
+                                "notificationsRecv": {
+                                  "type": "integer",
+                                  "description": "Number of notification messages received."
+                                },
+                                "depthOutq": {
+                                  "type": "integer",
+                                  "description": "Depth of the output queue."
+                                },
+                                "updatesSent": {
+                                  "type": "integer",
+                                  "description": "Number of update messages sent."
+                                },
+                                "opensRecv": {
+                                  "type": "integer",
+                                  "description": "Number of open messages received."
+                                }
+                              }
+                            },
+                            "readThread": {
+                              "type": "string",
+                              "description": "Thread handling read operations."
+                            },
+                            "hostLocal": {
+                              "type": "string",
+                              "description": "Hostname of the local router."
+                            },
+                            "lastResetCode": {
+                              "type": "integer",
+                              "description": "Code indicating the reason for the last reset."
+                            },
+                            "nextConnectTimerDueInMsecs": {
+                              "type": "integer",
+                              "description": "Time until the next connection attempt in milliseconds."
+                            },
+                            "connectRetryTimer": {
+                              "type": "integer",
+                              "description": "Retry timer for connection attempts in milliseconds."
+                            },
+                            "bgpTimerKeepAliveIntervalMsecs": {
+                              "type": "integer",
+                              "description": "Interval for keepalive messages in milliseconds."
+                            },
+                            "portForeign": {
+                              "type": "integer",
+                              "description": "Foreign port used for the BGP session."
+                            },
+                            "hostForeign": {
+                              "type": "string",
+                              "description": "Hostname of the remote neighbor."
+                            },
+                            "bgpTimerLastRead": {
+                              "type": "integer",
+                              "description": "Time since the last read operation in milliseconds."
+                            },
+                            "connectionsEstablished": {
+                              "type": "integer",
+                              "description": "Number of connections successfully established."
+                            },
+                            "bgpInUpdateElapsedTimeMsecs": {
+                              "type": "integer",
+                              "description": "Elapsed time since the last update message in milliseconds."
+                            },
+                            "writeThread": {
+                              "type": "string",
+                              "description": "Thread handling write operations."
+                            },
+                            "bgpTimerConfiguredKeepAliveIntervalMsecs": {
+                              "type": "integer",
+                              "description": "Configured interval for keepalive messages in milliseconds."
+                            },
+                            "lastResetDueTo": {
+                              "type": "string",
+                              "description": "Reason for the last reset."
+                            },
+                            "bgpVersion": {
+                              "type": "integer",
+                              "description": "Version of the BGP protocol used."
+                            },
+                            "bgpTimerHoldTimeMsecs": {
+                              "type": "integer",
+                              "description": "Hold time for the BGP session in milliseconds."
+                            },
+                            "connectionsDropped": {
+                              "type": "integer",
+                              "description": "Number of connections dropped."
+                            },
+                            "nbrExternalLink": {
+                              "type": "boolean",
+                              "description": "Indicates if the neighbor is an external link."
+                            },
+                            "localRouterId": {
+                              "type": "string",
+                              "description": "Router ID of the local router."
+                            },
+                            "externalBgpNbrMaxHopsAway": {
+                              "type": "integer",
+                              "description": "Maximum number of hops away for the external BGP neighbor."
+                            },
+                            "remoteAs": {
+                              "type": "integer",
+                              "description": "Autonomous System (AS) number of the remote neighbor."
+                            },
+                            "localAs": {
+                              "type": "integer",
+                              "description": "Autonomous System (AS) number of the local router."
+                            }
+                          }
+                        },
+                        "192.168.222.100": {
+                          "type": "object",
+                          "properties": {
+                            "bgpTimerKeepAliveIntervalMsecs": {
+                              "type": "integer",
+                              "description": "Interval for keepalive messages in milliseconds."
+                            },
+                            "localRole": {
+                              "type": "string",
+                              "description": "Role of the local BGP router."
+                            },
+                            "bgpState": {
+                              "type": "string",
+                              "description": "Current state of the BGP session."
+                            },
+                            "bgpTimerConfiguredConditionalAdvertisementsSec": {
+                              "type": "integer",
+                              "description": "Configured timer for conditional advertisements in seconds."
+                            },
+                            "gracefulRestartInfo": {
+                              "type": "object",
+                              "description": "Information about the graceful restart capabilities.",
+                              "properties": {
+                                "endOfRibRecv": {
+                                  "type": "object",
+                                  "description": "End-of-RIB received status.",
+                                  "properties": {
+                                    "ipv4Unicast": {
+                                      "type": "boolean",
+                                      "description": "Indicates if IPv4 unicast is supported."
+                                    }
+                                  }
+                                },
+                                "remoteGrMode": {
+                                  "type": "string",
+                                  "description": "Graceful restart mode of the remote neighbor."
+                                },
+                                "localGrMode": {
+                                  "type": "string",
+                                  "description": "Graceful restart mode of the local router."
+                                },
+                                "endOfRibSend": {
+                                  "type": "object",
+                                  "description": "End-of-RIB sent status.",
+                                  "properties": {
+                                    "ipv4Unicast": {
+                                      "type": "boolean",
+                                      "description": "Indicates if IPv4 unicast is supported."
+                                    }
+                                  }
+                                },
+                                "ipv4Unicast": {
+                                  "type": "object",
+                                  "description": "Details about IPv4 unicast address family.",
+                                  "properties": {
+                                    "timers": {
+                                      "type": "object",
+                                      "description": "Timers related to IPv4 unicast.",
+                                      "properties": {
+                                        "stalePathTimer": {
+                                          "type": "integer",
+                                          "description": "Timer for stale paths."
+                                        }
+                                      }
+                                    },
+                                    "endOfRibStatus": {
+                                      "type": "object",
+                                      "description": "Status of End-of-RIB.",
+                                      "properties": {
+                                        "endOfRibRecv": {
+                                          "type": "boolean",
+                                          "description": "Indicates if End-of-RIB was received."
+                                        },
+                                        "endOfRibSentAfterUpdate": {
+                                          "type": "boolean",
+                                          "description": "Indicates if End-of-RIB was sent after an update."
+                                        },
+                                        "endOfRibSend": {
+                                          "type": "boolean",
+                                          "description": "Indicates if End-of-RIB was sent."
+                                        }
+                                      }
+                                    },
+                                    "fBit": {
+                                      "type": "boolean",
+                                      "description": "Indicates if the F-bit is set."
+                                    }
+                                  }
+                                },
+                                "timers": {
+                                  "type": "object",
+                                  "description": "Timers related to graceful restart.",
+                                  "properties": {
+                                    "receivedRestartTimer": {
+                                      "type": "integer",
+                                      "description": "Timer for received restart."
+                                    },
+                                    "configuredRestartTimer": {
+                                      "type": "integer",
+                                      "description": "Configured restart timer."
+                                    }
+                                  }
+                                },
+                                "rBit": {
+                                  "type": "boolean",
+                                  "description": "Indicates if the R-bit is set."
+                                },
+                                "nBit": {
+                                  "type": "boolean",
+                                  "description": "Indicates if the N-bit is set."
+                                }
+                              }
+                            },
+                            "bgpTimerUpEstablishedEpoch": {
+                              "type": "integer",
+                              "description": "Epoch time when the BGP session was established."
+                            },
+                            "extendedOptionalParametersLength": {
+                              "type": "boolean",
+                              "description": "Indicates if extended optional parameters are supported."
+                            },
+                            "minBtwnAdvertisementRunsTimerMsecs": {
+                              "type": "integer",
+                              "description": "Minimum time between advertisement runs in milliseconds."
+                            },
+                            "remoteRouterId": {
+                              "type": "string",
+                              "description": "Router ID of the remote neighbor."
+                            },
+                            "bgpConnection": {
+                              "type": "string",
+                              "description": "Details about the BGP connection."
+                            },
+                            "bgpTimerLastWrite": {
+                              "type": "integer",
+                              "description": "Time since the last write operation in milliseconds."
+                            },
+                            "lastResetTimerMsecs": {
+                              "type": "integer",
+                              "description": "Time since the last reset in milliseconds."
+                            },
+                            "nexthopLocal": {
+                              "type": "string",
+                              "description": "Local next-hop address."
+                            },
+                            "portLocal": {
+                              "type": "integer",
+                              "description": "Local port used for the BGP session."
+                            },
+                            "bgpTimerConfiguredHoldTimeMsecs": {
+                              "type": "integer",
+                              "description": "Configured hold time for the BGP session in milliseconds."
+                            },
+                            "messageStats": {
+                              "type": "object",
+                              "description": "Statistics about BGP messages exchanged.",
+                              "properties": {
+                                "updatesRecv": {
+                                  "type": "integer",
+                                  "description": "Number of update messages received."
+                                },
+                                "totalSent": {
+                                  "type": "integer",
+                                  "description": "Total number of messages sent."
+                                },
+                                "capabilityRecv": {
+                                  "type": "integer",
+                                  "description": "Number of capability messages received."
+                                },
+                                "capabilitySent": {
+                                  "type": "integer",
+                                  "description": "Number of capability messages sent."
+                                },
+                                "routeRefreshRecv": {
+                                  "type": "integer",
+                                  "description": "Number of route refresh messages received."
+                                },
+                                "keepalivesSent": {
+                                  "type": "integer",
+                                  "description": "Number of keepalive messages sent."
+                                },
+                                "depthInq": {
+                                  "type": "integer",
+                                  "description": "Depth of the input queue."
+                                },
+                                "routeRefreshSent": {
+                                  "type": "integer",
+                                  "description": "Number of route refresh messages sent."
+                                },
+                                "keepalivesRecv": {
+                                  "type": "integer",
+                                  "description": "Number of keepalive messages received."
+                                },
+                                "totalRecv": {
+                                  "type": "integer",
+                                  "description": "Total number of messages received."
+                                },
+                                "opensSent": {
+                                  "type": "integer",
+                                  "description": "Number of open messages sent."
+                                },
+                                "notificationsSent": {
+                                  "type": "integer",
+                                  "description": "Number of notification messages sent."
+                                },
+                                "notificationsRecv": {
+                                  "type": "integer",
+                                  "description": "Number of notification messages received."
+                                },
+                                "depthOutq": {
+                                  "type": "integer",
+                                  "description": "Depth of the output queue."
+                                },
+                                "updatesSent": {
+                                  "type": "integer",
+                                  "description": "Number of update messages sent."
+                                },
+                                "opensRecv": {
+                                  "type": "integer",
+                                  "description": "Number of open messages received."
+                                }
+                              }
+                            },
+                            "neighborCapabilities": {
+                              "type": "object",
+                              "description": "Capabilities of the BGP neighbor.",
+                              "properties": {
+                                "addPath": {
+                                  "type": "object",
+                                  "description": "Details about Add-Path capability.",
+                                  "properties": {
+                                    "ipv4Unicast": {
+                                      "type": "object",
+                                      "description": "IPv4 unicast Add-Path capability.",
+                                      "properties": {
+                                        "rxAdvertisedAndReceived": {
+                                          "type": "boolean",
+                                          "description": "Indicates if Add-Path is advertised and received."
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "addressFamiliesByPeer": {
+                                  "type": "string",
+                                  "description": "Address families supported by the peer."
+                                },
+                                "gracefulRestartRemoteTimerMsecs": {
+                                  "type": "integer",
+                                  "description": "Remote timer for graceful restart in milliseconds."
+                                },
+                                "hostName": {
+                                  "type": "object",
+                                  "description": "Hostname details of the neighbor.",
+                                  "properties": {
+                                    "rcvDomainName": {
+                                      "type": "string",
+                                      "description": "Received domain name."
+                                    },
+                                    "rcvHostName": {
+                                      "type": "string",
+                                      "description": "Received hostname."
+                                    },
+                                    "advHostName": {
+                                      "type": "string",
+                                      "description": "Advertised hostname."
+                                    },
+                                    "advDomainName": {
+                                      "type": "string",
+                                      "description": "Advertised domain name."
+                                    }
+                                  }
+                                },
+                                "gracefulRestart": {
+                                  "type": "string",
+                                  "description": "Indicates if graceful restart is supported."
+                                },
+                                "longLivedGracefulRestartByPeer": {
+                                  "type": "array",
+                                  "description": "Details about long-lived graceful restart by the peer.",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {}
+                                  }
+                                },
+                                "4byteAs": {
+                                  "type": "string",
+                                  "description": "Indicates if 4-byte AS numbers are supported."
+                                },
+                                "enhancedRouteRefresh": {
+                                  "type": "string",
+                                  "description": "Indicates if enhanced route refresh is supported."
+                                },
+                                "multiprotocolExtensions": {
+                                  "type": "object",
+                                  "description": "Details about multiprotocol extensions.",
+                                  "properties": {
+                                    "ipv4Unicast": {
+                                      "type": "object",
+                                      "description": "IPv4 unicast multiprotocol extensions.",
+                                      "properties": {
+                                        "advertisedAndReceived": {
+                                          "type": "boolean",
+                                          "description": "Indicates if multiprotocol extensions are advertised and received."
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "longLivedGracefulRestart": {
+                                  "type": "string",
+                                  "description": "Indicates if long-lived graceful restart is supported."
+                                },
+                                "extendedMessage": {
+                                  "type": "string",
+                                  "description": "Indicates if extended messages are supported."
+                                },
+                                "routeRefresh": {
+                                  "type": "string",
+                                  "description": "Indicates if route refresh is supported."
+                                }
+                              }
+                            },
+                            "nexthop": {
+                              "type": "string",
+                              "description": "Next-hop address."
+                            },
+                            "readThread": {
+                              "type": "string",
+                              "description": "Thread handling read operations."
+                            },
+                            "connectRetryTimer": {
+                              "type": "integer",
+                              "description": "Retry timer for connection attempts in milliseconds."
+                            },
+                            "bgpTimerUpString": {
+                              "type": "string",
+                              "description": "String representation of the BGP session uptime."
+                            },
+                            "hostLocal": {
+                              "type": "string",
+                              "description": "Hostname of the local router."
+                            },
+                            "nexthopGlobal": {
+                              "type": "string",
+                              "description": "Global next-hop address."
+                            },
+                            "hostname": {
+                              "type": "string",
+                              "description": "Hostname of the neighbor."
+                            },
+                            "connectionsEstablished": {
+                              "type": "integer",
+                              "description": "Number of connections successfully established."
+                            },
+                            "hostForeign": {
+                              "type": "string",
+                              "description": "Hostname of the remote neighbor."
+                            },
+                            "internalBgpNbrMaxHopsAway": {
+                              "type": "integer",
+                              "description": "Maximum number of hops away for the internal BGP neighbor."
+                            },
+                            "remoteRole": {
+                              "type": "string",
+                              "description": "Role of the remote BGP neighbor."
+                            },
+                            "lastResetCode": {
+                              "type": "integer",
+                              "description": "Code indicating the reason for the last reset."
+                            },
+                            "lastResetDueTo": {
+                              "type": "string",
+                              "description": "Reason for the last reset."
+                            },
+                            "bgpTimerUpMsec": {
+                              "type": "integer",
+                              "description": "Uptime of the BGP session in milliseconds."
+                            },
+                            "localRouterId": {
+                              "type": "string",
+                              "description": "Router ID of the local router."
+                            },
+                            "bgpTimerLastRead": {
+                              "type": "integer",
+                              "description": "Time since the last read operation in milliseconds."
+                            },
+                            "writeThread": {
+                              "type": "string",
+                              "description": "Thread handling write operations."
+                            },
+                            "nbrInternalLink": {
+                              "type": "boolean",
+                              "description": "Indicates if the neighbor is an internal link."
+                            },
+                            "connectionsDropped": {
+                              "type": "integer",
+                              "description": "Number of connections dropped."
+                            },
+                            "bgpVersion": {
+                              "type": "integer",
+                              "description": "Version of the BGP protocol used."
+                            },
+                            "bgpTimerHoldTimeMsecs": {
+                              "type": "integer",
+                              "description": "Hold time for the BGP session in milliseconds."
+                            },
+                            "bgpTimerConfiguredKeepAliveIntervalMsecs": {
+                              "type": "integer",
+                              "description": "Configured interval for keepalive messages in milliseconds."
+                            },
+                            "portForeign": {
+                              "type": "integer",
+                              "description": "Foreign port used for the BGP session."
+                            },
+                            "addressFamilyInfo": {
+                              "type": "object",
+                              "description": "Information about address families supported by the BGP neighbor.",
+                              "properties": {
+                                "ipv4Unicast": {
+                                  "type": "object",
+                                  "description": "Details about IPv4 unicast address family.",
+                                  "properties": {
+                                    "acceptedPrefixCounter": {
+                                      "type": "integer",
+                                      "description": "Number of accepted prefixes."
+                                    },
+                                    "packetQueueLength": {
+                                      "type": "integer",
+                                      "description": "Length of the packet queue."
+                                    },
+                                    "updateGroupId": {
+                                      "type": "integer",
+                                      "description": "Update group ID."
+                                    },
+                                    "commAttriSentToNbr": {
+                                      "type": "string",
+                                      "description": "Community attributes sent to the neighbor."
+                                    },
+                                    "subGroupId": {
+                                      "type": "integer",
+                                      "description": "Sub-group ID."
+                                    },
+                                    "sentPrefixCounter": {
+                                      "type": "integer",
+                                      "description": "Number of prefixes sent."
+                                    }
+                                  }
+                                }
+                              }
+                            },
+                            "bgpInUpdateElapsedTimeMsecs": {
+                              "type": "integer",
+                              "description": "Elapsed time since the last update message in milliseconds."
+                            },
+                            "localAs": {
+                              "type": "integer",
+                              "description": "Autonomous System (AS) number of the local router."
+                            },
+                            "remoteAs": {
+                              "type": "integer",
+                              "description": "Autonomous System (AS) number of the remote neighbor."
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "x-examples": {
+                    "example-1": {
+                      "success": true,
+                      "data": {
+                        "default": {
+                          "routerId": "string",
+                          "vrfName": "string",
+                          "vrfId": 0,
+                          "routes": {
+                            "10.65.7.0/24": [
+                              {
+                                "valid": true,
+                                "prefixLen": 24,
+                                "network": "10.65.7.0/24",
+                                "origin": "incomplete",
+                                "nexthops": [
+                                  {
+                                    "used": true,
+                                    "afi": "ipv4",
+                                    "hostname": "RUTX11",
+                                    "ip": "0.0.0.0"
+                                  }
+                                ],
+                                "path": "",
+                                "peerId": "(unspec)",
+                                "pathFrom": "external",
+                                "prefix": "10.65.7.0",
+                                "weight": 32768,
+                                "metric": 0,
+                                "selectionReason": "First path received",
+                                "bestpath": true,
+                                "version": 2
+                              }
+                            ],
+                            "192.168.10.0/24": [
+                              {
+                                "valid": true,
+                                "pathFrom": "external",
+                                "network": "192.168.10.0/24",
+                                "origin": "incomplete",
+                                "nexthops": [
+                                  {
+                                    "used": true,
+                                    "afi": "ipv4",
+                                    "hostname": "RUTX11",
+                                    "ip": "0.0.0.0"
+                                  }
+                                ],
+                                "path": "",
+                                "version": 1,
+                                "weight": 32768,
+                                "metric": 0,
+                                "peerId": "(unspec)",
+                                "prefixLen": 24,
+                                "prefix": "192.168.10.0"
+                              },
+                              {
+                                "valid": true,
+                                "prefixLen": 24,
+                                "network": "192.168.10.0/24",
+                                "origin": "IGP",
+                                "nexthops": [
+                                  {
+                                    "used": true,
+                                    "afi": "ipv4",
+                                    "hostname": "RUTX11",
+                                    "ip": "0.0.0.0"
+                                  }
+                                ],
+                                "path": "",
+                                "peerId": "(unspec)",
+                                "pathFrom": "external",
+                                "prefix": "192.168.10.0",
+                                "weight": 32768,
+                                "metric": 0,
+                                "selectionReason": "Origin",
+                                "bestpath": true,
+                                "version": 1
+                              }
+                            ],
+                            "192.168.1.0/24": [
+                              {
+                                "valid": true,
+                                "prefixLen": 0,
+                                "network": "string",
+                                "origin": "string",
+                                "nexthops": [
+                                  {
+                                    "used": true,
+                                    "afi": "string",
+                                    "hostname": "string",
+                                    "ip": "string"
+                                  }
+                                ],
+                                "path": "string",
+                                "peerId": "string",
+                                "pathFrom": "string",
+                                "prefix": "string",
+                                "weight": 0,
+                                "metric": 0,
+                                "selectionReason": "string",
+                                "bestpath": true,
+                                "version": 0
+                              }
+                            ],
+                            "192.168.2.0/24": [
+                              {
+                                "valid": true,
+                                "prefixLen": 0,
+                                "network": "string",
+                                "origin": "string",
+                                "nexthops": [
+                                  {
+                                    "used": true,
+                                    "afi": "string",
+                                    "hostname": "string",
+                                    "ip": "string"
+                                  }
+                                ],
+                                "path": "string",
+                                "peerId": "string",
+                                "pathFrom": "string",
+                                "locPrf": 0,
+                                "prefix": "string",
+                                "weight": 0,
+                                "metric": 0,
+                                "selectionReason": "string",
+                                "bestpath": true,
+                                "version": 0
+                              }
+                            ],
+                            "192.168.222.0/24": [
+                              {
+                                "valid": true,
+                                "pathFrom": "string",
+                                "network": "string",
+                                "origin": "string",
+                                "nexthops": [
+                                  {
+                                    "used": true,
+                                    "afi": "string",
+                                    "hostname": "string",
+                                    "ip": "string"
+                                  }
+                                ],
+                                "path": "string",
+                                "peerId": "string",
+                                "version": 0,
+                                "weight": 0,
+                                "metric": 0,
+                                "prefixLen": 0,
+                                "prefix": "string",
+                                "locPrf": 0,
+                                "selectionReason": "string",
+                                "bestpath": true
+                              }
+                            ]
+                          },
+                          "defaultLocPrf": 0,
+                          "tableVersion": 0,
+                          "localAS": 0
+                        },
+                        "192.168.25.1": {
+                          "remoteRole": "undefined",
+                          "localRole": "undefined",
+                          "bgpState": "Active",
+                          "bgpTimerConfiguredConditionalAdvertisementsSec": 60,
+                          "gracefulRestartInfo": {
+                            "endOfRibRecv": [],
+                            "remoteGrMode": "NotApplicable",
+                            "localGrMode": "Helper*",
+                            "endOfRibSend": [],
+                            "timers": {
+                              "receivedRestartTimer": 0,
+                              "configuredRestartTimer": 120
+                            },
+                            "rBit": false,
+                            "nBit": false
+                          },
+                          "addressFamilyInfo": {
+                            "ipv4Unicast": {
+                              "acceptedPrefixCounter": 0,
+                              "commAttriSentToNbr": "extendedAndStandard",
+                              "outboundEbgpRequiresPolicy": "Outbound updates discarded due to missing policy",
+                              "inboundEbgpRequiresPolicy": "Inbound updates discarded due to missing policy"
+                            }
+                          },
+                          "extendedOptionalParametersLength": false,
+                          "minBtwnAdvertisementRunsTimerMsecs": 0,
+                          "remoteRouterId": "0.0.0.0",
+                          "bgpTimerLastWrite": 3724000,
+                          "lastResetTimerMsecs": 41000,
+                          "portLocal": -1,
+                          "bgpTimerConfiguredHoldTimeMsecs": 180000,
+                          "messageStats": {
+                            "updatesRecv": 0,
+                            "totalSent": 0,
+                            "capabilityRecv": 0,
+                            "capabilitySent": 0,
+                            "routeRefreshRecv": 0,
+                            "keepalivesSent": 0,
+                            "depthInq": 0,
+                            "routeRefreshSent": 0,
+                            "keepalivesRecv": 0,
+                            "totalRecv": 0,
+                            "opensSent": 0,
+                            "notificationsSent": 0,
+                            "notificationsRecv": 0,
+                            "depthOutq": 0,
+                            "updatesSent": 0,
+                            "opensRecv": 0
+                          },
+                          "readThread": "off",
+                          "hostLocal": "Unknown",
+                          "lastResetCode": 27,
+                          "nextConnectTimerDueInMsecs": 79000,
+                          "connectRetryTimer": 120,
+                          "bgpTimerKeepAliveIntervalMsecs": 60000,
+                          "portForeign": -1,
+                          "hostForeign": "Unknown",
+                          "bgpTimerLastRead": 41000,
+                          "connectionsEstablished": 0,
+                          "bgpInUpdateElapsedTimeMsecs": 3724000,
+                          "writeThread": "off",
+                          "bgpTimerConfiguredKeepAliveIntervalMsecs": 60000,
+                          "lastResetDueTo": "Waiting for NHT",
+                          "bgpVersion": 4,
+                          "bgpTimerHoldTimeMsecs": 180000,
+                          "connectionsDropped": 0,
+                          "nbrExternalLink": true,
+                          "localRouterId": "192.168.10.1",
+                          "externalBgpNbrMaxHopsAway": 1,
+                          "remoteAs": 33,
+                          "localAs": 10
+                        },
+                        "192.168.222.100": {
+                          "bgpTimerKeepAliveIntervalMsecs": 0,
+                          "localRole": "string",
+                          "bgpState": "string",
+                          "bgpTimerConfiguredConditionalAdvertisementsSec": 0,
+                          "gracefulRestartInfo": {
+                            "endOfRibRecv": {
+                              "ipv4Unicast": true
+                            },
+                            "remoteGrMode": "string",
+                            "localGrMode": "string",
+                            "endOfRibSend": {
+                              "ipv4Unicast": true
+                            },
+                            "ipv4Unicast": {
+                              "timers": {
+                                "stalePathTimer": 0
+                              },
+                              "endOfRibStatus": {
+                                "endOfRibRecv": true,
+                                "endOfRibSentAfterUpdate": true,
+                                "endOfRibSend": true
+                              },
+                              "fBit": true
+                            },
+                            "timers": {
+                              "receivedRestartTimer": 0,
+                              "configuredRestartTimer": 0
+                            },
+                            "rBit": true,
+                            "nBit": true
+                          },
+                          "bgpTimerUpEstablishedEpoch": 0,
+                          "extendedOptionalParametersLength": true,
+                          "minBtwnAdvertisementRunsTimerMsecs": 0,
+                          "remoteRouterId": "string",
+                          "bgpConnection": "string",
+                          "bgpTimerLastWrite": 0,
+                          "lastResetTimerMsecs": 0,
+                          "nexthopLocal": "string",
+                          "portLocal": 0,
+                          "bgpTimerConfiguredHoldTimeMsecs": 0,
+                          "messageStats": {
+                            "updatesRecv": 0,
+                            "totalSent": 0,
+                            "capabilityRecv": 0,
+                            "capabilitySent": 0,
+                            "routeRefreshRecv": 0,
+                            "keepalivesSent": 0,
+                            "depthInq": 0,
+                            "routeRefreshSent": 0,
+                            "keepalivesRecv": 0,
+                            "totalRecv": 0,
+                            "opensSent": 0,
+                            "notificationsSent": 0,
+                            "notificationsRecv": 0,
+                            "depthOutq": 0,
+                            "updatesSent": 0,
+                            "opensRecv": 0
+                          },
+                          "neighborCapabilities": {
+                            "addPath": {
+                              "ipv4Unicast": {
+                                "rxAdvertisedAndReceived": true
+                              }
+                            },
+                            "addressFamiliesByPeer": "string",
+                            "gracefulRestartRemoteTimerMsecs": 0,
+                            "hostName": {
+                              "rcvDomainName": "string",
+                              "rcvHostName": "string",
+                              "advHostName": "string",
+                              "advDomainName": "string"
+                            },
+                            "gracefulRestart": "string",
+                            "longLivedGracefulRestartByPeer": [{}],
+                            "4byteAs": "string",
+                            "enhancedRouteRefresh": "string",
+                            "multiprotocolExtensions": {
+                              "ipv4Unicast": {
+                                "advertisedAndReceived": true
+                              }
+                            },
+                            "longLivedGracefulRestart": "string",
+                            "extendedMessage": "string",
+                            "routeRefresh": "string"
+                          },
+                          "nexthop": "string",
+                          "readThread": "string",
+                          "connectRetryTimer": 0,
+                          "bgpTimerUpString": "string",
+                          "hostLocal": "string",
+                          "nexthopGlobal": "string",
+                          "hostname": "string",
+                          "connectionsEstablished": 0,
+                          "hostForeign": "string",
+                          "internalBgpNbrMaxHopsAway": 0,
+                          "remoteRole": "string",
+                          "lastResetCode": 0,
+                          "lastResetDueTo": "string",
+                          "bgpTimerUpMsec": 0,
+                          "localRouterId": "string",
+                          "bgpTimerLastRead": 0,
+                          "writeThread": "string",
+                          "nbrInternalLink": true,
+                          "connectionsDropped": 0,
+                          "bgpVersion": 0,
+                          "bgpTimerHoldTimeMsecs": 0,
+                          "bgpTimerConfiguredKeepAliveIntervalMsecs": 0,
+                          "portForeign": 0,
+                          "addressFamilyInfo": {
+                            "ipv4Unicast": {
+                              "acceptedPrefixCounter": 0,
+                              "packetQueueLength": 0,
+                              "updateGroupId": 0,
+                              "commAttriSentToNbr": "string",
+                              "subGroupId": 0,
+                              "sentPrefixCounter": 0
+                            }
+                          },
+                          "bgpInUpdateElapsedTimeMsecs": 0,
+                          "localAs": 0,
+                          "remoteAs": 0
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {}
+              }
+            }
+          }
+        },
+        "tags": ["Global Settings"],
+        "description": ""
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "BGP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "BGP"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200BgGe": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Indicates whether the operation was successful."
+                },
+                "enabled": {
+                  "type": "string",
+                  "description": "Indicates whether the BGP feature is enabled."
+                },
+                "debug": {
+                  "type": "string",
+                  "description": "Indicates whether BGP logging is enabled."
+                },
+                "enabled_vty": {
+                  "type": "string",
+                  "description": "Indicates whether the VTY interface is enabled."
+                },
+                "bgpd_custom_conf": {
+                  "type": "string",
+                  "description": "Custom configuration for the BGP daemon."
+                },
+                "bgpd_custom_conf:file_size": {
+                  "type": "number",
+                  "description": "Size of the custom BGP configuration file."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "bgp_general_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Enable/Disable BGP protocol."
+          },
+          "debug": {
+            "x-web": {
+              "pretty": "Enable logging",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Enable logging of BGP.",
+            "enum": ["0", "1"]
+          },
+          "enabled_vty": {
+            "x-web": {
+              "pretty": "Enable VTY",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Enable/Disable vty access from LAN."
+          },
+          "bgpd_custom_conf": {
+            "x-web": {
+              "pretty": "Import config",
+              "input-type": "input",
+              "upload_endpoint": "/bgp/global"
+            },
+            "type": "string",
+            "format": "binary",
+            "description": "Use imported BGP configuration."
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "bgpd_custom_conf": {
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "option": {
+                  "type": "string",
+                  "description": "Parameter to upload the file to.",
+                  "enum": ["bgpd_custom_conf"]
+                },
+                "file": {
+                  "type": "string",
+                  "format": "binary",
+                  "description": "File to upload."
+                }
+              },
+              "required": ["option", "file"]
+            }
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "BGP Global Settings",
+    "version": "1.0",
+    "description": "BGP global settings api documentation"
+  },
+  "tags": [
+    {
+      "name": "Global Settings"
+    }
+  ]
+}

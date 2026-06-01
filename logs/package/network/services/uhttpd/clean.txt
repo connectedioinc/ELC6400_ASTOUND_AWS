@@ -1,0 +1,12 @@
+make[2]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/services/uhttpd'
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/uhttpd-2021-03-21-15346de8
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-remove uhttpd /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/uhttpd_2021-03-21-15346de8-16_arm_cortex-a7_neon-vfpv4.ipk
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/uhttpd_2021-03-21-15346de8-16_arm_cortex-a7_neon-vfpv4.ipk'
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-remove uhttpd-mod-lua /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/uhttpd-mod-lua_2021-03-21-15346de8-16_arm_cortex-a7_neon-vfpv4.ipk
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/uhttpd-mod-lua_2021-03-21-15346de8-16_arm_cortex-a7_neon-vfpv4.ipk'
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-remove uhttpd-mod-ubus /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/uhttpd-mod-ubus_2021-03-21-15346de8-16_arm_cortex-a7_neon-vfpv4.ipk
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/uhttpd-mod-ubus_2021-03-21-15346de8-16_arm_cortex-a7_neon-vfpv4.ipk'
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.uhttpd_installed
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/uhttpd.list
+make[2]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/services/uhttpd'
+time: package/network/services/uhttpd/clean#0.12#0.14#0.25

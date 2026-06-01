@@ -1,0 +1,56 @@
+sequenceDiagram
+    autonumber
+    actor User
+    User->>VuciTemplateSection: editTemplate()
+    activate User
+    activate VuciTemplateSection
+    VuciTemplateSection->>VuciEditModal: openModal()
+    activate VuciEditModal
+    VuciEditModal-->>User: edit template modal opened
+    User->>VuciEditModal: editTemplateData(data=)
+    VuciEditModal-->>User: data edited
+    opt set as default template
+        User->>VuciEditModal: setDefault(id=)
+        VuciEditModal-->>User: template set to be saved as default
+    end
+    opt save template
+        User->>VuciEditModal: save()
+        VuciEditModal->>VuciTemplateSection: back()
+        VuciTemplateSection-->>User: template saved
+    end
+    opt delete template
+        User->>VuciEditModal: deleteTemplate(id=)
+        VuciEditModal->>Prompt: openPrompt(id=)
+        activate Prompt
+        Prompt-->>User: prompt opened
+        alt on delete
+            User->>Prompt: onOk()
+            Prompt->>Prompt: close()
+            Prompt->>VuciEditModal: deleteTemplate(id=)
+            VuciEditModal->>VuciTemplateSection: deleteTemplate(id=)
+            VuciTemplateSection->>VuciEditModal: back()
+            VuciEditModal-->>User: template deleted
+        else on cancel
+            User->>Prompt: onCancel()
+            Prompt->>Prompt: close()
+            Prompt-->>User: delete canceled
+        end
+    end
+    opt discard changes
+        User->>VuciEditModal: discardTemplate()
+        alt on discard
+            VuciEditModal->>Prompt: onOk()
+            Prompt->>Prompt: close()
+            Prompt->>VuciEditModal: back()
+            VuciEditModal-->>User: template discarded
+        else on cancel
+            User->>Prompt: onCancel()
+            Prompt->>Prompt: close()
+            Prompt-->>User: discard canceled
+            deactivate Prompt
+        end
+        deactivate VuciEditModal
+        deactivate User
+        deactivate VuciTemplateSection
+    end
+

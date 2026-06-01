@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/libs/libtwCSdk/Makefile
+
+Package: libtwCSdk
+Version: 2026-02-11-1
+Depends: +libc +libopenssl +libpthread +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: ThingWorx C SDK Library.
+Maintainer: 
+Source: libtwCSdk-1.9-2026-02-11.tar.gz
+License: Teltonika-3p-closed
+Type: ipkg
+Detail-Description: ThingWorx C SDK Library.
+Description: 	A simple library to enable ThingWorx on the device.
+
+@@
+
+

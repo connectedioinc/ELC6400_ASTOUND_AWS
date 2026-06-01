@@ -1,0 +1,16 @@
+{
+	"services/ntrip": {
+		"description": "NTRIP acls",
+		"read": {
+			"api": {
+				"/ntrip/*": ["*"],
+				"/serial/status/*": ["*"]
+			}
+		},
+		"write": {
+			"api": [
+				"/ntrip/*"
+			]
+		}
+	}
+}

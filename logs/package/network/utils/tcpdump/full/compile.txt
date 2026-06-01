@@ -1,0 +1,7 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/utils/tcpdump'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/tcpdump-full/tcpdump-4.99.5/.pkgdir/tcpdump/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.tcpdump_installed
+echo "tcpdump" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/tcpdump.full.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/utils/tcpdump'
+time: package/network/utils/tcpdump/full/compile#0.13#0.14#0.28

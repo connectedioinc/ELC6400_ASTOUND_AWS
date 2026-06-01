@@ -1,0 +1,33 @@
+Source-Makefile: package/network/services/zerotier/Makefile
+
+Package: zerotier
+Submenu: VPN
+Version: 1.14.0-7
+Depends: +libc +libpthread +libstdcpp +kmod-tun +ip +libminiupnpc +libnatpmp +libatomic +kmod-sched-flower +kmod-sched-act-police +tc-tiny +ucode +libucode
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Create flat virtual Ethernet networks of almost unlimited size
+Maintainer: Moritz Warning <moritzwarning@web.de>
+CPE-ID: cpe:/a:zerotier:zerotierone
+Require-User: zerotier:zerotier
+FileAttributes: /usr/bin/zerotier-one::::cap_net_admin,cap_net_bind_service+ep
+Source: zerotier-1.14.0.tar.gz
+License: BUSL-1.1
+LicenseFiles: LICENSE.txt
+Type: ipkg
+Detail-Description: Create flat virtual Ethernet networks of almost unlimited size
+Description: 	ZeroTier package can establish Peer to Peer VPN (P2PVPN) connection
+	between various devices running various operating systems. It also provides
+	network management possibilities such as routing and creating firewall rules.
+https://www.zerotier.com
+Moritz Warning <moritzwarning@web.de>
+@@
+Config:
+	source "package/network/services/zerotier/Config.in"
+@@
+
+

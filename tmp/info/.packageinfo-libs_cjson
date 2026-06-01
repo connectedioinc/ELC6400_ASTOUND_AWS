@@ -1,0 +1,27 @@
+Source-Makefile: package/libs/cjson/Makefile
+
+Package: cJSON
+Version: 1.7.18-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Ultralightweight JSON parser in ANSI C
+Maintainer: Karl Palsson <karlp@etactica.com>
+CPE-ID: cpe:/a:cjson_project:cjson
+Source: cJSON-1.7.18.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: Ultralightweight JSON parser in ANSI C
+Description:  Ultralightweight JSON parser in ANSI C.
+cJSON aims to be the dumbest possible parser that you can get your
+job done with. It's a single file of C, and a single header file.
+https://github.com/DaveGamble/cJSON
+Karl Palsson <karlp@etactica.com>
+@@
+
+

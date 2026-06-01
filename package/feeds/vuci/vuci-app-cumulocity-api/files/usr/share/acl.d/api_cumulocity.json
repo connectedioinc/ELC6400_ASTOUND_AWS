@@ -1,0 +1,8 @@
+{
+    "user": "uhttpd",
+    "access": {
+        "iot.*":{
+            "methods": ["status"]
+        }
+    }
+}

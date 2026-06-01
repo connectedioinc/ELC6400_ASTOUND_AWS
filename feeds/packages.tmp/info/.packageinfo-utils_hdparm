@@ -1,0 +1,25 @@
+Source-Makefile: feeds/packages/utils/hdparm/Makefile
+
+Package: hdparm
+Submenu: Disc
+Version: 9.60-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Hard disk drive configuration utilitity
+Maintainer: 
+Source: hdparm-9.60.tar.gz
+License: BSD-Style Open Source License
+LicenseFiles: LICENSE.TXT
+Type: ipkg
+Detail-Description: Hard disk drive configuration utilitity
+Description:  get/set SATA/IDE device parameters
+https://sourceforge.net/projects/hdparm/
+
+@@
+
+

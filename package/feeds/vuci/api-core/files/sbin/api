@@ -1,0 +1,157 @@
+#!/usr/bin/lua
+
+local json = require("luci.jsonc")
+local ubus = require("ubus")
+
+local DEFAULT_TIMEOUT = 30.0
+
+local function usage()
+	local program_name = arg[0]
+
+	print("This script allows calling API endpoint locally without HTTP")
+	print("")
+	print(("Usage: %s [options] <HTTP_METHOD> <REQUEST_PATH> [<file_upload_arg>] [<request_body>]"):format(program_name))
+	print("  <file_upload_arg> format: '@<file_path>;<option_name>'")
+	print("Options:")
+	print("  -h   Show this help")
+	print("")
+	print("  -d   Delete provided source file after upload execution")
+	print("")
+	print(("  -t <seconds>   Request timeout. Default: %ss"):format(DEFAULT_TIMEOUT))
+	print("")
+	print("File downloads:")
+	print("  Endpoints which download a file will always respond in `{\"path\":\"<path>\",\"temporary\":<true|false>}` format")
+	print("  If `temporary` is true, then the user is responsible for deleting the file at `path` after using it.")
+	print("  If `temporary` is false, then the file MUST NOT be deleted.")
+	print("")
+	print("Examples:")
+	print(("  %s PUT /interfaces/config '{\"data\":{\"netmask\":\"255.255.255.0\"}}'"):format(program_name))
+	print(("  %s POST /firmware/actions/upload '@/tmp/fw.bin;firmware' '{\"data\":{\"encrypt\":\"1\"}}'"):format(program_name))
+end
+
+local arg_index = 1
+
+local script_options = {
+	delete_source_file = false
+}
+local timeout = DEFAULT_TIMEOUT
+
+-- TODO: Tidy this up, move argument parsing to a function.
+while arg[arg_index] and arg[arg_index]:sub(1,1) == "-" do
+	if arg[arg_index] == "-h" then
+		usage()
+		os.exit(0)
+	elseif arg[arg_index] == "-d" then
+		script_options.delete_source_file = true
+	elseif arg[arg_index] == "-t" then
+		if not arg[arg_index+1] then
+			print("ERROR: Missing required parameter: duration")
+			os.exit(1)
+		end
+		timeout = tonumber(arg[arg_index+1])
+		if timeout == nil then
+			print(("ERROR: Invalid parmeter '%s': Not a number"):format(arg[arg_index+1]))
+			os.exit(1)
+		end
+		if timeout <= 0 then
+			print("ERROR: Timeout must be positive")
+			os.exit(1)
+		end
+		if math.floor(timeout) ~= timeout then
+			print("ERROR: Timeout must be an integer, can't be floating point")
+			os.exit(1)
+		end
+		arg_index = arg_index + 1
+	else
+		print("Unknown option: " .. arg[arg_index])
+		usage()
+		os.exit(1)
+	end
+	arg_index = arg_index + 1
+end
+
+if not arg[arg_index] or not arg[arg_index + 1] then
+	usage()
+	os.exit(1)
+end
+
+local method = arg[arg_index]:lower()
+local path   = arg[arg_index + 1]
+
+local valid_methods = { get=true, put=true, post=true, delete=true }
+
+if not valid_methods[method] then
+	local fake_response = {
+		http_body = {
+			success = false,
+			errors = {
+				{
+					source = "Request",
+					code = 122,
+					error = "HTTP method not supported. Supported methods: [POST, PUT, GET, DELETE]"
+				}
+			}
+		},
+		http_code = 501
+	}
+	print(json.stringify(fake_response, true))
+	os.exit(0)
+end
+
+local upload_arg, body_arg
+if arg[arg_index + 2] and arg[arg_index + 2]:sub(1,1) == "@" then
+	upload_arg = arg[arg_index + 2]
+	body_arg   = arg[arg_index + 3]
+else
+	body_arg = arg[arg_index + 2]
+end
+
+local body = {}
+local upload = false
+
+local parts = {}
+if upload_arg then
+	for part in upload_arg:gmatch("([^;]+)") do
+		table.insert(parts, part)
+	end
+	upload = true
+	body.data = {
+		option = parts[2],
+		file   = parts[1]:sub(2)
+	}
+end
+
+local json_str = body_arg or "{}"
+local ok, parsed_body = pcall(json.parse, json_str)
+if ok and parsed_body then
+	body = parsed_body
+	body.data = body.data or {}
+	if upload then
+		body.data.option = body.data.option or parts[2]
+		body.data.file   = body.data.file or parts[1]:sub(2)
+	end
+elseif not upload then
+	body = {}
+end
+
+local conn = ubus.connect(nil, timeout)
+if not conn then
+	print("Error: Failed to connect to ubus")
+	os.exit(1)
+end
+
+local ret, err = conn:call("api", method, {
+	path   = path,
+	body   = body,
+	upload = upload,
+	delete_source = script_options.delete_source_file
+})
+
+conn:close()
+
+if ret then
+	print(json.stringify(ret, nil))
+else
+	print("Error:", err or "unknown error")
+	os.exit(1)
+end

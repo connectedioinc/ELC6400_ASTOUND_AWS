@@ -1,0 +1,9 @@
+./debug.go
+./generate.go
+./proxy.go
+./sigpipe.go
+./ssh.go
+./tailscaled.go
+./tailscaled_bird.go
+./tailscaled_notwindows.go
+./with_cli.go

@@ -1,0 +1,8 @@
+make[2]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/base-files'
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/base-files
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-remove base-files /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages/base-files_260225.50289-r16279-5cc0535800_arm_cortex-a7_neon-vfpv4.ipk
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages/base-files_260225.50289-r16279-5cc0535800_arm_cortex-a7_neon-vfpv4.ipk'
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.base-files_installed
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/base-files.list
+make[2]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/base-files'
+time: package/base-files/clean#0.18#0.26#1.16

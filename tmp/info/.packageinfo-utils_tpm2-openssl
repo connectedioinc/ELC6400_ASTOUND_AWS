@@ -1,0 +1,25 @@
+Source-Makefile: package/utils/tpm2-openssl/Makefile
+
+Package: tpm2-openssl
+Submenu: TPM2
+Version: 1.3.0-1
+Depends: +libc +tpm2-tss +openssl-util
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: TPM2-OPENSSL
+Maintainer: 
+Source: tpm2-openssl-1.3.0-8a5572639742dee5bc0b370ac04547b4b8ab2e0f.tar.xz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: TPM2-OPENSSL
+Description:   TPM (Trusted Platform Module) 2 openssl
+https://github.com/tpm2-software/tpm2-openssl
+
+@@
+
+

@@ -1,0 +1,463 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AWS IoT Core Provisioning",
+    "description": "AWS IoT Core Provisioning API documentation",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [],
+  "tags": [
+    {
+      "name": "Provisioning"
+    }
+  ],
+  "paths": {
+    "/aws/provisioning/config": {
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "AWS", "Provisioning"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "AWS"
+      },
+      "get": {
+        "summary": "Returns all AWS IoT Core provisioning configurations",
+        "tags": ["Provisioning"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/aws_provisioning_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates a new AWS IoT Core provisioning configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/aws_provisioning_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_aws_provisioning_one"
+              }
+            }
+          }
+        },
+        "tags": ["Provisioning"]
+      },
+      "put": {
+        "summary": "Updates the selected AWS IoT Core provisioning configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/aws_provisioning_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_aws_provisioning_multi"
+              }
+            }
+          }
+        },
+        "tags": ["Provisioning"]
+      },
+      "delete": {
+        "summary": "Deletes the selected AWS IoT Core provisioning configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "tags": ["Provisioning"]
+      }
+    },
+    "/aws/provisioning/config/{id}": {
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "AWS", "Provisioning"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "AWS"
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected AWS IoT Core provisioning configuration",
+        "tags": ["Provisioning"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/aws_provisioning_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates the selected AWS IoT Core provisioning configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/aws_provisioning_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_aws_provisioning_one"
+              }
+            }
+          }
+        },
+        "tags": ["Provisioning"]
+      },
+      "delete": {
+        "summary": "Deletes the selected AWS IoT Core provisioning configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Provisioning"]
+      },
+      "post": {
+        "summary": "Uploads AWS IoT Core provisioning files",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["Provisioning"],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "enum": ["certfile", "keyfile"]
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": ["option", "file"]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "aws_provisioning": {
+        "type": "object",
+        "properties": {
+          "template": {
+            "description": "Name of Fleet provisioning template in AWS service.",
+            "type": "string",
+            "maxLength": 36,
+            "format": "regex",
+            "pattern": "^[A-Za-z0-9_-]+$",
+            "x-web": {
+              "pretty": "Template",
+              "input-type": "input",
+              "unique": true
+            }
+          },
+          "type": {
+            "description": "Fleet provisioning type.",
+            "type": "string",
+            "enum": ["1", "2"],
+            "x-web": {
+              "pretty": "Fleet provisioning type",
+              "input-type": "select",
+              "enum-pretty": {
+                "1": "Provisioning by claim",
+                "2": "Provisioning by trusted user"
+              }
+            }
+          },
+          "creation_type": {
+            "description": "Specifies the AWS API to be used for certificate creation.",
+            "type": "string",
+            "enum": ["1", "2"],
+            "x-web": {
+              "pretty": "Creation type",
+              "input-type": "select",
+              "enum-pretty": {
+                "1": "CreateKeysAndCertificate",
+                "2": "CreateCertificateFromCsr"
+              }
+            }
+          },
+          "certfile": {
+            "type": "string",
+            "description": "Provisioning claim certificate.",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/aws/provisioning/config/{id}",
+              "pretty": "Provisioning claim certificate",
+              "input-type": "input",
+              "depends": [
+                {
+                  "type": "1"
+                }
+              ],
+              "require-depends": [
+                {
+                  "type": "1"
+                }
+              ]
+            }
+          },
+          "keyfile": {
+            "type": "string",
+            "description": "Provisioning claim private key.",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/aws/provisioning/config/{id}",
+              "pretty": "Provisioning claim private key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "type": "1"
+                }
+              ],
+              "require-depends": [
+                {
+                  "type": "1"
+                }
+              ]
+            }
+          },
+          "access_key": {
+            "type": "string",
+            "description": "Trusted user's access key.",
+            "maxLength": 20,
+            "minLength": 20,
+            "format": "regex",
+            "pattern": "^[A-Z0-9]+$",
+            "x-web": {
+              "pretty": "Access key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "type": "2"
+                }
+              ],
+              "require-depends": [
+                {
+                  "type": "2"
+                }
+              ]
+            }
+          },
+          "secret_key": {
+            "type": "string",
+            "description": "Trusted user's secret key.",
+            "maxLength": 40,
+            "minLength": 40,
+            "format": "default_validation",
+            "x-web": {
+              "pretty": "Secret key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "type": "2"
+                }
+              ],
+              "require-depends": [
+                {
+                  "type": "2"
+                }
+              ]
+            }
+          },
+          "param": {
+            "type": "array",
+            "description": "Parameters which will be sent along with the certificate creation request. Value must be in the format \"key:value\". It will be formatted as JSON values (\"key\": \"value\"). Additional device parameters can be used: %device% - Device name, \n %mac% - MAC address, \n %maceth% - WAN MAC address, \n %batch% - Batch, \n %hwver% - Hardware version, \n %serial% - Serial number, \n %time% - Time now, \n %thing% - AWS Thing name.",
+            "format": "regex",
+            "pattern": "^[a-zA-Z0-9:%%_-]+$",
+            "x-web": {
+              "pretty": "Parameters",
+              "input-type": "input"
+            },
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": ["template", "type", "creation_type"]
+      },
+      "req_body_aws_provisioning_one": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/aws_provisioning"
+          }
+        },
+        "required": ["data"]
+      },
+      "req_body_aws_provisioning_multi": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/components/schemas/aws_provisioning"
+                }
+              ],
+              "required": ["id"]
+            }
+          }
+        },
+        "required": ["data"]
+      }
+    },
+    "responses": {
+      "aws_provisioning_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "$ref": "#/components/schemas/aws_provisioning"
+                    }
+                  ],
+                  "required": ["id"]
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "aws_provisioning_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      {
+                        "$ref": "#/components/schemas/aws_provisioning"
+                      }
+                    ],
+                    "required": ["id"]
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+	"user": "uhttpd",
+	"access": {
+		"network.interface.*": {
+			"methods": ["status"]
+		}
+	}
+}
+

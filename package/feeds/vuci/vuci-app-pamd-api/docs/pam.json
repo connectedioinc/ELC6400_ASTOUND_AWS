@@ -1,0 +1,652 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "PAM",
+    "version": "1.0",
+    "description": "PAM API documentation"
+  },
+  "tags": [
+    {
+      "name": "PAM"
+    }
+  ],
+  "paths": {
+    "/access_control/pam/options": {
+      "get": {
+        "summary": "Returns PAM allowed modules",
+        "tags": ["PAM"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_modules"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["System", "Administration", "Access Control"],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    },
+    "/access_control/pam/config": {
+      "get": {
+        "summary": "Returns all PAM configurations",
+        "tags": ["PAM"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_pam"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates specified PAM configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_pam"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PAM_multi"
+        },
+        "tags": ["PAM"]
+      },
+      "post": {
+        "summary": "Creates PAM configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_pam_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PAM"
+        },
+        "tags": ["PAM"]
+      },
+      "delete": {
+        "summary": "Deletes specified PAM configurations",
+        "tags": ["PAM"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["System", "Administration", "Access Control"],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    },
+    "/access_control/pam/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Access Control - PAM configuration identifier (ID)"
+        }
+      ],
+      "get": {
+        "summary": "Returns the specified PAM configuration",
+        "tags": ["PAM"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_pam_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Access Control - PAM configuration identifier (ID)"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates the specified PAM configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_pam_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/PAM"
+        },
+        "tags": ["PAM"],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Access Control - PAM configuration identifier (ID)"
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Deletes specified PAM configuration",
+        "tags": ["PAM"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "Access Control - PAM configuration identifier (ID)"
+          }
+        ]
+      },
+      "x-web": {
+        "menu": ["System", "Administration", "Access Control"],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PAM": {
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "enabled": "",
+            "service": "",
+            "module": "",
+            "type": "",
+            "server": "",
+            "secret": "",
+            "port": "",
+            "timeout": "",
+            "priority": ""
+          }
+        },
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Turns the PAM auth on or off.",
+            "format": "is_bool",
+            "enum": ["0", "1"]
+          },
+          "service": {
+            "x-web": {
+              "pretty": "Service",
+              "input-type": "select",
+              "enum-pretty": {
+                "sshd": "SSH",
+                "rpcd": "WebUI"
+              }
+            },
+            "type": "string",
+            "enum": ["sshd", "rpcd"],
+            "description": "Service"
+          },
+          "module": {
+            "x-web": {
+              "pretty": "Module",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Specifies the PAM module that implements the service."
+          },
+          "type": {
+            "x-web": {
+              "pretty": "Type",
+              "input-type": "select",
+              "enum-pretty": {
+                "required": "Required",
+                "requisite": "Requisite",
+                "sufficient": "Sufficient",
+                "optional": "Optional"
+              }
+            },
+            "type": "string",
+            "enum": ["required", "requisite", "sufficient", "optional"],
+            "description": "Determines the continuation or failure behavior for the module."
+          },
+          "server": {
+            "x-web": {
+              "pretty": "Server",
+              "input-type": "input",
+              "depends": [
+                {
+                  "module": "radius_auth"
+                },
+                {
+                  "module": "tacplus"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "The IP address of the RADIUS/TACACS+ server.",
+            "format": "ipaddr"
+          },
+          "secret": {
+            "x-web": {
+              "pretty": "Secret",
+              "input-type": "input",
+              "depends": [
+                {
+                  "module": "radius_auth"
+                },
+                {
+                  "module": "tacplus"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "RADIUS/TACACS+ shared secret."
+          },
+          "port": {
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input",
+              "depends": [
+                {
+                  "module": "radius_auth"
+                },
+                {
+                  "module": "tacplus"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Server authentication port.",
+            "format": "port"
+          },
+          "timeout": {
+            "x-web": {
+              "pretty": "Timeout",
+              "input-type": "input",
+              "depends": [
+                {
+                  "module": "radius_auth"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Timeout in seconds waiting for RADIUS server reply.",
+            "format": "range(3, 10)",
+            "minLength": 1,
+            "maxLength": 2
+          },
+          "require_message_auth": {
+            "x-web": {
+              "pretty": "Require Message-Authenticator",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "module": "radius_auth"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Require and validate Message-Authenticator RADIUS attribute on Access-Request replies.",
+            "format": "is_bool",
+            "enum": ["0", "1"]
+          },
+          "all_users": {
+            "x-web": {
+              "pretty": "All users",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "service": "rpcd",
+                  "users": ""
+                },
+                {
+                  "service": "sshd",
+                  "module": "radius_auth",
+                  "users": ""
+                },
+                {
+                  "service": "sshd",
+                  "module": "tacplus",
+                  "users": ""
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Indicate if all users should use PAM for authentication.",
+            "format": "is_bool",
+            "enum": ["0", "1"]
+          },
+          "default_group": {
+            "x-web": {
+              "pretty": "Default group",
+              "input-type": "select",
+              "depends": [
+                {
+                  "service": "rpcd",
+                  "all_users": "1",
+                  "module": "radius_auth"
+                },
+                {
+                  "service": "rpcd",
+                  "all_users": "1",
+                  "module": "tacplus"
+                }
+              ],
+              "enum-pretty": {
+                "none": "None",
+                "root": "Root",
+                "admin": "Admin",
+                "user": "User"
+              }
+            },
+            "type": "string",
+            "enum": ["none", "root", "admin", "user"],
+            "description": "Specifies the default user group if parameter Management-Privilege-Level (Radius) or priv-lvl (TACACS+) is not sent. Selecting 'none' will deny users without this parameter."
+          },
+          "users": {
+            "x-web": {
+              "pretty": "Specific users",
+              "input-type": "input",
+              "depends": [
+                {
+                  "service": "rpcd",
+                  "all_users": "0"
+                }
+              ]
+            },
+            "type": "array",
+            "description": "List of users that should use PAM for authentication.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "priority": {
+            "x-web": {
+              "pretty": "Priority",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Priority of PAM modules.",
+            "format": "uinteger"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_modules": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "x-examples": {
+                "example-1": {
+                  "success": true,
+                  "data": {
+                    "modules": [""]
+                  }
+                }
+              },
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "object",
+                  "required": ["modules"],
+                  "properties": {
+                    "modules": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "200_pam": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "x-examples": {
+                "example-1": {
+                  "success": true,
+                  "data": [
+                    {
+                      "id": ""
+                    }
+                  ]
+                }
+              },
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          }
+                        },
+                        "required": ["id"]
+                      },
+                      {
+                        "$ref": "#/components/schemas/PAM"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "200_pam_one": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "x-examples": {
+                "example-1": {
+                  "success": true,
+                  "data": {
+                    "id": ""
+                  }
+                }
+              },
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["id"]
+                    },
+                    {
+                      "$ref": "#/components/schemas/PAM"
+                    }
+                  ]
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "PAM": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "x-examples": {
+                "example-1": {
+                  "data": {}
+                }
+              },
+              "properties": {
+                "data": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PAM"
+                    },
+                    {
+                      "type": "object",
+                      "required": ["service"]
+                    }
+                  ]
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "PAM_multi": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "x-examples": {
+                "example-1": {
+                  "data": [
+                    {
+                      "id": ""
+                    }
+                  ]
+                }
+              },
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "x-web": {
+                              "pretty": "Configuration ID",
+                              "input-type": "input"
+                            },
+                            "type": "string",
+                            "description": "Access Control - PAM configuration identifier (ID)."
+                          }
+                        },
+                        "required": ["id"]
+                      },
+                      {
+                        "$ref": "#/components/schemas/PAM"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+Source-Makefile: package/libs/libaws-iot-device-sdk-embedded-C/Makefile
+
+Package: libaws-iot-device-sdk-embedded-C
+Version: 202211.00-1
+Depends: +libc +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: AWS IoT Device SDK for Embedded C
+Maintainer: 
+Source: aws-iot-device-sdk-embedded-C-202211.00.zip
+License: MIT
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: AWS IoT Device SDK for Embedded C
+Description: AWS IoT Device SDK for Embedded C
+
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-iec60870-client-ui/Makefile
+
+Package: vuci-app-iec60870-client-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-iec60870-client-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for IEC 60870-5 Client
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for IEC 60870-5 Client
+Description: VuCI UI Support for IEC 60870-5 Client
+
+@@
+
+

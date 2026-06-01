@@ -1,0 +1,375 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Switch Ports"
+    }
+  ],
+  "paths": {
+    "/site_manager/ports_settings/config": {
+      "get": {
+        "summary": "Returns all Site manager switch port configurations",
+        "tags": [
+          "Switch Ports"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_switch_ports_multi"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager switch port configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_switch_ports_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_switch_ports_multi"
+        },
+        "tags": [
+          "Switch Ports"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Network",
+          "Ports"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/ports_settings/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected Site manager switch port configuration",
+        "tags": [
+          "Switch Ports"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_switch_ports_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager switch port configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_switch_ports_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_switch_ports_one"
+        },
+        "tags": [
+          "Switch Ports"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Network",
+          "Ports"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "devman_switch_port": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "dm_device_id": {
+                "type": "string",
+                "description": "Device's ID for which this configuration will be applied to.",
+                "readOnly": true
+              }
+            },
+            "required": [
+              "dm_device_id"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "string",
+                "description": "Enable/Disable port.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Enable",
+                  "input-type": "switch"
+                }
+              },
+              "speed": {
+                "type": "string",
+                "description": "Port speed.",
+                "enum": [
+                  "auto",
+                  "10",
+                  "100",
+                  "1000"
+                ],
+                "x-web": {
+                  "pretty": "Speed",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "auto": "Auto",
+                    "10": "10 Mbps",
+                    "100": "100 Mbps",
+                    "1000": "1000 Mbps"
+                  }
+                }
+              },
+              "duplex": {
+                "type": "string",
+                "description": "Duplex mode.",
+                "enum": [
+                  "full",
+                  "half"
+                ],
+                "x-web": {
+                  "pretty": "Duplex",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "full": "Full",
+                    "half": "Half"
+                  }
+                }
+              },
+              "isolated": {
+                "type": "string",
+                "description": "Port isolation.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Isolated",
+                  "input-type": "switch"
+                }
+              },
+              "description": {
+                "type": "string",
+                "description": "Port description.",
+                "x-web": {
+                  "pretty": "Description",
+                  "input-type": "input"
+                }
+              },
+              "_id": {
+                "type": "string",
+                "description": "Port ID.",
+                "readOnly": true
+              },
+              "poe_enable": {
+                "type": "string",
+                "description": "Enable/Disable PoE.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "PoE",
+                  "input-type": "switch"
+                }
+              },
+              "eee_enable": {
+                "type": "string",
+                "description": "Enable/Disable EEE (Energy Efficient Ethernet).",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "EEE",
+                  "input-type": "switch"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "responses": {
+      "200_siteman_switch_ports_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_switch_port"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_switch_ports_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_switch_port"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "req_body_siteman_switch_ports_one": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/devman_switch_port"
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "req_body_siteman_switch_ports_multi": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_switch_port"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

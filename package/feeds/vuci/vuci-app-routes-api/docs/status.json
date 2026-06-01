@@ -1,0 +1,401 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Status"
+    }
+  ],
+  "paths": {
+    "/ip_neighbors/ipv4/status": {
+      "get": {
+        "summary": "Returns ARP tables",
+        "description": "Returns arp tables with their parameters",
+        "responses": {
+          "200": {
+            "description": "Returns ARP tables with their parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/routes_arp_status_200"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["IPv4"]
+      },
+      "x-web": {
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "menu": ["Status", "Routes", "Static"],
+        "name": "IP Neighbors"
+      }
+    },
+    "/ip_routes/ipv4/status": {
+      "get": {
+        "summary": "Returns IPv4 routes",
+        "description": "Returns IPv4 routes with their parameters",
+        "responses": {
+          "200": {
+            "description": "Returns IPv4 routes with their parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/routes_ipv4_status_200"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["IPv4"]
+      },
+      "x-web": {
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "menu": ["Status", "Routes", "Static"],
+        "name": "IP Routes"
+      }
+    },
+    "/ip_routes/ipv6/status": {
+      "get": {
+        "summary": "Returns IPv6 routes",
+        "responses": {
+          "200": {
+            "description": "Returns IPv6 routes with their parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/routes_ipv6_status_200"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["IPv6"]
+      },
+      "x-web": {
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "menu": ["Status", "Routes", "Static"],
+        "name": "IP Routes"
+      }
+    },
+    "/ip_neighbors/ipv6/status": {
+      "get": {
+        "summary": "Returns IPv6 neighbors",
+        "description": "Returns IPv6 neighbors with their parameters",
+        "responses": {
+          "200": {
+            "description": "Returns IPv6 neighbors with their parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/routes_arp_status_200"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["IPv6"]
+      },
+      "x-web": {
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "menu": ["Status", "Routes", "Static"],
+        "name": "IP Neighbors"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "routes_arp_status_200": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "proxy": {
+              "type": "string",
+              "description": "Boolean \"true\" if this is a proxy entry."
+            },
+            "stale": {
+              "type": "string",
+              "description": "Boolean \"true\" if the entry is stale (entry is valid but hasn't been confirmed recently)."
+            },
+            "noarp": {
+              "type": "string",
+              "description": "Boolean \"true\" if the entry is not caused by NDP or ARP."
+            },
+            "incomplete": {
+              "type": "string",
+              "description": "Boolean \"true\" if the entry is in incomplete state."
+            },
+            "delay": {
+              "type": "string",
+              "description": "Boolean \"true\" if the entry is delayed."
+            },
+            "family": {
+              "type": "string",
+              "description": "Number containing the neighbour entry family, 4 for IPv4 ARP or 6 for IPv6 NDP."
+            },
+            "reachable": {
+              "type": "string",
+              "description": "Boolean \"true\" if the entry is in reachable state."
+            },
+            "mac": {
+              "type": "string",
+              "description": "MAC address of the neighbor."
+            },
+            "dev": {
+              "type": "string",
+              "description": "String containing the associated device of the neighbour entry."
+            },
+            "router": {
+              "type": "string",
+              "description": "Boolean \"true\" if the neighbour entry is a router."
+            },
+            "dest": {
+              "type": "string",
+              "description": "Destination IP address of the neighbor."
+            },
+            "probe": {
+              "type": "string",
+              "description": "Boolean \"true\" if the entry is in probe state."
+            },
+            "failed": {
+              "type": "string",
+              "description": "Boolean \"true\" if the entry is in failed state."
+            },
+            "permanent": {
+              "type": "string",
+              "description": "Boolean \"true\" if the entry was statically configured from userspace."
+            }
+          }
+        }
+      },
+      "routes_ipv4_status_200": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "dev": {
+              "type": "string",
+              "description": "String containing the name of the outgoing interface.",
+              "x-web": {
+                "pretty": "Device"
+              }
+            },
+            "type": {
+              "type": "string",
+              "description": "Route type (e.g., 1 - unicast, 2 - local, 3 - broadcast, 4 - anycast, 5 - multicast).",
+              "x-web": {
+                "pretty": "Type",
+                "hw_tags": {
+                  "is_switch": false
+                }
+              }
+            },
+            "family": {
+              "type": "string",
+              "description": "Number containing the route family, 4 for IPv4 or 6 for IPv6.",
+              "x-web": {
+                "pretty": "Family",
+                "hw_tags": {
+                  "is_switch": false
+                }
+              }
+            },
+            "table": {
+              "type": "string",
+              "description": "Number of the associated routing table (0..65535).",
+              "x-web": {
+                "pretty": "Table"
+              }
+            },
+            "src": {
+              "type": "string",
+              "description": "Source prefix for the route.",
+              "x-web": {
+                "pretty": "Source",
+                "hw_tags": {
+                  "is_switch": false
+                }
+              }
+            },
+            "metric": {
+              "type": "string",
+              "description": "Number describing the route metric.",
+              "x-web": {
+                "pretty": "Metric",
+                "hw_tags": {
+                  "is_switch": true
+                }
+              }
+            },
+            "proto": {
+              "type": "string",
+              "description": "Number of the associated routing protocol.",
+              "x-web": {
+                "pretty": "Protocol",
+                "hw_tags": {
+                  "is_switch": false
+                }
+              }
+            },
+            "scope": {
+              "type": "string",
+              "description": "Number describing the scope of the route, most commonly 0 for global or 253 for on-link.",
+              "x-web": {
+                "pretty": "Scope",
+                "hw_tags": {
+                  "is_switch": false
+                }
+              }
+            },
+            "dest": {
+              "type": "string",
+              "description": "Destination network in CIDR format (e.g., 192.168.1.0/24).",
+              "x-web": {
+                "pretty": "Destination"
+              }
+            },
+            "gateway": {
+              "type": "string",
+              "description": "Gateway IP address for the route (e.g., 192.168.1.1).",
+              "x-web": {
+                "pretty": "Gateway"
+              }
+            }
+          }
+        }
+      },
+      "routes_ipv6_status_200": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "dev": {
+              "type": "string",
+              "description": "String containing the name of the outgoing interface.",
+              "x-web": {
+                "pretty": "Device"
+              }
+            },
+            "type": {
+              "type": "string",
+              "description": "Route type (e.g., 1 - unicast, 2 - local, 3 - broadcast, 4 - anycast, 5 - multicast).",
+              "x-web": {
+                "pretty": "Type",
+                "hw_tags": {
+                  "is_switch": false
+                }
+              }
+            },
+            "family": {
+              "type": "string",
+              "description": "Number containing the route family, 4 for IPv4 or 6 for IPv6.",
+              "x-web": {
+                "pretty": "Family",
+                "hw_tags": {
+                  "is_switch": false
+                }
+              }
+            },
+            "table": {
+              "type": "string",
+              "description": "Number of the associated routing table (0..65535).",
+              "x-web": {
+                "pretty": "Table"
+              }
+            },
+            "metric": {
+              "type": "string",
+              "description": "Number describing the route metric.",
+              "x-web": {
+                "pretty": "Metric"
+              }
+            },
+            "proto": {
+              "type": "string",
+              "description": "Number of the associated routing protocol.",
+              "x-web": {
+                "pretty": "Protocol",
+                "hw_tags": {
+                  "is_switch": false
+                }
+              }
+            },
+            "scope": {
+              "type": "string",
+              "description": "Number describing the scope of the route, most commonly 0 for global or 253 for on-link.",
+              "x-web": {
+                "pretty": "Scope",
+                "hw_tags": {
+                  "is_switch": false
+                }
+              }
+            },
+            "dest": {
+              "type": "string",
+              "description": "Destination network in CIDR format.",
+              "x-web": {
+                "pretty": "Destination"
+              }
+            },
+            "gateway": {
+              "type": "string",
+              "description": "Gateway IP address for the route.",
+              "x-web": {
+                "pretty": "Gateway"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "Routes status",
+    "version": "1.0",
+    "description": "Routes status api documentation"
+  }
+}

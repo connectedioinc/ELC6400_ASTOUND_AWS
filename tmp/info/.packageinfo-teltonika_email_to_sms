@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/email_to_sms/Makefile
+
+Package: email_to_sms
+Version: 2026-02-11-1
+Depends: +libc +lua-pop3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: POP3 email to SMS
+Maintainer: 
+Require-User: ets=507:ets=507
+Source: email_to_sms-2.18-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: POP3 email to SMS
+Description:  Enable this option in order to include POP3 email to SMS
+
+@@
+
+

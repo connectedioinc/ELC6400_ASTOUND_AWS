@@ -1,0 +1,28 @@
+Source-Makefile: package/teltonika/easycwmp/Makefile
+
+Package: easycwmp
+Version: 2026-02-11-1
+Depends: +libc +libubus +libuci +libubox +libmicroxml +libjson-c +libcurl +curl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: CWMP client (using libcurl)
+Maintainer: 
+Require-User: easycwmp=521:easycwmp=521
+Groups: easycwmp:network gsm chilli dnsmasq
+Source: EasyCwmp-1.8.3.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: CWMP client (using libcurl)
+Description:  TR-069 is an open source implementation of the client CWMP (TR-069)
+ protocol for data transfer to Auto Configuration Server (ACS).
+
+@@
+Config:
+	source "package/teltonika/easycwmp/Config.in"
+@@
+
+

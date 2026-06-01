@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/sim_idle_protection/Makefile
+
+Package: sim_idle_protection
+Version: 7.18
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: sim idle protection
+Maintainer: 
+Require-User: sim_idle_protection=574:sim_idle_protection=574
+Source: sim_idle_protection-7.18-7.18.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: sim idle protection
+Description: 	Package enabling periodic switching to a secondary SIM card for data
+	connection, preventing SIM card blockage due to inactivity.
+
+@@
+
+

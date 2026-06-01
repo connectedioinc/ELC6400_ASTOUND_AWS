@@ -1,0 +1,60 @@
+Source-Makefile: package/teltonika/coova-chilli/Makefile
+
+Package: coova-chilli
+Menu: 1
+Submenu: Captive Portals
+Version: 2026-02-11-1
+Depends: +libc +libuci +libtlt_uci +kmod-tun +librt +COOVACHILLI_CYASSL:libcyassl +COOVACHILLI_OPENSSL:libopenssl +COOVACHILLI_DATABASE:libsqlite3 +MOBILE_SUPPORT:libgsm +libubus +libubox +libtltchilli +libjson-c +COOVACHILLI_CURL:libcurl +COOVACHILLI_KMOD:kmod-ipt-coova +libcap +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Wireless LAN HotSpot controller (Coova Chilli Version)
+Maintainer: Jaehoon You <teslamint@gmail.com>
+Require-User: chilli=511:chilli=511
+FileAttributes: /usr/sbin/chilli::::cap_net_admin,cap_net_raw,cap_net_bind_service=ep;/usr/sbin/chilli_script:root::y:
+Source: coova-chilli-1.4.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Wireless LAN HotSpot controller (Coova Chilli Version)
+Description: 	CoovaChilli is an open source access controller for wireless LAN
+	access points and is based on ChilliSpot. It is used for authenticating
+	users of a wireless (or wired) LAN. It supports web based login (UAM)
+	which is today's standard for public HotSpots and it supports Wireless
+	Protected Access (WPA) which is the standard of the future.
+	Authentication,	authorization and accounting (AAA) is handled by your
+	favorite radius server.
+https://coova.github.io/
+Jaehoon You <teslamint@gmail.com>
+@@
+Config:
+  source "package/teltonika/coova-chilli/Config.in"
+@@
+
+Package: kmod-ipt-coova
+Submenu: Netfilter Extensions
+Version: <LINUX_VERSION>+2026-02-11-1
+Depends: +kmod-ipt-core +libxtables +kmod-ifb +tc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Coova netfilter module
+Maintainer: Jaehoon You <teslamint@gmail.com>
+Source: coova-chilli-1.4.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Coova netfilter module
+Description: 	Netfilter kernel module for CoovaChilli
+	Includes:
+	- coova
+http://www.coova.org/CoovaChilli
+Jaehoon You <teslamint@gmail.com>
+@@
+
+

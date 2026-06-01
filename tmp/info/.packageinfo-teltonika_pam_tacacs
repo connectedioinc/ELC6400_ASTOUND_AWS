@@ -1,0 +1,43 @@
+Source-Makefile: package/teltonika/pam_tacacs/Makefile
+
+Package: pam-tacacs
+Version: 2024-09-30-1
+Depends: +libc +libpam +libtacacs +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: TACACS+ PAM module
+Maintainer: 
+Source: pam-tacacs-v1.6.1-2024-09-30.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: TACACS+ PAM module
+Description: TACACS+ PAM module
+
+@@
+
+Package: libtacacs
+Version: 2024-09-30-1
+Depends: +libc +libpam +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: libtacacs
+Section: lib
+Category: Base system
+Repository: base
+Title: TACACS+ PAM module
+Maintainer: 
+Source: pam-tacacs-v1.6.1-2024-09-30.tar.xz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: TACACS+ PAM module
+Description: TACACS+ PAM module
+
+@@
+
+

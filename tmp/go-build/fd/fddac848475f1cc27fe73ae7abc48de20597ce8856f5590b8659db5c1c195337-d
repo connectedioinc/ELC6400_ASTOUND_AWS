@@ -1,0 +1,10 @@
+./delete.go
+./doc.go
+./ext.go
+./localapi.go
+./paths.go
+./peerapi.go
+./resume.go
+./retrieve.go
+./send.go
+./taildrop.go

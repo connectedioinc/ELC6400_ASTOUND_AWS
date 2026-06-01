@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/tlt_hotspot_theme_office/Makefile
+
+Package: hs_theme_office
+Submenu: Landing page themes
+Version: 2022-07-27
+Depends: +libc +vuci-app-landingpage
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: webui
+Category: WebUI
+Repository: vuci
+Title: Office theme
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Office theme
+Description: 	Hotspot landing page Office theme.
+
+@@
+
+

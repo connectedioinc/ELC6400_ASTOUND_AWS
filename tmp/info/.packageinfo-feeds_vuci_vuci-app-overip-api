@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-overip-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-overip-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +sodog-tlt +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI Support for OverIP
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI Support for OverIP
+Description: VuCI Support for OverIP
+
+@@
+
+

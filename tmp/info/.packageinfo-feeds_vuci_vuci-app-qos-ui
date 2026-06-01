@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-qos-ui/Makefile
+
+Package: vuci-app-qos-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-qos-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for QoS
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for QoS
+Description: VuCI UI Support for QoS
+
+@@
+
+

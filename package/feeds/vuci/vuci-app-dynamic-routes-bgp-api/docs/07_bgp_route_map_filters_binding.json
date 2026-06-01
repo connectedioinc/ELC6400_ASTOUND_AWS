@@ -1,0 +1,361 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "BGP Route Map Filters",
+    "version": "1.0",
+    "description": "BGP route map filters api documentation"
+  },
+  "servers": [],
+  "paths": {
+    "/bgp/instance/{id}/map_filters/config": {
+      "post": {
+        "operationId": "post-multi-bgp-map-filter-binding-config",
+        "summary": "Creates BGP route map filter configuration",
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bgp_route_map_filters_instance_options_multi"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200BgMapFiMultiInstance"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["Route Map Filters"]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "description": "UCI BGP instance section identifier",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "operationId": "get-multi-bgp-map-filter-binding-config",
+        "summary": "Returns all BGP route map filter configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgMapFiMultiInstance"
+          }
+        },
+        "tags": ["Route Map Filters"],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "description": "UCI BGP instance section identifier",
+            "in": "path",
+            "required": true
+          }
+        ]
+      },
+      "put": {
+        "operationId": "put-multi-bgp-map-filter-binding-config",
+        "summary": "Updates multiple BGP route map filter configurations",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bgp_route_map_filters_instance_options_multi"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgMapFiMultiInstance"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["Route Map Filters"]
+      },
+      "delete": {
+        "operationId": "delete-multi-bgp-map-filter-binding-config",
+        "summary": "Deletes multiple BGP route map filter configurations",
+        "tags": ["Route Map Filters"],
+        "description": "UCI section name of map filter",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "BGP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "BGP"
+      }
+    },
+    "/bgp/instance/{id}/map_filters/config/{map_filter_id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "UCI BGP instance section identifier"
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "map_filter_id",
+          "in": "path",
+          "required": true,
+          "description": "UCI BGP route map filter section identifier"
+        }
+      ],
+      "get": {
+        "operationId": "get-bgp-map-filter-binding-config",
+        "description": "",
+        "summary": "Returns specified BGP map filter configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgMapFiInstance"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Route Map Filters"],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          },{
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "UCI BGP instance section identifier"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "map_filter_id",
+            "in": "path",
+            "required": true,
+            "description": "UCI BGP route map filter section identifier"
+          }
+        ]
+      },
+      "put": {
+        "operationId": "put-bgp-map-filter-binding-config",
+        "summary": "Updates specified BGP map filter configuration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bgp_route_map_filters_instance_options"
+                  }
+                }
+              },
+              "examples": {}
+            }
+          },
+          "description": ""
+        },
+        "description": "",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgMapFiInstance"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["Route Map Filters"]
+      },
+      "delete": {
+        "operationId": "delete-bgp-map-filter-binding-config",
+        "summary": "Deletes specified BGP route map filter configuration",
+        "tags": ["Route Map Filters"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "BGP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "BGP"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "bgp_route_map_filters_instance_options": {
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "enabled": "1",
+            "direction": "in",
+            "target": "peer",
+            "route_map": "test"
+          }
+        },
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "description": "Enable/Disable BGP route map filter.",
+            "enum": ["0", "1"]
+          },
+          "direction": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Direction",
+              "input-type": "select"
+            },
+            "description": "If direction is Inbound, the access list is applied to input routes. If direction is Outbound the access list is applied to advertised routes.",
+            "enum": ["in", "out"]
+          },
+          "target": {
+            "x-web": {
+              "pretty": "Peer",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Applies the filter for the specified peer."
+          },
+          "route_map": {
+            "x-web": {
+              "pretty": "Route map",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Route-map filter to apply."
+          },
+          "instance": {
+            "type": "string",
+            "description": "Instance to which this entry belongs"
+          }
+        },
+        "required": ["direction", "target", "route_map"]
+      },
+      "bgp_route_map_filters_instance_options_multi": {
+        "title": "bgp_route_map_filters_instance_options_multi",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "x-web": {
+                  "pretty": "Configuration name",
+                  "unique": true,
+                  "input-type": "input"
+                },
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/bgp_route_map_filters_instance_options"
+          }
+        ]
+      }
+    },
+    "responses": {
+      "200BgMapFiInstance": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/bgp_route_map_filters_instance_options_multi"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200BgMapFiMultiInstance": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/bgp_route_map_filters_instance_options_multi"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Route Map Filters"
+    }
+  ]
+}

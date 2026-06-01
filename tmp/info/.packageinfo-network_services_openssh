@@ -1,0 +1,27 @@
+Source-Makefile: package/network/services/openssh/Makefile
+
+Package: openssh-sftp-server
+Submenu: SSH
+Version: 9.6p1-1
+Depends: +libc +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: without-pam
+Section: net
+Category: Network
+Repository: base
+Title: OpenSSH SFTP server
+Maintainer: Peter Wagner <tripolar@gmx.at>
+CPE-ID: cpe:/a:openbsd:openssh
+Source: openssh-9.6p1.tar.gz
+License: SSH-OpenSSH
+LicenseFiles: LICENCE
+Type: ipkg
+Detail-Description: OpenSSH SFTP server
+Description: OpenSSH SFTP server.
+http://www.openssh.com/
+Peter Wagner <tripolar@gmx.at>
+@@
+
+

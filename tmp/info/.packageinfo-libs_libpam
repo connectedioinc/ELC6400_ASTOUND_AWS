@@ -1,0 +1,138 @@
+Source-Makefile: package/libs/libpam/Makefile
+Build-Depends: libgpg-error libgcrypt meson/host ninja/host
+Build-Depends/host: ninja/host
+
+Package: libpam
+Menu: 1
+Version: 1.7.1-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: the Linux-PAM libraries and modules.
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+CPE-ID: cpe:/a:linux-pam:linux-pam
+Source: Linux-PAM-1.7.1.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: the Linux-PAM libraries and modules.
+Description: 	The Linux-PAM Pluggable Authentication Modules.
+http://www.kernel.org/pub/linux/libs/pam
+Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+@@
+
+Package: libpam-mod-unix
+Version: 1.7.1-1
+Depends: +libc libpam
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Module for traditional password authentication
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+CPE-ID: cpe:/a:linux-pam:linux-pam
+Source: Linux-PAM-1.7.1.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Module for traditional password authentication
+Description: Module for traditional password authentication
+http://www.kernel.org/pub/linux/libs/pam
+Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+@@
+
+Package: libpam-mod-deny
+Version: 1.7.1-1
+Depends: +libc libpam
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: The locking-out PAM module
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+CPE-ID: cpe:/a:linux-pam:linux-pam
+Source: Linux-PAM-1.7.1.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: The locking-out PAM module
+Description: 	This module can be used to deny access. It always indicates a failure to the application through the PAM framework
+http://www.kernel.org/pub/linux/libs/pam
+Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+@@
+
+Package: libpam-mod-permit
+Version: 1.7.1-1
+Depends: +libc libpam
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: The promiscuous module
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+CPE-ID: cpe:/a:linux-pam:linux-pam
+Source: Linux-PAM-1.7.1.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: The promiscuous module
+Description: 	pam_permit is a PAM module that always permit access. It does nothing else.
+http://www.kernel.org/pub/linux/libs/pam
+Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+@@
+
+Package: libpam-mod-umask
+Version: 1.7.1-1
+Depends: +libc libpam
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: PAM module to set the file mode creation mask
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+CPE-ID: cpe:/a:linux-pam:linux-pam
+Source: Linux-PAM-1.7.1.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: PAM module to set the file mode creation mask
+Description: PAM module to set the file mode creation mask
+http://www.kernel.org/pub/linux/libs/pam
+Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+@@
+
+Package: libpam-mod-extra
+Version: 1.7.1-1
+Depends: +libc libpam
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Extra PAM modules
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+CPE-ID: cpe:/a:linux-pam:linux-pam
+Source: Linux-PAM-1.7.1.tar.xz
+License: BSD-3-Clause
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Extra PAM modules
+Description: Extra PAM modules
+http://www.kernel.org/pub/linux/libs/pam
+Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+@@
+
+

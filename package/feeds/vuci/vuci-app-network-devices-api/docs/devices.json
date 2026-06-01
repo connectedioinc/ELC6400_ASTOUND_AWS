@@ -1,0 +1,1629 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Network Devices",
+    "version": "1.0",
+    "description": "Network devices api documentation.",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "General"
+    },
+    {
+      "name": "Bridge"
+    },
+    {
+      "name": "Ethernet"
+    }
+  ],
+  "paths": {
+    "/network/devices/config": {
+      "get": {
+        "summary": "Returns network device configurations",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "description": "Returns network device configurations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_devices_base_options_identifier"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    },
+    "/network/devices/config/{id}": {
+      "get": {
+        "summary": "Returns network device configuration",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "description": "Returns network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_base_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the device configuration"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "The ID of the device configuration"
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    },
+    "/network/devices/bridge/config": {
+      "get": {
+        "summary": "Returns bridge network device configurations",
+        "tags": ["Bridge"],
+        "responses": {
+          "200": {
+            "description": "Returns bridge network device configurations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_devices_bridge_options_identifier"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates bridge network device configuration",
+        "responses": {
+          "201": {
+            "description": "Returns created bridge network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_bridge_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/network_devices_bridge_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Bridge"]
+      },
+      "put": {
+        "summary": "Updates bridge network device configurations",
+        "responses": {
+          "200": {
+            "description": "Returns updated bridge network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_devices_bridge_options_identifier"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/network_devices_bridge_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Bridge"]
+      },
+      "delete": {
+        "summary": "Deletes bridge network device configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Bridge"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "IDs of network devices to delete.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "dsa": true,
+          "is_switch": false
+        }
+      }
+    },
+    "/network/devices/bridge/config/{id}": {
+      "get": {
+        "summary": "Returns bridge network device configuration",
+        "tags": ["Bridge"],
+        "responses": {
+          "200": {
+            "description": "Returns specified bridge network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_bridge_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the device configuration"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates bridge network device configuration",
+        "responses": {
+          "200": {
+            "description": "Returns updated bridge network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_bridge_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "",
+        "tags": ["Bridge"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/network_devices_bridge_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes bridge network device configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Bridge"]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "The ID of the device configuration"
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "dsa": true,
+          "is_switch": false
+        }
+      }
+    },
+    "/network/devices/ethernet/config": {
+      "get": {
+        "summary": "Returns ethernet network device configurations",
+        "tags": ["Ethernet"],
+        "responses": {
+          "200": {
+            "description": "Returns ethernet network device configurations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_devices_base_options_identifier"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates ethernet network device configuration",
+        "responses": {
+          "201": {
+            "description": "Returns created ethernet network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_base_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/network_devices_base_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Ethernet"]
+      },
+      "put": {
+        "summary": "Updates ethernet network device configurations",
+        "responses": {
+          "200": {
+            "description": "Returns updated ethernet network device configurations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_devices_base_options_identifier"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/network_devices_base_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Ethernet"]
+      },
+      "delete": {
+        "summary": "Deletes ethernet network device configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Ethernet"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "IDs of network devices to delete.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    },
+    "/network/devices/ethernet/config/{id}": {
+      "get": {
+        "summary": "Returns ethernet network device configuration",
+        "tags": ["Ethernet"],
+        "responses": {
+          "200": {
+            "description": "Returns ethernet network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_base_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the device configuration"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates ethernet network device configuration",
+        "responses": {
+          "200": {
+            "description": "Updates ethernet network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_base_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["Ethernet"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/network_devices_base_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes ethernet network device configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Ethernet"]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "The ID of the device configuration"
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    },
+    "/network/devices/status": {
+      "get": {
+        "summary": "Returns network devices status",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "description": "Returns network devices status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_device_status"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"]
+      }
+    },
+    "/network/devices/status/{id}": {
+      "get": {
+        "summary": "Returns specified network device status",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "description": "Returns specified network device status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_device_status"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "device name"
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"]
+      }
+    },
+    "/network/devices/bridge/status": {
+      "get": {
+        "summary": "Returns bridge network devices status",
+        "tags": ["Bridge"],
+        "responses": {
+          "200": {
+            "description": "Returns network devices bridge status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_device_status"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    },
+    "/network/devices/bridge/status/{id}": {
+      "get": {
+        "summary": "Returns specified bridge network device status",
+        "tags": ["Bridge"],
+        "responses": {
+          "200": {
+            "description": "Returns specified network device's bridge status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_device_status"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "device name"
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    },
+    "/network/devices/ethernet/status": {
+      "get": {
+        "summary": "Returns ethernet network devices status",
+        "tags": ["Ethernet"],
+        "responses": {
+          "200": {
+            "description": "Returns ethernet network devices status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_device_status"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    },
+    "/network/devices/ethernet/status/{id}": {
+      "get": {
+        "summary": "Returns specified ethernet network device status",
+        "tags": ["Ethernet"],
+        "responses": {
+          "200": {
+            "description": "Returns specified ethernet network device status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_device_status"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "device name"
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {},
+    "schemas": {
+      "network_devices_base_options": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Name",
+              "group": "General"
+            },
+            "type": "string",
+            "description": "Name of the device."
+          },
+          "macaddr": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "MAC address",
+              "group": "General"
+            },
+            "type": "string",
+            "format": "macaddr",
+            "description": "MAC address overriding the default one for this device."
+          },
+          "mtu": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "MTU",
+              "group": "General"
+            },
+            "type": "string",
+            "format": "irange(68,65535)",
+            "description": "Sets the maximum transmission unit (MTU) size. It is the largest size of a protocol data unit (PDU) that can be transmitted in a single network layer transaction."
+          },
+          "type": {
+            "type": "string",
+            "description": "If set to bridge, creates a bridge of the given name using L2 devices listed in ports.",
+            "readOnly": true
+          }
+        }
+      },
+      "network_devices_base_options_identifier": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The ID of the device configuration."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/network_devices_base_options"
+          }
+        ]
+      },
+      "network_devices_bridge_options": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/network_devices_base_options"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ports": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "Ports",
+                  "group": "General"
+                },
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Specifies the wired ports to attach to this bridge."
+              },
+              "igmp_snooping": {
+                "x-web": {
+                  "input-type": "switch",
+                  "pretty": "Enable IGMP",
+                  "group": "General"
+                },
+                "type": "string",
+                "enum": ["1", "0"],
+                "description": "Enables IGMP snooping on this bridge."
+              },
+              "stp": {
+                "x-web": {
+                  "input-type": "switch",
+                  "pretty": "Enable STP",
+                  "group": "General"
+                },
+                "type": "string",
+                "enum": ["1", "0"],
+                "description": "Enables the Spanning Tree Protocol on this bridge."
+              },
+              "priority": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "Priority",
+                  "group": "General",
+                  "depends": [
+                    {
+                      "stp": "1"
+                    }
+                  ]
+                },
+                "type": "string",
+                "format": "irange(0,65535)",
+                "description": "Bridge Priority. Lowest priority bridge becomes the Root of the Spanning Tree; most switches default to 32768."
+              },
+              "ageing_time": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "Ageing time",
+                  "group": "General",
+                  "depends": [
+                    {
+                      "stp": "1"
+                    }
+                  ]
+                },
+                "type": "string",
+                "format": "irange(10,1000000)",
+                "description": "Timeout in seconds for learned MAC addresses in the forwarding database."
+              },
+              "hello_time": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "Hello time",
+                  "group": "General",
+                  "depends": [
+                    {
+                      "stp": "1"
+                    }
+                  ]
+                },
+                "type": "string",
+                "format": "irange(1,10)",
+                "description": "Number of seconds between transmissions of configuration BPDUs."
+              },
+              "forward_delay": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "Forward delay",
+                  "group": "General",
+                  "depends": [
+                    {
+                      "stp": "1"
+                    }
+                  ]
+                },
+                "type": "string",
+                "format": "irange(2,30)",
+                "description": "How long an STP bridge port remains in the listening and learning states before transitioning to the forwarding state."
+              },
+              "max_age": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "Max age",
+                  "group": "General",
+                  "depends": [
+                    {
+                      "stp": "1"
+                    }
+                  ]
+                },
+                "type": "string",
+                "format": "irange(6,40)",
+                "description": "Maximum expected arrival time of hello bridge protocol data units (BPDUs)."
+              }
+            }
+          }
+        ]
+      },
+      "network_devices_bridge_options_identifier": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The ID of the device configuration."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/network_devices_bridge_options"
+          }
+        ]
+      },
+      "network_device_status": {
+        "description": "Network device status",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the device configuration."
+          },
+          "drop_unsolicited_na": {
+            "type": "boolean",
+            "description": "Specifies whether unsolicited Neighbor Advertisements (NA) should be dropped.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "mtu": {
+            "type": "number",
+            "description": "Maximum transmission unit is the largest size of a protocol data unit (PDU) that can be transmitted in a single network layer transaction."
+          },
+          "external": {
+            "type": "boolean",
+            "description": "Indicates if the interface is externally controlled (e.g., by another system component).",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "igmpversion": {
+            "type": "number",
+            "description": "Specifies the IGMP version used by the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "ip6segmentrouting": {
+            "type": "boolean",
+            "description": "Enables or disables IPv6 Segment Routing.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "drop_v4_unicast_in_l2_multicast": {
+            "type": "boolean",
+            "description": "Drops IPv4 unicast packets received in a Layer 2 multicast frame.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "speed": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The speed at which the interface is operating.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "virtual": {
+            "type": "boolean",
+            "description": "Indicates if the device is a virtual interface (e.g., bridge, VLAN).",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "drop_gratuitous_arp": {
+            "type": "boolean",
+            "description": "Drops gratuitous ARP packets received on the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "mldversion": {
+            "type": "number",
+            "description": "Specifies the MLD (Multicast Listener Discovery) version used by the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "neigh6reachabletime": {
+            "type": "number",
+            "description": "Time in milliseconds a neighbor is considered reachable via IPv6.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "up": {
+            "type": "boolean",
+            "description": "Indicates if the device is administratively up."
+          },
+          "autoneg": {
+            "type": "boolean",
+            "description": "Specifies whether auto-negotiation is enabled for the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "arp_accept": {
+            "type": "boolean",
+            "description": "Specifies whether the acceptance of ARP requests on the interface is enabled.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The name of the network interface (e.g., br-lan)."
+          },
+          "carrier": {
+            "type": "boolean",
+            "description": "Indicates if a physical carrier is detected (link present)."
+          },
+          "macaddr": {
+            "type": "string",
+            "description": "MAC address of the device.",
+            "minLength": 1
+          },
+          "present": {
+            "type": "boolean",
+            "description": "Indicates if the device is currently present in the system.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "mtu6": {
+            "type": "number",
+            "description": "MTU used for IPv6 traffic on the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "neigh6gcstaletime": {
+            "type": "number",
+            "description": "Stale time for IPv6 neighbor garbage collection.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "dadtransmits": {
+            "type": "number",
+            "description": "Number of Duplicate Address Detection (DAD) messages sent.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "link-supported": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "Array of link modes supported by the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "acceptlocal": {
+            "type": "boolean",
+            "description": "Allows or denies packets with a local source address to be accepted.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "ipv6": {
+            "type": "boolean",
+            "description": "Indicates whether IPv6 is enabled on the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "promisc": {
+            "type": "boolean",
+            "description": "Indicates whether the interface is in promiscuous mode.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "statistics": {
+            "type": "object",
+            "description": "Object containing counters.",
+            "properties": {
+              "rx_frame_errors": {
+                "type": "number",
+                "description": "Receive frame alignment errors."
+              },
+              "rx_crc_errors": {
+                "type": "number",
+                "description": "Receive CRC errors."
+              },
+              "tx_heartbeat_errors": {
+                "type": "number",
+                "description": "Transmit heartbeat errors."
+              },
+              "rx_over_errors": {
+                "type": "number",
+                "description": "Receive overrun errors."
+              },
+              "rx_errors": {
+                "type": "number",
+                "description": "Total receive errors."
+              },
+              "tx_packets": {
+                "type": "number",
+                "description": "Number of packets transmitted."
+              },
+              "tx_carrier_errors": {
+                "type": "number",
+                "description": "Carrier errors on transmit."
+              },
+              "rx_packets": {
+                "type": "number",
+                "description": "Number of packets received."
+              },
+              "rx_length_errors": {
+                "type": "number",
+                "description": "Length errors on received frames."
+              },
+              "tx_errors": {
+                "type": "number",
+                "description": "Total transmit errors."
+              },
+              "tx_aborted_errors": {
+                "type": "number",
+                "description": "Aborted transmission errors."
+              },
+              "tx_window_errors": {
+                "type": "number",
+                "description": "Window errors on transmission."
+              },
+              "tx_bytes": {
+                "type": "number",
+                "description": "Total bytes transmitted."
+              },
+              "collisions": {
+                "type": "number",
+                "description": "Number of collisions detected on transmit."
+              },
+              "rx_bytes": {
+                "type": "number",
+                "description": "Total bytes received."
+              },
+              "rx_fifo_errors": {
+                "type": "number",
+                "description": "FIFO overrun errors on receive."
+              },
+              "rx_dropped": {
+                "type": "number",
+                "description": "Packets dropped on receive."
+              },
+              "tx_fifo_errors": {
+                "type": "number",
+                "description": "FIFO overrun errors on transmit."
+              },
+              "rx_compressed": {
+                "type": "number",
+                "description": "Compressed packets received."
+              },
+              "multicast": {
+                "type": "number",
+                "description": "Multicast packets received."
+              },
+              "tx_compressed": {
+                "type": "number",
+                "description": "Compressed packets transmitted."
+              },
+              "rx_missed_errors": {
+                "type": "number",
+                "description": "Missed packet errors on receive."
+              },
+              "tx_dropped": {
+                "type": "number",
+                "description": "Packets dropped on transmit."
+              }
+            },
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "link-partner-advertising": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "Capabilities advertised by the link partner.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "rpfilter": {
+            "type": "number",
+            "description": "Reverse Path Filtering setting for the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "txqueuelen": {
+            "type": "number",
+            "description": "Length of the transmit queue.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "type": {
+            "type": "string",
+            "description": "Indicates the device type (e.g., ethernet, bridge)",
+            "minLength": 1
+          },
+          "multicast": {
+            "type": "boolean",
+            "description": "Indicates whether multicast is enabled on the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "drop_v6_unicast_in_l2_multicast": {
+            "type": "boolean",
+            "description": "Drops IPv6 unicast packets received in a Layer 2 multicast frame.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "auth_status": {
+            "type": "boolean",
+            "description": "Indicates the authentication status of the interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "neigh4locktime": {
+            "type": "number",
+            "description": "Lock time for IPv4 neighbors (in milliseconds).",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "neigh4gcstaletime": {
+            "type": "number",
+            "description": "Stale time for IPv4 neighbor garbage collection.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "sendredirects": {
+            "type": "boolean",
+            "description": "Indicates if the interface sends ICMP redirects.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "neigh4reachabletime": {
+            "type": "number",
+            "description": "Time in milliseconds a neighbor is considered reachable via IPv4.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "link-advertising": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            },
+            "description": "Link capabilities advertised by this interface.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": false
+              }
+            }
+          },
+          "bridge-members": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of member interfaces in the bridge."
+          },
+          "tx_bytes": {
+            "type": "number",
+            "description": "Total bytes transmitted on the device.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": true
+              }
+            }
+          },
+          "rx_bytes": {
+            "type": "number",
+            "description": "Total bytes received on the device.",
+            "x-web": {
+              "pretty": "",
+              "hw_tags": {
+                "is_switch": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

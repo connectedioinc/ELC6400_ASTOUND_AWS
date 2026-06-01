@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/networkmap/Makefile
+
+Package: networkmap
+Version: 2026-01-13-1
+Depends: +libc +libpcap +libpthread +libsqlite3 +libubus +libubox +libcap +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Networkmap tool
+Maintainer: 
+Require-User: networkmap=526:networkmap=526
+FileAttributes: /bin/networkmap::::cap_net_raw=ep;/usr/libexec/rpcd/networkmap:networkmap:networkmap::
+Source: networkmap-2026-01-13-2.4.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Networkmap tool
+Description: 	Devices scanner.
+
+@@
+
+

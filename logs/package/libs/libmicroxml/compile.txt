@@ -1,0 +1,142 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libmicroxml'
+libmicroxml-2018-06-14-80a15162f3a8318c70e8688d8ecbfc38676bd9a2.tar.gz: Download from https://github.com/pivasoftware/microxml.git failed
+libmicroxml-2018-06-14-80a15162f3a8318c70e8688d8ecbfc38676bd9a2.tar.gz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'libmicroxml-2018-06-14'...
+Note: switching to '80a15162f3a8318c70e8688d8ecbfc38676bd9a2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 80a1516 Merge pull request #1 from sharkvary/patch-1
+Packing checkout...
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.prepared_b436eff352c1ae3c57e5aa34805fae80_6664517399ebbbc92a37c5bb081b5c53_check
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.prepared_b436eff352c1ae3c57e5aa34805fae80_6664517399ebbbc92a37c5bb081b5c53
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.configured_*
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.libmicroxml_installed
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14; rm -f aclocal.m4; if [ -f ./configure.ac ] || [ -f ./configure.in ]; then [ -d ./autom4te.cache ] && rm -rf ./autom4te.cache; [ -e ./config.rpath ] || ln -s /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.rpath ./config.rpath; touch NEWS AUTHORS COPYING ABOUT-NLS ChangeLog; AUTOM4TE=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autom4te AUTOCONF=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoconf AUTOMAKE=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/automake ACLOCAL=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/aclocal AUTOHEADER=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoheader LIBTOOLIZE=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/libtoolize LIBTOOL=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/libtool M4=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/m4 AUTOPOINT=true GTKDOCIZE=true LIBTOOLIZE='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/libtoolize --install' /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoreconf -v -f -i -s -B /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/share/aclocal -I /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/share/aclocal -I /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/share/aclocal -I /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/share/aclocal -I m4 -I . . || true; fi; );
+autoreconf: Entering directory `.'
+autoreconf: configure.in: not using Gettext
+autoreconf: running: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/aclocal -I /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/share/aclocal -I /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/share/aclocal -I /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/share/aclocal -I m4 -I . --force 
+aclocal.real: warning: autoconf input should be named 'configure.ac', not 'configure.in'
+autoreconf: configure.in: tracing
+autoreconf: configure.in: not using Libtool
+autoreconf: running: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoconf --include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/share/aclocal --include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/share/aclocal --include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/share/aclocal --include=m4 --include=. --prepend-include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/share/aclocal --force
+autoreconf: running: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoheader --include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/share/aclocal --include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/share/aclocal --include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/share/aclocal --include=m4 --include=. --prepend-include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/share/aclocal --force
+autoheader: warning: missing template: HAVE_LONG_LONG
+autoheader: Use AC_DEFINE([HAVE_LONG_LONG], [], [Description])
+autoheader: warning: missing template: HAVE_PTHREAD_H
+autoheader: warning: missing template: MICROXML_VERSION
+autoreconf: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoheader failed with exit status: 1
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/./; if [ -x ./configure ]; then find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ -name config.guess | xargs -r chmod u+w; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ -name config.guess | xargs -r -n1 cp --remove-destination /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.guess; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ -name config.sub | xargs -r chmod u+w; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ -name config.sub | xargs -r -n1 cp --remove-destination /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.sub; AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14=libmicroxml-2018-06-14 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14=libmicroxml-2018-06-14 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14=libmicroxml-2018-06-14 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro "   ./configure --target=arm-openwrt-linux --host=arm-openwrt-linux --build=x86_64-pc-linux-gnu --program-prefix="" --program-suffix="" --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --libexecdir=/usr/lib --sysconfdir=/etc --datadir=/usr/share --localstatedir=/var --mandir=/usr/man --infodir=/usr/info --disable-nls  --disable-threads --enable-static --enable-shared ; fi; )
+configure: WARNING: unrecognized options: --disable-nls
+configure: loading site script /media/home/FIRMWARES1/RUTX11/sdk2/include/site/arm
+checking for arm-openwrt-linux-gcc... arm-openwrt-linux-muslgnueabi-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... yes
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether arm-openwrt-linux-muslgnueabi-gcc accepts -g... yes
+checking for arm-openwrt-linux-muslgnueabi-gcc option to accept ISO C89... none needed
+checking whether we are using the GNU C++ compiler... yes
+checking whether arm-openwrt-linux-muslgnueabi-g++ accepts -g... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for arm-openwrt-linux-ranlib... arm-openwrt-linux-muslgnueabi-gcc-ranlib
+checking for ar... /usr/bin/ar
+checking for cp... /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/cp
+checking for ln... /usr/bin/ln
+checking for mkdir... /usr/bin/mkdir
+checking for rm... /usr/bin/rm
+checking for inline... inline
+checking for strdup... yes
+checking for snprintf... yes
+checking for vsnprintf... (cached) yes
+checking for long long int... yes
+checking for shared library support... yes
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating microxml.list
+config.status: creating microxml.pc
+config.status: creating config.h
+configure: WARNING: unrecognized options: --disable-nls
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.built_check
+printf "%s\n" "• libmicroxml is rebuilt"
+• libmicroxml is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "libmicroxml" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14=libmicroxml-2018-06-14 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14=libmicroxml-2018-06-14 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14=libmicroxml-2018-06-14 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" ; 
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14'
+Compiling mxml-attr.c
+Compiling mxml-entity.c
+Compiling mxml-file.c
+Compiling mxml-get.c
+Compiling mxml-index.c
+Compiling mxml-node.c
+Compiling mxml-search.c
+Compiling mxml-set.c
+Compiling mxml-private.c
+Compiling mxml-string.c
+Creating libmicroxml.so.1.0...
+Creating libmicroxml.a...
+a - mxml-attr.o
+a - mxml-entity.o
+a - mxml-file.o
+a - mxml-get.o
+a - mxml-index.o
+a - mxml-node.o
+a - mxml-search.o
+a - mxml-set.o
+a - mxml-private.o
+a - mxml-string.o
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.pkgdir/libmicroxml.installed /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.pkgdir/libmicroxml
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.pkgdir/libmicroxml
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.pkgdir/libmicroxml/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/libmicroxml.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.pkgdir/libmicroxml/usr/lib
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.pkgdir/libmicroxml.installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/.pkgdir/libmicroxml/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.libmicroxml_installed
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/libmicroxml_2018-06-14-80a15162f3a8318c70e8688d8ecbfc38676bd9a2_arm_cortex-a7_neon-vfpv4.ipk'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml/CONTROL /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/libmicroxml.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml/usr/lib
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml -name 'CVS' -o -name '.svn' -o -name '.#*' -o -name '*~'| xargs -r rm -rf
+export CROSS="arm-openwrt-linux-muslgnueabi-"  NO_RENAME=1 ; NM="arm-openwrt-linux-muslgnueabi-nm" STRIP="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sstrip -z" STRIP_KMOD="/media/home/FIRMWARES1/RUTX11/sdk2/scripts/strip-kmod.sh" PATCHELF="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/patchelf" /media/home/FIRMWARES1/RUTX11/sdk2/scripts/rstrip.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml/usr/lib/libmicroxml.so.1.0: shared object
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml/usr/lib/libmicroxml.so.1.0: removing rpath /usr/lib
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml/CONTROL; ( echo "$CONTROL"; printf "Description: "; echo "$DESCRIPTION" | sed -e 's,^[[:space:]]*, ,g'; ) > control; chmod 644 control; ( echo "#!/bin/sh"; echo "[ \"\${IPKG_NO_SCRIPT}\" = \"1\" ] && exit 0"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_postinst \$0 \$@"; ) > postinst; ( echo "#!/bin/sh"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_prerm \$0 \$@"; ) > prerm; chmod 0755 postinst prerm;  )
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-build -m "" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+Packaged contents of /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/ipkg-arm_cortex-a7_neon-vfpv4/libmicroxml into /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/libmicroxml_2018-06-14-80a15162f3a8318c70e8688d8ecbfc38676bd9a2_arm_cortex-a7_neon-vfpv4.ipk
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml/host /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml/usr/include
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/microxml.h /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml/usr/include
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/libmicroxml.so* /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml/usr/lib
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml/usr/lib/pkgconfig
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libmicroxml-2018-06-14/microxml.pc /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml/usr/lib/pkgconfig
+find /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml -name '*.la' | xargs -r rm -f; 
+if [ -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/libmicroxml.list ]; then /media/home/FIRMWARES1/RUTX11/sdk2/scripts/clean-package.sh "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/libmicroxml.list" "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi"; fi
+if [ -d /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml ]; then (cd /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml; find ./ > /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml.files); 	SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.staging-dir.flock -c ' mv /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml.files /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/libmicroxml.list && cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml/* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ '; fi
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libmicroxml
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.libmicroxml_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libmicroxml'
+time: package/libs/libmicroxml/compile#3.13#1.41#6.78

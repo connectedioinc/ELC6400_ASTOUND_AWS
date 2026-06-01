@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-getty-ui/Makefile
+
+Package: vuci-app-getty-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-getty-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Getty
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Getty
+Description: VuCI UI Support for Getty
+
+@@
+
+

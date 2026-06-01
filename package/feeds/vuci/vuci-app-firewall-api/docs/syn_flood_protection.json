@@ -1,0 +1,274 @@
+{
+  "openapi": "3.0.0",
+  "tags": [],
+  "paths": {
+    "/attack_prevention/syn_flood/config": {
+      "get": {
+        "summary": "Returns Firewall SYN Flood Protection Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200SynFlPrMulti"
+          }
+        },
+        "tags": [
+          "SYN Flood"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates Firewall SYN Flood Protection Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200SynFlPrMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/syn_flood_protection_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "SYN Flood"
+        ]
+      },
+      "x-web": {
+        "name": "Attack Prevention",
+        "menu": [
+          "Network",
+          "Firewall",
+          "Attack Prevention"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/attack_prevention/syn_flood/config/{id}": {
+      "get": {
+        "summary": "Returns Firewall SYN Flood Protection Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200SynFlPr"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the SYN Flood Protection configuration"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "tags": [
+          "SYN Flood"
+        ]
+      },
+      "put": {
+        "summary": "Updates Firewall SYN Flood Protection Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200SynFlPr"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the SYN Flood Protection configuration"
+          }
+        ],
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/syn_flood_protection_options_single_put"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "SYN Flood"
+        ]
+      },
+      "x-web": {
+        "name": "Attack Prevention",
+        "menu": [
+          "Network",
+          "Firewall",
+          "Attack Prevention"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200SynFlPr": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/syn_flood_protection_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200SynFlPrMulti": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/syn_flood_protection_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "syn_flood_protection_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Configuration ID.",
+                "x-web": {
+                  "unique": true,
+                  "pretty": "Configuration ID",
+                  "group": "General Setup",
+                  "input-type": "input"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/syn_flood_protection_options_single_put"
+          }
+        ]
+      },
+      "syn_flood_protection_options_single_put": {
+        "type": "object",
+        "properties": {
+          "syn_flood": {
+            "type": "string",
+            "description": "Enable new connection throttle for the SYN flood to prevent flood attacks from all zones. It uses token bucket algorithm.",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "synflood_rate": {
+            "type": "string",
+            "description": "The maximum theoretical rate (packets/second). It represents how quickly the burst refills.",
+            "x-web": {
+              "pretty": "Limit",
+              "input-type": "input",
+              "depends": [
+                {
+                  "syn_flood": "1"
+                }
+              ]
+            }
+          },
+          "synflood_burst": {
+            "type": "string",
+            "description": "The maximum number of new connections that can occur in a short time. This is the token bucket, which is depleted with each new connection. It refills at the rate defined by the limit, and if empty, new connections are blocked.",
+            "x-web": {
+              "pretty": "Burst",
+              "input-type": "input",
+              "depends": [
+                {
+                  "syn_flood": "1"
+                }
+              ]
+            }
+          },
+          "tcp_syncookies": {
+            "type": "string",
+            "description": "Enable the use of SYN cookies.",
+            "x-web": {
+              "pretty": "TCP SYN cookies",
+              "input-type": "switch"
+            }
+          }
+        },
+        "required": ["synflood_rate", "synflood_burst"]
+      }
+    }
+  }
+}

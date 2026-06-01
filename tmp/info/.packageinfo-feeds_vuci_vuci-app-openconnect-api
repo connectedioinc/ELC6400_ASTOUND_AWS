@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-openconnect-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-openconnect-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +openconnect +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for OpenConnect
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for OpenConnect
+Description: VuCI API Support for OpenConnect
+
+@@
+
+

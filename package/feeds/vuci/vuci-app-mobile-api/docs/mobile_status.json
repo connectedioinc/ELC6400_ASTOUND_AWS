@@ -1,0 +1,893 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Mobile status API documentation",
+    "version": "1.0"
+  },
+  "servers": [],
+  "tags": [
+    {
+      "name": "Modem status"
+    }
+  ],
+  "paths": {
+    "/modems/status": {
+      "get": {
+        "summary": "Returns full status for multiple modems",
+        "tags": [
+          "Modem status"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/mobile_status_full_multiple"
+          }
+        },
+        "operationId": "get-network-mobile-modems-status_full"
+      },
+      "x-web": {
+        "menu": [
+          "Network",
+          "Mobile",
+          "Mobile"
+        ],
+        "hw_tags": {
+          "mobile": true
+        }
+      }
+    },
+    "/modems/status/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Modem ID",
+              "enum-depends": {
+                "$ref": "#/x-schemas/modem_select"
+              }
+            }
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Modem ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns full status for specified modem",
+        "tags": [
+          "Modem status"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/mobile_status_full_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "operationId": "get-network-mobile-modems-status_full-id"
+      },
+      "x-web": {
+        "menu": [
+          "Network",
+          "Mobile",
+          "Mobile"
+        ],
+        "hw_tags": {
+          "mobile": true
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "status_full": {
+        "title": "status_full",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Modem usb id"
+          },
+          "imei": {
+            "type": "string",
+            "description": "International Mobile Equipment Identity number"
+          },
+          "model": {
+            "type": "string",
+            "description": "Modem model"
+          },
+          "cell_info": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "mcc": {
+                  "type": "string",
+                  "description": "Mobile Country Code"
+                },
+                "mnc": {
+                  "type": "string",
+                  "description": "Mobile Network Code"
+                },
+                "cellid": {
+                  "type": "string",
+                  "description": "Cell ID"
+                },
+                "ue_state": {
+                  "type": "number",
+                  "description": "User Equipment state"
+                },
+                "lac": {
+                  "type": "string",
+                  "description": "Location Area Code"
+                },
+                "tac": {
+                  "type": "string",
+                  "description": "Tracking Area Code"
+                },
+                "pcid": {
+                  "type": "number",
+                  "description": "Physical Cell ID"
+                },
+                "earfcn": {
+                  "type": "number",
+                  "description": "E-UTRA Absolute Radio Frequency Channel Number"
+                },
+                "arfcn": {
+                  "type": "number",
+                  "description": "Absolute Radio Frequency Channel Number"
+                },
+                "uarfcn": {
+                  "type": "number",
+                  "description": "UMTS Absolute Radio Frequency Channel Number"
+                },
+                "nr-arfcn": {
+                  "type": "number",
+                  "description": "New Radio Absolute Radio Frequency Channel Number"
+                },
+                "rsrp": {
+                  "type": "number",
+                  "description": "Reference Signal Received Power"
+                },
+                "rsrq": {
+                  "type": "number",
+                  "description": "Reference Signal Received Quality"
+                },
+                "sinr": {
+                  "type": "number",
+                  "description": "Signal to Interference plus Noise Ratio"
+                },
+                "bandwidth": {
+                  "type": "string",
+                  "description": "Bandwidth"
+                }
+              }
+            }
+          },
+          "dynamic_mtu": {
+            "type": "boolean",
+            "description": "Dynamic MTU status"
+          },
+          "service_modes": {
+            "type": "object",
+            "description": "Supported service modes",
+            "properties": {
+              "2G": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "3G": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "4G": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "NB": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "5G_NSA": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "lac": {
+            "type": "string",
+            "description": "The Location Area Code is a unique number given to each location area within the network. The served area of a cellular radio access network is usually divided into location areas, consisting of one or several radio cells."
+          },
+          "tac": {
+            "type": "string",
+            "description": "The Tracking Area Code is a unique number given to each location area within the network. The served area of a cellular radio access network is usually divided into location areas, consisting of one or several radio cells."
+          },
+          "name": {
+            "type": "string",
+            "description": "Modem name",
+            "enum": [
+              "Primary modem",
+              "Secondary modem",
+              "External modem",
+              "Internal modem",
+              "Unknown modem"
+            ]
+          },
+          "index": {
+            "type": "number",
+            "description": "Modem index"
+          },
+          "sim_count": {
+            "type": "number",
+            "description": "Number of SIM cards in the modem"
+          },
+          "version": {
+            "type": "string",
+            "description": "Modem firmware version"
+          },
+          "cfg_version": {
+            "type": "string",
+            "description": "Modem configuration version"
+          },
+          "serial": {
+            "type": "string",
+            "description": "Modem serial number"
+          },
+          "manufacturer": {
+            "type": "string",
+            "description": "Modem manufacturer"
+          },
+          "builtin": {
+            "type": "boolean",
+            "description": "Modem type"
+          },
+          "mode": {
+            "type": "number",
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "primary": {
+            "type": "number",
+            "description": "Modem type"
+          },
+          "multi_apn": {
+            "type": "boolean",
+            "description": "Modem supports multiple APN"
+          },
+          "ipv6": {
+            "type": "boolean",
+            "description": "Modem supports IPv6"
+          },
+          "volte_supported": {
+            "type": "boolean",
+            "description": "Modem supports VoLTE"
+          },
+          "auto_2g_bands": {
+            "type": "boolean",
+            "description": "Modem selects 2G band automatically"
+          },
+          "auto_3g_bands": {
+            "type": "boolean",
+            "description": "Modem selects 3G band automatically"
+          },
+          "operators_scan": {
+            "type": "boolean",
+            "description": "Modem supports operator scanning"
+          },
+          "mobile_dfota": {
+            "type": "boolean",
+            "description": "Modem supports mobile DFOTA"
+          },
+          "no_ussd": {
+            "type": "boolean",
+            "description": "Modem does not support USSD"
+          },
+          "framed_routing": {
+            "type": "boolean",
+            "description": "Modem supports framed routing"
+          },
+          "low_signal_reconnect": {
+            "type": "boolean",
+            "description": "Modem supports low signal reconnect"
+          },
+          "active_sim": {
+            "type": "number",
+            "description": "Currently active SIM card."
+          },
+          "conntype": {
+            "type": "string",
+            "description": "Modem connection type"
+          },
+          "simstate": {
+            "type": "string",
+            "description": "SIM card state",
+            "enum": [
+              "Inserted",
+              "Not inserted"
+            ]
+          },
+          "simstate_id": {
+            "type": "number",
+            "description": "SIM card state ID",
+            "enum": [
+              0,
+              1
+            ]
+          },
+          "data_conn_state": {
+            "type": "string",
+            "description": "Data connection state",
+            "enum": [
+              "Connected",
+              "Disconnected",
+              "Unknown"
+            ]
+          },
+          "state": {
+            "deprecated": true,
+            "type": "string",
+            "description": "Data connection state",
+            "enum": [
+              "Connected",
+              "Disconnected",
+              "Unknown"
+            ]
+          },
+          "data_conn_state_id": {
+            "type": "number",
+            "description": "Data connection state ID",
+            "minLength": 1,
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          },
+          "state_id": {
+            "deprecated": true,
+            "type": "number",
+            "description": "Data connection state ID",
+            "minLength": 1,
+            "enum": [
+              0,
+              1,
+              2
+            ]
+          },
+          "txbytes": {
+            "type": "number",
+            "description": "Total number of bytes sent"
+          },
+          "rxbytes": {
+            "type": "number",
+            "description": "Total number of bytes received"
+          },
+          "baudrate": {
+            "type": "number",
+            "description": "Baud rate of the modem"
+          },
+          "is_busy": {
+            "type": "number",
+            "description": "Indicates if the modem is busy"
+          },
+          "data_off": {
+            "type": "boolean",
+            "description": "Shows if data was turned off with mobileoff SMS."
+          },
+          "busy_state": {
+            "type": "string",
+            "description": "Modem busy state"
+          },
+          "busy_state_id": {
+            "type": "number",
+            "description": "Modem busy state ID"
+          },
+          "pinstate": {
+            "type": "string",
+            "description": "SIM card PIN state",
+            "minLength": 1,
+            "enum": [
+              "Inserted",
+              "Not ready",
+              "Required PIN, X attempts left",
+              "Required PUK, X attempts left",
+              "Not inserted",
+              "SIM failure",
+              "Busy",
+              "PUK"
+            ]
+          },
+          "pinstate_id": {
+            "type": "number",
+            "description": "SIM card PIN state ID",
+            "enum": [
+              0,
+              1,
+              2,
+              4,
+              5,
+              10,
+              13,
+              14,
+              15
+            ]
+          },
+          "operator_state": {
+            "type": "string",
+            "description": "Operator state",
+            "enum": [
+              "Not registered",
+              "Registered, home",
+              "Searching",
+              "Denied",
+              "Unknown",
+              "Roaming"
+            ]
+          },
+          "netstate": {
+            "deprecated": true,
+            "type": "string",
+            "description": "Operator state",
+            "enum": [
+              "Not registered",
+              "Registered, home",
+              "Searching",
+              "Denied",
+              "Unknown",
+              "Roaming"
+            ]
+          },
+          "operator_state_id": {
+            "type": "number",
+            "description": "Operator state ID",
+            "minLength": 1,
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          "netstate_id": {
+            "deprecated": true,
+            "type": "number",
+            "description": "Operator state ID",
+            "minLength": 1,
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          },
+          "rssi": {
+            "type": "number",
+            "description": "Received Signal Strength Indicator"
+          },
+          "signal": {
+            "deprecated": true,
+            "description": "Received Signal Strength Indicator",
+            "type": "number"
+          },
+          "operator": {
+            "type": "string",
+            "description": "Operator name"
+          },
+          "oper": {
+            "deprecated": true,
+            "description": "Operator name",
+            "type": "string"
+          },
+          "provider": {
+            "type": "string",
+            "description": "Provider name"
+          },
+          "ntype": {
+            "type": "string",
+            "description": "Network type"
+          },
+          "imsi": {
+            "type": "string",
+            "description": "International Mobile Subscriber Identity number"
+          },
+          "iccid": {
+            "type": "string",
+            "description": "Integrated Circuit Card Identifier number"
+          },
+          "cellid": {
+            "type": "string",
+            "description": "Cell ID"
+          },
+          "rscp": {
+            "type": "string",
+            "description": "Received Signal Code Power"
+          },
+          "ecio": {
+            "type": "string",
+            "description": "Quality/Cleanliness of the signal from the tower"
+          },
+          "rsrp": {
+            "type": "number",
+            "description": "Reference Signal Received Power"
+          },
+          "rsrq": {
+            "type": "number",
+            "description": "Reference Signal Received Quality"
+          },
+          "sinr": {
+            "type": "number",
+            "description": "Signal to Interference plus Noise Ratio"
+          },
+          "pinleft": {
+            "type": "number",
+            "description": "Number of attempts left to enter the PIN code"
+          },
+          "pukleft": {
+            "type": "number",
+            "description": "Number of attempts left to enter the PUK code"
+          },
+          "volte": {
+            "type": "boolean",
+            "description": "Modem supports VoLTE"
+          },
+          "sc_band_av": {
+            "type": "string",
+            "enum": [
+              "Inactive",
+              "Active"
+            ],
+            "description": "Carrier aggregation"
+          },
+          "ca_signal": {
+            "type": "array",
+            "description": "Carrier aggregation signal values",
+            "items": {
+              "type": "object",
+              "properties": {
+                "band": {
+                  "type": "string",
+                  "description": "Band number"
+                },
+                "bandwidth": {
+                  "type": "string",
+                  "description": "Bandwidth"
+                },
+                "sinr": {
+                  "type": "number",
+                  "description": "Signal to Interference plus Noise Ratio"
+                },
+                "rsrq": {
+                  "type": "number",
+                  "description": "Reference Signal Received Quality"
+                },
+                "rsrp": {
+                  "type": "number",
+                  "description": "Reference Signal Received Power"
+                },
+                "pcid": {
+                  "type": "number",
+                  "description": "Physical Cell ID"
+                },
+                "frequency": {
+                  "type": "number",
+                  "description": "Frequency"
+                },
+                "primary": {
+                  "type": "boolean",
+                  "description": "Indicates if this is the primary cell"
+                }
+              }
+            }
+          },
+          "temperature": {
+            "type": "number",
+            "description": "Modem temperature"
+          },
+          "esim_profile": {
+            "type": "string",
+            "description": "Active eSIM profile"
+          },
+          "sim_switch_enabled": {
+            "type": "boolean",
+            "description": "Indicates if SIM switch is for active SIM"
+          },
+          "mobile_stage": {
+            "type": "number",
+            "description": "Indicates current mobile connection stage",
+            "enum": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23
+            ],
+            "x-web": {
+              "pretty": "Mobile stage",
+              "enum-pretty": {
+                "0": "Unknown state",
+                "1": "Waiting for SIM to be inserted",
+                "2": "SIM failure",
+                "3": "Idling",
+                "4": "Waiting for user action",
+                "5": "Waiting for PIN to be entered",
+                "6": "Waiting for PUK to be entered",
+                "7": "SIM blocked, no PUK attempts left",
+                "8": "Initializing mobile connection",
+                "9": "Configuring Voice over LTE (VoLTE)",
+                "10": "Setting up connection settings",
+                "11": "Scanning for available operators",
+                "12": "Currently handling SIM PIN event",
+                "13": "Currently handling SIM switch event",
+                "14": "Initializing modem",
+                "15": "Changed default SIM card",
+                "16": "Setting up data connection settings",
+                "17": "Clearing PDP context",
+                "18": "Currently handling config",
+                "19": "Mobile connection setup is complete",
+                "20": "Waiting for SIM switch",
+                "21": "Trying saved PIN",
+                "22": "Trying saved PUK",
+                "23": "Flight mode enabled"
+              }
+            }
+          },
+          "gnss_state": {
+            "type": "number",
+            "description": "Indicates the state of GNSS for devices that switch between mobile and GNSS."
+          },
+          "modem_state_id": {
+            "type": "number",
+            "description": "Indicates the state of the modem.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "x-web": {
+              "pretty": "Modem state",
+              "enum-pretty": {
+                "1": "Modem is in functioning state",
+                "2": "Modem shut down unexpectedly",
+                "3": "Modem rebooted by modem manager",
+                "4": "Modem rebooted by user",
+                "5": "Modem shut down by user"
+              }
+            }
+          },
+          "band": {
+            "type": "string",
+            "description": "Active band"
+          },
+          "wwan_gnss_conflict": {
+            "type": "boolean",
+            "description": "Indicates if mobile will stop working when GNSS is enabled"
+          },
+          "auto_5g_mode": {
+            "type": "boolean",
+            "description": "Indicates if 5G mode can not be controlled manually"
+          },
+          "csd": {
+            "type": "boolean",
+            "description": "Indicates CSD support"
+          },
+          "nr5g_sa_disabled": {
+            "type": "boolean",
+            "description": "Indicates if 5G SA mode is not supported"
+          },
+          "esim_bootstrap": {
+            "type": "boolean",
+            "description": "Indicates if the modem has any eSIM bootstrap profile"
+          }
+        }
+      },
+      "status_offline": {
+        "title": "status_offline",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Offline modem id"
+          },
+          "name": {
+            "type": "string",
+            "enum": [
+              "Primary modem",
+              "Secondary modem",
+              "Internal modem"
+            ],
+            "description": "Offline modem name"
+          },
+          "offline": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "description": "Modem state"
+          },
+          "blocked": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "description": "Modem block state"
+          },
+          "disabled": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "description": "Modem disable state"
+          },
+          "builtin": {
+            "type": "boolean",
+            "description": "Modem type"
+          },
+          "primary": {
+            "type": "boolean",
+            "description": "Modem type"
+          },
+          "sim_count": {
+            "type": "number",
+            "description": "Modem SIM count"
+          },
+          "csd": {
+            "type": "boolean",
+            "description": "Modem supports CSD"
+          },
+          "mode": {
+            "type": "number",
+            "description": "Modem mode",
+            "enum": [
+              0,
+              1,
+              2,
+              3
+            ]
+          },
+          "multi_apn": {
+            "type": "boolean",
+            "description": "Modem supports multiple APN"
+          },
+          "operators_scan": {
+            "type": "boolean",
+            "description": "Modem supports operator scanning"
+          },
+          "dynamic_mtu": {
+            "type": "boolean",
+            "description": "Modem supports dynamic MTU"
+          },
+          "ipv6": {
+            "type": "boolean",
+            "description": "Modem supports IPv6"
+          },
+          "volte": {
+            "type": "boolean",
+            "description": "Modem supports VoLTE"
+          },
+          "esim_profile": {
+            "type": "string",
+            "description": "Active eSIM profile"
+          },
+          "sim_switch_enabled": {
+            "type": "boolean",
+            "description": "Indicates if SIM switch is for active SIM"
+          },
+          "modem_state_id": {
+            "type": "number",
+            "description": "Indicates the state of the modem.",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "x-web": {
+              "pretty": "Modem state",
+              "enum-pretty": {
+                "1": "Modem is in functioning state",
+                "2": "Modem shut down unexpectedly",
+                "3": "Modem rebooted by modem manager",
+                "4": "Modem rebooted by user",
+                "5": "Modem shut down by user"
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "mobile_status_full_multiple": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "$ref": "#/components/schemas/status_full"
+                      },
+                      {
+                        "$ref": "#/components/schemas/status_offline"
+                      }
+                    ]
+                  },
+                  "type": "array"
+                }
+              }
+            }
+          }
+        }
+      },
+      "mobile_status_full_one": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/status_full"
+                    },
+                    {
+                      "$ref": "#/components/schemas/status_offline"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

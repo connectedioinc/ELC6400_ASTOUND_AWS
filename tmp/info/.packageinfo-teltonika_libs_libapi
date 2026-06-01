@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/libs/libapi/Makefile
+
+Package: libapi
+Version: 2025-06-13-1.5
+Depends: +libc +libblobmsg-json +libubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: RUTOS API communication library
+Maintainer: 
+Source: libapi-2025-06-13-1.5-1.5.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: RUTOS API communication library
+Description: 	A helper library for RUTOS API communication.
+	It provides an easy way to interact with the RUTOS API, including access control, data manipulation, and other features.
+
+@@
+
+

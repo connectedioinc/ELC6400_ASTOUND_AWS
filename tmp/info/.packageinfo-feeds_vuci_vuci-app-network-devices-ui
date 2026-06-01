@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-network-devices-ui/Makefile
+
+Package: vuci-app-network-devices-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-network-devices-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for the Network Devices
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for the Network Devices
+Description: VuCI UI Support for the Network Devices
+
+@@
+
+

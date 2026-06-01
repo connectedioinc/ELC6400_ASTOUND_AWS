@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/libs/libtlt_termios/Makefile
+
+Package: libtlt_termios
+Version: 7.21
+Depends: +libc +libubox +libtlt_uci +libcfgx +libuci +libboardjson +libgpiod +libcfgx
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Terminal settings handling library by Teltonika
+Maintainer: 
+Require-User: tltserial=643:tltserial=643
+Source: libtlt_termios-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Terminal settings handling library by Teltonika
+Description: 	Terminal settings handling library. Created by Teltonika
+
+@@
+
+

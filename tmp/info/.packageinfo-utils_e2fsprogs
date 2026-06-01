@@ -1,0 +1,258 @@
+Source-Makefile: package/utils/e2fsprogs/Makefile
+Build-Depends: util-linux
+
+Package: e2fsprogs
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +libuuid
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2/3/4 filesystem utilities
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2/3/4 filesystem utilities
+Description:  This package contains essential ext2 filesystem utilities which consists of
+ e2fsck, mke2fs and most of the other core ext2 filesystem utilities.
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: tune2fs
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2 Filesystem tune utility
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2 Filesystem tune utility
+Description: Ext2 Filesystem tune utility
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: resize2fs
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2 Filesystem resize utility
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2 Filesystem resize utility
+Description: Ext2 Filesystem resize utility
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: badblocks
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2 Filesystem badblocks utility
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2 Filesystem badblocks utility
+Description: Ext2 Filesystem badblocks utility
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: dumpe2fs
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2 Filesystem information dumping utility
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2 Filesystem information dumping utility
+Description: Ext2 Filesystem information dumping utility
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: e2freefrag
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2 Filesystem free space fragmentation information utility
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2 Filesystem free space fragmentation information utility
+Description: Ext2 Filesystem free space fragmentation information utility
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: e4crypt
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext4 Filesystem encryption utility
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext4 Filesystem encryption utility
+Description: Ext4 Filesystem encryption utility
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: filefrag
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2 Filesystem file fragmentation report utility
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2 Filesystem file fragmentation report utility
+Description: Ext2 Filesystem file fragmentation report utility
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: debugfs
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2 Filesystem debugger
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2 Filesystem debugger
+Description: Ext2 Filesystem debugger
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: chattr
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2 Filesystem chattr utility
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2 Filesystem chattr utility
+Description: Ext2 Filesystem chattr utility
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+Package: lsattr
+Submenu: Filesystem
+Version: 1.47.0-2
+Depends: +libc +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Ext2 Filesystem lsattr utility
+Maintainer: 
+CPE-ID: cpe:/a:e2fsprogs_project:e2fsprogs
+Source: e2fsprogs-1.47.0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: NOTICE
+Type: ipkg
+Detail-Description: Ext2 Filesystem lsattr utility
+Description: Ext2 Filesystem lsattr utility
+http://e2fsprogs.sourceforge.net/
+
+@@
+
+

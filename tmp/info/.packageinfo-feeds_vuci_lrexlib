@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/lrexlib/Makefile
+
+Package: lrexlib
+Version: 2021-12-28
+Depends: +libc +liblua +lua +libpcre2
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: vuci
+Title: A library for exposing regex functions to LUA.
+Maintainer: 
+Source: lrexlib-2021-12-28-870a0d5a664565b5ee0a6b9edb8ebd44b0d20a8c.tar.xz
+License: MIT
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: A library for exposing regex functions to LUA.
+Description: A library for exposing regex functions to LUA.
+
+@@
+
+

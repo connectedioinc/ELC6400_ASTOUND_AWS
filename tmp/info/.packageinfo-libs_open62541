@@ -1,0 +1,24 @@
+Source-Makefile: package/libs/open62541/Makefile
+
+Package: open62541
+Version: 1.4.0
+Depends: +libc +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: implementation of IEC 62541
+Maintainer: 
+CPE-ID: cpe:/a:open62541:open62541
+Source: open62541-1.4.0-v1.4.0.tar.xz
+License: MPL-2.0 CC0-1.0
+LicenseFiles: LICENSE LICENSE-CC0
+Type: ipkg
+Detail-Description: implementation of IEC 62541
+Description: 	Open source implementation of OPC UA (OPC Unified Architecture) aka IEC 62541 licensed under Mozilla Public License v2.0
+
+@@
+
+

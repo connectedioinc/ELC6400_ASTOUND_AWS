@@ -1,0 +1,24 @@
+{
+  "network/dhcp_servers": {
+    "title": "DHCP",
+    "index": 110
+  },
+  "network/dhcp_servers/general": {
+    "title": "Server Settings",
+    "index": 10,
+    "acls": ["network/dhcp_servers/general"],
+    "view": "network/Dhcp4Server/Dhcp4Servers"
+  },
+  "network/dhcp_servers/static_leases": {
+    "title": "Static Leases",
+    "acls": ["network/dhcp_servers/static_leases"],
+    "view": "network/StaticLease/Static4Leases",
+    "index": 20
+  },
+  "status/network/dhcp_leases": {
+    "title": "DHCP Leases",
+    "acls": ["status/network/lan"],
+    "view": "status/Lease4Status",
+    "index": 40
+  }
+}

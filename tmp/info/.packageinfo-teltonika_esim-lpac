@@ -1,0 +1,60 @@
+Source-Makefile: package/teltonika/esim-lpac/Makefile
+
+Package: liblpac
+Version: 1.7.1
+Depends: +libc +libgsm +libubus +libcurl +libmnfinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library for eSIM Lpac manager
+Maintainer: 
+Source: esim-lpac-1.7.1-1.7.1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A library for eSIM Lpac manager
+Description: A library for eSIM Lpac manager
+
+@@
+
+Package: rpc_esim
+Version: 1.7.1
+Depends: +libc +esim-lpac +libmnfinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: RPC library for eSIM management
+Maintainer: 
+Source: esim-lpac-1.7.1-1.7.1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: RPC library for eSIM management
+Description: RPC library for eSIM management
+
+@@
+
+Package: esim-lpac
+Version: 1.7.1
+Depends: +libc +liblpac
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: eSIM Lpac manager
+Maintainer: 
+Source: esim-lpac-1.7.1-1.7.1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: eSIM Lpac manager
+Description: eSIM Lpac manager
+
+@@
+
+

@@ -1,0 +1,3 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/cjson'
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/cjson'
+time: package/libs/cjson/compile#0.10#0.11#0.19

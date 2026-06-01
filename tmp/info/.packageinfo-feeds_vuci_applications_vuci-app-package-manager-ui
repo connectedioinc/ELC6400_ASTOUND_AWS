@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/applications/vuci-app-package-manager-ui/Makefile
+
+Package: vuci-app-package-manager-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-package-manager-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Package Manager
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Package Manager
+Description: VuCI UI Support for Package Manager
+
+@@
+
+

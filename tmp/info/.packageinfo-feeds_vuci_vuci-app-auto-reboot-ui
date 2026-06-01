@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-auto-reboot-ui/Makefile
+
+Package: vuci-app-auto-reboot-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-auto-reboot-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Auto Reboot
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Auto Reboot
+Description: VuCI UI Support for Auto Reboot
+
+@@
+
+

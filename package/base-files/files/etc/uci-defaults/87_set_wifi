@@ -1,0 +1,19 @@
+#!/bin/sh
+
+
+default_ssid1="ELC6400-1"
+default_ssid2="ELC6400-2"
+default_net="wifi"
+default_pass="CIO-$(at.sh at+cgsn | cut -d' ' -f1 | tail -c7)"
+
+uci set wireless.@wifi-iface[0].ssid="$default_ssid1"
+uci set wireless.@wifi-iface[0].network="$default_net"
+uci set wireless.@wifi-iface[0].key="$default_pass"
+
+uci set wireless.@wifi-iface[1].ssid="$default_ssid2"
+uci set wireless.@wifi-iface[1].network="$default_net"
+uci set wireless.@wifi-iface[1].key="$default_pass"
+
+uci commit wireless
+
+exit 0

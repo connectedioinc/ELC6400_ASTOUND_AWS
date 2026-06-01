@@ -1,0 +1,3 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libiconv-full'
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libiconv-full'
+time: package/libs/libiconv-full/host-compile#0.14#0.14#0.28

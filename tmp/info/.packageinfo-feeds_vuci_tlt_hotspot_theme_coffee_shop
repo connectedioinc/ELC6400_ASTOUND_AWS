@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/tlt_hotspot_theme_coffee_shop/Makefile
+
+Package: hs_theme_coffee_shop
+Submenu: Landing page themes
+Version: 2022-07-27
+Depends: +libc +vuci-app-landingpage
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: webui
+Category: WebUI
+Repository: vuci
+Title: Coffee shop theme
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Coffee shop theme
+Description: 	Hotspot landing page Coffee shop theme.
+
+@@
+
+

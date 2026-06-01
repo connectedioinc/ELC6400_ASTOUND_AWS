@@ -1,0 +1,23 @@
+Source-Makefile: package/network/utils/swanmon/Makefile
+
+Package: swanmon
+Version: 0.3-3
+Depends: +libc +davici +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: strongSwan monitoring tool
+Maintainer: Lukas Voegl <lvoegl@tdt.de>
+Source: swanmon-0.3-296096e172005cae855c316f859265aba8b2e472.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: strongSwan monitoring tool
+Description:   A command-line utility for serializing the strongSwan VICI output to JSON.
+Lukas Voegl <lvoegl@tdt.de>
+@@
+
+

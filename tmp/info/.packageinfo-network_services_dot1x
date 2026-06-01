@@ -1,0 +1,24 @@
+Source-Makefile: package/network/services/dot1x/Makefile
+
+Package: dot1x-client
+Version: 2025-03-13-dev-4
+Depends: +libc +wpad-openssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: 802.1X Client
+Maintainer: 
+Require-User: dot1x_client=555:dot1x=596
+Groups: dot1x_client:network dot1x_client:users
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: 802.1X Client
+Description: 802.1X Client
+
+@@
+
+

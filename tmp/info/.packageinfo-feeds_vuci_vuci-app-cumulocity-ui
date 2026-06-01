@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-cumulocity-ui/Makefile
+
+Package: vuci-app-cumulocity-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-cumulocity-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Cumulocity/Cloud of Things
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Cumulocity/Cloud of Things
+Description: VuCI UI Support for Cumulocity/Cloud of Things
+
+@@
+
+

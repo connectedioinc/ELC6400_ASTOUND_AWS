@@ -1,0 +1,84 @@
+Source-Makefile: package/system/ubus/Makefile
+
+Package: libubus
+Version: 2025-10-19-6fdf7a97916207ef1de01cd9e662e6daca96516a-1
+Depends: +libc +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: OpenWrt RPC client library
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: ubus-2025-10-19-6fdf7a97916207ef1de01cd9e662e6daca96516a-6fdf7a97916207ef1de01cd9e662e6daca96516a.tar.xz
+License: LGPL-2.1-only
+LicenseFiles: libubus.h
+Type: ipkg
+Detail-Description: OpenWrt RPC client library
+Description: OpenWrt RPC client library
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: libubus-lua
+Version: 2025-10-19-6fdf7a97916207ef1de01cd9e662e6daca96516a-1
+Depends: +libc +libubus +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Lua binding for the OpenWrt RPC client
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: ubus-2025-10-19-6fdf7a97916207ef1de01cd9e662e6daca96516a-6fdf7a97916207ef1de01cd9e662e6daca96516a.tar.xz
+License: LGPL-2.1-only
+LicenseFiles: libubus.h
+Type: ipkg
+Detail-Description: Lua binding for the OpenWrt RPC client
+Description: Lua binding for the OpenWrt RPC client
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: ubus
+Version: 2025-10-19-6fdf7a97916207ef1de01cd9e662e6daca96516a-1
+Depends: +libc +libubus +libblobmsg-json +ubusd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: OpenWrt RPC client utility
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: ubus-2025-10-19-6fdf7a97916207ef1de01cd9e662e6daca96516a-6fdf7a97916207ef1de01cd9e662e6daca96516a.tar.xz
+License: LGPL-2.1-only
+LicenseFiles: libubus.h
+Type: ipkg
+Detail-Description: OpenWrt RPC client utility
+Description: OpenWrt RPC client utility
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: ubusd
+Version: 2025-10-19-6fdf7a97916207ef1de01cd9e662e6daca96516a-1
+Depends: +libc +libubox +libblobmsg-json
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: OpenWrt RPC daemon
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Require-User: ubus:ubus
+Source: ubus-2025-10-19-6fdf7a97916207ef1de01cd9e662e6daca96516a-6fdf7a97916207ef1de01cd9e662e6daca96516a.tar.xz
+License: LGPL-2.1-only
+LicenseFiles: libubus.h
+Type: ipkg
+Detail-Description: OpenWrt RPC daemon
+Description: OpenWrt RPC daemon
+Felix Fietkau <nbd@nbd.name>
+@@
+
+

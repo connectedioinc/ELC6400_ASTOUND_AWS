@@ -1,0 +1,12 @@
+{
+  "system/maintenance/eventlog/all": {
+    "description": "all events",
+    "read": {
+      "api": {
+        "/events_log/config/*": [
+          "*"
+        ]
+      }
+    }
+  }
+}

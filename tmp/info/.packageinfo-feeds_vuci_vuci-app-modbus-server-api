@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-modbus-server-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-modbus-server-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +modbus_server +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for Modbus TCP Server
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for Modbus TCP Server
+Description: VuCI API Support for Modbus TCP Server
+
+@@
+
+

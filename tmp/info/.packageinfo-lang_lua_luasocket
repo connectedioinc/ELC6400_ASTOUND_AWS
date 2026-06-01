@@ -1,0 +1,30 @@
+Source-Makefile: package/lang/lua/luasocket/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: luasocket
+Submenu: Lua
+Version: 2019-04-21-733af884f1aa18ff469bf3c4d18810e815853211-2
+Depends: +libc +lua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: lua-51
+Default-Variant: lua-51
+Section: lang
+Category: Languages
+Repository: base
+Title: LuaSocket
+Maintainer: W. Michael Petullo <mike@flyn.org>
+Source: luasocket-2019-04-21-733af884f1aa18ff469bf3c4d18810e815853211-733af884f1aa18ff469bf3c4d18810e815853211.tar.xz
+License: MIT
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: LuaSocket
+Description:   LuaSocket is the most comprehensive networking support
+  library for the Lua language. It provides easy access to
+  TCP, UDP, DNS, SMTP, FTP, HTTP, MIME and much more.
+http://w3.impa.br/~diego/software/luasocket
+W. Michael Petullo <mike@flyn.org>
+@@
+
+

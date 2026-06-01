@@ -1,0 +1,33 @@
+{
+  "data": [
+    {
+      "chains": [
+        {
+          "bytes": "14550",
+          "rules": [
+            {
+              "target": "prerouting_rule"
+            }
+          ],
+          "chain": "PREROUTING",
+          "pkts": "123",
+          "policy": "ACCEPT"
+        },
+        {
+          "rules": [
+            {
+              "target": "prerouting_rule_1"
+            }
+          ],
+          "chain": "prerouting_rule"
+        },
+        {
+          "rules": [],
+          "chain": "prerouting_rule_1"
+        }
+      ],
+      "table": "nat"
+    }
+  ],
+  "success": true
+}

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-reset-ui/Makefile
+
+Package: vuci-app-reset-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Reset
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Reset
+Description: VuCI UI Support for Reset
+
+@@
+
+

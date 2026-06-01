@@ -1,0 +1,24 @@
+Source-Makefile: package/libs/libazure-iot-sdk-c/Makefile
+
+Package: libazure-iot-sdk-c
+Version: 2024-11-05-1
+Depends: +libc +libopenssl +libcurl +libuuid
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Azure IoT C SDKs and Libraries
+Maintainer: 
+CPE-ID: cpe:/a:microsoft:c_sdk_for_azure_iot
+Source: libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791.tar.xz
+License: MIT
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: Azure IoT C SDKs and Libraries
+Description: Azure IoT C SDKs and Libraries
+
+@@
+
+

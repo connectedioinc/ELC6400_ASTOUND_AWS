@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-tinc-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-tinc-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +tinc +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for Tinc VPN
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for Tinc VPN
+Description: VuCI API Support for Tinc VPN
+
+@@
+
+

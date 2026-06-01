@@ -1,0 +1,1125 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux'
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx'
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/localversion
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/kconfig.pl  + /media/home/FIRMWARES1/RUTX11/sdk2/target/linux/generic/config-6.6 /media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx/config-6.6 > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target
+awk '/^(#[[:space:]]+)?CONFIG_KERNEL/{sub("CONFIG_KERNEL_","CONFIG_");print}' /media/home/FIRMWARES1/RUTX11/sdk2/.config >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target
+echo "# CONFIG_KALLSYMS_EXTRA_PASS is not set" >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target
+echo "CONFIG_KALLSYMS_UNCOMPRESSED=y" >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/package-metadata.pl kconfig /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.packageinfo /media/home/FIRMWARES1/RUTX11/sdk2/.config 6.6 > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.override
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/kconfig.pl 'm+' '+' /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.target /dev/null /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.override > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set
+mv /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.old
+grep -v INITRAMFS /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.old > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set
+echo 'CONFIG_INITRAMFS_SOURCE=""' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set
+echo '# CONFIG_INITRAMFS_FORCE is not set' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/modules
+cmp -s /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.prev || { cp /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config; cp /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.prev; }
+export MAKEFLAGS= ; [ -d /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/user_headers ] || make -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119 KCFLAGS="-fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi=target-arm_cortex-a7+neon-vfpv4_musl_eabi -fno-caller-saves " HOSTCFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include  -Wall -Wmissing-prototypes -Wstrict-prototypes" CROSS_COMPILE="arm-openwrt-linux-muslgnueabi-" ARCH="arm" KBUILD_HAVE_NLS=no KBUILD_BUILD_USER="" KBUILD_BUILD_HOST="" KBUILD_BUILD_TIMESTAMP="Wed Feb 25 13:58:09 2026" KBUILD_BUILD_VERSION="0" HOST_LOADLIBES="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib" KBUILD_HOSTLDLIBS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib" CONFIG_SHELL="bash" V=''  cmd_syscalls=  KERNELRELEASE=6.6.119 CC="arm-openwrt-linux-muslgnueabi-gcc" INSTALL_HDR_PATH=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/user_headers headers_install
+grep '=[ym]' /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.config.set | LC_ALL=C sort | /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/mkhash md5 > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.vermagic
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.configured
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/init
+make -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119 KCFLAGS="-fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi=target-arm_cortex-a7+neon-vfpv4_musl_eabi -fno-caller-saves " HOSTCFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include  -Wall -Wmissing-prototypes -Wstrict-prototypes" CROSS_COMPILE="arm-openwrt-linux-muslgnueabi-" ARCH="arm" KBUILD_HAVE_NLS=no KBUILD_BUILD_USER="" KBUILD_BUILD_HOST="" KBUILD_BUILD_TIMESTAMP="Wed Feb 25 13:58:09 2026" KBUILD_BUILD_VERSION="0" HOST_LOADLIBES="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib" KBUILD_HOSTLDLIBS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib" CONFIG_SHELL="bash" V=''  cmd_syscalls=  KERNELRELEASE=6.6.119 CC="arm-openwrt-linux-muslgnueabi-gcc"  zImage Image dtbs modules
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119'
+  Kernel: arch/arm/boot/Image is ready
+  Kernel: arch/arm/boot/zImage is ready
+make[6]: Nothing to be done for 'Image'.
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119'
+cmp -s /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/vmlinux /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/vmlinux.debug || { arm-openwrt-linux-muslgnueabi-objcopy -O binary -R .reginfo -R .notes -R .note -R .comment -R .mdebug -R .note.gnu.build-id -S /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/vmlinux /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/vmlinux; arm-openwrt-linux-muslgnueabi-objcopy -R .reginfo -R .notes -R .note -R .comment -R .mdebug -R .note.gnu.build-id -S /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/vmlinux /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/vmlinux.elf; cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/vmlinux /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/vmlinux.debug;  cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot//zImage /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/zImage;   cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot//Image /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/Image;  }
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/debug
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/debug/modules
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/vmlinux /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/debug/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/lib/modules/6.6.119/* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/debug/modules/
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/debug -type f | xargs -r arm-openwrt-linux-muslgnueabi-strip --only-keep-debug
+tar c -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic debug --mtime="@1772027889" | zstd -T0 -f -o /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/kernel-debug.tar.zst
+                                                                               Read : 16 MB ==> 20%                                                                               Read : 26 MB ==> 29%                                                                               Read : 38 MB ==> 34%                                                                               Read : 52 MB ==> 33%                                                                               Read : 66 MB ==> 32%                                                                               Read : 80 MB ==> 32%                                                                               Read : 93 MB ==> 32%                                                                               Read : 107 MB ==> 32%                                                                               /*stdin*\            : 32.35%   (128573440 => 41591562 bytes, /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/kernel-debug.tar.zst) 
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/.image
+make -C image compile install TARGET_BUILD=
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx/image'
+make[5]: Nothing to be done for 'compile'.
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08.dtb.tmp ../dts/qcom-ipq4018-rutx-08.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08_STM32.dtb.tmp ../dts/qcom-ipq4018-rutx-08_STM32.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08_STM32.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08_STM32.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08_STM32.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08_STM32.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-08_STM32.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09.dtb.tmp ../dts/qcom-ipq4018-rutx-09.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09_STM32.dtb.tmp ../dts/qcom-ipq4018-rutx-09_STM32.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09_STM32.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09_STM32.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09_STM32.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09_STM32.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-09_STM32.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10.dtb.tmp ../dts/qcom-ipq4018-rutx-10.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10_STM32.dtb.tmp ../dts/qcom-ipq4018-rutx-10_STM32.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10_STM32.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10_STM32.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10_STM32.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10_STM32.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-10_STM32.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11.dtb.tmp ../dts/qcom-ipq4018-rutx-11.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11_STM32.dtb.tmp ../dts/qcom-ipq4018-rutx-11_STM32.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11_STM32.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11_STM32.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11_STM32.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11_STM32.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-11_STM32.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12.dtb.tmp ../dts/qcom-ipq4018-rutx-12.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12_STM32.dtb.tmp ../dts/qcom-ipq4018-rutx-12_STM32.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12_STM32.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12_STM32.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12_STM32.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12_STM32.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-12_STM32.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14.dtb.tmp ../dts/qcom-ipq4018-rutx-14.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14_STM32.dtb.tmp ../dts/qcom-ipq4018-rutx-14_STM32.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14_STM32.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14_STM32.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14_STM32.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14_STM32.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-14_STM32.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-50.dtb.tmp ../dts/qcom-ipq4018-rutx-50.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-50.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-50.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-50.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-50.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-50.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1.dtb.tmp ../dts/qcom-ipq4018-rutx-R1.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1.dtb.tmp
+echo "/ { platform = \"RUTX\"; };  " > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/platform_name.dtsi
+arm-openwrt-linux-muslgnueabi-cpp -nostdinc -x assembler-with-cpp -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/arch/arm/boot/dts/include -I/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/include/ -undef -D__DTS__  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1_STM32.dtb.tmp ../dts/qcom-ipq4018-rutx-R1_STM32.dts
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc/dtc  -O dtb -i../dts/ -Wno-unit_address_vs_reg -Wno-simple_bus_reg -Wno-unit_address_format -Wno-pci_bridge -Wno-pci_device_bus_num -Wno-pci_device_reg -Wno-avoid_unnecessary_addr_size -Wno-alias_paths -Wno-graph_child_address -Wno-graph_port -Wno-unique_unit_address  -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1_STM32.dtb /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1_STM32.dtb.tmp
+../dts/qcom-ipq4018-rutx-common.dtsi:32.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:35.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:42.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:45.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:52.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:55.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:62.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:65.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:72.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+../dts/qcom-ipq4018-rutx-common.dtsi:75.7-17: Warning (reg_format): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4:reg: property has invalid length (4 bytes) (#address-cells == 2, #size-cells == 1)
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1_STM32.dtb: Warning (i2c_bus_reg): Failed prerequisite 'reg_format'
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1_STM32.dtb: Warning (spi_bus_reg): Failed prerequisite 'reg_format'
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:31.13-33.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_y0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:34.13-36.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@0/leds/eth_g0: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:41.13-43.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_y1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:44.13-46.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@1/leds/eth_g1: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:51.13-53.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_y2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:54.13-56.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@2/leds/eth_g2: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:61.13-63.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_y3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:64.13-66.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@3/leds/eth_g3: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:71.13-73.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_y4: Relying on default #size-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #address-cells value
+../dts/qcom-ipq4018-rutx-common.dtsi:74.13-76.8: Warning (avoid_default_addr_size): /soc/mdio@90000/ethernet-phy@4/leds/eth_g4: Relying on default #size-cells value
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/image-qcom-ipq4018-rutx-R1_STM32.dtb.tmp
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/json_info_files
+echo 'IPKG_INSTROOT="/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx"' > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+echo 'root="$IPKG_INSTROOT"' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+echo 'in_fakeroot=y' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+echo '. /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/lib/functions.sh' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+echo "for file in /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/usr/lib/opkg/info/*.control ; do" >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+echo '	file="${file##*/}"' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+echo '	file="${file%.control}"' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+echo '	set_file_attributes "$file"' >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+echo "done" >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+in_fakeroot=y ; echo "	/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/mksquashfs4 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs -nopad -noappend $([ "$in_fakeroot" = "y" ] || echo -root-owned) -comp xz -Xpreset 9 -Xe -Xlc 0 -Xlp 2 -Xpb 2 -Xbcj arm -b 64k -xattrs -p '/dev d 755 0 0' -p '/dev/console c 600 0 0 5 1' -processors 1" >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+chmod +x /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs.fakeroot-script"
+processing /usr/bin/blesemd::::cap_net_raw,cap_net_admin+eip
+processing /bin/busybox:root::y:
+processing /usr/sbin/pppd::::cap_net_admin,cap_net_raw=ep
+processing /usr/local/usr/sbin/connchecker::::cap_net_raw=ep
+processing /usr/sbin/chilli::::cap_net_admin,cap_net_raw,cap_net_bind_service=ep
+processing /usr/sbin/chilli_script:root::y:
+processing /usr/bin/etherwake:etherwake:::cap_net_raw=ep
+processing /usr/sbin/bgpd::::cap_net_bind_service,cap_net_admin,cap_net_raw,cap_sys_admin+p
+processing /usr/sbin/eigrpd::::cap_net_bind_service,cap_net_admin,cap_net_raw+p
+processing /usr/sbin/nhrpd::::cap_dac_override,cap_net_admin,cap_net_raw+p
+processing /usr/sbin/ospfd::::cap_net_bind_service,cap_net_raw,cap_sys_admin+p
+processing /usr/sbin/ripd::::cap_net_bind_service,cap_net_raw,cap_sys_admin+p
+processing /usr/sbin/zebra::::cap_net_admin,cap_net_raw,cap_sys_admin+p
+processing /usr/bin/gkeepalive::::cap_net_raw=ep
+processing /usr/sbin/wpad::::cap_net_bind_service,cap_net_raw,cap_net_admin+ep
+processing /usr/sbin/bridge::::cap_net_admin+ei
+processing /usr/libexec/ip-full::::cap_net_admin+ei
+processing /usr/bin/ip_blockd::::cap_net_raw,cap_net_admin=ep
+processing /usr/sbin/xtables-legacy-multi::::cap_net_admin,cap_net_raw+ei
+processing /usr/sbin/iw::::cap_net_admin+ei
+processing /usr/sbin/mobutils::::cap_net_raw,cap_setuid,cap_setgid+eip
+processing /usr/sbin/modbus_server::::cap_net_bind_service=ep
+processing /usr/sbin/modbusgwd::::cap_net_bind_service=ep
+processing /bin/networkmap::::cap_net_raw=ep
+processing /usr/libexec/rpcd/networkmap:networkmap:networkmap::
+processing /usr/sbin/nlbwmon::::cap_net_admin=ep
+processing /usr/sbin/ntp_gps::::cap_sys_time=ep
+processing /usr/sbin/ntpclient::::cap_sys_time=ep
+processing /usr/sbin/odhcp6c::::cap_net_raw,cap_net_bind_service,cap_net_admin=ep
+processing /usr/sbin/odhcpd::::cap_net_admin,cap_net_raw,cap_net_bind_service=ep
+processing /usr/sbin/openvpn::::cap_net_admin,cap_net_bind_service+ep
+processing /bin/opkg::::cap_setuid,cap_setgid,cap_dac_override=ep
+processing /usr/sbin/pppd::::cap_net_admin,cap_net_raw=ep
+processing /usr/sbin/pppd::::cap_net_admin,cap_net_raw=ep
+processing /usr/sbin/pppd::::cap_net_admin,cap_net_raw=ep
+processing /usr/sbin/pppd::::cap_net_admin,cap_net_raw=ep
+processing /usr/sbin/pptpctrl::::cap_net_raw+ep
+processing /usr/bin/quota_limit::::cap_net_admin=ep
+processing /usr/local/usr/sbin/relayd::::cap_net_admin,cap_net_raw=ep
+processing /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+processing /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+processing /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+processing /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+processing /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+processing /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+processing /usr/sbin/shellinaboxd::::cap_net_bind_service=ep
+processing /usr/bin/siteman::::cap_net_bind_service=ep
+processing /usr/sbin/snmpd::::cap_net_bind_service=ep
+processing /usr/sbin/sodog::::cap_net_bind_service=ep
+processing /usr/libexec/rpcd/speedtest:speedtest:speedtest::
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /usr/lib/ipsec/charon::::cap_net_admin,cap_net_bind_service,cap_net_raw+ep
+processing /sbin/swconfig::::cap_net_admin=ei
+processing /usr/libexec/tc-tiny::::cap_net_admin+ei
+processing /sbin/logd::::cap_dac_read_search,cap_syslog=eip
+processing /sbin/udhcpc::::cap_net_raw,cap_net_bind_service=ep
+processing /usr/sbin/uhttpd::::cap_net_bind_service,cap_net_admin,cap_net_raw=ep
+processing /usr/lib/uhttpd_lua.so:uhttpd:::
+processing /usr/sbin/ulogd::::cap_net_admin,cap_sys_nice=ep
+processing /usr/sbin/untpd::::cap_net_bind_service=ep
+processing /sbin/urngd::::cap_sys_admin+ep
+processing /usr/local/usr/sbin/vrrpd::::cap_net_raw,cap_net_admin=ep
+processing /usr/bin/wg::::cap_net_admin+ep
+processing /usr/sbin/wpad::::cap_net_bind_service,cap_net_raw,cap_net_admin+ep
+Pseudo file "/dev" exists in source filesystem "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/dev".
+Ignoring, exclude it (-e/-ef) to override.
+Parallel mksquashfs: Using 1 processor
+Creating 4.0 filesystem on /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs, block size 65536.
+[=================\                                            ] 1800/6408  28%[=============================================================/] 6408/6408 100%
+
+Exportable Squashfs 4.0 filesystem, xz compressed, data block size 65536
+	compressed data, compressed metadata, compressed fragments,
+	compressed xattrs, compressed ids
+	duplicates are removed
+Filesystem size 20253.89 Kbytes (19.78 Mbytes)
+	22.22% of uncompressed filesystem size (91135.89 Kbytes)
+Inode table size 40056 bytes (39.12 Kbytes)
+	19.15% of uncompressed inode table size (209213 bytes)
+Directory table size 60816 bytes (59.39 Kbytes)
+	37.54% of uncompressed directory table size (162016 bytes)
+Xattr table size 178 bytes (0.17 Kbytes)
+	20.23% of uncompressed xattr table size (880 bytes)
+Number of duplicate files found 1199
+Number of inodes 6202
+Number of files 5474
+Number of fragments 289
+Number of symbolic links  450
+Number of device nodes 1
+Number of fifo nodes 0
+Number of socket nodes 0
+Number of directories 277
+Number of ids (unique uids + gids) 5
+Number of uids 5
+	root (0)
+	unknown (554)
+	unknown (575)
+	unknown (526)
+	unknown (538)
+Number of gids 5
+	root (0)
+	unknown (554)
+	unknown (575)
+	unknown (526)
+	unknown (538)
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin
+cp /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/vmlinux /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin
+gzip -f -9n -c /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin  > /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.new
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/mkits.sh -D teltonika_rutx -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its -k /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin -C gzip   -d "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/{image-qcom-ipq4018-rutx-08.dtb,image-qcom-ipq4018-rutx-08_STM32.dtb,image-qcom-ipq4018-rutx-09.dtb,image-qcom-ipq4018-rutx-09_STM32.dtb,image-qcom-ipq4018-rutx-10.dtb,image-qcom-ipq4018-rutx-10_STM32.dtb,image-qcom-ipq4018-rutx-11.dtb,image-qcom-ipq4018-rutx-11_STM32.dtb,image-qcom-ipq4018-rutx-12.dtb,image-qcom-ipq4018-rutx-12_STM32.dtb,image-qcom-ipq4018-rutx-14.dtb,image-qcom-ipq4018-rutx-14_STM32.dtb,image-qcom-ipq4018-rutx-50.dtb,image-qcom-ipq4018-rutx-R1.dtb,image-qcom-ipq4018-rutx-R1_STM32.dtb}"   -a 0x80208000 -e 0x80208000      -c config@5 -A arm -v 6.6.119
+PATH=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/linux-6.6.119/scripts/dtc:/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin:/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin:/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin:/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin mkimage  -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.new
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:8.12-23.5: Warning (unit_address_vs_reg): /images/kernel@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:17.11-19.6: Warning (unit_address_vs_reg): /images/kernel@1/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:20.11-22.6: Warning (unit_address_vs_reg): /images/kernel@1/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:27.11-39.7: Warning (unit_address_vs_reg): /images/fdt@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:33.13-35.8: Warning (unit_address_vs_reg): /images/fdt@1/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:36.13-38.8: Warning (unit_address_vs_reg): /images/fdt@1/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:42.11-54.7: Warning (unit_address_vs_reg): /images/fdt@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:48.13-50.8: Warning (unit_address_vs_reg): /images/fdt@2/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:51.13-53.8: Warning (unit_address_vs_reg): /images/fdt@2/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:57.11-69.7: Warning (unit_address_vs_reg): /images/fdt@3: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:63.13-65.8: Warning (unit_address_vs_reg): /images/fdt@3/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:66.13-68.8: Warning (unit_address_vs_reg): /images/fdt@3/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:72.11-84.7: Warning (unit_address_vs_reg): /images/fdt@4: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:78.13-80.8: Warning (unit_address_vs_reg): /images/fdt@4/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:81.13-83.8: Warning (unit_address_vs_reg): /images/fdt@4/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:87.11-99.7: Warning (unit_address_vs_reg): /images/fdt@5: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:93.13-95.8: Warning (unit_address_vs_reg): /images/fdt@5/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:96.13-98.8: Warning (unit_address_vs_reg): /images/fdt@5/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:102.11-114.7: Warning (unit_address_vs_reg): /images/fdt@6: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:108.13-110.8: Warning (unit_address_vs_reg): /images/fdt@6/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:111.13-113.8: Warning (unit_address_vs_reg): /images/fdt@6/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:117.11-129.7: Warning (unit_address_vs_reg): /images/fdt@7: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:123.13-125.8: Warning (unit_address_vs_reg): /images/fdt@7/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:126.13-128.8: Warning (unit_address_vs_reg): /images/fdt@7/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:132.11-144.7: Warning (unit_address_vs_reg): /images/fdt@8: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:138.13-140.8: Warning (unit_address_vs_reg): /images/fdt@8/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:141.13-143.8: Warning (unit_address_vs_reg): /images/fdt@8/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:147.11-159.7: Warning (unit_address_vs_reg): /images/fdt@9: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:153.13-155.8: Warning (unit_address_vs_reg): /images/fdt@9/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:156.13-158.8: Warning (unit_address_vs_reg): /images/fdt@9/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:162.12-174.7: Warning (unit_address_vs_reg): /images/fdt@10: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:168.13-170.8: Warning (unit_address_vs_reg): /images/fdt@10/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:171.13-173.8: Warning (unit_address_vs_reg): /images/fdt@10/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:177.12-189.7: Warning (unit_address_vs_reg): /images/fdt@11: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:183.13-185.8: Warning (unit_address_vs_reg): /images/fdt@11/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:186.13-188.8: Warning (unit_address_vs_reg): /images/fdt@11/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:192.12-204.7: Warning (unit_address_vs_reg): /images/fdt@12: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:198.13-200.8: Warning (unit_address_vs_reg): /images/fdt@12/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:201.13-203.8: Warning (unit_address_vs_reg): /images/fdt@12/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:207.12-219.7: Warning (unit_address_vs_reg): /images/fdt@13: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:213.13-215.8: Warning (unit_address_vs_reg): /images/fdt@13/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:216.13-218.8: Warning (unit_address_vs_reg): /images/fdt@13/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:222.12-234.7: Warning (unit_address_vs_reg): /images/fdt@14: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:228.13-230.8: Warning (unit_address_vs_reg): /images/fdt@14/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:231.13-233.8: Warning (unit_address_vs_reg): /images/fdt@14/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:237.12-249.7: Warning (unit_address_vs_reg): /images/fdt@15: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:243.13-245.8: Warning (unit_address_vs_reg): /images/fdt@15/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:246.13-248.8: Warning (unit_address_vs_reg): /images/fdt@15/hash@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:259.17-265.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:268.17-274.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@2: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:277.17-283.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@3: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:286.17-292.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@4: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:295.17-301.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@5: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:304.17-310.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@6: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:313.17-319.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@7: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:322.17-328.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@8: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:331.17-337.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@9: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:340.18-346.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@10: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:349.18-355.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@11: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:358.18-364.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@12: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:367.18-373.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@13: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:376.18-382.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@14: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin.its:385.18-391.6: Warning (unit_address_vs_reg): /configurations/conf_mdtb@15: node has a unit name, but no reg or ranges property
+FIT description: ARM OpenWrt FIT (Flattened Image Tree)
+Created:         Wed Feb 25 13:58:09 2026
+ Image 0 (kernel@1)
+  Description:  ARM OpenWrt Linux-6.6.119
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Kernel Image
+  Compression:  gzip compressed
+  Data Size:    5085926 Bytes = 4966.72 KiB = 4.85 MiB
+  Architecture: ARM
+  OS:           Linux
+  Load Address: 0x80208000
+  Entry Point:  0x80208000
+  Hash algo:    crc32
+  Hash value:   9cf4e5a7
+  Hash algo:    sha1
+  Hash value:   aa342c3d99be4cfc825cd50e29ec58aac38a186b
+ Image 1 (fdt@1)
+  Description:  image-qcom-ipq4018-rutx-08.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    20143 Bytes = 19.67 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   29cbe73c
+  Hash algo:    sha1
+  Hash value:   32ccee92a2e2af549c4dc2f5f7a08562c7f79148
+ Image 2 (fdt@2)
+  Description:  image-qcom-ipq4018-rutx-08_STM32.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    19963 Bytes = 19.50 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   ec9f4e5a
+  Hash algo:    sha1
+  Hash value:   af6e6990621f82e33583618663190da9ac04a324
+ Image 3 (fdt@3)
+  Description:  image-qcom-ipq4018-rutx-09.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    23501 Bytes = 22.95 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   f393927f
+  Hash algo:    sha1
+  Hash value:   edc59468bff152e9915d2951a4e918805889610c
+ Image 4 (fdt@4)
+  Description:  image-qcom-ipq4018-rutx-09_STM32.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    21805 Bytes = 21.29 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   f97decdd
+  Hash algo:    sha1
+  Hash value:   ad8cc9b4edba427d7992702da475a5c57a4a1b42
+ Image 5 (fdt@5)
+  Description:  image-qcom-ipq4018-rutx-10.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    20688 Bytes = 20.20 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   62350bf1
+  Hash algo:    sha1
+  Hash value:   def9b31b86c71b44bf3aa6302d3040b9b3b265ce
+ Image 6 (fdt@6)
+  Description:  image-qcom-ipq4018-rutx-10_STM32.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    20147 Bytes = 19.67 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   1b5d2461
+  Hash algo:    sha1
+  Hash value:   20e99d4d196a164d5f20674461c4abe170872ccb
+ Image 7 (fdt@7)
+  Description:  image-qcom-ipq4018-rutx-11.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    24072 Bytes = 23.51 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   5698493f
+  Hash algo:    sha1
+  Hash value:   7c6d9edb0fb1797e5040ce20855ebff1c3671308
+ Image 8 (fdt@8)
+  Description:  image-qcom-ipq4018-rutx-11_STM32.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    22005 Bytes = 21.49 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   9d53ca39
+  Hash algo:    sha1
+  Hash value:   b9046c07c1fa0546828cb610e073ab964e42ddfb
+ Image 9 (fdt@9)
+  Description:  image-qcom-ipq4018-rutx-12.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    23766 Bytes = 23.21 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   35dc9712
+  Hash algo:    sha1
+  Hash value:   d79f44aff08cabe6b3b89d8d1e59553cdd3cb410
+ Image 10 (fdt@10)
+  Description:  image-qcom-ipq4018-rutx-12_STM32.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    22785 Bytes = 22.25 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   247c3d16
+  Hash algo:    sha1
+  Hash value:   4a0a2f2d2101c3b93083dec4e5bab754383feba3
+ Image 11 (fdt@11)
+  Description:  image-qcom-ipq4018-rutx-14.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    21789 Bytes = 21.28 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   1288c949
+  Hash algo:    sha1
+  Hash value:   f252caee2142ef5790cec103402c2fc22625ceb0
+ Image 12 (fdt@12)
+  Description:  image-qcom-ipq4018-rutx-14_STM32.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    21761 Bytes = 21.25 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   c1397e73
+  Hash algo:    sha1
+  Hash value:   f4f43aa4cae52daa91a56b132626387a88b2682d
+ Image 13 (fdt@13)
+  Description:  image-qcom-ipq4018-rutx-50.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    24087 Bytes = 23.52 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   1d26a0ae
+  Hash algo:    sha1
+  Hash value:   9183be507f2dd5b5fe4cf3ac3de1d3781a22afd1
+ Image 14 (fdt@14)
+  Description:  image-qcom-ipq4018-rutx-R1.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    21392 Bytes = 20.89 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   8134c62d
+  Hash algo:    sha1
+  Hash value:   eee6580f53f94d451f65699ded1b379e120a7617
+ Image 15 (fdt@15)
+  Description:  image-qcom-ipq4018-rutx-R1_STM32.dtb
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Flat Device Tree
+  Compression:  uncompressed
+  Data Size:    21185 Bytes = 20.69 KiB = 0.02 MiB
+  Architecture: ARM
+  Hash algo:    crc32
+  Hash value:   8478375a
+  Hash algo:    sha1
+  Hash value:   6776b3888239851a2916508d73b54bec8eccb28b
+ Default Configuration: 'config@5'
+ Configuration 0 (conf_mdtb@1)
+  Description:  08
+  Kernel:       kernel@1
+  FDT:          fdt@1
+ Configuration 1 (conf_mdtb@2)
+  Description:  08_STM32
+  Kernel:       kernel@1
+  FDT:          fdt@2
+ Configuration 2 (conf_mdtb@3)
+  Description:  09
+  Kernel:       kernel@1
+  FDT:          fdt@3
+ Configuration 3 (conf_mdtb@4)
+  Description:  09_STM32
+  Kernel:       kernel@1
+  FDT:          fdt@4
+ Configuration 4 (conf_mdtb@5)
+  Description:  10
+  Kernel:       kernel@1
+  FDT:          fdt@5
+ Configuration 5 (conf_mdtb@6)
+  Description:  10_STM32
+  Kernel:       kernel@1
+  FDT:          fdt@6
+ Configuration 6 (conf_mdtb@7)
+  Description:  11
+  Kernel:       kernel@1
+  FDT:          fdt@7
+ Configuration 7 (conf_mdtb@8)
+  Description:  11_STM32
+  Kernel:       kernel@1
+  FDT:          fdt@8
+ Configuration 8 (conf_mdtb@9)
+  Description:  12
+  Kernel:       kernel@1
+  FDT:          fdt@9
+ Configuration 9 (conf_mdtb@10)
+  Description:  12_STM32
+  Kernel:       kernel@1
+  FDT:          fdt@10
+ Configuration 10 (conf_mdtb@11)
+  Description:  14
+  Kernel:       kernel@1
+  FDT:          fdt@11
+ Configuration 11 (conf_mdtb@12)
+  Description:  14_STM32
+  Kernel:       kernel@1
+  FDT:          fdt@12
+ Configuration 12 (conf_mdtb@13)
+  Description:  50
+  Kernel:       kernel@1
+  FDT:          fdt@13
+ Configuration 13 (conf_mdtb@14)
+  Description:  R1
+  Kernel:       kernel@1
+  FDT:          fdt@14
+ Configuration 14 (conf_mdtb@15)
+  Description:  R1_STM32
+  Kernel:       kernel@1
+  FDT:          fdt@15
+echo "EXECUTING append-ubi | UbootFw | append-metadata | finalize-tlt-webui for openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin and adding /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs "
+EXECUTING append-ubi | UbootFw | append-metadata | finalize-tlt-webui for openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin and adding /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs 
+[ -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin -a -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs ]
+sh /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ubinize-image.sh  --kernel /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin  /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin.tmp -p 128KiB -m 2048   
+1+0 records in
+1+0 records out
+104 bytes copied, 7.3793e-05 s, 1.4 MB/s
+[kernel]
+mode=ubi
+vol_id=0
+vol_type=dynamic
+vol_name=kernel
+image=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin
+[rootfs]
+mode=ubi
+vol_id=1
+vol_type=dynamic
+vol_name=rootfs
+image=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/root.squashfs
+vol_size=20740096
+[rootfs_data]
+mode=ubi
+vol_id=2
+vol_type=dynamic
+vol_name=rootfs_data
+vol_size=1MiB
+vol_flags=autoresize
+ubinize: volume size was not specified in section "kernel", assume minimum to fit image "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/teltonika_rutx-kernel.bin"5421056 bytes (5.1 MiB)
+cat /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin.tmp >> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin
+rm /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin.tmp
+cp -fpR ./uboot_fw/ /media/home/FIRMWARES1/RUTX11/sdk2/tmp/
+if [ -e /media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw/tz.mbn ]; then /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sed -i -e 's~file\.ubi~/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin~g' /media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw/norplusnand-flash.conf; /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sed -i -e 's~file\.elf~/media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-u-boot-stripped.elf~g'  /media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw/norplusnand-flash.conf; python /media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx/image/uboot_fw/pack.py -t norplusnand -B -F boardconfig_premium_tlt -E -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin /media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw; else /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sed -i -e 's~file\.ubi~/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin~g' /media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw/norplusnand-apps-flash.conf; /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sed -i -e 's~file\.elf~/media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-u-boot-stripped.elf~g'  /media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw/norplusnand-apps-flash.conf; python /media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx/image/uboot_fw/pack.py -t norplusnand -B -F appsboardconfig_premium_tlt -E -o /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin /media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw; fi
+/media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw/flash.its:14.32-52: Warning (unit_address_vs_reg): /images/script/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw/flash.its:23.32-52: Warning (unit_address_vs_reg): /images/ubi-05412e4364b2730e03df083e6d972a37e399ffa5/hash@1: node has a unit name, but no reg or ranges property
+/media/home/FIRMWARES1/RUTX11/sdk2/tmp/uboot_fw/flash.its:32.32-52: Warning (unit_address_vs_reg): /images/u-boot-e6d2ec537b2bc7d17fc20b8619d322530d76217b/hash@1: node has a unit name, but no reg or ranges property
+FIT description: Flashing norplusnand 100 10000
+Created:         Wed Feb 25 13:58:09 2026
+ Image 0 (script)
+  Description:  flash.scr
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Script
+  Compression:  uncompressed
+  Data Size:    6336 Bytes = 6.19 KiB = 0.01 MiB
+  Hash algo:    crc32
+  Hash value:   c5652141
+ Image 1 (ubi-05412e4364b2730e03df083e6d972a37e399ffa5)
+  Description:  /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Firmware
+  Compression:  uncompressed
+  Data Size:    27394048 Bytes = 26752.00 KiB = 26.12 MiB
+  Architecture: ARM
+  OS:           Unknown OS
+  Load Address: unavailable
+  Hash algo:    crc32
+  Hash value:   d7cf6d78
+ Image 2 (u-boot-e6d2ec537b2bc7d17fc20b8619d322530d76217b)
+  Description:  /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-u-boot-stripped.elf
+  Created:      Wed Feb 25 13:58:09 2026
+  Type:         Firmware
+  Compression:  uncompressed
+  Data Size:    568980 Bytes = 555.64 KiB = 0.54 MiB
+  Architecture: ARM
+  OS:           Unknown OS
+  Load Address: unavailable
+  Hash algo:    crc32
+  Hash value:   176bf298
+primary: ubi
+primary: u-boot
+primary: ubi
+primary: u-boot
+echo '{  "metadata_version": "1.1", "compat_version": "1.0", "version":"AR64E_07.21.1.5", "device_code": [".*"], "hwver": [".*"], "batch": [".*"], "serial": [".*"],   "supported_devices":["teltonika,rutx","elleconet,elc6400"], "version_wrt": { "dist": "OpenWrt", "version": "21.02.0", "revision": "r16279-5cc0535800", "target": "ipq40xx/generic", "board": "rutx" }, "hw_support": {  "io_expander": ["stm32" ,"shiftreg_1"]}, "hw_mods": { "mod1": "blv1", "mod2": "W25N02KV", "mod3": "NAND_GD5F2GXX", "mod4": "EG060K", "mod5": "RUTX_V12", "mod6": "RUTX14_V4"} }' | fwtool -I - /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin
+[ -z "y" -o ! -s "/media/home/FIRMWARES1/RUTX11/sdk2/key-build" -o ! -s "/media/home/FIRMWARES1/RUTX11/sdk2/key-build.ucert" -o ! -s "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin" ] || { cp "/media/home/FIRMWARES1/RUTX11/sdk2/key-build.ucert" "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin.ucert" ; usign -S -m "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin" -s "/media/home/FIRMWARES1/RUTX11/sdk2/key-build" -x "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin.sig" ; ucert -A -c "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin.ucert" -x "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin.sig" ; fwtool -S "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin.ucert" "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin" ; }
+[ -d /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/tltFws ] || mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/tltFws
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/tltFws/AR64E_07.21.1.5_WEBUI.bin
+echo "Copying /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin to tltFws"
+Copying /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin to tltFws
+echo  /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/tltFws/AR64E_07.21.1.5_WEBUI.bin | tee /tmp/last_built.fw >"/media/home/FIRMWARES1/RUTX11/sdk2/tmp/last_built.fw"
+sed -e 's|/media/home/FIRMWARES1/RUTX11/sdk2/||g' "/media/home/FIRMWARES1/RUTX11/sdk2/tmp"/last_built.fw >>"/media/home/FIRMWARES1/RUTX11/sdk2/tmp"/unsigned_fws
+cp /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin
+echo "CP /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin"
+CP /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin
+IPKG_NO_SCRIPT=1 IPKG_INSTROOT=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root.orig-ipq40xx TMPDIR=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root.orig-ipq40xx/tmp /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/opkg --offline-root /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root.orig-ipq40xx --no-autoremove --force-postinstall --add-dest root:/ --add-arch all:100 --add-arch arm_cortex-a7_neon-vfpv4:200 list-installed > /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-generic-teltonika_rutx.manifest
+LIBGCC_VERSION=8.4.0 /media/home/FIRMWARES1/RUTX11/sdk2/scripts/package-metadata.pl imgcyclonedxsbom  /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.packageinfo /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-generic-teltonika_rutx.manifest /media/home/FIRMWARES1/RUTX11/sdk2/.config > /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-generic-teltonika_rutx.bom.cdx.json
+LIBGCC_VERSION=8.4.0 /media/home/FIRMWARES1/RUTX11/sdk2/scripts/package-metadata.pl imgcyclonedxsbom_extended  /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.packageinfo /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-generic-teltonika_rutx.manifest /media/home/FIRMWARES1/RUTX11/sdk2/.config > /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-generic-teltonika_rutx.bom.cdx_ex.json
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx/image'
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux/ipq40xx'
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/target/linux'
+time: target/linux/install#59.11#8.34#61.20

@@ -1,0 +1,24 @@
+Source-Makefile: package/libs/ser4cpp/Makefile
+
+Package: ser4cpp
+Version: 1.0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Safe low-level serializations routines for C++
+Maintainer: 
+Source: ser4cpp-1.0-3c449734dc530a8f465eb0982de29165cc4e23d5.tar.xz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: Safe low-level serializations routines for C++
+Description: 	Ser4cpp is a C++ library that provides safe low-level serialization routines for C++.
+https://github.com/automatak/ser4cpp
+
+@@
+
+

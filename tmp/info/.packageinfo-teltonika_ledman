@@ -1,0 +1,44 @@
+Source-Makefile: package/teltonika/ledman/Makefile
+
+Package: ledman
+Version: 2.28
+Depends: +libc 
+Conflicts: ledman-full
+Menu-Depends: 
+Provides: ledman
+Build-Variant: tiny
+Section: base
+Category: Base system
+Repository: base
+Title: LED status manager
+Maintainer: 
+Require-User: ledman:ledman
+Source: ledman-2.28-2.28.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: LED status manager
+Description: 	Daemon for handling and controlling LEDs
+
+@@
+
+Package: ledman-full
+Version: 2.28
+Depends: +libc +libubus +libubox +libblobmsg-json +libuci +libnl-tiny +MOBILE_SUPPORT:libgsm +MOBILE_SUPPORT:liburc
+Conflicts: 
+Menu-Depends: 
+Provides: ledman
+Build-Variant: full
+Section: base
+Category: Base system
+Repository: base
+Title: LED status manager
+Maintainer: 
+Source: ledman-2.28-2.28.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: LED status manager
+Description: 	Daemon for handling and controlling LEDs
+
+@@
+
+

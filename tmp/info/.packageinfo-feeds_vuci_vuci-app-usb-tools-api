@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-usb-tools-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-usb-tools-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for USB Tools application
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for USB Tools application
+Description: VuCI API Support for USB Tools application
+
+@@
+
+

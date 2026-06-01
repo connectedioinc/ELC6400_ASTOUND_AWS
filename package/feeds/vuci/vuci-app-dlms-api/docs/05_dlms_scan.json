@@ -1,0 +1,339 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "DLMS Documentation",
+    "version": "1.0",
+    "contact": {},
+    "description": "DLMS API documentation"
+  },
+  "paths": {
+    "/dlms/scan/actions/start": {
+      "post": {
+        "summary": "Starts DLMS scan",
+        "tags": [
+          "Scanning"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/scan_action_body"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "DLMS",
+        "menu": [
+          "Services",
+          "DLMS",
+          "DLMS"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/dlms/scan/actions/stop": {
+      "post": {
+        "summary": "Stops DLMS scan",
+        "tags": [
+          "Scanning"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/scan_action_body"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "DLMS",
+        "menu": [
+          "Services",
+          "DLMS",
+          "DLMS"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/dlms/scan/status": {
+      "get": {
+        "summary": "Returns DLMS scan status",
+        "tags": [
+          "Scanning"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200DlmsScanStatus"
+          }
+        }
+      },
+      "x-web": {
+        "name": "DLMS",
+        "menu": [
+          "Services",
+          "DLMS",
+          "DLMS"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/dlms/found_parameters/status": {
+      "get": {
+        "summary": "Returns DLMS scan results",
+        "tags": [
+          "Scanning"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200DlmsFoundParametersStatus"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Limit number of items returned"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Number of items to skip from the beginning"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Search in obis or cosem_class_id fields"
+          },
+          {
+            "name": "devices",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "description": "Physical device ID"
+              }
+            },
+            "description": "List of physical device IDs to find parameters for"
+          }
+        ]
+      },
+      "x-web": {
+        "name": "DLMS",
+        "menu": [
+          "Services",
+          "DLMS",
+          "DLMS"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200DlmsScanStatus": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/dlms_scan_status"
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200DlmsFoundParametersStatus": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/dlms_found_parameters_status"
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "scan_action_body": {
+        "title": "scan_action_body",
+        "type": "object",
+        "properties": {
+          "device_ids": {
+            "type": "array",
+            "description": "List of physical device IDs to scan",
+            "items": {
+              "type": "string",
+              "format": "uinteger"
+            }
+          }
+        },
+        "required": [
+          "device_ids"
+        ]
+      },
+      "dlms_scan_status": {
+        "title": "dlms_scan_status",
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "integer",
+            "enum": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "description": "Indicates scan status. 0 - IDLE, 1 - IN_QUEUE, 2 - IN_PROGRESS, 3 - ERROR, 4 - COMPLETED, 5 - STOPPING."
+          },
+          "progress": {
+            "type": "integer",
+            "description": "Number of scanned parameters"
+          },
+          "physical_device_id": {
+            "type": "string",
+            "description": "Physical device which is being scanned"
+          },
+          "error": {
+            "type": "string",
+            "description": "Error message provided when status is error"
+          }
+        },
+        "required": [
+          "status",
+          "progress",
+          "physical_device_id"
+        ]
+      },
+      "dlms_found_parameters_status": {
+        "title": "dlms_found_parameters_status",
+        "type": "object",
+        "properties": {
+          "physical_device_id": {
+            "type": "string",
+            "description": "Device Configuration identifier (ID)",
+            "x-web": {
+              "pretty": "Physical device id"
+            }
+          },
+          "cosem_class_id": {
+            "type": "string",
+            "description": "Object type for OBIS code",
+            "x-web": {
+              "pretty": "COSEM class id"
+            }
+          },
+          "obis": {
+            "type": "string",
+            "description": "OBIS code value",
+            "x-web": {
+              "pretty": "OBIS Code"
+            }
+          },
+          "short_name": {
+            "type": "string",
+            "description": "OBIS code short name",
+            "x-web": {
+              "pretty": "Short name"
+            }
+          }
+        },
+        "required": [
+          "cosem_class_id",
+          "obis",
+          "short_name"
+        ]
+      }
+    }
+  }
+}

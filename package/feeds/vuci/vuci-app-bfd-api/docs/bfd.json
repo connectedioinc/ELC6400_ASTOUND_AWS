@@ -1,0 +1,755 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "BFD",
+    "version": "1.0"
+  },
+  "paths": {
+    "/bfd/peers/config": {
+      "get": {
+        "summary": "Returns BFD peer configurations",
+        "tags": ["Peers"],
+        "operationId": "get-services-bfd-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_bfd_peer_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates BFD peer configuration",
+        "operationId": "post-services-bfd-config",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_bfd_peer_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bfd_peers"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Peers"]
+      },
+      "put": {
+        "summary": "Updates BFD peer configurations",
+        "operationId": "put-services-bfd-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_bfd_peer_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/bfd_peers_req_body_multi"
+              }
+            }
+          }
+        },
+        "tags": ["Peers"]
+      },
+      "delete": {
+        "summary": "Deletes BFD peer configurations",
+        "operationId": "delete-services-bfd-id-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": ["data"]
+              }
+            }
+          }
+        },
+        "tags": ["Peers"]
+      },
+      "x-web": {
+        "name": "BFD",
+        "menu": ["Network", "Routing", "BFD"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    },
+    "/bfd/peers/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "The ID of the BFD peer configuration."
+        }
+      ],
+      "get": {
+        "summary": "Returns BFD peer configuration",
+        "tags": ["Peers"],
+        "operationId": "get-services-bfd-id-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_bfd_peer_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates BFD peer configuration",
+        "operationId": "put-services-bfd-id-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_bfd_peer_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/bfd_peers"
+              }
+            }
+          }
+        },
+        "tags": ["Peers"]
+      },
+      "delete": {
+        "summary": "Deletes BFD peer configuration",
+        "operationId": "delete-services-bfd-route-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Peers"]
+      },
+      "x-web": {
+        "name": "BFD",
+        "menu": ["Network", "Routing", "BFD"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    },
+    "/bfd/peers/status": {
+      "get": {
+        "summary": "Returns BFD peers status",
+        "tags": ["Peers"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/bfd_peers_status"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-network-ethernet-device-status"
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Routing", "BFD"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    },
+    "/bfd/profiles/config": {
+      "get": {
+        "summary": "Returns BFD profile configurations",
+        "tags": ["Profiles"],
+        "operationId": "get-services-bfd-profile-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_bfd_profile_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates BFD profile configuration",
+        "operationId": "post-services-bfd-profile-config",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_bfd_profile_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bfd_intervals"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Profiles"]
+      },
+      "put": {
+        "summary": "Updates BFD profile configurations",
+        "operationId": "put-services-bfd-profile-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_bfd_profile_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/bfd_profiles_req_body_multi"
+              }
+            }
+          }
+        },
+        "tags": ["Profiles"]
+      },
+      "delete": {
+        "summary": "Deletes BFD profile configurations",
+        "operationId": "delete-services-bfd-profile-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "required": ["data"]
+              }
+            }
+          }
+        },
+        "tags": ["Profiles"]
+      },
+      "x-web": {
+        "name": "BFD",
+        "menu": ["Network", "Routing", "BFD"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    },
+    "/bfd/profiles/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "The ID of the BFD profile configuration."
+        }
+      ],
+      "get": {
+        "summary": "Returns BFD profile configuration",
+        "tags": ["Profiles"],
+        "operationId": "get-services-bfd-profile-id-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_bfd_profile_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates BFD profile configuration",
+        "operationId": "put-services-bfd-profile-id-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_bfd_profile_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/bfd_intervals"
+              }
+            }
+          }
+        },
+        "tags": ["Profiles"]
+      },
+      "delete": {
+        "summary": "Deletes BFD profile configuration",
+        "operationId": "delete-services-bfd-profile-id-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Profiles"]
+      },
+      "x-web": {
+        "name": "BFD",
+        "menu": ["Network", "Routing", "BFD"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "bfd_intervals": {
+        "type": "object",
+        "properties": {
+          "receive_interval": {
+            "x-web": {
+              "pretty": "Receive interval",
+              "input-type": "input"
+            },
+            "type": "string",
+            "format": "irange(10, 4294967)",
+            "description": "Configures the minimum interval in milliseconds that this system is capable of receiving control packets."
+          },
+          "transmit_interval": {
+            "x-web": {
+              "pretty": "Transmit interval",
+              "input-type": "input"
+            },
+            "type": "string",
+            "format": "irange(10, 4294967)",
+            "description": "The minimum transmission interval, in milliseconds (with reduced jitter), that this system aims to use for sending BFD control packets."
+          }
+        }
+      },
+      "bfd_peers": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "string",
+                "description": "Enables or disables the peer.",
+                "enum": ["1", "0"],
+                "x-web": {
+                  "pretty": "Enable",
+                  "input-type": "switch"
+                }
+              },
+              "ip": {
+                "x-web": {
+                  "pretty": "IP address",
+                  "input-type": "input"
+                },
+                "type": "string",
+                "format": "ipaddr",
+                "description": "Remote IP address of the device (peer) with which BFD establishes a session. IP address identifies the neighboring router or system that BFD will monitor for liveliness."
+              },
+              "multihop_ip": {
+                "x-web": {
+                  "pretty": "IP address",
+                  "input-type": "input"
+                },
+                "type": "string",
+                "format": "ipaddr",
+                "description": "Tells the BFD daemon that we should expect packets with TTL less than 254 and to listen on the multihop port. Requires to specify which IP address should be used as the source of the BFD packets."
+              },
+              "detect_multiplier": {
+                "x-web": {
+                  "pretty": "Detect multiplier",
+                  "input-type": "input"
+                },
+                "type": "string",
+                "format": "irange(1, 255)",
+                "description": "Configures the detection multiplier to determine packet loss. The remote transmission interval will be multiplied by this value to determine the connection loss detection timer."
+              },
+              "profile": {
+                "x-web": {
+                  "pretty": "Profile",
+                  "input-type": "input"
+                },
+                "type": "string",
+                "description": "Configure peer to use the profile configurations. Profile configurations can be overridden on a peer basis by specifying non-default parameters in peer configuration node."
+              }
+            },
+            "required": ["ip"]
+          },
+          {
+            "$ref": "#/components/schemas/bfd_intervals"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "passive_mode": {
+                "type": "string",
+                "description": "Mark session as passive: a passive session will not attempt to start the connection and will wait for control packets from peer before it begins replying.",
+                "enum": ["1", "0"],
+                "x-web": {
+                  "pretty": "Passive mode",
+                  "input-type": "switch"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "bfd_peers_status": {
+        "description": "BFD peers status",
+        "type": "object",
+        "properties": {
+          "peer": {
+            "type": "string",
+            "description": "The remote peer's IP address."
+          },
+          "status": {
+            "type": "string",
+            "description": "The current BFD session state as seen by the transmitting system."
+          },
+          "diagnostic": {
+            "type": "string",
+            "description": "A diagnostic message specifying the local system's reason for the last change in session state."
+          },
+          "detect_multiplier": {
+            "type": "number",
+            "description": "The remote transmission interval that will be multiplied by this value to determine the connection loss detection timer."
+          },
+          "remote_transmit_interval": {
+            "type": "number",
+            "description": "The transmission interval in milliseconds at which the remote peer is sending BFD control packets."
+          },
+          "remote_receive_interval": {
+            "type": "number",
+            "description": "The minimum interval in milliseconds that the remote peer is capable of receiving control packets."
+          },
+          "uptime": {
+            "type": "number",
+            "description": "The total cumulative duration in seconds that the BFD session has been in the 'Up' state."
+          },
+          "downtime": {
+            "type": "number",
+            "description": "The total cumulative duration in seconds that the BFD session has been in the 'Down' state."
+          },
+          "session_up": {
+            "type": "number",
+            "description": "The number of times the BFD session transitioned to the 'Up' state."
+          },
+          "session_down": {
+            "type": "number",
+            "description": "The number of times the BFD session transitioned to the 'Down' state."
+          }
+        }
+      },
+      "bfd_peers_req_body_multi": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "The ID of the BFD peer configuration."
+                    }
+                  },
+                  "required": ["id"]
+                },
+                {
+                  "$ref": "#/components/schemas/bfd_peers"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "bfd_profiles_req_body_multi": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "The ID of the BFD profile configuration."
+                    }
+                  },
+                  "required": ["id"]
+                },
+                {
+                  "$ref": "#/components/schemas/bfd_intervals"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_bfd_peer_one": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "The ID of the BFD peer configuration."
+                        }
+                      },
+                      "required": ["id"]
+                    },
+                    {
+                      "$ref": "#/components/schemas/bfd_peers"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_bfd_peer_multi": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "The ID of the BFD peer configuration."
+                          }
+                        }
+                      },
+                      {
+                        "$ref": "#/components/schemas/bfd_peers"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_bfd_profile_one": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "The ID of the BFD profile configuration."
+                        }
+                      },
+                      "required": ["id"]
+                    },
+                    {
+                      "$ref": "#/components/schemas/bfd_intervals"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_bfd_profile_multi": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "The ID of the BFD profile configuration."
+                          }
+                        }
+                      },
+                      {
+                        "$ref": "#/components/schemas/bfd_intervals"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

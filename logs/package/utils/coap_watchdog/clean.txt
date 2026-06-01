@@ -1,0 +1,8 @@
+make[2]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/utils/coap_watchdog'
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/coap_watchdog
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-remove coap_watchdog /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/coap_watchdog_1.0.0-3_arm_cortex-a7_neon-vfpv4.ipk
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/coap_watchdog_1.0.0-3_arm_cortex-a7_neon-vfpv4.ipk'
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.coap_watchdog_installed
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/coap_watchdog.list
+make[2]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/utils/coap_watchdog'
+time: package/utils/coap_watchdog/clean#0.08#0.10#0.22

@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/profiler/Makefile
+
+Package: profiler
+Version: 2.18
+Depends: +libc +libubox +libuci +libubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Configuration profiles scheduler
+Maintainer: 
+Require-User: profiler=528:profiler=528
+Source: profiler-2.18-2.18.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Configuration profiles scheduler
+Description: 	Configuration profiles scheduler
+
+@@
+
+

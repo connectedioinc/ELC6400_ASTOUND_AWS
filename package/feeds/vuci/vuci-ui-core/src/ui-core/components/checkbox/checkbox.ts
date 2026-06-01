@@ -1,0 +1,5 @@
+export { default as Group } from './CheckboxGroup.vue'
+export { default as Item } from './CheckboxItem.vue'
+export { default as ItemLabel } from './CheckboxItemLabel.vue'
+export { default as ItemControl } from './CheckboxItemControl.vue'
+export { default as Control } from './CheckboxControl.vue'

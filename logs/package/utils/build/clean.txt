@@ -1,0 +1,8 @@
+make[2]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/utils/build'
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/build
+/media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-remove build /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/build_1_arm_cortex-a7_neon-vfpv4.ipk
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/build_1_arm_cortex-a7_neon-vfpv4.ipk'
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.build_installed
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/build.list
+make[2]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/utils/build'
+time: package/utils/build/clean#0.08#0.09#0.15

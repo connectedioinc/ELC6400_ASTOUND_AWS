@@ -1,0 +1,852 @@
+#!/usr/bin/lua
+
+local uci = require("vuci.uci").cursor()
+local fs = require "nixio.fs"
+local json = require "luci.jsonc"
+local util = require "vuci.util"
+local util_tlt = require("vuci.util_tlt")
+local certs = require("vuci.certificates")
+
+local OPENSSL_CMD = "/usr/bin/openssl"
+local OPENSSL_CNF = "/etc/ssl/openssl.cnf"
+local DIRECTORY = "/etc/certificates"
+local LOG_FILE = "/tmp/certificates-status"
+local DEF_SUBJECT = "/C=''/ST=''/L=''/O=''/OU=''"
+
+local GHT_ACME_SH = "/sbin/letsencrypt"
+if not fs.access(GHT_ACME_SH) then
+	GHT_ACME_SH = "/usr/local" .. GHT_ACME_SH
+end
+
+local LOCAL_ACME_PORT = "82"
+local ACME_HOME = DIRECTORY.."/acme"
+local ACME_HOME_HTTP = ACME_HOME.."/http"
+local CHALLENGE_DIR = ACME_HOME_HTTP.."/.well-known/acme-challenge/"
+local FORWARD_RULE_NAME = "acme-http-01"
+
+local SIGOPT
+
+uci.supress_warnings = true
+
+local defaults = {
+	KEY_SIZE = "2048",
+	SIGN 	 = false,
+	DELETE   = false,
+	RENEW    = false,
+	CA 		 = "",
+	CA_KEY   = "",
+	REQUEST_FILE = "",
+	DAYS	 = 3650,
+	SUBJECT  = DEF_SUBJECT,
+	DNS = {},
+	IP = {},
+	ENCRYPTION = "rsa",
+	PASS_REQUIRED = false,
+	SIGNED_BY = "",
+	PATH = ""
+}
+
+local file_patterns = {
+	key = function(name) return { name .. ".key.pem", name .. ".req.pem" } end,
+	key_only = function(name) return { name .. ".key.pem" } end,
+	cert = function(name) return { name .. ".cert.pem" } end,
+	dh = function(name) return { name .. ".pem" } end,
+	request = function() return { defaults.REQUEST_FILE } end
+}
+
+local function get_sigopt()
+	if SIGOPT then
+		return SIGOPT
+	end
+	local handle = io.popen("echo test | openssl dgst 2>/dev/null")
+	local result = handle:read("*a")
+	handle:close()
+	if not result or result == "" then
+		return nil
+	end
+	local algo = result:match("(%u+%d+)")
+	if not algo then
+		return nil
+	end
+	local bits = tonumber(algo:match("(%d+)"))
+	if not bits then
+		return nil
+	end
+
+	local key_size_bits = tonumber(defaults.KEY_SIZE) or 2048
+
+	-- Calculate safe salt length based on key size
+	-- For RSA-PSS, the formula is roughly (key_size_bits/8) - hash_size - 2
+	-- But we'll use an even more conservative value to ensure compatibility
+	local hash_size = bits / 8
+	local overhead = 2
+	local max_salt_len = math.floor((key_size_bits / 8) - hash_size - overhead)
+
+	-- Use a safe value that's less than the theoretical maximum
+	local saltlen = math.min(max_salt_len - 10, hash_size)
+
+	-- Ensure salt length is positive
+	saltlen = math.max(saltlen, 10)
+
+	SIGOPT = string.format("-sigopt rsa_padding_mode:pss -sigopt rsa_pss_saltlen:%d", saltlen)
+	return SIGOPT
+end
+
+local function get_forward_rule()
+	local rule = nil
+	uci:foreach("firewall", "redirect", function(s)
+		if s.name == FORWARD_RULE_NAME then
+			rule = s[".name"]
+			return true
+		end
+	end)
+	return rule
+end
+
+local function create_forward_rule()
+	local redirect = {
+		dest_port = LOCAL_ACME_PORT,
+		src_dport = "80",
+		src = "wan",
+		name = FORWARD_RULE_NAME,
+		target = "DNAT",
+		dest = "lan",
+		proto = "tcp",
+		enabled = "0"
+	}
+	local id = util_tlt.next_id()
+	uci:set("firewall", id, "redirect")
+	for key, value in pairs(redirect) do
+		uci:set("firewall", id, key, value)
+	end
+	return id
+end
+
+local function enable_acme_forward()
+	local rule = get_forward_rule()
+	if not rule then rule = create_forward_rule() end
+
+	local lan_ip = util_tlt.lan_ip()
+	uci:set("firewall", rule, "enabled", '1')
+	uci:set("firewall", rule, "dest_ip", lan_ip)
+	uci:commit("firewall")
+end
+
+local function disable_acme_forward()
+	local rule = get_forward_rule()
+	if rule then
+		uci:set("firewall", rule, "enabled", '0')
+		uci:commit("firewall")
+	end
+end
+
+local function enable_acme_uhttpd()
+	local acme = uci:get_all("uhttpd", "acme")
+	if not acme then
+		acme = uci:set("uhttpd", "acme", "uhttpd")
+	end
+	uci:set("uhttpd", "acme", "listen_http", LOCAL_ACME_PORT)
+	uci:set("uhttpd", "acme", "home", ACME_HOME_HTTP)
+	uci:set("uhttpd", "acme", "disabled", '0')
+	uci:commit("uhttpd")
+end
+
+local function disable_acme_uhttpd()
+	local acme = uci:get_all("uhttpd", "acme")
+	if acme then
+		uci:set("uhttpd", "acme", "disabled", "1")
+		uci:commit("uhttpd")
+	end
+end
+
+local function add_http_01_challenge(token, thumbprint)
+	fs.mkdirr(CHALLENGE_DIR)
+	fs.writefile(CHALLENGE_DIR..token, token.."."..thumbprint)
+end
+
+local function del_http_01_challenge(token)
+	fs.remove(CHALLENGE_DIR..token)
+end
+
+local function sleep(n)
+	os.execute("sleep " .. tostring(n))
+end
+
+local function parse_iso8601(date)
+	local pattern = "(%d+)-(%d+)-(%d+)T(%d+):(%d+):(%d+)Z"
+	local year, month, day, hour, min, sec = date:match(pattern)
+	local timestamp = os.time({year=year, month=month, day=day, hour=hour, min=min, sec=sec})
+	return timestamp
+end
+
+local function file_name(v)
+	return v:gsub("\\/", ""):gsub("/", "")
+end
+
+local function common_name(v)
+	return v:gsub("/", "\\/"):gsub("\\\\*", "\\"):gsub("\\$", "")
+end
+
+local function append_to_generating_list(json_table)
+	local current_json = {}
+	if fs.access(LOG_FILE) then
+		current_json = json.parse(fs.readfile(LOG_FILE) or "" ) or {}
+	end
+	table.insert(current_json, json_table)
+	fs.writefile(LOG_FILE, json.stringify(current_json))
+end
+
+local function remove_json_from_generating_list(name, file_type)
+	local current_json = {}
+	local new_json = {}
+	if fs.access(LOG_FILE) then
+		current_json = json.parse(fs.readfile(LOG_FILE) or "") or {}
+	end
+
+	local patterns = file_patterns[file_type] and file_patterns[file_type](name) or {}
+
+	for _, v in pairs(current_json) do
+		local keep = true
+		for _, pattern in ipairs(patterns) do
+			if v.fullname == pattern then
+				keep = false
+				break
+			end
+		end
+		if keep then
+			table.insert(new_json, v)
+		end
+	end
+	fs.writefile(LOG_FILE, json.stringify(new_json))
+end
+
+local function print_to_log(file_type, filename)
+	filename = filename or defaults.FILE_NAME
+	certs.remove_cert_from_config(filename, file_type, _, true)
+	local info = {}
+	if file_type == 'key' then
+		info.fullname = filename .. '.key.pem'
+		info.type = 'key'
+		append_to_generating_list(info)
+		info.fullname = filename .. '.req.pem'
+		info.type = 'req'
+		append_to_generating_list(info)
+	elseif file_type == 'key_only' then
+		info.fullname = filename .. '.key.pem'
+		info.type = 'key'
+		append_to_generating_list(info)
+	elseif file_type == 'cert' then
+		info.fullname = filename .. '.cert.pem'
+		info.type = 'cert'
+		append_to_generating_list(info)
+	elseif file_type == 'dh' then
+		info.fullname = filename .. '.pem'
+		info.type = 'dh'
+		append_to_generating_list(info)
+	end
+end
+
+local function print_to_info(file_type, file_path, cert_info, custom_fullname)
+	cert_info = cert_info or defaults
+	local info = {}
+	if file_type == 'key' then
+		info.fullname = cert_info.FILE_NAME .. '.key.pem'
+		info.type = 'key'
+		info.key_size = cert_info.KEY_SIZE
+		info.cert_type = cert_info.TYPE
+		info.datetime = "-"
+		info.name = cert_info.COMMON_NAME:gsub("\\", "")
+		info.pass_required = cert_info.PASS_REQUIRED
+		info.path = file_path
+		info.encryption = cert_info.ENCRYPTION
+		certs.append_cert_to_config(info, true)
+
+		info = {}
+		info.fullname = cert_info.FILE_NAME .. '.req.pem'
+		info.type = 'req'
+		info.key_size = cert_info.KEY_SIZE
+		info.cert_type = cert_info.TYPE
+		info.datetime = "-"
+		info.name = cert_info.COMMON_NAME:gsub("\\", "")
+		info.encryption = cert_info.ENCRYPTION
+		info.path = DIRECTORY .. "/" .. info.fullname
+		certs.append_cert_to_config(info, true)
+	elseif file_type == 'key_only' then
+		info.fullname = cert_info.FILE_NAME .. '.key.pem'
+		info.type = 'key'
+		info.key_size = cert_info.KEY_SIZE
+		info.cert_type = cert_info.TYPE
+		info.datetime = "-"
+		info.name = cert_info.COMMON_NAME:gsub("\\", "")
+		info.pass_required = cert_info.PASS_REQUIRED
+		info.path = file_path
+		info.encryption = cert_info.ENCRYPTION
+		certs.append_cert_to_config(info, true)
+	elseif file_type == 'cert' then
+		info.fullname = custom_fullname or (cert_info.FILE_NAME .. '.cert.pem')
+		info.type = 'cert'
+		info.key_size = cert_info.KEY_SIZE
+		info.cert_type = cert_info.TYPE
+		local dates_info = certs.execute_openssl({"x509", "-in", file_path, "-dates", "-noout"})
+		local cert_expiry = certs:parse_date(dates_info.stdout)
+		info.datetime = cert_expiry and cert_expiry or "-"
+		info.auto_renew = cert_info.RENEW
+		info.name = cert_info.COMMON_NAME:gsub("\\", "")
+		info.dns = cert_info.DNS
+		info.ip = cert_info.IP
+		info.encryption = cert_info.ENCRYPTION
+		info.scep_url = cert_info.SCEP_SERVER
+		info.password = cert_info.SCEP_PASSWORD
+		info.signed_by = cert_info.SIGNED_BY
+		info.path = file_path
+		certs.append_cert_to_config(info, true)
+		if cert_info.DELETE == true then
+			certs.remove_cert_from_config(cert_info.FILE_NAME, "request", defaults.REQUEST_FILE, true)
+		end
+	elseif file_type == 'dh' then
+		info.fullname = cert_info.FILE_NAME .. '.pem'
+		info.type = 'dh'
+		info.key_size = cert_info.KEY_SIZE
+		info.cert_type = cert_info.TYPE
+		info.datetime = "-"
+		info.name = "-"
+		info.path = file_path
+		certs.append_cert_to_config(info, true)
+	end
+end
+
+local function get_key_handle(keyfile)
+	local res = util.file_exec("/bin/tpm2_importer", {keyfile, "get_handle"})
+	if res.code ~= 0 then return nil end
+	return "handle:"..string.gsub(res.stdout, "\n", "")
+end
+
+local function sign_ca()
+	local req_file  = DIRECTORY.."/"..defaults.REQUEST_FILE
+	local key_file = DIRECTORY.."/"..defaults.KEY_FILE
+	local cert_file = DIRECTORY .."/" ..defaults.FILE_NAME..".cert.pem"
+	local key_handle = get_key_handle(key_file)
+	local san_extension = ""
+	if defaults.DNS or defaults.IP then
+		local san_entries = {}
+		for id, dns in ipairs(defaults.DNS) do
+			table.insert(san_entries, string.format("DNS.%d:%s", id, dns))
+		end
+		for id, ip in ipairs(defaults.IP) do
+			table.insert(san_entries, string.format("IP.%d:%s", id, ip))
+		end
+		san_extension = table.concat(san_entries, ",")
+
+	end
+
+	local ext_options = string.format(
+		"[EXT]\nsubjectKeyIdentifier=hash\nauthorityKeyIdentifier=keyid:always,issuer\nbasicConstraints = critical,CA:true\nkeyUsage=keyCertSign")
+	if san_extension ~= "" then
+		ext_options = ext_options .. string.format("\nsubjectAltName=%s", san_extension)
+	end
+	local ret = os.execute(string.format(
+		"echo -e %s | %s x509 -req -days %s %s %s -in %s -signkey %s -out %s -extensions EXT -extfile -",
+		util.shellquote(ext_options), OPENSSL_CMD,
+		util.shellquote(defaults.DAYS),
+		not key_handle and get_sigopt() or "",
+		key_handle and "-provider tpm2" or "",
+		util.shellquote(req_file),
+		util.shellquote(key_handle or key_file), util.shellquote(cert_file)
+	))
+	remove_json_from_generating_list(defaults.FILE_NAME, 'cert')
+	if ret == 0 then
+		defaults.SIGNED_BY = "self-signed"
+		print_to_info('cert', cert_file)
+	end
+	if defaults.DELETE == true then
+		fs.remove(req_file)
+	end
+	return ret
+end
+
+local function sign_client_server()
+	local req_file  = DIRECTORY.."/"..defaults.REQUEST_FILE
+	local ca_file = DIRECTORY.."/"..defaults.CA
+	local cakey_file = DIRECTORY .."/" ..defaults.CA_KEY
+	local key_handle = get_key_handle(cakey_file)
+	local cert_file = DIRECTORY .."/" ..defaults.FILE_NAME..".cert.pem"
+	local san_extension = ""
+
+	local ca_std = util.file_exec("/usr/bin/openssl", {"x509", "-in", ca_file, "-text", "-noout"}).stdout
+	local ca_key_len = tonumber(string.match(ca_std or "", "(%d+)"))
+	local sigopt
+	if not ca_key_len or ca_key_len > 1024 then
+		sigopt = get_sigopt()
+	end
+	if defaults.DNS or defaults.IP then
+		local san_entries = {}
+		for id, dns in ipairs(defaults.DNS) do
+			table.insert(san_entries, string.format("DNS.%d:%s", id, dns))
+		end
+		for id, ip in ipairs(defaults.IP) do
+			table.insert(san_entries, string.format("IP.%d:%s", id, ip))
+		end
+		san_extension = table.concat(san_entries, ",")
+	end
+	local ext_options = string.format(
+		"[EXT]\nextendedKeyUsage = %sAuth",defaults.TYPE)
+	if san_extension ~= "" then
+		ext_options = ext_options .. string.format("\nsubjectAltName=%s", san_extension)
+	end
+
+	local ret = os.execute(string.format(
+		'echo -e "%s" | %s x509 -req -days %s %s -in %s %s -CA %s -CAkey %s -out %s -CAcreateserial -extensions EXT -extfile -',
+		ext_options, OPENSSL_CMD, util.shellquote(defaults.DAYS),
+		not key_handle and sigopt or "",
+		util.shellquote(req_file),
+		key_handle and "-provider tpm2" or "", util.shellquote(ca_file),
+		util.shellquote(key_handle or cakey_file), util.shellquote(cert_file)
+	))
+	remove_json_from_generating_list(defaults.FILE_NAME, 'cert')
+	if ret == 0 then
+		defaults.SIGNED_BY = defaults.CA
+		print_to_info('cert', cert_file)
+	end
+	if defaults.DELETE == true then
+		fs.remove(req_file)
+	end
+	return ret
+end
+
+local function generate_certificate(file_type)
+	local key_file = DIRECTORY.."/"..defaults.FILE_NAME..".key.pem"
+	local req_file = DIRECTORY.."/"..defaults.FILE_NAME..".req.pem"
+	local pem_file = DIRECTORY.."/"..defaults.FILE_NAME..".pem"
+	local ret
+
+	if file_type == "client_server" or file_type == "ca" then
+		if defaults.PASS and defaults.PASS ~= '' and file_type == "client_server" then
+			ret = os.execute(string.format(
+				OPENSSL_CMD .. " req -config %s -subj %s -keyout %s -newkey %s -new -out %s -passout %s",
+				OPENSSL_CNF, util.shellquote(defaults.SUBJECT), util.shellquote(key_file),
+				util.shellquote("rsa:"..defaults.KEY_SIZE), util.shellquote(req_file),
+				util.shellquote("pass:"..defaults.PASS)
+			))
+		else
+			ret = os.execute(string.format(
+				OPENSSL_CMD .. " req -config %s -nodes -subj %s -keyout %s -newkey %s -new -out %s",
+				OPENSSL_CNF, util.shellquote(defaults.SUBJECT), util.shellquote(key_file),
+				util.shellquote("rsa:"..defaults.KEY_SIZE), util.shellquote(req_file)
+			))
+		end
+
+		remove_json_from_generating_list(defaults.FILE_NAME, "key")
+
+		if ret == 0 then print_to_info("key", key_file) end
+
+		if defaults.SIGN == true then
+			defaults.REQUEST_FILE = defaults.FILE_NAME .. ".req.pem"
+			if file_type == "client_server" then
+				sign_client_server()
+			else
+				defaults.KEY_FILE = defaults.FILE_NAME .. ".key.pem"
+				sign_ca()
+			end
+		end
+		return ret
+	end
+	-- dh param generation
+	ret = os.execute(string.format(
+		OPENSSL_CMD .. " dhparam -out %s %s", util.shellquote(pem_file), util.shellquote(defaults.KEY_SIZE)
+	))
+	remove_json_from_generating_list(defaults.FILE_NAME, "dh")
+	if ret == 0 then print_to_info("dh", pem_file) end
+
+	return ret
+end
+
+local function simple_generation()
+	defaults.COMMON_NAME = 'dh'
+	defaults.FILE_NAME = 'dh'
+	print_to_log('dh')
+	defaults.COMMON_NAME = 'client'
+	defaults.FILE_NAME = 'client'
+	print_to_log('cert')
+	print_to_log('key')
+	defaults.COMMON_NAME = 'server'
+	defaults.FILE_NAME = 'server'
+	print_to_log('cert')
+	print_to_log('key')
+	defaults.COMMON_NAME = 'ca'
+	defaults.FILE_NAME = 'ca'
+	print_to_log('cert')
+	print_to_log('key')
+
+	defaults.SIGN = true
+	defaults.DELETE = true
+	defaults.CA = "ca.cert.pem"
+	defaults.CA_KEY = "ca.key.pem"
+
+	defaults.COMMON_NAME = "ca"
+	defaults.FILE_NAME = 'ca'
+	defaults.TYPE = "ca"
+	defaults.SUBJECT = DEF_SUBJECT.."/CN=ca"
+	generate_certificate("ca")
+
+	defaults.COMMON_NAME = "server"
+	defaults.FILE_NAME = 'server'
+	defaults.TYPE = "server"
+	defaults.SUBJECT = DEF_SUBJECT.."/CN=server"
+	generate_certificate("client_server")
+
+	defaults.COMMON_NAME = "client"
+	defaults.FILE_NAME = 'client'
+	defaults.TYPE = "client"
+	defaults.SUBJECT = DEF_SUBJECT.."/CN=client"
+	generate_certificate("client_server")
+
+	defaults.COMMON_NAME = "dh"
+	defaults.FILE_NAME = 'dh'
+	defaults.TYPE = "dh"
+	generate_certificate("dh")
+end
+
+local function acme_generation(renew)
+	local ca_dir, file_name, ca_file_name
+	if defaults.TYPE == "letsencrypt" then
+		ca_dir = "https://acme-v02.api.letsencrypt.org/directory"
+		-- Let's encrypt testing directory (does not produce valid certificates)
+		-- ca_dir = "https://acme-staging-v02.api.letsencrypt.org/directory"
+	end
+	if not ca_dir then os.exit(6) end
+
+	local ca_defaults = util.clone(defaults)
+	ca_defaults.FILE_NAME = "ca-" .. ca_defaults.FILE_NAME
+	ca_defaults.TYPE = "ca"
+	ca_defaults.DNS = {}
+	ca_defaults.IP = {}
+
+	if renew then
+		file_name = defaults.FILE_NAME
+		ca_file_name = ca_defaults.FILE_NAME
+		defaults.FILE_NAME = defaults.FILE_NAME .. "_renew"
+		ca_defaults.FILE_NAME = ca_defaults.FILE_NAME .. "_renew"
+	else
+		print_to_log('cert', ca_defaults.FILE_NAME)
+		print_to_log('cert')
+		print_to_log('key_only')
+	end
+
+	local key_path = string.format("%s/account_%s_%s.key", ACME_HOME, defaults.TYPE, defaults.COMMON_NAME)
+	local ca_file = DIRECTORY .."/" ..ca_defaults.FILE_NAME..".cert.pem"
+	local cert_file = DIRECTORY .."/" ..defaults.FILE_NAME..".cert.pem"
+	local key_file = DIRECTORY .."/" ..defaults.FILE_NAME..".key.pem"
+
+	local function cleanup(exit)
+		if not renew then
+			remove_json_from_generating_list(ca_defaults.FILE_NAME, 'cert')
+			remove_json_from_generating_list(defaults.FILE_NAME, 'cert')
+			remove_json_from_generating_list(defaults.FILE_NAME, 'key')
+		end
+		fs.remove(key_path)
+		fs.remove(key_file)
+		fs.remove(ca_file)
+		fs.remove(cert_file)
+		fs.remove(cert_file.."_chain")
+		if renew and exit then return exit end
+		if exit then os.exit(exit) end
+	end
+
+	if not fs.access(key_path) then
+		local ret = os.execute(OPENSSL_CMD.." genrsa -out "..key_path.." "..defaults.KEY_SIZE.." > /dev/null 2>&1")
+		if ret ~= 0 then return cleanup(1) end
+
+		ret = os.execute(string.format("%s register -D %s -a %s -e %s",
+			GHT_ACME_SH, util.shellquote(ca_dir), util.shellquote(key_path), util.shellquote("webmaster@"..defaults.COMMON_NAME)))
+		if ret ~= 0 then return cleanup(1) end
+	end
+
+	local ret = os.execute(string.format("%s genpkey -algorithm RSA -out %s > /dev/null 2>&1", OPENSSL_CMD, util.shellquote(key_file)))
+	if ret ~= 0 then return cleanup(7) end
+
+	if not util.contains(defaults.DNS, defaults.COMMON_NAME) then
+		table.insert(defaults.DNS, defaults.COMMON_NAME)
+	end
+	local command = string.format("%s sign -D %s -a %s -k %s -c %s -P %s %s",
+		GHT_ACME_SH, util.shellquote(ca_dir), util.shellquote(key_path), util.shellquote(key_file), util.shellquote(cert_file), arg[0], table.concat(defaults.DNS, " "))
+	ret = os.execute(command)
+	if ret ~= 0 then return cleanup(8) end
+
+	if not fs.access(cert_file) then return cleanup(9) end
+	if not fs.access(cert_file.."_chain") then return cleanup(10) end
+
+	fs.move(cert_file.."_chain", ca_file)
+	ca_defaults.COMMON_NAME = certs.parse_CN(ca_file) or ca_defaults.COMMON_NAME
+	if renew then
+		defaults.FILE_NAME = file_name
+		ca_defaults.FILE_NAME = ca_file_name
+		local ca_file_new = DIRECTORY .."/" ..ca_defaults.FILE_NAME..".cert.pem"
+		local cert_file_new = DIRECTORY .."/" ..defaults.FILE_NAME..".cert.pem"
+		local key_file_new = DIRECTORY .."/" ..defaults.FILE_NAME..".key.pem"
+		fs.move(ca_file, ca_file_new)
+		fs.move(cert_file, cert_file_new)
+		fs.move(key_file, key_file_new)
+		ca_file = ca_file_new
+		cert_file = cert_file_new
+		key_file = key_file_new
+		certs.remove_cert_from_config(defaults.FILE_NAME,_. _, true)
+		certs.remove_cert_from_config(ca_defaults.FILE_NAME,_. _, true)
+	else
+		remove_json_from_generating_list(ca_defaults.FILE_NAME, 'cert')
+		remove_json_from_generating_list(defaults.FILE_NAME, 'cert')
+		remove_json_from_generating_list(defaults.FILE_NAME, 'key')
+	end
+
+	print_to_info('cert', ca_file, ca_defaults)
+	print_to_info('cert', cert_file)
+	print_to_info('key_only', key_file)
+
+	return 0
+end
+
+local function renew_expiring()
+	local renew_days_left = {
+		-- Certificates from Let's Encrypt are valid for 90 days
+		-- they recommend automatically renewing every 60 days
+		["letsencrypt"] = 30
+	}
+	local current_json = {}
+	local current_config = {}
+	for _, v in pairs(current_json) do
+		if renew_days_left[v.cert_type] and v.type == "cert" and v.auto_renew and v.datetime and v.datetime ~= "-"
+			and parse_iso8601(v.datetime) - (renew_days_left[v.cert_type] * 86400) <= os.time() then
+			defaults.TYPE = v.cert_type
+			defaults.COMMON_NAME = common_name(v.name)
+			defaults.FILE_NAME = file_name(v.name)
+			defaults.KEY_SIZE = v.key_size or defaults.KEY_SIZE
+			defaults.DNS = v.dns or {}
+			defaults.IP = v.ip or {}
+			defaults.RENEW = true
+			acme_generation(defaults.RENEW)
+		end
+	end
+end
+
+local function scep_generation()
+	if not defaults.SCEP_SERVER then os.exit(6) end
+
+	local ca_file = DIRECTORY .."/ca-" ..defaults.FILE_NAME..".cert.pem"
+	local cert_file = DIRECTORY .."/" ..defaults.FILE_NAME..".cert.pem"
+	local key_file = DIRECTORY .."/" ..defaults.FILE_NAME..".key.pem"
+
+	print_to_log('cert', "ca-" ..defaults.FILE_NAME)
+	print_to_log('cert', defaults.FILE_NAME)
+	print_to_log('key_only', defaults.FILE_NAME)
+
+	local function cleanup(ret)
+		local stat = fs.stat(DIRECTORY .. "/cert-enroll/new/" .. defaults.FILE_NAME .. "-cert.pem")
+		if stat and stat.size == 0 then
+			remove_json_from_generating_list("ca-" ..defaults.FILE_NAME, 'cert')
+			remove_json_from_generating_list(defaults.FILE_NAME, 'cert')
+			remove_json_from_generating_list(defaults.FILE_NAME, 'key')
+			print_to_info('cert', cert_file)
+			print_to_info('key_only', key_file)
+			local result = util.exec(OPENSSL_CMD .. " x509 -noout -subject -in " .. util.shellquote(ca_file))
+			defaults.COMMON_NAME = result:match("CN%s*=%s*(%S+)")
+			print_to_info('cert', ca_file, nil, "ca-" .. defaults.FILE_NAME .. ".cert.pem")
+			os.exit(7)
+		end
+		local function remove_file(file)
+			if file and file ~= "" then
+				local link = fs.readlink(file)
+				if link then fs.remove(link) end
+				fs.remove(file)
+			end
+		end
+		remove_json_from_generating_list("ca-" ..defaults.FILE_NAME, 'cert')
+		remove_json_from_generating_list(defaults.FILE_NAME, 'cert')
+		remove_json_from_generating_list(defaults.FILE_NAME, 'key')
+		remove_file(key_file)
+		remove_file(ca_file)
+		remove_file(cert_file)
+		os.exit(10)
+	end
+
+	local params_enroll = {}
+	table.insert(params_enroll, "FQDN=" .. util.shellquote(defaults.FILE_NAME))
+	table.insert(params_enroll, "SCEP_URL=" .. util.shellquote(defaults.SCEP_SERVER))
+	table.insert(params_enroll, "RSA_SIZE=" .. util.shellquote(defaults.KEY_SIZE))
+	table.insert(params_enroll, "PASSWORD=" .. util.shellquote(defaults.SCEP_PASSWORD))
+	table.insert(params_enroll, "cert-enroll.sh")
+
+	local command = table.concat(params_enroll, " ") .. " cert-enroll.sh"
+	local ret = os.execute(command)
+	local old_cert = fs.stat(DIRECTORY .. "/cert-enroll/" .. defaults.FILE_NAME .. "-cert.pem")
+	local has_old_cert = old_cert and old_cert.size > 0
+
+	if ret ~= 0 and not has_old_cert then cleanup(ret) end
+	certs.remove_cert_from_config(defaults.FILE_NAME, "key_only", _, true)
+	certs.remove_cert_from_config(defaults.FILE_NAME, "cert", _, true)
+	certs.remove_cert_from_config("ca-" .. defaults.FILE_NAME, "cert", _, true)
+	print_to_info('cert', cert_file)
+	print_to_info('key_only', key_file)
+	local result = util.exec(OPENSSL_CMD .. " x509 -noout -subject -in " .. util.shellquote(ca_file))
+	defaults.COMMON_NAME = result:match("CN%s*=%s*(%S+)")
+	print_to_info('cert', ca_file, nil, "ca-" .. defaults.FILE_NAME .. ".cert.pem")
+	remove_json_from_generating_list("ca-" .. defaults.FILE_NAME, "cert")
+	remove_json_from_generating_list(defaults.FILE_NAME, "key_only")
+	remove_json_from_generating_list(defaults.FILE_NAME, "cert")
+
+	return 0
+end
+
+local function usage()
+    print(
+        string.format([[
+        Usage: %s -t <certificate type> [<generate-option>...]
+
+        generate-option:
+            -t <type>    certificate type ('ca', 'server', 'client' or 'dh')
+                            ('simple' for simple all certificate generation)
+                            ('letsencrypt' for SSL certificate generated with Lets Encrypt)
+            -d <days>    days until certificate expires (default 3650)
+            -k <size>    certificate key size (default 2048)
+            -s <subject> certificate subject in "/C= /ST= /L= /O= /OU= " format
+            -n <name>    common name and file name of the certificate
+            -g           sign the certificate (for client and server -c and -v are needed)
+            -c <ca>      certificate authority file full name (in /etc/certificates
+                            folder; used for signing certificates)
+            -v <ca_key>  certificate authority key file full name (in /etc/certificates
+                            folder; used for signing certificates)
+            -l           sign already generated certificate (-q, -y for ca; -c, -v, -q
+                            for client/server are needed)
+            -q <request> certificate signing request file full name (in /etc/certificates
+                            folder; used for signing certificates)
+            -y <key>     certificate key file full name (in /etc/certificates
+                            folder; used for signing certificates)
+            -r           delete certificate signing request after signing it
+            -a           automatically renew certificate before it expires
+            -p <pass>    add private key decryption password
+            -f <host> add host address
+            -i <ip_addr> add ip address
+            -u <url>     scep server url
+            -up <pass>   scep server password
+
+            -h           display this help
+            ]]
+        ,arg[0])
+    )
+    end
+
+if #arg == 0 then
+	usage()
+	return
+-- used in ACME script to enable HTTP server for verification
+elseif arg[1] == "install" then
+	enable_acme_uhttpd()
+	enable_acme_forward()
+	add_http_01_challenge(arg[3], arg[4])
+	sleep(5)
+	return
+-- used in ACME script to disable HTTP server for verification
+elseif arg[1] == "remove" then
+	disable_acme_uhttpd()
+	disable_acme_forward()
+	del_http_01_challenge(arg[3])
+	return
+elseif arg[1] == "cron" then
+	renew_expiring()
+	return
+else
+	local i = 1
+	local inc = 1
+	while arg[i] do
+		if arg[i]:sub(1,1) == "-" then
+			local opt = arg[i]:sub(2)
+			if	 opt == "t" then defaults.TYPE = arg[i+1] inc = 2
+			elseif opt == "d" then
+				if tonumber(arg[i+1]) ~= nil then
+					defaults.DAYS = tonumber(arg[i+1])
+				end
+				inc = 2
+			elseif opt == "k" then defaults.KEY_SIZE = arg[i+1] inc = 2
+			elseif opt == "s" then defaults.SUBJECT = arg[i+1] inc = 2
+			elseif opt == "n" then defaults.COMMON_NAME = common_name(arg[i+1]) defaults.FILE_NAME = file_name(arg[i+1]) inc = 2
+			elseif opt == "c" then defaults.CA = arg[i+1] inc = 2
+			elseif opt == "v" then defaults.CA_KEY = arg[i+1] inc = 2
+			elseif opt == "g" then defaults.SIGN = true inc = 1
+			elseif opt == "r" then defaults.DELETE = true inc = 1
+			elseif opt == "a" then defaults.RENEW = true inc = 1
+			elseif opt == "p" then defaults.PASS = arg[i+1] inc = 2
+			elseif opt == "q" then defaults.REQUEST_FILE = arg[i+1] inc = 2
+			elseif opt == "y" then defaults.KEY_FILE = arg[i+1] inc = 2
+			elseif opt == "l" then defaults.SIGN_OLD = true inc = 1
+			elseif opt == "f" then table.insert(defaults.DNS, arg[i+1]) inc = 2
+			elseif opt == "i" then table.insert(defaults.IP, arg[i+1]) inc = 2
+			elseif opt == "u" then defaults.SCEP_SERVER = arg[i+1]
+			elseif opt == "up" then defaults.SCEP_PASSWORD = arg[i+1]
+			elseif opt == "h" then usage() end
+		end
+		i = i + inc
+	end
+end
+
+if defaults.TYPE == 'letsencrypt' then
+	if not defaults.COMMON_NAME then defaults.COMMON_NAME = common_name(defaults.DNS[1]) end
+	if not defaults.FILE_NAME then defaults.FILE_NAME = file_name(defaults.DNS[1]) end
+else
+	if not defaults.COMMON_NAME then defaults.COMMON_NAME = common_name(defaults.TYPE) end
+	if not defaults.FILE_NAME then defaults.FILE_NAME = file_name(defaults.COMMON_NAME) end
+end
+defaults.SUBJECT  = defaults.SUBJECT .. "/CN=".. defaults.COMMON_NAME
+
+if not fs.access(DIRECTORY) then fs.mkdir(DIRECTORY) end
+if not fs.access(ACME_HOME) then fs.mkdir(ACME_HOME) end
+
+if (defaults.SIGN == true or defaults.SIGN_OLD == true) and (defaults.TYPE ~= 'ca' and defaults.TYPE~= "dh") then
+	if defaults.CA ~= '' and not fs.access(DIRECTORY .. '/' .. defaults.CA) then
+		os.exit(2) --"Certificate Authority not existing or not given"
+	end
+	if defaults.CA_KEY ~= '' and not fs.access(DIRECTORY .. '/' .. defaults.CA_KEY) then
+		os.exit(3) --"Certificate Authority key file not existing or not given"
+	end
+end
+
+if defaults.SIGN_OLD == true and defaults.TYPE~= "dh" then
+	if defaults.REQUEST_FILE ~= '' and not fs.access(DIRECTORY .. '/' .. defaults.REQUEST_FILE) then
+		os.exit(4) --"Certificate Request file not existing or not given"
+	end
+	if defaults.TYPE == 'ca' and
+	(not defaults.KEY_FILE or defaults.KEY_FILE == '' or not fs.access(DIRECTORY .. '/' .. defaults.KEY_FILE)) then
+		os.exit(5) --"Certificate key file not existing or not given"
+	end
+end
+
+if defaults.SIGN_OLD == true then
+	print_to_log('cert')
+	if defaults.TYPE == 'ca' then
+		local ret = sign_ca()
+		if ret ~= 0 then os.exit(1) end
+		return -- Exit from script if only signing
+	elseif defaults.TYPE == 'server' or defaults.TYPE == 'client' then
+		local ret = sign_client_server()
+		if ret ~= 0 then os.exit(1) end
+		return -- Exit from script if only signing
+	end
+end
+
+if defaults.TYPE then
+	if defaults.TYPE == 'letsencrypt' then
+		acme_generation()
+	elseif defaults.TYPE == 'scep' then
+		scep_generation()
+	elseif defaults.TYPE == 'simple' then
+		simple_generation()
+	elseif defaults.TYPE== 'dh' then
+		print_to_log('dh')
+		generate_certificate("dh")
+	elseif defaults.TYPE == 'ca' then
+		print_to_log('key')
+		if defaults.SIGN == true then print_to_log('cert') end
+		generate_certificate("ca")
+	else
+		print_to_log('key')
+		if defaults.SIGN == true then print_to_log('cert') end
+		generate_certificate("client_server")
+	end
+end

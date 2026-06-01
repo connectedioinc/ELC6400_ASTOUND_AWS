@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-internet-ui/Makefile
+
+Package: vuci-app-internet-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-internet-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Internet status
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Internet status
+Description: VuCI UI Support for Internet status
+
+@@
+
+

@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-ntpd-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-ntpd-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +ntpd +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for NTPD time synchronisation configuration module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for NTPD time synchronisation configuration module
+Description: VuCI API Support for NTPD time synchronisation configuration module
+
+@@
+
+

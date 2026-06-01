@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/wifi_scanner/Makefile
+
+Package: wifi_scanner
+Version: 2025-11-14-1
+Depends: +libc +libubox +libtlt-logger +libubus +lsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: wifi_scanner
+Maintainer: 
+Require-User: wifi_scanner:wifi_scanner
+Source: wifi_scanner-1.15-2025-11-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: wifi_scanner
+Description: 	Wireless devices beacon and probe packet analyzer
+
+@@
+
+

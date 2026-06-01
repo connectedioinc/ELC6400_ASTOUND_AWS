@@ -1,0 +1,278 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "General"
+    }
+  ],
+  "paths": {
+    "/starlink/status": {
+      "get": {
+        "summary": "Returns Starlink dish status",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200GetForStarlink"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Starlink", "Starlink"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "flash16mb": false,
+          "is_gateway": false
+        }
+      }
+    },
+    "/starlink/actions/stow": {
+      "post": {
+        "summary": "Stows the Starlink dish",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PostForStarlink"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Starlink", "Starlink"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "flash16mb": false,
+          "is_gateway": false
+        }
+      }
+    },
+    "/starlink/actions/unstow": {
+      "post": {
+        "summary": "Unstows the Starlink dish",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PostForStarlink"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Starlink", "Starlink"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "flash16mb": false,
+          "is_gateway": false
+        }
+      }
+    },
+    "/starlink/actions/reboot": {
+      "post": {
+        "summary": "Reboots the Starlink dish",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PostForStarlink"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Starlink", "Starlink"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "flash16mb": false,
+          "is_gateway": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200GetForStarlink": {
+        "description": "Returns starlink status",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/starlink_status"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200PostForStarlink": {
+        "description": "Operation status response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "starlink_status": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "ID of the Starlink dish"
+          },
+          "software_version": {
+            "type": "string",
+            "description": "Software version of the Starlink dish"
+          },
+          "hardware_version": {
+            "type": "string",
+            "description": "Hardware version of the Starlink dish"
+          },
+          "uplink_throughput": {
+            "type": "number",
+            "description": "Uplink throughput in Bps"
+          },
+          "downlink_throughput": {
+            "type": "number",
+            "description": "Downlink throughput in Bps"
+          },
+          "pop_ping_drop_rate": {
+            "type": "number",
+            "description": "POP ping drop rate in percentage"
+          },
+          "pop_ping_latency": {
+            "type": "number",
+            "description": "POP ping latency in milliseconds"
+          },
+          "fraction_obstructed": {
+            "type": "number",
+            "description": "Fraction of time the dish is obstructed"
+          },
+          "currently_obstructed": {
+            "type": "boolean",
+            "description": "Whether the dish is currently obstructed"
+          },
+          "boresight_azimuth_deg": {
+            "type": "number",
+            "description": "Boresight azimuth in degrees"
+          },
+          "boresight_elevation_deg": {
+            "type": "number",
+            "description": "Boresight elevation in degrees"
+          },
+          "mobility_class": {
+            "type": "string",
+            "description": "Mobility class of the Starlink dish"
+          },
+          "alerts": {
+            "type": "object",
+            "description": "Alerts related to the Starlink dish",
+            "properties": {
+              "motorsStuck": {
+                "type": "boolean",
+                "description": "Indicates if the motors are stuck"
+              },
+              "thermalShutdown": {
+                "type": "boolean",
+                "description": "Indicates if the dish is in thermal shutdown"
+              },
+              "thermalThrottle": {
+                "type": "boolean",
+                "description": "Indicates if the dish is in thermal throttle"
+              },
+              "unexpectedLocation": {
+                "type": "boolean",
+                "description": "Indicates if the dish is in an unexpected location"
+              },
+              "mastNotNearVertical": {
+                "type": "boolean",
+                "description": "Indicates if the mast is not near vertical"
+              },
+              "slowEthernetSpeeds": {
+                "type": "boolean",
+                "description": "Indicates if the Ethernet speeds are slow"
+              },
+              "roaming": {
+                "type": "boolean",
+                "description": "Indicates if the dish is roaming"
+              },
+              "installPending": {
+                "type": "boolean",
+                "description": "Indicates if update installation is pending"
+              },
+              "isHeating": {
+                "type": "boolean",
+                "description": "Indicates if the dish is currently heating"
+              },
+              "powerSupplyThermalThrottle": {
+                "type": "boolean",
+                "description": "Indicates if the power supply is in thermal throttle"
+              },
+              "isPowerSaveIdle": {
+                "type": "boolean",
+                "description": "Indicates if the dish is in power save idle mode"
+              },
+              "movingWhileNotMobile": {
+                "type": "boolean",
+                "description": "Indicates if the dish is moving while not in mobile mode"
+              },
+              "dbfTelemStale": {
+                "type": "boolean",
+                "description": "Indicates if the DBF telemetry is stale"
+              },
+              "movingTooFastForPolicy": {
+                "type": "boolean",
+                "description": "Indicates if the dish is moving too fast for policy"
+              },
+              "lowMotorCurrent": {
+                "type": "boolean",
+                "description": "Indicates if the motor current is low"
+              },
+              "lowerSignalThanPredicted": {
+                "type": "boolean",
+                "description": "Indicates if the signal is lower than predicted"
+              },
+              "slowEthernetSpeeds100mbps": {
+                "type": "boolean",
+                "description": "Indicates if the Ethernet speeds are slow at 100 Mbps"
+              },
+              "obstructionMapReset": {
+                "type": "boolean",
+                "description": "Indicates if the obstruction map has been reset"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

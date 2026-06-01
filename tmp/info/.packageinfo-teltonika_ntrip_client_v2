@@ -1,0 +1,25 @@
+Source-Makefile: package/teltonika/ntrip_client_v2/Makefile
+
+Package: ntrip_client_v2
+Version: 2025-08-26
+Depends: +libc +libstdcpp +libuci +libubox +libubus +libtlt_uci +libtlt_termios +libjson-c +libblobmsg-json +GPS_SUPPORT:libgps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ntrip_client_v2
+Maintainer: 
+Require-User: ntrip=584:ntrip=584
+Source: ntrip_client_v2-2025-08-26-647cae59ee687216180a475d38fdf32ba90a1a25.tar.xz
+License: Apache-2.0
+LicenseFiles: LICENSE NOTICE
+Type: ipkg
+Detail-Description: ntrip_client_v2
+Description: 	NTRIP client designed for providing differential correction data acquired via Internet Protocol to RTK receiver or rover connected via serial connection.
+	It is not meant to correct the GPS coordinates of the Teltonika device itself.
+
+@@
+
+

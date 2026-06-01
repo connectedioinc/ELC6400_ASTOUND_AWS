@@ -1,0 +1,232 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Universal Gateway"
+    }
+  ],
+  "paths": {
+    "/universal_gateway/options": {
+      "get": {
+        "tags": [
+          "Universal Gateway"
+        ],
+        "summary": "Returns available tag options. A tag is an abstraction representing a single data point (such as a value or parameter) that can be read from or written to various protocol clients.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200UniversalGatewayTags"
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Universal Gateway",
+          "Universal Gateway"
+        ]
+      }
+    },
+    "/universal_gateway/status": {
+      "get": {
+        "tags": [
+          "Universal Gateway"
+        ],
+        "summary": "Returns tag ids from all configured data sources. A tag is an abstraction representing a single data point (such as a value or parameter) that can be read from or written to various protocol clients.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200UniversalGatewayStatus"
+          }
+        },
+        "parameters": [
+          {
+            "name": "client_service",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mbus_client",
+                "modbus_client",
+                "dnp3_client"
+              ]
+            },
+            "description": "Name of the client service to filter tags by"
+          }
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Universal Gateway",
+          "Universal Gateway"
+        ]
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200UniversalGatewayTags": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/universal_gateway_tags"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200UniversalGatewayStatus": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/universal_gateway_status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "universal_gateway_tags": {
+        "type": "object",
+        "properties": {
+          "tags": {
+            "type": "array",
+            "description": "Array of tag data",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique tag identifier"
+                },
+                "pretty_name": {
+                  "type": "string",
+                  "description": "Prettified tag identifier"
+                },
+                "source": {
+                  "type": "string",
+                  "description": "Source service of the tag",
+                  "enum": [
+                    "mbus_client",
+                    "modbus_client",
+                    "dnp3_client"
+                  ]
+                },
+                "type": {
+                  "type": "string",
+                  "description": "Data type of tag's value",
+                  "enum": [
+                    "string",
+                    "binary",
+                    "bool",
+                    "int8",
+                    "uint8",
+                    "int16",
+                    "uint16",
+                    "int32",
+                    "uint32",
+                    "int64",
+                    "uint64",
+                    "float32",
+                    "float64",
+                    "unknown"
+                  ]
+                },
+                "value_count": {
+                  "type": "integer",
+                  "description": "Number of elements in tag's array"
+                },
+                "permissions": {
+                  "type": "string",
+                  "description": "Read/write permissions of the tag",
+                  "enum": [
+                    "r",
+                    "w",
+                    "rw"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "pretty_name",
+                "source",
+                "type",
+                "permissions"
+              ]
+            }
+          }
+        },
+        "required": [
+          "tags"
+        ]
+      },
+      "universal_gateway_status": {
+        "type": "object",
+        "properties": {
+          "mbus_client": {
+            "$ref": "#/components/schemas/client_status"
+          },
+          "modbus_client": {
+            "$ref": "#/components/schemas/client_status"
+          },
+          "dnp3_client": {
+            "$ref": "#/components/schemas/client_status"
+          }
+        }
+      },
+      "client_status": {
+        "type": "object",
+        "properties": {
+          "modbus_server": {
+            "$ref": "#/components/schemas/server_data_source_status"
+          },
+          "modbus_serial_server": {
+            "$ref": "#/components/schemas/server_data_source_status"
+          },
+          "dnp3_outstation": {
+            "$ref": "#/components/schemas/server_data_source_status"
+          },
+          "dnp3_serial_outstation": {
+            "$ref": "#/components/schemas/server_data_source_status"
+          }
+        }
+      },
+      "server_data_source_status": {
+        "description": "Tags by their Configuration Identifier (ID).",
+        "type": "object",
+        "additionalProperties": {
+          "type": "object",
+          "properties": {
+            "tag_id": {
+              "type": "string",
+              "description": "Tag source id"
+            }
+          },
+          "required": [
+            "tag_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

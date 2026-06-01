@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/troubleshoot/Makefile
+
+Package: troubleshoot
+Version: 1.4
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Troubleshoot generator by Teltonika
+Maintainer: 
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Troubleshoot generator by Teltonika
+Description: Troubleshoot generator by Teltonika
+
+@@
+
+

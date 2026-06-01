@@ -1,0 +1,305 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Wireless PPSK groups",
+    "version": "1.0",
+    "contact": {},
+    "description": "Wireless PPSK groups API documentation"
+  },
+  "tags": [
+    {
+      "name": "Group"
+    }
+  ],
+  "paths": {
+    "/wireless/ppsk/groups/config": {
+      "get": {
+        "tags": ["Group"],
+        "summary": "Returns all wireless groups",
+        "description": "Returns a list of all configured wireless groups.",
+        "responses": {
+          "200": {
+            "description": "A list of wireless groups",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/wifi_ppsk_group_id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Group"],
+        "summary": "Updates wireless groups",
+        "description": "Updates the wireless group configurations.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/wifi_ppsk_group_id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Wireless groups updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/wifi_ppsk_group_id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Group"],
+        "summary": "Creates a wireless group configuration",
+        "description": "Creates a new wireless group configuration.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/wifi_ppsk_group"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/wifi_ppsk_group_id"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Group"],
+        "summary": "Deletes wireless group configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Section names of wireless groups to delete.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Network", "Wireless", "PPSK"],
+        "hw_tags": {
+          "wifi": true
+        },
+        "hidden_documentation_page": true
+      }
+    },
+    "/wireless/ppsk/groups/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The ID of the WiFi group"
+        }
+      ],
+      "get": {
+        "tags": ["Group"],
+        "summary": "Return wireless group configuration",
+        "description": "Returns details of a specific WiFi group.",
+        "responses": {
+          "200": {
+            "description": "WiFi group details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/wifi_ppsk_group_id"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates wireless group configuration",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/wifi_ppsk_group_id"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/wifi_ppsk_group"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Group"]
+      },
+      "delete": {
+        "summary": "Deletes wireless group configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Group"]
+      },
+      "x-web": {
+        "menu": ["Network", "Wireless", "PPSK"],
+        "hw_tags": {
+          "wifi": true
+        },
+        "hidden_documentation_page": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "wifi_ppsk_group": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "description": "Description of the PPSK profile.",
+            "x-web": {
+              "pretty": "Profile description",
+              "input-type": "input"
+            }
+          }
+        },
+        "required": ["description"]
+      },
+      "wifi_ppsk_group_id": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "ID of the WiFi group"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/wifi_ppsk_group"
+          }
+        ]
+      }
+    }
+  }
+}

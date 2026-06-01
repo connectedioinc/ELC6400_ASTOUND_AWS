@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/netperf/Makefile
+
+Package: netperf
+Version: 2.7.0-2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Network performance measurement tool
+Maintainer: Toke Høiland-Jørgensen <toke@toke.dk>
+CPE-ID: cpe:/a:netperf:netperf
+Source: netperf-2.7.0.tar.bz2
+License: Custom
+Type: ipkg
+Detail-Description: Network performance measurement tool
+Description: Network performance measurement tool
+http://www.netperf.org/
+Toke Høiland-Jørgensen <toke@toke.dk>
+@@
+
+

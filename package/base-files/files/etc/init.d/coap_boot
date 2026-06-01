@@ -1,0 +1,15 @@
+#!/bin/sh /etc/rc.common
+# Run coap_watchdog once, 10 min after boot
+START=99
+USE_PROCD=1
+
+start_service() {
+    procd_open_instance
+    procd_set_param command /bin/sh -c '
+        sleep 600
+        /usr/bin/coap_watchdog
+        logger -t coap_boot "coap_watchdog executed after boot"
+    '
+    procd_close_instance
+}
+

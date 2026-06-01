@@ -1,0 +1,11 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "rpc-sys": {
+      "methods": ["add_user", "del_user"]
+    },
+    "service": {
+      "methods": ["list"]
+    }
+  }
+}

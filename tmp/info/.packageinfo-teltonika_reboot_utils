@@ -1,0 +1,82 @@
+Source-Makefile: package/teltonika/reboot_utils/Makefile
+
+Package: reboot_utils
+Menu: 1
+Version: 2026-01-22-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: Reboot utilities
+Maintainer: 
+Require-User: preboot=531:preboot=531
+Source: reboot_utils-3.13.1-2026-01-22.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Reboot utilities
+Description: Reboot utilities
+
+@@
+
+Package: reboot_utils-periodic
+Version: 2026-01-22-1
+Depends: +libc reboot_utils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: Periodic reboot by Teltonika
+Maintainer: 
+Source: reboot_utils-3.13.1-2026-01-22.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Periodic reboot by Teltonika
+Description: Periodic reboot by Teltonika
+
+@@
+
+Package: reboot_utils-ping
+Version: 2026-01-22-1
+Depends: +libc reboot_utils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: ping_reboot
+Maintainer: 
+Groups: preboot:network
+Source: reboot_utils-3.13.1-2026-01-22.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: ping_reboot
+Description: ping_reboot
+
+@@
+
+Package: reboot_utils-wireless
+Version: 2026-01-22-1
+Depends: +libc reboot_utils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: wireless_reboot
+Maintainer: 
+Source: reboot_utils-3.13.1-2026-01-22.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: wireless_reboot
+Description: wireless_reboot
+
+@@
+
+

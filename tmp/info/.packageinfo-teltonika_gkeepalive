@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/gkeepalive/Makefile
+
+Package: gkeepalive
+Version: 2025-11-18-1
+Depends: +libc +libpcap +libpthread +libtlt-logger +libubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: GRE keepalive
+Maintainer: 
+Require-User: gkeepalive:gkeepalive
+FileAttributes: /usr/bin/gkeepalive::::cap_net_raw=ep
+Source: gkeepalive-2025-11-18-1.4.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: GRE keepalive
+Description:   GRE keepalive packet sender/receiver.
+
+@@
+
+

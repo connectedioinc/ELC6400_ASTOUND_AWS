@@ -1,0 +1,359 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "EoIP",
+    "version": "1.0",
+    "description": "EoIP api documentation"
+  },
+  "servers": [],
+  "paths": {
+    "/eoip/config": {
+      "parameters": [],
+      "get": {
+        "summary": "Returns all EoIP configurations",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200EoIPMulti"
+          }
+        },
+        "operationId": "get-eoip-config",
+        "description": ""
+      },
+      "put": {
+        "summary": "Updates specified EoIP configurations",
+        "operationId": "put-eoip-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200EoIPMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/eoip_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      },
+      "post": {
+        "summary": "Creates EoIP configuration",
+        "operationId": "post-eoip-config",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/eoip_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200EoIP"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["General"]
+      },
+      "delete": {
+        "summary": "Deletes specified EoIP configurations",
+        "operationId": "delete-eoip-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200EoIPMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      },
+      "x-web": {
+        "menu": ["Services", "VPN", "EoIP"],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false
+        }
+      }
+    },
+    "/eoip/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "get": {
+        "summary": "Returns the specified EoIP configuration",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200EoIP"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "operationId": "get-eoip-config-id",
+        "description": ""
+      },
+      "put": {
+        "summary": "Updates the specified EoIP configuration",
+        "operationId": "put-eoip-config-id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200EoIP"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/eoip_single_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["General"]
+      },
+      "delete": {
+        "summary": "Deletes the specified EoIP configuration",
+        "operationId": "delete-eoip-config-id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["General"]
+      },
+      "x-web": {
+        "menu": ["Services", "VPN", "EoIP"],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "eoip_options": {
+        "title": "eoip_options",
+        "description": "",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "x-web": {
+                  "pretty": "Configuration ID",
+                  "unique": true,
+                  "input-type": "input"
+                },
+                "type": "string",
+                "description": "EoIP configuration identifier (ID)."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/eoip_single_options"
+          }
+        ]
+      },
+      "eoip_single_options": {
+        "title": "eoip_single_options",
+        "type": "object",
+        "description": "",
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enable configuration",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Enable current configuration.",
+            "format": "is_bool",
+            "enum": ["0", "1"]
+          },
+          "name": {
+            "x-web": {
+              "pretty": "Name",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Name of the EoIP instance.",
+            "maxLength": 64,
+            "pattern": "^[a-zA-Z0-9_ ]+"
+          },
+          "tun_id": {
+            "x-web": {
+              "pretty": "Tunnel ID",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "Unique tunnel identifier, which must match other side of the tunnel.",
+            "format": "irange(1, 65536)"
+          },
+          "local_ip": {
+            "x-web": {
+              "pretty": "Local IP",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "The parameter specifies the local IP address used as the source for sending traffic through a tunnel.",
+            "format": "ipaddr"
+          },
+          "dynamic": {
+            "x-web": {
+              "pretty": "Dynamic",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "format": "is_bool",
+            "enum": ["0", "1"],
+            "description": "Allow the connection. If you enable it, be aware that there is no authorization and it is not secure. Avoid using this feature on a public IP or a network where you do not have full control over all hosts."
+          },
+          "remote_ip": {
+            "x-web": {
+              "pretty": "Remote IP",
+              "input-type": "input",
+              "depends": [
+                {
+                  "dynamic": "1"
+                }
+              ]
+            },
+            "type": "string",
+            "description": "The parameter specifies the IP address of the remote endpoint that the tunnel will connect to.",
+            "format": "ipaddr"
+          },
+          "to_bridge": {
+            "x-web": {
+              "pretty": "Bridge",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Assign a EoIP interface to a bridge."
+          },
+          "use_ipv6": {
+            "x-web": {
+              "pretty": "Use IPv6",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "format": "is_bool",
+            "enum": ["0", "1"],
+            "description": "Use IPv6 address to create a tunnel"
+          }
+        },
+        "required": ["name"]
+      }
+    },
+    "responses": {
+      "200EoIP": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/eoip_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200EoIPMulti": {
+        "description": "Returns configurations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/eoip_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

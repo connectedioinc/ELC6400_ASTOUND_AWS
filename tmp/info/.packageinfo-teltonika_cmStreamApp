@@ -1,0 +1,25 @@
+Source-Makefile: package/teltonika/cmStreamApp/Makefile
+
+Package: cmStreamApp
+Version: 2026-02-11-1
+Depends: +libc +libmosquitto +libtlt-logger +libtlt_uci +libuci +libmnfinfo +libubus +libubox +libcurl +MOBILE_SUPPORT:libgsm +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Cumulocity - Cloud of Things stream application.
+Maintainer: 
+Require-User: iot=503:iot=503
+Source: cmStreamApp-2.10-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Cumulocity - Cloud of Things stream application.
+Description: 	Cumulocity - Cloud of Things IoT application meant
+	for interaction with cloud-based Cumulocity IoT platform and
+	Telekom Cloud of Things.
+
+@@
+
+

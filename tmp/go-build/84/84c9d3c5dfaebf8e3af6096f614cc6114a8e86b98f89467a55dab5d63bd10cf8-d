@@ -1,0 +1,3 @@
+./hostinfo.go
+./hostinfo_linux.go
+./hostinfo_uname.go

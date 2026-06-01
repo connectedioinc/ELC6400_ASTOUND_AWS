@@ -1,0 +1,1480 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "radius",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/dot1x/radius/config/": {
+      "get": {
+        "summary": "Get all radius client configurations",
+        "tags": [
+          "Radius"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-examples": {
+                    "example-1": {
+                      "success": true,
+                      "data": [
+                        {
+                          "port": "1812",
+                          "id": "example",
+                          ".type": "radius",
+                          "secret": "testing123",
+                          "address": "192.168.1.1"
+                        }
+                      ]
+                    }
+                  },
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/radius_client_id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dot1x-radius-config-multi",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Create a radius client configuration",
+        "tags": [
+          "Radius"
+        ],
+        "operationId": "post-dot1x-radius-config",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_radius_one"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/radius_client_id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Edit multiple radius client configurations",
+        "tags": [
+          "Radius"
+        ],
+        "operationId": "put-dot1x-radius-config-multi",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_radius_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/radius_client_id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete multiple radius client configurations",
+        "tags": [
+          "Radius"
+        ],
+        "operationId": "delete-dot1x-radius-config-multi",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Network",
+          "Ports",
+          "802.1X",
+          "Radius"
+        ],
+        "hw_tags": {
+          "has_dot1x_server": true
+        }
+      }
+    },
+    "/dot1x/ports/config": {
+      "get": {
+        "summary": "Get all 802.1X port configurations",
+        "tags": [
+          "General"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_port_multi"
+          }
+        },
+        "operationId": "get-dot1x-ports-config-multi",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Edit multiple 802.1X port configurations",
+        "tags": [
+          "General"
+        ],
+        "operationId": "put-dot1x-ports-config-multi",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_port_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/dot1x_port_edit"
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": [
+          "Network",
+          "Ports",
+          "802.1X",
+          "General"
+        ],
+        "hw_tags": {
+          "dot1x": true
+        }
+      }
+    },
+    "/dot1x/radius/config/{id}": {
+      "get": {
+        "summary": "Get a single radius client configuration",
+        "tags": [
+          "Radius"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-examples": {
+                    "example-1": {
+                      "success": true,
+                      "data": [
+                        {
+                          "port": "1812",
+                          "id": "example",
+                          ".type": "radius",
+                          "secret": "testing123",
+                          "address": "192.168.1.1"
+                        }
+                      ]
+                    }
+                  },
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/radius_client_id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-dot1x-radius-config-single",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Edit a single radius client configuration",
+        "tags": [
+          "Radius"
+        ],
+        "operationId": "put-dot1x-radius-config-single",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_radius_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/radius_client_no_id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a single radius client configuration",
+        "tags": [
+          "Radius"
+        ],
+        "operationId": "delete-dot1x-radius-config-single",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "description": "UCI radius section identifier",
+          "required": true
+        }
+      ],
+      "x-web": {
+        "menu": [
+          "Network",
+          "Ports",
+          "802.1X",
+          "Radius"
+        ],
+        "hw_tags": {
+          "has_dot1x_server": true
+        }
+      }
+    },
+    "/dot1x/ports/config/{id}": {
+      "get": {
+        "summary": "Get a single 802.1X port configuration",
+        "tags": [
+          "General"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_port_one"
+          }
+        },
+        "operationId": "get-dot1x-ports-config-single",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update a single 802.1X port configuration",
+        "tags": [
+          "General"
+        ],
+        "operationId": "put-dot1x-ports-config-single",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_port_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/dot1x_port_edit_one"
+        }
+      },
+      "post": {
+        "summary": "Upload 802.1X client certificates",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["General"],
+        "operationId": "post-dot1x-ports-config-single",
+        "x-web": {
+            "hw_tags": {
+                "has_dot1x_client": true
+            }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "Parameter to upload the file to.",
+                    "enum": ["ca_cert", "client_cert", "private_key", "pac_file"]
+                  },
+                  "file": {
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
+                  }
+                },
+                "required": ["option", "file"]
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "description": "UCI 802.1X port section identifier",
+          "required": true
+        }
+      ],
+      "x-web": {
+        "menu": [
+          "Network",
+          "Ports",
+          "802.1X",
+          "General"
+        ],
+        "hw_tags": {
+          "dot1x": true
+        }
+      }
+    },
+    "/dot1x/client/config/{id}": {
+      "get": {
+        "deprecated": true,
+        "summary": "Get a single 802.1X client configuration",
+        "tags": [
+          "Client"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_port_one"
+          }
+        },
+        "operationId": "get-dot1x-client-config-single",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "deprecated": true,
+        "summary": "Update a single 802.1X client configuration",
+        "tags": [
+          "Client"
+        ],
+        "operationId": "put-dot1x-client-config-single",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_port_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/dot1x_port_edit_one"
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "description": "UCI 802.1X port section identifier",
+          "required": true
+        }
+      ],
+      "x-web": {
+        "menu": [
+          "Network",
+          "Ports",
+          "802.1X",
+          "General"
+        ],
+        "hw_tags": {
+          "has_dot1x_client": true
+        }
+      }
+    },
+    "/dot1x/client/config": {
+      "get": {
+        "deprecated": true,
+        "summary": "Get all 802.1X client configurations",
+        "tags": [
+          "Client"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_port_multi"
+          }
+        },
+        "operationId": "get-dot1x-client-config-multi",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "deprecated": true,
+        "summary": "Edit multiple 802.1X client configurations",
+        "tags": [
+          "Client"
+        ],
+        "operationId": "put-dot1x-client-config-multi",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_port_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/dot1x_port_edit"
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": [
+          "Network",
+          "Ports",
+          "802.1X",
+          "General"
+        ],
+        "hw_tags": {
+          "has_dot1x_client": true
+        }
+      }
+    },
+    "/dot1x/radius/actions/test": {
+      "post": {
+        "tags": [
+          "Radius"
+        ],
+        "summary": "send an auth request to a RADIUS server",
+        "operationId": "post-dot1x-radius-test",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-examples": {
+                    "example-1": {
+                      "data": {
+                        "status": "timed-out",
+                        "connected": false,
+                        "response": "[58214.123404] RADIUS message: code=1 (Access-Request) identifier=0 length=65[58214.123465]    Attribute 1 (User-Name) length=3[58214.123478]       Value: '_'[58214.123486]    Attribute 4 (NAS-IP-Address) length=6[58214.123504]       Value: 127.0.0.1[58214.123512]    Attribute 2 (User-Password) length=18[58214.123559]       Value: 8ce160bc4315ead12a765b168b3c87c1[58214.123571]    Attribute 80 (Message-Authenticator) length=18[58214.123617]       Value: 338e4814a621e8e365cef1a482482cae[58214.124135] recvmsg[RADIUS]: Connection refusedTimed out"
+                      }
+                    }
+                  },
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "status": {
+                          "type": "string"
+                        },
+                        "connected": {
+                          "type": "boolean"
+                        },
+                        "response": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "status",
+                        "connected",
+                        "response"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/radius_test"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": ""
+      },
+      "x-web": {
+        "menu": [
+          "Network",
+          "Ports",
+          "802.1X",
+          "Radius"
+        ],
+        "hw_tags": {
+          "has_dot1x_server": true
+        }
+      }
+    },
+    "/dot1x/ports/status": {
+      "x-web": {
+        "menu": ["Network", "Ports", "802.1X", "General"],
+        "hw_tags": {
+          "dot1x": true
+        }
+      },
+      "get": {
+        "summary": "Get all 802.1X port statuses",
+        "tags": [
+          "General"
+        ],
+        "operationId": "get-dot1x-ports-status-all",
+        "responses": {
+          "200": {
+            "description": "status response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-examples": {
+                    "success": true,
+                    "data": [
+                      {
+                        "port": "eth0",
+                        "code": 1
+                      },
+                      {
+                        "port": "eth1",
+                        "code": 2
+                      }
+                    ]
+  
+                  },
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "port": {
+                            "description": "802.1X UCI port identifier",
+                            "type": "string"
+                          },
+                          "code": {
+                            "description": "Status of the 802.1X instance; 1 = disabled, 2 = port down, 3 = authentication failed, 4 = port is authorized, 5 = authentication in progress, 6 = invalid config, 7 = no physical device, 8 = physical device is used by other 802.1X instance, 9 = port is unauthorized",
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dot1x/ports/status/{id}": {
+      "x-web": {
+        "menu": ["Network", "Ports", "802.1X", "General"],
+        "hw_tags": {
+          "dot1x": true
+        }
+      },
+      "get": {
+        "summary": "Get single 802.1X port status",
+        "tags": [
+          "General"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "description": "UCI 802.1X port section identifier",
+            "required": true
+          }
+        ],
+        "operationId": "get-dot1x-ports-status",
+        "responses": {
+          "200": {
+            "description": "status response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-examples": {
+                    "success": true,
+                    "data": {
+                      "port": "eth0",
+                      "code": 1
+                    }
+                  },
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "port": {
+                          "description": "802.1X UCI port identifier",
+                          "type": "string"
+                        },
+                        "code": {
+                          "description": "Status of the 802.1X instance; 1 = disabled, 2 = port down, 3 = authentication failed, 4 = port is authorized, 5 = authentication in progress, 6 = invalid config, 7 = no physical device, 8 = physical device is used by other 802.1X instance, 9 = port is unauthorized",
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+              "$ref": "#/components/responses/404response"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "radius_client_no_id": {
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "port": "1812",
+            "id": "example",
+            "secret": "testing123",
+            "address": "192.168.1.1"
+          }
+        },
+        "properties": {
+          "name": {
+            "x-web": {
+              "pretty": "Name",
+              "unique": true,
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Name of radius configuration",
+            "format": "uciname"
+          },
+          "port": {
+            "type": "string",
+            "x-web": {
+              "pretty": "RADIUS auth client port",
+              "input-type": "input"
+            },
+            "description": "primary RADIUS server port",
+            "format": "port"
+          },
+          "secret": {
+            "type": "string",
+            "description": "primary RADIUS server secret",
+            "x-web": {
+              "pretty": "RADIUS auth shared secret",
+              "input-type": "input"
+            },
+            "maxLength": 256
+          },
+          "address": {
+            "type": "string",
+            "description": "primary RADIUS server IP address",
+            "x-web": {
+              "pretty": "RADIUS auth server IP address",
+              "input-type": "input"
+            },
+            "format": "ipaddr"
+          },
+          "backup_enable": {
+            "type": "string",
+            "description": "enable backup RADIUS server",
+            "x-web": {
+              "pretty": "Enable backup RADIUS server",
+              "input-type": "switch"
+            },
+            "enum": [
+              "0",
+              "1"
+            ]
+          },
+          "backup_port": {
+            "description": "backup RADIUS server port",
+            "x-web": {
+              "depends": [ { "backup_enable": "1" } ],
+              "pretty": "Backup RADIUS auth client port",
+              "input-type": "input"
+            },
+            "type": "string",
+            "format": "port"
+          },
+          "backup_secret": {
+            "description": "backup RADIUS server secret",
+            "type": "string",
+            "x-web": {
+              "depends": [ { "backup_enable": "1" } ],
+              "pretty": "Backup RADIUS auth shared secret",
+              "input-type": "input"
+            },
+            "maxLength": 256
+          },
+          "backup_address": {
+            "description": "backup RADIUS server IP address",
+            "x-web": {
+              "depends": [ { "backup_enable": "1" } ],
+              "pretty": "Backup RADIUS auth server IP address",
+              "input-type": "input"
+            },
+            "type": "string",
+            "format": "ipaddr"
+          }
+        },
+        "required": [
+          "port",
+          "secret",
+          "address"
+        ]
+      },
+      "radius_client_id": {
+        "title": "radius_client_no_id",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "radius UCI section identifier",
+                "x-web": {
+                  "pretty": "Radius client name",
+                  "input-type": "input"
+                },
+                "format": "uciname"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/radius_client_no_id"
+          }
+        ]
+      },
+      "port_no_id": {
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "id": "port1",
+            "dot1x_enable": "1",
+            "radius": "HQ",
+            "reject_vlan": "disabled",
+            "accept_vlan": "radius_assigned",
+            "guest_vlan": "disabled",
+            "fallback_vlan": "disabled"
+          }
+        },
+        "properties": {
+          "enabled": {
+            "description": "enable this instance",
+            "type": "string",
+            "x-web": {
+              "pretty": "Enable 802.1X",
+              "input-type": "switch",
+              "depends": [ { "role": "server" }, { "role": "client" } ]
+            },
+            "enum": [
+              "0",
+              "1"
+            ]
+          },
+          "eap_retrans_count": {
+            "description": "802.1X server eap retransmission count",
+            "type": "string",
+            "format": "range(1, 10)",
+            "x-web": {
+              "pretty": "Max EAP retransmissions count",
+              "input-type": "input",
+              "hw_tags": { "is_switch": true, "has_dot1x_server": true },
+              "depends": [ { "role": "server" } ]
+            }
+          },
+          "eap_retrans_timeout": {
+            "description": "802.1X server eap retransmission timeout",
+            "type": "string",
+            "format": "range(1, 10)",
+            "x-web": {
+              "pretty": "How long to wait for response before retransmitting EAP request",
+              "input-type": "input",
+              "hw_tags": { "is_switch": true, "has_dot1x_server": true },
+              "depends": [ { "role": "server" } ]
+            }
+          },
+          "radius": {
+            "description": "RADIUS server UCI identifier to use for client authentication",
+            "x-web": {
+              "pretty": "Radius server instance name",
+              "hw_tags": { "has_dot1x_server": true },
+              "input-type": "input",
+              "depends": [ { "role": "server" } ]
+            },
+            "type": "string"
+          },
+          "guest_vlan": {
+            "description": "VLAN to put port in if the client does not support 802.1X",
+            "x-web": {
+              "pretty": "Guest VLAN",
+              "hw_tags": { "is_switch": true, "has_dot1x_server": true },
+              "input-type": "input",
+              "depends": [ { "role": "server" }
+              ]
+            },
+            "type": "string"
+          },
+          "fallback_vlan": {
+            "description": "VLAN to put port in if the RADIUS server is unreachable",
+            "x-web": {
+              "pretty": "Fallback VLAN",
+              "hw_tags": { "is_switch": true, "has_dot1x_server": true },
+              "input-type": "input",
+              "depends": [ { "role": "server" } ]
+            },
+            "type": "string"
+          },
+          "reject_vlan": {
+            "description": "VLAN to put port in if authentication is unsuccessful",
+            "x-web": {
+              "pretty": "Reject VLAN",
+              "hw_tags": { "is_gateway": false, "has_dot1x_server": true },
+              "input-type": "input",
+              "depends": [ { "role": "server" } ]
+            },
+            "type": "string"
+          },
+          "accept_vlan": {
+            "description": "VLAN to put port in if authentication is successful",
+            "x-web": {
+              "pretty": "Accept VLAN",
+              "hw_tags": { "is_gateway": false, "has_dot1x_server": true },
+              "input-type": "input",
+              "depends": [ { "role": "server" } ]
+            },
+            "type": "string"
+          },
+          "use_vlans": {
+            "description": "Allow 802.1X server to control VLANs",
+            "x-web": {
+              "pretty": "Use VLANs",
+              "hw_tags": { "has_dot1x_server": true },
+              "input-type": "select",
+              "depends": [ { "role": "server" } ],
+              "enum-depends": [
+                  {
+                      "hw_tags": {
+                          "dsa": false,
+                          "is_gateway": false
+                      },
+                      "values": ["1"]
+                  },
+                  {
+                      "hw_tags": {
+                          "dsa": false,
+                          "is_gateway": true
+                      },
+                      "values": ["0"]
+                  },
+                  {
+                      "hw_tags": {
+                          "dsa": true
+                      },
+                      "values": ["1", "0"]
+                  }
+              ],
+              "enum-pretty": {
+                  "0": "Disabled",
+                  "1": "Enabled"
+              }
+            },
+            "enum": [
+              "0",
+              "1"
+            ],
+            "type": "string"
+          },
+          "role": {
+            "description": "802.1X client/server selection",
+            "type": "string",
+            "enum": [
+              "server",
+              "client"
+            ],
+            "x-web": {
+              "pretty": "Role",
+              "input-type": "select",
+              "enum-pretty": {
+                "client": "Client",
+                "server": "Server"
+              },
+              "enum-depends": [
+                {
+                  "hw_tags": { "has_dot1x_client": true },
+                  "values": [ "client" ]
+                },
+                {
+                  "hw_tags": { "has_dot1x_server": true },
+                  "values": [ "server" ]
+                },
+                {
+                  "hw_tags": { "has_dot1x_client": true, "has_dot1x_server": true },
+                  "values": [ "client", "server" ]
+                }
+              ]
+            }
+          },
+          "identity": {
+            "description": "802.1X client identity",
+            "type": "string",
+            "x-web": {
+              "pretty": "Identity",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "input",
+              "depends": [
+                {
+                  "auth_type": [
+                    "md5",
+                    "tls",
+                    "pwd",
+                    "ttls",
+                    "peap"
+                  ],
+                  "role": "client"
+                }
+              ]
+            },
+            "maxLength": 253
+          },
+          "anonymous_identity": {
+            "type": "string",
+            "description": "802.1X client anonymous identity",
+            "x-web": {
+              "pretty": "Anonymous Identity",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "input",
+              "depends": [
+                {
+                  "auth_type": [
+                    "peap",
+                    "ttls"
+                  ],
+                  "role": "client"
+                }
+              ]
+            },
+            "maxLength": 253
+          },
+          "password": {
+            "type": "string",
+            "description": "802.1X client password",
+            "x-web": {
+              "pretty": "Password",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "input",
+              "depends": [
+                {
+                  "auth_type": [
+                    "md5",
+                    "pwd",
+                    "ttls",
+                    "peap"
+                  ],
+                  "role": "client"
+                }
+              ]
+            },
+            "maxLength": 112
+          },
+          "client_cert": {
+            "description": "802.1X client certificate",
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/dot1x/ports/config/{id}",
+              "pretty": "Client Certificate",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "input",
+              "depends": [
+                {
+                  "auth_type": "tls",
+                  "role": "client"
+                }
+              ]
+            }
+          },
+          "ca_cert": {
+            "description": "CA Certificate",
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/dot1x/ports/config/{id}",
+              "pretty": "CA Certificate",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "input",
+              "depends": [
+                {
+                  "auth_type": "tls",
+                  "role": "client"
+                },
+                {
+                  "auth_type": "ttls",
+                  "role": "client"
+                },
+                {
+                  "auth_type": "peap",
+                  "role": "client"
+                }
+              ]
+            }
+          },
+          "private_key": {
+            "description": "802.1X client private key",
+            "type": "string",
+            "x-web": {
+              "upload_endpoint": "/dot1x/ports/config/{id}",
+              "pretty": "Private Key",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "input",
+              "depends": [
+                {
+                  "auth_type": "tls",
+                  "role": "client"
+                }
+              ]
+            }
+          },
+          "private_key_pass": {
+            "description": "802.1X client private key encryption password",
+            "type": "string",
+            "x-web": {
+              "pretty": "Private Key Password",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "input",
+              "depends": [
+                {
+                  "auth_type": "tls",
+                  "role": "client"
+                }
+              ]
+            }
+          },
+          "auth_type": {
+            "description": "802.1X client authentication method",
+            "type": "string",
+            "enum": [
+              "md5",
+              "tls",
+              "pwd",
+              "ttls",
+              "peap"
+            ],
+            "x-web": {
+              "pretty": "Auth type",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "input",
+              "enum-pretty": {
+                "md5": "MD5",
+                "tls": "TLS",
+                "pwd": "PWD",
+                "ttls": "Tunneled TLS",
+                "peap": "Protected EAP (PEAP)"
+              },
+              "depends": [
+                {
+                  "role": "client"
+                }
+              ]
+            }
+          },
+          "inner_authentication": {
+            "description": "802.1X client inner authentication method",
+            "type": "string",
+            "enum": [
+              "pap",
+              "mschap",
+              "mschapv2",
+              "mschapv2noeap",
+              "chap",
+              "md5",
+              "gtc"
+            ],
+            "x-web": {
+              "pretty": "Inner Authentication",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "select",
+              "enum-pretty": {
+                "pap": "PAP",
+                "mschap": "MSCHAP",
+                "mschapv2": "MSCHAPv2",
+                "mschapv2noeap": "MSCHAPv2 (no EAP)",
+                "chap": "CHAP",
+                "md5": "MD5",
+                "gtc": "GTC"
+              },
+              "depends": [
+                {
+                  "auth_type": [
+                    "ttls",
+                    "peap"
+                  ],
+                  "role": "client"
+                }
+              ]
+            }
+          },
+          "peap_version": {
+            "description": "802.1X client PEAP version",
+            "type": "string",
+            "enum": [
+              "auto",
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Peap Version",
+              "hw_tags": { "has_dot1x_client": true },
+              "input-type": "select",
+              "enum-pretty": {
+                "0": "0",
+                "1": "1",
+                "auto": "Auto"
+              },
+              "depends": [
+                {
+                  "auth_type": [
+                    "ttls",
+                    "peap"
+                  ],
+                  "role": "client"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "port_id": {
+        "title": "security_profile_id",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "802.1X UCI section identifier",
+                "x-web": {
+                  "pretty": "Port name",
+                  "input-type": "input"
+                },
+                "format": "uciname"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/port_no_id"
+          }
+        ]
+      },
+      "radius_test": {
+        "title": "radius_test",
+        "type": "object",
+        "properties": {
+          "username": {
+            "description": "test username",
+            "type": "string",
+            "maxLength": 253,
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input"
+            }
+          },
+          "password": {
+            "description": "test password",
+            "type": "string",
+            "maxLength": 112,
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input"
+            }
+          },
+          "secret": {
+            "description": "RADIUS server secret",
+            "type": "string",
+            "maxLength": 256,
+            "x-web": {
+              "pretty": "Secret",
+              "input-type": "input"
+            }
+          },
+          "ip": {
+            "description": "RADIUS server IP address",
+            "type": "string",
+            "format": "ip4addr",
+            "x-web": {
+              "pretty": "Address (IPv4)",
+              "input-type": "input"
+            }
+          },
+          "port": {
+            "description": "RADIUS server port",
+            "type": "string",
+            "format": "port",
+            "x-web": {
+              "pretty": "Authentication port",
+              "input-type": "input"
+            }
+          }
+        },
+        "required": [
+          "secret",
+          "ip"
+        ]
+      }
+    },
+    "responses": {
+      "200_radius_one": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/radius_client_id"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_radius_multi": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/radius_client_id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_port_one": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/port_id"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_port_multi": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/port_id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "dot1x_port_edit_one": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/port_no_id"
+                }
+              }
+            }
+          }
+        }
+      },
+      "dot1x_port_edit": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/port_id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

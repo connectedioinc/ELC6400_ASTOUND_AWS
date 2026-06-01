@@ -1,0 +1,413 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/rip/interface/config": {
+      "get": {
+        "summary": "Returns all RIP interface configurations",
+        "description": "",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200RiInMulti"
+          }
+        },
+        "tags": ["Interfaces"],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates rip interface configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200RiInMulti"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/rip_interface_options_multi"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Interfaces"]
+      },
+      "put": {
+        "summary": "Updates specified RIP interface configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200RiInMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "$ref": "#/components/schemas/rip_interface_options_multi"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Interfaces"]
+      },
+      "delete": {
+        "summary": "Deletes specified RIP interface configurations",
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Interfaces"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "RIP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "RIP"
+      }
+    },
+    "/rip/interface/config/{id}": {
+      "get": {
+        "summary": "Returns specified RIP interface configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200RiIn"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configuration RIP interface identifier"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "tags": ["Interfaces"]
+      },
+      "put": {
+        "summary": "Updates specified RIP interface configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200RiIn"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configuration RIP interface identifier"
+          }
+        ],
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/rip_interface_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Interfaces"]
+      },
+      "delete": {
+        "summary": "Deletes specified RIP interface configuration",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configuration RIP interface identifier"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Interfaces"]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "RIP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "RIP"
+      }
+    },
+    "/rip/interface/options": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/rip_available_interfaces"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "RIP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "RIP"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200RiIn": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/rip_interface_options_multi"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200RiInMulti": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/rip_interface_options_multi"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "rip_available_interfaces": {
+        "description": "Lists available interfaces for selection",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "object",
+                  "description": "list of available interfaces",
+                  "properties": {
+                    "available_interfaces": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "parent": {
+                            "type": "string",
+                            "description": "Parent to which this interface belongs"
+                          },
+                          "ifname": {
+                            "type": "string",
+                            "description": "Interface name"
+                          },
+                          "service": {
+                            "type": "string",
+                            "description": "Service this interface belongs to"
+                          },
+                          "interfaces": {
+                            "type": "string",
+                            "description": "Logical interfaces to which the interface is assigned"
+                          },
+                          "ports": {
+                            "type": "string",
+                            "description": "Physical interfaces assigned to the bridge"
+                          },
+                          "child": {
+                            "type": "string",
+                            "description": "Child instance name"
+                          }
+                        },
+                        "required": ["ifname"]
+                      }
+                    }
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "rip_interface_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enabled",
+              "input-type": "switch"
+            },
+            "type": "string"
+          },
+          "ifname": {
+            "x-web": {
+              "pretty": "Interface",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Interface name."
+          },
+          "passive_interface": {
+            "x-web": {
+              "pretty": "Passive Interface",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "description": "Specify interface to passive mode."
+          }
+        }
+      },
+      "rip_interface_options_multi": {
+        "title": "rip_interface_options_multi",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "x-web": {
+                  "pretty": "Configuration name",
+                  "unique": true,
+                  "input-type": "input"
+                },
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/rip_interface_options"
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "RIP Interfaces",
+    "version": "1.0",
+    "description": "RIP interfaces api documentation"
+  },
+  "tags": [
+    {
+      "name": "Interfaces"
+    }
+  ]
+}

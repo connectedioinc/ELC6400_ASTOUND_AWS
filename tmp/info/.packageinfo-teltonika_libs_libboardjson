@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/libs/libboardjson/Makefile
+
+Package: libboardjson
+Version: 7.21-2
+Depends: +libc +libubus +libblobmsg-json +rpcd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A shell utility and a library that provides an easy way to read /etc/board.json
+Maintainer: 
+Require-User: boardjson=642:boardjson=642
+Source: libboardjson-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A shell utility and a library that provides an easy way to read /etc/board.json
+Description: 	A shell utility and a library that provides an easy way to read /etc/board.json. Refer to this package's git repo for further documentation. Created by Teltonika.
+
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/network/services/travelmate/Makefile
+
+Package: travelmate
+Version: 2.1.0-1
+Depends: +libc +iwinfo +jshn +jsonfilter +curl +ca-bundle
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A wlan connection manager for travel router
+Maintainer: Dirk Brenken <dev@brenken.org>
+Require-User: travelmate:travelmate
+Source: 
+License: GPL-3.0-or-later
+Type: ipkg
+Detail-Description: A wlan connection manager for travel router
+Description: A wlan connection manager for travel router
+Dirk Brenken <dev@brenken.org>
+@@
+
+

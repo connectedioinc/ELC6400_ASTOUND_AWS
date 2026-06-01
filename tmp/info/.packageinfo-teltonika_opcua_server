@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/opcua_server/Makefile
+
+Package: opcua_server
+Version: 2026-02-07-1
+Depends: +libc +open62541 +libmnfinfo +libuci +libtlt_uci +libubus +libboardjson +GPS_SUPPORT:libgps +MOBILE_SUPPORT:libgsm +IO_SUPPORT:iomand +libtag
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OPC UA server
+Maintainer: 
+Require-User: opcua_server=506:opcua_server=506
+FileAttributes: /usr/bin/opcua_server::::cap_net_bind_service=ep
+Source: opcua_server-2026-02-07-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: OPC UA server
+Description: 	OPC UA server designed for OPC UA clients to read device data.
+
+@@
+
+

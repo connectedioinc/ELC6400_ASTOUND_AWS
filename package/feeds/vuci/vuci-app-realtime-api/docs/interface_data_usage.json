@@ -1,0 +1,244 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Interface data usage"
+    }
+  ],
+  "paths": {
+    "/data_usage/{interval}/interface/{interface}/status": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string",
+            "enum": [
+              "hour",
+              "day",
+              "week",
+              "month",
+              "total"
+            ]
+          },
+          "name": "interval",
+          "in": "path",
+          "required": true,
+          "description": "Interval of the returned data"
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "interface",
+          "in": "path",
+          "required": true,
+          "description": "Interface whose usage should be returned"
+        },
+        {
+          "name": "aggregate_by",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "hour",
+              "day",
+              "week",
+              "month",
+              "total"
+            ]
+          },
+          "description": "Override interval into which the data is aggregated"
+        },
+        {
+          "name": "current",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          },
+          "description": "Controls the period for which data is returned.. \"true\": Fetches data from the start of the current interval to the present moment. \"false\": Fetches data from one interval back to the present moment"
+        }
+      ],
+      "get": {
+        "summary": "Returns interface usage data for specified interval",
+        "tags": [
+          "Data usage"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "interval": {
+                          "type": "string",
+                          "description": "Interval by which the data was aggregated"
+                        },
+                        "usage": {
+                          "type": "array",
+                          "description": "Array of data usage entries.",
+                          "items": {
+                            "type": "array",
+                            "description": "Data usage entry. Values:\na[0] - timestamp of when the data was used.\na[1] - received data in bytes.\na[2] - transfered data in bytes.",
+                            "minItems": 3,
+                            "maxItems": 3,
+                            "items": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Status",
+          "Realtime Data",
+          "Traffic"
+        ],
+        "hw_tags": {
+          "is_switch": false
+        },
+        "hidden_documentation_page": true,
+        "name": "Interface data usage"
+      }
+    },
+    "/data_usage/{interval}/device/{device}/status": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string",
+            "enum": [
+              "hour",
+              "day",
+              "week",
+              "month",
+              "total"
+            ]
+          },
+          "name": "interval",
+          "in": "path",
+          "required": true,
+          "description": "Interval of the returned data"
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "device",
+          "in": "path",
+          "required": true,
+          "description": "Device whose usage should be returned"
+        },
+        {
+          "name": "aggregate_by",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "hour",
+              "day",
+              "week",
+              "month",
+              "total"
+            ]
+          },
+          "description": "Override interval into which the data is aggregated"
+        },
+        {
+          "name": "current",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          },
+          "description": "Determines the interval of data to be retrieved. \"true\": Fetches data from the start of the current interval to the present moment. \"false\": Fetches data from one interval back to the present moment"
+        }
+      ],
+      "get": {
+        "summary": "Returns device usage data for specified interval",
+        "tags": [
+          "Data usage"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "interval": {
+                          "type": "string",
+                          "description": "Interval by which the data was aggregated"
+                        },
+                        "usage": {
+                          "type": "array",
+                          "description": "Array of data usage entries.",
+                          "items": {
+                            "type": "array",
+                            "description": "Data usage entry. Values:\na[0] - timestamp of when the data was used.\na[1] - received data in bytes.\na[2] - transfered data in bytes.",
+                            "minItems": 3,
+                            "maxItems": 3,
+                            "items": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Status",
+          "Realtime Data",
+          "Traffic"
+        ],
+        "hw_tags": {
+          "is_switch": false
+        },
+        "hidden_documentation_page": true,
+        "name": "Interface data usage"
+      }
+    }
+  },
+  "components": {
+    "responses": {},
+    "schemas": {}
+  }
+}

@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-auto-reboot-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-auto-reboot-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +reboot_utils +reboot_utils-periodic +reboot_utils-ping +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for Auto Reboot
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for Auto Reboot
+Description: VuCI API Support for Auto Reboot
+
+@@
+
+

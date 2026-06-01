@@ -1,0 +1,8 @@
+{
+    "user": "uhttpd",
+    "access": {
+        "azure.*": {
+            "methods": [ "get_connection_status" ]
+        }
+    }
+}

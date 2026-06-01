@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/applications/vuci-app-ddns-ui/Makefile
+
+Package: vuci-app-ddns-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-ddns-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Dynamic DNS
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Dynamic DNS
+Description: VuCI UI Support for Dynamic DNS
+
+@@
+
+

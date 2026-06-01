@@ -1,0 +1,23 @@
+Source-Makefile: package/kernel/tlt-gpio/Makefile
+
+Package: kmod-tlt-gpio
+Submenu: Other modules
+Version: <LINUX_VERSION>-1
+Depends: 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Teltonika gpiochip parameter modification module
+Maintainer: 
+Source: 
+License: GPL-2.0-only
+LicenseFiles: LICENSE/GPL-2.0
+Type: ipkg
+Detail-Description: Teltonika gpiochip parameter modification module
+Description: Teltonika gpiochip parameter modification module
+
+@@
+
+

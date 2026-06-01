@@ -1,0 +1,25 @@
+Source-Makefile: package/teltonika/speedtest/Makefile
+
+Package: speedtest
+Version: 2025-11-26-7
+Depends: +libc +liblua +libcurl +rpcd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Speedtest
+Maintainer: 
+Require-User: speedtest:speedtest
+FileAttributes: /usr/libexec/rpcd/speedtest:speedtest:speedtest::
+Source: speedtest-1.12-2025-11-26.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Speedtest
+Description: 	Speed Test package provides with the possibility to test
+	the data transfer speed of your WAN connection.
+
+@@
+
+

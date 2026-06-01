@@ -1,0 +1,41 @@
+Source-Makefile: package/network/config/wifi-scripts/Makefile
+
+Package: wifi-scripts
+Version: 1.0-8
+Depends: +libc +netifd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: Wi-Fi configuration scripts
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: 
+License: GPL-2.0-only
+Type: ipkg
+Detail-Description: Wi-Fi configuration scripts
+Description:  A set of scripts that handle setup and configuration of Wi-Fi devices.
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: wifi-scripts-lite
+Version: 1.0-8
+Depends: +libc +netifd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: Wi-Fi configuration scripts
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: 
+License: GPL-2.0-only
+Type: ipkg
+Detail-Description: Wi-Fi configuration scripts
+Description: Wi-Fi configuration scripts
+Felix Fietkau <nbd@nbd.name>
+@@
+
+

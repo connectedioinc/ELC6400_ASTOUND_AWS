@@ -1,0 +1,25 @@
+Source-Makefile: package/utils/7zip/Makefile
+
+Package: 7zip
+Version: 22.0-1
+Depends: +libc +libstdcpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: 7-Zip archiver (Teltonika version)
+Maintainer: 
+Source: 7z2200-src.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: DOC/License.txt
+Type: ipkg
+Detail-Description: 7-Zip archiver (Teltonika version)
+Description: 	Minified 7-Zip archiver version with only 7z
+	archive format and AES-256 encryption support.
+http://http://www.7-zip.org
+
+@@
+
+

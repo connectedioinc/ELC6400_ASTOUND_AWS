@@ -1,0 +1,2785 @@
+Installing base-files (260225.50289-r16279-5cc0535800) to root...
+Installing libgcc1 (8.4.0-3) to root...
+Installing libc (1.2.4-3) to root...
+Installing libubox20240329 (2024-03-29-eb9bcb64-2) to root...
+Installing libubus20251019 (2025-10-19-6fdf7a97-1) to root...
+Installing libuci20130104 (2021-10-22-f84f49f0-18-18) to root...
+Installing libnl-tiny2023-04-02 (2023-04-02-11b7c5f0-1) to root...
+Installing libjson-c5 (0.15-2) to root...
+Installing libblobmsg-json20240329 (2024-03-29-eb9bcb64-2) to root...
+Installing ubusd (2025-10-19-6fdf7a97-1) to root...
+Installing ubus (2025-10-19-6fdf7a97-1) to root...
+Installing jshn (2024-03-29-eb9bcb64-2) to root...
+Installing libcap (2.69-1) to root...
+Installing libtlt-logger (2025-11-24-1) to root...
+Installing rpcd (2025-12-10-1) to root...
+Installing netifd (2025-05-23-7901e66c-4) to root...
+Installing jsonfilter (2018-02-04-c7e938d6-1) to root...
+Installing usign (2020-05-23-f1f65026-1) to root...
+Installing openwrt-keyring (2021-02-20-49283916-2) to root...
+Installing ubi-utils (2.1.2-1) to root...
+Installing ubox (2020-10-25-9ef88681-13) to root...
+Installing fstools (2022-05-03-9e11b372-260225.50289) to root...
+Installing fwtool (2019-11-12-8f7fe925-1) to root...
+Installing ipq-wifi-teltonika_rutx (2) to root...
+Installing kmod-gpio-button-hotplug (6.6.119-5) to root...
+Installing kernel (6.6.119-1-cdf11e765db66c4eb258a05777cedbf8) to root...
+Package kernel (6.6.119-1-cdf11e765db66c4eb258a05777cedbf8) installed in root is up to date.
+Installing kmod-scsi-core (6.6.119-1) to root...
+Installing kmod-crypto-acompress (6.6.119-1) to root...
+Installing kmod-crypto-aead (6.6.119-1) to root...
+Installing kmod-crypto-hash (6.6.119-1) to root...
+Installing kmod-crypto-null (6.6.119-1) to root...
+Installing kmod-crypto-arc4 (6.6.119-1) to root...
+Installing kmod-crypto-authenc (6.6.119-1) to root...
+Installing kmod-crypto-pcompress (6.6.119-1) to root...
+Installing kmod-crypto-manager (6.6.119-1) to root...
+Installing kmod-crypto-cbc (6.6.119-1) to root...
+Installing kmod-crypto-ccm (6.6.119-1) to root...
+Installing kmod-crypto-hmac (6.6.119-1) to root...
+Installing kmod-crypto-sha256 (6.6.119-1) to root...
+Installing kmod-crypto-rng (6.6.119-1) to root...
+Installing kmod-crypto-geniv (6.6.119-1) to root...
+Installing kmod-crypto-seqiv (6.6.119-1) to root...
+Installing kmod-crypto-ctr (6.6.119-1) to root...
+Installing kmod-crypto-cmac (6.6.119-1) to root...
+Installing kmod-crypto-crc32c (6.6.119-1) to root...
+Package kmod-crypto-ctr (6.6.119-1) installed in root is up to date.
+Installing kmod-crypto-deflate (6.6.119-1) to root...
+Installing kmod-lib-zlib-inflate (6.6.119-1) to root...
+Installing kmod-lib-zlib-deflate (6.6.119-1) to root...
+Installing kmod-crypto-des (6.6.119-1) to root...
+Installing kmod-crypto-ecb (6.6.119-1) to root...
+Installing kmod-crypto-ecdh (6.6.119-1) to root...
+Installing kmod-crypto-kpp (6.6.119-1) to root...
+Installing kmod-crypto-echainiv (6.6.119-1) to root...
+Installing kmod-crypto-gcm (6.6.119-1) to root...
+Installing kmod-crypto-gf128 (6.6.119-1) to root...
+Installing kmod-crypto-ghash (6.6.119-1) to root...
+Package kmod-crypto-gf128 (6.6.119-1) installed in root is up to date.
+Package kmod-crypto-ghash (6.6.119-1) installed in root is up to date.
+Package kmod-crypto-hash (6.6.119-1) installed in root is up to date.
+Package kmod-crypto-hmac (6.6.119-1) installed in root is up to date.
+Package kmod-crypto-kpp (6.6.119-1) installed in root is up to date.
+Installing kmod-crypto-lib-blake2s (6.6.119-1) to root...
+Installing kmod-crypto-lib-chacha20 (6.6.119-1) to root...
+Installing kmod-crypto-lib-chacha20poly1305 (6.6.119-1) to root...
+Installing kmod-crypto-lib-poly1305 (6.6.119-1) to root...
+Installing kmod-crypto-lib-curve25519 (6.6.119-1) to root...
+Package kmod-crypto-lib-poly1305 (6.6.119-1) installed in root is up to date.
+Package kmod-crypto-manager (6.6.119-1) installed in root is up to date.
+Installing kmod-crypto-md5 (6.6.119-1) to root...
+Package kmod-crypto-null (6.6.119-1) installed in root is up to date.
+Package kmod-crypto-pcompress (6.6.119-1) installed in root is up to date.
+Package kmod-crypto-rng (6.6.119-1) installed in root is up to date.
+Package kmod-crypto-geniv (6.6.119-1) installed in root is up to date.
+Package kmod-crypto-seqiv (6.6.119-1) installed in root is up to date.
+Installing kmod-crypto-sha1 (6.6.119-1) to root...
+Package kmod-crypto-sha256 (6.6.119-1) installed in root is up to date.
+Installing kmod-crypto-sha512 (6.6.119-1) to root...
+Installing kmod-crypto-user (6.6.119-1) to root...
+Installing kmod-fs-autofs4 (6.6.119-1) to root...
+Installing kmod-fs-exfat (6.6.119-1) to root...
+Installing kmod-nls-base (6.6.119-1) to root...
+Installing kmod-fs-ext4 (6.6.119-1) to root...
+Installing kmod-lib-crc16 (6.6.119-1) to root...
+Installing kmod-fs-msdos (6.6.119-1) to root...
+Installing kmod-nls-cp437 (6.6.119-1) to root...
+Installing kmod-nls-iso8859-1 (6.6.119-1) to root...
+Installing kmod-nls-utf8 (6.6.119-1) to root...
+Installing kmod-fs-vfat (6.6.119-1) to root...
+Installing kmod-fs-ntfs (6.6.119-1) to root...
+Package kmod-fs-vfat (6.6.119-1) installed in root is up to date.
+Installing kmod-i2c-core (6.6.119-1) to root...
+Installing kmod-hid (6.6.119-1) to root...
+Installing kmod-input-core (6.6.119-1) to root...
+Installing kmod-input-evdev (6.6.119-1) to root...
+Package kmod-input-core (6.6.119-1) installed in root is up to date.
+Package kmod-input-evdev (6.6.119-1) installed in root is up to date.
+Installing kmod-leds-gpio (6.6.119-1) to root...
+Installing kmod-lib-crc-ccitt (6.6.119-1) to root...
+Package kmod-lib-crc16 (6.6.119-1) installed in root is up to date.
+Installing kmod-lib-crc32c (6.6.119-1) to root...
+Installing kmod-lib-textsearch (6.6.119-1) to root...
+Package kmod-lib-zlib-inflate (6.6.119-1) installed in root is up to date.
+Package kmod-lib-zlib-deflate (6.6.119-1) installed in root is up to date.
+Installing kmod-asn1-decoder (6.6.119-1) to root...
+Installing kmod-mii (6.6.119-1) to root...
+Installing kmod-ifb (6.6.119-1) to root...
+Installing kmod-nf-reject (6.6.119-1) to root...
+Installing kmod-nf-reject6 (6.6.119-1) to root...
+Installing kmod-nf-ipt (6.6.119-1) to root...
+Installing kmod-nf-ipt6 (6.6.119-1) to root...
+Installing kmod-nf-log (6.6.119-1) to root...
+Installing kmod-nf-log6 (6.6.119-1) to root...
+Installing kmod-ipt-core (6.6.119-1) to root...
+Installing kmod-nf-conntrack (6.6.119-1) to root...
+Installing kmod-nf-conntrack6 (6.6.119-1) to root...
+Package kmod-nf-log (6.6.119-1) installed in root is up to date.
+Package kmod-nf-log6 (6.6.119-1) installed in root is up to date.
+Installing kmod-nf-nat (6.6.119-1) to root...
+Installing kmod-nf-nat6 (6.6.119-1) to root...
+Installing kmod-nf-flow (6.6.119-1) to root...
+Installing kmod-ipsec (6.6.119-1) to root...
+Installing kmod-iptunnel4 (6.6.119-1) to root...
+Installing kmod-ipsec4 (6.6.119-1) to root...
+Installing kmod-ipt-conntrack (6.6.119-1) to root...
+Installing kmod-ipt-conntrack-extra (6.6.119-1) to root...
+Installing kmod-ipt-offload (6.6.119-1) to root...
+Installing kmod-ipt-ipopt (6.6.119-1) to root...
+Installing kmod-ipt-ipsec (6.6.119-1) to root...
+Installing kmod-ipt-ipset (6.6.119-1) to root...
+Installing kmod-nfnetlink (6.6.119-1) to root...
+Installing kmod-ipt-nat (6.6.119-1) to root...
+Installing kmod-ipt-raw (6.6.119-1) to root...
+Installing kmod-ipt-raw6 (6.6.119-1) to root...
+Installing kmod-ip6tables (6.6.119-1) to root...
+Installing kmod-ipt-nat6 (6.6.119-1) to root...
+Installing kmod-nf-nathelper (6.6.119-1) to root...
+Installing kmod-nf-nathelper-extra (6.6.119-1) to root...
+Installing kmod-ipt-nflog (6.6.119-1) to root...
+Installing kmod-nfnetlink-log (6.6.119-1) to root...
+Package kmod-ip6tables (6.6.119-1) installed in root is up to date.
+Package kmod-nfnetlink (6.6.119-1) installed in root is up to date.
+Package kmod-nfnetlink-log (6.6.119-1) installed in root is up to date.
+Installing kmod-nf-conntrack-netlink (6.6.119-1) to root...
+Installing kmod-ipt-hashlimit (6.6.119-1) to root...
+Installing kmod-nft-core (6.6.119-1) to root...
+Installing kmod-nft-netdev (6.6.119-1) to root...
+Installing kmod-udptunnel4 (6.6.119-1) to root...
+Installing kmod-udptunnel6 (6.6.119-1) to root...
+Package kmod-ipsec (6.6.119-1) installed in root is up to date.
+Package kmod-ipsec4 (6.6.119-1) installed in root is up to date.
+Installing kmod-ipsec6 (6.6.119-1) to root...
+Installing kmod-iptunnel6 (6.6.119-1) to root...
+Installing kmod-iptunnel (6.6.119-1) to root...
+Installing kmod-xfrm-interface (6.6.119-1) to root...
+Package kmod-iptunnel4 (6.6.119-1) installed in root is up to date.
+Package kmod-iptunnel6 (6.6.119-1) installed in root is up to date.
+Installing kmod-ip6-tunnel (6.6.119-1) to root...
+Installing kmod-gre (6.6.119-1) to root...
+Installing kmod-gre6 (6.6.119-1) to root...
+Installing kmod-tun (6.6.119-1) to root...
+Installing kmod-vrf (6.6.119-1) to root...
+Installing kmod-slhc (6.6.119-1) to root...
+Installing kmod-ppp (6.6.119-1) to root...
+Installing kmod-pppox (6.6.119-1) to root...
+Installing kmod-pppoe (6.6.119-1) to root...
+Installing kmod-pptp (6.6.119-1) to root...
+Installing kmod-pppol2tp (6.6.119-1) to root...
+Installing kmod-l2tp (6.6.119-1) to root...
+Installing kmod-mppe (6.6.119-1) to root...
+Installing kmod-sched-core (6.6.119-1) to root...
+Installing kmod-sched-cake (6.6.119-1) to root...
+Installing kmod-sched-act-ipt (6.6.119-1) to root...
+Package kmod-l2tp (6.6.119-1) installed in root is up to date.
+Installing kmod-l2tp-eth (6.6.119-1) to root...
+Installing kmod-l2tp-ip (6.6.119-1) to root...
+Installing kmod-tcpmd5sig (6.6.119-1) to root...
+Installing kmod-wireguard (6.6.119-1) to root...
+Package kmod-nls-base (6.6.119-1) installed in root is up to date.
+Package kmod-nls-cp437 (6.6.119-1) installed in root is up to date.
+Package kmod-nls-iso8859-1 (6.6.119-1) installed in root is up to date.
+Package kmod-nls-utf8 (6.6.119-1) installed in root is up to date.
+Installing kmod-bluetooth (6.6.119-1) to root...
+Installing kmod-usb-core (6.6.119-1) to root...
+Installing kmod-regmap-core (6.6.119-1) to root...
+Package kmod-regmap-core (6.6.119-1) installed in root is up to date.
+Installing kmod-random-core (6.6.119-1) to root...
+Installing kmod-tpm (6.6.119-1) to root...
+Installing kmod-tpm-tis-core (6.6.119-1) to root...
+Installing kmod-tpm-tis-i2c (6.6.119-1) to root...
+Package kmod-usb-core (6.6.119-1) installed in root is up to date.
+Installing kmod-usb-uhci (6.6.119-1) to root...
+Installing kmod-usb-dwc3 (6.6.119-1) to root...
+Installing kmod-usb-dwc3-qcom (6.6.119-1) to root...
+Installing kmod-usb-acm (6.6.119-1) to root...
+Installing kmod-usb-wdm (6.6.119-1) to root...
+Installing kmod-usb-serial (6.6.119-1) to root...
+Installing kmod-usb-serial-belkin (6.6.119-1) to root...
+Installing kmod-usb-serial-ch341 (6.6.119-1) to root...
+Installing kmod-usb-serial-ch343 (6.6.119-1) to root...
+Installing kmod-usb-serial-ftdi (6.6.119-1) to root...
+Installing kmod-usb-serial-pl2303 (6.6.119-1) to root...
+Installing kmod-usb-serial-cp210x (6.6.119-1) to root...
+Installing kmod-usb-serial-ark3116 (6.6.119-1) to root...
+Installing kmod-usb-serial-cypress-m8 (6.6.119-1) to root...
+Installing kmod-usb-serial-wwan (6.6.119-1) to root...
+Installing kmod-usb-serial-option (6.6.119-1) to root...
+Installing kmod-usb-storage (6.6.119-1) to root...
+Installing kmod-usb-net (6.6.119-1) to root...
+Installing kmod-usb-net-cdc-ether (6.6.119-1) to root...
+Installing kmod-usb-net-qmi-wwan (6.6.119-1) to root...
+Installing kmod-usb-net-cdc-ncm (6.6.119-1) to root...
+Installing kmod-usb3 (6.6.119-1) to root...
+Installing kmod-usb-xhci-hcd (6.6.119-1) to root...
+Package kmod-usb-xhci-hcd (6.6.119-1) installed in root is up to date.
+Installing kmod-ath_66 (6.6.119+6.12.6-1) to root...
+Installing iw-66 (6.9-1) to root...
+Installing libiwinfo-data (2025-02-06-9cec6b4d-4) to root...
+Installing libiwinfo20230701 (2025-02-06-9cec6b4d-4) to root...
+Installing iwinfo (2025-02-06-9cec6b4d-4) to root...
+Installing wifi-scripts (1.0-8) to root...
+Installing wireless-regdb (2024.10.07-1) to root...
+Installing kmod-cfg80211_66 (6.6.119+6.12.6-1) to root...
+Installing libatomic1 (8.4.0-3) to root...
+Installing libopenssl3 (3.0.14-4) to root...
+Installing libucode20220812 (2023-06-06-v0.0.202-2) to root...
+Installing ucode (2023-06-06-v0.0.202-2) to root...
+Installing hostapd-common (2.12-dev-6) to root...
+Installing kmod-mac80211_66 (6.6.119+6.12.6-1) to root...
+Installing kmod-ath10k_66 (6.6.119+6.12.6-1) to root...
+Package kmod-cfg80211_66 (6.6.119+6.12.6-1) installed in root is up to date.
+Package kmod-mac80211_66 (6.6.119+6.12.6-1) installed in root is up to date.
+Installing kmod-ovpn-dco-v2 (6.6.119+0.2.20241216-4) to root...
+Installing kmod-tlt-pulse-counter (6.6.119-2) to root...
+Installing kmod-r2ec (6.6.119-2) to root...
+Installing kmod-tlt-gpio (6.6.119-1) to root...
+Package libc (1.2.4-3) installed in root is up to date.
+Package libgcc1 (8.4.0-3) installed in root is up to date.
+Package libatomic1 (8.4.0-3) installed in root is up to date.
+Installing libpthread (1.2.4-3) to root...
+Installing librt (1.2.4-3) to root...
+Installing dropbear (2025.88-4) to root...
+Installing libxtables12 (1.8.7-4) to root...
+Installing libip4tc2 (1.8.7-4) to root...
+Installing libip6tc2 (1.8.7-4) to root...
+Installing iptables (1.8.7-4) to root...
+Installing iptables-mod-conntrack-extra (1.8.7-4) to root...
+Installing iptables-mod-ipopt (1.8.7-4) to root...
+Installing iptables-mod-ipsec (1.8.7-4) to root...
+Installing iptables-mod-hashlimit (1.8.7-4) to root...
+Installing iptables-mod-nflog (1.8.7-4) to root...
+Installing ip6tables (1.8.7-4) to root...
+Installing ip6tables-mod-nat (1.8.7-4) to root...
+Package fstools (2022-05-03-9e11b372-260225.50289) installed in root is up to date.
+Installing block-mount (2022-05-03-9e11b372-260225.50289) to root...
+Package fwtool (2019-11-12-8f7fe925-1) installed in root is up to date.
+Installing mtd (27) to root...
+Installing kmod-ipt-coova (6.6.119+2026-02-11-1) to root...
+Installing tc-tiny (5.19.0-260225.50289) to root...
+Installing kmod-cypress-serial (6.6.119+1.1.1-1) to root...
+Package ubi-utils (2.1.2-1) installed in root is up to date.
+Installing uboot-ipq40xx (3.3.2) to root...
+Installing ath10k-board-qca4019 (20241110-1) to root...
+Installing ath10k-firmware-qca4019 (20241110-1) to root...
+Installing rtl8761bu-firmware (20241110-1) to root...
+Package wireless-regdb (2024.10.07-1) installed in root is up to date.
+Installing lsqlite3 (0.9.5-1) to root...
+Installing liblua5.1.5 (5.1.5-10) to root...
+Installing lua (5.1.5-10) to root...
+Installing zlib (1.2.11-4) to root...
+Installing libsqlite3-0 (3.41.2-2) to root...
+Installing luasocket (2019-04-21-733af884-2) to root...
+Installing libcares (1.19.1-2) to root...
+Installing davici (1.4-1) to root...
+Installing glib2 (2.80.5-4) to root...
+Installing libffi (3.4.6-1) to root...
+Installing libattr (2.4.48-2) to root...
+Installing libpcre2 (10.37-260225.50289) to root...
+Package libcap (2.69-1) installed in root is up to date.
+Installing libcap-bin (2.69-1) to root...
+Installing libcgi (1.3.0-1) to root...
+Installing libcoap3 (4.3.5-1) to root...
+Installing coap-client (4.3.5-1) to root...
+Installing libevent2-7 (2.1.12-1) to root...
+Package libffi (3.4.6-1) installed in root is up to date.
+Installing libgcrypt (1.9.3-260225.50289) to root...
+Installing libgpg-error (1.39-2) to root...
+Package libgpg-error (1.39-2) installed in root is up to date.
+Installing libgpiod (1.6.3-1) to root...
+Installing gpiod-tools (1.6.3-1) to root...
+Package libjson-c5 (0.15-2) installed in root is up to date.
+Installing libmnl0 (1.0.4-2) to root...
+Installing libmodbus (2026-02-09) to root...
+Installing libmodbus_client (2026-02-03-1) to root...
+Installing libtag (2026-01-26-2) to root...
+Installing libtlt_uci (2025-08-07-1) to root...
+Installing libcfgx (7.21) to root...
+Installing libboardjson (7.21-2) to root...
+Installing libtlt_termios1.0 (7.21) to root...
+Installing libnghttp2-14 (1.43.0-1) to root...
+Installing ca-bundle (20240203-1) to root...
+Installing libcurl4 (8.16.0-260225.50289.1) to root...
+Installing libtlt_smtp (1.11) to root...
+Installing libnetfilter-conntrack3 (1.0.8-1) to root...
+Installing libnfnetlink0 (1.0.1-4) to root...
+Installing libnetfilter-log1 (1.0.1-3) to root...
+Package libnfnetlink0 (1.0.1-4) installed in root is up to date.
+Installing libnftnl11 (1.2.5-260225.50289) to root...
+Installing libnl-core200 (3.9.0-1) to root...
+Installing libnl-genl200 (3.9.0-1) to root...
+Package libnl-tiny2023-04-02 (2023-04-02-11b7c5f0-1) installed in root is up to date.
+Installing libpcap1 (1.10.5-4) to root...
+Package libubox20240329 (2024-03-29-eb9bcb64-2) installed in root is up to date.
+Package libblobmsg-json20240329 (2024-03-29-eb9bcb64-2) installed in root is up to date.
+Package jshn (2024-03-29-eb9bcb64-2) installed in root is up to date.
+Installing libjson-script20240329 (2024-03-29-eb9bcb64-2) to root...
+Installing libubox-lua (2024-03-29-eb9bcb64-2) to root...
+Installing libusb-1.0-0 (1.0.24-260225.50289) to root...
+Installing libyang (2.0.112-260225.50289) to root...
+Installing lua-pop3 (0.1.6-1) to root...
+Installing lua-md5 (1.3-1) to root...
+Installing luasec (0.9-1) to root...
+Package luasec (0.9-1) installed in root is up to date.
+Installing luci-lib-jsonc (2025-10-14) to root...
+Installing liblzo2 (2.10-4) to root...
+Package libnghttp2-14 (1.43.0-1) installed in root is up to date.
+Package libopenssl3 (3.0.14-4) installed in root is up to date.
+Installing libopenssl-conf (3.0.14-4) to root...
+Installing libopenssl-legacy (3.0.14-4) to root...
+Installing openssl-util (3.0.14-4) to root...
+Installing libpcre (8.45-1) to root...
+Package libpcre2 (10.37-260225.50289) installed in root is up to date.
+Installing rpcd-mod-rrdns (2025-03-25) to root...
+Package libsqlite3-0 (3.41.2-2) installed in root is up to date.
+Installing libuclient20201210 (2021-05-14-6a6011df-1) to root...
+Installing uclient-fetch (2021-05-14-6a6011df-1) to root...
+Installing libustream-openssl20201210 (2024-03-04-263b9a97-1) to root...
+Package zlib (1.2.11-4) installed in root is up to date.
+Installing firewall (2022-02-17-4cd7d4f3-15) to root...
+Installing gre (14) to root...
+Installing resolveip (2) to root...
+Package netifd (2025-05-23-7901e66c-4) installed in root is up to date.
+Installing swconfig (17) to root...
+Package wifi-scripts (1.0-8) installed in root is up to date.
+Installing xfrm (4) to root...
+Installing odhcp6c (2021-01-09-53f07e90-16) to root...
+Installing dnsmasq (2.90-260225.50289.2) to root...
+Installing dot1x-client (2025-03-13-dev-4) to root...
+Installing liblog (2024-09-30) to root...
+Installing ucode-mod-fs (2023-06-06-v0.0.202-2) to root...
+Installing ucode-mod-nl80211 (2023-06-06-v0.0.202-2) to root...
+Installing ucode-mod-rtnl (2023-06-06-v0.0.202-2) to root...
+Installing ucode-mod-ubus (2023-06-06-v0.0.202-2) to root...
+Installing ucode-mod-uloop (2023-06-06-v0.0.202-2) to root...
+Installing wpad-openssl (2.12-dev-6) to root...
+Installing etherwake (1.09-10) to root...
+Package hostapd-common (2.12-dev-6) installed in root is up to date.
+Package wpad-openssl (2.12-dev-6) installed in root is up to date.
+Installing wpa-cli (2.12-dev-6) to root...
+Installing mosquitto-ssl (2.0.21-2) to root...
+Installing libuuid1 (2.36.1-2) to root...
+Installing tpm2-tss (4.1.3-1) to root...
+Installing tpm2-tools (5.7-4) to root...
+Installing tpm2_importer (7.21) to root...
+Installing libmosquitto-ssl (2.0.21-2) to root...
+Package mosquitto-ssl (2.0.21-2) installed in root is up to date.
+Package libmosquitto-ssl (2.0.21-2) installed in root is up to date.
+Installing mwan3 (2.10.12-20) to root...
+Installing ip-full (5.19.0-260225.50289) to root...
+Installing libipset13 (7.6-1) to root...
+Installing ipset (7.6-1) to root...
+Installing libnetsnmp (5.9.1-260225.50289) to root...
+Installing libpci (3.7.0-2) to root...
+Installing snmpd (5.9.1-260225.50289) to root...
+Installing nlbwmon (2026-01-13-1) to root...
+Installing odhcpd-ipv6only (2021-07-18-bc9d317f-260225.50289.3) to root...
+Installing openssh-sftp-server (9.6p1-1) to root...
+Installing openvpn-openssl (2.6.14-21) to root...
+Installing ppp (2.4.9.git-2021-01-04-18) to root...
+Installing ppp-mod-pppoe (2.4.9.git-2021-01-04-18) to root...
+Installing ppp-mod-pppol2tp (2.4.9.git-2021-01-04-18) to root...
+Installing ppp-mod-pptp (2.4.9.git-2021-01-04-18) to root...
+Installing chat (2.4.9.git-2021-01-04-18) to root...
+Installing pptpd (1.4.0-16) to root...
+Installing privoxy (3.0.32-5) to root...
+Installing relayd (2020-04-25-2) to root...
+Installing sstp-client (1.0.19-5) to root...
+Installing strongswan (5.9.14-33) to root...
+Installing strongswan-minimal (5.9.14-33) to root...
+Installing strongswan-charon (5.9.14-33) to root...
+Installing strongswan-mod-vici (5.9.14-33) to root...
+Installing strongswan-swanctl (5.9.14-33) to root...
+Installing strongswan-mod-kernel-netlink (5.9.14-33) to root...
+Installing strongswan-mod-nonce (5.9.14-33) to root...
+Installing strongswan-mod-mgf1 (5.9.14-33) to root...
+Installing strongswan-mod-pubkey (5.9.14-33) to root...
+Installing strongswan-mod-socket-default (5.9.14-33) to root...
+Installing strongswan-mod-updown (5.9.14-33) to root...
+Installing strongswan-mod-x509 (5.9.14-33) to root...
+Installing strongswan-mod-xcbc (5.9.14-33) to root...
+Installing strongswan-mod-connmark (5.9.14-33) to root...
+Installing strongswan-mod-random (5.9.14-33) to root...
+Installing strongswan-mod-xauth-generic (5.9.14-33) to root...
+Installing strongswan-mod-revocation (5.9.14-33) to root...
+Installing strongswan-mod-pkcs1 (5.9.14-33) to root...
+Installing strongswan-mod-pgp (5.9.14-33) to root...
+Installing strongswan-mod-pem (5.9.14-33) to root...
+Installing strongswan-mod-constraints (5.9.14-33) to root...
+Installing strongswan-mod-openssl (5.9.14-33) to root...
+Installing strongswan-mod-eap-identity (5.9.14-33) to root...
+Installing strongswan-mod-md4 (5.9.14-33) to root...
+Installing strongswan-mod-eap-mschapv2 (5.9.14-33) to root...
+Installing strongswan-mod-pkcs8 (5.9.14-33) to root...
+Package strongswan-charon (5.9.14-33) installed in root is up to date.
+Installing strongswan-pki (5.9.14-33) to root...
+Installing strongswan-libtls (5.9.14-33) to root...
+Package strongswan-swanctl (5.9.14-33) installed in root is up to date.
+Package strongswan-libtls (5.9.14-33) installed in root is up to date.
+Installing strongswan-tss-tss2 (5.9.14-33) to root...
+Package strongswan-mod-connmark (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-constraints (5.9.14-33) installed in root is up to date.
+Installing strongswan-mod-curl (5.9.14-33) to root...
+Package strongswan-mod-eap-identity (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-eap-mschapv2 (5.9.14-33) installed in root is up to date.
+Installing strongswan-mod-kdf (5.9.14-33) to root...
+Package strongswan-mod-kernel-netlink (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-nonce (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-md4 (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-mgf1 (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-openssl (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-pem (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-pgp (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-pkcs1 (5.9.14-33) installed in root is up to date.
+Installing strongswan-mod-pkcs7 (5.9.14-33) to root...
+Package strongswan-mod-pkcs8 (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-pubkey (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-random (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-revocation (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-socket-default (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-updown (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-vici (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-x509 (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-xauth-generic (5.9.14-33) installed in root is up to date.
+Package strongswan-mod-xcbc (5.9.14-33) installed in root is up to date.
+Installing strongswan-mod-tpm (5.9.14-33) to root...
+Installing stunnel (5.72-4) to root...
+Installing travelmate (2.1.0-1) to root...
+Installing curl (8.16.0-260225.50289.1) to root...
+Installing uhttpd (2021-03-21-15346de8-16) to root...
+Installing uhttpd-mod-lua (2021-03-21-15346de8-16) to root...
+Installing vrrpd (1.15-6) to root...
+Installing xl2tpd (1.3.16-20) to root...
+Installing xl2tpd6 (1.3.17-7) to root...
+Package libcurl4 (8.16.0-260225.50289.1) installed in root is up to date.
+Package curl (8.16.0-260225.50289.1) installed in root is up to date.
+Installing ethtool (6.15-3) to root...
+Installing frr (8.4.2-20) to root...
+Installing frr-libfrr (8.4.2-20) to root...
+Installing frr-zebra (8.4.2-20) to root...
+Installing frr-bgpd (8.4.2-20) to root...
+Installing frr-eigrpd (8.4.2-20) to root...
+Installing frr-nhrp (8.4.2-20) to root...
+Installing frr-ospfd (8.4.2-20) to root...
+Installing frr-ripd (8.4.2-20) to root...
+Package ip-full (5.19.0-260225.50289) installed in root is up to date.
+Installing ip-bridge (5.19.0-260225.50289) to root...
+Package tc-tiny (5.19.0-260225.50289) installed in root is up to date.
+Package libipset13 (7.6-1) installed in root is up to date.
+Package ipset (7.6-1) installed in root is up to date.
+Package iw-66 (6.9-1) installed in root is up to date.
+Package libiwinfo20230701 (2025-02-06-9cec6b4d-4) installed in root is up to date.
+Installing libiwinfo-lua (2025-02-06-9cec6b4d-4) to root...
+Package libiwinfo-data (2025-02-06-9cec6b4d-4) installed in root is up to date.
+Package iwinfo (2025-02-06-9cec6b4d-4) installed in root is up to date.
+Installing nftables-nojson (1.0.7-1) to root...
+Package resolveip (2) installed in root is up to date.
+Installing sqm-scripts (1.5.1-3) to root...
+Installing swanmon (0.3-3) to root...
+Installing tcpdump (4.99.5-1) to root...
+Installing ulogd (2.0.7-6) to root...
+Installing ulogd-mod-nflog (2.0.7-6) to root...
+Installing ulogd-mod-extra (2.0.7-6) to root...
+Installing tlt-ulogd (2.0.7-6) to root...
+Installing wireguard-tools (1.0.20210223-12) to root...
+Installing wwan (2019-04-29-8) to root...
+Installing modems (3.20) to root...
+Package ca-bundle (20240203-1) installed in root is up to date.
+Installing fwcert (1.0) to root...
+Installing letsencrypt (2024-11-26-2) to root...
+Package openwrt-keyring (2021-02-20-49283916-2) installed in root is up to date.
+Installing opkg (2021-06-13-1bf042dd-4) to root...
+Installing procd (2021-02-23-37eed131-260225.50289.3) to root...
+Installing procd-init (2021-02-23-37eed131-260225.50289.3) to root...
+Package rpcd (2025-12-10-1) installed in root is up to date.
+Installing session (2025-12-10-1) to root...
+Installing rpcd-mod-file (2025-12-10-1) to root...
+Installing rpcd-mod-rpcsys (2025-12-10-1) to root...
+Installing rpcd-mod-iwinfo (2025-12-10-1) to root...
+Installing rpcd-mod-uci (2025-12-10-1) to root...
+Installing rpcd-mod-rc (2025-12-10-1) to root...
+Package ubox (2020-10-25-9ef88681-13) installed in root is up to date.
+Installing getrandom (2020-10-25-9ef88681-13) to root...
+Installing logd (2020-10-25-9ef88681-13) to root...
+Package libubus20251019 (2025-10-19-6fdf7a97-1) installed in root is up to date.
+Installing libubus-lua (2025-10-19-6fdf7a97-1) to root...
+Package ubus (2025-10-19-6fdf7a97-1) installed in root is up to date.
+Package ubusd (2025-10-19-6fdf7a97-1) installed in root is up to date.
+Package libuci20130104 (2021-10-22-f84f49f0-18-18) installed in root is up to date.
+Installing libuci-lua (2021-10-22-f84f49f0-18-18) to root...
+Installing uci (2021-10-22-f84f49f0-18-18) to root...
+Installing urandom-seed (3) to root...
+Installing urngd (2020-01-21-c7f7b6b6-1) to root...
+Package usign (2020-05-23-f1f65026-1) installed in root is up to date.
+Installing apn_db (7.21) to root...
+Installing blesemd (7.21) to root...
+Installing bluez-libs (5.56-1) to root...
+Installing connchecker (2025-01-15-1) to root...
+Installing coova-chilli (2026-02-11-1) to root...
+Installing iomand1.0 (2.28.1) to root...
+Installing libgsm1.0 (7.21.1) to root...
+Installing libtltchilli (2024-09-30-1) to root...
+Installing data-sender-mod-bluetooth (1.24-1) to root...
+Installing libtpm2_importer (7.21) to root...
+Installing libmnfinfo (2.30) to root...
+Installing liburc (7.21.1) to root...
+Installing libmdcollect (2025-10-08-1) to root...
+Installing libgps (2025-11-27-1) to root...
+Installing data-sender (1.24-1) to root...
+Installing data-sender-mod-modbus (1.24-1) to root...
+Installing data-sender-mod-modbus-alarm (1.24-1) to root...
+Installing data-sender-mod-impulse_counter (1.24-1) to root...
+Installing data-sender-mod-wifiscan (1.24-1) to root...
+Installing data-sender-mod-mnfinfo (1.24-1) to root...
+Installing data-sender-mod-gsm (1.24-1) to root...
+Installing data-sender-mod-sms-in (1.24-1) to root...
+Installing data-sender-mod-mdcollect (1.24-1) to root...
+Installing data-sender-mod-gps (1.24-1) to root...
+Installing data-sender-mod-io (1.24-1) to root...
+Installing data-sender-mod-format-custom (1.24-1) to root...
+Installing data-sender-mod-http (1.24-1) to root...
+Installing data-sender-mod-mqtt-out (1.24-1) to root...
+Installing data-sender-mod-socket (1.24-1) to root...
+Installing data-sender-mod-sms-out (1.24-1) to root...
+Installing data-sender-mod-smtp (1.24-1) to root...
+Installing data-sender-mod-base (1.24-1) to root...
+Installing data-sender-mod-lua-in (1.24-1) to root...
+Installing data-sender-mod-lua-out (1.24-1) to root...
+Installing data-sender-mod-lua_format (1.24-1) to root...
+Installing data-sender-mod-ftp (1.24-1) to root...
+Installing data-sender-mod-ubus (1.24-1) to root...
+Installing data-sender-mod-mqtt-in (1.24-1) to root...
+Package data-sender (1.24-1) installed in root is up to date.
+Installing ddns-scripts (2026-02-02-8) to root...
+Installing ddns-scripts_cloudflare.com-v4 (2026-02-02-8) to root...
+Installing ddns-scripts_no-ip_com (2026-02-02-8) to root...
+Installing ddns-scripts_nsupdate (2026-02-02-8) to root...
+Installing snsupdate (1.3) to root...
+Package ddns-scripts_cloudflare.com-v4 (2026-02-02-8) installed in root is up to date.
+Package ddns-scripts_no-ip_com (2026-02-02-8) installed in root is up to date.
+Package ddns-scripts_nsupdate (2026-02-02-8) installed in root is up to date.
+Installing tlt-ddns (2026-02-02-8) to root...
+Installing dmvpn (2021-02-11-7) to root...
+Installing email_to_sms (2026-02-11-1) to root...
+Installing liblpac (1.7.1) to root...
+Installing rpc_esim (1.7.1) to root...
+Installing esim-lpac (1.7.1) to root...
+Package esim-lpac (1.7.1) installed in root is up to date.
+Installing event-juggler (1.9) to root...
+Installing librms (2026-02-11-1) to root...
+Installing libapi (2025-06-13-1.5) to root...
+Installing libparam (2026-02-11) to root...
+Installing libcfg20260211 (2026-02-11-1.5) to root...
+Installing libmctl (4.14) to root...
+Installing fmt-usb-msd (2025-05-15-1) to root...
+Installing e2fsprogs (1.47.0-2) to root...
+Installing gkeepalive (2025-11-18-1) to root...
+Package libgps (2025-11-27-1) installed in root is up to date.
+Installing gpsd (2025-11-27-1) to root...
+Installing gpsctl (2025-11-27-1) to root...
+Installing ntp_gps (2025-11-27-1) to root...
+Installing avl (2025-11-27-1) to root...
+Package libgsm1.0 (7.21.1) installed in root is up to date.
+Package liburc (7.21.1) installed in root is up to date.
+Installing gsmd (7.21.1) to root...
+Installing gsmctl (7.21.1) to root...
+Installing host_block (2025-10-14-1) to root...
+Installing impulse-counter (2025-10-16) to root...
+Installing io_scheduler (1.4) to root...
+Package iomand1.0 (2.28.1) installed in root is up to date.
+Installing ip_blockd (2025-12-08-1) to root...
+Installing ledman-full (2.28) to root...
+Package libapi (2025-06-13-1.5) installed in root is up to date.
+Package libboardjson (7.21-2) installed in root is up to date.
+Package libcfg20260211 (2026-02-11-1.5) installed in root is up to date.
+Package libcfgx (7.21) installed in root is up to date.
+Package liblog (2024-09-30) installed in root is up to date.
+Installing libnetifd (2024-06-18-1) to root...
+Package libparam (2026-02-11) installed in root is up to date.
+Package libtag (2026-01-26-2) installed in root is up to date.
+Installing libticket_mutex (7.21-1) to root...
+Package libtlt-logger (2025-11-24-1) installed in root is up to date.
+Package libtlt_smtp (1.11) installed in root is up to date.
+Package libtlt_termios1.0 (7.21) installed in root is up to date.
+Package libtlt_uci (2025-08-07-1) installed in root is up to date.
+Package libtltchilli (2024-09-30-1) installed in root is up to date.
+Installing libuacl20250610 (2025-06-10-1.0) to root...
+Package modems (3.20) installed in root is up to date.
+Installing modem_trackd (4.14) to root...
+Package libmctl (4.14) installed in root is up to date.
+Installing mctl (4.14) to root...
+Installing mdcollectd (2025-10-08-1) to root...
+Package libmdcollect (2025-10-08-1) installed in root is up to date.
+Installing mnfinfo (2.30) to root...
+Package libmnfinfo (2.30) installed in root is up to date.
+Installing rpcd-mod-mnfinfo (2.30) to root...
+Installing mobifd (7.21) to root...
+Installing mobutils (3.20-1) to root...
+Installing mobutils-call_utilities (3.20-1) to root...
+Installing mobutils-sms_utilities (3.20-1) to root...
+Package libmodbus_client (2026-02-03-1) installed in root is up to date.
+Installing modbus_client (2026-02-03-1) to root...
+Installing modbus_server (7.21-1) to root...
+Installing modbusgwd (2025-08-14) to root...
+Installing modem_control (2025-07-17) to root...
+Installing mqtt-modbus-gateway (2025-10-01) to root...
+Installing mqtt_pub (2026-02-11) to root...
+Installing multiple_ap (2025-07-09-1) to root...
+Installing networkmap (2026-01-13-1) to root...
+Installing ntpclient (2026-02-11-1) to root...
+Installing package_restore (2026-02-11-1) to root...
+Installing luci-lib-nixio (git-20.234.06894-c4a4e43) to root...
+Installing luci-lib-ip (git-20.250.76529-62505bd) to root...
+Installing lua_crypto (1.0-1) to root...
+Installing lua_extra_validators (2021-12-28) to root...
+Installing lrexlib (2021-12-28) to root...
+Installing api-core (1) to root...
+Installing vuci-app-package-manager-api (1) to root...
+Installing port_eventsd (1.16-6) to root...
+Installing profiler (2.18) to root...
+Installing dfota (2024-08-05-4) to root...
+Installing quota_limit (2025-07-09-1) to root...
+Installing reboot_utils (2026-01-22-1) to root...
+Installing reboot_utils-periodic (2026-01-22-1) to root...
+Installing reboot_utils-ping (2026-01-22-1) to root...
+Package librms (2026-02-11-1) installed in root is up to date.
+Installing librut_fota (2.24) to root...
+Installing rut_fota (2.24) to root...
+Installing scep (2025-05-12-1) to root...
+Installing serial (2024-11-21) to root...
+Installing shellinabox (2025-03-25-4) to root...
+Installing sim_switch (2026-01-13-1) to root...
+Installing libtdp (7.21-1) to root...
+Installing siteman (7.21-1) to root...
+Installing rpcd-mod-smslimit (7.20) to root...
+Installing snmp (2026-01-14-1) to root...
+Installing snmp-mib (2026-01-14-1) to root...
+Installing snmp-mod-chilli (2026-01-14-1) to root...
+Installing snmp-mod-device (2026-01-14-1) to root...
+Installing snmp-mod-gps (2026-01-14-1) to root...
+Installing snmp-mod-gsm (2026-01-14-1) to root...
+Installing snmp-mod-io (2026-01-14-1) to root...
+Installing snmp-mod-sqm (2026-01-14-1) to root...
+Installing snmp-mod-vlan (2026-01-14-1) to root...
+Installing snmp-mod-wireless (2026-01-14-1) to root...
+Installing snmp-mod-port (2026-01-14-1) to root...
+Installing snmp-mod-mwan3 (2026-01-14-1) to root...
+Installing snmp-mod-universalgwd (2026-01-14-1) to root...
+Installing snmptrap (2026-02-11-1) to root...
+Package snmp-mib (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-chilli (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-device (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-gps (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-gsm (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-io (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-wireless (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-vlan (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-sqm (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-port (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-mwan3 (2026-01-14-1) installed in root is up to date.
+Package snmp-mod-universalgwd (2026-01-14-1) installed in root is up to date.
+Package snmptrap (2026-02-11-1) installed in root is up to date.
+Package snsupdate (1.3) installed in root is up to date.
+Installing sodog-tlt (2025-04-23) to root...
+Installing speedtest (2025-11-26-7) to root...
+Installing stm32flasher (2.7) to root...
+Installing storage-memory-expansion (2025-04-29-1) to root...
+Package tpm2_importer (7.21) installed in root is up to date.
+Package libtpm2_importer (7.21) installed in root is up to date.
+Installing tpm_flasher (1.0-1) to root...
+Installing tpm_manager (1.4-1) to root...
+Installing troubleshoot (1.4) to root...
+Installing uci-default (2024-08-05-11) to root...
+Installing uqmi (56cb2d40-2) to root...
+Installing urcd (1.10) to root...
+Installing web_filter (2021-02-11-1) to root...
+Installing wifi_scanner (2025-11-14-1) to root...
+Package bluez-libs (5.56-1) installed in root is up to date.
+Installing build (1) to root...
+Installing untpd (1.34.1-260225.50289.18) to root...
+Installing udhcpc (1.34.1-260225.50289.18) to root...
+Installing busybox (1.34.1-260225.50289.18) to root...
+Installing cioClient (1) to root...
+Installing cio_watchdog (1) to root...
+Installing coap_watchdog (1.0.0-3) to root...
+Installing crconf (2018-03-02-8bd99640-1) to root...
+Package e2fsprogs (1.47.0-2) installed in root is up to date.
+Installing exfat-mkfs (1.1.3-260225.50289) to root...
+Package jsonfilter (2018-02-04-c7e938d6-1) installed in root is up to date.
+Package liblua5.1.5 (5.1.5-10) installed in root is up to date.
+Package lua (5.1.5-10) installed in root is up to date.
+Installing minizip (4.0.7-2) to root...
+Package libpci (3.7.0-2) installed in root is up to date.
+Installing sysupgrade-helper (1.0-1) to root...
+Installing tpm2-openssl (1.3.0-1) to root...
+Package tpm2-tools (5.7-4) installed in root is up to date.
+Package tpm2-tss (4.1.3-1) installed in root is up to date.
+Package libucode20220812 (2023-06-06-v0.0.202-2) installed in root is up to date.
+Package ucode (2023-06-06-v0.0.202-2) installed in root is up to date.
+Package ucode-mod-fs (2023-06-06-v0.0.202-2) installed in root is up to date.
+Package ucode-mod-nl80211 (2023-06-06-v0.0.202-2) installed in root is up to date.
+Package ucode-mod-rtnl (2023-06-06-v0.0.202-2) installed in root is up to date.
+Package ucode-mod-ubus (2023-06-06-v0.0.202-2) installed in root is up to date.
+Package ucode-mod-uloop (2023-06-06-v0.0.202-2) installed in root is up to date.
+Package libuuid1 (2.36.1-2) installed in root is up to date.
+Package luci-lib-ip (git-20.250.76529-62505bd) installed in root is up to date.
+Package luci-lib-nixio (git-20.234.06894-c4a4e43) installed in root is up to date.
+Package libattr (2.4.48-2) installed in root is up to date.
+Package lua-md5 (1.3-1) installed in root is up to date.
+Package api-core (1) installed in root is up to date.
+Installing vuci-app-administration-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-ui-core (2026-02-23-4f4044c88cc-3) to root...
+Installing vuci-app-administration-api (1) to root...
+Installing vuci-app-coovachilli-themes-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-coovachilli-themes-api (1) to root...
+Installing vuci-app-ddns-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-ddns-api (1) to root...
+Installing vuci-app-dynamic-routes-nhrp-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-dynamic-routes-nhrp-api (1) to root...
+Installing vuci-app-events-reporting-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-events-reporting-api (1) to root...
+Installing vuci-app-firewall-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-firewall-api (1) to root...
+Installing vuci-app-io-scheduler-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-io-scheduler-api (1) to root...
+Installing vuci-app-modbus-client-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-universal-gateway-api (1) to root...
+Installing vuci-app-modbus-serial-api (1) to root...
+Installing vuci-app-modbus-serial-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-data-sender-api-mod-modbus (1) to root...
+Installing vuci-app-data-sender-api-mod-modbus-alarm (1) to root...
+Installing vuci-app-modbus-client-api (1) to root...
+Installing vuci-app-network-usage-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-network-usage-api (1) to root...
+Installing vuci-app-ntp-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-ntp-api (1) to root...
+Installing vuci-app-package-manager-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-relayd-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-relayd-api (1) to root...
+Installing vuci-app-side-widget-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-side-widget-api (1) to root...
+Installing vuci-app-site-manager-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-site-manager-api (1) to root...
+Installing vuci-app-system-status-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-system-status-api (1) to root...
+Installing vuci-app-travelmate-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-wireless-api (1) to root...
+Installing vuci-app-wireless-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-vrrp-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-vrrp-api (1) to root...
+Package lrexlib (2021-12-28) installed in root is up to date.
+Package lua_crypto (1.0-1) installed in root is up to date.
+Package lua_extra_validators (2021-12-28) installed in root is up to date.
+Installing tlt_hs_theme_default (2022-07-27) to root...
+Installing vuci-app-landingpage (2021-02-19-1) to root...
+Installing vuci-app-access-control-api (1) to root...
+Installing vuci-app-access-control-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-administration-api (1) installed in root is up to date.
+Installing vuci-app-auto-reboot-api (1) to root...
+Installing vuci-app-auto-reboot-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-backup-api (1) to root...
+Installing vuci-app-backup-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-bluetooth-api (1) to root...
+Installing vuci-app-bluetooth-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-call-utilities-api (1) to root...
+Installing vuci-app-call-utilities-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-certificates-api (1) to root...
+Installing vuci-app-certificates-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-channel-analysis-api (1) to root...
+Installing vuci-app-channel-analysis-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-cli-api (1) to root...
+Installing vuci-app-cli-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-coovachilli-api (1) to root...
+Package vuci-app-coovachilli-themes-api (1) installed in root is up to date.
+Installing vuci-app-coovachilli-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-core-api (1) to root...
+Installing vuci-app-core-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-data-sender-api (1) to root...
+Installing vuci-app-data-sender-api-mod-format-custom (1) to root...
+Installing vuci-app-data-sender-api-mod-lua_format (1) to root...
+Installing vuci-app-data-sender-api-mod-mqtt-in (1) to root...
+Installing vuci-app-data-sender-api-mod-mqtt-out (1) to root...
+Installing vuci-app-data-sender-api-mod-http (1) to root...
+Installing vuci-app-data-sender-api-mod-ubus (1) to root...
+Installing vuci-app-data-sender-api-mod-bluetooth (1) to root...
+Installing vuci-app-data-sender-api-mod-lua-in (1) to root...
+Installing vuci-app-data-sender-api-mod-gsm (1) to root...
+Installing vuci-app-data-sender-api-mod-mdcollect (1) to root...
+Package vuci-app-data-sender-api-mod-modbus-alarm (1) installed in root is up to date.
+Package vuci-app-data-sender-api-mod-modbus (1) installed in root is up to date.
+Installing vuci-app-data-sender-api-mod-impulse_counter (1) to root...
+Installing vuci-app-data-sender-api-mod-wifiscan (1) to root...
+Installing vuci-app-data-sender-api-mod-advanced (1) to root...
+Installing vuci-app-data-sender-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-ddns-api (1) installed in root is up to date.
+Installing vuci-app-dhcp-api (1) to root...
+Installing vuci-app-dhcp-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-dmvpn-api (1) to root...
+Installing vuci-app-dmvpn-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-dns-api (1) to root...
+Installing vuci-app-dns-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-dot1x-client-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-port-security-api (1) to root...
+Installing vuci-app-dynamic-routes-bgp-api (1) to root...
+Installing vuci-app-dynamic-routes-bgp-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-dynamic-routes-eigrp-api (1) to root...
+Installing vuci-app-dynamic-routes-eigrp-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-dynamic-routes-nhrp-api (1) installed in root is up to date.
+Installing vuci-app-dynamic-routes-ospf-api (1) to root...
+Installing vuci-app-dynamic-routes-ospf-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-dynamic-routes-rip-api (1) to root...
+Installing vuci-app-dynamic-routes-rip-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-email-recipients-api (1) to root...
+Installing vuci-app-email-recipients-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-email-to-sms-api (1) to root...
+Installing vuci-app-email-to-sms-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-event-juggler-api (1) to root...
+Installing vuci-app-event-juggler-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-events-reporting-api (1) installed in root is up to date.
+Package vuci-app-firewall-api (1) installed in root is up to date.
+Installing vuci-app-firmware-api (1) to root...
+Installing vuci-app-firmware-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-getty-api (1) to root...
+Installing vuci-app-getty-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-gps-api (1) to root...
+Installing vuci-app-gps-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-gre-api (1) to root...
+Installing vuci-app-gre-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-hotspot2-api (1) to root...
+Installing vuci-app-hotspot2-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-impulse-counter-api (1) to root...
+Installing vuci-app-impulse-counter-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-internet-api (1) to root...
+Installing vuci-app-internet-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-io-api (1) to root...
+Installing vuci-app-io-juggler-api (1) to root...
+Installing vuci-app-io-juggler-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-io-scheduler-api (1) installed in root is up to date.
+Installing vuci-app-io-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-l2tp-api (1) to root...
+Installing vuci-app-l2tp-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-landingpage (2021-02-19-1) installed in root is up to date.
+Installing vuci-app-logs-api (1) to root...
+Installing vuci-app-logs-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-memory-expansion-api (1) to root...
+Installing vuci-app-memory-expansion-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-mobile-api (1) to root...
+Installing vuci-app-mobile-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-mobile-usage-api (1) to root...
+Installing vuci-app-mobile-usage-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-mobile-utilities-api (1) to root...
+Installing vuci-app-mobile-utilities-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-modbus-client-api (1) installed in root is up to date.
+Installing vuci-app-modbus-gateway-api (1) to root...
+Installing vuci-app-modbus-gateway-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-modbus-serial-api (1) installed in root is up to date.
+Installing vuci-app-modbus-serial-gateway-api (1) to root...
+Installing vuci-app-modbus-serial-gateway-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-modbus-serial-ui (2026-02-23-4f4044c88cc-1) installed in root is up to date.
+Installing vuci-app-modbus-server-api (1) to root...
+Installing vuci-app-modbus-server-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-modem-control-api (1) to root...
+Installing vuci-app-modem-control-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-mqtt-api (1) to root...
+Installing vuci-app-mqtt-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-multiusers-api (1) to root...
+Installing vuci-app-multiusers-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-mwan3-api (1) to root...
+Installing vuci-app-mwan3-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-network-api (1) to root...
+Installing vuci-app-network-devices-api (1) to root...
+Installing vuci-app-network-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-network-usage-api (1) installed in root is up to date.
+Installing vuci-app-networkmap-api (1) to root...
+Installing vuci-app-networkmap-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-ntp-api (1) installed in root is up to date.
+Installing vuci-app-openvpn-api (1) to root...
+Installing vuci-app-openvpn-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-overip-api (1) to root...
+Installing vuci-app-overip-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-overview-api (1) to root...
+Installing vuci-app-overview-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-package-manager-api (1) installed in root is up to date.
+Installing vuci-app-password-policy-api (1) to root...
+Installing vuci-app-password-policy-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-phone-recipients-api (1) to root...
+Installing vuci-app-phone-recipients-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-port-mirroring-api (1) to root...
+Installing vuci-app-port-mirroring-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-port-security-api (1) installed in root is up to date.
+Installing vuci-app-ports-settings-api (1) to root...
+Installing vuci-app-ports-settings-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-pptp-api (1) to root...
+Installing vuci-app-pptp-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-profiles-api (1) to root...
+Installing vuci-app-profiles-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-realtime-api (1) to root...
+Installing vuci-app-realtime-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-relayd-api (1) installed in root is up to date.
+Installing vuci-app-reset-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-routes-api (1) to root...
+Installing vuci-app-routes-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-rut-fota-api (1) to root...
+Installing vuci-app-rut-fota-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-services-status-api (1) to root...
+Installing vuci-app-services-status-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-setup-wizard-api (1) to root...
+Installing vuci-app-setup-wizard-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-side-widget-api (1) installed in root is up to date.
+Package vuci-app-site-manager-api (1) installed in root is up to date.
+Installing vuci-app-snmp-api (1) to root...
+Installing vuci-app-snmp-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-speed-test-api (1) to root...
+Installing vuci-app-speed-test-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-sqm-api (1) to root...
+Installing vuci-app-sqm-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-sstp-api (1) to root...
+Installing vuci-app-sstp-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-strong-swan-api (1) to root...
+Installing vuci-app-strong-swan-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-stunnel-api (1) to root...
+Installing vuci-app-stunnel-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-system-info-api (1) to root...
+Package vuci-app-system-status-api (1) installed in root is up to date.
+Installing vuci-app-tcpdump-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-troubleshoot-api (1) to root...
+Installing vuci-app-troubleshoot-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-troubleshoot-api (1) installed in root is up to date.
+Package vuci-app-troubleshoot-ui (2026-02-23-4f4044c88cc-1) installed in root is up to date.
+Installing vuci-app-ui-api (1) to root...
+Installing vuci-app-ulog-api (1) to root...
+Installing vuci-app-ulog-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-universal-gateway-api (1) installed in root is up to date.
+Installing vuci-app-usb-tools-api (1) to root...
+Installing vuci-app-usb-tools-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-uscripts-api (1) to root...
+Installing vuci-app-uscripts-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-vlan-api (1) to root...
+Installing vuci-app-vlan-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-vrf-api (1) to root...
+Installing vuci-app-vrf-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-vrrp-api (1) installed in root is up to date.
+Installing vuci-app-webfilter-api (1) to root...
+Installing vuci-app-webfilter-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-wifi-scanner-api (1) to root...
+Installing vuci-app-wifi-scanner-ui (2026-02-23-4f4044c88cc-1) to root...
+Installing vuci-app-wireguard-api (1) to root...
+Installing vuci-app-wireguard-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-app-wireless-api (1) installed in root is up to date.
+Package vuci-app-wireless-ui (2026-02-23-4f4044c88cc-1) installed in root is up to date.
+Installing vuci-app-wol-api (1) to root...
+Installing vuci-app-wol-ui (2026-02-23-4f4044c88cc-1) to root...
+Package vuci-ui-core (2026-02-23-4f4044c88cc-3) installed in root is up to date.
+Package lua_crypto (1.0-1) installed in root is up to date.
+Package lua_extra_validators (2021-12-28) installed in root is up to date.
+Configuring libgcc1.
+Configuring libc.
+Configuring libpthread.
+Configuring libnl-tiny2023-04-02.
+Configuring ip-full.
+Configuring kernel.
+Configuring kmod-crypto-hash.
+Configuring kmod-crypto-null.
+Configuring kmod-crypto-aead.
+Configuring kmod-crypto-pcompress.
+Configuring kmod-crypto-manager.
+Configuring kmod-crypto-authenc.
+Configuring kmod-crypto-cbc.
+Configuring kmod-lib-zlib-inflate.
+Configuring kmod-lib-zlib-deflate.
+Configuring kmod-crypto-des.
+Configuring kmod-crypto-hmac.
+Configuring kmod-crypto-sha256.
+Configuring kmod-crypto-rng.
+Configuring kmod-crypto-geniv.
+Configuring kmod-crypto-echainiv.
+Configuring kmod-crypto-md5.
+Configuring kmod-crypto-sha1.
+Configuring kmod-crypto-acompress.
+Configuring kmod-crypto-deflate.
+Configuring kmod-ipsec.
+Configuring kmod-iptunnel4.
+Configuring kmod-ipsec4.
+Configuring kmod-iptunnel6.
+Configuring kmod-ipsec6.
+Configuring strongswan.
+Configuring strongswan-mod-eap-identity.
+Configuring libubox20240329.
+Configuring libubus20251019.
+Configuring libuci20130104.
+Configuring libtlt-logger.
+Configuring libjson-c5.
+Configuring libblobmsg-json20240329.
+Configuring libtpm2_importer.
+Configuring zlib.
+Configuring libsqlite3-0.
+Configuring libmnfinfo.
+Configuring libcap.
+Configuring rpcd.
+Configuring libboardjson.
+Configuring libcgi.
+Configuring liblog.
+Configuring kmod-tlt-gpio.
+Configuring libgpiod.
+Configuring kmod-tlt-pulse-counter.
+Configuring iomand1.0.
+Configuring libgsm1.0.
+Configuring liburc.
+Configuring liblua5.1.5.
+Configuring lua.
+Configuring lsqlite3.
+Configuring libmdcollect.
+Configuring libgps.
+Configuring libatomic1.
+Configuring libopenssl3.
+Configuring libnghttp2-14.
+Configuring ca-bundle.
+Configuring libcurl4.
+Configuring librt.
+Configuring libcares.
+Configuring libmosquitto-ssl.
+Configuring data-sender.
+Configuring data-sender-mod-base.
+Configuring libmodbus.
+Configuring libiwinfo-data.
+Configuring libiwinfo20230701.
+Configuring rpcd-mod-iwinfo.
+Configuring rpcd-mod-file.
+Configuring rpcd-mod-rpcsys.
+Configuring libjson-script20240329.
+Configuring uhttpd.
+Configuring libubox-lua.
+Configuring libubus-lua.
+Configuring libuci-lua.
+Configuring luci-lib-jsonc.
+Configuring luci-lib-nixio.
+Configuring luci-lib-ip.
+Configuring rpcd-mod-rrdns.
+Configuring uhttpd-mod-lua.
+Configuring libopenssl-conf.
+Configuring libopenssl-legacy.
+Configuring openssl-util.
+Configuring lua_crypto.
+Configuring lua_extra_validators.
+Configuring luasocket.
+Configuring libpcre2.
+Configuring lrexlib.
+Configuring rpcd-mod-mnfinfo.
+Configuring luasec.
+Configuring rpcd-mod-uci.
+Configuring rpcd-mod-rc.
+Configuring session.
+Configuring api-core.
+Configuring vuci-app-channel-analysis-api.
+Configuring kmod-scsi-core.
+Configuring kmod-nls-base.
+Configuring kmod-usb-core.
+Configuring kmod-usb-storage.
+Configuring vuci-ui-core.
+Configuring libpcap1.
+Configuring networkmap.
+Configuring vuci-app-networkmap-api.
+Configuring vuci-app-networkmap-ui.
+Configuring libmctl.
+Configuring vuci-app-gps-api.
+Configuring vuci-app-gps-ui.
+Configuring dnsmasq.
+Configuring host_block.
+Configuring ntpclient.
+Configuring vuci-app-ntp-api.
+Configuring iwinfo.
+Configuring libtlt_uci.
+Configuring impulse-counter.
+Configuring openssh-sftp-server.
+Configuring kmod-nfnetlink.
+Configuring kmod-nf-reject.
+Configuring kmod-nf-reject6.
+Configuring kmod-nf-conntrack.
+Configuring kmod-nf-conntrack6.
+Configuring kmod-nf-nat.
+Configuring kmod-nf-log.
+Configuring kmod-nf-log6.
+Configuring kmod-crypto-crc32c.
+Configuring kmod-lib-crc32c.
+Configuring kmod-nft-core.
+Configuring libmnl0.
+Configuring libnftnl11.
+Configuring nftables-nojson.
+Configuring vuci-app-universal-gateway-api.
+Configuring libcfgx.
+Configuring libtlt_termios1.0.
+Configuring librms.
+Configuring libapi.
+Configuring libparam.
+Configuring libtlt_smtp.
+Configuring libtag.
+Configuring libmodbus_client.
+Configuring libticket_mutex.
+Configuring modbus_client.
+Configuring vuci-app-modbus-serial-api.
+Configuring vuci-app-modbus-serial-ui.
+Configuring kmod-lib-textsearch.
+Configuring ubusd.
+Configuring ubus.
+Configuring jshn.
+Configuring netifd.
+Configuring libnetifd.
+Configuring udhcpc.
+Configuring kmod-udptunnel4.
+Configuring kmod-udptunnel6.
+Configuring kmod-l2tp.
+Configuring kmod-iptunnel.
+Configuring kmod-gre.
+Configuring kmod-ip6-tunnel.
+Configuring kmod-gre6.
+Configuring resolveip.
+Configuring gre.
+Configuring wifi_scanner.
+Configuring data-sender-mod-wifiscan.
+Configuring vuci-app-data-sender-api-mod-wifiscan.
+Configuring vuci-app-wifi-scanner-api.
+Configuring vuci-app-wifi-scanner-ui.
+Configuring kmod-crypto-user.
+Configuring strongswan-mod-curl.
+Configuring vuci-app-email-recipients-api.
+Configuring vuci-app-email-recipients-ui.
+Configuring libpci.
+Configuring libpcre.
+Configuring libnetsnmp.
+Configuring snmp-mod-vlan.
+Configuring vuci-app-vlan-api.
+Configuring kmod-crypto-gf128.
+Configuring libuclient20201210.
+Configuring uclient-fetch.
+Configuring opkg.
+Configuring vuci-app-ports-settings-api.
+Configuring vuci-app-ports-settings-ui.
+Configuring frr.
+Configuring libyang.
+Configuring frr-libfrr.
+Configuring frr-zebra.
+Configuring kmod-tcpmd5sig.
+Configuring frr-bgpd.
+Configuring vuci-app-dynamic-routes-bgp-api.
+Configuring vuci-app-dynamic-routes-bgp-ui.
+Configuring libnfnetlink0.
+Configuring ulogd.
+Configuring ulogd-mod-extra.
+Configuring vuci-app-routes-api.
+Configuring speedtest.
+Configuring vuci-app-speed-test-api.
+Configuring vuci-app-speed-test-ui.
+Configuring ddns-scripts.
+Configuring ddns-scripts_no-ip_com.
+Configuring profiler.
+Configuring strongswan-mod-constraints.
+Configuring jsonfilter.
+Configuring busybox.
+Configuring kmod-crypto-seqiv.
+Configuring kmod-crypto-ctr.
+Configuring vuci-app-mobile-usage-api.
+Configuring kmod-mii.
+Configuring kmod-usb-net.
+Configuring kmod-usb-wdm.
+Configuring kmod-usb-net-qmi-wwan.
+Configuring relayd.
+Configuring vuci-app-relayd-api.
+Configuring vuci-app-relayd-ui.
+Configuring strongswan-mod-vici.
+Configuring strongswan-swanctl.
+Configuring chat.
+Configuring vrrpd.
+Configuring vuci-app-vrrp-api.
+Configuring kmod-r2ec.
+Configuring kmod-nf-conntrack-netlink.
+Configuring nlbwmon.
+Configuring vuci-app-network-usage-api.
+Configuring kmod-sched-core.
+Configuring tc-tiny.
+Configuring kmod-ifb.
+Configuring kmod-nf-ipt.
+Configuring kmod-ipt-core.
+Configuring libxtables12.
+Configuring libip4tc2.
+Configuring libip6tc2.
+Configuring iptables.
+Configuring kmod-ipt-ipopt.
+Configuring iptables-mod-ipopt.
+Configuring kmod-ipt-conntrack.
+Configuring kmod-ipt-conntrack-extra.
+Configuring kmod-ipt-raw.
+Configuring iptables-mod-conntrack-extra.
+Configuring kmod-sched-cake.
+Configuring kmod-sched-act-ipt.
+Configuring sqm-scripts.
+Configuring vuci-app-sqm-api.
+Configuring data-sender-mod-lua_format.
+Configuring mdcollectd.
+Configuring vuci-app-realtime-api.
+Configuring kmod-tun.
+Configuring libffi.
+Configuring libattr.
+Configuring glib2.
+Configuring kmod-usb-serial.
+Configuring kmod-usb-serial-belkin.
+Configuring libiwinfo-lua.
+Configuring liblpac.
+Configuring data-sender-mod-bluetooth.
+Configuring vuci-app-mobile-utilities-api.
+Configuring vuci-app-strong-swan-api.
+Configuring kmod-ipt-ipsec.
+Configuring iptables-mod-ipsec.
+Configuring kmod-ipt-hashlimit.
+Configuring iptables-mod-hashlimit.
+Configuring kmod-nfnetlink-log.
+Configuring kmod-ipt-nflog.
+Configuring iptables-mod-nflog.
+Configuring frr-nhrp.
+Configuring dmvpn.
+Configuring vuci-app-dmvpn-api.
+Configuring kmod-usb-dwc3.
+Configuring iw-66.
+Configuring wifi-scripts.
+Configuring wireless-regdb.
+Configuring kmod-cfg80211_66.
+Configuring kmod-crypto-cmac.
+Configuring kmod-crypto-ccm.
+Configuring kmod-crypto-ghash.
+Configuring kmod-crypto-gcm.
+Configuring libucode20220812.
+Configuring ucode.
+Configuring hostapd-common.
+Configuring kmod-mac80211_66.
+Configuring kmod-ath_66.
+Configuring swconfig.
+Configuring vuci-app-reset-ui.
+Configuring snmp-mod-gps.
+Configuring liblzo2.
+Configuring libnl-core200.
+Configuring libnl-genl200.
+Configuring openvpn-openssl.
+Configuring vuci-app-openvpn-api.
+Configuring vuci-app-openvpn-ui.
+Configuring kmod-vrf.
+Configuring kmod-ipt-coova.
+Configuring modbus_server.
+Configuring vuci-app-modbus-server-api.
+Configuring vuci-app-modbus-server-ui.
+Configuring strongswan-libtls.
+Configuring vuci-app-firewall-api.
+Configuring libnetfilter-log1.
+Configuring ulogd-mod-nflog.
+Configuring tlt-ulogd.
+Configuring vuci-app-ulog-api.
+Configuring kmod-nf-flow.
+Configuring libgpg-error.
+Configuring libgcrypt.
+Configuring libusb-1.0-0.
+Configuring libuuid1.
+Configuring tpm2-tss.
+Configuring strongswan-tss-tss2.
+Configuring vuci-app-mobile-usage-ui.
+Configuring vuci-app-system-info-api.
+Configuring kmod-lib-crc-ccitt.
+Configuring ucode-mod-uloop.
+Configuring sim_switch.
+Configuring kmod-slhc.
+Configuring kmod-ppp.
+Configuring kmod-pppox.
+Configuring kmod-pppol2tp.
+Configuring ppp-mod-pppol2tp.
+Configuring kmod-l2tp-eth.
+Configuring kmod-l2tp-ip.
+Configuring xl2tpd.
+Configuring vuci-app-l2tp-api.
+Configuring getrandom.
+Configuring frr-ripd.
+Configuring connchecker.
+Configuring vuci-app-internet-api.
+Configuring vuci-app-internet-ui.
+Configuring snmp-mod-device.
+Configuring ucode-mod-ubus.
+Configuring strongswan-mod-connmark.
+Configuring data-sender-mod-format-custom.
+Configuring vuci-app-data-sender-api-mod-format-custom.
+Configuring kmod-asn1-decoder.
+Configuring curl.
+Configuring modems.
+Configuring kmod-usb-serial-wwan.
+Configuring kmod-usb-serial-option.
+Configuring gsmd.
+Configuring gsmctl.
+Configuring dfota.
+Configuring ubox.
+Configuring ubi-utils.
+Configuring fstools.
+Configuring e2fsprogs.
+Configuring fmt-usb-msd.
+Configuring libcap-bin.
+Configuring libustream-openssl20201210.
+Configuring vuci-app-firmware-api.
+Configuring vuci-app-firmware-ui.
+Configuring crconf.
+Configuring kmod-nf-nathelper.
+Configuring kmod-pppoe.
+Configuring vuci-app-administration-api.
+Configuring vuci-app-usb-tools-api.
+Configuring ddns-scripts_cloudflare.com-v4.
+Configuring data-sender-mod-modbus.
+Configuring vuci-app-data-sender-api-mod-modbus.
+Configuring vuci-app-setup-wizard-api.
+Configuring vuci-app-side-widget-api.
+Configuring vuci-app-logs-api.
+Configuring vuci-app-logs-ui.
+Configuring strongswan-mod-openssl.
+Configuring tpm2-openssl.
+Configuring snmptrap.
+Configuring libcfg20260211.
+Configuring event-juggler.
+Configuring vuci-app-events-reporting-api.
+Configuring reboot_utils.
+Configuring reboot_utils-periodic.
+Configuring vuci-app-events-reporting-ui.
+Configuring usign.
+Configuring openwrt-keyring.
+Configuring fwtool.
+Configuring base-files.
+Configuring kmod-lib-crc16.
+Configuring snmp-mod-port.
+Configuring modem_control.
+Configuring vuci-app-modem-control-api.
+Configuring vuci-app-modem-control-ui.
+Configuring kmod-input-core.
+Configuring snmp-mod-gsm.
+Configuring kmod-nls-cp437.
+Configuring kmod-nls-iso8859-1.
+Configuring kmod-nls-utf8.
+Configuring kmod-fs-vfat.
+Configuring kmod-fs-msdos.
+Configuring vuci-app-getty-api.
+Configuring vuci-app-getty-ui.
+Configuring libcoap3.
+Configuring vuci-app-package-manager-api.
+Configuring reboot_utils-ping.
+Configuring vuci-app-auto-reboot-api.
+Configuring vuci-app-auto-reboot-ui.
+Configuring frr-ospfd.
+Configuring data-sender-mod-sms-in.
+Configuring ucode-mod-fs.
+Configuring ucode-mod-nl80211.
+Configuring ucode-mod-rtnl.
+Configuring wpad-openssl.
+Configuring dot1x-client.
+Configuring vuci-app-port-security-api.
+Configuring vuci-app-dot1x-client-ui.
+Configuring kmod-usb-dwc3-qcom.
+Configuring kmod-usb-serial-pl2303.
+Configuring vuci-app-data-sender-api.
+Configuring privoxy.
+Configuring web_filter.
+Configuring vuci-app-webfilter-api.
+Configuring vuci-app-webfilter-ui.
+Configuring snsupdate.
+Configuring ddns-scripts_nsupdate.
+Configuring tlt-ddns.
+Configuring vuci-app-ddns-api.
+Configuring libtltchilli.
+Configuring coova-chilli.
+Configuring vuci-app-coovachilli-themes-api.
+Configuring vuci-app-coovachilli-themes-ui.
+Configuring vuci-app-landingpage.
+Configuring tlt_hs_theme_default.
+Configuring vuci-app-coovachilli-api.
+Configuring vuci-app-coovachilli-ui.
+Configuring untpd.
+Configuring vuci-app-bluetooth-api.
+Configuring davici.
+Configuring strongswan-mod-pem.
+Configuring kmod-usb-xhci-hcd.
+Configuring strongswan-mod-md4.
+Configuring strongswan-mod-eap-mschapv2.
+Configuring procd.
+Configuring shellinabox.
+Configuring vuci-app-site-manager-api.
+Configuring vuci-app-site-manager-ui.
+Configuring vuci-app-dns-api.
+Configuring vuci-app-dns-ui.
+Configuring mqtt-modbus-gateway.
+Configuring vuci-app-modbus-gateway-api.
+Configuring vuci-app-modbus-gateway-ui.
+Configuring libnetfilter-conntrack3.
+Configuring vuci-app-io-juggler-api.
+Configuring gpiod-tools.
+Configuring ledman-full.
+Configuring kmod-nf-nat6.
+Configuring vuci-app-ulog-ui.
+Configuring kmod-ipt-ipset.
+Configuring libipset13.
+Configuring ipset.
+Configuring ip_blockd.
+Configuring vuci-app-access-control-api.
+Configuring vuci-app-access-control-ui.
+Configuring etherwake.
+Configuring apn_db.
+Configuring vuci-app-dynamic-routes-rip-api.
+Configuring vuci-app-wireless-api.
+Configuring librut_fota.
+Configuring rut_fota.
+Configuring vuci-app-rut-fota-api.
+Configuring kmod-i2c-core.
+Configuring sodog-tlt.
+Configuring vuci-app-overip-api.
+Configuring vuci-app-ntp-ui.
+Configuring modem_trackd.
+Configuring mctl.
+Configuring kmod-nf-ipt6.
+Configuring kmod-ip6tables.
+Configuring kmod-ipt-raw6.
+Configuring vuci-app-firewall-ui.
+Configuring strongswan-mod-pgp.
+Configuring kmod-crypto-ecb.
+Configuring kmod-input-evdev.
+Configuring kmod-hid.
+Configuring kmod-regmap-core.
+Configuring kmod-crypto-kpp.
+Configuring kmod-crypto-ecdh.
+Configuring kmod-bluetooth.
+Configuring bluez-libs.
+Configuring kmod-crypto-sha512.
+Configuring vuci-app-uscripts-api.
+Configuring vuci-app-uscripts-ui.
+Configuring kmod-pptp.
+Configuring io_scheduler.
+Configuring vuci-app-io-scheduler-api.
+Configuring vuci-app-io-scheduler-ui.
+Configuring vuci-app-profiles-api.
+Configuring vuci-app-profiles-ui.
+Configuring stunnel.
+Configuring vuci-app-stunnel-api.
+Configuring vuci-app-wireguard-api.
+Configuring vuci-app-wireguard-ui.
+Configuring block-mount.
+Configuring tpm2-tools.
+Configuring tpm2_importer.
+Configuring mosquitto-ssl.
+Configuring cio_watchdog.
+Configuring mnfinfo.
+Configuring vuci-app-services-status-api.
+Configuring strongswan-mod-xcbc.
+Configuring kmod-crypto-lib-chacha20.
+Configuring kmod-crypto-lib-poly1305.
+Configuring kmod-crypto-lib-chacha20poly1305.
+Configuring strongswan-mod-random.
+Configuring vuci-app-memory-expansion-api.
+Configuring kmod-usb3.
+Configuring kmod-fs-exfat.
+Configuring kmod-ipt-nat.
+Configuring firewall.
+Configuring snmpd.
+Configuring snmp-mib.
+Configuring snmp-mod-chilli.
+Configuring snmp-mod-io.
+Configuring snmp-mod-sqm.
+Configuring snmp-mod-wireless.
+Configuring snmp-mod-mwan3.
+Configuring snmp-mod-universalgwd.
+Configuring snmp.
+Configuring libtdp.
+Configuring vuci-app-network-api.
+Configuring vuci-app-port-mirroring-ui.
+Configuring libuacl20250610.
+Configuring mobutils.
+Configuring mobutils-sms_utilities.
+Configuring troubleshoot.
+Configuring vuci-app-vrf-api.
+Configuring vuci-app-vrf-ui.
+Configuring vuci-app-vlan-ui.
+Configuring vuci-app-realtime-ui.
+Configuring strongswan-mod-pkcs1.
+Configuring kmod-ovpn-dco-v2.
+Configuring vuci-app-side-widget-ui.
+Configuring strongswan-mod-pkcs7.
+Configuring vuci-app-memory-expansion-ui.
+Configuring strongswan-mod-pkcs8.
+Configuring kmod-random-core.
+Configuring kmod-tpm.
+Configuring kmod-tpm-tis-core.
+Configuring tcpdump.
+Configuring data-sender-mod-smtp.
+Configuring odhcp6c.
+Configuring strongswan-pki.
+Configuring strongswan-mod-kdf.
+Configuring scep.
+Configuring vuci-app-wol-api.
+Configuring data-sender-mod-mnfinfo.
+Configuring data-sender-mod-modbus-alarm.
+Configuring vuci-app-data-sender-api-mod-modbus-alarm.
+Configuring vuci-app-modbus-client-api.
+Configuring vuci-app-certificates-api.
+Configuring mobutils-call_utilities.
+Configuring rpcd-mod-smslimit.
+Configuring esim-lpac.
+Configuring blesemd.
+Configuring ethtool.
+Configuring minizip.
+Configuring uci.
+Configuring kmod-fs-ext4.
+Configuring mqtt_pub.
+Configuring vuci-app-mqtt-api.
+Configuring vuci-app-mqtt-ui.
+Configuring data-sender-mod-lua-in.
+Configuring kmod-ath10k_66.
+Configuring vuci-app-sqm-ui.
+Configuring dropbear.
+Configuring vuci-app-bluetooth-ui.
+Configuring tpm_flasher.
+Configuring vuci-app-troubleshoot-api.
+Configuring vuci-app-troubleshoot-ui.
+Configuring vuci-app-tcpdump-ui.
+Configuring strongswan-charon.
+Configuring kmod-crypto-arc4.
+Configuring kmod-mppe.
+Configuring ppp-mod-pptp.
+Configuring ppp-mod-pppoe.
+Configuring pptpd.
+Configuring vuci-app-pptp-api.
+Configuring vuci-app-pptp-ui.
+Configuring mtd.
+Configuring data-sender-mod-impulse_counter.
+Configuring vuci-app-data-sender-api-mod-impulse_counter.
+Configuring vuci-app-impulse-counter-api.
+Configuring odhcpd-ipv6only.
+Configuring ip6tables.
+Configuring kmod-ipt-nat6.
+Configuring ip6tables-mod-nat.
+Configuring ath10k-board-qca4019.
+Configuring urcd.
+Configuring vuci-app-overview-api.
+Configuring vuci-app-package-manager-ui.
+Configuring data-sender-mod-ftp.
+Configuring data-sender-mod-lua-out.
+Configuring data-sender-mod-socket.
+Configuring data-sender-mod-sms-out.
+Configuring data-sender-mod-gps.
+Configuring data-sender-mod-io.
+Configuring vuci-app-data-sender-api-mod-advanced.
+Configuring data-sender-mod-mdcollect.
+Configuring vuci-app-data-sender-api-mod-mdcollect.
+Configuring vuci-app-dynamic-routes-ospf-api.
+Configuring kmod-xfrm-interface.
+Configuring xfrm.
+Configuring libevent2-7.
+Configuring ppp.
+Configuring sstp-client.
+Configuring vuci-app-sstp-api.
+Configuring vuci-app-sstp-ui.
+Configuring gpsd.
+Configuring gpsctl.
+Configuring vuci-app-system-status-api.
+Configuring vuci-app-backup-api.
+Configuring lua-md5.
+Configuring lua-pop3.
+Configuring vuci-app-wireless-ui.
+Configuring travelmate.
+Configuring vuci-app-travelmate-ui.
+Configuring vuci-app-io-juggler-ui.
+Configuring ath10k-firmware-qca4019.
+Configuring urandom-seed.
+Configuring vuci-app-data-sender-api-mod-lua_format.
+Configuring vuci-app-password-policy-api.
+Configuring strongswan-mod-socket-default.
+Configuring frr-eigrpd.
+Configuring rpc_esim.
+Configuring vuci-app-overip-ui.
+Configuring kmod-nft-netdev.
+Configuring exfat-mkfs.
+Configuring data-sender-mod-http.
+Configuring vuci-app-data-sender-api-mod-http.
+Configuring kmod-leds-gpio.
+Configuring kmod-gpio-button-hotplug.
+Configuring strongswan-mod-pubkey.
+Configuring mwan3.
+Configuring vuci-app-mwan3-api.
+Configuring vuci-app-mwan3-ui.
+Configuring logd.
+Configuring vuci-app-core-api.
+Configuring vuci-app-core-ui.
+Configuring vuci-app-channel-analysis-ui.
+Configuring vuci-app-dynamic-routes-eigrp-api.
+Configuring vuci-app-services-status-ui.
+Configuring ip-bridge.
+Configuring vuci-app-dynamic-routes-ospf-ui.
+Configuring multiple_ap.
+Configuring vuci-app-event-juggler-api.
+Configuring vuci-app-event-juggler-ui.
+Configuring gkeepalive.
+Configuring port_eventsd.
+Configuring kmod-crypto-lib-blake2s.
+Configuring kmod-crypto-lib-curve25519.
+Configuring kmod-wireguard.
+Configuring wireguard-tools.
+Configuring vuci-app-network-usage-ui.
+Configuring vuci-app-setup-wizard-ui.
+Configuring kmod-cypress-serial.
+Configuring ipq-wifi-teltonika_rutx.
+Configuring strongswan-mod-kernel-netlink.
+Configuring uci-default.
+Configuring vuci-app-modbus-client-ui.
+Configuring vuci-app-certificates-ui.
+Configuring xl2tpd6.
+Configuring kmod-usb-net-cdc-ether.
+Configuring kmod-usb-net-cdc-ncm.
+Configuring vuci-app-multiusers-api.
+Configuring vuci-app-multiusers-ui.
+Configuring email_to_sms.
+Configuring vuci-app-hotspot2-api.
+Configuring vuci-app-hotspot2-ui.
+Configuring vuci-app-call-utilities-api.
+Configuring vuci-app-call-utilities-ui.
+Configuring vuci-app-rut-fota-ui.
+Configuring mobifd.
+Configuring coap_watchdog.
+Configuring vuci-app-overview-ui.
+Configuring kmod-fs-ntfs.
+Configuring kmod-usb-serial-cp210x.
+Configuring cioClient.
+Configuring strongswan-mod-mgf1.
+Configuring vuci-app-vrrp-ui.
+Configuring data-sender-mod-mqtt-in.
+Configuring kmod-nf-nathelper-extra.
+Configuring package_restore.
+Configuring kmod-usb-serial-cypress-m8.
+Configuring data-sender-mod-ubus.
+Configuring vuci-app-data-sender-api-mod-ubus.
+Configuring ntp_gps.
+Configuring storage-memory-expansion.
+Configuring kmod-usb-acm.
+Configuring serial.
+Configuring build.
+Configuring vuci-app-io-api.
+Configuring vuci-app-system-status-ui.
+Configuring vuci-app-backup-ui.
+Configuring vuci-app-network-devices-api.
+Configuring sysupgrade-helper.
+Configuring vuci-app-dynamic-routes-eigrp-ui.
+Configuring letsencrypt.
+Configuring kmod-usb-serial-ch341.
+Configuring kmod-usb-serial-ch343.
+Configuring wpa-cli.
+Configuring strongswan-mod-updown.
+Configuring vuci-app-wol-ui.
+Configuring vuci-app-email-to-sms-api.
+Configuring vuci-app-mobile-api.
+Configuring wwan.
+Configuring uqmi.
+Configuring vuci-app-data-sender-api-mod-lua-in.
+Configuring kmod-usb-serial-ftdi.
+Configuring strongswan-mod-nonce.
+Configuring strongswan-mod-xauth-generic.
+Configuring kmod-usb-serial-ark3116.
+Configuring vuci-app-data-sender-api-mod-mqtt-in.
+Configuring modbusgwd.
+Configuring vuci-app-modbus-serial-gateway-api.
+Configuring vuci-app-data-sender-api-mod-bluetooth.
+Configuring vuci-app-dynamic-routes-nhrp-api.
+Configuring uboot-ipq40xx.
+Configuring avl.
+Configuring kmod-fs-autofs4.
+Configuring strongswan-mod-x509.
+Configuring data-sender-mod-mqtt-out.
+Configuring vuci-app-data-sender-api-mod-mqtt-out.
+Configuring fwcert.
+Configuring vuci-app-cli-api.
+Configuring vuci-app-dhcp-api.
+Configuring vuci-app-dhcp-ui.
+Configuring vuci-app-usb-tools-ui.
+Configuring rtl8761bu-firmware.
+Configuring vuci-app-dynamic-routes-rip-ui.
+Configuring kmod-tpm-tis-i2c.
+Configuring vuci-app-io-ui.
+Configuring vuci-app-ui-api.
+Configuring kmod-usb-uhci.
+Configuring vuci-app-snmp-api.
+Configuring vuci-app-snmp-ui.
+Configuring data-sender-mod-gsm.
+Configuring vuci-app-data-sender-api-mod-gsm.
+Configuring vuci-app-dynamic-routes-nhrp-ui.
+Configuring vuci-app-dmvpn-ui.
+Configuring vuci-app-port-mirroring-api.
+Configuring vuci-app-ddns-ui.
+Configuring siteman.
+Configuring vuci-app-email-to-sms-ui.
+Configuring vuci-app-mobile-ui.
+Configuring vuci-app-phone-recipients-api.
+Configuring vuci-app-phone-recipients-ui.
+Configuring vuci-app-routes-ui.
+Configuring strongswan-mod-tpm.
+Configuring vuci-app-administration-ui.
+Configuring vuci-app-data-sender-ui.
+Configuring strongswan-mod-revocation.
+Configuring procd-init.
+Configuring vuci-app-strong-swan-ui.
+Configuring tpm_manager.
+Configuring vuci-app-password-policy-ui.
+Configuring vuci-app-cli-ui.
+Configuring vuci-app-gre-api.
+Configuring vuci-app-gre-ui.
+Configuring vuci-app-stunnel-ui.
+Configuring vuci-app-network-ui.
+Configuring quota_limit.
+Configuring strongswan-minimal.
+Configuring kmod-ipt-offload.
+Configuring coap-client.
+Configuring vuci-app-modbus-serial-gateway-ui.
+Configuring stm32flasher.
+Configuring vuci-app-mobile-utilities-ui.
+Configuring vuci-app-l2tp-ui.
+Configuring urngd.
+Configuring swanmon.
+Configuring vuci-app-impulse-counter-ui.
+Setting flags for package libc to hold.
+Setting flags for package libgcc1 to hold.
+Setting flags for package libatomic1 to hold.
+Setting flags for package libpthread to hold.
+Setting flags for package librt to hold.
+Generating package index...
+Generating index for package ./base-files_260225.50289-r16279-5cc0535800_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./block-mount_2022-05-03-9e11b372-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./dropbear_2025.88-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./fstools_2022-05-03-9e11b372-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./fwtool_2019-11-12-8f7fe925-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ip6tables-mod-nat_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ip6tables_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ipq-wifi-teltonika_rutx_2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iptables-mod-conntrack-extra_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iptables-mod-filter_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iptables-mod-hashlimit_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iptables-mod-ipopt_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iptables-mod-ipsec_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iptables-mod-nat-extra_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iptables-mod-nflog_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iptables_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-asn1-decoder_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ath10k_66_6.6.119+6.12.6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ath_66_6.6.119+6.12.6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-bluetooth_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-cfg80211_66_6.6.119+6.12.6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-acompress_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-aead_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-arc4_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-authenc_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-cbc_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-ccm_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-cmac_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-crc32c_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-ctr_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-deflate_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-des_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-ecb_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-ecdh_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-echainiv_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-gcm_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-geniv_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-gf128_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-ghash_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-hash_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-hmac_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-kpp_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-lib-blake2s_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-lib-chacha20_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-lib-chacha20poly1305_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-lib-curve25519_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-lib-poly1305_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-manager_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-md4_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-md5_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-null_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-pcompress_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-rng_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-seqiv_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-sha1_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-sha256_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-sha512_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-crypto-user_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-cypress-serial_6.6.119+1.1.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-dnsresolver_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fs-autofs4_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fs-cifs_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fs-exfat_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fs-ext4_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fs-msdos_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fs-netfs_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fs-ntfs_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fs-smbfs-common_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fs-vfat_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-fuse_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-gpio-button-hotplug_6.6.119-5_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-gre6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-gre_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-hid_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-i2c-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ifb_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-input-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-input-evdev_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ip6-tunnel_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ip6tables_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipsec4_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipsec6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipsec_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-conntrack-extra_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-conntrack_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-coova_6.6.119+2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-filter_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-hashlimit_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-ipopt_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-ipsec_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-ipset_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-nat-extra_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-nat6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-nat_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-nflog_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-offload_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-raw6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ipt-raw_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-iptunnel4_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-iptunnel6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-iptunnel_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-jool_6.6.119+4.1.12-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-l2tp-eth_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-l2tp-ip_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-l2tp_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-leds-gpio_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-lib-crc-ccitt_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-lib-crc16_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-lib-crc32c_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-lib-textsearch_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-lib-zlib-deflate_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-lib-zlib-inflate_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-mac80211_66_6.6.119+6.12.6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-mii_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-mpls_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-mppe_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-conntrack-netlink_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-conntrack6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-conntrack_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-flow_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-ipt6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-ipt_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-log6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-log_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-nat6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-nat_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-nathelper-extra_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-nathelper_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-reject6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nf-reject_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nfnetlink-log_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nfnetlink_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nft-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nft-netdev_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nls-base_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nls-cp437_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nls-iso8859-1_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nls-ucs2-utils_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-nls-utf8_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-oid-registry_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ovpn-dco-v2_6.6.119+0.2.20241216-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-ppp_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-pppoe_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-pppol2tp_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-pppox_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-pptp_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-r2ec_6.6.119-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-random-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-regmap-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-sched-act-ipt_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-sched-act-police_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-sched-cake_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-sched-connmark_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-sched-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-sched-flower_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-scsi-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-slhc_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-tcpmd5sig_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-tlt-gpio_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-tlt-pulse-counter_6.6.119-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-tpm-tis-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-tpm-tis-i2c_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-tpm_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-tun_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-udptunnel4_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-udptunnel6_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-acm_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-core_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-dwc3-qcom_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-dwc3_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-net-cdc-ether_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-net-cdc-ncm_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-net-qmi-wwan_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-net_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-printer_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-ark3116_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-belkin_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-ch341_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-ch343_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-cp210x_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-cypress-m8_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-ftdi_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-option_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-pl2303_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial-wwan_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-serial_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-storage_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-uhci_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-wdm_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb-xhci-hcd_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-usb3_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-vrf_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-vxlan_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-wireguard_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./kmod-xfrm-interface_6.6.119-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libatomic1_8.4.0-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libgcc1_8.4.0-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libip4tc2_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libip6tc2_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpthread_1.2.4-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./librt_1.2.4-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libstdcpp6_8.4.0-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libxtables12_1.8.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mtd_27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ubi-utils_2.1.2-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./7zip_22.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./Meig_Firehose_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./QDLoader_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./apn_db_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ath10k-board-qca4019_20241110-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ath10k-firmware-qca4019_20241110-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./avl_2025-11-27-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./aws_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./azure_iothub_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./bfdd-frr_2024-10-10-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./blesemd_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./bluez-libs_5.56-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./build_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./busybox_1.34.1-260225.50289.18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ca-bundle_20240203-1_all.ipk
+Generating index for package ./chat_2.4.9.git-2021-01-04-18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./cioClient_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./cio_watchdog_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./classpath_0.99-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./cmStreamApp_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./coap-client_4.3.5-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./coap_watchdog_1.0.0-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./connchecker_2025-01-15-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./coova-chilli_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./crconf_2018-03-02-8bd99640-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./curl_8.16.0-260225.50289.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-base_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-bluetooth_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-dlms_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-dnp3_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-format-custom_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-ftp_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-gps_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-gsm_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-http_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-iec60870_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-impulse_counter_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-io_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-lua-in_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-lua-out_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-lua_format_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-mdcollect_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-mnfinfo_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-modbus-alarm_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-modbus_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-mqtt-in_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-mqtt-out_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-opcua_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-sms-in_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-sms-out_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-smtp_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-socket_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-ubus_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender-mod-wifiscan_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./data-sender_1.24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./davici_1.4-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ddns-scripts_2026-02-02-8_all.ipk
+Generating index for package ./ddns-scripts_cloudflare.com-v4_2026-02-02-8_all.ipk
+Generating index for package ./ddns-scripts_no-ip_com_2026-02-02-8_all.ipk
+Generating index for package ./ddns-scripts_nsupdate_2026-02-02-8_all.ipk
+Generating index for package ./dfota_2024-08-05-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./dlms_client_2026-01-23-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./dmvpn_2021-02-11-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./dnp3_2026-01-06-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./dnsmasq_2.90-260225.50289.2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./dot1x-client_2025-03-13-dev-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./e2fsprogs_1.47.0-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./easycwmp_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./email_to_sms_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./emailrelay_2024-12-20-260225.50289-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./eoip_1.0-8_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./esim-lpac_1.7.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./etherwake_1.09-10_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ethtool_6.15-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./event-juggler_1.9_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./exfat-mkfs_1.1.3-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./fbfdownloader_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./firewall_2022-02-17-4cd7d4f3-15_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./fmt-usb-msd_2025-05-15-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-common_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-democerts_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-always_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-attr-filter_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-chap_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-detail_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-digest_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-eap-gtc_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-eap-md5_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-eap-mschapv2_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-eap-peap_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-eap-pwd_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-eap-tls_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-eap-ttls_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-eap_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-exec_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-expiration_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-expr_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-files_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-logintime_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-mschap_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-pap_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-preprocess_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-radutmp_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-realm_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3-mod-unix_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./freeradius3_3.2.7-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-bfdd_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-bgpd_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-eigrpd_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-ldpd_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-libfrr_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-nhrp_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-ospfd_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-ripd_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-vtysh_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr-zebra_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./frr_8.4.2-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./fuse3-utils_3.10.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./fwcert_1.0_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./getrandom_2020-10-25-9ef88681-13_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./gkeepalive_2025-11-18-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./glib2_2.80.5-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./gpiod-tools_1.6.3-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./gpsctl_2025-11-27-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./gpsd_2025-11-27-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./gre_14_all.ipk
+Generating index for package ./grpcurl_1.9.3-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./gsmctl_7.21.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./gsmd_7.21.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./host_block_2025-10-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hostapd-common_2.12-dev-6_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./https-dns-proxy_2021-07-29-5_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iec60870_client_7.21-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iec60870_server_2025-12-09_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./igmpproxy_0.2.1-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./impulse-counter_2025-10-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./io_scheduler_1.4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iomand1.0_2.28.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ip-bridge_5.19.0-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ip-full_5.19.0-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ip_blockd_2025-12-08-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iperf3_3.19.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ipset_7.6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iw-66_6.9-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./iwinfo_2025-02-06-9cec6b4d-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./jamvm_2.0.0-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./jool_4.1.12-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./jshn_2024-03-29-eb9bcb64-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./jsonfilter_2018-02-04-c7e938d6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ldpd-frr_2025-11-03-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ledman-full_2.28_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./letsencrypt_2024-11-26-2_all.ipk
+Generating index for package ./lib60870_63028a92_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libapi_2025-06-13-1.5_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libaws-iot-device-sdk-embedded-C_202211.00-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libazure-iot-sdk-c_2024-11-05-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libblobmsg-json20240329_2024-03-29-eb9bcb64-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libboardjson_7.21-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libbz2-1.0_1.0.8-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libcap-bin_2.69-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libcap_2.69-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libcares_1.19.1-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libcfg20260211_2026-02-11-1.5_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libcfgx_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libcgi_1.3.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libcoap3_4.3.5-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libcurl4_8.16.0-260225.50289.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libdlms_fa855d2e-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libevent2-7_2.1.12-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libexif_0.6.22-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libffi_3.4.6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libffmpeg-audio-dec_4.3.1-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libflac_1.3.3-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libfuse3-3_3.10.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libgcrypt_1.9.3-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libgmp10_6.2.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libgpg-error_1.39-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libgpiod_1.6.3-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libgps_2025-11-27-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libgsm1.0_7.21.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libiperf3_3.19.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libipset13_7.6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libiwinfo-data_2025-02-06-9cec6b4d-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libiwinfo-lua_2025-02-06-9cec6b4d-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libiwinfo20230701_2025-02-06-9cec6b4d-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libjson-c5_0.15-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libjson-script20240329_2024-03-29-eb9bcb64-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./liblog_2024-09-30_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./liblpac_1.7.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./liblua5.1.5_5.1.5-10_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./liblzo2_2.10-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libmctl_4.14_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libmdcollect_2025-10-08-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libmicroxml_2018-06-14-80a15162f3a8318c70e8688d8ecbfc38676bd9a2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libmnfinfo_2.30_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libmnl0_1.0.4-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libmodbus_2026-02-09_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libmodbus_client_2026-02-03-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libmosquitto-ssl_2.0.21-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libncurses6_6.5-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnetfilter-conntrack3_1.0.8-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnetfilter-log1_1.0.1-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnetifd_2024-06-18-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnetsnmp_5.9.1-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnfnetlink0_1.0.1-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnftnl11_1.2.5-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnghttp2-14_1.43.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnl-cli200_3.9.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnl-core200_3.9.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnl-genl200_3.9.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnl-nf200_3.9.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnl-route200_3.9.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnl-tiny2023-04-02_2023-04-02-11b7c5f0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnl200_3.9.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libopenssl-conf_3.0.14-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libopenssl-legacy_3.0.14-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libopenssl3_3.0.14-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libp11_0.4.12-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpam-mod-deny_1.7.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpam-mod-permit_1.7.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpam-mod-umask_1.7.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpam-mod-unix_1.7.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpam_1.7.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libparam_2026-02-11_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpcap1_1.10.5-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpci_3.7.0-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpcre2_10.37-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpcre_8.45-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libpython3-3.11_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libreadline8_8.2-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./librms_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./librut_fota_2.24_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libsmpp34_1.14.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libsqlite3-0_3.41.2-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtacacs_2024-09-30-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtag_2026-01-26-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtalloc_2.4.2-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtasn1_4.20.0-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtdp_7.21-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libticket_mutex_7.21-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtlt-logger_2025-11-24-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtlt_smtp_1.11_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtlt_termios1.0_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtlt_uci_2025-08-07-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtltchilli_2024-09-30-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtpm2_importer_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libtwCSdk_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libuacl20250610_2025-06-10-1.0_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libubox-lua_2024-03-29-eb9bcb64-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libubox20240329_2024-03-29-eb9bcb64-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libubus-lua_2025-10-19-6fdf7a97-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libubus20251019_2025-10-19-6fdf7a97-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libuci-lua_2021-10-22-f84f49f0-18-18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libuci20130104_2021-10-22-f84f49f0-18-18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libuclient20201210_2021-05-14-6a6011df-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libucode20220812_2023-06-06-v0.0.202-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./liburc_7.21.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libusb-1.0-0_1.0.24-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libustream-openssl20201210_2024-03-04-263b9a97-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libuuid1_2.36.1-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libxml2_2.9.12-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libyang_2.0.112-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./logd_2020-10-25-9ef88681-13_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./lsqlite3_0.9.5-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./lua-pop3_0.1.6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./lua_5.1.5-10_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./luasec_0.9-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./luasocket_2019-04-21-733af884-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./luci-lib-jsonc_2025-10-14_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mctl_4.14_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mdcollectd_2025-10-08-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./miniupnpd_2.3.4-5_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./minizip_4.0.7-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mnfinfo_2.30_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mobifd_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mobutils-call_utilities_3.20-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mobutils-sms_utilities_3.20-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mobutils_3.20-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modbus_client_2026-02-03-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modbus_server_7.21-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modbusgwd_2025-08-14_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modem_control_2025-07-17_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modem_logger-offline_7.20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modem_logger_7.20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modem_trackd_4.14_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modem_updater-offline_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modem_updater_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./modems_3.20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./more_2.36.1-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mosquitto-ssl_2.0.21-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mqtt-modbus-gateway_2025-10-01_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mqtt_pub_2026-02-11_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./multiple_ap_2025-07-09-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./mwan3_2.10.12-20_all.ipk
+Generating index for package ./netifd_2025-05-23-7901e66c-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./networkmap_2026-01-13-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./nftables-nojson_1.0.7-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./nlbwmon_2026-01-13-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ntp_gps_2025-11-27-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ntpclient_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ntpd_4.2.8p15-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ntrip_client_v2_2025-08-26_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./odhcp6c_2021-01-09-53f07e90-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./odhcpd-ipv6only_2021-07-18-bc9d317f-260225.50289.3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./opcua_client_2026-01-22_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./opcua_server_2026-02-07-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./open62541_1.4.0_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./openconnect_9.12-8_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./opendnp3_43728627_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./openssh-sftp-server_9.6p1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./openssl-util_3.0.14-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./openvpn-openssl_2.6.14-21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./openwrt-keyring_2021-02-20-49283916-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./opkg_2021-06-13-1bf042dd-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./p11-kit_0.25.3-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./p910nd_0.97-9_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./package_restore_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./pam-radius_2024-09-30-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./pam-tacacs_2024-09-30-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./pam_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./port_eventsd_1.16-6_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ppp-mod-pppoe_2.4.9.git-2021-01-04-18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ppp-mod-pppol2tp_2.4.9.git-2021-01-04-18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ppp-mod-pptp_2.4.9.git-2021-01-04-18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ppp_2.4.9.git-2021-01-04-18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./pptpd_1.4.0-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./privoxy_3.0.32-5_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./procd-init_2021-02-23-37eed131-260225.50289.3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./procd_2021-02-23-37eed131-260225.50289.3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./profiler_2.18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-asyncio_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-base_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-cgi_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-cgitb_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-codecs_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-ctypes_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-decimal_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-distutils_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-email_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-light_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-logging_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-multiprocessing_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-ncurses_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-openssl_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-pydoc_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-sqlite3_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-unittest_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-urllib_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-uuid_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3-xml_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./python3_3.11.7-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./qc_trace_collector_7.20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./qdownload_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./qlog_7.20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./qos-scripts_1.3.1-260225.50289.1_all.ipk
+Generating index for package ./quectel_flash_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./quota_limit_2025-07-09-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./reboot_utils-periodic_2026-01-22-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./reboot_utils-ping_2026-01-22-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./reboot_utils_2026-01-22-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./relayd_2020-04-25-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./resolveip_2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpc_esim_1.7.1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpcd-mod-file_2025-12-10-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpcd-mod-iwinfo_2025-12-10-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpcd-mod-mnfinfo_2.30_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpcd-mod-rc_2025-12-10-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpcd-mod-rpcsys_2025-12-10-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpcd-mod-rrdns_2025-03-25_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpcd-mod-smslimit_7.20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpcd-mod-uci_2025-12-10-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rpcd_2025-12-10-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rtl8761bu-firmware_20241110-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./rut_fota_2.24_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./samba36-server_3.6.25-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./scep_2025-05-12-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./serial_2024-11-21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./session_2025-12-10-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./shellinabox_2025-03-25-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./sim_idle_protection_7.18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./sim_switch_2026-01-13-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./siteman_7.21-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./smpp_2025-10-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mib_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-chilli_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-device_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-gps_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-gsm_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-io_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-mwan3_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-port_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-sqm_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-universalgwd_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-vlan_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp-mod-wireless_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmp_2026-01-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmpd_5.9.1-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snmptrap_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./snsupdate_1.3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./socat_1.7.3.4-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./sodog-tlt_2025-04-23_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./speedtest_2025-11-26-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./sqm-scripts_1.5.1-3_all.ipk
+Generating index for package ./sshfs_3.7.1-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./sstp-client_1.0.19-5_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./stm32flasher_2.7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./storage-memory-expansion_2025-04-29-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-charon_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-libtls_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-minimal_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-connmark_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-constraints_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-curl_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-eap-identity_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-eap-mschapv2_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-kdf_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-kernel-netlink_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-md4_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-mgf1_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-nonce_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-openssl_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-pem_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-pgp_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-pkcs1_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-pkcs7_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-pkcs8_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-pubkey_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-random_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-revocation_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-socket-default_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-tpm_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-updown_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-vici_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-x509_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-xauth-generic_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-mod-xcbc_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-pki_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-swanctl_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan-tss-tss2_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./strongswan_5.9.14-33_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./stunnel_5.72-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./swanmon_0.3-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./swconfig_17_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./sysupgrade-helper_1.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tailscale_1.86.2-14_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tc-tiny_5.19.0-260225.50289_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tcpdump_4.99.5-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./telnet_1.34.1-260225.50289.18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./terminfo_6.5-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tinc_1.0.36-9_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tlt-ddns_2026-02-02-8_all.ipk
+Generating index for package ./tlt-minidlna_2022-08-29-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tlt-ulogd_2.0.7-6_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tpm2-openssl_1.3.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tpm2-tools_5.7-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tpm2-tss_4.1.3-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tpm2_importer_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tpm_flasher_1.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tpm_manager_1.4-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./travelmate_2.1.0-1_all.ipk
+Generating index for package ./troubleshoot_1.4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./twStreamApp_2026-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./uboot-ipq40xx_3.3.2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ubox_2020-10-25-9ef88681-13_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ubus_2025-10-19-6fdf7a97-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ubusd_2025-10-19-6fdf7a97-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./uci-default_2024-08-05-11_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./uci_2021-10-22-f84f49f0-18-18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./uclient-fetch_2021-05-14-6a6011df-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ucode-mod-fs_2023-06-06-v0.0.202-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ucode-mod-nl80211_2023-06-06-v0.0.202-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ucode-mod-rtnl_2023-06-06-v0.0.202-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ucode-mod-ubus_2023-06-06-v0.0.202-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ucode-mod-uloop_2023-06-06-v0.0.202-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ucode_2023-06-06-v0.0.202-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./udhcpc_1.34.1-260225.50289.18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./udprelay_2020-02-26-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./uhttpd-mod-lua_2021-03-21-15346de8-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./uhttpd-mod-ubus_2021-03-21-15346de8-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./uhttpd_2021-03-21-15346de8-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ulogd-mod-extra_2.0.7-6_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ulogd-mod-nflog_2.0.7-6_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./ulogd_2.0.7-6_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./untpd_1.34.1-260225.50289.18_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./uqmi_56cb2d40-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./urandom-seed_3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./urcd_1.10_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./urngd_2020-01-21-c7f7b6b6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./usign_2020-05-23-f1f65026-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./uxfp_7.21_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vpnc-scripts_20151220-4_all.ipk
+Generating index for package ./vrrpd_1.15-6_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./web_filter_2021-02-11-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./wifi-scripts_1.0-8_all.ipk
+Generating index for package ./wifi_scanner_2025-11-14-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./wireguard-tools_1.0.20210223-12_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./wireless-regdb_2024.10.07-1_all.ipk
+Generating index for package ./wpa-cli_2.12-dev-6_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./wpad-openssl_2.12-dev-6_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./wwan_2019-04-29-8_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./xfrm_4_all.ipk
+Generating index for package ./xl2tpd6_1.3.17-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./xl2tpd_1.3.16-20_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./zerotier_1.14.0-7_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./zlib_1.2.11-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./luci-lib-ip_git-20.250.76529-62505bd_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./luci-lib-nixio_git-20.234.06894-c4a4e43_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libattr_2.4.48-2_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libev_4.31-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libid3tag_0.15.1b-4_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libjpeg-turbo_2.0.6-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./liblzma_5.2.5-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libmagic_5.39-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libminiupnpc_2.2.1-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libnatpmp1_20150609-3_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libogg0_1.3.4-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./libvorbis_1.3.7-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./lua-md5_1.3-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./api-core_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hs_theme_airport2_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hs_theme_airport_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hs_theme_bus_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hs_theme_coffee_shop_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hs_theme_grocery_store_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hs_theme_office_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hs_theme_park_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hs_theme_ship_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./hs_theme_station_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./lrexlib_2021-12-28_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./lua_crypto_1.0-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./lua_extra_validators_2021-12-28_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./tlt_hs_theme_default_2022-07-27_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-access-control-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-access-control-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-administration-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-administration-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-apn-database-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-apn-database-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-auto-reboot-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-auto-reboot-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-aws-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-aws-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-azure-iothub-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-azure-iothub-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-backup-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-backup-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-bacnet-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-bacnet-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-bfd-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-bfd-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-bluetooth-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-bluetooth-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-call-utilities-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-call-utilities-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-certificates-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-certificates-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-channel-analysis-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-channel-analysis-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-cli-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-cli-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-coovachilli-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-coovachilli-themes-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-coovachilli-themes-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-coovachilli-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-core-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-core-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-cumulocity-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-cumulocity-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-advanced_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-azure_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-bluetooth_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-dlms_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-dnp3_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-format-custom_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-gsm_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-http_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-iec60870_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-impulse_counter_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-lua-in_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-lua_format_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-mdcollect_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-modbus-alarm_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-modbus_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-mqtt-in_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-mqtt-out_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-opcua_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-ubus_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api-mod-wifiscan_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-data-sender-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ddns-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ddns-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dhcp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dhcp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dlms-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dlms-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dmvpn-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dmvpn-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dnp3-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dnp3-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dns-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dns-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dot1x-client-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-bgp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-bgp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-eigrp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-eigrp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-nhrp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-nhrp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-ospf-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-ospf-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-rip-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-dynamic-routes-rip-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-email-recipients-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-email-recipients-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-email-relay-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-email-relay-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-email-to-sms-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-email-to-sms-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-eoip-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-eoip-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-event-juggler-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-event-juggler-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-events-reporting-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-events-reporting-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-firewall-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-firewall-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-firmware-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-firmware-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-getty-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-getty-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-gps-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-gps-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-gre-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-gre-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-hotspot2-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-hotspot2-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-https-dns-proxy-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-https-dns-proxy-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-iec60870-client-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-iec60870-client-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-iec60870-server-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-iec60870-server-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-igmp-proxy-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-igmp-proxy-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-impulse-counter-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-impulse-counter-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-internet-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-internet-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-io-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-io-juggler-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-io-juggler-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-io-scheduler-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-io-scheduler-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-io-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-jool-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-jool-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-l2tp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-l2tp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-landingpage_2021-02-19-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-logs-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-logs-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-memory-expansion-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-memory-expansion-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-minidlna-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-minidlna-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mobile-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mobile-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mobile-usage-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mobile-usage-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mobile-utilities-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mobile-utilities-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-client-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-client-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-gateway-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-gateway-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-serial-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-serial-gateway-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-serial-gateway-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-serial-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-server-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modbus-server-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modem-control-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-modem-control-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mpls-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mpls-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mqtt-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mqtt-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-multiusers-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-multiusers-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mwan3-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-mwan3-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-network-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-network-devices-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-network-devices-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-network-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-network-usage-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-network-usage-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-networkmap-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-networkmap-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ntp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ntp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ntpd-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ntpd-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ntrip-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ntrip-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-opcua-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-opcua-server-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-opcua-server-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-opcua-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-openconnect-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-openconnect-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-openvpn-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-openvpn-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-overip-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-overip-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-overview-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-overview-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-p910nd-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-p910nd-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-package-manager-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-package-manager-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-pamd-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-pamd-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-password-policy-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-password-policy-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-phone-recipients-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-phone-recipients-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-port-mirroring-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-port-mirroring-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-port-security-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ports-settings-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ports-settings-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-pptp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-pptp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-profiles-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-profiles-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-qos-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-qos-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-realtime-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-realtime-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-relayd-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-relayd-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-reset-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-routes-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-routes-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-rut-fota-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-rut-fota-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-samba-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-samba-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-services-status-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-services-status-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-setup-wizard-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-setup-wizard-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-side-widget-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-side-widget-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-sim-idle-protection-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-sim-idle-protection-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-site-manager-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-site-manager-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-smpp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-smpp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-snmp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-snmp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-speed-test-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-speed-test-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-sqm-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-sqm-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-sshfs-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-sshfs-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-sstp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-sstp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-starlink-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-starlink-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-strong-swan-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-strong-swan-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-stunnel-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-stunnel-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-system-info-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-system-status-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-system-status-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-tailscale-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-tailscale-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-tcpdump-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-telnet-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-thingworx-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-thingworx-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-tinc-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-tinc-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-tr069-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-tr069-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-travelmate-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-troubleshoot-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-troubleshoot-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-udprelay-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-udprelay-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ui-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ulog-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-ulog-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-universal-gateway-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-upnp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-upnp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-usb-tools-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-usb-tools-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-uscripts-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-uscripts-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-vlan-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-vlan-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-vrf-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-vrf-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-vrrp-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-vrrp-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-vxlan-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-vxlan-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-webfilter-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-webfilter-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-wifi-scanner-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-wifi-scanner-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-wireguard-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-wireguard-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-wireless-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-wireless-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-wol-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-wol-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-zerotier-api_1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-app-zerotier-ui_2026-02-23-4f4044c88cc-1_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-i18n-german_2023-01-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-i18n-japanese_2025-04-08_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-i18n-portuguese_2023-01-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-i18n-spanish_2023-03-02_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-i18n-turkish_2023-01-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-i18n-ukrainian_2025-01-16_arm_cortex-a7_neon-vfpv4.ipk
+Generating index for package ./vuci-ui-core_2026-02-23-4f4044c88cc-3_arm_cortex-a7_neon-vfpv4.ipk

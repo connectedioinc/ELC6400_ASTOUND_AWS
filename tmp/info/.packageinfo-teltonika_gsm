@@ -1,0 +1,81 @@
+Source-Makefile: package/teltonika/gsm/Makefile
+
+Package: libgsm
+Version: 7.21.1
+Depends: +libc +libblobmsg-json +libubus +libubox +libboardjson +IO_SUPPORT:iomand
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library for manage gsm API. Read, list, delete, etc. For parse AT commands
+Maintainer: 
+Source: gsm-7.21.1-7.21.1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A library for manage gsm API. Read, list, delete, etc. For parse AT commands
+Description: 	A simple lib with AT commands parser. Created by Teltonika
+
+@@
+
+Package: liburc
+Version: 7.21.1
+Depends: +libc +libubus +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library to handle URC
+Maintainer: 
+Source: gsm-7.21.1-7.21.1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A library to handle URC
+Description: A library to handle URC
+
+@@
+
+Package: gsmd
+Version: 7.21.1
+Depends: +libc +libubus +libubox +libblobmsg-json +modems +kmod-usb-serial-option +libmnfinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Simple server to route AT commands to modem
+Maintainer: 
+Require-User: gsm=509:gsm=509
+Groups: gsm:gpio
+Source: gsm-7.21.1-7.21.1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Simple server to route AT commands to modem
+Description: 	Simple server to route GSM modem AT commands. Created by Teltonika
+
+@@
+
+Package: gsmctl
+Version: 7.21.1
+Depends: +libc +libblobmsg-json +libubus +libgsm +gsmd +libtlt_uci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Sending AT commands by ubus to gsmd deamon app
+Maintainer: 
+Source: gsm-7.21.1-7.21.1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Sending AT commands by ubus to gsmd deamon app
+Description: 	Simple executable application to execute and read GSM modem AT commands. Created by Teltonika
+
+@@
+
+

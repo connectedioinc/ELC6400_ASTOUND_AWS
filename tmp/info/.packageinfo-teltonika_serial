@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/serial/Makefile
+
+Package: serial
+Version: 2024-11-21
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: General serial device package.
+Maintainer: 
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: General serial device package.
+Description: 	General serial device package. Contains files which don't belong to any specific serial service.
+
+@@
+
+

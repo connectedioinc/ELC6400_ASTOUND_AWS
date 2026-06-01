@@ -1,0 +1,49 @@
+Source-Makefile: package/network/services/dropbear/Makefile
+
+Package: dropbear
+Version: 2025.88-4
+Depends: +libc +DROPBEAR_ZLIB:zlib +libubus +libubox +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Base system
+Title: Small SSH2 client/server
+Maintainer: 
+CPE-ID: cpe:/a:dropbear_ssh_project:dropbear_ssh
+Require-User: dropbear:dropbear
+Source: dropbear-2025.88.tar.bz2
+License: MIT
+LicenseFiles: LICENSE libtomcrypt/LICENSE libtommath/LICENSE
+Type: ipkg
+Detail-Description: Small SSH2 client/server
+Description:  A small SSH2 server/client designed for small memory environments.
+http://matt.ucc.asn.au/dropbear/
+
+@@
+Config:
+	source "package/network/services/dropbear/Config.in"
+@@
+
+Package: dropbearconvert
+Version: 2025.88-4
+Depends: +libc +DROPBEAR_ZLIB:zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Utility for converting SSH keys
+Maintainer: 
+CPE-ID: cpe:/a:dropbear_ssh_project:dropbear_ssh
+Source: dropbear-2025.88.tar.bz2
+License: MIT
+LicenseFiles: LICENSE libtomcrypt/LICENSE libtommath/LICENSE
+Type: ipkg
+Detail-Description: Utility for converting SSH keys
+Description: Utility for converting SSH keys
+http://matt.ucc.asn.au/dropbear/
+
+@@
+
+

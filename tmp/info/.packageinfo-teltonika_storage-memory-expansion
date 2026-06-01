@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/storage-memory-expansion/Makefile
+
+Package: storage-memory-expansion
+Submenu: Filesystem
+Version: 2025-04-29-1
+Depends: +libc +fstools +fmt-usb-msd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Storage Memory Expansion script
+Maintainer: 
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Storage Memory Expansion script
+Description: 	Sets up overlay on a USB Mass Storage Device
+
+@@
+
+

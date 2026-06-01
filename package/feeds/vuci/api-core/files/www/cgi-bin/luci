@@ -1,0 +1,13 @@
+#!/usr/bin/lua
+
+io.write("Status: 200 OK\r\n")
+io.write("Content-Type: text/html\r\n\r\n")
+io.write([[
+  <html>
+    <head>
+    </head>
+    <body>
+      <script>window.location = window.location.origin + '/status/overview'</script>
+    </body>
+  </html>
+]])

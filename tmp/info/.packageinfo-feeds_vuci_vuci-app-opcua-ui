@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-opcua-ui/Makefile
+
+Package: vuci-app-opcua-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-opcua-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for OPCUA
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for OPCUA
+Description: VuCI UI Support for OPCUA
+
+@@
+
+

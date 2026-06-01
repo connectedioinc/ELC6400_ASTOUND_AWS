@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-channel-analysis-ui/Makefile
+
+Package: vuci-app-channel-analysis-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-channel-analysis-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Channel Analysis
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Channel Analysis
+Description: VuCI UI Support for Channel Analysis
+
+@@
+
+

@@ -1,0 +1,9 @@
+{
+	"user": "rpcd",
+	"access": {
+		"date_time": {
+			"methods": [ "set_time" ]
+		}
+	},
+	"publish": [ "date_time" ]
+}

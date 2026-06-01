@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/aws/Makefile
+
+Package: aws
+Version: 2026-02-11-1
+Depends: +libc +libubus +libuci +libaws-iot-device-sdk-embedded-C +libmosquitto +libtlt-logger +libubox +libblobmsg-json +libatomic +libapi +libopenssl +libcurl +libmnfinfo +TPM_SUPPORT:libtpm2_importer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: AWS client
+Maintainer: 
+Require-User: aws=508:aws=508
+Source: aws-2026-02-11-1.6.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: AWS client
+Description: 	AWS Cloud support.
+
+@@
+
+

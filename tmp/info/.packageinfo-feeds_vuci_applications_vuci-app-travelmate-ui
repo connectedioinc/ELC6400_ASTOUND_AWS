@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/applications/vuci-app-travelmate-ui/Makefile
+
+Package: vuci-app-travelmate-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-app-wireless-ui +travelmate +vuci-ui-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for travelmate
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for travelmate
+Description: 	Travelmate package provides "Redirect captive portal" functionality to wireless clients.
+
+@@
+
+

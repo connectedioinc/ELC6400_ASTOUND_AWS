@@ -1,0 +1,100 @@
+Source-Makefile: package/utils/busybox/Makefile
+Build-Depends: BUSYBOX_CONFIG_PAM:libpam
+
+Package: telnet
+Version: 1.34.1-0.18
+Depends: +libc +BUSYBOX_CONFIG_PAM:libpam +BUSYBOX_CONFIG_NTPD:jsonfilter +libubus +libubox +BUSYBOX_CONFIG_FEATURE_IP_BLOCKD:libtlt-logger +BUSYBOX_CONFIG_PASSWD:libtlt-logger +BUSYBOX_CONFIG_FEATURE_NETIFD:libnetifd +BUSYBOX_CONFIG_FEATURE_PASSWORD_POLICY:libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Telnet server
+Maintainer: 
+CPE-ID: cpe:/a:busybox:busybox
+Require-User: telnetd:telnetd
+FileAttributes: /usr/sbin/telnetd::::cap_net_bind_service=ep
+Source: busybox-1.34.1.tar.bz2
+License: GPL-2.0-only
+LicenseFiles: LICENSE archival/libarchive/bz/LICENSE
+Type: ipkg
+Detail-Description: Telnet server
+Description:  This package contains a telnet server.
+
+@@
+
+Package: untpd
+Version: 1.34.1-0.18
+Depends: +libc +libubus +libnetifd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Stripped down NTPD (busybox) version
+Maintainer: 
+CPE-ID: cpe:/a:busybox:busybox
+Require-User: ntp=547:ntp=547
+FileAttributes: /usr/sbin/untpd::::cap_net_bind_service=ep
+Source: busybox-1.34.1.tar.bz2
+License: GPL-2.0-only
+LicenseFiles: LICENSE archival/libarchive/bz/LICENSE
+Type: ipkg
+Detail-Description: Stripped down NTPD (busybox) version
+Description: Stripped down NTPD (busybox) version
+
+@@
+
+Package: udhcpc
+Version: 1.34.1-0.18
+Depends: +libc +libcap +libubus +libnetifd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: DHCPv4 client from Busybox
+Maintainer: 
+CPE-ID: cpe:/a:busybox:busybox
+Require-User: udhcpc:udhcpc
+FileAttributes: /sbin/udhcpc::::cap_net_raw,cap_net_bind_service=ep
+Source: busybox-1.34.1.tar.bz2
+License: GPL-2.0-only
+LicenseFiles: LICENSE archival/libarchive/bz/LICENSE
+Type: ipkg
+Detail-Description: DHCPv4 client from Busybox
+Description:  DHCPv4 client package
+
+@@
+
+Package: busybox
+Version: 1.34.1-0.18
+Depends: +libc +BUSYBOX_CONFIG_PAM:libpam +BUSYBOX_CONFIG_NTPD:jsonfilter +libubus +libubox +BUSYBOX_CONFIG_FEATURE_IP_BLOCKD:libtlt-logger +BUSYBOX_CONFIG_PASSWD:libtlt-logger +BUSYBOX_CONFIG_FEATURE_NETIFD:libnetifd +BUSYBOX_CONFIG_FEATURE_PASSWORD_POLICY:libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: default
+Section: base
+Category: Base system
+Repository: base
+Title: Core utilities for embedded Linux
+Maintainer: Felix Fietkau <nbd@nbd.name>
+CPE-ID: cpe:/a:busybox:busybox
+Source: busybox-1.34.1.tar.bz2
+License: GPL-2.0-only
+LicenseFiles: LICENSE archival/libarchive/bz/LICENSE
+Type: ipkg
+Detail-Description: Core utilities for embedded Linux
+Description:  The Swiss Army Knife of embedded Linux.
+ It slices, it dices, it makes Julian Fries.
+http://busybox.net/
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+	source "package/utils/busybox/Config.in"
+@@
+
+

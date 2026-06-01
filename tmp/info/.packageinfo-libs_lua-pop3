@@ -1,0 +1,24 @@
+Source-Makefile: package/libs/lua-pop3/Makefile
+
+Package: lua-pop3
+Submenu: Lua
+Version: 0.1.6-1
+Depends: +libc +luasocket +lua-md5 +luasec
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: LUA POP3 LIB
+Maintainer: 
+Source: v0.1.6.tar.gz
+License: MIT
+LicenseFiles: LICENSE.txt
+Type: ipkg
+Detail-Description: LUA POP3 LIB
+Description: LUA POP3 LIB
+
+@@
+
+

@@ -1,0 +1,1061 @@
+{
+  "openapi": "3.0.0",
+  "tags": [],
+  "paths": {
+    "/port_based_vlan/config": {
+      "get": {
+        "tags": [
+          "VLAN"
+        ],
+        "summary": "Returns Port Based VLANs",
+        "description": "",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PortBaseMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "VLAN"
+        ],
+        "summary": "Deletes Port Based VLANs",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "VLAN"
+        ],
+        "summary": "Creates Port Based VLAN",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200PortBase"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "The ID of the Port Based VLAN configuration.",
+                            "x-web": {
+                              "pretty": "Configuration ID",
+                              "input-type": "input",
+                              "hw_tags": {
+                                "is_switch": true
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "$ref": "#/components/schemas/port_based_options"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "VLAN"
+        ],
+        "summary": "Updates Port Based VLANs",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PortBaseMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of objects",
+                    "items": {
+                      "allOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "description": "The ID of the Port Based VLAN configuration.",
+                              "x-web": {
+                                "pretty": "Configuration ID",
+                                "input-type": "input"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "$ref": "#/components/schemas/port_based_options"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": [
+          "Network",
+          "VLAN",
+          "Port Based"
+        ],
+        "hw_tags": {
+          "vlan": 1,
+          "is_access_point": false
+        },
+        "name": "Port Based VLAN"
+      }
+    },
+    "/port_based_vlan/config/{id}": {
+      "get": {
+        "tags": [
+          "VLAN"
+        ],
+        "summary": "Returns Port Based VLAN",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PortBase"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "VLAN"
+        ],
+        "summary": "Deletes Port Based VLAN",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "VLAN"
+        ],
+        "summary": "Updates Port Based VLAN",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PortBase"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/port_based_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "The ID of Port Based VLAN configuration."
+        }
+      ],
+      "x-web": {
+        "menu": [
+          "Network",
+          "VLAN",
+          "Port Based"
+        ],
+        "hw_tags": {
+          "vlan": 1,
+          "is_access_point": false
+        },
+        "name": "Port Based VLAN"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200PortBase": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "The ID of the Port Based VLAN configuration.",
+                          "x-web": {
+                            "pretty": "Configuration ID",
+                            "input-type": "input",
+                            "hw_tags": {
+                              "is_switch": true
+                            }
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "$ref": "#/components/schemas/port_based_options"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "200PortBaseMulti": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "The ID of the Port Based VLAN configuration.",
+                            "x-web": {
+                              "pretty": "Configuration ID",
+                              "input-type": "input"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "$ref": "#/components/schemas/port_based_options"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "port_based_options": {
+        "type": "object",
+        "properties": {
+          "vid": {
+            "x-web": {
+              "pretty": "VLAN ID",
+              "input-type": "input",
+              "unique": true,
+              "hw_tags": {
+                "is_switch": false
+              }
+            },
+            "type": "string",
+            "description": "VLAN ID."
+          },
+          "vlan": {
+            "x-web": {
+              "pretty": "VLAN ID",
+              "input-type": "input",
+              "hw_tags": {
+                "is_switch": true
+              }
+            },
+            "type": "string",
+            "description": "VLAN ID."
+          },
+          "name": {
+            "x-web": {
+              "pretty": "Name",
+              "input-type": "input",
+              "hw_tags": {
+                "is_switch": true
+              }
+            },
+            "type": "string",
+            "description": "Name of the VLAN."
+          },
+          "lan": {
+            "type": "string",
+            "description": "LAN port configuration.",
+            "x-web": {
+              "pretty": "LAN",
+              "input-type": "select",
+              "enum-pretty": {
+                "": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "vlan": 1,
+                "is_switch": false,
+                "single_vlan_lan_port": true
+              }
+            },
+            "enum": [
+              "",
+              "u",
+              "t"
+            ]
+          },
+          "lan1": {
+            "type": "string",
+            "description": "LAN 1 port configuration.",
+            "x-web": {
+              "pretty": "LAN 1",
+              "input-type": "select",
+              "enum-pretty": {
+                "": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "vlan": 1,
+                "is_switch": false,
+                "single_vlan_lan_port": false
+              }
+            },
+            "enum": ["", "u", "t"]
+          },
+          "lan2": {
+            "type": "string",
+            "description": "LAN 2 port configuration.",
+            "x-web": {
+              "pretty": "LAN 2",
+              "input-type": "select",
+              "enum-pretty": {
+                "": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "vlan": 2,
+                "is_switch": false
+              }
+            },
+            "enum": ["", "u", "t"]
+          },
+          "lan3": {
+            "type": "string",
+            "description": "LAN 3 port configuration.",
+            "x-web": {
+              "pretty": "LAN 3",
+              "input-type": "select",
+              "enum-pretty": {
+                "": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "vlan": 3,
+                "is_switch": false
+              }
+            },
+            "enum": ["", "u", "t"]
+          },
+          "lan4": {
+            "type": "string",
+            "description": "LAN 4 port configuration.",
+            "x-web": {
+              "pretty": "LAN 4",
+              "input-type": "select",
+              "enum-pretty": {
+                "": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "vlan": 4,
+                "is_switch": false
+              }
+            },
+            "enum": ["", "u", "t"]
+          },
+          "wan": {
+            "type": "string",
+            "description": "WAN port configuration.",
+            "x-web": {
+              "pretty": "WAN",
+              "input-type": "select",
+              "enum-pretty": {
+                "": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "vlan_wan": true,
+                "is_switch": false
+              }
+            },
+            "enum": ["", "u", "t"]
+          },
+          "port1": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 1",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 1
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "port2": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 2",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 2
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "port3": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 3",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 3
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "port4": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 4",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 4
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "port5": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 5",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 5
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "port6": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 6",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 6
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "port7": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 7",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 7
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "port8": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 8",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 8
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port9": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 9",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 9
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port10": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 10",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 10
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port11": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 11",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 11
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port12": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 12",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 12
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port13": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 13",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 13
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port14": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 14",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 14
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port15": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 15",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 15
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port16": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 16",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 16
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port17": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 17",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 17
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port18": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 18",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 18
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port19": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 19",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 19
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port20": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 20",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 20
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port21": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 21",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 21
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port22": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 22",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 22
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port23": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 23",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 23
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "port24": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port 24",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "eth_ports": 24
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "sfp1": {
+            "type": "string",
+            "x-web": {
+              "pretty": "SFP 1",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "sfp_ports": 1
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "sfp2": {
+            "type": "string",
+            "x-web": {
+              "pretty": "SFP 2",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "sfp_ports": 2
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "sfp3": {
+            "type": "string",
+            "x-web": {
+              "pretty": "SFP 3",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "sfp_ports": 3
+              }
+            },
+            "enum": [
+              "u",
+              "t",
+              "off"
+            ]
+          },
+          "sfp4": {
+            "type": "string",
+            "x-web": {
+              "pretty": "SFP 4",
+              "input-type": "select",
+              "enum-pretty": {
+                "off": "Off",
+                "u": "Untagged",
+                "t": "Tagged"
+              },
+              "hw_tags": {
+                "is_switch": true,
+                "sfp_ports": 4
+              }
+            },
+            "enum": ["u", "t", "off"]
+          },
+          "device": {
+            "type": "string",
+            "description": "Name of the device to which the VLAN belongs.",
+            "x-web": {
+              "pretty": "Device",
+              "input-type": "input",
+              "hw_tags": {
+                "dsa": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

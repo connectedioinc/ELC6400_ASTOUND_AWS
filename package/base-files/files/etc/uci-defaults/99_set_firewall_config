@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#Firewall changes for VPN
+uci set firewall.@zone[1].network='wan wan6 mob1s1a1 mob1s2a1 vpnclient remoteaccessvpn'
+#Zone for Wifi
+uci add firewall zone
+uci set firewall.@zone[-1].name='wifi'
+uci set firewall.@zone[-1].network='wifi'
+uci set firewall.@zone[-1].input='ACCEPT'
+uci set firewall.@zone[-1].output='ACCEPT'
+uci set firewall.@zone[-1].forward='ACCEPT'
+#Forwarding rule for Wifi
+uci add firewall forwarding
+uci set firewall.@forwarding[-1].src='wifi'
+uci set firewall.@forwarding[-1].dest='wan'
+
+uci commit firewall
+
+exit 0

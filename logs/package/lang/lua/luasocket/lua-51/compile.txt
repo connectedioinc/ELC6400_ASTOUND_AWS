@@ -1,0 +1,586 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/lang/lua/luasocket'
+luasocket-2019-04-21-733af884-733af884f1aa18ff469bf3c4d18810e815853211.tar.xz: Download from https://github.com/diegonehab/luasocket failed
+luasocket-2019-04-21-733af884-733af884f1aa18ff469bf3c4d18810e815853211.tar.xz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'luasocket-2019-04-21-733af884-733af884f1aa18ff469bf3c4d18810e815853211'...
+Note: switching to '733af884f1aa18ff469bf3c4d18810e815853211'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 733af88 Merge pull request #280 from ewestbrook/rockspec-scm
+Packing checkout...
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.prepared_05a772f2964e79da838559748e985c16_6664517399ebbbc92a37c5bb081b5c53_check
+
+Applying ./patches/0001-Add-interface-support.patch using plaintext: 
+patching file src/if.c
+patching file src/if.h
+patching file src/luasocket.c
+patching file src/makefile
+patching file src/options.c
+
+Applying ./patches/0301-Fix-mpc85xx-build.patch using plaintext: 
+patching file src/makefile
+
+Applying ./patches/040-remove-fpic-and-warnings.patch using plaintext: 
+patching file src/makefile
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.prepared_05a772f2964e79da838559748e985c16_6664517399ebbbc92a37c5bb081b5c53
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.configured_*
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.luasocket.lua-51_installed
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.built_check
+printf "%s\n" "• luasocket is rebuilt"
+• luasocket is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "luasocket" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src -type f -name '*.lua' | while read src; do if LUA_PATH="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib/lua/5.1/?.lua" luasrcdiet --noopt-binequiv --noopt-emptylines -o "$src.o" "$src"; then mv "$src.o" "$src"; fi; done; 
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       4      23      5.75
+----------------------------------------------------------
+Local (in)            37      62     356    2038      5.72
+TOTAL (in)            39      62     360    2061      5.72
+----------------------------------------------------------
+Local (out)           10      62     356     356      1.00
+TOTAL (out)           12      62     360     379      1.05
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/url.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/url.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           250    1020      4.08     250    1020      4.08
+TK_NAME              469    2680      5.71     469     998      2.13
+TK_NUMBER             21      22      1.05      21      22      1.05
+TK_STRING             91     475      5.22      91     475      5.22
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                517     558      1.08     517     558      1.08
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT           114    4788     42.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               331     331      1.00     331     331      1.00
+TK_SPACE             761    1801      2.37     183     183      1.00
+--------------------------------------------------------------------
+Total Elements      2555   11675      4.57    1863    3587      1.93
+--------------------------------------------------------------------
+Total Tokens        1349    4755      3.52    1349    3073      2.28
+--------------------------------------------------------------------
+* WARNING: before and after binary chunks are NOT equivalent!
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0      21     122      5.81
+----------------------------------------------------------
+Local (in)            20      36     148     719      4.86
+TOTAL (in)            24      36     169     841      4.98
+----------------------------------------------------------
+Local (out)            5      36     148     148      1.00
+TOTAL (out)            9      36     169     270      1.60
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/mbox.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/mbox.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            91     384      4.22      91     384      4.22
+TK_NAME              215    1157      5.38     215     586      2.73
+TK_NUMBER              8       8      1.00       8       8      1.00
+TK_STRING             30     207      6.90      30     207      6.90
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                245     250      1.02     245     250      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                92      92      1.00      92      92      1.00
+TK_SPACE             286     556      1.94      70      70      1.00
+--------------------------------------------------------------------
+Total Elements       968    2654      2.74     752    1597      2.12
+--------------------------------------------------------------------
+Total Tokens         590    2006      3.40     590    1435      2.43
+--------------------------------------------------------------------
+* WARNING: before and after binary chunks are NOT equivalent!
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       4      23      5.75
+----------------------------------------------------------
+Local (in)            30      47     176     765      4.35
+TOTAL (in)            32      47     180     788      4.38
+----------------------------------------------------------
+Local (out)           10      47     176     176      1.00
+TOTAL (out)           12      47     180     199      1.11
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/socket.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/socket.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           158     710      4.49     158     710      4.49
+TK_NAME              244    1172      4.80     244     583      2.39
+TK_NUMBER              6       9      1.50       6       9      1.50
+TK_STRING             24     233      9.71      24     233      9.71
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                324     331      1.02     324     331      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            14     830     59.29       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               149     149      1.00     149     149      1.00
+TK_SPACE             371    1014      2.73     106     106      1.00
+--------------------------------------------------------------------
+Total Elements      1291    4448      3.45    1012    2121      2.10
+--------------------------------------------------------------------
+Total Tokens         757    2455      3.24     757    1866      2.46
+--------------------------------------------------------------------
+* WARNING: before and after binary chunks are NOT equivalent!
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       4      23      5.75
+----------------------------------------------------------
+Local (in)            19      19      90     397      4.41
+TOTAL (in)            21      19      94     420      4.47
+----------------------------------------------------------
+Local (out)            8      19      90      90      1.00
+TOTAL (out)           10      19      94     113      1.20
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/mime.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/mime.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            65     310      4.77      65     310      4.77
+TK_NAME              130     605      4.65     130     298      2.29
+TK_NUMBER              6       9      1.50       6       9      1.50
+TK_STRING             28     212      7.57      28     212      7.57
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                178     183      1.03     178     183      1.03
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            16     782     48.88       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                89      89      1.00      89      89      1.00
+TK_SPACE             153     273      1.78      39      39      1.00
+--------------------------------------------------------------------
+Total Elements       666    2463      3.70     536    1140      2.13
+--------------------------------------------------------------------
+Total Tokens         408    1319      3.23     408    1012      2.48
+--------------------------------------------------------------------
+* WARNING: before and after binary chunks are NOT equivalent!
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0      10      61      6.10
+----------------------------------------------------------
+Local (in)            66     116     549    2175      3.96
+TOTAL (in)            70     116     559    2236      4.00
+----------------------------------------------------------
+Local (out)           13     116     549     984      1.79
+TOTAL (out)           17     116     559    1045      1.87
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/ftp.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/ftp.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           266    1112      4.18     266    1112      4.18
+TK_NAME              930    4044      4.35     930    2853      3.07
+TK_NUMBER             26      46      1.77      26      46      1.77
+TK_STRING             78     678      8.69      78     678      8.69
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP               1090    1105      1.01    1090    1105      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            33    1711     51.85       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               329     329      1.00     329     329      1.00
+TK_SPACE             801    1615      2.02     216     216      1.00
+--------------------------------------------------------------------
+Total Elements      3554   10640      2.99    2936    6339      2.16
+--------------------------------------------------------------------
+Total Tokens        2391    6985      2.92    2391    5794      2.42
+--------------------------------------------------------------------
+* WARNING: before and after binary chunks are NOT equivalent!
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 6       0       7      37      5.29
+----------------------------------------------------------
+Local (in)            42      83     334    1403      4.20
+TOTAL (in)            48      83     341    1440      4.22
+----------------------------------------------------------
+Local (out)           10      83     334     334      1.00
+TOTAL (out)           16      83     341     371      1.09
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/ltn12.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/ltn12.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           356    1519      4.27     356    1519      4.27
+TK_NAME              403    1783      4.42     403     714      1.77
+TK_NUMBER             22      25      1.14      22      25      1.14
+TK_STRING             29     284      9.79      29     284      9.79
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                422     457      1.08     422     457      1.08
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            44    2046     46.50       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               319     319      1.00     319     319      1.00
+TK_SPACE             714    2439      3.42     271     271      1.00
+--------------------------------------------------------------------
+Total Elements      2310    8872      3.84    1823    3589      1.97
+--------------------------------------------------------------------
+Total Tokens        1233    4068      3.30    1233    2999      2.43
+--------------------------------------------------------------------
+* WARNING: before and after binary chunks are NOT equivalent!
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       4      23      5.75
+----------------------------------------------------------
+Local (in)            34      52     175     682      3.90
+TOTAL (in)            36      52     179     705      3.94
+----------------------------------------------------------
+Local (out)           11      52     175     250      1.43
+TOTAL (out)           13      52     179     273      1.53
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/tp.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/tp.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           132     580      4.39     132     580      4.39
+TK_NAME              246    1067      4.34     246     635      2.58
+TK_NUMBER              4       5      1.25       4       5      1.25
+TK_STRING             15     128      8.53      15     128      8.53
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                268     279      1.04     268     279      1.04
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            20     956     47.80       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               134     134      1.00     134     134      1.00
+TK_SPACE             285     617      2.16     104     104      1.00
+--------------------------------------------------------------------
+Total Elements      1105    3766      3.41     904    1865      2.06
+--------------------------------------------------------------------
+Total Tokens         666    2059      3.09     666    1627      2.44
+--------------------------------------------------------------------
+* WARNING: before and after binary chunks are NOT equivalent!
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0      10      65      6.50
+----------------------------------------------------------
+Local (in)            52      83     330    1605      4.86
+TOTAL (in)            54      83     340    1670      4.91
+----------------------------------------------------------
+Local (out)           13      83     330     516      1.56
+TOTAL (out)           15      83     340     581      1.71
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/smtp.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/smtp.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           182     797      4.38     182     797      4.38
+TK_NAME              522    2513      4.81     522    1424      2.73
+TK_NUMBER              8      14      1.75       8      14      1.75
+TK_STRING             77     742      9.64      77     742      9.64
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                647     670      1.04     647     670      1.04
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            48    2092     43.58       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               255     255      1.00     255     255      1.00
+TK_SPACE             480     991      2.06     139     139      1.00
+--------------------------------------------------------------------
+Total Elements      2220    8074      3.64    1831    4041      2.21
+--------------------------------------------------------------------
+Total Tokens        1437    4736      3.30    1437    3647      2.54
+--------------------------------------------------------------------
+* WARNING: before and after binary chunks are NOT equivalent!
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0      13      86      6.62
+----------------------------------------------------------
+Local (in)            71     138     586    2744      4.68
+TOTAL (in)            75     138     599    2830      4.72
+----------------------------------------------------------
+Local (out)           15     138     586     664      1.13
+TOTAL (out)           19     138     599     750      1.25
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/http.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/http.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           403    1653      4.10     403    1653      4.10
+TK_NAME              862    4366      5.06     862    2286      2.65
+TK_NUMBER             30      62      2.07      30      62      2.07
+TK_STRING             79     824     10.43      79     824     10.43
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP               1018    1064      1.05    1018    1064      1.05
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            76    3436     45.21       0       0      0.00
+TK_LCOMMENT            2      22     11.00       0       0      0.00
+TK_EOL               420     420      1.00     420     420      1.00
+TK_SPACE            1198    2741      2.29     332     332      1.00
+--------------------------------------------------------------------
+Total Elements      4089   14588      3.57    3145    6641      2.11
+--------------------------------------------------------------------
+Total Tokens        2393    7969      3.33    2393    5889      2.46
+--------------------------------------------------------------------
+* WARNING: before and after binary chunks are NOT equivalent!
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 1       0       1       7      7.00
+----------------------------------------------------------
+Local (in)             2       2       6      24      4.00
+TOTAL (in)             3       2       7      31      4.43
+----------------------------------------------------------
+Local (out)            1       2       6       6      1.00
+TOTAL (out)            2       2       7      13      1.86
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/headers.lua -> /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/headers.lua.o
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             3      16      5.33       3      16      5.33
+TK_NAME               10      52      5.20      10      34      3.40
+TK_NUMBER              0       0      0.00       0       0      0.00
+TK_STRING            183    2358     12.89     183    2358     12.89
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                377     377      1.00     377     377      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             5     235     47.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               103     103      1.00     103     103      1.00
+TK_SPACE             284     557      1.96       3       3      1.00
+--------------------------------------------------------------------
+Total Elements       966    3698      3.83     680    2891      4.25
+--------------------------------------------------------------------
+Total Tokens         574    2803      4.88     574    2785      4.85
+--------------------------------------------------------------------
+
+make -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ LIBDIR="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro" CC="arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic" LD="arm-openwrt-linux-muslgnueabi-ld -shared" LUAV=5.1 LUAINC_linux_base=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include all
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884'
+make -C src linux
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src'
+make all-unix PLAT=linux
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src'
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o luasocket.o luasocket.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o timeout.o timeout.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o buffer.o buffer.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o io.o io.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o auxiliar.o auxiliar.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o compat.o compat.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o options.o options.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o inet.o inet.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o if.o if.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o usocket.o usocket.c
+In file included from usocket.c:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/sys/poll.h:1:2: warning: #warning redirecting incorrect #include <sys/poll.h> to <poll.h> [-Wcpp]
+ #warning redirecting incorrect #include <sys/poll.h> to <poll.h>
+  ^~~~~~~
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o except.o except.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o select.o select.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o tcp.o tcp.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o udp.o udp.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic luasocket.o timeout.o buffer.o io.o auxiliar.o compat.o options.o inet.o if.o usocket.o except.o select.o tcp.o udp.o  -O -shared -osocket-3.0-rc1.so
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o mime.o mime.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic mime.o compat.o  -O -shared -omime-1.0.3.so
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o unixstream.o unixstream.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o unixdgram.o unixdgram.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o unix.o unix.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic buffer.o auxiliar.o options.o timeout.o io.o usocket.o unixstream.o unixdgram.o compat.o unix.o  -O -shared -ounix.so
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua/5.1 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/lua5.1 -DLUASOCKET_NODEBUG   -c -o serial.o serial.c
+arm-openwrt-linux-muslgnueabi-gcc -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884=luasocket-2019-04-21-733af884 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=Quectel,Meiglink -DDEVICE_MODEM_LIST=EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828 -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE -DPIC -fpic buffer.o compat.o auxiliar.o options.o timeout.o io.o usocket.o serial.o  -O -shared -oserial.so
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src'
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src'
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket.installed /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/{ltn12,mime,socket}.lua /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/mime-1.0.3.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/socket-3.0-rc1.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua/mime
+ln -sf ../mime-1.0.3.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua/mime/core.so
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua/socket
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/{ftp,http,smtp,tp,url,headers}.lua /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua/socket
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/unix.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua/socket
+ln -sf ../socket-3.0-rc1.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/usr/lib/lua/socket/core.so
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket.installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/.pkgdir/luasocket/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.luasocket_installed
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/luasocket_2019-04-21-733af884-2_arm_cortex-a7_neon-vfpv4.ipk'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/CONTROL /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/{ltn12,mime,socket}.lua /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/mime-1.0.3.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/socket-3.0-rc1.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua/mime
+ln -sf ../mime-1.0.3.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua/mime/core.so
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua/socket
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/{ftp,http,smtp,tp,url,headers}.lua /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua/socket
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/src/unix.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua/socket
+ln -sf ../socket-3.0-rc1.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua/socket/core.so
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket -name 'CVS' -o -name '.svn' -o -name '.#*' -o -name '*~'| xargs -r rm -rf
+export CROSS="arm-openwrt-linux-muslgnueabi-"  NO_RENAME=1 ; NM="arm-openwrt-linux-muslgnueabi-nm" STRIP="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sstrip -z" STRIP_KMOD="/media/home/FIRMWARES1/RUTX11/sdk2/scripts/strip-kmod.sh" PATCHELF="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/patchelf" /media/home/FIRMWARES1/RUTX11/sdk2/scripts/rstrip.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua/socket/unix.so: shared object
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua/mime-1.0.3.so: shared object
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/usr/lib/lua/socket-3.0-rc1.so: shared object
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket/CONTROL; ( echo "$CONTROL"; printf "Description: "; echo "$DESCRIPTION" | sed -e 's,^[[:space:]]*, ,g'; ) > control; chmod 644 control; ( echo "#!/bin/sh"; echo "[ \"\${IPKG_NO_SCRIPT}\" = \"1\" ] && exit 0"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_postinst \$0 \$@"; ) > postinst; ( echo "#!/bin/sh"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_prerm \$0 \$@"; ) > prerm; chmod 0755 postinst prerm;  )
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-build -m "" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+Packaged contents of /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/luasocket-lua-51/luasocket-2019-04-21-733af884/ipkg-arm_cortex-a7_neon-vfpv4/luasocket into /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/luasocket_2019-04-21-733af884-2_arm_cortex-a7_neon-vfpv4.ipk
+echo "luasocket" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/luasocket.lua-51.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/lang/lua/luasocket'
+time: package/lang/lua/luasocket/lua-51/compile#3.01#0.98#5.93

@@ -1,0 +1,1015 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/feeds/vuci/vuci-ui-core'
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.built_check
+printf "%s\n" "• vuci-ui-core is rebuilt"
+• vuci-ui-core is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "vuci-ui-core" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+make build-only -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc CC="gcc" CXX="g++" DL_DIR="/media/home/FIRMWARES1/RUTX11/sdk2/dl/vuci-ui-core" || { ls -al "/media/home/FIRMWARES1/RUTX11/sdk2/dl/vuci-ui-core/node_modules"; ls -al ""/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/node_modules""; cp -r "/media/home/FIRMWARES1/RUTX11/sdk2/dl/vuci-ui-core/node_modules" /media/home/FIRMWARES1/RUTX11/sdk2/bin/; exit 1; }
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc'
+rm -f -rf "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/node_modules"
+ln -s "/media/home/FIRMWARES1/RUTX11/sdk2/dl/vuci-ui-core/node_modules" "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/node_modules"
+
+> vuci@8.5.0_dev build-only
+> vite build
+
+vite v5.4.21 building for production...
+All menu.d references successfully mapped to views!
+[plugin:VuCI] [plugin VuCI] Some selected apps could not be found:
+
+1. [1;33mvuci-app-core[0m,
+2. [1;33mvuci-app-side-widget[0m,
+3. [1;33mvuci-app-travelmate[0m,
+4. [1;33mvuci-app-vxlan[0m
+This may cause failing build if files from these folders are not referenced anywhere.
+
+[plugin VuCI] Formatting the file contents...
+[plugin VuCI] Writing menu contents to [3;32m/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-menu.ts[0m
+[plugin VuCI] Contents successfully written to [3;32m/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-menu.ts[0m
+transforming...
+Found 1 warning while optimizing generated CSS:
+
+[2m│ }[22m
+[2m│ @media not all and (min-width: 48rem) {[22m
+[2m│[22m   :global(.hide) {
+[2m┆[22m           [33m[2m^--[22m 'global' is not recognized as a valid pseudo-class. Did you mean '::global' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     width: 0 !important;[22m
+[2m│     flex-grow: 0 !important;[22m
+
+Found 3 warnings while optimizing generated CSS:
+
+Issue #1:
+[2m│ /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */[22m
+[2m│ @layer properties;[22m
+[2m│[22m :deep(.cell) {
+[2m┆[22m       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   display: flex;[22m
+[2m│   min-width: calc(var(--spacing, 0.25rem) * 0);[22m
+
+Issue #2:
+[2m│   }[22m
+[2m│ }[22m
+[2m│[22m :deep(.cell.action-cell) {
+[2m┆[22m       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   flex-shrink: 0;[22m
+[2m│   flex-grow: 1;[22m
+
+Issue #3:
+[2m│   }[22m
+[2m│ }[22m
+[2m│[22m .with-drag:deep(.cell):nth-last-child(2) {
+[2m┆[22m                 [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   @media (width >= 64rem) {[22m
+[2m│     border-right-style: var(--tw-border-style);[22m
+
+Found 2 warnings while optimizing generated CSS:
+
+Issue #1:
+[2m│ /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */[22m
+[2m│[22m .inline-wrapper :deep(> *) {
+[2m┆[22m                       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   flex-grow: 1;[22m
+[2m│   @media (width >= 48rem) {[22m
+
+Issue #2:
+[2m│ }[22m
+[2m│ @media (min-width: 48rem) {[22m
+[2m│[22m   .with-headers :deep(.form-item-label:not(.form-item-control .form-item-label)) {
+[2m┆[22m                       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     margin-top: 1.625rem;[22m
+[2m│   }[22m
+
+Found 3 warnings while optimizing generated CSS:
+
+Issue #1:
+[2m│ /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */[22m
+[2m│[22m :deep(.tlt-input-wrapper) {
+[2m┆[22m       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   width: max-content;[22m
+[2m│ }[22m
+
+Issue #2:
+[2m│   width: max-content;[22m
+[2m│ }[22m
+[2m│[22m :deep(.tlt-input-field) {
+[2m┆[22m       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   width: calc(var(--spacing, 0.25rem) * 80);[22m
+[2m│   min-width: 100% !important;[22m
+
+Issue #3:
+[2m│   }[22m
+[2m│ }[22m
+[2m│[22m :deep(.form-item-label) {
+[2m┆[22m       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   margin-top: 0.375rem;[22m
+[2m│ }[22m
+
+Found 1 warning while optimizing generated CSS:
+
+[2m│ /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */[22m
+[2m│[22m .wrap-zones :deep(.zone-badge-list) {
+[2m┆[22m                   [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   display: flex;[22m
+[2m│   flex-wrap: wrap;[22m
+
+Found 4 warnings while optimizing generated CSS:
+
+Issue #1:
+[2m│   border-bottom-width: 0px;[22m
+[2m│ }[22m
+[2m│[22m .custom-input :deep(.x-input-wrapper, .tlt-input-wrapper) {
+[2m┆[22m                     [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   min-width: calc(var(--spacing, 0.25rem) * 0);[22m
+[2m│ }[22m
+
+Issue #2:
+[2m│ }[22m
+[2m│ @media (min-width: 48rem) {[22m
+[2m│[22m   :deep(.form-item-label) {
+[2m┆[22m         [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     margin-top: calc(var(--spacing, 0.25rem) * 1.5);[22m
+[2m│   }[22m
+
+Issue #3:
+[2m│     margin-top: calc(var(--spacing, 0.25rem) * 1.5);[22m
+[2m│   }[22m
+[2m│[22m   .with-headers :deep(.form-item-label) {
+[2m┆[22m                       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     margin-top: 1.875rem;[22m
+[2m│   }[22m
+
+Issue #4:
+[2m│     margin-top: 1.875rem;[22m
+[2m│   }[22m
+[2m│[22m   .custom-input :deep(.tlt-input-after) {
+[2m┆[22m                       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     margin-right: calc(var(--spacing, 0.25rem) * 1);[22m
+[2m│   }[22m
+
+Found 1 warning while optimizing generated CSS:
+
+[2m│   width: 100%;[22m
+[2m│ }[22m
+[2m│[22m .list-input__field :deep(.tlt-input-wrapper) {
+[2m┆[22m                          [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   min-width: calc(var(--spacing, 0.25rem) * 0);[22m
+[2m│ }[22m
+
+Found 2 warnings while optimizing generated CSS:
+
+Issue #1:
+[2m│ /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */[22m
+[2m│[22m :deep(.fullwidth) {
+[2m┆[22m       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   width: 100% !important;[22m
+[2m│ }[22m
+
+Issue #2:
+[2m│   width: 100% !important;[22m
+[2m│ }[22m
+[2m│[22m :deep(.form-item-label) {
+[2m┆[22m       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   margin-top: 0.375rem;[22m
+[2m│ }[22m
+
+Found 1 warning while optimizing generated CSS:
+
+[2m│ /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */[22m
+[2m│[22m .wrap-zones :deep(.zone-list) {
+[2m┆[22m                   [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│   flex-wrap: wrap;[22m
+[2m│ }[22m
+
+Found 1 warning while optimizing generated CSS:
+
+[2m│ }[22m
+[2m│ @media (min-width: 64rem) {[22m
+[2m│[22m   :deep(tbody:nth-last-child(1 of :not(.dnd__dragging-element)) tr:last-child td) {
+[2m┆[22m         [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     border-bottom-style: var(--tw-border-style);[22m
+[2m│     border-bottom-width: 0px;[22m
+
+Found 1 warning while optimizing generated CSS:
+
+[2m│ /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */[22m
+[2m│ @media not all and (min-width: 64rem) {[22m
+[2m│[22m   .has-header + :deep(tbody tr) {
+[2m┆[22m                       [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     border-top-width: 0 !important;[22m
+[2m│     border-top-left-radius: 0 !important;[22m
+
+Found 4 warnings while optimizing generated CSS:
+
+Issue #1:
+[2m│ /*! tailwindcss v4.1.14 | MIT License | https://tailwindcss.com */[22m
+[2m│ @media not all and (min-width: 64rem) {[22m
+[2m│[22m   tbody:first-of-type :deep(tr) {
+[2m┆[22m                             [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     border-top: 1px solid var(--color-theme-border-base);[22m
+[2m│     border-top-left-radius: 0.375rem;[22m
+
+Issue #2:
+[2m│     border-top-right-radius: 0.375rem;[22m
+[2m│   }[22m
+[2m│[22m   tbody:last-of-type :deep(tr) {
+[2m┆[22m                            [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     border-bottom-left-radius: 0.375rem;[22m
+[2m│     border-bottom-right-radius: 0.375rem;[22m
+
+Issue #3:
+[2m│     border-bottom-right-radius: 0.375rem;[22m
+[2m│   }[22m
+[2m│[22m   tr :deep(td:last-of-type) {
+[2m┆[22m            [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     padding-bottom: 1rem;[22m
+[2m│   }[22m
+
+Issue #4:
+[2m│     padding-bottom: 1rem;[22m
+[2m│   }[22m
+[2m│[22m   tr :deep(td:first-of-type) {
+[2m┆[22m            [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     padding-top: 1rem;[22m
+[2m│   }[22m
+
+Found 3 warnings while optimizing generated CSS:
+
+Issue #1:
+[2m│     margin-inline: -1rem;[22m
+[2m│   }[22m
+[2m│[22m   .navigation-tabs :deep([role='tablist']) {
+[2m┆[22m                          [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     margin-left: 1rem;[22m
+[2m│   }[22m
+
+Issue #2:
+[2m│     margin-left: 1rem;[22m
+[2m│   }[22m
+[2m│[22m   .navigation-tabs :deep([role='tablist'] [role='tab'].active-tab::before) {
+[2m┆[22m                          [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     display: block;[22m
+[2m│   }[22m
+
+Issue #3:
+[2m│     display: block;[22m
+[2m│   }[22m
+[2m│[22m   .navigation-tabs :deep([role='tabpanel']) {
+[2m┆[22m                          [33m[2m^--[22m 'deep' is not recognized as a valid pseudo-class. Did you mean '::deep' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     border-inline: unset;[22m
+[2m│     border-radius: 0;[22m
+
+Found 1 warning while optimizing generated CSS:
+
+[2m│     }[22m
+[2m│   }[22m
+[2m│[22m   .selector:is(:disabled, [data-disabled], :readonly, [data-readonly]) {
+[2m┆[22m                                             [33m[2m^--[22m 'readonly' is not recognized as a valid pseudo-class. Did you mean '::readonly' (pseudo-element) or is this a typo?[39m
+[2m┆[22m
+[2m│     cursor: not-allowed;[22m
+[2m│     opacity: 0.4;[22m
+
+applications/vuci-app-iec60870-server/vuci-app-iec60870-server-ui/src/views/services/IEC60870ServerEdit.vue?vue&type=script&setup=true&lang.ts (8:17): "SerialDevice" is not exported by "vuci-ui-core/src/src/plugins/serial.ts", imported by "applications/vuci-app-iec60870-server/vuci-app-iec60870-server-ui/src/views/services/IEC60870ServerEdit.vue?vue&type=script&setup=true&lang.ts".
+applications/vuci-app-iec60870-server/vuci-app-iec60870-server-ui/src/views/services/IEC60870ServerEdit.vue?vue&type=script&setup=true&lang.ts (8:31): "SerialStatus" is not exported by "vuci-ui-core/src/src/plugins/serial.ts", imported by "applications/vuci-app-iec60870-server/vuci-app-iec60870-server-ui/src/views/services/IEC60870ServerEdit.vue?vue&type=script&setup=true&lang.ts".
+applications/vuci-app-iec60870-server/vuci-app-iec60870-server-ui/src/views/services/IEC60870Server.vue?vue&type=script&setup=true&lang.ts (11:17): "SerialDevice" is not exported by "vuci-ui-core/src/src/plugins/serial.ts", imported by "applications/vuci-app-iec60870-server/vuci-app-iec60870-server-ui/src/views/services/IEC60870Server.vue?vue&type=script&setup=true&lang.ts".
+applications/vuci-app-iec60870-server/vuci-app-iec60870-server-ui/src/views/services/IEC60870Server.vue?vue&type=script&setup=true&lang.ts (11:31): "SerialStatus" is not exported by "vuci-ui-core/src/src/plugins/serial.ts", imported by "applications/vuci-app-iec60870-server/vuci-app-iec60870-server-ui/src/views/services/IEC60870Server.vue?vue&type=script&setup=true&lang.ts".
+✓ 2289 modules transformed.
+rendering chunks...
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconPort.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/form/core/TltPort.vue?vue&type=script&setup=true&lang.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconAddCircle.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconAddSquare.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconAggregated.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconArrowDown.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconArrowThin.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconArrowUp.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconArticle.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconAuthorized.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconBell.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconBlock.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconBluetooth.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconBroadcast.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconCalendar.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconChangePriority.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconChevron.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconChevronDouble.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconCircle.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconClientConfig.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconCloud.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconColumns.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconCookie.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconCopy.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconCrowdsource.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconCustomURL.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDelete.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDevice.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDeviceHub.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDice.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDockerPause.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDockerRestart.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDockerStart.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDockerStop.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDownloadImport.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDragAnywhere.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconDropdownArrow.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconEdit.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconEmpty.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconError.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconErrorStatus.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconExternalLink.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconFileFail.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconFiles.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconFilter.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconGear.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconGenerate.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconInfo.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconInstall.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconInterface.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconJitter.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconKernelLogs.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconKey.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconLan.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconLatency.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconLink.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconLock.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconMail.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconMobile.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconMobileSetup.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconMore.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconMulticast.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconNetwork.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconNoSignal.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconNumberedList.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconPair.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconPassword.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconPause.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconPlay.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconPoe.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconProfileSettings.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconQrCode.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconRecenter.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconReferenceAll.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconRefresh.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconRemoveCircle.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconRenew.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconReset.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconRms.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSearch.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconServer.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSettings.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSign.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSignal.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSignalWifi.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSim.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSimSolid.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSortDirection.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSpinner.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconStatus.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconStatusCircle.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSuccess.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSystem.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconSystemLogs.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconThumb.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconTime.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconToggle.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconTooltip.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconUnauthorized.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconUnblock.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconUnicast.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconUnlock.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconUpgradeFirmware.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconUploadExport.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconUsbEject.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconUser.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconValidation.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconWarning.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconWifi.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconWired.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconX.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+[plugin:vite:reporter] [plugin vite:reporter] 
+(!) /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/tlt-design/icons/IconXCircle.vue is dynamically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/stories/Icons.story.vue but also statically imported by /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/ui-core/plugins/globals.ts, dynamic import will not move module into another chunk.
+
+warnings when minifying css:
+▲ [WARNING] Unexpected ")" [css-syntax-error]
+
+    <stdin>:3:105395:
+      3 │ ...options-wrapper\"\]\:visible:is(){visibility:visible}.\[\&\>div\...
+        ╵                                    ^
+
+
+computing gzip size...
+dist/www/assets/app.dot1x-client.app-2026-02-23-4f4044c88cc.js.gz               0.17 kB
+dist/www/index.html.gz                                                          0.73 kB
+dist/www/assets/app.uscripts.app-2026-02-23-4f4044c88cc.js.gz                   0.75 kB
+dist/www/assets/app.udprelay.app-2026-02-23-4f4044c88cc.js.gz                   0.88 kB
+dist/www/assets/app.thingworx.app-2026-02-23-4f4044c88cc.js.gz                  0.92 kB
+dist/www/assets/app.p910nd.app-2026-02-23-4f4044c88cc.js.gz                     0.93 kB
+dist/www/assets/app.cli.app-2026-02-23-4f4044c88cc.js.gz                        0.94 kB
+dist/www/assets/app.internet.app-2026-02-23-4f4044c88cc.js.gz                   1.04 kB
+dist/www/assets/app.port-mirroring.app-2026-02-23-4f4044c88cc.js.gz             1.05 kB
+dist/www/assets/app.ntpd.app-2026-02-23-4f4044c88cc.js.gz                       1.11 kB
+dist/www/assets/app.rut-fota.app-2026-02-23-4f4044c88cc.js.gz                   1.12 kB
+dist/www/assets/app.password-policy.app-2026-02-23-4f4044c88cc.js.gz            1.13 kB
+dist/www/assets/app.wifi-scanner.app-2026-02-23-4f4044c88cc.js.gz               1.20 kB
+dist/www/assets/app.logs.app-2026-02-23-4f4044c88cc.js.gz                       1.28 kB
+dist/www/assets/app.sshfs.app-2026-02-23-4f4044c88cc.js.gz                      1.30 kB
+dist/www/assets/app.email-to-sms.app-2026-02-23-4f4044c88cc.js.gz               1.33 kB
+dist/www/assets/app.services-status.app-2026-02-23-4f4044c88cc.js.gz            1.35 kB
+dist/www/assets/app.smpp.app-2026-02-23-4f4044c88cc.js.gz                       1.51 kB
+dist/www/assets/app.relayd.app-2026-02-23-4f4044c88cc.js.gz                     1.56 kB
+dist/www/assets/app.eoip.app-2026-02-23-4f4044c88cc.js.gz                       1.58 kB
+dist/www/assets/app.tr069.app-2026-02-23-4f4044c88cc.js.gz                      1.60 kB
+dist/www/assets/app.phone-recipients.app-2026-02-23-4f4044c88cc.js.gz           1.68 kB
+dist/www/index.html                                                             1.70 kB │ gzip:   0.73 kB
+dist/www/assets/app.cumulocity.app-2026-02-23-4f4044c88cc.js.gz                 1.73 kB
+dist/www/assets/app.https-dns-proxy.app-2026-02-23-4f4044c88cc.js.gz            1.75 kB
+dist/www/assets/app.sim-idle-protection.app-2026-02-23-4f4044c88cc.js.gz        1.76 kB
+dist/www/assets/app.dynamic-routes-eigrp.app-2026-02-23-4f4044c88cc.js.gz       1.77 kB
+dist/www/assets/app.call-utilities.app-2026-02-23-4f4044c88cc.js.gz             1.83 kB
+dist/www/assets/app.qos.app-2026-02-23-4f4044c88cc.js.gz                        1.84 kB
+dist/www/assets/app.tcpdump.app-2026-02-23-4f4044c88cc.js.gz                    1.93 kB
+dist/www/assets/app.reset.app-2026-02-23-4f4044c88cc.js.gz                      1.99 kB
+dist/www/assets/app.wol.app-2026-02-23-4f4044c88cc.js.gz                        2.08 kB
+dist/www/assets/app.email-recipients.app-2026-02-23-4f4044c88cc.js.gz           2.11 kB
+dist/www/assets/app.minidlna.app-2026-02-23-4f4044c88cc.js.gz                   2.14 kB
+dist/www/assets/app.igmp-proxy.app-2026-02-23-4f4044c88cc.js.gz                 2.16 kB
+dist/www/assets/app.memory-expansion.app-2026-02-23-4f4044c88cc.js.gz           2.20 kB
+dist/www/assets/app.vrf.app-2026-02-23-4f4044c88cc.js.gz                        2.30 kB
+dist/www/assets/app.sstp.app-2026-02-23-4f4044c88cc.js.gz                       2.31 kB
+dist/www/assets/app.ulog.app-2026-02-23-4f4044c88cc.js.gz                       2.32 kB
+dist/www/assets/app.email-relay.app-2026-02-23-4f4044c88cc.js.gz                2.36 kB
+dist/www/assets/app.starlink.app-2026-02-23-4f4044c88cc.js.gz                   2.43 kB
+dist/www/assets/app.usb-tools.app-2026-02-23-4f4044c88cc.js.gz                  2.45 kB
+dist/www/assets/app.mpls.app-2026-02-23-4f4044c88cc.js.gz                       2.46 kB
+dist/www/assets/app.upnp.app-2026-02-23-4f4044c88cc.js.gz                       2.53 kB
+dist/www/assets/app.dynamic-routes-rip.app-2026-02-23-4f4044c88cc.js.gz         2.54 kB
+dist/www/assets/app.zerotier.app-2026-02-23-4f4044c88cc.js.gz                   2.65 kB
+dist/www/assets/app.apn-database.app-2026-02-23-4f4044c88cc.js.gz               2.69 kB
+dist/www/assets/app.vrrp.app-2026-02-23-4f4044c88cc.js.gz                       2.75 kB
+dist/www/assets/app.tailscale.app-2026-02-23-4f4044c88cc.js.gz                  2.88 kB
+dist/www/assets/app.bluetooth.app-2026-02-23-4f4044c88cc.js.gz                  2.92 kB
+dist/www/assets/app.sqm.app-2026-02-23-4f4044c88cc.js.gz                        2.94 kB
+dist/www/assets/app.pamd.app-2026-02-23-4f4044c88cc.js.gz                       2.96 kB
+dist/www/assets/app.administration.app-2026-02-23-4f4044c88cc.js.gz             2.97 kB
+dist/www/assets/app.ntp.app-2026-02-23-4f4044c88cc.js.gz                        2.99 kB
+dist/www/assets/app.system-status.app-2026-02-23-4f4044c88cc.js.gz              3.10 kB
+dist/www/assets/app.vlan.app-2026-02-23-4f4044c88cc.js.gz                       3.18 kB
+dist/www/assets/app.bfd.app-2026-02-23-4f4044c88cc.js.gz                        3.21 kB
+dist/www/assets/app.dynamic-routes-nhrp.app-2026-02-23-4f4044c88cc.js.gz        3.24 kB
+dist/www/assets/app.setup-wizard.app-2026-02-23-4f4044c88cc.js.gz               3.26 kB
+dist/www/assets/app.io-scheduler.app-2026-02-23-4f4044c88cc.js.gz               3.28 kB
+dist/www/assets/app.jool.app-2026-02-23-4f4044c88cc.js.gz                       3.32 kB
+dist/www/assets/app.getty.app-2026-02-23-4f4044c88cc.js.gz                      3.40 kB
+dist/www/assets/app.webfilter.app-2026-02-23-4f4044c88cc.js.gz                  3.53 kB
+dist/www/assets/app.dns.app-2026-02-23-4f4044c88cc.js.gz                        3.57 kB
+dist/www/assets/app.openconnect.app-2026-02-23-4f4044c88cc.js.gz                3.61 kB
+dist/www/assets/app.backup.app-2026-02-23-4f4044c88cc.js.gz                     3.62 kB
+dist/www/assets/app.tinc.app-2026-02-23-4f4044c88cc.js.gz                       3.78 kB
+dist/www/assets/app.gre.app-2026-02-23-4f4044c88cc.js.gz                        3.97 kB
+dist/www/assets/app.network-usage.app-2026-02-23-4f4044c88cc.js.gz              3.98 kB
+dist/www/assets/app.events-reporting.app-2026-02-23-4f4044c88cc.js.gz           4.00 kB
+dist/www/assets/app.coovachilli-themes.app-2026-02-23-4f4044c88cc.js.gz         4.13 kB
+dist/www/assets/app.multiusers.app-2026-02-23-4f4044c88cc.js.gz                 4.14 kB
+dist/www/assets/app.dmvpn.app-2026-02-23-4f4044c88cc.js.gz                      4.15 kB
+dist/www/assets/app.impulse-counter.app-2026-02-23-4f4044c88cc.js.gz            4.23 kB
+dist/www/assets/app.samba.app-2026-02-23-4f4044c88cc.js.gz                      4.23 kB
+dist/www/assets/app.profiles.app-2026-02-23-4f4044c88cc.js.gz                   4.23 kB
+dist/www/assets/app.stunnel.app-2026-02-23-4f4044c88cc.js.gz                    4.24 kB
+dist/www/assets/app.ntrip.app-2026-02-23-4f4044c88cc.js.gz                      4.28 kB
+dist/www/assets/app.ports-settings.app-2026-02-23-4f4044c88cc.js.gz             4.29 kB
+dist/www/assets/app.dynamic-routes-ospf.app-2026-02-23-4f4044c88cc.js.gz        4.30 kB
+dist/www/assets/app.channel-analysis.app-2026-02-23-4f4044c88cc.js.gz           4.33 kB
+dist/www/assets/app.modem-control.app-2026-02-23-4f4044c88cc.js.gz              4.36 kB
+dist/www/assets/app.azure-iothub.app-2026-02-23-4f4044c88cc.js.gz               4.41 kB
+dist/www/assets/app.bacnet.app-2026-02-23-4f4044c88cc.js.gz                     4.44 kB
+dist/www/assets/app.aws.app-2026-02-23-4f4044c88cc.js.gz                        4.45 kB
+dist/www/assets/app.io.app-2026-02-23-4f4044c88cc.js.gz                         4.79 kB
+dist/www/assets/app.modbus-serial-gateway.app-2026-02-23-4f4044c88cc.js.gz      4.86 kB
+dist/www/assets/app.pptp.app-2026-02-23-4f4044c88cc.js.gz                       4.86 kB
+dist/www/assets/app.ddns.app-2026-02-23-4f4044c88cc.js.gz                       4.88 kB
+dist/www/assets/app.networkmap.app-2026-02-23-4f4044c88cc.js.gz                 5.01 kB
+dist/www/assets/app.modbus-gateway.app-2026-02-23-4f4044c88cc.js.gz             5.01 kB
+dist/www/assets/app.speed-test.app-2026-02-23-4f4044c88cc.js.gz                 5.10 kB
+dist/www/assets/app.hotspot2.app-2026-02-23-4f4044c88cc.js.gz                   5.21 kB
+dist/www/assets/app.routes.app-2026-02-23-4f4044c88cc.js.gz                     5.95 kB
+dist/www/assets/app.iec60870-server.app-2026-02-23-4f4044c88cc.js.gz            6.04 kB
+dist/www/assets/app.wireguard.app-2026-02-23-4f4044c88cc.js.gz                  6.14 kB
+dist/www/assets/app.auto-reboot.app-2026-02-23-4f4044c88cc.js.gz                6.38 kB
+dist/www/assets/app.mobile-usage.app-2026-02-23-4f4044c88cc.js.gz               6.39 kB
+dist/www/assets/app.opcua-server.app-2026-02-23-4f4044c88cc.js.gz               6.60 kB
+dist/www/assets/IconTap-2026-02-23-4f4044c88cc.png                              6.96 kB
+dist/www/assets/app.side-widget.app-2026-02-23-4f4044c88cc.js.gz                7.03 kB
+dist/www/assets/app.mqtt.app-2026-02-23-4f4044c88cc.js.gz                       7.06 kB
+dist/www/assets/app.network-devices.app-2026-02-23-4f4044c88cc.js.gz            7.08 kB
+dist/www/assets/app.iec60870-client.app-2026-02-23-4f4044c88cc.js.gz            7.34 kB
+dist/www/assets/app.dynamic-routes-bgp.app-2026-02-23-4f4044c88cc.js.gz         7.96 kB
+dist/www/assets/app.mwan3.app-2026-02-23-4f4044c88cc.js.gz                      8.10 kB
+dist/www/assets/app.snmp.app-2026-02-23-4f4044c88cc.js.gz                       8.13 kB
+dist/www/assets/app.l2tp.app-2026-02-23-4f4044c88cc.js.gz                       8.22 kB
+dist/www/assets/app.troubleshoot.app-2026-02-23-4f4044c88cc.js.gz               8.24 kB
+dist/www/assets/app.modbus-server.app-2026-02-23-4f4044c88cc.js.gz              8.32 kB
+dist/www/assets/app.opcua.app-2026-02-23-4f4044c88cc.js.gz                      8.43 kB
+dist/www/assets/app.package-manager.app-2026-02-23-4f4044c88cc.js.gz            8.55 kB
+dist/www/assets/app.overip.app-2026-02-23-4f4044c88cc.js.gz                     9.52 kB
+dist/www/assets/app.overview.app-2026-02-23-4f4044c88cc.js.gz                   9.60 kB
+dist/www/assets/app.realtime.app-2026-02-23-4f4044c88cc.js.gz                   9.75 kB
+dist/www/assets/app.firmware.app-2026-02-23-4f4044c88cc.js.gz                   9.89 kB
+dist/www/assets/app.access-control.app-2026-02-23-4f4044c88cc.js.gz            10.61 kB
+dist/www/assets/app.modbus-client.app-2026-02-23-4f4044c88cc.js.gz             10.66 kB
+dist/www/assets/app.certificates.app-2026-02-23-4f4044c88cc.js.gz              11.60 kB
+dist/www/assets/app.io-juggler.app-2026-02-23-4f4044c88cc.js.gz                12.08 kB
+dist/www/assets/app.dnp3.app-2026-02-23-4f4044c88cc.js.gz                      12.10 kB
+dist/www/assets/app.strong-swan.app-2026-02-23-4f4044c88cc.js.gz               12.34 kB
+dist/www/assets/app.mobile-utilities.app-2026-02-23-4f4044c88cc.js.gz          12.83 kB
+dist/www/assets/app.coovachilli.app-2026-02-23-4f4044c88cc.js.gz               12.84 kB
+dist/www/assets/app.dhcp.app-2026-02-23-4f4044c88cc.js.gz                      12.87 kB
+dist/www/assets/app.modbus-serial.app-2026-02-23-4f4044c88cc.js.gz             12.88 kB
+dist/www/assets/IconSwm-2026-02-23-4f4044c88cc.webp                            14.65 kB
+dist/www/assets/app.dlms.app-2026-02-23-4f4044c88cc.js.gz                      16.99 kB
+dist/www/assets/app.openvpn.app-2026-02-23-4f4044c88cc.js.gz                   17.55 kB
+dist/www/assets/app.gps.app-2026-02-23-4f4044c88cc.js.gz                       17.97 kB
+dist/www/assets/app.firewall.app-2026-02-23-4f4044c88cc.js.gz                  20.05 kB
+dist/www/assets/IconTsw-2026-02-23-4f4044c88cc.webp                            23.58 kB
+dist/www/assets/app.wireless.app-2026-02-23-4f4044c88cc.js.gz                  23.74 kB
+dist/www/assets/app.data-sender.app-2026-02-23-4f4044c88cc.js.gz               24.70 kB
+dist/www/assets/app.event-juggler.app-2026-02-23-4f4044c88cc.js.gz             25.73 kB
+dist/www/assets/app.network.app-2026-02-23-4f4044c88cc.js.gz                   28.23 kB
+dist/www/assets/style-2026-02-23-4f4044c88cc.css.gz                            31.19 kB
+dist/www/assets/app.site-manager.app-2026-02-23-4f4044c88cc.js.gz              41.33 kB
+dist/www/assets/app.mobile.app-2026-02-23-4f4044c88cc.js.gz                    42.16 kB
+dist/www/assets/vendor-2026-02-23-4f4044c88cc.js.gz                           155.51 kB
+dist/www/assets/index-2026-02-23-4f4044c88cc.js.gz                            315.91 kB
+dist/www/assets/style-2026-02-23-4f4044c88cc.css                              182.06 kB │ gzip:  31.33 kB
+dist/www/assets/app.dot1x-client.app-2026-02-23-4f4044c88cc.js                  0.20 kB │ gzip:   0.17 kB
+dist/www/assets/app.uscripts.app-2026-02-23-4f4044c88cc.js                      1.40 kB │ gzip:   0.75 kB
+dist/www/assets/app.cli.app-2026-02-23-4f4044c88cc.js                           1.58 kB │ gzip:   0.94 kB
+dist/www/assets/app.udprelay.app-2026-02-23-4f4044c88cc.js                      1.91 kB │ gzip:   0.88 kB
+dist/www/assets/app.p910nd.app-2026-02-23-4f4044c88cc.js                        2.03 kB │ gzip:   0.93 kB
+dist/www/assets/app.thingworx.app-2026-02-23-4f4044c88cc.js                     2.21 kB │ gzip:   0.92 kB
+dist/www/assets/app.internet.app-2026-02-23-4f4044c88cc.js                      2.37 kB │ gzip:   1.04 kB
+dist/www/assets/app.port-mirroring.app-2026-02-23-4f4044c88cc.js                2.42 kB │ gzip:   1.05 kB
+dist/www/assets/app.ntpd.app-2026-02-23-4f4044c88cc.js                          2.65 kB │ gzip:   1.11 kB
+dist/www/assets/app.logs.app-2026-02-23-4f4044c88cc.js                          2.66 kB │ gzip:   1.28 kB
+dist/www/assets/app.password-policy.app-2026-02-23-4f4044c88cc.js               2.76 kB │ gzip:   1.13 kB
+dist/www/assets/app.rut-fota.app-2026-02-23-4f4044c88cc.js                      2.87 kB │ gzip:   1.12 kB
+dist/www/assets/app.wifi-scanner.app-2026-02-23-4f4044c88cc.js                  3.00 kB │ gzip:   1.20 kB
+dist/www/assets/app.sshfs.app-2026-02-23-4f4044c88cc.js                         3.22 kB │ gzip:   1.30 kB
+dist/www/assets/app.services-status.app-2026-02-23-4f4044c88cc.js               3.49 kB │ gzip:   1.35 kB
+dist/www/assets/app.relayd.app-2026-02-23-4f4044c88cc.js                        3.54 kB │ gzip:   1.56 kB
+dist/www/assets/app.email-to-sms.app-2026-02-23-4f4044c88cc.js                  3.80 kB │ gzip:   1.33 kB
+dist/www/assets/app.https-dns-proxy.app-2026-02-23-4f4044c88cc.js               4.09 kB │ gzip:   1.75 kB
+dist/www/assets/app.phone-recipients.app-2026-02-23-4f4044c88cc.js              4.14 kB │ gzip:   1.68 kB
+dist/www/assets/app.call-utilities.app-2026-02-23-4f4044c88cc.js                4.29 kB │ gzip:   1.83 kB
+dist/www/assets/app.eoip.app-2026-02-23-4f4044c88cc.js                          4.30 kB │ gzip:   1.58 kB
+dist/www/assets/app.cumulocity.app-2026-02-23-4f4044c88cc.js                    4.34 kB │ gzip:   1.73 kB
+dist/www/assets/app.dynamic-routes-eigrp.app-2026-02-23-4f4044c88cc.js          4.35 kB │ gzip:   1.77 kB
+dist/www/assets/app.qos.app-2026-02-23-4f4044c88cc.js                           4.68 kB │ gzip:   1.84 kB
+dist/www/assets/app.tcpdump.app-2026-02-23-4f4044c88cc.js                       4.86 kB │ gzip:   1.93 kB
+dist/www/assets/app.smpp.app-2026-02-23-4f4044c88cc.js                          5.14 kB │ gzip:   1.52 kB
+dist/www/assets/app.sim-idle-protection.app-2026-02-23-4f4044c88cc.js           5.27 kB │ gzip:   1.76 kB
+dist/www/assets/app.tr069.app-2026-02-23-4f4044c88cc.js                         5.36 kB │ gzip:   1.60 kB
+dist/www/assets/app.wol.app-2026-02-23-4f4044c88cc.js                           5.42 kB │ gzip:   2.08 kB
+dist/www/assets/app.memory-expansion.app-2026-02-23-4f4044c88cc.js              5.47 kB │ gzip:   2.20 kB
+dist/www/assets/app.minidlna.app-2026-02-23-4f4044c88cc.js                      5.55 kB │ gzip:   2.14 kB
+dist/www/assets/app.reset.app-2026-02-23-4f4044c88cc.js                         5.58 kB │ gzip:   2.00 kB
+dist/www/assets/app.vrf.app-2026-02-23-4f4044c88cc.js                           5.69 kB │ gzip:   2.30 kB
+dist/www/assets/app.sstp.app-2026-02-23-4f4044c88cc.js                          5.91 kB │ gzip:   2.31 kB
+dist/www/assets/app.email-recipients.app-2026-02-23-4f4044c88cc.js              6.12 kB │ gzip:   2.12 kB
+dist/www/assets/app.usb-tools.app-2026-02-23-4f4044c88cc.js                     6.38 kB │ gzip:   2.45 kB
+dist/www/assets/app.starlink.app-2026-02-23-4f4044c88cc.js                      6.57 kB │ gzip:   2.43 kB
+dist/www/assets/app.igmp-proxy.app-2026-02-23-4f4044c88cc.js                    6.62 kB │ gzip:   2.17 kB
+dist/www/assets/app.ulog.app-2026-02-23-4f4044c88cc.js                          6.90 kB │ gzip:   2.33 kB
+dist/www/assets/app.mpls.app-2026-02-23-4f4044c88cc.js                          6.96 kB │ gzip:   2.46 kB
+dist/www/assets/app.tailscale.app-2026-02-23-4f4044c88cc.js                     7.31 kB │ gzip:   2.88 kB
+dist/www/assets/app.sqm.app-2026-02-23-4f4044c88cc.js                           7.69 kB │ gzip:   2.94 kB
+dist/www/assets/app.upnp.app-2026-02-23-4f4044c88cc.js                          7.91 kB │ gzip:   2.53 kB
+dist/www/assets/app.dynamic-routes-rip.app-2026-02-23-4f4044c88cc.js            7.99 kB │ gzip:   2.54 kB
+dist/www/assets/app.administration.app-2026-02-23-4f4044c88cc.js                8.33 kB │ gzip:   2.98 kB
+dist/www/assets/app.vrrp.app-2026-02-23-4f4044c88cc.js                          8.43 kB │ gzip:   2.76 kB
+dist/www/assets/app.system-status.app-2026-02-23-4f4044c88cc.js                 8.51 kB │ gzip:   3.10 kB
+dist/www/assets/app.email-relay.app-2026-02-23-4f4044c88cc.js                   8.64 kB │ gzip:   2.36 kB
+dist/www/assets/app.apn-database.app-2026-02-23-4f4044c88cc.js                  8.79 kB │ gzip:   2.69 kB
+dist/www/assets/app.zerotier.app-2026-02-23-4f4044c88cc.js                      8.87 kB │ gzip:   2.65 kB
+dist/www/assets/app.ntp.app-2026-02-23-4f4044c88cc.js                           9.03 kB │ gzip:   2.99 kB
+dist/www/assets/app.setup-wizard.app-2026-02-23-4f4044c88cc.js                  9.20 kB │ gzip:   3.26 kB
+dist/www/assets/app.bluetooth.app-2026-02-23-4f4044c88cc.js                     9.22 kB │ gzip:   2.93 kB
+dist/www/assets/app.pamd.app-2026-02-23-4f4044c88cc.js                          9.46 kB │ gzip:   2.96 kB
+dist/www/assets/app.dns.app-2026-02-23-4f4044c88cc.js                           9.68 kB │ gzip:   3.58 kB
+dist/www/assets/app.vlan.app-2026-02-23-4f4044c88cc.js                          9.74 kB │ gzip:   3.18 kB
+dist/www/assets/app.bfd.app-2026-02-23-4f4044c88cc.js                           9.87 kB │ gzip:   3.21 kB
+dist/www/assets/app.webfilter.app-2026-02-23-4f4044c88cc.js                    10.21 kB │ gzip:   3.53 kB
+dist/www/assets/app.getty.app-2026-02-23-4f4044c88cc.js                        10.22 kB │ gzip:   3.41 kB
+dist/www/assets/app.dynamic-routes-nhrp.app-2026-02-23-4f4044c88cc.js          10.50 kB │ gzip:   3.23 kB
+dist/www/assets/app.openconnect.app-2026-02-23-4f4044c88cc.js                  10.52 kB │ gzip:   3.61 kB
+dist/www/assets/app.backup.app-2026-02-23-4f4044c88cc.js                       10.66 kB │ gzip:   3.62 kB
+dist/www/assets/app.jool.app-2026-02-23-4f4044c88cc.js                         10.88 kB │ gzip:   3.33 kB
+dist/www/assets/app.channel-analysis.app-2026-02-23-4f4044c88cc.js             11.07 kB │ gzip:   4.33 kB
+dist/www/assets/app.io-scheduler.app-2026-02-23-4f4044c88cc.js                 11.40 kB │ gzip:   3.28 kB
+dist/www/assets/app.ports-settings.app-2026-02-23-4f4044c88cc.js               12.28 kB │ gzip:   4.29 kB
+dist/www/assets/app.impulse-counter.app-2026-02-23-4f4044c88cc.js              12.38 kB │ gzip:   4.23 kB
+dist/www/assets/app.events-reporting.app-2026-02-23-4f4044c88cc.js             12.57 kB │ gzip:   4.00 kB
+dist/www/assets/app.samba.app-2026-02-23-4f4044c88cc.js                        12.74 kB │ gzip:   4.23 kB
+dist/www/assets/app.gre.app-2026-02-23-4f4044c88cc.js                          12.80 kB │ gzip:   3.97 kB
+dist/www/assets/app.tinc.app-2026-02-23-4f4044c88cc.js                         13.00 kB │ gzip:   3.79 kB
+dist/www/assets/app.azure-iothub.app-2026-02-23-4f4044c88cc.js                 13.23 kB │ gzip:   4.41 kB
+dist/www/assets/app.multiusers.app-2026-02-23-4f4044c88cc.js                   13.48 kB │ gzip:   4.14 kB
+dist/www/assets/app.profiles.app-2026-02-23-4f4044c88cc.js                     13.53 kB │ gzip:   4.24 kB
+dist/www/assets/app.ntrip.app-2026-02-23-4f4044c88cc.js                        13.55 kB │ gzip:   4.29 kB
+dist/www/assets/app.aws.app-2026-02-23-4f4044c88cc.js                          13.61 kB │ gzip:   4.46 kB
+dist/www/assets/app.network-usage.app-2026-02-23-4f4044c88cc.js                13.65 kB │ gzip:   3.99 kB
+dist/www/assets/app.stunnel.app-2026-02-23-4f4044c88cc.js                      13.76 kB │ gzip:   4.24 kB
+dist/www/assets/app.modem-control.app-2026-02-23-4f4044c88cc.js                13.90 kB │ gzip:   4.36 kB
+dist/www/assets/app.coovachilli-themes.app-2026-02-23-4f4044c88cc.js           14.02 kB │ gzip:   4.14 kB
+dist/www/assets/app.dmvpn.app-2026-02-23-4f4044c88cc.js                        14.42 kB │ gzip:   4.15 kB
+dist/www/assets/app.ddns.app-2026-02-23-4f4044c88cc.js                         14.83 kB │ gzip:   4.88 kB
+dist/www/assets/app.io.app-2026-02-23-4f4044c88cc.js                           15.02 kB │ gzip:   4.79 kB
+dist/www/assets/app.modbus-serial-gateway.app-2026-02-23-4f4044c88cc.js        15.12 kB │ gzip:   4.87 kB
+dist/www/assets/app.dynamic-routes-ospf.app-2026-02-23-4f4044c88cc.js          15.21 kB │ gzip:   4.30 kB
+dist/www/assets/app.pptp.app-2026-02-23-4f4044c88cc.js                         16.11 kB │ gzip:   4.86 kB
+dist/www/assets/app.bacnet.app-2026-02-23-4f4044c88cc.js                       16.66 kB │ gzip:   4.46 kB
+dist/www/assets/app.speed-test.app-2026-02-23-4f4044c88cc.js                   17.12 kB │ gzip:   5.12 kB
+dist/www/assets/app.hotspot2.app-2026-02-23-4f4044c88cc.js                     17.43 kB │ gzip:   5.22 kB
+dist/www/assets/app.modbus-gateway.app-2026-02-23-4f4044c88cc.js               17.94 kB │ gzip:   5.02 kB
+dist/www/assets/app.mobile-usage.app-2026-02-23-4f4044c88cc.js                 18.24 kB │ gzip:   6.41 kB
+dist/www/assets/app.networkmap.app-2026-02-23-4f4044c88cc.js                   18.38 kB │ gzip:   5.04 kB
+dist/www/assets/app.iec60870-server.app-2026-02-23-4f4044c88cc.js              18.77 kB │ gzip:   6.04 kB
+dist/www/assets/app.wireguard.app-2026-02-23-4f4044c88cc.js                    19.84 kB │ gzip:   6.16 kB
+dist/www/assets/app.opcua-server.app-2026-02-23-4f4044c88cc.js                 20.19 kB │ gzip:   6.61 kB
+dist/www/assets/app.side-widget.app-2026-02-23-4f4044c88cc.js                  20.90 kB │ gzip:   7.04 kB
+dist/www/assets/app.network-devices.app-2026-02-23-4f4044c88cc.js              22.98 kB │ gzip:   7.09 kB
+dist/www/assets/app.iec60870-client.app-2026-02-23-4f4044c88cc.js              23.78 kB │ gzip:   7.35 kB
+dist/www/assets/app.troubleshoot.app-2026-02-23-4f4044c88cc.js                 24.02 kB │ gzip:   8.25 kB
+dist/www/assets/app.auto-reboot.app-2026-02-23-4f4044c88cc.js                  25.05 kB │ gzip:   6.40 kB
+dist/www/assets/app.routes.app-2026-02-23-4f4044c88cc.js                       26.39 kB │ gzip:   5.95 kB
+dist/www/assets/app.mwan3.app-2026-02-23-4f4044c88cc.js                        27.00 kB │ gzip:   8.12 kB
+dist/www/assets/app.package-manager.app-2026-02-23-4f4044c88cc.js              28.30 kB │ gzip:   8.56 kB
+dist/www/assets/app.realtime.app-2026-02-23-4f4044c88cc.js                     29.77 kB │ gzip:   9.77 kB
+dist/www/assets/app.dynamic-routes-bgp.app-2026-02-23-4f4044c88cc.js           31.82 kB │ gzip:   7.99 kB
+dist/www/assets/app.modbus-server.app-2026-02-23-4f4044c88cc.js                31.87 kB │ gzip:   8.35 kB
+dist/www/assets/app.firmware.app-2026-02-23-4f4044c88cc.js                     32.21 kB │ gzip:   9.89 kB
+dist/www/assets/app.snmp.app-2026-02-23-4f4044c88cc.js                         32.80 kB │ gzip:   8.16 kB
+dist/www/assets/app.mqtt.app-2026-02-23-4f4044c88cc.js                         33.00 kB │ gzip:   7.08 kB
+dist/www/assets/app.opcua.app-2026-02-23-4f4044c88cc.js                        33.35 kB │ gzip:   8.45 kB
+dist/www/assets/app.l2tp.app-2026-02-23-4f4044c88cc.js                         33.35 kB │ gzip:   8.22 kB
+dist/www/assets/app.overview.app-2026-02-23-4f4044c88cc.js                     33.94 kB │ gzip:   9.63 kB
+dist/www/assets/app.overip.app-2026-02-23-4f4044c88cc.js                       34.28 kB │ gzip:   9.54 kB
+dist/www/assets/app.modbus-client.app-2026-02-23-4f4044c88cc.js                40.05 kB │ gzip:  10.69 kB
+dist/www/assets/app.certificates.app-2026-02-23-4f4044c88cc.js                 40.31 kB │ gzip:  11.61 kB
+dist/www/assets/app.dhcp.app-2026-02-23-4f4044c88cc.js                         42.79 kB │ gzip:  12.89 kB
+dist/www/assets/app.access-control.app-2026-02-23-4f4044c88cc.js               43.90 kB │ gzip:  10.65 kB
+dist/www/assets/app.strong-swan.app-2026-02-23-4f4044c88cc.js                  45.28 kB │ gzip:  12.36 kB
+dist/www/assets/app.mobile-utilities.app-2026-02-23-4f4044c88cc.js             45.92 kB │ gzip:  12.86 kB
+dist/www/assets/app.modbus-serial.app-2026-02-23-4f4044c88cc.js                50.35 kB │ gzip:  12.93 kB
+dist/www/assets/app.coovachilli.app-2026-02-23-4f4044c88cc.js                  53.32 kB │ gzip:  12.88 kB
+dist/www/assets/app.io-juggler.app-2026-02-23-4f4044c88cc.js                   54.25 kB │ gzip:  12.12 kB
+dist/www/assets/app.dnp3.app-2026-02-23-4f4044c88cc.js                         54.88 kB │ gzip:  12.13 kB
+dist/www/assets/app.dlms.app-2026-02-23-4f4044c88cc.js                         66.25 kB │ gzip:  17.05 kB
+dist/www/assets/app.openvpn.app-2026-02-23-4f4044c88cc.js                      74.35 kB │ gzip:  17.58 kB
+dist/www/assets/app.gps.app-2026-02-23-4f4044c88cc.js                          78.23 kB │ gzip:  18.04 kB
+dist/www/assets/app.wireless.app-2026-02-23-4f4044c88cc.js                     81.15 kB │ gzip:  23.79 kB
+dist/www/assets/app.firewall.app-2026-02-23-4f4044c88cc.js                     88.72 kB │ gzip:  20.13 kB
+dist/www/assets/app.network.app-2026-02-23-4f4044c88cc.js                     103.08 kB │ gzip:  28.33 kB
+dist/www/assets/app.event-juggler.app-2026-02-23-4f4044c88cc.js               110.48 kB │ gzip:  25.86 kB
+dist/www/assets/app.data-sender.app-2026-02-23-4f4044c88cc.js                 114.44 kB │ gzip:  24.79 kB
+dist/www/assets/app.site-manager.app-2026-02-23-4f4044c88cc.js                142.89 kB │ gzip:  41.39 kB
+dist/www/assets/app.mobile.app-2026-02-23-4f4044c88cc.js                      162.59 kB │ gzip:  42.27 kB
+dist/www/assets/vendor-2026-02-23-4f4044c88cc.js                              438.95 kB │ gzip: 155.70 kB
+dist/www/assets/index-2026-02-23-4f4044c88cc.js                             1,073.87 kB │ gzip: 316.74 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[plugin VuCI] Moving plugin applications out of [3;32m/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/www[0m
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-apn-database
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-aws
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-azure-iothub
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-bacnet
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-bfd
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-cumulocity
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-dlms
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-dnp3
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-email-relay
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-eoip
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-https-dns-proxy
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-iec60870-client
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-iec60870-server
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-igmp-proxy
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-jool
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-minidlna
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-mpls
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-network-devices
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-ntpd
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-ntrip
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-opcua-server
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-opcua
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-openconnect
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-p910nd
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-pamd
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-qos
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-samba
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-sim-idle-protection
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-smpp
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-sshfs
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-starlink
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-tailscale
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-thingworx
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-tinc
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-tr069
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-udprelay
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-upnp
+[plugin VuCI] Creating directory: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/applications/vuci-app-zerotier
+[2mdist/www/[22m[32mbrand/colors.css.gz                          [39m[1m[2m0.40 kB[1m[22m
+[2mdist/www/[22m[32mbrand/tokens.css.gz                          [39m[1m[2m0.77 kB[1m[22m
+[2mdist/www/[22m[32mtlt_networks_logo.svg.gz                     [39m[1m[2m5.36 kB[1m[22m
+[2mdist/www/[22m[32micons/checkbox_tick.svg.gz                   [39m[1m[2m0.22 kB[1m[22m
+[2mdist/www/[22m[32micons/checkbox_tick_white.svg.gz             [39m[1m[2m0.17 kB[1m[22m
+[2mdist/www/[22m[32micons/tlt_networks_logo_white.svg.gz         [39m[1m[2m5.34 kB[1m[22m
+✓ built in 21.08s
+
+
+> vuci@8.5.0_dev postbuild-only
+> find ./vuci-ui-core/src/dist -type f -name '*.gz' -exec bash -c 'rm -f "${0%.gz}"' {} \;; find ./vuci-ui-core/src/dist -type f -name '*.map' -delete
+
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core.installed /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core/www
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core/usr/share/vuci/menu.d
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/www/* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core/www/
+if [ ! -z "$(ls ./modem-icons/RUTX*)" ]; then cp -fpR ./modem-icons/RUTX* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core/www/icons/modem-icons/; fi
+ls: cannot access './modem-icons/RUTX*': No such file or directory
+cp -fpR ../menu_static.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/menu_static.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/menu.json /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/applications/menu.d
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/menu.json /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core/usr/share/vuci/menu.d/
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core/ -type f -name '*.json' | while read src; do if jq -c . < "$src" > "$src.o"; then mv "$src.o" "$src"; fi; done;
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core.installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/.pkgdir/vuci-ui-core/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.vuci-ui-core_installed
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/vuci/vuci-ui-core_2026-02-23-4f4044c88cc-3_arm_cortex-a7_neon-vfpv4.ipk'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core/CONTROL /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core/www
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core/usr/share/vuci/menu.d
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/vuci-ui-core/src/dist/www/* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core/www/
+if [ ! -z "$(ls ./modem-icons/RUTX*)" ]; then cp -fpR ./modem-icons/RUTX* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core/www/icons/modem-icons/; fi
+ls: cannot access './modem-icons/RUTX*': No such file or directory
+cp -fpR ../menu_static.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc
+/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/menu_static.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/menu.json /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/applications/menu.d
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/menu.json /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core/usr/share/vuci/menu.d/
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core/ -type f -name '*.json' | while read src; do if jq -c . < "$src" > "$src.o"; then mv "$src.o" "$src"; fi; done;
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core -name 'CVS' -o -name '.svn' -o -name '.#*' -o -name '*~'| xargs -r rm -rf
+export CROSS="arm-openwrt-linux-muslgnueabi-"  NO_RENAME=1 ; NM="arm-openwrt-linux-muslgnueabi-nm" STRIP="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sstrip -z" STRIP_KMOD="/media/home/FIRMWARES1/RUTX11/sdk2/scripts/strip-kmod.sh" PATCHELF="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/patchelf" /media/home/FIRMWARES1/RUTX11/sdk2/scripts/rstrip.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core/CONTROL; ( echo "$CONTROL"; printf "Description: "; echo "$DESCRIPTION" | sed -e 's,^[[:space:]]*, ,g'; ) > control; chmod 644 control; ( echo "#!/bin/sh"; echo "[ \"\${IPKG_NO_SCRIPT}\" = \"1\" ] && exit 0"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_postinst \$0 \$@"; ) > postinst; ( echo "#!/bin/sh"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_prerm \$0 \$@"; ) > prerm; chmod 0755 postinst prerm; echo "$V_Package_vuci_ui_core_conffiles" > conffiles;  echo "$V_Package_vuci_ui_core_postinst" > postinst-pkg; chmod 0755 postinst-pkg; )
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/vuci
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-build -m "" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/vuci
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/find: '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core/etc/config/widget': No such file or directory
+Packaged contents of /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/vuci-ui-core-2026-02-23-4f4044c88cc/ipkg-arm_cortex-a7_neon-vfpv4/vuci-ui-core into /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/vuci/vuci-ui-core_2026-02-23-4f4044c88cc-3_arm_cortex-a7_neon-vfpv4.ipk
+echo "vuci-ui-core" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/vuci-ui-core.default.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/feeds/vuci/vuci-ui-core'
+time: package/feeds/vuci/vuci-ui-core/compile#235.04#16.14#231.52

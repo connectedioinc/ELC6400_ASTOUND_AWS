@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/blesemd/Makefile
+
+Package: blesemd
+Version: 7.21
+Depends: +libc +libubus +libuci +libblobmsg-json +bluez-libs +lsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Bluetooth Low Energy Sensor management daemon
+Maintainer: 
+Require-User: blesemd=527:blesemd=527
+FileAttributes: /usr/bin/blesemd::::cap_net_raw,cap_net_admin+eip
+Source: blesemd-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Bluetooth Low Energy Sensor management daemon
+Description: 	Management utility for Bluetooth Low Energy devices
+
+@@
+
+

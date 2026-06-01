@@ -1,0 +1,66 @@
+Source-Makefile: package/system/uci/Makefile
+
+Package: libuci
+Version: 2021-10-22-f84f49f00fb70364f58b4cce72f1796a7190d370-18-18
+Depends: +libc +libubox +UCI_LOG_SUPPORT:libubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: C library for the Unified Configuration Interface (UCI)
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: uci-2021-10-22-f84f49f00fb70364f58b4cce72f1796a7190d370-18-f84f49f00fb70364f58b4cce72f1796a7190d370.tar.xz
+License: LGPL-2.1
+LicenseFiles: uci.h
+Type: ipkg
+Detail-Description: C library for the Unified Configuration Interface (UCI)
+Description: C library for the Unified Configuration Interface (UCI)
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+  source "package/system/uci/Config.in"
+@@
+
+Package: libuci-lua
+Version: 2021-10-22-f84f49f00fb70364f58b4cce72f1796a7190d370-18-18
+Depends: +libc +libuci +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Lua plugin for UCI
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: uci-2021-10-22-f84f49f00fb70364f58b4cce72f1796a7190d370-18-f84f49f00fb70364f58b4cce72f1796a7190d370.tar.xz
+License: LGPL-2.1
+LicenseFiles: uci.h
+Type: ipkg
+Detail-Description: Lua plugin for UCI
+Description: Lua plugin for UCI
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: uci
+Version: 2021-10-22-f84f49f00fb70364f58b4cce72f1796a7190d370-18-18
+Depends: +libc +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Utility for the Unified Configuration Interface (UCI)
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: uci-2021-10-22-f84f49f00fb70364f58b4cce72f1796a7190d370-18-f84f49f00fb70364f58b4cce72f1796a7190d370.tar.xz
+License: LGPL-2.1
+LicenseFiles: uci.h
+Type: ipkg
+Detail-Description: Utility for the Unified Configuration Interface (UCI)
+Description: Utility for the Unified Configuration Interface (UCI)
+Felix Fietkau <nbd@nbd.name>
+@@
+
+

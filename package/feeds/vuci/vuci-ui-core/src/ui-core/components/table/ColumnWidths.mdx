@@ -1,0 +1,17 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import * as TltTableStories from './TltTable.stories'
+
+export const ColumnWidths = () => <div className="flex flex-col gap-6 text-sm overflow-x-auto">
+  <div className="w-[15ch] p-4 font-semibold bg-[#EDE9D3] box-content">XS <span className="font-normal text-theme-text-secondary-subtle">(15 characters)</span></div>
+  <div className="w-[18ch] p-4 font-semibold bg-[#F7E89D] box-content">Small <span className="font-normal text-theme-text-secondary-subtle">(18 characters)</span></div>
+  <div className="w-[28ch] p-4 font-semibold bg-[#D7E4D1] box-content">Normal <span className="font-normal text-theme-text-secondary-subtle">(28 characters)</span></div>
+  <div className="w-[41ch] p-4 font-semibold bg-[#B9D8AA] box-content">Medium <span className="font-normal text-theme-text-secondary-subtle">(41 characters)</span></div>
+  <div className="w-[57ch] p-4 font-semibold bg-[#C8C3FF] box-content">Large <span className="font-normal text-theme-text-secondary-subtle">(57 characters)</span></div>
+  <div className="w-[85ch] p-4 font-semibold bg-[#FFBDAF] box-content">Extra large <span className="font-normal text-theme-text-secondary-subtle">(85 characters)</span></div>
+</div>
+
+<Meta name="Column Widths" of={TltTableStories} />
+
+# Column Widths
+
+<ColumnWidths />

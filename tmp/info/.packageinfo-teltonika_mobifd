@@ -1,0 +1,27 @@
+Source-Makefile: package/teltonika/mobifd/Makefile
+
+Package: mobifd
+Menu: 1
+Version: 7.21
+Depends: +libc +libubus +libubox +libgsm +liburc +libuci +libtlt_uci +libtlt-logger +libsqlite3 +libmnfinfo +libboardjson +liblpac
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GSM Modem manager
+Maintainer: 
+Require-User: gsm=509:gsm=509
+Source: mobifd-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: GSM Modem manager
+Description: 	Daemon for managing operator connection establishment and data connection handling.
+
+@@
+Config:
+	source "package/teltonika/mobifd/Config.in"
+@@
+
+

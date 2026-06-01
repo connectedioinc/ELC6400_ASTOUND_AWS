@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#Setting for the storage of SMS - Modem
+uci set simcard.@simman[0].msg_storage='me'
+uci set simcard.@simman[0].free='50'
+
+uci commit simcard
+
+exit 0

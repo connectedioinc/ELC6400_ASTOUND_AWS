@@ -1,0 +1,10 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "site_manager.*": {
+      "methods": [
+        "*"
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+#!/usr/bin/lua
+local fs = require "nixio.fs"
+local nixio = require "nixio"
+
+local output_file = "/tmp/loadavg_data"
+local pid_file = "/tmp/run/loadavg_monitor.pid"
+local signal_file = "/tmp/loadavg_signal"
+local iteration_step = 1
+local write_duration = 10
+local cleanup_iterations = 60
+
+local function generate_entry()
+	local f = io.open("/proc/loadavg", "r")
+	local load_1, load_5, load_15 = f:read("*l"):match("([^ ]+) ([^ ]+) ([^ ]+)")
+	f:close()
+
+	local timestamp = os.time()
+
+	return string.format("[ %d, %.2f, %.2f, %.2f ],\n", timestamp,
+                         load_1,
+                         load_5,
+                         load_15)
+end
+
+local function loadavg()
+	if fs.access(pid_file) then
+		fs.writefile(signal_file, "")
+		os.exit(0)
+	end
+	local pid = nixio.getpid()
+	fs.writefile(pid_file, pid)
+
+	local end_time = os.time() + cleanup_iterations
+	local inner_end_time = os.time() + write_duration
+
+	while os.time() < end_time do
+		while os.time() < inner_end_time do
+			fs.writefile(output_file, (fs.readfile(output_file) or "") .. generate_entry())
+			local content = fs.readfile(output_file) or ""
+			local lines = {}
+			for line in content:gmatch("[^\n]+") do
+				table.insert(lines, line)
+			end
+			if #lines > cleanup_iterations then
+				fs.writefile(output_file, table.concat(lines, "\n", #lines - cleanup_iterations + 1))
+			end
+			nixio.nanosleep(iteration_step)
+		end
+		if fs.access(signal_file) then
+			fs.unlink(signal_file)
+			end_time = os.time() + cleanup_iterations
+			inner_end_time = os.time() + write_duration
+		end
+	end
+
+	fs.writefile(output_file, "")
+	fs.unlink(pid_file)
+	os.exit(0)
+end
+
+loadavg()

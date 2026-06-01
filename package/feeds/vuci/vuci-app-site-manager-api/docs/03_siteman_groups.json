@@ -1,0 +1,355 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Groups"
+    }
+  ],
+  "paths": {
+    "/site_manager/groups/config": {
+      "get": {
+        "summary": "Returns all Site manager group configurations",
+        "tags": [
+          "Groups"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_groups_config_multi"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager group configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_groups_config_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_siteman_groups_config_multi"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Groups"
+        ]
+      },
+      "post": {
+        "summary": "Creates a new Site manager group configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_siteman_groups_config_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_siteman_groups_config_one"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Groups"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager group configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "tags": [
+          "Groups"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Groups",
+          "Groups"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/groups/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected Site manager group configuration",
+        "tags": [
+          "Groups"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_groups_config_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager group configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_groups_config_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_siteman_groups_config_one"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Groups"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager group configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": [
+          "Groups"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Groups",
+          "Groups"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "devman_group_config": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "format": "string",
+            "description": "Name",
+            "x-web": {
+              "pretty": "Group's custom name for easier management",
+              "input-type": "input",
+              "unique": true
+            }
+          },
+          "platform": {
+            "type": "string",
+            "description": "Platform type.",
+            "enum": [
+              "default",
+              "switch"
+            ]
+          },
+          "default": {
+            "type": "string",
+            "description": "Is this the default group.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ]
+          },
+          "devices": {
+            "type": "array",
+            "description": "List of devices (device IDs) added to the group.",
+            "items": {
+              "type": "string"
+            },
+            "x-web": {
+              "pretty": "Devices",
+              "input-type": "multiselect"
+            }
+          }
+        },
+        "required": [
+          "name",
+          "platform"
+        ]
+      },
+      "req_body_siteman_groups_config_one": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/devman_group_config"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "req_body_siteman_groups_config_multi": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Configuration ID"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "$ref": "#/components/schemas/devman_group_config"
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      }
+    },
+    "responses": {
+      "200_siteman_groups_config_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_group_config"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_groups_config_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_group_config"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

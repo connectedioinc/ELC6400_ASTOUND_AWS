@@ -1,0 +1,80 @@
+.form {
+  @apply flex flex-col gap-8 text-body-secondary;
+}
+
+.form__item {
+  /*form item's tag vars*/
+  --gap-x-row: --spacing(4);
+  --gap-y-row: --spacing(4);
+  --gap-x-column: --spacing(1);
+  --gap-y-column: --spacing(1);
+  /*form item's leading tag vars*/
+  --leading-line-height-row: --spacing(8);
+  --leading-line-height-row-sm: --spacing(6);
+  --leading-line-height-column: --spacing(5);
+  --leading-line-height: var(--leading-line-height-row);
+
+  line-height: var(--leading-line-height);
+}
+
+.form__item {
+  @apply relative text-body-secondary text-theme-text-base;
+}
+
+.form__item__leading {
+  line-height: var(--leading-line-height);
+}
+
+.form__item__trailing__actions {
+  @apply flex gap-2;
+}
+
+.form__item--column:has(.form__item__leading) + .form__item__trailing__actions {
+  margin-top: calc(var(--leading-line-height-column) + var(--gap-y-column));
+}
+
+.form__item__leading:has(+ .form__item__trailing .form__item--column > .form__item__leading) {
+  margin-top: calc(var(--leading-line-height-column) + var(--gap-y-column));
+}
+
+.form__item--row.form__item--small {
+  --leading-line-height: var(--row-leading-line-height-sm);
+  /*in a case where the trailing item is a bit higher than the leading one, we want to align them vertically*/
+  align-items: center;
+}
+
+.form__item--column {
+  --leading-line-height: var(--column-leading-line-height);
+}
+
+.form__item--column .form__item__leading {
+  @apply flex gap-(--gap-x) items-center;
+}
+
+.form__item--row {
+  @apply grid grid-cols-10 gap-x-(--gap-x-row) gap-y-(--gap-y-row);
+}
+
+.form__item--row .form__item__leading {
+  @apply col-start-1 col-span-4 justify-self-end flex gap-1 h-min;
+}
+
+.form__item--row .form__item__trailing {
+  @apply col-start-5 col-span-6;
+}
+
+.form__item--column .form__item__leading {
+  @apply flex items-center gap-2;
+}
+
+.form__item--column {
+  @apply flex flex-col gap-y-(--gap-y-column);
+}
+
+.form__item__control {
+  @apply col-span-6;
+}
+
+.form__item .field-textarea__control {
+  @apply md:w-xs;
+}

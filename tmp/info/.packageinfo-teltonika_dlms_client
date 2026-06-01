@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/dlms_client/Makefile
+
+Package: dlms_client
+Version: 2026-01-23-1
+Depends: +libc +libsqlite3 +libubus +libubox +libuci +libtlt_uci +libtlt_termios +libtlt-logger +libpthread +libdlms +libcfgx +libticket_mutex +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: DLMS Client for COSEM device monitoring
+Maintainer: 
+Source: GuruxDLMS.c-fa855d2e82db1a7d27c419d09ed7a11fe86b86f0.tar.gz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: DLMS Client for COSEM device monitoring
+Description: 	DLMS client designed for reading data from COSEM devices and storing read data in local database.
+
+@@
+
+

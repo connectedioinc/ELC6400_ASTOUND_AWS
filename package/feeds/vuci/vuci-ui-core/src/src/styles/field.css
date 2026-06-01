@@ -1,0 +1,531 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  box-shadow: inset 0 0 20px 20px transparent;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* remove default password icon on IE and Edge*/
+/* https://stackoverflow.com/questions/47854041/how-to-add-see-password-icon-just-for-chrome-and-firefox */
+input::-ms-reveal {
+  display: none;
+}
+@layer components {
+  .selector {
+    --bg: var(--theme-bg-surface);
+    --bg-active: var(--theme-bg-primary-1);
+    --border: var(--theme-border-strong);
+    --border-active: var(--theme-border-primary);
+    --size-scale: 1;
+    --size: calc(var(--size-scale) * 1rem);
+    --radius: --spacing(1);
+    appearance: none;
+    font: inherit;
+    width: var(--size);
+    height: var(--size);
+    outline-offset: -1px;
+    outline: 1px solid var(--border);
+    color: var(--border);
+    border-radius: var(--radius);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  @media (width >= theme(--breakpoint-4xl)) {
+    .selector {
+      --size-scale: 1.25;
+    }
+  }
+  .selector:is(:disabled, [data-disabled], :readonly, [data-readonly]) {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  .selector:focus-visible {
+    @apply focus-token;
+  }
+
+  input[type='radio'] {
+    --radius: 100%;
+    border-radius: var(--radius);
+    display: inline-grid;
+    place-content: center;
+  }
+
+  input[type='radio']::before {
+    content: '';
+    width: calc(var(--size) / 2);
+    height: calc(var(--size) / 2);
+    scale: 0;
+    transition: all 150ms ease-out;
+    border-radius: var(--radius);
+  }
+
+  input[type='radio']:checked {
+    outline-offset: -2px;
+    outline: 2px solid var(--border-active);
+  }
+
+  input[type='checkbox']::before,
+  input[type='checkbox']::after {
+    position: absolute;
+    content: '';
+  }
+
+  input[type='checkbox']::after {
+    top: 50%;
+    left: 50%;
+  }
+
+  input[type='checkbox']::before {
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    opacity: 0;
+    transition: all 120ms ease-in-out;
+    border-radius: var(--radius);
+  }
+
+  input[type='checkbox']:is(:checked, :indeterminate)::before,
+  input[type='radio']:checked::before {
+    opacity: 1;
+    scale: 1;
+    box-shadow: inset var(--size) var(--size) var(--bg-active);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+
+  input[type='checkbox']:checked::after {
+    width: 10px;
+    height: 9px;
+    transform: translate(-50%, -50%) scale(var(--size-scale, 1));
+    background-image: url('/icons/checkbox_tick_white.svg');
+    background-repeat: no-repeat;
+  }
+
+  input[type='checkbox']:indeterminate::after {
+    width: calc(var(--size) * 0.56);
+    height: 0.125rem;
+    background-color: white;
+    border-radius: 2px;
+    transform: translate(-50%, -50%);
+  }
+
+  .field {
+    --border: var(--theme-border-strong);
+    --border-hover: var(--theme-border-primary);
+    --border-focus: var(--theme-border-primary-strong);
+    --border-danger: var(--theme-border-danger);
+    --border-warning: var(--theme-border-warning);
+    --border-disabled: var(--theme-bg-secondary-subtle);
+    --icon: var(--theme-bg-secondary-1);
+    --icon-hover: var(--theme-bg-secondary-2);
+    --icon-focus: var(--theme-bg-secondary-2);
+    --placeholder: var(--theme-text-subtle);
+    --value: var(--theme-text-base);
+    --value-disabled: var(--theme-text-secondary-subtle);
+    --background: var(--theme-bg-surface);
+    --background-disabled: var(--theme-bg-secondary-subtle);
+    --padding-x: --spacing(3);
+    --padding-y: --spacing(1.5);
+    --gap: --spacing(2);
+    --border-radius: --spacing(2);
+  }
+
+  .field__addon {
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 1.25rem;
+    height: 1.25rem;
+    color: var(--icon);
+  }
+
+  .field__addon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .field__addon:active {
+    color: var(--icon-focus);
+  }
+
+  .field__addon:is(:hover) {
+    color: var(--icon-hover);
+  }
+  /* --------------- INPUT --------------- */
+  .field-input {
+    outline: solid 1px var(--border);
+    outline-offset: -1px;
+    background: var(--background);
+    color: var(--value);
+    display: flex;
+    gap: var(--gap);
+    padding: var(--padding-y) var(--padding-x);
+    border-radius: var(--border-radius);
+  }
+
+  .field-input__control,
+  input:autofill {
+    appearance: none;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: inherit;
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 1.25rem;
+    width: 100%;
+  }
+
+  .field-input[data-state='error'] {
+    outline-color: var(--border-danger);
+  }
+
+  .field-input[data-state='warning'] {
+    outline-color: var(--border-warning);
+  }
+
+  .field-input:is(:hover, .field-input--hovered) {
+    outline-color: var(--border-hover);
+  }
+
+  .field-input:is(:focus-visible, :focus-within, .field-input--focused) {
+    outline-color: var(--border-focus);
+  }
+
+  .field-input:is([data-disabled], [data-readonly]) {
+    outline-color: var(--border-disabled);
+    background: var(--background-disabled);
+    --value: var(--value-disabled);
+  }
+
+  /* --------------- INPUT --------------- */
+
+  /* --------------- SELECT --------------- */
+  .field-select {
+    outline: solid 1px var(--border);
+    outline-offset: -1px;
+    background: var(--background);
+    color: var(--value);
+    display: flex;
+    width: 100%;
+    gap: --spacing(2);
+    padding: var(--padding-y) var(--padding-x);
+    border-radius: var(--border-radius);
+  }
+
+  .field-select__control {
+    min-width: 0;
+    background: transparent;
+    color: inherit;
+    flex-grow: 1;
+    font-size: 14px;
+    line-height: 1.25rem;
+    position: relative;
+    overflow-x: clip;
+    display: flex;
+    gap: --spacing(1);
+    align-items: center;
+  }
+  .field-select__value {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .field-select__value[data-placeholder-shown] {
+    color: var(--placeholder);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+  }
+
+  .field-select__value-tag {
+    @apply rounded-full border border-theme-border-strong py-px px-2 inline-flex shrink-0 gap-1 -my-(--padding-y);
+  }
+
+  .field-select__addon {
+    flex-shrink: 0;
+    font-size: 14px;
+    line-height: 1.25rem;
+    height: 1.25rem;
+    color: var(--icon);
+  }
+
+  .field-select__addon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .field-select__addon:is(:focus) {
+    color: var(--icon-focus);
+  }
+
+  .field-select__addon:is(:hover) {
+    color: var(--icon-hover);
+  }
+
+  .field-select:is(:hover, .field-select--hovered) {
+    outline-color: var(--border-hover);
+  }
+
+  .field-select:is(:focus-visible, :focus-within, .field-select--focused) {
+    outline-color: var(--border-focus);
+  }
+
+  .field-select:is([data-disabled], [data-readonly]) {
+    outline-color: var(--border-disabled);
+    background: var(--background-disabled);
+    --value: var(--value-disabled);
+  }
+
+  .field-select[data-state='error'] {
+    outline-color: var(--border-danger);
+  }
+
+  .field-select[data-state='warning'] {
+    outline-color: var(--border-warning);
+  }
+
+  .field-select__placeholder {
+    color: var(--placeholder);
+  }
+
+  .field-select__listbox {
+    @apply bg-white border rounded-md overflow-auto space-y-1 shadow-lg w-full max-w-xs text-sm py-2 focus-within:ring-theme-border-primary-strong focus-within:ring-1 outline-none max-h-80;
+  }
+  .field-select__listbox-item {
+    @apply py-2 px-2 mx-2 rounded-2xl outline-none select-none cursor-pointer;
+  }
+
+  .field-select__listbox-item[data-highlighted]:not([data-disabled]) {
+    @apply bg-theme-bg-hover;
+  }
+  .field-select__listbox-item[data-disabled] {
+    @apply text-theme-text-subtle cursor-default;
+  }
+  .field-select__listbox-item[data-selected] {
+    @apply text-theme-text-primary;
+  }
+
+  /* --------------- SELECT --------------- */
+
+  /* --------------- TEXT-AREA --------------- */
+
+  .field-textarea {
+    position: relative;
+    max-width: 100%;
+    width: max-content;
+    outline: solid 1px var(--border);
+    outline-offset: -1px;
+    background: var(--background);
+    border-radius: var(--border-radius);
+    min-height: 32px;
+  }
+
+  .field-textarea .field__addon.field__addon-right {
+    position: absolute;
+    right: --spacing(3);
+    top: --spacing(2);
+  }
+
+  .field-textarea__control {
+    outline: none;
+    border: none;
+    background: transparent;
+    appearance: none;
+    color: var(--value);
+    font-size: 14px;
+    line-height: 20px;
+    min-height: 32px;
+    max-width: 100%;
+    padding: var(--padding-y) var(--padding-x);
+  }
+
+  .field-textarea__control:has(+ .field__addon) {
+    padding-right: calc(20px + --spacing(5));
+  }
+
+  .field-textarea:is(:hover, .field-textarea--hovered) {
+    --border: var(--border-hover);
+  }
+
+  .field-textarea:is(:focus-visible, :focus-within, .field-textarea--hovered) {
+    --border: var(--border-focus);
+  }
+
+  .field-textarea:is([data-disabled], [data-readonly]) {
+    --border: var(--border-disabled);
+    --value: var(--value-disabled);
+    --background: var(--background-disabled);
+  }
+
+  .field-textarea[data-state='error'] {
+    --border: var(--border-danger);
+  }
+
+  .field-textarea[data-state='warning'] {
+    --border: var(--border-warning);
+  }
+
+  /* --------------- TEXT-AREA --------------- */
+}
+
+.t-switch {
+  --bg-unchecked: var(--theme-border-base);
+  --bg-checked: var(--theme-bg-primary-1);
+  --bg-indicator: var(--theme-bg-page);
+  --_height: --spacing(5);
+  --_width: --spacing(9.5);
+  --_indicator-size: calc(var(--_height) - 4px);
+}
+
+.t-switch__control--checked .t-switch__thumb {
+  /*translate: 100%;*/
+  translate: calc(var(--_width) - var(--_indicator-size) - 4px);
+}
+
+@media (width >= 1920px) {
+  .t-switch {
+    --_height: --spacing(6);
+    --_width: --spacing(11);
+  }
+}
+
+.t-switch__thumb {
+  height: var(--_indicator-size);
+  width: var(--_indicator-size);
+}
+.t-switch {
+  @apply flex items-center gap-2;
+}
+.t-switch:is([data-disabled], [data-readonly]) {
+  @apply opacity-40;
+}
+
+.t-switch__control {
+  @apply block relative w-9.5 h-5 4xl:w-11 4xl:h-6 transition-colors duration-200 text-left rounded-full p-0.5 bg-(--bg-unchecked);
+}
+
+.t-switch__control--checked {
+  @apply bg-(--bg-checked);
+}
+
+.t-switch__thumb {
+  @apply shadow rounded-full bg-(--bg-indicator) block transition-transform duration-200;
+}
+/*.t-switch__control--checked .t-switch__thumb {
+  @apply translate-x-full;
+}*/
+
+.t-field {
+  --clr-border: var(--theme-border-strong);
+  --clr-icon: var(--theme-bg-secondary-2);
+  --clr-border-active: var(--theme-border-primary-strong);
+  --clr-border-hover: var(--theme-border-primary);
+  --bg-active: var(--theme-bg-surface);
+  --bg-disabled: var(--theme-bg-secondary-subtle);
+  --text-active: var(--theme-text-base);
+  --text-muted: var(--color-theme-text-secondary-subtle);
+  --text-placeholder: var(--theme-text-subtle);
+}
+/*.t-field {
+  @apply relative text-body-secondary text-(--text-active);
+}*/
+.t-field {
+  @apply relative text-(--text-active) flex items-center gap-2 !leading-4 text-[14px];
+}
+.t-field--single-line {
+  @apply transition-all duration-200 min-w-[160px] ring-1 ring-inset ring-(--clr-border) rounded-lg bg-(--bg-active) outline-none;
+}
+.t-field--single-line {
+  padding-left: var(--_padding-left, var(--_space-x));
+  padding-right: var(--_padding-right, var(--_space-x));
+}
+
+.t-field--size-md {
+  --spacing: 0.25rem;
+  --_space-x: --spacing(3);
+  --_space-y: --spacing(1.5);
+  /*--_space-y: calc(1 * var(--spacing));*/
+}
+.t-field__addon {
+  @apply text-(--clr-icon);
+}
+
+/*.t-field[data-addon-right='true'] {
+  --_padding-right: calc(var(--_space-x) + var(--_addon-size) + var(--spacing) * 2);
+}
+.t-field[data-addon-left='true'] {
+  --_padding-left: calc(var(--_space-x) + var(--_addon-size) + var(--spacing) * 2);
+}*/
+
+/*.t-field__addon {
+  @apply absolute top-1/2 -translate-y-1/2 inline-block text-(--clr-icon);
+}*/
+
+/*.t-field__addon--left {
+  @apply left-2;
+}*/
+
+/*.t-field__addon--right {
+  @apply right-2;
+}*/
+
+/*.t-field__control {
+  @apply transition-all duration-200 min-w-[160px] ring-1 ring-inset ring-(--clr-border) rounded-lg bg-(--bg-active) min-h-8 outline-none h-full text-inherit w-full text-left;
+}*/
+.t-field__control {
+  padding-top: var(--_padding-top, var(--_space-y));
+  padding-bottom: var(--_padding-bottom, var(--_space-y));
+}
+
+.t-field__control {
+  @apply grow outline-none text-left;
+}
+.t-field--state-error {
+  @apply ring-theme-border-danger;
+}
+
+.t-field--state-warning {
+  @apply ring-theme-border-warning;
+}
+
+.t-field:hover,
+.t-field--hovered {
+  @apply ring-(--clr-border-hover) ring-1 outline-none;
+}
+
+.t-field:focus,
+.t-field--focused {
+  @apply ring-(--clr-border-active) ring-1 outline-none;
+}
+
+.t-field:is([disabled], [data-disabled='true'], [readonly], [data-readonly='true']) {
+  @apply bg-(--bg-disabled) text-(--text-muted) ring-0;
+}
+
+.t-field:is([disabled], [data-disabled='true']),
+.t-switch:is([disabled]) {
+  @apply cursor-not-allowed;
+}
+
+.t-field__control--placeholder,
+.t-field__control::placeholder {
+  @apply text-(--text-placeholder);
+}
+
+.t-field--width-lg {
+  max-width: calc(var(--base-width, 20rem) * 1);
+}
+.t-field--width-base {
+  max-width: calc(var(--base-width, 20rem) * 2 / 3);
+}
+.t-field--width-md {
+  max-width: calc(var(--base-width, 20rem) * 1 / 2);
+}
+.t-field--width-sm {
+  max-width: calc(var(--base-width, 20rem) * 1 / 3);
+}

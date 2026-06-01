@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/applications/vuci-app-p910nd-ui/Makefile
+
+Package: vuci-app-p910nd-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-p910nd-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Printer server application
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Printer server application
+Description: VuCI UI Support for Printer server application
+
+@@
+
+

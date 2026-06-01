@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-speed-test-ui/Makefile
+
+Package: vuci-app-speed-test-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-speed-test-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Speed Test
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Speed Test
+Description: VuCI UI Support for Speed Test
+
+@@
+
+

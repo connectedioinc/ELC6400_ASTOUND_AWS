@@ -1,0 +1,23 @@
+Source-Makefile: package/libs/luci-lib-jsonc/Makefile
+
+Package: luci-lib-jsonc
+Version: 2025-10-14
+Depends: +libc +liblua +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: LuCI Lua JSON-C bindings
+Maintainer: 
+Source: 
+License: Apache-2.0
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: LuCI Lua JSON-C bindings
+Description: 	LuCI JSON-C Lua bindings, used for encoding and decoding JSON within Lua scripts.
+
+@@
+
+

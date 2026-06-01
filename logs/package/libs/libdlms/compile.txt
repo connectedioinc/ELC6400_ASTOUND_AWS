@@ -1,0 +1,366 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libdlms'
+libdlms-fa855d2e-fa855d2e82db1a7d27c419d09ed7a11fe86b86f0.tar.xz: Download from https://github.com/Gurux/GuruxDLMS.c.git failed
+libdlms-fa855d2e-fa855d2e82db1a7d27c419d09ed7a11fe86b86f0.tar.xz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'libdlms-fa855d2e-fa855d2e82db1a7d27c419d09ed7a11fe86b86f0'...
+Note: switching to 'fa855d2e82db1a7d27c419d09ed7a11fe86b86f0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at fa855d2 Version 20240123.1
+Packing checkout...
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.prepared_561304af7b3781148a47002c00350dd3_6664517399ebbbc92a37c5bb081b5c53_check
+
+Applying ./patches/000_tlt.patch using plaintext: 
+patching file .gitignore
+patching file GuruxDLMSClientExample/src/communication.c
+patching file GuruxDLMSClientExample/src/main.c
+patching file GuruxDLMSDataGateway/Development/include/communication.h
+patching file GuruxDLMSDataGateway/Development/include/exampleserver.h
+patching file GuruxDLMSDataGateway/Development/src/communication.c
+patching file GuruxDLMSDataGateway/Development/src/exampleserver.c
+patching file GuruxDLMSServerExample/include/exampleserver.h
+patching file GuruxDLMSServerExample/src/exampleserver/exampleserver.c
+patching file GuruxDLMSServerExample/src/exampleserver.c
+patching file GuruxDLMSServerExample/src/main.c
+patching file GuruxDLMSServerExample2/VS/GuruxDLMSServerExample2.vcxproj
+patching file GuruxDLMSServerExample2/VS/GuruxDLMSServerExample2.vcxproj.filters
+patching file GuruxDLMSServerExample2/src/main.c
+patching file development/VS/GuruxDLMS.c.vcxproj
+patching file development/VS/GuruxDLMS.c.vcxproj.filters
+patching file development/include/asn1Parser.h
+patching file development/include/bigInteger.h
+patching file development/include/bytebuffer.h
+patching file development/include/ciphering.h
+patching file development/include/client.h
+patching file development/include/cosem.h
+patching file development/include/curve.h
+patching file development/include/datainfo.h
+patching file development/include/date.h
+patching file development/include/dlms.h
+patching file development/include/dlmssettings.h
+patching file development/include/eccPoint.h
+patching file development/include/enums.h
+patching file development/include/errorcodes.h
+patching file development/include/gx509Certificate.h
+patching file development/include/gxPkcs10.h
+patching file development/include/gxdefine.h
+patching file development/include/gxecdsa.h
+patching file development/include/gxget.h
+patching file development/include/gxignore.h
+patching file development/include/gxint.h
+patching file development/include/gxobjects.h
+patching file development/include/gxserializer.h
+patching file development/include/gxsetignoremalloc.h
+patching file development/include/gxsetmalloc.h
+patching file development/include/gxsha256.h
+patching file development/include/gxsha384.h
+patching file development/include/gxvalueeventargs.h
+patching file development/include/helpers.h
+patching file development/include/privateKey.h
+patching file development/include/publicKey.h
+patching file development/include/server.h
+patching file development/include/serverevents.h
+patching file development/include/shamirs.h
+patching file development/include/variant.h
+patching file development/src/apdu.c
+patching file development/src/asn1Parser.c
+patching file development/src/bigInteger.c
+patching file development/src/bitarray.c
+patching file development/src/bytebuffer.c
+patching file development/src/ciphering.c
+patching file development/src/client.c
+patching file development/src/converters.c
+patching file development/src/cosem.c
+patching file development/src/curve.c
+patching file development/src/datainfo.c
+patching file development/src/date.c
+patching file development/src/dlms.c
+patching file development/src/dlmsSettings.c
+patching file development/src/eccPoint.c
+patching file development/src/gx509Certificate.c
+patching file development/src/gxPkcs10.c
+patching file development/src/gxecdsa.c
+patching file development/src/gxget.c
+patching file development/src/gxinvoke.c
+patching file development/src/gxmd5.c
+patching file development/src/gxobjects.c
+patching file development/src/gxserializer.c
+patching file development/src/gxset.c
+patching file development/src/gxsetignoremalloc.c
+patching file development/src/gxsetmalloc.c
+patching file development/src/gxsha1.c
+patching file development/src/gxsha256.c
+patching file development/src/gxsha384.c
+patching file development/src/gxvalueeventargs.c
+patching file development/src/helpers.c
+patching file development/src/message.c
+patching file development/src/objectarray.c
+patching file development/src/privateKey.c
+patching file development/src/publicKey.c
+patching file development/src/server.c
+patching file development/src/shamirs.c
+patching file development/src/variant.c
+
+Applying ./patches/010-gxignore_define_edit.patch using plaintext: 
+patching file development/include/gxignore.h
+Hunk #2 succeeded at 160 (offset 3 lines).
+
+Applying ./patches/013-limiter_ln_fix.patch using plaintext: 
+patching file development/src/gxsetmalloc.c
+Hunk #1 succeeded at 3048 (offset 14 lines).
+
+Applying ./patches/015-date_assert_remove.patch using plaintext: 
+patching file development/src/date.c
+Hunk #1 succeeded at 331 (offset 11 lines).
+Hunk #2 succeeded at 1722 (offset 63 lines).
+
+Applying ./patches/016-day_profile_check_byte_arr.patch using plaintext: 
+patching file development/src/gxsetmalloc.c
+
+Applying ./patches/017-remove-assert.patch using plaintext: 
+patching file development/src/variant.c
+Hunk #1 succeeded at 1279 with fuzz 2 (offset 76 lines).
+
+Applying ./patches/018-add_null_checking.patch using plaintext: 
+patching file development/src/gxsetmalloc.c
+Hunk #1 succeeded at 1687 (offset 6 lines).
+Hunk #2 succeeded at 2134 (offset 6 lines).
+Hunk #3 succeeded at 2557 (offset 13 lines).
+Hunk #4 succeeded at 2679 (offset 13 lines).
+Hunk #5 succeeded at 4063 (offset 13 lines).
+patching file development/src/variant.c
+Hunk #1 succeeded at 1469 (offset 76 lines).
+
+Applying ./patches/018-change-to-dynamic-library.patch using plaintext: 
+patching file development/makefile
+
+Applying ./patches/020-fix_illegal_instruction_sha1.patch using plaintext: 
+patching file development/src/client.c
+Hunk #1 succeeded at 413 with fuzz 1 (offset 3 lines).
+Hunk #2 succeeded at 425 with fuzz 2 (offset 2 lines).
+Hunk #3 succeeded at 514 (offset 33 lines).
+
+Applying ./patches/021-remove_shortname_clearing.patch using plaintext: 
+patching file development/src/gxobjects.c
+Hunk #1 succeeded at 756 (offset 24 lines).
+
+Applying ./patches/022-fix-extended-register-scaler-and-unit-reading.patch using plaintext: 
+patching file development/include/gxobjects.h
+Hunk #1 succeeded at 442 (offset 5 lines).
+patching file development/src/gxobjects.c
+Hunk #1 succeeded at 1730 (offset 39 lines).
+patching file development/src/gxsetmalloc.c
+Hunk #1 succeeded at 2093 (offset 17 lines).
+
+Applying ./patches/023-improve-hdlc-parser.patch using plaintext: 
+patching file development/include/dlms.h
+patching file development/include/dlmssettings.h
+patching file development/include/serverevents.h
+patching file development/src/dlms.c
+patching file development/src/dlmsSettings.c
+
+Applying ./patches/024-ignore_problematic_packets.patch using plaintext: 
+patching file development/src/dlms.c
+
+Applying ./patches/025-allow_disabling_logging.patch using plaintext: 
+patching file development/include/dlms_log.h
+patching file development/include/variant.h
+patching file development/src/bytebuffer.c
+Hunk #1 succeeded at 1332 (offset 151 lines).
+patching file development/src/converters.c
+patching file development/src/cosem.c
+patching file development/src/date.c
+patching file development/src/dlmsSettings.c
+patching file development/src/dlms_log.c
+patching file development/src/gxaes.c
+patching file development/src/gxobjects.c
+patching file development/src/gxserializer.c
+patching file development/src/helpers.c
+patching file development/src/objectarray.c
+patching file development/src/variant.c
+
+Applying ./patches/025-scan-regression.patch using plaintext: 
+patching file development/src/dlms.c
+Hunk #1 succeeded at 2890 with fuzz 2.
+
+Applying ./patches/026-add_type_checks_for_tagged_union.patch using plaintext: 
+patching file development/include/gxset.h
+patching file development/src/client.c
+patching file development/src/gxsetmalloc.c
+
+Applying ./patches/026-fix-segfault.patch using plaintext: 
+patching file development/src/gxsetmalloc.c
+Hunk #1 succeeded at 6453 (offset 12 lines).
+
+Applying ./patches/027-check-object-data-type-for-sort-object.patch using plaintext: 
+patching file development/src/gxsetmalloc.c
+
+Applying ./patches/027-remove_assert_for_limiter_data_type.patch using plaintext: 
+patching file development/src/gxsetmalloc.c
+
+Applying ./patches/028-add_functions_to_allow_static_allocation.patch using plaintext: 
+patching file development/include/cosem.h
+patching file development/include/gxobjects.h
+patching file development/src/client.c
+patching file development/src/cosem.c
+patching file development/src/gxobjects.c
+
+Applying ./patches/028-use_calloc.patch using plaintext: 
+patching file development/src/gxsetmalloc.c
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/development/obj /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/development/lib
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.prepared_561304af7b3781148a47002c00350dd3_6664517399ebbbc92a37c5bb081b5c53
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.configured_*
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.libdlms_installed
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/./; if [ -x ./configure ]; then find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ -name config.guess | xargs -r chmod u+w; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ -name config.guess | xargs -r -n1 cp --remove-destination /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.guess; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ -name config.sub | xargs -r chmod u+w; find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ -name config.sub | xargs -r -n1 cp --remove-destination /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.sub; AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e=libdlms-fa855d2e -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e=libdlms-fa855d2e -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e=libdlms-fa855d2e -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro "   ./configure --target=arm-openwrt-linux --host=arm-openwrt-linux --build=x86_64-pc-linux-gnu --program-prefix="" --program-suffix="" --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --libexecdir=/usr/lib --sysconfdir=/etc --datadir=/usr/share --localstatedir=/var --mandir=/usr/man --infodir=/usr/info --disable-nls  ; fi; )
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.built_check
+printf "%s\n" "• libdlms is rebuilt"
+• libdlms is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "libdlms" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e=libdlms-fa855d2e -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e=libdlms-fa855d2e -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/development AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e=libdlms-fa855d2e -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" ; 
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/development'
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/apdu.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/asn1Parser.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/bigInteger.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/bitarray.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/bytebuffer.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/ciphering.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+src/client.c: In function 'cl_getApplicationAssociationRequest':
+src/client.c:424:19: warning: unused variable 'APPLICATION_ASSOCIATION_REQUEST' [-Wunused-variable]
+     unsigned char APPLICATION_ASSOCIATION_REQUEST[64];
+                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Compiled src/client.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/converters.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/cosem.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/curve.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/datainfo.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/date.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/dlms.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/dlmsSettings.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/dlms_log.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/eccPoint.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gx509Certificate.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxPkcs10.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxaes.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxarray.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxecdsa.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxget.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxinvoke.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxkey.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxmd5.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxobjects.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxserializer.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxset.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxsetignoremalloc.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxsetmalloc.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxsha1.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxsha256.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxsha384.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/gxvalueeventargs.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/helpers.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/message.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/notify.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/objectarray.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/parameters.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/privateKey.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/publicKey.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/replydata.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/server.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/serverevents.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/shamirs.c successfully!
+cc1: note: someone does not honour COPTS correctly, passed 0 times
+Compiled src/variant.c successfully!
+Linking complete!
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/development'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.pkgdir/libdlms.installed /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.pkgdir/libdlms
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.pkgdir/libdlms
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.pkgdir/libdlms/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/development/lib/libgurux_dlms_c.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.pkgdir/libdlms/usr/lib
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.pkgdir/libdlms.installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/.pkgdir/libdlms/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.libdlms_installed
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/libdlms_fa855d2e-3_arm_cortex-a7_neon-vfpv4.ipk'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ipkg-arm_cortex-a7_neon-vfpv4/libdlms/CONTROL /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ipkg-arm_cortex-a7_neon-vfpv4/libdlms/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/development/lib/libgurux_dlms_c.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ipkg-arm_cortex-a7_neon-vfpv4/libdlms/usr/lib
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ipkg-arm_cortex-a7_neon-vfpv4/libdlms -name 'CVS' -o -name '.svn' -o -name '.#*' -o -name '*~'| xargs -r rm -rf
+export CROSS="arm-openwrt-linux-muslgnueabi-"  NO_RENAME=1 ; NM="arm-openwrt-linux-muslgnueabi-nm" STRIP="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sstrip -z" STRIP_KMOD="/media/home/FIRMWARES1/RUTX11/sdk2/scripts/strip-kmod.sh" PATCHELF="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/patchelf" /media/home/FIRMWARES1/RUTX11/sdk2/scripts/rstrip.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ipkg-arm_cortex-a7_neon-vfpv4/libdlms
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ipkg-arm_cortex-a7_neon-vfpv4/libdlms/usr/lib/libgurux_dlms_c.so: shared object
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ipkg-arm_cortex-a7_neon-vfpv4/libdlms/CONTROL; ( echo "$CONTROL"; printf "Description: "; echo "$DESCRIPTION" | sed -e 's,^[[:space:]]*, ,g'; ) > control; chmod 644 control; ( echo "#!/bin/sh"; echo "[ \"\${IPKG_NO_SCRIPT}\" = \"1\" ] && exit 0"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_postinst \$0 \$@"; ) > postinst; ( echo "#!/bin/sh"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_prerm \$0 \$@"; ) > prerm; chmod 0755 postinst prerm;  )
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-build -m "" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ipkg-arm_cortex-a7_neon-vfpv4/libdlms /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+Packaged contents of /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/ipkg-arm_cortex-a7_neon-vfpv4/libdlms into /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/libdlms_fa855d2e-3_arm_cortex-a7_neon-vfpv4.ipk
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms/host /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms/usr/include /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms/usr/lib/
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/development/include/*.h /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms/usr/include/
+install -m0644 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libdlms-fa855d2e/development/lib/libgurux_dlms_c.so /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms/usr/lib/
+find /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms -name '*.la' | xargs -r rm -f; 
+if [ -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/libdlms.list ]; then /media/home/FIRMWARES1/RUTX11/sdk2/scripts/clean-package.sh "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/libdlms.list" "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi"; fi
+if [ -d /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms ]; then (cd /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms; find ./ > /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms.files); 	SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.staging-dir.flock -c ' mv /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms.files /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/libdlms.list && cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms/* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ '; fi
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libdlms
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.libdlms_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libdlms'
+time: package/libs/libdlms/compile#11.83#1.75#15.23

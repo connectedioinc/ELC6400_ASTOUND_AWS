@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-firmware-ui/Makefile
+
+Package: vuci-app-firmware-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-firmware-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Firmware
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Firmware
+Description: VuCI UI Support for Firmware
+
+@@
+
+

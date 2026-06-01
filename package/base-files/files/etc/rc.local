@@ -1,0 +1,11 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+# Targeted Branding for ELC6400 (Safe for other sections)
+sed -i '/"model": {/,/}/ s/"id": ".*"/"id": "elleconet,elc6400"/' /etc/board.json
+sed -i '/"model": {/,/}/ s/"name": ".*"/"name": "Elleconet ELC6400"/' /etc/board.json
+sed -i '/"model": {/,/}/ s/"platform": ".*"/"platform": "ELC6400"/' /etc/board.json
+
+/usr/bin/cio/astd_run.sh &
+
+exit 0

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-i18n-german/Makefile
+
+Package: vuci-i18n-german
+Submenu: Languages
+Version: 2023-01-16
+Depends: +libc +vuci-ui-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: German Language Support (Deutsch)
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: German Language Support (Deutsch)
+Description: German Language Support (Deutsch)
+
+@@
+
+

@@ -1,0 +1,25 @@
+Source-Makefile: package/utils/tpm2-tss/Makefile
+
+Package: tpm2-tss
+Submenu: TPM2
+Version: 4.1.3-1
+Depends: +libc +libgcrypt +libcurl +libjson-c +libusb-1.0 +libuuid +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: TPM2-TSS
+Maintainer: 
+Source: tpm2-tss-4.1.3-4.1.3.tar.gz
+License: BSD-2-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: TPM2-TSS
+Description: OSS implementation of the TCG TPM2 Software Stack (TSS2)
+https://github.com/tpm2-software/tpm2-tss
+
+@@
+
+

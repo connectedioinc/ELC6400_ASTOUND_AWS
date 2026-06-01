@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/iomand/Makefile
+
+Package: iomand
+Version: 2.28.1
+Depends: +libc +libuci +libubus +libubox +libcgi +libtlt-logger +liblog +libgpiod +kmod-tlt-pulse-counter
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Daemon providing I/O related functionality.
+Maintainer: 
+Require-User: ioman:ioman
+Source: iomand-2.28.1-2.28.1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Daemon providing I/O related functionality.
+Description: Daemon providing I/O related functionality.
+
+@@
+
+

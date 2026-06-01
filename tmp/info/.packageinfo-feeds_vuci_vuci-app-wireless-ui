@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-wireless-ui/Makefile
+
+Package: vuci-app-wireless-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-wireless-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Wireless
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Wireless
+Description: VuCI UI Support for Wireless
+
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/bfdd-frr/Makefile
+
+Package: bfdd-frr
+Version: 2024-10-10-3
+Depends: +libc +frr-bfdd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Configuration template for frr-bfdd service
+Maintainer: 
+Require-User: bfd:frr
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Configuration template for frr-bfdd service
+Description: 	Configuration template for frr-bfdd service
+
+@@
+
+

@@ -1,0 +1,1177 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libazure-iot-sdk-c'
+libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791.tar.xz: Download from https://github.com/Azure/azure-iot-sdk-c.git failed
+libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791.tar.xz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791'...
+Note: switching to '9c70f98b7b659e169ae44389a5142f3a386c5791'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 9c70f98b7 Update LTS Schedule for LTS_08_2024
+Submodule 'azure-c-shared-utility' (https://github.com/Azure/azure-c-shared-utility.git) registered for path 'c-utility'
+Submodule 'deps/azure-c-testrunnerswitcher' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'deps/azure-c-testrunnerswitcher'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'deps/azure-ctest'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/azure-macro-utils-c'
+Submodule 'deps/parson' (https://github.com/kgabis/parson.git) registered for path 'deps/parson'
+Submodule 'deps/uhttp' (https://github.com/Azure/azure-uhttp-c.git) registered for path 'deps/uhttp'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c.git) registered for path 'deps/umock-c'
+Submodule 'provisioning_client/deps/RIoT' (https://github.com/Microsoft/RIoT.git) registered for path 'provisioning_client/deps/RIoT'
+Submodule 'provisioning_client/deps/utpm' (https://github.com/Azure/azure-utpm-c.git) registered for path 'provisioning_client/deps/utpm'
+Submodule 'azure-uamqp-c' (https://github.com/Azure/azure-uamqp-c.git) registered for path 'uamqp'
+Submodule 'azure-umqtt-c' (https://github.com/Azure/azure-umqtt-c.git) registered for path 'umqtt'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/azure-c-testrunnerswitcher'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/azure-ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/parson'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/umock-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/RIoT'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt'...
+Submodule path 'c-utility': checked out '51d6f3f7246876051f713c7abed28f909bf604e3'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'c-utility/deps/azure-macro-utils-c'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c.git) registered for path 'c-utility/deps/umock-c'
+Submodule 'testtools/ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'c-utility/testtools/ctest'
+Submodule 'testtools/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'c-utility/testtools/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/deps/umock-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/testtools/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/testtools/testrunner'...
+Submodule path 'c-utility/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'c-utility/deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'c-utility/deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'c-utility/deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'c-utility/deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/deps/umock-c/deps/testrunner'...
+Submodule path 'c-utility/deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'c-utility/deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'c-utility/deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'c-utility/testtools/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'c-utility/testtools/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/testtools/ctest/deps/azure-macro-utils-c'...
+Submodule path 'c-utility/testtools/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'c-utility/testtools/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'c-utility/testtools/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/c-utility/testtools/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'c-utility/testtools/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/azure-c-testrunnerswitcher': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c'...
+Submodule path 'deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/azure-ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/azure-ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/azure-ctest/deps/azure-macro-utils-c'...
+Submodule path 'deps/azure-ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/parson': checked out '60c37844d7a1c97547812cac3423d458c73e60f9'
+Submodule path 'deps/uhttp': checked out '65449ac08044475f9a14d3667ae04064a8767d76'
+Submodule 'deps/azure-c-testrunnerswitcher' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'deps/uhttp/deps/azure-c-testrunnerswitcher'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'deps/uhttp/deps/azure-ctest'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/uhttp/deps/azure-macro-utils-c'
+Submodule 'deps/c-utility' (https://github.com/Azure/azure-c-shared-utility.git) registered for path 'deps/uhttp/deps/c-utility'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c.git) registered for path 'deps/uhttp/deps/umock-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/azure-c-testrunnerswitcher'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/azure-ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/umock-c'...
+Submodule path 'deps/uhttp/deps/azure-c-testrunnerswitcher': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'deps/uhttp/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c'...
+Submodule path 'deps/uhttp/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/azure-ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/uhttp/deps/azure-ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/azure-ctest/deps/azure-macro-utils-c'...
+Submodule path 'deps/uhttp/deps/azure-ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/c-utility': checked out '51d6f3f7246876051f713c7abed28f909bf604e3'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/uhttp/deps/c-utility/deps/azure-macro-utils-c'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c.git) registered for path 'deps/uhttp/deps/c-utility/deps/umock-c'
+Submodule 'testtools/ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'deps/uhttp/deps/c-utility/testtools/ctest'
+Submodule 'testtools/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'deps/uhttp/deps/c-utility/testtools/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/deps/umock-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/testtools/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/testtools/testrunner'...
+Submodule path 'deps/uhttp/deps/c-utility/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/c-utility/deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/deps/umock-c/deps/testrunner'...
+Submodule path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'deps/uhttp/deps/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/c-utility/testtools/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/uhttp/deps/c-utility/testtools/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/testtools/ctest/deps/azure-macro-utils-c'...
+Submodule path 'deps/uhttp/deps/c-utility/testtools/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/c-utility/testtools/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'deps/uhttp/deps/c-utility/testtools/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/c-utility/testtools/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'deps/uhttp/deps/c-utility/testtools/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/uhttp/deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'deps/uhttp/deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'deps/uhttp/deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/umock-c/deps/testrunner'...
+Submodule path 'deps/uhttp/deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/uhttp/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'deps/uhttp/deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/uhttp/deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'deps/uhttp/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/uhttp/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'deps/uhttp/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/umock-c/deps/testrunner'...
+Submodule path 'deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/RIoT': checked out 'f6bebff2f5a68f5bc18d23ed164800db33b7d2a4'
+Submodule path 'provisioning_client/deps/utpm': checked out '111a6c6ff7abe98951f60b633445f47e4ac5c0cd'
+Submodule 'deps/azure-c-testrunnerswitcher' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'provisioning_client/deps/utpm/deps/azure-c-testrunnerswitcher'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'provisioning_client/deps/utpm/deps/azure-ctest'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'provisioning_client/deps/utpm/deps/azure-macro-utils-c'
+Submodule 'deps/c-utility' (https://github.com/Azure/azure-c-shared-utility.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c.git) registered for path 'provisioning_client/deps/utpm/deps/umock-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/azure-c-testrunnerswitcher'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/azure-ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/umock-c'...
+Submodule path 'provisioning_client/deps/utpm/deps/azure-c-testrunnerswitcher': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'provisioning_client/deps/utpm/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c'...
+Submodule path 'provisioning_client/deps/utpm/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/azure-ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'provisioning_client/deps/utpm/deps/azure-ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/azure-ctest/deps/azure-macro-utils-c'...
+Submodule path 'provisioning_client/deps/utpm/deps/azure-ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility': checked out '51d6f3f7246876051f713c7abed28f909bf604e3'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility/deps/azure-macro-utils-c'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c'
+Submodule 'testtools/ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility/testtools/ctest'
+Submodule 'testtools/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility/testtools/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/deps/umock-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/testtools/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/testtools/testrunner'...
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/testrunner'...
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/testtools/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'provisioning_client/deps/utpm/deps/c-utility/testtools/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/testtools/ctest/deps/azure-macro-utils-c'...
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/testtools/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/testtools/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'provisioning_client/deps/utpm/deps/c-utility/testtools/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/c-utility/testtools/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'provisioning_client/deps/utpm/deps/c-utility/testtools/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'provisioning_client/deps/utpm/deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'provisioning_client/deps/utpm/deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'provisioning_client/deps/utpm/deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/umock-c/deps/testrunner'...
+Submodule path 'provisioning_client/deps/utpm/deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'provisioning_client/deps/utpm/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'provisioning_client/deps/utpm/deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'provisioning_client/deps/utpm/deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'provisioning_client/deps/utpm/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/provisioning_client/deps/utpm/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'provisioning_client/deps/utpm/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp': checked out '96d7179f60e558b2c350194ea0061c725377f7e0'
+Submodule 'deps/azure-c-shared-utility' (https://github.com/Azure/azure-c-shared-utility) registered for path 'uamqp/deps/azure-c-shared-utility'
+Submodule 'deps/azure-c-testrunnerswitcher' (https://github.com/Azure/azure-c-testrunnerswitcher) registered for path 'uamqp/deps/azure-c-testrunnerswitcher'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest) registered for path 'uamqp/deps/azure-ctest'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'uamqp/deps/azure-macro-utils-c'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c) registered for path 'uamqp/deps/umock-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-testrunnerswitcher'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/umock-c'...
+Submodule path 'uamqp/deps/azure-c-shared-utility': checked out '51d6f3f7246876051f713c7abed28f909bf604e3'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'uamqp/deps/azure-c-shared-utility/deps/azure-macro-utils-c'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c.git) registered for path 'uamqp/deps/azure-c-shared-utility/deps/umock-c'
+Submodule 'testtools/ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'uamqp/deps/azure-c-shared-utility/testtools/ctest'
+Submodule 'testtools/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'uamqp/deps/azure-c-shared-utility/testtools/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/deps/umock-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/testtools/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/testtools/testrunner'...
+Submodule path 'uamqp/deps/azure-c-shared-utility/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/azure-c-shared-utility/deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/testrunner'...
+Submodule path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'uamqp/deps/azure-c-shared-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/azure-c-shared-utility/testtools/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'uamqp/deps/azure-c-shared-utility/testtools/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/testtools/ctest/deps/azure-macro-utils-c'...
+Submodule path 'uamqp/deps/azure-c-shared-utility/testtools/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/azure-c-shared-utility/testtools/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'uamqp/deps/azure-c-shared-utility/testtools/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-shared-utility/testtools/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'uamqp/deps/azure-c-shared-utility/testtools/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/azure-c-testrunnerswitcher': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'uamqp/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c'...
+Submodule path 'uamqp/deps/azure-c-testrunnerswitcher/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/azure-ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'uamqp/deps/azure-ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/azure-ctest/deps/azure-macro-utils-c'...
+Submodule path 'uamqp/deps/azure-ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'uamqp/deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'uamqp/deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'uamqp/deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/umock-c/deps/testrunner'...
+Submodule path 'uamqp/deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'uamqp/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'uamqp/deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'uamqp/deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'uamqp/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/uamqp/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'uamqp/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt': checked out 'f1cc7804df4213a8f4b87575b1272b2f16a27438'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'umqtt/deps/azure-macro-utils-c'
+Submodule 'deps/c-utility' (https://github.com/Azure/azure-c-shared-utility.git) registered for path 'umqtt/deps/c-utility'
+Submodule 'deps/ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'umqtt/deps/ctest'
+Submodule 'deps/testrunnerswitcher' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'umqtt/deps/testrunnerswitcher'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c.git) registered for path 'umqtt/deps/umock-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/testrunnerswitcher'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/umock-c'...
+Submodule path 'umqtt/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/c-utility': checked out '51d6f3f7246876051f713c7abed28f909bf604e3'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'umqtt/deps/c-utility/deps/azure-macro-utils-c'
+Submodule 'deps/umock-c' (https://github.com/Azure/umock-c.git) registered for path 'umqtt/deps/c-utility/deps/umock-c'
+Submodule 'testtools/ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'umqtt/deps/c-utility/testtools/ctest'
+Submodule 'testtools/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'umqtt/deps/c-utility/testtools/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/deps/umock-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/testtools/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/testtools/testrunner'...
+Submodule path 'umqtt/deps/c-utility/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/c-utility/deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'umqtt/deps/c-utility/deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'umqtt/deps/c-utility/deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'umqtt/deps/c-utility/deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/deps/umock-c/deps/testrunner'...
+Submodule path 'umqtt/deps/c-utility/deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/c-utility/deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'umqtt/deps/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'umqtt/deps/c-utility/deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/c-utility/deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'umqtt/deps/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'umqtt/deps/c-utility/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/c-utility/testtools/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'umqtt/deps/c-utility/testtools/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/testtools/ctest/deps/azure-macro-utils-c'...
+Submodule path 'umqtt/deps/c-utility/testtools/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/c-utility/testtools/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'umqtt/deps/c-utility/testtools/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/c-utility/testtools/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'umqtt/deps/c-utility/testtools/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'umqtt/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'umqtt/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/testrunnerswitcher': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'umqtt/deps/testrunnerswitcher/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/testrunnerswitcher/deps/azure-macro-utils-c'...
+Submodule path 'umqtt/deps/testrunnerswitcher/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/umock-c': checked out '504193e65d1c2f6eb50c15357167600a296df7ff'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'umqtt/deps/umock-c/deps/azure-macro-utils-c'
+Submodule 'deps/azure-ctest' (https://github.com/Azure/azure-ctest.git) registered for path 'umqtt/deps/umock-c/deps/ctest'
+Submodule 'deps/testrunner' (https://github.com/Azure/azure-c-testrunnerswitcher.git) registered for path 'umqtt/deps/umock-c/deps/testrunner'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/umock-c/deps/azure-macro-utils-c'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/umock-c/deps/ctest'...
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/umock-c/deps/testrunner'...
+Submodule path 'umqtt/deps/umock-c/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/umock-c/deps/ctest': checked out '4aa84c45236ecda21983fb682f542f17d0b21e19'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c.git) registered for path 'umqtt/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/umock-c/deps/ctest/deps/azure-macro-utils-c'...
+Submodule path 'umqtt/deps/umock-c/deps/ctest/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Submodule path 'umqtt/deps/umock-c/deps/testrunner': checked out '8734bd6c53c88dd6c0cea8e87d70b9964726484a'
+Submodule 'deps/azure-macro-utils-c' (https://github.com/Azure/azure-macro-utils-c) registered for path 'umqtt/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'
+Cloning into '/media/home/FIRMWARES1/RUTX11/sdk2/tmp/dl/libazure-iot-sdk-c-2024-11-05-9c70f98b7b659e169ae44389a5142f3a386c5791/umqtt/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c'...
+Submodule path 'umqtt/deps/umock-c/deps/testrunner/deps/azure-macro-utils-c': checked out '5926caf4e42e98e730e6d03395788205649a3ada'
+Packing checkout...
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.prepared_5fd5c62093560c38570d5b9711b06867_6664517399ebbbc92a37c5bb081b5c53_check
+
+Applying ./patches/010-change_telemetry_timeouts.patch using plaintext: 
+patching file iothub_client/src/iothubtransport_mqtt_common.c
+Hunk #1 succeeded at 47 (offset 1 line).
+
+Applying ./patches/020-fix_prov_mqtt_transport.patch using plaintext: 
+patching file provisioning_client/CMakeLists.txt
+
+Applying ./patches/021-openssl-v3-support-fix.patch using plaintext: 
+patching file c-utility/adapters/tlsio_openssl.c
+patching file c-utility/adapters/x509_openssl.c
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.prepared_5fd5c62093560c38570d5b9711b06867_6664517399ebbbc92a37c5bb081b5c53
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.configured_*
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.libazure-iot-sdk-c_installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05; CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05=libazure-iot-sdk-c-2024-11-05 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -DRUTX_PLATFORM=1 -DTLT_PLATFORM_NAME=RUTX" CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05=libazure-iot-sdk-c-2024-11-05 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " cmake -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_VERSION=1 -DCMAKE_SYSTEM_PROCESSOR=arm -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS_RELEASE="-DNDEBUG" -DCMAKE_CXX_FLAGS_RELEASE="-DNDEBUG" -DCMAKE_C_COMPILER_LAUNCHER="" -DCMAKE_C_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc" -DCMAKE_CXX_COMPILER_LAUNCHER="" -DCMAKE_CXX_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-g++" -DCMAKE_ASM_COMPILER_LAUNCHER="" -DCMAKE_ASM_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc" -DCMAKE_EXE_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro" -DCMAKE_MODULE_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro -Wl,-Bsymbolic-functions" -DCMAKE_SHARED_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro -Wl,-Bsymbolic-functions" -DCMAKE_AR="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-ar" -DCMAKE_NM="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-nm" -DCMAKE_RANLIB="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-ranlib" -DCMAKE_FIND_ROOT_PATH="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr;/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi" -DCMAKE_FIND_ROOT_PATH_MODE_PROGRAM=BOTH -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY -DCMAKE_STRIP=: -DCMAKE_INSTALL_PREFIX=/usr -DDL_LIBRARY=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi -DCMAKE_PREFIX_PATH=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_EXPORT_PACKAGE_REGISTRY=FALSE -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=TRUE -DCMAKE_FIND_USE_PACKAGE_REGISTRY=FALSE -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=TRUE -DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=FALSE -DCMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY=TRUE -DCMAKE_POLICY_DEFAULT_CMP0054=NEW -Dbuild_as_dynamic=ON -Duse_mqtt=ON -Duse_amqp=OFF -Duse_http=OFF -Duse_prov_client=ON -Dhsm_type_x509=ON -DBUILD_TESTING=OFF -Dskip_samples=ON -Ddont_use_uploadtoblob=ON -DCMAKE_BUILD_TYPE="Release" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05 )
+-- The C compiler identification is GNU 8.4.0
+-- The CXX compiler identification is GNU 8.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- IoT Client SDK Version = 1.13.0
+-- Provisioning SDK Version = 1.13.0
+[0mSetting dont_use_uploadtoblob to ON because use_http is OFF[0m
+-- use_http:         OFF
+-- dont_use_uploadtoblob:         ON
+[0mCMake Deprecation Warning at deps/azure-macro-utils-c/CMakeLists.txt:4 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[0mCMake Deprecation Warning at deps/umock-c/CMakeLists.txt:4 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+-- Looking for include file stdint.h
+-- Looking for include file stdint.h - found
+-- Looking for include file stdbool.h
+-- Looking for include file stdbool.h - found
+-- target architecture: ARM
+-- Performing Test CXX_FLAG_CXX11
+-- Performing Test CXX_FLAG_CXX11 - Success
+-- Found OpenSSL: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/lib/libcrypto.so (found version "3.0.14")  
+-- IoT Hub Architecture: ARM
+-- iothub_service_client build is disabled (AMQP and HTTP support are required)
+-- provisioning_service_client build is disabled (HTTP support is required)
+-- Configuring done
+-- Generating done
+[33mCMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_COMPILER
+    CMAKE_ASM_COMPILER_LAUNCHER
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_EXPORT_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY
+    CMAKE_MODULE_LINKER_FLAGS
+    DL_LIBRARY
+
+[0m
+-- Build files have been written to: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.built_check
+printf "%s\n" "• libazure-iot-sdk-c is rebuilt"
+• libazure-iot-sdk-c is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "libazure-iot-sdk-c" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05=libazure-iot-sdk-c-2024-11-05 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05=libazure-iot-sdk-c-2024-11-05 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05=libazure-iot-sdk-c-2024-11-05 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" CMAKE_COMMAND='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/cmake' CMAKE_DISABLE_cmake_check_build_system=1 ; 
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[  0%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umock_c.c.o[0m
+[  1%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umock_c_negative_tests.c.o[0m
+[  1%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umockalloc.c.o[0m
+[  2%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umockcall.c.o[0m
+[  2%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umockcallrecorder.c.o[0m
+[  2%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umocktypename.c.o[0m
+[  3%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umocktypes.c.o[0m
+[  3%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umocktypes_bool.c.o[0m
+[  4%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umocktypes_c.c.o[0m
+[  4%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umocktypes_stdint.c.o[0m
+[  4%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umocktypes_charptr.c.o[0m
+[  5%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umocktypes_wcharptr.c.o[0m
+[  5%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umockcallpairs.c.o[0m
+[  6%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umockstring.c.o[0m
+[  6%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umockautoignoreargs.c.o[0m
+[  7%] [32mBuilding C object deps/umock-c/CMakeFiles/umock_c.dir/src/umock_log.c.o[0m
+[  7%] [32m[1mLinking C static library libumock_c.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[  7%] Built target umock_c
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[  8%] [32mBuilding C object deps/parson/CMakeFiles/parson.dir/parson.c.o[0m
+[  8%] [32m[1mLinking C static library libparson.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[  8%] Built target parson
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[  8%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/azure_base32.c.o[0m
+[  8%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/azure_base64.c.o[0m
+[  9%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/buffer.c.o[0m
+[  9%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/constbuffer_array.c.o[0m
+[ 10%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/constbuffer_array_batcher.c.o[0m
+[ 10%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/connection_string_parser.c.o[0m
+[ 10%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/constbuffer.c.o[0m
+[ 11%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/consolelogger.c.o[0m
+[ 11%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/crt_abstractions.c.o[0m
+[ 12%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/constmap.c.o[0m
+[ 12%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/doublylinkedlist.c.o[0m
+[ 12%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/gballoc.c.o[0m
+[ 13%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/gbnetwork.c.o[0m
+[ 13%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/gb_stdio.c.o[0m
+[ 14%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/gb_time.c.o[0m
+[ 14%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/hmac.c.o[0m
+[ 15%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/hmacsha256.c.o[0m
+[ 15%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/xio.c.o[0m
+[ 15%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/singlylinkedlist.c.o[0m
+[ 16%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/map.c.o[0m
+[ 16%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/sastoken.c.o[0m
+[ 17%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/sha1.c.o[0m
+[ 17%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/sha224.c.o[0m
+[ 17%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/sha384-512.c.o[0m
+[ 18%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/strings.c.o[0m
+[ 18%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/string_token.c.o[0m
+[ 19%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/string_tokenizer.c.o[0m
+[ 19%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/uuid.c.o[0m
+[ 20%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/urlencode.c.o[0m
+[ 20%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/usha.c.o[0m
+[ 20%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/vector.c.o[0m
+[ 21%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/xlogging.c.o[0m
+[ 21%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/optionhandler.c.o[0m
+[ 22%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/memory_data.c.o[0m
+[ 22%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/agenttime.c.o[0m
+[ 22%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/condition_pthreads.c.o[0m
+[ 23%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/lock_pthreads.c.o[0m
+[ 23%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/random_posix.c.o[0m
+[ 24%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/platform_linux.c.o[0m
+[ 24%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/socketio_berkeley.c.o[0m
+[ 25%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/tickcounter_linux.c.o[0m
+[ 25%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/threadapi_pthreads.c.o[0m
+[ 25%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/uniqueid_linux.c.o[0m
+[ 26%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/envvariable.c.o[0m
+[ 26%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/dns_resolver_sync.c.o[0m
+[ 27%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/linux_time.c.o[0m
+[ 27%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/http_proxy_io.c.o[0m
+[ 27%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/tlsio_openssl.c.o[0m
+[ 28%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/adapters/x509_openssl.c.o[0m
+[ 28%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/wsio.c.o[0m
+[ 29%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/uws_client.c.o[0m
+[ 29%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/uws_frame_encoder.c.o[0m
+[ 29%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/utf8_checker.c.o[0m
+[ 30%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil.dir/src/ws_url.c.o[0m
+[ 30%] [32m[1mLinking C static library libaziotsharedutil.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 30%] Built target aziotsharedutil
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 31%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/azure_base32.c.o[0m
+[ 31%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/azure_base64.c.o[0m
+[ 32%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/buffer.c.o[0m
+[ 32%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/constbuffer_array.c.o[0m
+[ 32%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/constbuffer_array_batcher.c.o[0m
+[ 33%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/connection_string_parser.c.o[0m
+[ 33%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/constbuffer.c.o[0m
+[ 34%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/consolelogger.c.o[0m
+[ 34%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/crt_abstractions.c.o[0m
+[ 34%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/constmap.c.o[0m
+[ 35%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/doublylinkedlist.c.o[0m
+[ 35%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/gballoc.c.o[0m
+[ 36%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/gbnetwork.c.o[0m
+[ 36%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/gb_stdio.c.o[0m
+[ 37%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/gb_time.c.o[0m
+[ 37%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/hmac.c.o[0m
+[ 37%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/hmacsha256.c.o[0m
+[ 38%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/xio.c.o[0m
+[ 38%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/singlylinkedlist.c.o[0m
+[ 39%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/map.c.o[0m
+[ 39%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/sastoken.c.o[0m
+[ 39%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/sha1.c.o[0m
+[ 40%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/sha224.c.o[0m
+[ 40%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/sha384-512.c.o[0m
+[ 41%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/strings.c.o[0m
+[ 41%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/string_token.c.o[0m
+[ 42%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/string_tokenizer.c.o[0m
+[ 42%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/uuid.c.o[0m
+[ 42%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/urlencode.c.o[0m
+[ 43%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/usha.c.o[0m
+[ 43%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/vector.c.o[0m
+[ 44%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/xlogging.c.o[0m
+[ 44%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/optionhandler.c.o[0m
+[ 44%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/memory_data.c.o[0m
+[ 45%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/agenttime.c.o[0m
+[ 45%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/condition_pthreads.c.o[0m
+[ 46%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/lock_pthreads.c.o[0m
+[ 46%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/random_posix.c.o[0m
+[ 47%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/platform_linux.c.o[0m
+[ 47%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/socketio_berkeley.c.o[0m
+[ 47%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/tickcounter_linux.c.o[0m
+[ 48%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/threadapi_pthreads.c.o[0m
+[ 48%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/uniqueid_linux.c.o[0m
+[ 49%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/envvariable.c.o[0m
+[ 49%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/dns_resolver_sync.c.o[0m
+[ 49%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/linux_time.c.o[0m
+[ 50%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/http_proxy_io.c.o[0m
+[ 50%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/tlsio_openssl.c.o[0m
+[ 51%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/adapters/x509_openssl.c.o[0m
+[ 51%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/wsio.c.o[0m
+[ 51%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/uws_client.c.o[0m
+[ 52%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/uws_frame_encoder.c.o[0m
+[ 52%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/utf8_checker.c.o[0m
+[ 53%] [32mBuilding C object c-utility/CMakeFiles/aziotsharedutil_dll.dir/src/ws_url.c.o[0m
+[ 53%] [32m[1mLinking C shared library libaziotsharedutil_dll.so[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 53%] Built target aziotsharedutil_dll
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 53%] [32mBuilding C object umqtt/CMakeFiles/umqtt.dir/src/mqtt_client.c.o[0m
+[ 54%] [32mBuilding C object umqtt/CMakeFiles/umqtt.dir/src/mqtt_codec.c.o[0m
+[ 54%] [32mBuilding C object umqtt/CMakeFiles/umqtt.dir/src/mqtt_message.c.o[0m
+[ 55%] [32m[1mLinking C static library libumqtt.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 55%] Built target umqtt
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 55%] [32mBuilding C object provisioning_client/deps/utpm/CMakeFiles/utpm.dir/src/Marshal.c.o[0m
+[ 55%] [32mBuilding C object provisioning_client/deps/utpm/CMakeFiles/utpm.dir/src/Memory.c.o[0m
+[ 56%] [32mBuilding C object provisioning_client/deps/utpm/CMakeFiles/utpm.dir/src/tpm_codec.c.o[0m
+[ 56%] [32mBuilding C object provisioning_client/deps/utpm/CMakeFiles/utpm.dir/src/gbfiledescript.c.o[0m
+[ 57%] [32mBuilding C object provisioning_client/deps/utpm/CMakeFiles/utpm.dir/src/tpm_comm_linux.c.o[0m
+[ 57%] [32mBuilding C object provisioning_client/deps/utpm/CMakeFiles/utpm.dir/src/tpm_socket_comm.c.o[0m
+[ 58%] [32m[1mLinking C static library libutpm.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 58%] Built target utpm
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 59%] [32mBuilding C object provisioning_client/CMakeFiles/hsm_security_client.dir/adapters/hsm_client_data.c.o[0m
+[ 59%] [32mBuilding C object provisioning_client/CMakeFiles/hsm_security_client.dir/adapters/hsm_client_x509.c.o[0m
+[ 59%] [32mBuilding C object provisioning_client/CMakeFiles/hsm_security_client.dir/adapters/hsm_client_tpm.c.o[0m
+[ 60%] [32mBuilding C object provisioning_client/CMakeFiles/hsm_security_client.dir/adapters/hsm_client_key.c.o[0m
+[ 60%] [32m[1mLinking C shared library libhsm_security_client.so[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 60%] Built target hsm_security_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 60%] [32mBuilding C object provisioning_client/CMakeFiles/prov_auth_client.dir/src/prov_auth_client.c.o[0m
+[ 61%] [32mBuilding C object provisioning_client/CMakeFiles/prov_auth_client.dir/src/prov_security_factory.c.o[0m
+[ 61%] [32mBuilding C object provisioning_client/CMakeFiles/prov_auth_client.dir/src/iothub_auth_client.c.o[0m
+[ 62%] [32mBuilding C object provisioning_client/CMakeFiles/prov_auth_client.dir/src/iothub_security_factory.c.o[0m
+[ 62%] [32m[1mLinking C shared library libprov_auth_client.so[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 62%] Built target prov_auth_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 63%] [32mBuilding C object provisioning_client/CMakeFiles/prov_device_ll_client.dir/src/prov_device_ll_client.c.o[0m
+[ 63%] [32m[1mLinking C static library libprov_device_ll_client.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 63%] Built target prov_device_ll_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 63%] [32mBuilding C object provisioning_client/CMakeFiles/prov_device_client.dir/src/prov_device_client.c.o[0m
+[ 64%] [32m[1mLinking C static library libprov_device_client.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 64%] Built target prov_device_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 64%] [32mBuilding C object provisioning_client/CMakeFiles/prov_device_client_dll.dir/src/prov_device_client.c.o[0m
+[ 65%] [32mBuilding C object provisioning_client/CMakeFiles/prov_device_client_dll.dir/src/prov_device_ll_client.c.o[0m
+[ 65%] [32m[1mLinking C shared library libprov_device_client.so[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 65%] Built target prov_device_client_dll
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 66%] [32mBuilding C object provisioning_client/CMakeFiles/prov_mqtt_ws_transport.dir/src/prov_transport_mqtt_ws_client.c.o[0m
+[ 66%] [32mBuilding C object provisioning_client/CMakeFiles/prov_mqtt_ws_transport.dir/src/prov_transport_mqtt_common.c.o[0m
+[ 66%] [32m[1mLinking C static library libprov_mqtt_ws_transport.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 66%] Built target prov_mqtt_ws_transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 66%] [32mBuilding C object provisioning_client/CMakeFiles/prov_mqtt_transport.dir/src/prov_transport_mqtt_client.c.o[0m
+[ 67%] [32mBuilding C object provisioning_client/CMakeFiles/prov_mqtt_transport.dir/src/prov_transport_mqtt_common.c.o[0m
+[ 67%] [32m[1mLinking C shared library libprov_mqtt_transport.so[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 67%] Built target prov_mqtt_transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 68%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_transport.dir/src/iothub_client_authorization.c.o[0m
+[ 68%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_transport.dir/src/iothub_client_retry_control.c.o[0m
+[ 68%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_transport.dir/src/iothub_transport_ll_private.c.o[0m
+[ 69%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_transport.dir/src/iothubtransport_mqtt_common.c.o[0m
+[ 69%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_transport.dir/src/iothubtransportmqtt.c.o[0m
+[ 70%] [32m[1mLinking C static library libiothub_client_mqtt_transport.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 70%] Built target iothub_client_mqtt_transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 70%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_ws_transport.dir/src/iothub_client_authorization.c.o[0m
+[ 70%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_ws_transport.dir/src/iothub_client_retry_control.c.o[0m
+[ 71%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_ws_transport.dir/src/iothub_transport_ll_private.c.o[0m
+[ 71%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_ws_transport.dir/src/iothubtransport_mqtt_common.c.o[0m
+[ 72%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_mqtt_ws_transport.dir/src/iothubtransportmqtt_websockets.c.o[0m
+[ 72%] [32m[1mLinking C static library libiothub_client_mqtt_ws_transport.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 72%] Built target iothub_client_mqtt_ws_transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 73%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub.c.o[0m
+[ 73%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_client.c.o[0m
+[ 74%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_client_core.c.o[0m
+[ 74%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_client_core_ll.c.o[0m
+[ 75%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_client_diagnostic.c.o[0m
+[ 75%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_client_ll.c.o[0m
+[ 75%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_client_properties.c.o[0m
+[ 76%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_device_client.c.o[0m
+[ 76%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_device_client_ll.c.o[0m
+[ 77%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_message.c.o[0m
+[ 77%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_module_client.c.o[0m
+[ 77%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_module_client_ll.c.o[0m
+[ 78%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothubtransport.c.o[0m
+[ 78%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/version.c.o[0m
+[ 79%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_client_authorization.c.o[0m
+[ 79%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_client_retry_control.c.o[0m
+[ 79%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothub_transport_ll_private.c.o[0m
+[ 80%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothubtransport_mqtt_common.c.o[0m
+[ 80%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothubtransportmqtt.c.o[0m
+[ 81%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client_dll.dir/src/iothubtransportmqtt_websockets.c.o[0m
+[ 81%] [32m[1mLinking C shared library libiothub_client.so[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 81%] Built target iothub_client_dll
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 82%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub.c.o[0m
+[ 82%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_client.c.o[0m
+[ 82%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_client_core.c.o[0m
+[ 83%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_client_core_ll.c.o[0m
+[ 83%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_client_diagnostic.c.o[0m
+[ 84%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_client_ll.c.o[0m
+[ 84%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_client_properties.c.o[0m
+[ 85%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_device_client.c.o[0m
+[ 85%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_device_client_ll.c.o[0m
+[ 85%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_message.c.o[0m
+[ 86%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_module_client.c.o[0m
+[ 86%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothub_module_client_ll.c.o[0m
+[ 87%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/iothubtransport.c.o[0m
+[ 87%] [32mBuilding C object iothub_client/CMakeFiles/iothub_client.dir/src/version.c.o[0m
+[ 87%] [32m[1mLinking C static library libiothub_client.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 87%] Built target iothub_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 88%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/agenttypesystem.c.o[0m
+[ 88%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/codefirst.c.o[0m
+[ 89%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/commanddecoder.c.o[0m
+[ 89%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/datamarshaller.c.o[0m
+[ 90%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/datapublisher.c.o[0m
+[ 90%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/dataserializer.c.o[0m
+[ 90%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/iotdevice.c.o[0m
+[ 91%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/jsondecoder.c.o[0m
+[ 91%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/jsonencoder.c.o[0m
+[ 92%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/multitree.c.o[0m
+[ 92%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/schema.c.o[0m
+[ 92%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/schemalib.c.o[0m
+[ 93%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/schemaserializer.c.o[0m
+[ 93%] [32mBuilding C object serializer/CMakeFiles/serializer.dir/src/methodreturn.c.o[0m
+[ 94%] [32m[1mLinking C static library libserializer.a[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 94%] Built target serializer
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 94%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/agenttypesystem.c.o[0m
+[ 94%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/codefirst.c.o[0m
+[ 95%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/commanddecoder.c.o[0m
+[ 95%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/datamarshaller.c.o[0m
+[ 96%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/datapublisher.c.o[0m
+[ 96%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/dataserializer.c.o[0m
+[ 97%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/iotdevice.c.o[0m
+[ 97%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/jsondecoder.c.o[0m
+[ 97%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/jsonencoder.c.o[0m
+[ 98%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/multitree.c.o[0m
+[ 98%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/schema.c.o[0m
+[ 99%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/schemalib.c.o[0m
+[ 99%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/schemaserializer.c.o[0m
+[ 99%] [32mBuilding C object serializer/CMakeFiles/serializer_dll.dir/src/methodreturn.c.o[0m
+[100%] [32m[1mLinking C shared library libserializer.so[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[100%] Built target serializer_dll
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05=libazure-iot-sdk-c-2024-11-05 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05=libazure-iot-sdk-c-2024-11-05 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05=libazure-iot-sdk-c-2024-11-05 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" CMAKE_COMMAND='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/cmake' CMAKE_DISABLE_cmake_check_build_system=1 DESTDIR="/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install"  install;
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target umock_c[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[  7%] Built target umock_c
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target parson[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[  8%] Built target parson
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target aziotsharedutil[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 30%] Built target aziotsharedutil
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target aziotsharedutil_dll[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 53%] Built target aziotsharedutil_dll
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target umqtt[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 55%] Built target umqtt
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target utpm[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 58%] Built target utpm
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target hsm_security_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 60%] Built target hsm_security_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target prov_auth_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 62%] Built target prov_auth_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target prov_device_ll_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 63%] Built target prov_device_ll_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target prov_device_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 64%] Built target prov_device_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target prov_device_client_dll[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 65%] Built target prov_device_client_dll
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target prov_mqtt_ws_transport[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 66%] Built target prov_mqtt_ws_transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target prov_mqtt_transport[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 67%] Built target prov_mqtt_transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target iothub_client_mqtt_transport[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 70%] Built target iothub_client_mqtt_transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target iothub_client_mqtt_ws_transport[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 72%] Built target iothub_client_mqtt_ws_transport
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target iothub_client_dll[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 81%] Built target iothub_client_dll
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target iothub_client[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 87%] Built target iothub_client
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target serializer[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[ 94%] Built target serializer
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[35m[1mConsolidate compiler generated dependencies of target serializer_dll[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[100%] Built target serializer_dll
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+[36mInstall the project...[0m
+-- Install configuration: "Release"
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_macro_utils/macro_utils.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_macro_utils/macro_utils_generated.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/azure_macro_utils_cTargets.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/azure_macro_utils_cConfig.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/azure_macro_utils_cConfigVersion.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libumock_c.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umock_c.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umock_c_internal.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umock_c_negative_tests.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umock_c_prod.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umockalloc.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umockcall.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umockcallrecorder.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umocktypename.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umocktypes.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umocktypes_bool.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umocktypes_c.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umocktypes_stdint.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umocktypes_charptr.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umocktypes_struct.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umocktypes_wcharptr.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umockcallpairs.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umockstring.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umockautoignoreargs.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/umock_log.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/umock_cTargets.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/umock_cTargets-release.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/umock_cFunctions.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/umock_cConfig.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/umock_cConfigVersion.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libparson.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/parson.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/parson/parsonConfig.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/parson/parsonConfig-release.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libaziotsharedutil.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libaziotsharedutil_dll.so
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/agenttime.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/azure_base32.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/azure_base64.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/buffer_.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/constbuffer_array.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/constbuffer_array_batcher.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/connection_string_parser.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/crt_abstractions.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/constmap.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/condition.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/const_defines.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/consolelogger.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/doublylinkedlist.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/envvariable.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/gballoc.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/gbnetwork.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/gb_stdio.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/gb_time.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/hmac.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/hmacsha256.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/http_proxy_io.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/singlylinkedlist.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/lock.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/map.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/optimize_size.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/platform.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/refcount.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/sastoken.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/sha-private.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/shared_util_options.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/sha.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/socketio.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/srw_lock.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/stdint_ce6.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/strings.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/strings_types.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/string_token.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/string_tokenizer.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/string_tokenizer_types.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/string_utils.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/tlsio_options.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/tickcounter.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/threadapi.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/xio.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/uniqueid.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/uuid.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/urlencode.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/vector.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/vector_types.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/vector_types_internal.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/xlogging.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/constbuffer.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/tlsio.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/optionhandler.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/memory_data.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/safe_math.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/linux_time.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/wsio.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/uws_client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/uws_frame_encoder.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/utf8_checker.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/ws_url.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/tlsio_openssl.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/x509_openssl.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/refcount_os.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/azure_c_shared_utility/azure_c_shared_utilityTargets.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/azure_c_shared_utility/azure_c_shared_utilityTargets-release.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/azure_c_shared_utility/azure_c_shared_utilityConfig.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/azure_c_shared_utility/azure_c_shared_utilityFunctions.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/azure_c_shared_utility/azure_iot_build_rules.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/azure_c_shared_utility/azure_c_shared_utilityConfigVersion.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libumqtt.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_umqtt_c/mqtt_client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_umqtt_c/mqtt_codec.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_umqtt_c/mqttconst.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_umqtt_c/mqtt_message.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/umqtt/umqttTargets.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/umqtt/umqttTargets-release.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/umqtt/umqttConfig.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/cmake/umqtt/umqttConfigVersion.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/hsm_client_data.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/hsm_client_x509.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/hsm_client_tpm.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/hsm_client_key.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_auth_client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_security_factory.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/iothub_auth_client.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_auth_client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/iothub_security_factory.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_client_const.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_device_ll_client.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_client_const.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_device_client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_transport.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_transport_mqtt_ws_client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_transport_private.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_transport_mqtt_common.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_transport.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_transport_mqtt_client.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_transport_private.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/prov_transport_mqtt_common.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libhsm_security_client.so
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_auth_client.so
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_device_ll_client.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_device_client.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_device_client.so.1.13.0
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_device_client.so.1
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_device_client.so
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_mqtt_ws_transport.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_mqtt_transport.so
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libutpm.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/BaseTypes.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/Capabilities.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/CompilerDependencies.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/GpMacros.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/gbfiledescript.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/Implementation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/Marshal_fp.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/Memory_fp.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/swap.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/Tpm.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/TPMB.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/TpmBuildSwitches.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/TpmError.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/TpmTypes.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/tpm_codec.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/tpm_comm.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/azure_utpm_c/gbfiledescript.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/utpmTargets.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/utpmTargets-release.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/cmake/utpmConfigVersion.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_core.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_core_ll.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_core_common.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_ll.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_diagnostic.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_properties.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_internal_consts.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_options.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_private.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_version.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_device_client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_device_client_ll.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_module_client.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_module_client_ll.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_transport_ll.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_message.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_message_private.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothubtransport.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_hsm_ll.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_authorization.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_retry_control.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_transport_ll_private.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothubtransport_mqtt_common.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothubtransportmqtt.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_authorization.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_client_retry_control.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothub_transport_ll_private.h
+-- Up-to-date: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothubtransport_mqtt_common.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iothubtransportmqtt_websockets.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libiothub_client.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libiothub_client_mqtt_transport.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libiothub_client_mqtt_ws_transport.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libiothub_client.so.1.13.0
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libiothub_client.so.1
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libiothub_client.so
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/agenttypesystem.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/codefirst.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/commanddecoder.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/datamarshaller.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/datapublisher.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/dataserializer.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/iotdevice.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/jsondecoder.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/jsonencoder.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/multitree.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/schema.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/schemalib.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/schemaserializer.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/serializer.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/serializer_devicetwin.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/methodreturn.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libserializer.a
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libserializer.so.1.13.0
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libserializer.so.1
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libserializer.so
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c.installed /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_mqtt_transport.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libiothub_client.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_device_client.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_auth_client.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libhsm_security_client.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c/usr/lib/
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c.installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/.pkgdir/libazure-iot-sdk-c/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.libazure-iot-sdk-c_installed
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/libazure-iot-sdk-c_2024-11-05-1_arm_cortex-a7_neon-vfpv4.ipk'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/CONTROL /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_mqtt_transport.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libiothub_client.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_device_client.so* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_auth_client.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libhsm_security_client.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c -name 'CVS' -o -name '.svn' -o -name '.#*' -o -name '*~'| xargs -r rm -rf
+export CROSS="arm-openwrt-linux-muslgnueabi-"  NO_RENAME=1 ; NM="arm-openwrt-linux-muslgnueabi-nm" STRIP="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sstrip -z" STRIP_KMOD="/media/home/FIRMWARES1/RUTX11/sdk2/scripts/strip-kmod.sh" PATCHELF="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/patchelf" /media/home/FIRMWARES1/RUTX11/sdk2/scripts/rstrip.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/libprov_mqtt_transport.so: shared object
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/libprov_auth_client.so: shared object
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/libprov_device_client.so.1.13.0: shared object
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/libhsm_security_client.so: shared object
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/usr/lib/libiothub_client.so.1.13.0: shared object
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c/CONTROL; ( echo "$CONTROL"; printf "Description: "; echo "$DESCRIPTION" | sed -e 's,^[[:space:]]*, ,g'; ) > control; chmod 644 control; ( echo "#!/bin/sh"; echo "[ \"\${IPKG_NO_SCRIPT}\" = \"1\" ] && exit 0"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_postinst \$0 \$@"; ) > postinst; ( echo "#!/bin/sh"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_prerm \$0 \$@"; ) > prerm; chmod 0755 postinst prerm;  )
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-build -m "" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+Packaged contents of /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-arm_cortex-a7_neon-vfpv4/libazure-iot-sdk-c into /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/libazure-iot-sdk-c_2024-11-05-1_arm_cortex-a7_neon-vfpv4.ipk
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c/host /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/azure_macro_utils/
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/umock_c/
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/azure_prov_client/
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/azureiot/
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/azure_c_shared_utility/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/*.h /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_macro_utils/*.h /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/azure_macro_utils/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/umock_c/*.h /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/umock_c/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_prov_client/*.h /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/azure_prov_client/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azureiot/*.h /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/azureiot/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/include/azure_c_shared_utility/*.h /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/azure_c_shared_utility/
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_mqtt_transport.so /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libiothub_client.so* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_device_client.so* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libprov_auth_client.so /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/libazure-iot-sdk-c-2024-11-05/ipkg-install/usr/lib/libhsm_security_client.so /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/lib/
+find /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c -name '*.la' | xargs -r rm -f; 
+if [ -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/libazure-iot-sdk-c.list ]; then /media/home/FIRMWARES1/RUTX11/sdk2/scripts/clean-package.sh "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/libazure-iot-sdk-c.list" "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi"; fi
+if [ -d /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c ]; then (cd /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c; find ./ > /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c.files); 	SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.staging-dir.flock -c ' mv /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c.files /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/libazure-iot-sdk-c.list && cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c/* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ '; fi
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-libazure-iot-sdk-c
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.libazure-iot-sdk-c_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/libazure-iot-sdk-c'
+time: package/libs/libazure-iot-sdk-c/compile#224.56#37.69#521.03

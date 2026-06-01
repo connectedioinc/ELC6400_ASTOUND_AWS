@@ -1,0 +1,5 @@
+services/HotspotUsers
+services/HotspotOverview
+services/HotspotGroups
+services/HotspotCurrentUsers
+services/HotspotRegisteredUsers

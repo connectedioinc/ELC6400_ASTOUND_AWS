@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/libs/libtlt-logger/Makefile
+
+Package: libtlt-logger
+Version: 2025-11-24-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Library providing logging utilities.
+Maintainer: 
+Source: libtlt-logger-7.20.1-2025-11-24.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: Library providing logging utilities.
+Description: Library providing logging utilities.
+
+@@
+
+

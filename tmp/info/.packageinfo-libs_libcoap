@@ -1,0 +1,43 @@
+Source-Makefile: package/libs/libcoap/Makefile
+
+Package: libcoap3
+Version: 4.3.5-1
+Depends: +libc +libopenssl +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: libcoap (CoAP RFC 7252) with OpenSSL (DTLS/TLS)
+Maintainer: you <you@example.com>
+Source: v4.3.5.tar.gz
+License: BSD-2-Clause GPL-2.0-or-later
+LicenseFiles: LICENSE.BSD LICENSE.GPL
+Type: ipkg
+Detail-Description: libcoap (CoAP RFC 7252) with OpenSSL (DTLS/TLS)
+Description: Lightweight CoAP library with OpenSSL backend (DTLS/TLS).
+you <you@example.com>
+@@
+
+Package: coap-client
+Version: 4.3.5-1
+Depends: +libc +libcoap3 +libopenssl +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: libcoap example client (coap-client)
+Maintainer: you <you@example.com>
+Source: v4.3.5.tar.gz
+License: BSD-2-Clause GPL-2.0-or-later
+LicenseFiles: LICENSE.BSD LICENSE.GPL
+Type: ipkg
+Detail-Description: libcoap example client (coap-client)
+Description: Command-line CoAP client built from libcoap examples, with DTLS/TLS (OpenSSL).
+you <you@example.com>
+@@
+
+

@@ -1,0 +1,24 @@
+Source-Makefile: package/network/utils/udprelay/Makefile
+
+Package: udprelay
+Version: 2020-02-26-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: UDP packages relay
+Maintainer: 
+Require-User: udprelay:udprelay
+FileAttributes: /usr/sbin/udp-broadcast-relay::::cap_net_bind_service,cap_net_raw=ep
+Source: udprelay-2020-02-26.tar.xz
+License: GPL-2.0-or-later
+Type: ipkg
+Detail-Description: UDP packages relay
+Description: 	This program listens for packets on a specified UDP broadcast port. When a packet is received, it sends that packet to all specified interfaces but the one it came from as though it originated from the original sender.
+
+@@
+
+

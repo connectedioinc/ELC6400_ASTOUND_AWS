@@ -1,0 +1,562 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Server"
+    }
+  ],
+  "paths": {
+    "/opcua/destination_server/config": {
+      "get": {
+        "tags": [
+          "Server"
+        ],
+        "summary": "Returns all OPC UA server configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpcuaServerMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Server"
+        ],
+        "summary": "Updates specified OPC UA server configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpcuaServerMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of objects",
+                    "items": {
+                      "$ref": "#/components/schemas/opcua_server_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Server",
+          "General"
+        ],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    },
+    "/opcua/destination_server/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "OPC UA Server Instance identifier (ID)"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Server"
+        ],
+        "summary": "Returns the specified OPC UA server configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpcuaServer"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Server"
+        ],
+        "summary": "Updates the specified OPC UA server configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpcuaServer"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/opcua_server_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Uploads the specified OPC UA server configuration certificate files",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": [
+          "Server"
+        ],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "Parameter to upload the file to.",
+                    "enum": [
+                      "certificate",
+                      "key",
+                      "tcl"
+                    ]
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "File to upload."
+                  }
+                },
+                "required": [
+                  "option",
+                  "file"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Server",
+          "General"
+        ],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    },
+    "/opcua/destination_server/status": {
+      "get": {
+        "tags": [
+          "Server"
+        ],
+        "summary": "Returns OPC UA server status",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpcuaServerStatus"
+          }
+        }
+      },
+      "x-web": {
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Server",
+          "General"
+        ],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200OpcuaServer": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/opcua_server_options_for_get"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200OpcuaServerMulti": {
+        "description": "Returns configurations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of objects",
+                  "items": {
+                    "$ref": "#/components/schemas/opcua_server_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200OpcuaServerStatus": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/opcua_server_status_options"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "error_code": {
+                          "type": "integer",
+                          "description": "Application exit code. 1 - Failed to start server, 2 - The TCP port is already in use.",
+                          "enum": [
+                            1,
+                            2
+                          ],
+                          "x-web": {
+                            "pretty": "Error code",
+                            "enum-pretty": {
+                              "1": "Failed to start server",
+                              "2": "The TCP port is already in use"
+                            }
+                          }
+                        }
+                      },
+                      "required": [
+                        "error_code"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "opcua_server_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable/disable OPC UA server.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "default_nodes_enabled": {
+            "type": "string",
+            "description": "If disabled, then all nodes which are provided by default will be removed.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Default nodes enabled",
+              "input-type": "switch"
+            }
+          },
+          "port": {
+            "type": "string",
+            "description": "Service port.",
+            "format": "port",
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input"
+            }
+          },
+          "encryption": {
+            "type": "string",
+            "description": "Enable/disable encryption.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Encryption",
+              "input-type": "switch"
+            }
+          },
+          "application_uri": {
+            "type": "string",
+            "description": "Should match SubjectAlternativeName in client certificate.",
+            "format": "string",
+            "x-web": {
+              "depends": [
+                {
+                  "encryption": "1"
+                }
+              ],
+              "require-depends": [
+                {
+                  "encryption": "1"
+                }
+              ],
+              "pretty": "Application URI",
+              "input-type": "input"
+            }
+          },
+          "disable_unencrypted_access": {
+            "type": "string",
+            "description": "Whether to disallow access without encryption.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Disable unencrypted access",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "encryption": "1"
+                }
+              ]
+            }
+          },
+          "certificate": {
+            "type": "string",
+            "description": "Upload certificate file.",
+            "format": "file_validation",
+            "x-web": {
+              "pretty": "Certificate file",
+              "input-type": "input",
+              "upload_endpoint": "/opcua/destination_server/config/{id}",
+              "depends": [
+                {
+                  "encryption": "1"
+                }
+              ],
+              "require-depends": [
+                {
+                  "encryption": "1"
+                }
+              ]
+            }
+          },
+          "certificate:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "key": {
+            "type": "string",
+            "description": "Upload key file",
+            "format": "file_validation",
+            "x-web": {
+              "pretty": "Key file",
+              "input-type": "input",
+              "upload_endpoint": "/opcua/destination_server/config/{id}",
+              "depends": [
+                {
+                  "encryption": "1"
+                }
+              ],
+              "require-depends": [
+                {
+                  "encryption": "1"
+                }
+              ]
+            }
+          },
+          "key:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "tcl": {
+            "type": "array",
+            "description": "Upload tcl files",
+            "items": {
+              "type": "string",
+              "format": "file_validation"
+            },
+            "x-web": {
+              "pretty": "Key file",
+              "input-type": "input",
+              "upload_endpoint": "/opcua/destination_server/config/{id}",
+              "depends": [
+                {
+                  "encryption": "1"
+                }
+              ]
+            }
+          },
+          "tcl:file_size": {
+            "description": "Uploaded file sizes in bytes.",
+            "type": "array",
+            "readOnly": true,
+            "items": {
+              "type": "number"
+            }
+          }
+        },
+        "required": [
+          "port"
+        ]
+      },
+      "opcua_server_options_for_get": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "OPC UA server Configuration identifier (ID)."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/opcua_server_single_options"
+          }
+        ]
+      },
+      "opcua_server_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "OPC UA server Configuration identifier (ID)."
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/opcua_server_single_options"
+          }
+        ]
+      },
+      "opcua_server_status_options": {
+        "title": "opcua_server_status_options",
+        "type": "object",
+        "properties": {
+          "active_session_count": {
+            "type": "integer",
+            "description": "Number of sessions that are currently active. This roughly represents how many clients are connected.",
+            "x-web": {
+              "pretty": "Connected clients"
+            }
+          },
+          "node_read_count": {
+            "type": "integer",
+            "description": "Number of times any node combined has been read. This will not increase if a non-existent node is read.",
+            "x-web": {
+              "pretty": "Node reads"
+            }
+          },
+          "uptime": {
+            "type": "integer",
+            "description": "Uptime of the application",
+            "x-web": {
+              "pretty": "Uptime"
+            }
+          },
+          "time_since_last_node_read": {
+            "type": "string",
+            "description": "Seconds passed since a node has been read.",
+            "x-web": {
+              "pretty": "Time since last request"
+            }
+          }
+        },
+        "required": [
+          "active_session_count",
+          "node_read_count",
+          "uptime"
+        ]
+      }
+    }
+  }
+}

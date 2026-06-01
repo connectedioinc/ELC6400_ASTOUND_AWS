@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-i18n-turkish/Makefile
+
+Package: vuci-i18n-turkish
+Submenu: Languages
+Version: 2023-01-16
+Depends: +libc +vuci-ui-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Turkish Language Support (Türkçe)
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Turkish Language Support (Türkçe)
+Description: Turkish Language Support (Türkçe)
+
+@@
+
+

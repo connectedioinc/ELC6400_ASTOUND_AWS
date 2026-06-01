@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-modbus-serial-gateway-ui/Makefile
+
+Package: vuci-app-modbus-serial-gateway-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-modbus-serial-gateway-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Modbus TCP over Serial Gateway
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Modbus TCP over Serial Gateway
+Description: VuCI UI Support for Modbus TCP over Serial Gateway
+
+@@
+
+

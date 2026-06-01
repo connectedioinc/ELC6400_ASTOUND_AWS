@@ -1,0 +1,10 @@
+{
+	"user": "uhttpd",
+	"access": {
+		"rms": {
+			"methods": [
+				"get_status"
+			]
+		}
+	}
+}

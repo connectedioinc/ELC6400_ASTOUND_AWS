@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/applications/vuci-app-vrrp-ui/Makefile
+
+Package: vuci-app-vrrp-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-vrrp-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for VRRP
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for VRRP
+Description: VuCI UI Support for VRRP
+
+@@
+
+

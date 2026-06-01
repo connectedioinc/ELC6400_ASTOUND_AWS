@@ -1,0 +1,25 @@
+Source-Makefile: package/teltonika/libs/libticket_mutex/Makefile
+
+Package: libticket_mutex
+Version: 7.21-1
+Depends: +libc +libtlt-logger +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: An implementation of a ticket lock.
+Maintainer: 
+Source: libticket_mutex-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: An implementation of a ticket lock.
+Description: 	An implementation of a ticket lock which uses a blocking mutex.
+
+	Works across processess and is able to recover from a situation where the process which was holding
+	the lock has been killed without unlocking.
+
+@@
+
+

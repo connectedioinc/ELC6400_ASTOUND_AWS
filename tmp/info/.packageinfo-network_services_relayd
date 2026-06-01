@@ -1,0 +1,25 @@
+Source-Makefile: package/network/services/relayd/Makefile
+
+Package: relayd
+Submenu: Routing and Redirection
+Version: 2020-04-25-2
+Depends: +libc +libubox +libubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Transparent routing / relay daemon
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Require-User: relayd:relayd
+FileAttributes: /usr/local/usr/sbin/relayd::::cap_net_admin,cap_net_raw=ep
+Source: relayd-2020-04-25-f4d759be54ceb37714e9a6ca320d5b50c95e9ce9.tar.xz
+License: GPL-2.0-only
+Type: ipkg
+Detail-Description: Transparent routing / relay daemon
+Description: Transparent routing / relay daemon
+Felix Fietkau <nbd@nbd.name>
+@@
+
+

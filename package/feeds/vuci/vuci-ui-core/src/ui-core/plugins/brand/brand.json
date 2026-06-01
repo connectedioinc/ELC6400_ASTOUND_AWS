@@ -1,0 +1,44 @@
+{
+  "companyURL": "https://elleconet.com",
+  "companyURLDisplay": "https://elleconet.com",
+  "rmsURL": "cloud.connectedio.com",
+  "wikiURL": "https://elleconet.com/faq",
+  "fwSdkDownloadsURL": "https://elleconet.com",
+  "fwDownloadUrl": "https://elleconet.com",
+  "packageDownloadURL": "https://elleconet.com",
+  "fwChangelog": "https://elleconet.com",
+  "company": "Elleco Networks",
+  "companyShort": "Elleco",
+  "companyFull": "Elleco Networks",
+  "companyEmail": "support@elleconet.com",
+  "companyLocation": "417 Oakbend Drive, Suite 320 Lewisville, TX 75067 US",
+  "companyGpl": "https://elleconet.com/faq",
+  "licenseUrl": "https://elleconet.com/faq",
+  "mqttWikiURL": "https://elleconet.com/faq",
+  "modemUpdateWikiURL": "https://elleconet.com/faq",
+  "mobileRSSIWikiURL": "https://elleconet.com/faq",
+  "privacyPolicyURL": "https://elleconet.com/faq",
+  "sentryDSN": "https://elleconet.com/faq",
+  "subscribeURL": "https://elleconet.com",
+  "footer": {
+    "start": ["Elleco Networks"],
+    "end": [
+      {
+        "text": "Faq",
+        "url": "https://elleconet.com/faq"
+      },
+      {
+        "text": "Community Forum",
+        "url": "https://elleconet.com"
+      },
+      {
+        "text": "Licenses",
+        "action": "licenses"
+      },
+      {
+        "text": "elleconet.com",
+        "url": "https://elleconet.com"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+Source-Makefile: package/network/utils/grpcurl/Makefile
+Build-Depends: golang/host
+
+Package: grpcurl
+Version: 1.9.3-1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||powerpc64||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: grpcurl
+Maintainer: 
+Source: grpcurl-1.9.3.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: grpcurl
+Description:   grpcurl is a command-line tool that lets you interact with gRPC servers.
+https://github.com/fullstorydev/grpcurl
+
+@@
+
+

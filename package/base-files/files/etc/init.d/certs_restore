@@ -1,0 +1,31 @@
+#!/bin/sh /etc/rc.common
+
+START=12
+USE_PROCD=1
+
+start_service() {
+    OVERLAY="/overlay/certs"
+    LOGCERTS="/log/certs"
+    CERT="$OVERLAY/deviceCert.crt"
+    KEY="$OVERLAY/privateKey.key"
+    LOGCERT="$LOGCERTS/deviceCert.crt"
+    LOGKEY="$LOGCERTS/privateKey.key"
+    # If both exist in overlay
+    if [ -f "$CERT" ] && [ -f "$KEY" ]; then
+        logger -t aws "Overlay certs already present — no restore needed."
+        return 0
+    fi
+    # If no backup
+    if [ ! -f "$LOGCERT" ] || [ ! -f "$LOGKEY" ]; then
+        logger -t aws "Backup missing, provisioning required."
+        return 0
+    fi
+
+    logger -t aws "Restoring certs"
+
+    mkdir -p "$OVERLAY"
+    cp -a "$LOGCERT" "$OVERLAY/"
+    cp -a "$LOGKEY" "$OVERLAY/"
+
+    logger -t aws "Restore complete."
+}

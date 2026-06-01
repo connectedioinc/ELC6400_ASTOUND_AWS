@@ -1,0 +1,26 @@
+Source-Makefile: package/feeds/vuci/api-core/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: api-core
+Version: 1
+Depends: +libc +rpcd +WIFI_SUPPORT:rpcd-mod-iwinfo +rpcd-mod-file +rpcd-mod-rpcsys +uhttpd +lua +libubox-lua +libubus-lua +libuci-lua +liblua +luci-lib-jsonc +luci-lib-nixio +luci-lib-ip +rpcd-mod-rrdns +uhttpd-mod-lua +lua_crypto +lua_extra_validators +libubus +luasocket +lsqlite3 +lrexlib +rpcd-mod-mnfinfo +luasec +rpcd-mod-uci +rpcd-mod-rc +session
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: webui
+Category: WebUI
+Repository: vuci
+Title: API core
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: API core
+Description: 	Provides core API functionality
+
+@@
+Config:
+	source "package/feeds/vuci/api-core/Config.in"
+@@
+
+

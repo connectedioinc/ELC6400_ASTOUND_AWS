@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/modem_control/Makefile
+
+Package: modem_control
+Version: 2025-07-17
+Depends: +libc +kmod-usb-serial +libubox +libuci +libtlt_uci +libubus +libpthread +libgsm +libmctl +libtlt_termios +libboardjson +libmnfinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Modem control through serial interface
+Maintainer: 
+Require-User: modem_control=504:modem_control=504
+Source: modem_control-2025-07-17-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem control through serial interface
+Description: 	Modem control through serial interface
+
+@@
+
+

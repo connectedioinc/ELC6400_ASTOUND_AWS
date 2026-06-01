@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-data-sender-ui/Makefile
+
+Package: vuci-app-data-sender-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-data-sender-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Data Sender
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Data Sender
+Description: VuCI UI Support for Data Sender
+
+@@
+
+

@@ -1,0 +1,581 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/data_to_server/collections/config": {
+      "get": {
+        "tags": ["Collections"],
+        "summary": "Returns all Data to Server Collections configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_collection_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Collections"],
+        "summary": "Creates a new Data to Server Collection configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_data_to_server_collection_single"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_collection_single"
+        }
+      },
+      "put": {
+        "tags": ["Collections"],
+        "summary": "Updates the selected Data to Server Collections configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_collection_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_collection_multi"
+        }
+      },
+      "delete": {
+        "tags": ["Collections"],
+        "summary": "Deletes the selected Data to Server Collections configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Collections"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/data_to_server/collections/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Collection configuration ID."
+        }
+      ],
+      "get": {
+        "tags": ["Collections"],
+        "summary": "Returns the specified Data to Server Collection configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_collection_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": ["Collections"],
+        "summary": "Updates the specified Data to Server Collection configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_collection_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_collection_single"
+        }
+      },
+      "delete": {
+        "tags": ["Collections"],
+        "summary": "Deletes the specified Data to Server configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Collections"],
+        "summary": "Uploads the Data to Server Collection necessary files",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "Path of the uploaded file"
+                        }
+                      }
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "",
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "Parameter to upload the file to.",
+                    "enum": ["format_script"]
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "The config file"
+                  }
+                },
+                "required": ["option", "file"]
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Collections"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "requestBodies": {
+      "req_data_to_server_collection_single": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/data_sender_collections_single_options"
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "req_data_to_server_collection_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/data_sender_collections_multi_options"
+                  }
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_data_to_server_collection_single": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/data_sender_collections_multi_options"
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_data_to_server_collection_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "$ref": "#/components/schemas/data_sender_collections_multi_options"
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "data_sender_collections_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Check to enable this Data to Server.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the Data to Server. Used for easier Data to Servers management purposes only.",
+            "format": "string",
+            "x-web": {
+              "pretty": "Name",
+              "input-type": "input",
+              "unique": true
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "Specifies custom format string.",
+            "enum": ["json", "custom", "lua"],
+            "default": "json",
+            "x-web": {
+              "pretty": "Format",
+              "input-type": "select",
+              "enum-pretty": {
+                "json": "JSON",
+                "custom": "Custom",
+                "lua": "Lua"
+              }
+            }
+          },
+          "format_str": {
+            "type": "string",
+            "description": "Specifies custom format string.",
+            "format": "string",
+            "x-web": {
+              "pretty": "Format string",
+              "input-type": "input",
+              "depends": [
+                {
+                  "format": "custom"
+                }
+              ]
+            }
+          },
+          "na_str": {
+            "type": "string",
+            "description": "A string which will be placed if any value cannot be received.",
+            "format": "string",
+            "x-web": {
+              "pretty": "Empty value",
+              "input-type": "input",
+              "depends": [
+                {
+                  "format": "custom"
+                }
+              ]
+            }
+          },
+          "format_script": {
+            "type": "string",
+            "description": "Path to the Lua script.",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/data_to_server/collections/config/{id}",
+              "pretty": "Lua format script",
+              "input-type": "input",
+              "depends": [
+                {
+                  "format": "Lua"
+                }
+              ]
+            }
+          },
+          "format_script:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "timer": {
+            "type": "string",
+            "description": "Specifies the timer mode, allowing selection between no timer, a periodic timer, or a scheduled timer.",
+            "enum": ["period", "scheduler", "none"],
+            "default": "period",
+            "x-web": {
+              "pretty": "Timer",
+              "input-type": "select",
+              "enum-pretty": {
+                "none": "None",
+                "period": "Period",
+                "scheduler": "Scheduler"
+              }
+            }
+          },
+          "period": {
+            "type": "string",
+            "description": "Interval in seconds for collecting/sending data to destination.",
+            "format": "irange(1,86400)",
+            "default": "60",
+            "x-web": {
+              "pretty": "Period",
+              "input-type": "input",
+              "depends": [
+                {
+                  "timer": "period"
+                }
+              ]
+            }
+          },
+          "day_mode": {
+            "type": "string",
+            "description": "Defines the type of day selection, either by weekdays or specific month days.",
+            "enum": ["month", "week"],
+            "x-web": {
+              "pretty": "Day type",
+              "input-type": "select",
+              "enum-pretty": {
+                "month": "Month days",
+                "week": "Weekdays"
+              },
+              "depends": [
+                {
+                  "timer": "scheduler"
+                }
+              ]
+            }
+          },
+          "month_days": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "irange(1, 31)"
+            },
+            "description": "Month days, when the collected information should be sent.",
+            "x-web": {
+              "pretty": "Month days",
+              "input-type": "multiselect",
+              "depends": [
+                {
+                  "timer": "scheduler",
+                  "day_mode": "month"
+                }
+              ]
+            }
+          },
+          "week_days": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"]
+            },
+            "description": "Week days, when the collected information should be sent.",
+            "x-web": {
+              "pretty": "Weekdays",
+              "input-type": "multiselect",
+              "enum-pretty": {
+                "mon": "Monday",
+                "tue": "Tuesday",
+                "wed": "Wednesday",
+                "thu": "Thursday",
+                "fri": "Friday",
+                "sat": "Saturday",
+                "sun": "Sunday"
+              },
+              "depends": [
+                {
+                  "timer": "scheduler",
+                  "day_mode": "week"
+                }
+              ]
+            }
+          },
+          "last_day": {
+            "type": "string",
+            "description": "Forces intervals to accept last day of month as valid option if selected day doesn't exist in ongoing month.",
+            "enum": ["0", "1"],
+            "format": "is_bool",
+            "x-web": {
+              "pretty": "Force last day",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "timer": "scheduler",
+                  "day_mode": "month"
+                }
+              ]
+            }
+          },
+          "time": {
+            "type": "array",
+            "maxItems": 10,
+            "description": "Day time when action should be executed. Use '*' to indicate every hour or minute, (e.g., 12:15, 12:15,16, *:15, *:15,16, 12:* or *:*).",
+            "items": {
+              "type": "string"
+            },
+            "x-web": {
+              "pretty": "Day time",
+              "input-type": "input",
+              "depends": [
+                {
+                  "timer": "scheduler"
+                }
+              ]
+            }
+          },
+          "retry": {
+            "type": "string",
+            "description": "In case of a failed attempt, retry to send the same data to destination later.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Retry",
+              "input-type": "switch"
+            }
+          },
+          "retry_count": {
+            "type": "string",
+            "description": "Retry to send the same data N times.",
+            "format": "irange(1,10)",
+            "x-web": {
+              "pretty": "Retry count",
+              "input-type": "input",
+              "depends": [
+                {
+                  "retry": "1"
+                }
+              ]
+            }
+          },
+          "retry_timeout": {
+            "type": "string",
+            "description": "Timeout in second between retry attempts.",
+            "format": "irange(1,10)",
+            "x-web": {
+              "pretty": "Retry timeout",
+              "input-type": "input",
+              "depends": [
+                {
+                  "retry": "1"
+                }
+              ]
+            }
+          },
+          "input": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Data plugins.",
+            "readOnly": true
+          },
+          "output": {
+            "type": "string",
+            "description": "Server plugin.",
+            "readOnly": true
+          },
+          "encoder": {
+            "type": "string",
+            "enum": ["","base64"],
+            "x-web": {
+              "pretty": "Encoder",
+              "enum-pretty": {
+                "": "None",
+                "base64": "Base64"
+              }
+            }
+          }
+        },
+        "required": ["name"]
+      },
+      "data_sender_collections_multi_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Name of the configuration."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/data_sender_collections_single_options"
+          }
+        ],
+        "required": ["id"]
+      }
+    }
+  }
+}

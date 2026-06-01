@@ -1,0 +1,36 @@
+
+/dts-v1/;
+
+/ {
+        description = "Flashing norplusnand 100 10000";
+        images {
+
+                script {
+                        description = "flash.scr";
+                        data = /incbin/("flash.scr");
+                        type = "script";
+                        arch = "arm";
+                        compression = "none";
+                        hash@1 { algo = "crc32"; };
+                };
+
+                ubi-05412e4364b2730e03df083e6d972a37e399ffa5 {
+                        description = "/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin";
+                        data = /incbin/("/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/linux-ipq40xx_generic/tmp/openwrt-ipq40xx-generic-teltonika_rutx-squashfs-sysupgrade.bin");
+                        type = "firmware";
+                        arch = "arm";
+                        compression = "none";
+                        hash@1 { algo = "crc32"; };
+                };
+
+                u-boot-e6d2ec537b2bc7d17fc20b8619d322530d76217b {
+                        description = "/media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-u-boot-stripped.elf";
+                        data = /incbin/("/media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/openwrt-ipq40xx-u-boot-stripped.elf");
+                        type = "firmware";
+                        arch = "arm";
+                        compression = "none";
+                        hash@1 { algo = "crc32"; };
+                };
+
+        };
+};

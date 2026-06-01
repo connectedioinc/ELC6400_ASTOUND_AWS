@@ -1,0 +1,153 @@
+#!/usr/bin/lua
+
+local json = require("luci.jsonc")
+local ltn12 = require("ltn12")
+local util = require("vuci.util")
+local http = require("socket.http")
+local nixio = require("nixio")
+http.TIMEOUT = 1
+
+local function send_response(status)
+	local status_codes = {
+		["200"] = "OK",
+		["400"] = "Bad Request",
+		["408"] = "Request Timeout"
+	}
+	io.stdout:write("Status: " .. status .. " " .. status_codes[status] .. "\r\n")
+	io.stdout:write("Cache-Control: no-cache\r\n\r\n")
+	io.stdout:flush()
+	os.exit()
+end
+
+local function split_dsn(dsn)
+	local url = require("socket.url")
+	local parsed = url.parse(dsn)
+	if not parsed then return {} end
+	return {
+		scheme = parsed.scheme,
+		host = parsed.host,
+		project_id = parsed.path:match("^/(.-)$"),
+	}
+end
+
+local function compress_data(data)
+	if not data or data == "" then return nil end
+	local tmp_filename = os.tmpname()
+	local tmp_file = io.open(tmp_filename, "w")
+	tmp_file:write(data)
+	tmp_file:close()
+
+	local pipe = io.popen("gzip -c " .. tmp_filename, "r")
+	local compressed_data = pipe:read("*a")
+	pipe:close()
+
+	os.remove(tmp_filename)
+
+	return compressed_data
+end
+
+local function check_connection(timeout, host, port)
+	local socket = require("socket")
+	local r, w = nixio.pipe()
+
+	local sleep_pid = nixio.fork()
+	if sleep_pid == 0 then
+		nixio.exec("/bin/sleep", tostring(timeout))
+	end
+
+	local dns_pid = nixio.fork()
+	if dns_pid == 0 then
+		r:close()
+		local ip = socket.dns.toip(host)
+		if ip then
+			w:write(ip)
+		end
+		w:close()
+		os.exit()
+	end
+	w:close()
+
+	while true do
+		local finished_pid  = nixio.waitpid()
+		if finished_pid == sleep_pid then
+			nixio.kill(dns_pid, 9)
+			break
+		end
+
+		if finished_pid == dns_pid then
+			break
+		end
+	end
+
+	local ip = r:read(1024)
+	r:close()
+
+	if not ip or ip == "" then
+		return false
+	end
+
+	local con = socket.tcp()
+	con:settimeout(timeout)
+
+	local result = con:connect(ip, port)
+	if not result then
+		return false
+	end
+	con:close()
+
+	return true
+end
+
+local csrf = os.getenv("HTTP_X_CSRF_PROTECTION")
+if not csrf or csrf == "" then return send_response("400") end
+
+local disp_common = require("api.dispatcher_common")
+local cookie = disp_common:parse_cookie_header(os.getenv("HTTP_COOKIE"))
+local request_method = os.getenv("REQUEST_METHOD") or ""
+local content_length = tonumber(os.getenv("CONTENT_LENGTH") or 0)
+
+local protocols = { http = 80, https = 443 }
+
+if request_method ~= "POST" or content_length == 0 then send_response("400") end
+if not cookie or not cookie.token or cookie.token == "00000000000000000000000000000000" then return send_response("400") end
+
+local session = util.ubus("session", "get", { ubus_rpc_session = cookie.token })
+if not session then return send_response("400") end
+
+local envelope = io.stdin:read(content_length)
+local piece = envelope:match("^(.-)\n")
+if not piece or piece == "" then send_response("400") end
+
+local header = json.parse(piece)
+if not header then send_response("400") end
+
+local dsn = split_dsn(header.dsn)
+if not dsn.scheme or not dsn.host or not dsn.project_id or not protocols[dsn.scheme] then send_response("400") end
+if not dsn.host:match("%.sentry%.io$") then send_response("400") end
+if not check_connection(http.TIMEOUT, dsn.host, protocols[dsn.scheme]) then send_response("408") end
+
+local compressed_envelope = compress_data(envelope) or envelope
+
+local url = dsn.scheme .. "://" .. dsn.host .. "/api/" .. dsn.project_id .. "/envelope/"
+local headers = {
+	["Content-Encoding"] = "gzip",
+	["Content-Type"] = "application/x-sentry-envelope",
+	["Content-Length"] = tostring(#compressed_envelope),
+	["X-Forwarded-For"] = os.getenv("REMOTE_ADDR") or ""
+}
+local response = {}
+local _, status_code = http.request{
+	url = url,
+	method = "POST",
+	headers = headers,
+	source = ltn12.source.string(compressed_envelope),
+	sink = ltn12.sink.table(response)
+}
+if status_code ~= 200 then
+	if response and #response > 0 then
+		util.perror("Sentry error: " .. table.concat(response))
+	end
+	send_response("400")
+end
+
+send_response("200")

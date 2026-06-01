@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/port_eventsd/Makefile
+
+Package: port_eventsd
+Version: 1.16-6
+Depends: +libc +libubox +libubus +libnl-tiny +libtlt-logger +libmnfinfo +libboardjson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Port Events Daemon
+Maintainer: 
+Require-User: port_eventsd:port_eventsd
+Source: port_eventsd-1.16-1.16.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Port Events Daemon
+Description: Port Events Daemon
+
+@@
+
+

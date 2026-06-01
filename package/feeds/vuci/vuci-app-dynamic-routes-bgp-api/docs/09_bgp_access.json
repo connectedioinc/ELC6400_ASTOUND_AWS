@@ -1,0 +1,357 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/bgp/access/config": {
+      "get": {
+        "operationId": "get-multi-bgp-access-filter-config",
+        "summary": "Returns all BGP access list filter configurations",
+        "description": "",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgAcMulti"
+          }
+        },
+        "tags": ["Access List Filters"],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "operationId": "post-bgp-access-filter-config",
+        "summary": "Creates BGP access list filter configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200BgAcMulti"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bgp_access_options_multi"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Access List Filters"]
+      },
+      "put": {
+        "operationId": "put-multi-bgp-access-filter-config",
+        "summary": "Updates multiple BGP access list filter configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgAcMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "$ref": "#/components/schemas/bgp_access_options_multi"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Access List Filters"]
+      },
+      "delete": {
+        "operationId": "delete-multi-bgp-access-filter-config",
+        "summary": "Deletes multiple BGP access list filter configurations",
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Access List Filters"],
+        "description": "",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "BGP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "BGP"
+      }
+    },
+    "/bgp/access/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "UCI BGP access list filter section identifier"
+        }
+      ],
+      "get": {
+        "operationId": "get-bgp-access-filter-config",
+        "summary": "Returns specified BGP access list filter configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgAc"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "UCI BGP access list filter section identifier"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "tags": ["Access List Filters"]
+      },
+      "put": {
+        "operationId": "put-bgp-access-filter-config",
+        "summary": "Updates specified BGP access list filter configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200BgAc"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/bgp_access_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Access List Filters"],
+        "description": ""
+      },
+      "delete": {
+        "operationId": "delete-bgp-access-filter-config",
+        "summary": "Deletes specified BGP access list filter configuration",
+        "description": "",
+        "tags": ["Access List Filters"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "BGP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "BGP"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200BgAc": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/bgp_access_options_multi"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200BgAcMulti": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/bgp_access_options_multi"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "bgp_access_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "type": "string"
+          },
+          "target": {
+            "x-web": {
+              "pretty": "Peer",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Applies the rule for the specified peer."
+          },
+          "action": {
+            "x-web": {
+              "pretty": "Action",
+              "input-type": "select",
+              "enum-pretty": {
+                "permit": "Permit",
+                "deny": "Deny"
+              }
+            },
+            "type": "string",
+            "description": "Denies or permits matched entry.",
+            "enum": ["permit", "deny"]
+          },
+          "net": {
+            "x-web": {
+              "pretty": "Filter Network",
+              "input-type": "input",
+              "enum-pretty": {
+                "any": "Any"
+              }
+            },
+            "type": "string",
+            "description": "Applies filter rule for this source network."
+          },
+          "direction": {
+            "x-web": {
+              "pretty": "Direction",
+              "input-type": "select",
+              "enum-pretty": {
+                "in": "Inbound",
+                "out": "Outbound"
+              }
+            },
+            "type": "string",
+            "description": "If direction is Inbound, the access list is applied to input routes. If direction is Outbound the access list is applied to advertised routes.",
+            "enum": ["in", "out"]
+          }
+        }
+      },
+      "bgp_access_options_multi": {
+        "title": "bgp_access_options_multi",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "x-web": {
+                  "pretty": "Configuration name",
+                  "unique": true,
+                  "input-type": "input"
+                },
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/bgp_access_options"
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "BGP Access List Filters",
+    "description": "BGP access list filters api documentation",
+    "version": "1.0"
+  },
+  "tags": [
+    {
+      "name": "Access List Filters"
+    }
+  ]
+}

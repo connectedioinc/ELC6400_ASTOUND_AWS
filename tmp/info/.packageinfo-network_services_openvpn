@@ -1,0 +1,33 @@
+Source-Makefile: package/network/services/openvpn/Makefile
+
+Package: openvpn-openssl
+Menu: 1
+Submenu: VPN
+Version: 2.6.14-21
+Depends: +libc +kmod-tun +libcap +OPENVPN_openssl_ENABLE_LZO:liblzo +OPENVPN_openssl_ENABLE_LZ4:liblz4 +OPENVPN_openssl_ENABLE_IPROUTE2:ip +OPENVPN_openssl_ENABLE_DCO:libnl-genl +PACKAGE_openvpn-openssl:libopenssl +libubus +libubox +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: openvpn openvpn-crypto
+Build-Variant: openssl
+Section: net
+Category: Network
+Repository: base
+Title: Open source VPN solution using OpenSSL
+Maintainer: Magnus Kroken <mkroken@gmail.com>
+CPE-ID: cpe:/a:openvpn:openvpn
+Require-User: openvpn=580:openvpn=580
+FileAttributes: /usr/sbin/openvpn::::cap_net_admin,cap_net_bind_service+ep
+Source: openvpn-2.6.14.tar.gz
+License: GPL-2.0-only
+LicenseFiles: COPYING COPYRIGHT.GPL
+Type: ipkg
+Detail-Description: Open source VPN solution using OpenSSL
+Description: Open source VPN solution using OpenSSL
+http://openvpn.net
+Magnus Kroken <mkroken@gmail.com>
+@@
+Config:
+	source "package/network/services/openvpn/Config-openssl.in"
+@@
+
+

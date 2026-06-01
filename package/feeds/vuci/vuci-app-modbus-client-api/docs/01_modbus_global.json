@@ -1,0 +1,345 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Modbus client global settings"
+    }
+  ],
+  "paths": {
+    "/modbus/client/global": {
+      "get": {
+        "tags": [
+          "Modbus client global settings"
+        ],
+        "summary": "Returns all Modbus client global settings configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200modbusGlobal"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Modbus client global settings"
+        ],
+        "summary": "Updates specified Modbus client global settings configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200modbusGlobal"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/modbus_global_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Modbus",
+          "TCP Client"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/modbus/client/database/status": {
+      "get": {
+        "tags": [
+          "Modbus client global settings"
+        ],
+        "summary": "Returns Modbus client database statistics",
+        "responses": {
+          "200": {
+            "description": "Database statistics",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "size_in_pages": {
+                          "type": "string",
+                          "format": "uinteger",
+                          "description": "Size of database in pages. A single page is 4KiB"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "db_path",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "A specific database for which to get statistics"
+        }
+      ],
+      "x-web": {
+        "menu": [
+          "Services",
+          "Modbus",
+          "TCP Client"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/modbus/client/database/entries/status": {
+      "get": {
+        "tags": [
+          "Modbus client global settings"
+        ],
+        "summary": "Returns all Modbus client database entries",
+        "responses": {
+          "200": {
+            "description": "Database entries result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "request_name": {
+                            "type": "string"
+                          },
+                          "request_id": {
+                            "type": "string"
+                          },
+                          "timestamp": {
+                            "type": "string",
+                            "format": "uinteger"
+                          },
+                          "data": {
+                            "type": "string"
+                          },
+                          "server_name": {
+                            "type": "string"
+                          },
+                          "server_id": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "required": ["total"],
+                      "properties": {
+                        "total": {
+                          "type": "string",
+                          "format": "uinteger"
+                        },
+                        "limit": {
+                          "type": "string",
+                          "format": "uinteger"
+                        },
+                        "offset": {
+                          "type": "string",
+                          "format": "uinteger"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "db_path",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "A specific database for which to list entries"
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "number"
+          },
+          "description": "Limit number of items returned"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "number"
+          },
+          "description": "Number of items to skip from the beginning"
+        },
+        {
+          "name": "id",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by ID"
+        },
+        {
+          "name": "request_id",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by request ID"
+        },
+        {
+          "name": "request_name",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by request name"
+        },
+        {
+          "name": "server_id",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by server ID"
+        },
+        {
+          "name": "server_name",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by server name"
+        }
+      ],
+      "x-web": {
+        "menu": [
+          "Services",
+          "Modbus",
+          "TCP Client"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200modbusGlobal": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/modbus_global_single_options"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "modbus_global_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enables/disables Modbus client functionality.",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ]
+          },
+          "db_path": {
+            "type": "string",
+            "description": "Path to the Modbus client database file.",
+            "x-web": {
+              "pretty": "Database path",
+              "input-type": "input"
+            }
+          },
+          "db_max_page_count": {
+            "type": "string",
+            "format": "uinteger",
+            "description": "Database size limit in pages. 1 Page is 4KiB",
+            "x-web": {
+              "pretty": "Database size limit",
+              "input-type": "input"
+            }
+          }
+        }
+      }
+    }
+  }
+}

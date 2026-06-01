@@ -1,0 +1,4 @@
+./dirwatcher.go
+./event.go
+./filewatcher.go
+./inotify.go

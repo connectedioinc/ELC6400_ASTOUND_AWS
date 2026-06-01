@@ -1,0 +1,22 @@
+Source-Makefile: package/utils/cioClient/Makefile
+
+Package: cioClient
+Version: 1
+Depends: +libc +libopenssl +libpthread +zlib +libubus +libblobmsg-json +libubox +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: AWS IoT MQTT Basic TLS Demo
+Maintainer: 
+Source: 
+Type: ipkg
+Detail-Description: AWS IoT MQTT Basic TLS Demo
+Description:   A  AWS IoT MQTT client demo using TLS, 
+  based on cioClient.c from the AWS IoT Device SDK.
+
+@@
+
+

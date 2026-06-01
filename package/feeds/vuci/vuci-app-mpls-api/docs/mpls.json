@@ -1,0 +1,252 @@
+{
+  "openapi": "3.0.0",
+  "tags": [],
+  "paths": {
+    "/mpls/ldp/global": {
+      "get": {
+        "summary": "Returns LDP global configuration",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_ldp_general"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates LDP global configuration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/ldp_general"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_ldp_general"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["General"]
+      },
+      "parameters": [],
+      "x-web": {
+        "name": "LDP",
+        "menu": ["Network", "MPLS", "LDP"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    },
+    "/mpls/ldp/status": {
+      "get": {
+        "summary": "Returns LDP status information",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/ldp_status"
+                    }
+                  },
+                  "x-examples": {
+                    "example-1": {
+                      "success": true,
+                      "data": {
+                        "neighbors": [
+                          {
+                            "state": "OPERATIONAL",
+                            "neighborId": "10.0.0.1",
+                            "upTime": "20:38:46",
+                            "addressFamily": "ipv4",
+                            "transportAddress": "10.0.0.1"
+                          },
+                          {
+                            "state": "OPERATIONAL",
+                            "neighborId": "10.0.0.3",
+                            "upTime": "20:01:31",
+                            "addressFamily": "ipv4",
+                            "transportAddress": "10.0.0.3"
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "",
+        "tags": ["General"]
+      },
+      "x-web": {
+        "menu": ["Network", "MPLS", "LDP"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        },
+        "name": "LDP",
+        "hidden": true,
+        "hidden_documentation_page": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ldp_general": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "Turns on LDP service.",
+            "enum": ["1", "0"],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "router_id": {
+            "type": "string",
+            "description": "LDP router ID in IPv4 address format.",
+            "x-web": {
+              "pretty": "IPv4 router ID",
+              "input-type": "input"
+            }
+          },
+          "transport_address": {
+            "type": "string",
+            "description": "IPv4 address used to establish LDP session.",
+            "x-web": {
+              "pretty": "IPv4 transport address",
+              "input-type": "input"
+            }
+          },
+          "ifname": {
+            "type": "array",
+            "description": "Devices on which LDP will run.",
+            "items": {
+              "type": "string"
+            },
+            "x-web": {
+              "pretty": "Devices",
+              "input-type": "input"
+            }
+          }
+        }
+      },
+      "ldp_status": {
+        "type": "object",
+        "properties": {
+           "neighbors": {
+            "type": "array",
+            "description": "Neighbor list",
+            "items": {
+              "type": "object",
+              "properties": {
+                "state": {
+                  "type": "string",
+                  "description": "Connection state"
+                },
+                "neighborId": {
+                  "type": "string",
+                  "description": "Router ID of neighbor"
+                },
+                "upTime": {
+                  "type": "string",
+                  "description": "Uptime of neighbor"
+                },
+                "addressFamily": {
+                  "type": "string",
+                  "description": "Which address family was used to establish connection"
+                },
+                "transportAddress": {
+                  "type": "string",
+                  "description": "Transport address of neighbor"
+                }
+              }
+            }
+          },
+          "interfaces": {
+            "type": "array",
+            "description": "Interface list",
+            "items": {
+              "type": "object",
+              "properties": {
+                "state": {
+                  "type": "string",
+                  "description": "Interface state"
+                },
+                "name": {
+                  "type": "string",
+                  "description": "Interface name"
+                },
+                "adjacencies": {
+                  "type": "string",
+                  "description": "Number of formed adjacencies"
+                },
+                "uptime": {
+                  "type": "string",
+                  "description": "Uptime of interface"
+                },
+                "family": {
+                  "type": "string",
+                  "description": "Address family used"
+                }
+              }
+            }
+          },
+          "enabled": {
+            "type": "string",
+            "description": "LDP enable state"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_ldp_general": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/ldp_general"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

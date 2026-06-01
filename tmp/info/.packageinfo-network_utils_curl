@@ -1,0 +1,52 @@
+Source-Makefile: package/network/utils/curl/Makefile
+
+Package: libcurl
+Menu: 1
+Version: 8.16.0-0.1
+Depends: +libc +LIBCURL_OPENSSL:libopenssl +LIBCURL_ZLIB:zlib +LIBCURL_THREADED_RESOLVER:libpthread +LIBCURL_NGHTTP2:libnghttp2 +ca-bundle
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A client-side URL transfer library
+Maintainer: Stan Grishin <stangri@melmac.ca>
+CPE-ID: cpe:/a:haxx:libcurl
+Source: curl-8.16.0.tar.bz2
+License: MIT
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: A client-side URL transfer library
+Description: A client-side URL transfer library
+http://curl.se/
+Stan Grishin <stangri@melmac.ca>
+@@
+Config:
+  source "package/network/utils/curl/Config.in"
+@@
+
+Package: curl
+Submenu: File Transfer
+Version: 8.16.0-0.1
+Depends: +libc +libcurl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A client-side URL transfer utility
+Maintainer: Stan Grishin <stangri@melmac.ca>
+CPE-ID: cpe:/a:haxx:libcurl
+Source: curl-8.16.0.tar.bz2
+License: MIT
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: A client-side URL transfer utility
+Description: A client-side URL transfer utility
+http://curl.se/
+Stan Grishin <stangri@melmac.ca>
+@@
+
+

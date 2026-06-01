@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-networkmap-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-networkmap-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +networkmap +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for Networkmap
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for Networkmap
+Description: VuCI API Support for Networkmap
+
+@@
+
+

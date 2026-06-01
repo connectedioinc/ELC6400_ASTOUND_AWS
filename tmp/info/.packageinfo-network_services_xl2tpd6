@@ -1,0 +1,27 @@
+Source-Makefile: package/network/services/xl2tpd6/Makefile
+
+Package: xl2tpd6
+Submenu: VPN
+Version: 1.3.17-7
+Depends: +libc +libpthread +kmod-l2tp +kmod-l2tp-eth +kmod-l2tp-ip +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: L2TP daemon with IPv6 support
+Maintainer: 
+Require-User: xl2tpd:xl2tpd
+Source: xl2tpd6-1.3.17.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: L2TP daemon with IPv6 support
+Description:   xl2tpd6 is a daemon that manages Layer 2 Tunneling Protocol (L2TP) tunnels.
+  It is based on xl2tpd with added IPv6 support.
+https://github.com/ulysse31/xl2tpd6
+
+@@
+
+

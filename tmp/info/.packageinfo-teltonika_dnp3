@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/dnp3/Makefile
+
+Package: dnp3
+Version: 2026-01-06-1
+Depends: +libc +libstdcpp +libuci +libubus +libopenssl +libsqlite3 +MOBILE_SUPPORT:libgsm +GPS_SUPPORT:libgps +libtlt_uci +libtlt_termios +MOBILE_SUPPORT:libmdcollect +libjson-c +opendnp3 +libubox +libblobmsg-json +libmnfinfo +IO_SUPPORT:iomand +MOBILE_SUPPORT:libboardjson +libtag
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: dnp3 stack
+Maintainer: 
+Source: dnp3-2026-01-06.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: dnp3 stack
+Description: 	DNP3 application stack which includes client and outstation.
+	DNP3 client is designed for reading data from DNP3 outstations and storing in local database.
+	DNP3 outstation is designed for DNP3 clients to read device data.
+
+@@
+
+

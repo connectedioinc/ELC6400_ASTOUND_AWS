@@ -1,0 +1,2642 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/data_to_server/data/options": {
+      "get": {
+        "summary": "Returns Data to Server all available Data Plugin names, description and tags",
+        "tags": ["Data Plugins"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_sender_available_plugin_names"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Data Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/data_to_server/collections/{collection_id}/data/config/{id}": {
+      "parameters": [
+        {
+          "name": "collection_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Collection configuration ID.",
+          "x-web": {
+            "pretty": "Collection configuration ID",
+            "parameter_endpoint": "/data_to_server/collections/config",
+            "parameter_filter": "$.http_body.data[*].id"
+          }
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Data Input configuration ID."
+        }
+      ],
+      "get": {
+        "tags": ["Data Plugins"],
+        "summary": "Returns the specified Data to Server Data Plugin configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_data_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Data Plugins"],
+        "summary": "Uploads the Data Plugin necessary files",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "Path of the uploaded file"
+                        }
+                      }
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+           "$ref": "#/components/requestBodies/req_req_data_to_server_input_upload"
+        }
+      },
+      "put": {
+        "tags": ["Data Plugins"],
+        "summary": "Updates the specified Data to Server Data Plugin configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_data_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_data_single"
+        }
+      },
+      "delete": {
+        "tags": ["Data Plugins"],
+        "summary": "Deletes the specified Data to Server Data Plugin configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Data Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "hidden": true,
+        "hidden_documentation_page": true
+      }
+    },
+    "/data_to_server/collections/{id}/data/config": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Collection configuration ID.",
+          "x-web": {
+            "pretty": "Collection configuration ID",
+            "parameter_endpoint": "/data_to_server/collections/config",
+            "parameter_filter": "$.http_body.data[*].id"
+          }
+        }
+      ],
+      "get": {
+        "tags": ["Data Plugins"],
+        "summary": "Returns all Data to Server Data Plugins configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_data_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "x-web": {
+          "hidden": true,
+          "hidden_documentation_page": true
+        }
+      },
+      "post": {
+        "tags": ["Data Plugins"],
+        "summary": "Creates a new Data to Server Data Plugin configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_data_to_server_data_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_data_single"
+        }
+      },
+      "put": {
+        "tags": ["Data Plugins"],
+        "summary": "Updates the selected Data to Server Data Plugins configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_data_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_data_multi"
+        },
+        "x-web": {
+          "hidden": true,
+          "hidden_documentation_page": true
+        }
+      },
+      "delete": {
+        "tags": ["Data Plugins"],
+        "summary": "Deletes the selected Data to Server Data Plugins configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "x-web": {
+          "hidden": true,
+          "hidden_documentation_page": true
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Data Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/data_to_server/data/config": {
+      "get": {
+        "tags": ["Data Plugins"],
+        "summary": "Returns all Data to Server Data Plugins configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_data_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": ["Data Plugins"],
+        "summary": "Updates the selected Data to Server Data Plugins configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_data_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_data_multi"
+        }
+      },
+      "delete": {
+        "tags": ["Data Plugins"],
+        "summary": "Deletes the selected Data to Server Plugins configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Data Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/data_to_server/data/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Data Input configuration ID."
+        }
+      ],
+      "get": {
+        "tags": ["Data Plugins"],
+        "summary": "Returns the specified Data to Server Data Plugin configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_data_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Data Plugins"],
+        "summary": "Uploads the Data Plugin necessary files",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "Path of the uploaded file"
+                        }
+                      }
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_req_data_to_server_input_upload"
+        }
+      },
+      "put": {
+        "tags": ["Data Plugins"],
+        "summary": "Updates the selected Data to Server Data Plugins configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_data_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_data_single"
+        }
+      },
+      "delete": {
+        "tags": ["Data Plugins"],
+        "summary": "Deletes the specified Data to Server Data Plugins configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Data Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/data_to_server/data/actions/download_example_input_lua": {
+      "post": {
+        "summary": "Downloads Lua script example file",
+        "tags": ["Data Plugins"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_example_lua"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Data Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "requestBodies": {
+      "req_data_to_server_data_single": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/data_sender_input_single_options"
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "req_data_to_server_data_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Name of the configuration."
+                          }
+                        }
+                      },
+                      {
+                        "$ref": "#/components/schemas/data_sender_input_single_options"
+                      }
+                    ],
+                    "required": ["id"]
+                  }
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "req_req_data_to_server_input_upload":{ 
+        "description": "",
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "option": {
+                  "type": "string",
+                  "description": "Parameter to upload the file to.",
+                  "enum": ["mqtt_in_cafile", "mqtt_in_certfile", "mqtt_in_keyfile", "lua_script", "format_script"]
+                },
+                "file": {
+                  "type": "string",
+                  "format": "binary",
+                  "description": "The config file"
+                }
+              },
+              "required": ["option", "file"]
+            }
+          }
+        }
+      } 
+    },
+    "responses": {
+      "200_data_to_server_data_single": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/data_sender_input_multi_options_resp"
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_data_to_server_data_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "$ref": "#/components/schemas/data_sender_input_multi_options_resp"
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_data_sender_available_plugin_names": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "plugins": {
+                      "type": "array",
+                      "items": {
+                        "allOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "description": {
+                                "type": "string",
+                                "description": "A concise explanation of the plugin's functionality."
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "The name of the plugin."
+                              },
+                              "solo_collection": {
+                                "type": "boolean",
+                                "description": "Indicates whether a collection can have only one plugin of this type (true), thus prohibiting multiple plugins of the same type within a single collection."
+                              },
+                              "params": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "info": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "data_sender_input_multi_options_resp": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Name of the configuration."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/data_sender_input_single_options"
+          }
+        ],
+        "required": ["id"]
+      },
+      "data_sender_input_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enables data to server input instance.",
+            "format": "is_bool",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "name": {
+            "type": "string",
+            "description": "Plugin name.",
+            "format": "uciname",
+            "maxLength": 64,
+            "x-web": {
+              "pretty": "Name",
+              "input-type": "input",
+              "unique": true
+            }
+          },
+          "plugin": {
+            "type": "string",
+            "description": "Data plugin module name.",
+            "enum": [
+              "base",
+              "bluetooth",
+              "dlms",
+              "dnp3",
+              "gsm",
+              "mbus",
+              "mdcollect",
+              "mnfinfo",
+              "modbus",
+              "modbus_alarm",
+              "mqtt",
+              "opcua",
+              "impulse_counter",
+              "wifiscan",
+              "lua",
+              "io",
+              "sms",
+              "gps"
+            ],
+            "default": "base",
+            "x-web": {
+              "pretty": "Data Plugin",
+              "input-type": "select",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ],
+              "enum-pretty": {
+                "base": "Base",
+                "bluetooth": "Bluetooth",
+                "dlms": "DLMS",
+                "dnp3": "DNP3",
+                "gsm": "GSM",
+                "mbus": "M-Bus data",
+                "mdcollect": "Mobile usage",
+                "mnfinfo": "MNFinfo",
+                "modbus": "Modbus",
+                "modbus_alarm": "Modbus alarm",
+                "opcua": "OPC UA",
+                "impulse_counter": "Impulse counter",
+                "wifiscan": "Wifi scanner",
+                "lua": "Lua script",
+                "mqtt": "MQTT",
+                "io": "Input/Output",
+                "sms": "SMS",
+                "gps": "GPS"
+              },
+              "enum-depends": [
+                {
+                  "hw_tags": {
+                    "ios": true
+                  },
+                  "values": [
+                    "base",
+                    "bluetooth",
+                    "dlms",
+                    "dnp3",
+                    "gsm",
+                    "mbus",
+                    "mdcollect",
+                    "mnfinfo",
+                    "modbus",
+                    "modbus_alarm",
+                    "mqtt",
+                    "opcua",
+                    "impulse_counter",
+                    "wifiscan",
+                    "lua",
+                    "io",
+                    "sms",
+                    "gps"
+                  ]
+                },
+                {
+                  "hw_tags": {
+                    "ios": false
+                  },
+                  "values": [
+                    "base",
+                    "bluetooth",
+                    "dlms",
+                    "dnp3",
+                    "gsm",
+                    "mbus",
+                    "mdcollect",
+                    "mnfinfo",
+                    "modbus",
+                    "modbus_alarm",
+                    "mqtt",
+                    "opcua",
+                    "wifiscan",
+                    "lua",
+                    "sms",
+                    "gps"
+                  ]
+                }
+              ]
+            }
+          },
+          "format": {
+            "type": "string",
+            "description": "Specifies custom format string.",
+            "enum": ["json", "custom", "lua"],
+            "default": "json",
+            "x-web": {
+              "pretty": "Format",
+              "input-type": "select",
+              "enum-pretty": {
+                "json": "JSON",
+                "custom": "Custom",
+                "lua": "Lua"
+              }
+            }
+          },
+          "members": {
+            "description": "Values based on the data input type. If no values are selected, all values will be included.",
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "time",
+                "local_time",
+                "fw",
+                "name",
+                "id",
+                "timestamp",
+                "date",
+                "bdate",
+                "size",
+                "data",
+                "q_bits",
+                "ip",
+                "port",
+                "address",
+                "group",
+                "index",
+                "connstate",
+                "psstate",
+                "netstate",
+                "imei",
+                "iccid",
+                "model",
+                "manuf",
+                "serial",
+                "revision",
+                "imsi",
+                "simstate",
+                "pinstate",
+                "modemtime",
+                "rssi",
+                "rscp",
+                "ecio",
+                "rsrp",
+                "sinr",
+                "rsrq",
+                "cellid",
+                "operator",
+                "opernum",
+                "conntype",
+                "temp",
+                "pincount",
+                "network",
+                "serving",
+                "modem",
+                "ipv6",
+                "tx",
+                "rx",
+                "mac",
+                "maceth",
+                "batch",
+                "hwver",
+                "server_id",
+                "server_name",
+                "bserver_id",
+                "addr",
+                "baddr",
+                "full_addr",
+                "raw_data",
+                "alarm_id",
+                "test_data",
+                "condition",
+                "register",
+                "topic",
+                "retain",
+                "host",
+                "signal",
+                "pin_name",
+                "count",
+                "type",
+                "state",
+                "custom_name",
+                "value",
+                "in",
+                "out",
+                "smac",
+                "dmac",
+                "uid",
+                "gid",
+                "time.sec",
+                "time.usec",
+                "ip.src",
+                "ip.dst",
+                "ip.len",
+                "ip.tos",
+                "ip.ttl",
+                "ip.id",
+                "ip.proto",
+                "tcp.sport",
+                "tcp.dsport",
+                "tcp.seq",
+                "tcp.ack",
+                "tcp.window",
+                "tcp.psh",
+                "tcp.rst",
+                "tcp.syn",
+                "tcp.fin",
+                "tcp.urg",
+                "mark",
+                "text",
+                "npdus",
+                "pdus",
+                "latitude",
+                "longitude",
+                "altitude",
+                "angle",
+                "speed",
+                "accuracy",
+                "satellites",
+                "fix_status"
+              ]
+            },
+            "x-web": {
+              "pretty": "Values",
+              "input-type": "input",
+              "depends": [
+                {
+                  "format": "json"
+                }
+              ],
+              "enum-pretty": {
+                "time": "Time now",
+                "local_time": "Local time",
+                "fw": "Firmware version",
+                "name": "The name of the sender / DLMS record name / MODBUS request name / Device name / M-Bus record name / I/O pin name",
+                "id": "ID of the sender",
+                "timestamp": "Date (Linux timestamp) / MODBUS server timestamp",
+                "date": "Date (Day/Month/Year Hour:Minute:Second)",
+                "bdate": "Binary Date (binary Linux timestamp, UINT32BE)",
+                "size": "DLMS data size in bytes / MODBUS register data size / OPC UA value group data size / M-Bus data size in bytes",
+                "data": "DLMS record data / DNP3 data / MODBUS register data / MQTT message payload / M-Bus record data / Device data (JSON object)",
+                "q_bits": "Quality bits",
+                "ip": "Outstation IP / MODBUS server IP / Interface IP",
+                "port": "Outstation Port",
+                "address": "Outstation remote address",
+                "group": "Data object group",
+                "index": "Index",
+                "connstate": "Connection state",
+                "psstate": "Package domain service state",
+                "netstate": "Network link state",
+                "imei": "IMEI",
+                "iccid": "SIM ICCID",
+                "model": "Model",
+                "manuf": "Manufacturer",
+                "serial": "Serial number / Device serial number",
+                "revision": "Revision number",
+                "imsi": "IMSI",
+                "simstate": "SIM card state",
+                "pinstate": "PIN state",
+                "modemtime": "Operator station time (GTM)",
+                "rssi": "RSSI",
+                "rscp": "RSCP",
+                "ecio": "EC/IO",
+                "rsrp": "RSRP",
+                "sinr": "SINR",
+                "rsrq": "RSRQ",
+                "cellid": "Cell ID",
+                "operator": "Operator name",
+                "opernum": "Operator number",
+                "conntype": "Data carrier type",
+                "temp": "Modem temperature",
+                "pincount": "PIN/PUK count",
+                "network": "Network information",
+                "serving": "Serving cell information",
+                "modem": "Modem ID",
+                "ipv6": "Interface IPV6",
+                "tx": "Total data transferred",
+                "rx": "Total data received",
+                "mac": "MAC address / WiFi device MAC address",
+                "maceth": "WAN MAC address",
+                "batch": "Batch",
+                "hwver": "Hardware version",
+                "server_id": "MODBUS server ID",
+                "server_name": "MODBUS server name",
+                "bserver_id": "MODBUS server ID (binary UINT8)",
+                "addr": "Start register",
+                "baddr": "Start register (binary UINT16BE)",
+                "full_addr": "Full MODBUS register address",
+                "raw_data": "Raw data",
+                "alarm_id": "Alarm configuration ID",
+                "test_data": "Values to be compared with values from server",
+                "condition": "Condition for comparing values read with configured values",
+                "register": "MODBUS register or coil number",
+                "topic": "MQTT topic",
+                "retain": "MQTT retain flag",
+                "host": "WiFi device hostname",
+                "signal": "Signal strength",
+                "pin_name": "Input/Output name",
+                "count": "Impulse count of the pin",
+                "type": "Pin type",
+                "state": "Pin state",
+                "custom_name": "I/O pin custom name",
+                "value": "Floating point pin value for Analog input/current loop pins",
+                "in": "Output interface name",
+                "out": "Input interface name",
+                "smac": "Source MAC address",
+                "dmac": "Destination MAC address",
+                "uid": "UID of the user that has generated the packet",
+                "gid": "GID of the user that has generated the packet",
+                "time.sec": "Packet timestamp seconds",
+                "time.usec": "Packet timestamp microseconds",
+                "ip.src": "Source IP address",
+                "ip.dst": "Destination IP address",
+                "ip.len": "Total length of IP packet in bytes",
+                "ip.tos": "Type Of Service",
+                "ip.ttl": "Time To Live",
+                "ip.id": "Unique ID for IP datagram",
+                "ip.proto": "Protocol name",
+                "tcp.sport": "Source port",
+                "tcp.dport": "Destination port",
+                "tcp.seq": "Receive Sequence number",
+                "tcp.ack": "Same as the Receive Sequence number: but for the other end of the TCP connection",
+                "tcp.window": "The TCP Receive Window size",
+                "tcp.psh": "PSH flag",
+                "tcp.rst": "RST flag",
+                "tcp.syn": "SYN flag",
+                "tcp.fin": "FIN flag",
+                "tcp.urg": "The Urgent Pointer",
+                "mark": "Packet mark",
+                "text": "SMS text",
+                "npdus": "Number of pdu",
+                "pdus": "List of contained PDU",
+                "latitude": "Latitude",
+                "longitude": "Longitude",
+                "altitude": "Altitude",
+                "angle": "Angle",
+                "speed": "Speed",
+                "accuracy": "GPS accuracy",
+                "satellites": "Number of satellites",
+                "fix_status": "GPS fix status"
+              },
+              "enum-depends": [
+                {
+                  "depends": {
+                    "plugin": "base"
+                  },
+                  "values": ["time", "local_time", "fw", "name", "id"]
+                },
+                {
+                  "depends": {
+                    "plugin": "dlms"
+                  },
+                  "values": ["name", "timestamp", "date", "bdate", "size", "data"]
+                },
+                {
+                  "depends": {
+                    "plugin": "dnp3"
+                  },
+                  "values": ["name", "timestamp", "date", "q_bits", "ip", "port", "address", "group", "index", "data"]
+                },
+                {
+                  "depends": {
+                    "plugin": "gsm"
+                  },
+                  "values": [
+                    "connstate",
+                    "psstate",
+                    "netstate",
+                    "imei",
+                    "iccid",
+                    "model",
+                    "manuf",
+                    "serial",
+                    "revision",
+                    "imsi",
+                    "simstate",
+                    "pinstate",
+                    "modemtime",
+                    "rssi",
+                    "rscp",
+                    "ecio",
+                    "rsrp",
+                    "sinr",
+                    "rsrq",
+                    "cellid",
+                    "operator",
+                    "opernum",
+                    "conntype",
+                    "temp",
+                    "pincount",
+                    "network",
+                    "serving",
+                    "modem",
+                    "ip",
+                    "ipv6"
+                  ]
+                },
+                {
+                  "depends": {
+                    "plugin": "mdcollect"
+                  },
+                  "values": ["tx", "rx"]
+                },
+                {
+                  "depends": {
+                    "plugin": "mnfinfo"
+                  },
+                  "values": ["name", "serial", "mac", "maceth", "batch", "hwver"]
+                },
+                {
+                  "depends": {
+                    "plugin": "modbus"
+                  },
+                  "values": ["timestamp", "date", "bdate", "server_id", "server_name", "bserver_id", "ip", "name", "addr", "baddr", "full_addr", "data", "raw_data", "size"]
+                },
+                {
+                  "depends": {
+                    "plugin": "modbus_alarm"
+                  },
+                  "values": ["timestamp", "alarm_id", "server_id", "test_data", "condition", "data", "register"]
+                },
+                {
+                  "depends": {
+                    "plugin": "mqtt"
+                  },
+                  "values": ["data", "topic", "retain"]
+                },
+                {
+                  "depends": {
+                    "plugin": "opcua"
+                  },
+                  "values": ["name", "timestamp", "date", "bdate", "size", "data"]
+                },
+                {
+                  "depends": {
+                    "plugin": "wifiscan"
+                  },
+                  "values": ["timestamp", "date", "mac", "host", "signal"]
+                },
+                {
+                  "depends": {
+                    "plugin": "mbus"
+                  },
+                  "values": ["name", "timestamp", "date", "bdate", "size", "data"]
+                },
+                {
+                  "depends": {
+                    "plugin": "bluetooth"
+                  },
+                  "values": ["name", "timestamp", "date", "mac", "rssi", "data"]
+                },
+                {
+                  "depends": {
+                    "plugin": "impulse_counter"
+                  },
+                  "values": ["timestamp", "pin_name", "count"]
+                },
+                {
+                  "depends": {
+                    "plugin": "io"
+                  },
+                  "values": ["name", "type", "state", "custom_name", "value"]
+                },
+                {
+                  "depends": {
+                    "plugin": "sms"
+                  },
+                  "values": ["index", "text", "sender", "date", "timestamp", "npdus", "pdus"]
+                },
+                {
+                  "depends": {
+                    "plugin": "gps"
+                  },
+                  "values": ["latitude", "longitude", "altitude", "angle", "speed", "accuracy", "satellites", "fix_status", "timestamp", "date"]
+                }
+              ]
+            }
+          },
+          "format_str": {
+            "type": "string",
+            "description": "Specifies custom format string.",
+            "format": "string",
+            "x-web": {
+              "pretty": "Format string",
+              "input-type": "input",
+              "depends": [
+                {
+                  "format": "custom"
+                }
+              ]
+            }
+          },
+          "na_str": {
+            "type": "string",
+            "description": "A string which will be placed if any value cannot be received.",
+            "format": "string",
+            "maxLength": 64,
+            "x-web": {
+              "pretty": "Empty value",
+              "input-type": "input",
+              "depends": [
+                {
+                  "format": "custom"
+                }
+              ]
+            }
+          },
+          "delimiter": {
+            "type": "string",
+            "description": "Specifies delimiters for multiple data segments.",
+            "minLength": 1,
+            "maxLength": 1,
+            "x-web": {
+              "pretty": "Delimiter",
+              "input-type": "input",
+              "depends": [
+                {
+                  "format": "custom"
+                }
+              ]
+            }
+          },
+          "format_script": {
+            "type": "string",
+            "description": "Path to the Lua script.",
+            "format": "file_validation",
+            "x-web": {
+              "pretty": "Lua format script",
+              "input-type": "input",
+              "upload_endpoint": "/data_to_server/data/config/{id}",
+              "depends": [
+                {
+                  "format": "Lua"
+                }
+              ]
+            }
+          },
+          "format_script:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mdc_period": {
+            "type": "string",
+            "description": "Data period.",
+            "enum": ["day", "week", "month"],
+            "x-web": {
+              "pretty": "Data period",
+              "input-type": "select",
+              "enum-pretty": {
+                "day": "Day",
+                "week": "Week",
+                "month": "Month"
+              },
+              "depends": [
+                {
+                  "plugin": "mdcollect"
+                }
+              ]
+            }
+          },
+          "mdc_current": {
+            "type": "string",
+            "description": "Current day/week/month.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Current",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "mdcollect"
+                }
+              ]
+            }
+          },
+          "mdc_modem_id": {
+            "type": "string",
+            "description": "Modem ID.",
+            "x-web": {
+              "pretty": "Modem",
+              "input-type": "select",
+              "hw_tags": {
+                "dual_modem": true
+              },
+              "depends": [
+                {
+                  "plugin": "mdcollect"
+                }
+              ],
+              "enum-pretty": {
+                "$ref": "#/x-schemas/modem_names"
+              },
+              "enum-depends": {
+                "$ref": "#/x-schemas/modem_select"
+              }
+            }
+          },
+          "mdc_sim": {
+            "type": "string",
+            "description": "SIM card section position.",
+            "x-web": {
+              "pretty": "SIM card",
+              "hw_tags": {
+                "dual_sim": true
+              },
+              "depends": [
+                {
+                  "plugin": "mdcollect"
+                }
+              ],
+              "enum-pretty": {
+                "$ref": "#/x-schemas/simcard_names"
+              },
+              "enum-depends": {
+                "$ref": "#/x-schemas/simcard_select"
+              }
+            }
+          },
+          "bl_filter": {
+            "type": "string",
+            "description": "Filter type.",
+            "enum": ["all", "mac", "name"],
+            "x-web": {
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "bluetooth"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "mac": "Device mac address",
+                "name": "Device name"
+              }
+            }
+          },
+          "bl_filter_mac": {
+            "description": "Filter data by device MAC address.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "format": "macaddr"
+            },
+            "x-web": {
+              "pretty": "MAC address",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "bluetooth",
+                  "bl_filter": "mac"
+                }
+              ]
+            }
+          },
+          "bl_filter_name": {
+            "description": "Filter data by device name.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "maxLength": 64
+            },
+            "x-web": {
+              "pretty": "Device name",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "bluetooth",
+                  "bl_filter": "name"
+                }
+              ]
+            }
+          },
+          "bl_segments": {
+            "type": "string",
+            "description": "Number of data segments.",
+            "format": "irange(1,64)",
+            "x-web": {
+              "pretty": "Segments",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "bluetooth"
+                }
+              ]
+            }
+          },
+          "bl_object": {
+            "type": "string",
+            "description": "Format segment as object and not as array element",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Send as object",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "bluetooth",
+                  "bl_segments": "1"
+                }
+              ]
+            }
+          },
+          "modbus_alarm_filter": {
+            "type": "string",
+            "description": "Filter type.",
+            "enum": ["all", "server_id", "alarm_id", "register"],
+            "x-web": {
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "modbus_alarm"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "server_id": "Server ID",
+                "alarm_id": "Alarm ID",
+                "register": "Register number"
+              }
+            }
+          },
+          "modbus_alarm_filter_server_id": {
+            "description": "Filter data by defined server ID.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "format": "irange(0,255)"
+            },
+            "x-web": {
+              "pretty": "Server ID",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "modbus_alarm",
+                  "modbus_alarm_filter": "server_id"
+                }
+              ]
+            }
+          },
+          "modbus_alarm_filter_alarm_id": {
+            "description": "Filter data by defined alarm ID.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "format": "uciname"
+            },
+            "x-web": {
+              "pretty": "Alarm ID",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "modbus_alarm",
+                  "modbus_alarm_filter": "alarm_id"
+                }
+              ]
+            }
+          },
+          "modbus_alarm_filter_register": {
+            "description": "Filter data by Modbus register number of alarm.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "format": "irange(1,65536)"
+            },
+            "x-web": {
+              "pretty": "Register number",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "modbus_alarm",
+                  "modbus_alarm_filter": "register"
+                }
+              ]
+            }
+          },
+          "modbus_filter": {
+            "type": "string",
+            "description": "Filter type.",
+            "enum": ["all", "ip", "id", "name"],
+            "x-web": {
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "modbus"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "ip": "Server IP address",
+                "id": "Server ID",
+                "name": "Request name"
+              }
+            }
+          },
+          "modbus_filter_server_id": {
+            "description": "Filter data by defined server ID.",
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "type": "string",
+              "format": "irange(0,255)"
+            },
+            "x-web": {
+              "pretty": "Server ID",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "modbus",
+                  "modbus_filter": "id"
+                }
+              ]
+            }
+          },
+          "modbus_filter_server_ip": {
+            "description": "Filter data by defined server IP address.",
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "type": "string",
+              "format": "ip4addr"
+            },
+            "x-web": {
+              "pretty": "Server IP",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "modbus",
+                  "modbus_filter": "ip"
+                }
+              ]
+            }
+          },
+          "modbus_filter_request": {
+            "description": "Filter data by request name.",
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "type": "string",
+              "format": "string",
+              "maxLength": 64
+            },
+            "x-web": {
+              "pretty": "Request name",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "modbus",
+                  "modbus_filter": "name"
+                }
+              ]
+            }
+          },
+          "modbus_segments": {
+            "type": "string",
+            "description": "Number of data segments.",
+            "format": "irange(1,64)",
+            "x-web": {
+              "pretty": "Segments",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "modbus"
+                }
+              ]
+            }
+          },
+          "modbus_object": {
+            "type": "string",
+            "description": "Format segment as object and not as array element.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Send as object",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "modbus",
+                  "modbus_segments": "1"
+                }
+              ]
+            }
+          },
+          "gsm_modem_id": {
+            "type": "string",
+            "description": "Modem ID.",
+            "x-web": {
+              "pretty": "Modem",
+              "input-type": "select",
+              "hw_tags": {
+                "dual_modem": true
+              },
+              "depends": [
+                {
+                  "plugin": "gsm"
+                }
+              ],
+              "enum-pretty": {
+                "$ref": "#/x-schemas/modem_names"
+              },
+              "enum-depends": {
+                "$ref": "#/x-schemas/modem_select"
+              }
+            }
+          },
+          "dnp3_filter": {
+            "type": "string",
+            "description": "Filter type.",
+            "enum": ["all", "address", "ip"],
+            "x-web": {
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "dnp3"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "address": "Address",
+                "ip": "IP"
+              }
+            }
+          },
+          "dnp3_filter_address": {
+            "description": "Filter data by defined DNP3 address.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "format": "irange(0,65519)"
+            },
+            "x-web": {
+              "pretty": "DNP3 address",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "dnp3",
+                  "dnp3_filter": "address"
+                }
+              ]
+            }
+          },
+          "dnp3_filter_ip": {
+            "description": "Filter data by defined IP address.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "format": "ipaddr"
+            },
+            "x-web": {
+              "pretty": "IP address",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "dnp3",
+                  "dnp3_filter": "ip"
+                }
+              ]
+            }
+          },
+          "dnp3_db": {
+            "type": "string",
+            "description": "Database location.",
+            "enum": ["/tmp/dnp3.db", "/usr/share/dnp3.db"],
+            "format": "string",
+            "x-web": {
+              "pretty": "Database",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "dnp3"
+                }
+              ],
+              "enum-pretty": {
+                "/tmp/dnp3.db": "RAM",
+                "/usr/share/dnp3.db": "Flash"
+              }
+            }
+          },
+          "dnp3_segments": {
+            "type": "string",
+            "description": "Number of data segments.",
+            "format": "irange(1,64)",
+            "x-web": {
+              "pretty": "Segments",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "dnp3"
+                }
+              ]
+            }
+          },
+          "dnp3_object": {
+            "type": "string",
+            "description": "Format segment as object and not as array element.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Send as object",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "dnp3",
+                  "dnp3_segments": "1"
+                }
+              ]
+            }
+          },
+          "lua_script": {
+            "type": "string",
+            "description": "Path to the Lua script.",
+            "format": "file_validation",
+            "x-web": {
+              "pretty": "Lua script",
+              "input-type": "input",
+              "upload_endpoint": "/data_to_server/data/config/{id}",
+              "depends": [
+                {
+                  "plugin": "lua"
+                }
+              ]
+            }
+          },
+          "lua_script:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mbus_filter": {
+            "type": "string",
+            "description": "Filter type.",
+            "enum": ["all", "name"],
+            "x-web": {
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "mbus"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "name": "Name"
+              }
+            }
+          },
+          "mbus_filter_name": {
+            "description": "Filter data by defined M-Bus group name",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "maxLength": 64
+            },
+            "x-web": {
+              "pretty": "M-Bus group name",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mbus",
+                  "mbus_filter": "name"
+                }
+              ]
+            }
+          },
+          "mbus_filter_invert": {
+            "type": "string",
+            "description": "Inverts filter condition.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Invert filter",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "mbus",
+                  "mbus_filter": "name"
+                }
+              ]
+            }
+          },
+          "mbus_db": {
+            "deprecated": true,
+            "type": "string",
+            "description": "Database location.",
+            "enum": ["/var/run/mbus_client/mbus_db", "/usr/share/mbus_db"],
+            "format": "string",
+            "x-web": {
+              "pretty": "Database",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "mbus"
+                }
+              ],
+              "enum-pretty": {
+                "/var/run/mbus_client/mbus_db": "RAM",
+                "/usr/share/mbus_db": "Flash"
+              }
+            }
+          },
+          "mbus_segments": {
+            "type": "string",
+            "description": "Number of data segments.",
+            "format": "irange(1,64)",
+            "x-web": {
+              "pretty": "Segments",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mbus"
+                }
+              ]
+            }
+          },
+          "mbus_object": {
+            "type": "string",
+            "description": "Format segment as object and not as array element.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Send as object",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "mbus",
+                  "mbus_segments": "1"
+                }
+              ]
+            }
+          },
+          "opcua_filter": {
+            "type": "string",
+            "description": "Filter type.",
+            "enum": ["all", "name"],
+            "x-web": {
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "opcua"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "name": "Name"
+              }
+            }
+          },
+          "opcua_filter_name": {
+            "description": "Filter data by defined OPC UA value group name.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "maxLength": 64
+            },
+            "x-web": {
+              "pretty": "OPC UA record name",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "opcua",
+                  "opcua_filter": "name"
+                }
+              ]
+            }
+          },
+          "opcua_filter_invert": {
+            "type": "string",
+            "description": "Inverts filter condition.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Invert filter",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "opcua",
+                  "opcua_filter": "name"
+                }
+              ]
+            }
+          },
+          "opcua_segments": {
+            "type": "string",
+            "description": "Number of data segments.",
+            "format": "irange(1,64)",
+            "x-web": {
+              "pretty": "Segments",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "opcua"
+                }
+              ]
+            }
+          },
+          "opcua_object": {
+            "type": "string",
+            "description": "Format segment as object and not as array element.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Send as object",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "opcua",
+                  "opcua_segments": "1"
+                }
+              ]
+            }
+          },
+          "impulse_counter_filter": {
+            "type": "string",
+            "description": "Filter type.",
+            "enum": ["all", "pin"],
+            "x-web": {
+              "hw_tags": {
+                "ios":true
+              },
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "impulse_counter"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "pin": "Pin Name"
+              }
+            }
+          },
+          "impulse_counter_filter_pin": {
+            "description": "Filter data by defined impulse counter pin.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "x-web": {
+              "hw_tags": {
+                "ios":true
+              },
+              "pretty": "Impulse counter pin",
+              "input-type": "input",
+              "unique": true,
+              "enum-depends": [
+                {
+                  "hw_tags": {
+                    "din1": true,
+                    "din2": true,
+                    "dio0": false,
+                    "dio1": false,
+                    "dio2": false,
+                    "iio": true,
+                    "iio_counter_support": false
+                  },
+                  "values": ["din1", "din2"]
+                },
+                {
+                  "hw_tags": {
+                    "din1": true,
+                    "din2": true,
+                    "dio0": false,
+                    "dio1": false,
+                    "dio2": false,
+                    "iio": true,
+                    "iio_counter_support": true
+                  },
+                  "values": ["din1", "din2", "iio"]
+                },
+                {
+                  "hw_tags": {
+                    "din1": true,
+                    "din2": false,
+                    "dio0": false,
+                    "dio1": false,
+                    "dio2": false,
+                    "iio": false
+                  },
+                  "values": ["din1"]
+                },
+                {
+                  "hw_tags": {
+                    "din1": false,
+                    "din2": false,
+                    "dio0": true,
+                    "dio1": true,
+                    "dio2": true,
+                    "iio": false
+                  },
+                  "values": ["dio0", "dio1", "dio2"]
+                },
+                {
+                  "hw_tags": {
+                    "din1": false,
+                    "din2": false,
+                    "dio0": true,
+                    "dio1": true,
+                    "dio2": false,
+                    "iio": true,
+                    "iio_counter_support": false
+                  },
+                  "values": ["dio0", "dio1"]
+                },
+                {
+                  "hw_tags": {
+                    "din1": false,
+                    "din2": false,
+                    "dio0": true,
+                    "dio1": true,
+                    "dio2": false,
+                    "iio": true,
+                    "iio_counter_support": true
+                  },
+                  "values": ["dio0", "dio1", "iio"]
+                },
+                {
+                  "hw_tags": {
+                    "din1": false,
+                    "din2": false,
+                    "dio0": true,
+                    "dio1": true,
+                    "dio2": false,
+                    "iio": false
+                  },
+                  "values": ["dio0", "dio1"]
+                }
+              ],
+              "depends": [
+                {
+                  "plugin": "impulse_counter",
+                  "impulse_counter_filter": "pin"
+                }
+              ]
+            }
+          },
+          "impulse_counter_filter_invert": {
+            "type": "string",
+            "description": "Inverts filter condition.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "hw_tags": {
+                "ios":true
+              },
+              "pretty": "Invert filter",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "impulse_counter",
+                  "impulse_counter_filter": "pin"
+                }
+              ]
+            }
+          },
+          "impulse_counter_segments": {
+            "type": "string",
+            "description": "Number of data segments.",
+            "format": "irange(1,64)",
+            "x-web": {
+              "hw_tags": {
+                "ios":true
+              },
+              "pretty": "Segments",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "impulse_counter"
+                }
+              ]
+            }
+          },
+          "impulse_counter_object": {
+            "type": "string",
+            "description": "Format segment as object and not as array element.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "hw_tags": {
+                "ios":true
+              },
+              "pretty": "Send as object",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "impulse_counter",
+                  "impulse_counter_segments": "1"
+                }
+              ]
+            }
+          },
+          "wifi_filter": {
+            "type": "string",
+            "description": "Filter type.",
+            "enum": ["all", "name", "mac", "singal"],
+            "x-web": {
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "wifiscan"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "name": "Name",
+                "mac": "MAC address",
+                "singal": "Signal strength"
+              }
+            }
+          },
+          "wifi_filter_name": {
+            "description": "Filter data by device hostname.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "maxLength": 64
+            },
+            "x-web": {
+              "pretty": "WiFi record name",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "wifiscan",
+                  "wifi_filter": "name"
+                }
+              ]
+            }
+          },
+          "wifi_filter_mac": {
+            "description": "Filter data by device MAC address.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "format": "macaddr"
+            },
+            "x-web": {
+              "pretty": "MAC address",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "wifiscan",
+                  "wifi_filter": "mac"
+                }
+              ]
+            }
+          },
+          "wifi_filter_signal": {
+            "description": "Filter data by signal.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "format": "irange(-100,-1)"
+            },
+            "x-web": {
+              "pretty": "Signal strength",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "wifiscan",
+                  "wifi_filter": "mac"
+                }
+              ]
+            }
+          },
+          "wifi_segments": {
+            "type": "string",
+            "description": "Number of data segments.",
+            "format": "irange(1,64)",
+            "x-web": {
+              "pretty": "Segments",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "wifiscan"
+                }
+              ]
+            }
+          },
+          "wifi_object": {
+            "type": "string",
+            "description": "Format segment as object and not as array element.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Send as object",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "wifiscan",
+                  "opcua_segments": "1"
+                }
+              ]
+            }
+          },
+          "mqtt_in_host": {
+            "type": "string",
+            "format": "host",
+            "description": "Host address or IP address of MQTT broker to connect to.",
+            "x-web": {
+              "pretty": "MQTT Host",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_in_port": {
+            "type": "string",
+            "description": "Port of MQTT broker",
+            "format": "port",
+            "default": 1883,
+            "x-web": {
+              "pretty": "MQTT Port",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_in_keepalive": {
+            "type": "string",
+            "description": "Keepalive time in seconds",
+            "format": "irange(0,2147483647)",
+            "default": "60",
+            "x-web": {
+              "pretty": "Keepalive",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_in_topic": {
+            "type": "string",
+            "description": "Topic to subscribe",
+            "format": "fieldvalidation('^[a-zA-Z0-9!@#:%$%%&%*%+%-/=%?%^_`%[%]{|}~%.]+$',0)",
+            "maxLength": 65535,
+            "x-web": {
+              "pretty": "Topic",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_in_client_id": {
+            "type": "string",
+            "description": "Client ID to send with the data.",
+            "format": "fieldvalidation('^[a-zA-Z0-9!@#:%$%%&%*%+%-/=%?%^_`%[%]{|}~%.]+$',0)",
+            "maxLength": 64,
+            "x-web": {
+              "pretty": "Client ID",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_in_qos": {
+            "type": "string",
+            "description": "MQTT Quality of Service. Allowed values: 0 - when we prefer that the message will not arrive at all rather than arrive twice, 1 - when we want the message to arrive at least once but don't care if it arrives twice or more, 2 - when we want the message to arrive exactly once. A higher QoS value means a slower transfer.",
+            "format": "string",
+            "enum": ["0", "1", "2"],
+            "x-web": {
+              "pretty": "QoS",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_in_tls": {
+            "type": "string",
+            "description": "Enable TLS connection",
+            "x-web": {
+              "pretty": "TLS",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_in_insecure": {
+            "type": "string",
+            "description": "Enable TLS connection",
+            "x-web": {
+              "pretty": "Allow insecure connection",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_in_tls": "1",
+                  "mqtt_in_tls_type": "cert"
+                }
+              ]
+            }
+          },
+          "mqtt_in_tls_type": {
+            "type": "string",
+            "enum": ["cert", "psk"],
+            "description": "Type of TLS connection",
+            "x-web": {
+              "pretty": "TLS Type",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_in_tls": "1"
+                }
+              ],
+              "enum-pretty": {
+                "cert": "Certificate based",
+                "psk": "Pre-Shared-Key based"
+              }
+            }
+          },
+          "mqtt_in_identity": {
+            "type": "string",
+            "description": "The identity",
+            "format": "uciname",
+            "maxLength": 255,
+            "x-web": {
+              "pretty": "Identity",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_in_tls": "1",
+                  "mqtt_in_tls_type": "psk"
+                }
+              ]
+            }
+          },
+          "mqtt_device_files": {
+            "type": "string",
+            "description": "Use certificate files from device"
+          },
+          "mqtt_in_cafile": {
+            "type": "string",
+            "description": "CA file path",
+            "format": "path",
+            "x-web": {
+              "pretty": "CA file",
+              "input-type": "input",
+              "upload_endpoint": "/data_to_server/data/config/{id}",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_in_tls": "1",
+                  "mqtt_in_tls_type": "cert"
+                }
+              ]
+            }
+          },
+          "mqtt_in_cafile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mqtt_in_certfile": {
+            "type": "string",
+            "description": "Certificate file path",
+            "format": "path",
+            "x-web": {
+              "pretty": "Certificate file",
+              "input-type": "input",
+              "upload_endpoint": "/data_to_server/data/config/{id}",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_in_tls": "1",
+                  "mqtt_in_tls_type": "cert"
+                }
+              ]
+            }
+          },
+          "mqtt_in_certfile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mqtt_in_keyfile": {
+            "type": "string",
+            "description": "Key file path",
+            "format": "path",
+            "x-web": {
+              "pretty": "Key file",
+              "input-type": "input",
+              "upload_endpoint": "/data_to_server/data/config/{id}",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_in_tls": "1",
+                  "mqtt_in_tls_type": "cert"
+                }
+              ]
+            }
+          },
+          "mqtt_in_keyfile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mqtt_in_username": {
+            "type": "string",
+            "description": "Username for MQTT authentication",
+            "format": "credentials_validate",
+            "maxLength": 512,
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_in_psk": {
+            "type": "string",
+            "description": "The pre-shared-key in hex format with no leading “0x”",
+            "format": "hexstring",
+            "maxLength": 128,
+            "x-web": {
+              "pretty": "Pre-Shared-Key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_in_tls": "1",
+                  "mqtt_in_tls_type": "psk"
+                }
+              ]
+            }
+          },
+          "mqtt_in_password": {
+            "type": "string",
+            "description": "Password for MQTT authentication",
+            "format": "credentials_validate",
+            "maxLength": 512,
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_in_psk:set": {
+            "type": "string",
+            "description": "Indicates if 'mqtt_in_psk' option is set.",
+            "enum": ["0", "1"],
+            "readOnly": true
+          },
+          "mqtt_in_password:set": {
+            "type": "string",
+            "description": "Indicates if 'mqtt_in_password' option is set.",
+            "enum": ["0", "1"],
+            "readOnly": true
+          },
+          "io_name": {
+            "type": "string",
+            "description": "I/O pin type",
+            "x-web": {
+              "pretty": "I/O pin",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "io"
+                }
+              ]
+            }
+          },
+          "sms_modem_id": {
+            "type": "string",
+            "description": "Modem ID",
+            "x-web": {
+              "pretty": "Modem",
+              "input-type": "select",
+              "hw_tags": {
+                "dual_modem": true
+              },
+              "depends": [
+                {
+                  "plugin": "sms"
+                }
+              ],
+              "enum-pretty": {
+                "$ref": "#/x-schemas/modem_names"
+              },
+              "enum-depends": {
+                "$ref": "#/x-schemas/modem_select"
+              }
+            }
+          },
+          "dlms_filter": {
+            "type": "string",
+            "description": "Filter type.",
+            "enum": ["all", "name"],
+            "x-web": {
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "dlms"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "name": "Name"
+              }
+            }
+          },
+          "dlms_filter_name": {
+            "description": "Filter data by defined DLMS record name.",
+            "type": "array",
+            "maxItems": 10,
+            "items": {
+              "type": "string",
+              "maxLength": 64
+            },
+            "x-web": {
+              "pretty": "DLMS record name",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "dlms",
+                  "dlms_filter": "name"
+                }
+              ]
+            }
+          },
+          "dlms_filter_invert": {
+            "type": "string",
+            "description": "Inverts filter condition.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Invert filter",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "dlms",
+                  "dlms_filter": "name"
+                }
+              ]
+            }
+          },
+          "dlms_segments": {
+            "type": "string",
+            "description": "Number of data segments.",
+            "format": "irange(1,64)",
+            "x-web": {
+              "pretty": "Segments",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "dlms"
+                }
+              ]
+            }
+          },
+          "dlms_object": {
+            "type": "string",
+            "description": "Format segment as object and not as array element.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Send as object",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "dlms",
+                  "dlms_segments": "1"
+                }
+              ]
+            }
+          },
+          "iec60870_filter": {
+            "type": "string",
+            "enum": ["all", "client_id", "information_object_address", "common_address"],
+            "x-web": {
+              "pretty": "Data filtering",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "iec60870"
+                }
+              ],
+              "enum-pretty": {
+                "all": "All",
+                "client_id": "Client",
+                "information_object_address": "Information object address",
+                "common_address": "Common address"
+              }
+            }
+          },
+          "iec60870_filter_client_id": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Client",
+              "depends": [
+                {
+                  "plugin": "iec60870",
+                  "iec60870_filter": "client_id"
+                }
+              ]
+            }
+          },
+          "iec60870_filter_information_object_address": {
+            "type": "string",
+            "format": "irange(0,16777215)",
+            "description": "Filter by information object address",
+            "x-web": {
+              "pretty": "Information object address",
+              "depends": [
+                {
+                  "plugin": "iec60870",
+                  "iec60870_filter": "information_object_address"
+                }
+              ]
+            }
+          },
+          "iec60870_filter_common_address": {
+            "type": "string",
+            "format": "irange(1,65535)",
+            "description": "Filter by common address",
+            "x-web": {
+              "pretty": "Common address",
+              "depends": [
+                {
+                  "plugin": "iec60870",
+                  "iec60870_filter": "common_address"
+                }
+              ]
+            }
+          },
+          "iec60870_segments": {
+            "type": "string",
+            "format": "irange(0,64)",
+            "description": "Max segment count in one JSON string sent to server. Use 0 for automatic segment count",
+            "x-web": {
+              "pretty": "Segment count",
+              "depends": [
+                {
+                  "plugin": "iec60870"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

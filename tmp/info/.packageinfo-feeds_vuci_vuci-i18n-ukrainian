@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-i18n-ukrainian/Makefile
+
+Package: vuci-i18n-ukrainian
+Submenu: Languages
+Version: 2025-01-16
+Depends: +libc +vuci-ui-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Ukrainian Language Support (Українська)
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Ukrainian Language Support (Українська)
+Description: Ukrainian Language Support (Українська)
+
+@@
+
+

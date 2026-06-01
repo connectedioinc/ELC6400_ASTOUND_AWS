@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/sodog-tlt/Makefile
+
+Package: sodog-tlt
+Version: 2025-04-23
+Depends: +libc +kmod-usb-serial +libubox +libuci +libtlt_uci +libubus +libpthread +libopenssl +@OPENSSL_WITH_DTLS +libtlt_termios +libboardjson +libgpiod
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: SOdog establishes multiple bidirectional byte streams and transfers data between them by Teltonika.
+Maintainer: 
+Require-User: sodog=522:sodog=522
+FileAttributes: /usr/sbin/sodog::::cap_net_bind_service=ep
+Source: sodog-tlt-2025-04-23-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SOdog establishes multiple bidirectional byte streams and transfers data between them by Teltonika.
+Description: 	SOdog establishes multiple bidirectional byte streams and transfers data between them by Teltonika.
+
+@@
+
+

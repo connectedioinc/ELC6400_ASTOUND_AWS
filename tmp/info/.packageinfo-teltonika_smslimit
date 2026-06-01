@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/smslimit/Makefile
+
+Package: rpcd-mod-smslimit
+Version: 7.20
+Depends: +libc +rpcd +lsqlite3 +libubus +libgsm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: SMS Limit rpcd module
+Maintainer: 
+Require-User: sms_limit=539:sms_limit=539
+Source: smslimit-7.20-7.20.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SMS Limit rpcd module
+Description: 	Package allows setting a limit on SMS messages sent from a SIM card within a specified period.
+
+@@
+
+

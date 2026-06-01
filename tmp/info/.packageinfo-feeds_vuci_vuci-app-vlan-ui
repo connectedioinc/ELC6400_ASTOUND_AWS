@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-vlan-ui/Makefile
+
+Package: vuci-app-vlan-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-vlan-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for VLAN
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for VLAN
+Description: VuCI UI Support for VLAN
+
+@@
+
+

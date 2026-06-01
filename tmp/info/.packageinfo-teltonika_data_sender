@@ -1,0 +1,806 @@
+Source-Makefile: package/teltonika/data_sender/Makefile
+
+Package: data-sender-mod-bluetooth
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for bluetooth data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for bluetooth data gathering
+Description: Input plugin for bluetooth data gathering
+
+@@
+
+Package: data-sender-mod-modbus
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for modbus data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for modbus data gathering
+Description: Input plugin for modbus data gathering
+
+@@
+
+Package: data-sender-mod-modbus-alarm
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for modbus alarm gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for modbus alarm gathering
+Description: Input plugin for modbus alarm gathering
+
+@@
+
+Package: data-sender-mod-iec60870
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3 +lib60870
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for IEC 60870-5 data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for IEC 60870-5 data gathering
+Description: Input plugin for IEC 60870-5 data gathering
+
+@@
+
+Package: data-sender-mod-dnp3
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for DNP3 data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for DNP3 data gathering
+Description: Input plugin for DNP3 data gathering
+
+@@
+
+Package: data-sender-mod-opcua
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for OPC UA data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for OPC UA data gathering
+Description: Input plugin for OPC UA data gathering
+
+@@
+
+Package: data-sender-mod-impulse_counter
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for impulse counter data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for impulse counter data gathering
+Description: Input plugin for impulse counter data gathering
+
+@@
+
+Package: data-sender-mod-mbus
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for M-Bus data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for M-Bus data gathering
+Description: Input plugin for M-Bus data gathering
+
+@@
+
+Package: data-sender-mod-wifiscan
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for wifi scaner data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for wifi scaner data gathering
+Description: Input plugin for wifi scaner data gathering
+
+@@
+
+Package: data-sender-mod-mnfinfo
+Version: 1.24-1
+Depends: +libc data-sender +libmnfinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for manufacturer information
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for manufacturer information
+Description: Input plugin for manufacturer information
+
+@@
+
+Package: data-sender-mod-gsm
+Version: 1.24-1
+Depends: +libc data-sender +libgsm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for gsm information
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for gsm information
+Description: Input plugin for gsm information
+
+@@
+
+Package: data-sender-mod-sms-in
+Version: 1.24-1
+Depends: +libc data-sender +libgsm +liburc
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for SMS input
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for SMS input
+Description: Input plugin for SMS input
+
+@@
+
+Package: data-sender-mod-mdcollect
+Version: 1.24-1
+Depends: +libc data-sender +libgsm +libmdcollect
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for data usage information
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for data usage information
+Description: Input plugin for data usage information
+
+@@
+
+Package: data-sender-mod-gps
+Version: 1.24-1
+Depends: +libc data-sender +libgps
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for GPS data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for GPS data gathering
+Description: Input plugin for GPS data gathering
+
+@@
+
+Package: data-sender-mod-chilli
+Version: 1.24-1
+Depends: +libc data-sender +libuci +libtltchilli
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for CoovaChilli Hotspot data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for CoovaChilli Hotspot data gathering
+Description: Input plugin for CoovaChilli Hotspot data gathering
+
+@@
+
+Package: data-sender-mod-io
+Version: 1.24-1
+Depends: +libc data-sender +iomand
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for Input/Output data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for Input/Output data gathering
+Description: Input plugin for Input/Output data gathering
+
+@@
+
+Package: data-sender-mod-format-custom
+Version: 1.24-1
+Depends: +libc data-sender +libblobmsg-json
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Format plugin for data concatenation
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Format plugin for data concatenation
+Description: Format plugin for data concatenation
+
+@@
+
+Package: data-sender-mod-format-csv
+Version: 1.24-1
+Depends: +libc data-sender +libblobmsg-json
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Format plugin for CSV formating
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Format plugin for CSV formating
+Description: Format plugin for CSV formating
+
+@@
+
+Package: data-sender-mod-format-none
+Version: 1.24-1
+Depends: +libc data-sender +libblobmsg-json
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Format plugin for plain serialization
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Format plugin for plain serialization
+Description: Format plugin for plain serialization
+
+@@
+
+Package: data-sender-mod-http
+Version: 1.24-1
+Depends: +libc data-sender +libcurl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for sending data over http
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for sending data over http
+Description: Output plugin for sending data over http
+
+@@
+
+Package: data-sender-mod-mqtt-out
+Version: 1.24-1
+Depends: +libc data-sender +libmosquitto
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for sending data over MQTT
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for sending data over MQTT
+Description: Output plugin for sending data over MQTT
+
+@@
+
+Package: data-sender-mod-socket
+Version: 1.24-1
+Depends: +libc data-sender
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for sending data over a UNIX socket
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for sending data over a UNIX socket
+Description: Output plugin for sending data over a UNIX socket
+
+@@
+
+Package: data-sender-mod-sms-out
+Version: 1.24-1
+Depends: +libc data-sender +libgsm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for sending data over SMS
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for sending data over SMS
+Description: Output plugin for sending data over SMS
+
+@@
+
+Package: data-sender-mod-smtp
+Version: 1.24-1
+Depends: +libc data-sender +libcurl +libuci +@LIBCURL_SMTP
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for sending data over SMTP
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for sending data over SMTP
+Description: Output plugin for sending data over SMTP
+
+@@
+
+Package: data-sender-mod-nflog
+Version: 1.24-1
+Depends: +libc data-sender +libnetfilter-log +libxtables
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for NFLOG
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for NFLOG
+Description: Input plugin for NFLOG
+
+@@
+
+Package: data-sender-mod-eventlog
+Version: 1.24-1
+Depends: +libc data-sender
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for events log
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for events log
+Description: Input plugin for events log
+
+@@
+
+Package: data-sender-mod-base
+Version: 1.24-1
+Depends: +libc data-sender
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Base input plugin
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Base input plugin
+Description: Base input plugin
+
+@@
+
+Package: data-sender-mod-lua-in
+Version: 1.24-1
+Depends: +libc data-sender +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for custom scripts
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for custom scripts
+Description: Input plugin for custom scripts
+
+@@
+
+Package: data-sender-mod-lua-out
+Version: 1.24-1
+Depends: +libc data-sender +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for custom scripts
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for custom scripts
+Description: Output plugin for custom scripts
+
+@@
+
+Package: data-sender-mod-lua_format
+Version: 1.24-1
+Depends: +libc data-sender +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for custom formating
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for custom formating
+Description: Output plugin for custom formating
+
+@@
+
+Package: data-sender-mod-telegram
+Version: 1.24-1
+Depends: +libc data-sender +libcurl +libopenssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for sending data over Telegram
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for sending data over Telegram
+Description: Output plugin for sending data over Telegram
+
+@@
+
+Package: data-sender-mod-ftp
+Version: 1.24-1
+Depends: +libc data-sender +libcurl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for sending data over FTP
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for sending data over FTP
+Description: Output plugin for sending data over FTP
+
+@@
+
+Package: data-sender-mod-ubus
+Version: 1.24-1
+Depends: +libc data-sender
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for sending data over UBUS
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for sending data over UBUS
+Description: Output plugin for sending data over UBUS
+
+@@
+
+Package: data-sender-mod-file
+Version: 1.24-1
+Depends: +libc data-sender
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for writing data to a file
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for writing data to a file
+Description: Output plugin for writing data to a file
+
+@@
+
+Package: data-sender-mod-dlms
+Version: 1.24-1
+Depends: +libc data-sender +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for M-Bus data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for M-Bus data gathering
+Description: Input plugin for M-Bus data gathering
+
+@@
+
+Package: data-sender-mod-mqtt-in
+Version: 1.24-1
+Depends: +libc data-sender +libmosquitto
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for subscribing MQTT data
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for subscribing MQTT data
+Description: Input plugin for subscribing MQTT data
+
+@@
+
+Package: data-sender-mod-lua_filter
+Version: 1.24-1
+Depends: +libc data-sender +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Filter plugin for LUA scripts
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Filter plugin for LUA scripts
+Description: Filter plugin for LUA scripts
+
+@@
+
+Package: data-sender-mod-cmp
+Version: 1.24-1
+Depends: +libc data-sender
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Filter plugin for data comparison
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Filter plugin for data comparison
+Description: Filter plugin for data comparison
+
+@@
+
+Package: data-sender-mod-stdin
+Version: 1.24-1
+Depends: +libc data-sender
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for reading data from stdin
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for reading data from stdin
+Description: Input plugin for reading data from stdin
+
+@@
+
+Package: data-sender-mod-stdout
+Version: 1.24-1
+Depends: +libc data-sender
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Output plugin for writing data to stdout
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Output plugin for writing data to stdout
+Description: Output plugin for writing data to stdout
+
+@@
+
+Package: data-sender-mod-syslog
+Version: 1.24-1
+Depends: +libc data-sender
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Input plugin for syslog data gathering
+Maintainer: 
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Input plugin for syslog data gathering
+Description: Input plugin for syslog data gathering
+
+@@
+
+Package: data-sender
+Menu: 1
+Version: 1.24-1
+Depends: +libc +libuci +libtlt-logger +libubox +libblobmsg-json +libubus +libjson-c +TPM_SUPPORT:libtpm2_importer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Data sender daemon by Teltonika
+Maintainer: 
+Require-User: ds=530:ds=530
+Source: data-sender-1.24-1.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Data sender daemon by Teltonika
+Description: Data sender daemon by Teltonika
+
+@@
+Config:
+  source "package/teltonika/data_sender/Config.in"
+@@
+
+

@@ -1,0 +1,24 @@
+Source-Makefile: package/libs/libdlms/Makefile
+
+Package: libdlms
+Version: fa855d2e82db1a7d27c419d09ed7a11fe86b86f0-3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: libdlms
+Maintainer: 
+Source: libdlms-fa855d2e82db1a7d27c419d09ed7a11fe86b86f0-fa855d2e82db1a7d27c419d09ed7a11fe86b86f0.tar.xz
+License: GPL-2.0-only
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: libdlms
+Description: 	Gurux DLMS library
+https://github.com/Gurux/GuruxDLMS.c
+
+@@
+
+

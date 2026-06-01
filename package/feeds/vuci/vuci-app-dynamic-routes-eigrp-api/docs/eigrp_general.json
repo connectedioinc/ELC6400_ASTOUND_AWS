@@ -1,0 +1,509 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/eigrp/config": {
+      "get": {
+        "summary": "Returns EIGRP global configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200EiGeMulti"
+          }
+        },
+        "tags": ["Global Settings"],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates EIGRP global configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200EiGeMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/eigrp_general_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Global Settings"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "EIGRP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "EIGRP"
+      }
+    },
+    "/eigrp/config/{id}": {
+      "get": {
+        "summary": "Returns EIGRP global configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200EiGe"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Global Settings"],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates EIGRP global configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200EiGe"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/eigrp_general_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Global Settings"]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "EIGRP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "EIGRP"
+      }
+    },
+    "/eigrp/status": {
+      "get": {
+        "summary": "Fetches data about EIGRP neighbors",
+        "tags": ["Global Settings"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "x-examples": {
+                    "example-1": {
+                      "data": {
+                        "route1": {
+                          "serno": "serno: 0 ",
+                          "fd": "FD is 28160",
+                          "successors": "1 successors",
+                          "interface": "br-lan",
+                          "via": "via Connected",
+                          "ip": "P  192.168.10.0/24"
+                        },
+                        "neighbors": {
+                          "neighbor1": {
+                            "Q": "0",
+                            "SRTT": "0",
+                            "RTO": "2",
+                            "H": "0",
+                            "Uptime": "0",
+                            "Address": "192.168.222.101",
+                            "Hold": "10",
+                            "Seq": "2",
+                            "Interface": "eth1"
+                          }
+                        },
+                        "route3": {
+                          "serno": "serno: 0 ",
+                          "fd": "FD is 28160",
+                          "successors": "1 successors",
+                          "interface": "eth1",
+                          "via": "via Connected",
+                          "ip": "P  192.168.222.0/24"
+                        },
+                        "route2": {
+                          "serno": "serno: 0 ",
+                          "fd": "FD is 30720",
+                          "successors": "1 successors",
+                          "interface": "eth1",
+                          "via": "via 192.168.222.101 (30720/28160)",
+                          "ip": "P  192.168.20.0/24"
+                        }
+                      }
+                    }
+                  },
+                  "properties": {
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "route1": {
+                          "type": "object",
+                          "description": "One of EIGRP routing entry.",
+                          "properties": {
+                            "serno": {
+                              "type": "string",
+                              "description": "Internal route serial number for tracking changes."
+                            },
+                            "fd": {
+                              "type": "string",
+                              "description": "Feasible Distance: the total metric to reach the destination."
+                            },
+                            "successors": {
+                              "type": "string",
+                              "description": "Number of successor routes (best next-hops)."
+                            },
+                            "interface": {
+                              "type": "string",
+                              "description": "Interface used to reach the network."
+                            },
+                            "via": {
+                              "type": "string",
+                              "description": "How the route was learned (Connected or via neighbor with metric info)."
+                            },
+                            "ip": {
+                              "type": "string",
+                              "description": "Destination network and prefix."
+                            }
+                          }
+                        },
+                        "neighbors": {
+                          "type": "object",
+                          "description": "Neighbor entries.",
+                          "properties": {
+                            "neighbor1": {
+                              "type": "object",
+                              "description": "One of the EIGRP neighbor entries.",
+                              "properties": {
+                                "Q": {
+                                  "type": "string",
+                                  "description": "Count of EIGRP packets queued to be sent."
+                                },
+                                "SRTT": {
+                                  "type": "string",
+                                  "description": "Smoothed Round-Trip Time in milliseconds."
+                                },
+                                "RTO": {
+                                  "type": "string",
+                                  "description": "Retransmission Timeout: time before resending a packet."
+                                },
+                                "H": {
+                                  "type": "string",
+                                  "description": "Hold time expired counter (should be 0 under normal conditions)."
+                                },
+                                "Uptime": {
+                                  "type": "string",
+                                  "description": "Time since adjacency with this neighbor was established (in seconds)."
+                                },
+                                "Address": {
+                                  "type": "string",
+                                  "description": "IP address of the EIGRP neighbor."
+                                },
+                                "Hold": {
+                                  "type": "string",
+                                  "description": "Hold timer: how long to wait before declaring neighbor dead (in seconds)."
+                                },
+                                "Seq": {
+                                  "type": "string",
+                                  "description": "Sequence number of the last message received from this neighbor."
+                                },
+                                "Interface": {
+                                  "type": "string",
+                                  "description": "Interface used to reach the neighbor."
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "route3": {
+                          "type": "object",
+                          "description": "One of EIGRP routing entry.",
+                          "properties": {
+                            "serno": {
+                              "type": "string",
+                              "description": "Internal route serial number for tracking changes."
+                            },
+                            "fd": {
+                              "type": "string",
+                              "description": "Feasible Distance: the total metric to reach the destination."
+                            },
+                            "successors": {
+                              "type": "string",
+                              "description": "Number of successor routes (best next-hops)."
+                            },
+                            "interface": {
+                              "type": "string",
+                              "description": "Interface used to reach the network."
+                            },
+                            "via": {
+                              "type": "string",
+                              "description": "How the route was learned (Connected or via neighbor with metric info)."
+                            },
+                            "ip": {
+                              "type": "string",
+                              "description": "Destination network and prefix."
+                            }
+                          }
+                        },
+                        "route2": {
+                          "type": "object",
+                          "description": "One of EIGRP routing entry.",
+                          "properties": {
+                            "serno": {
+                              "type": "string",
+                              "description": "Internal route serial number for tracking changes."
+                            },
+                            "fd": {
+                              "type": "string",
+                              "description": "Feasible Distance: the total metric to reach the destination."
+                            },
+                            "successors": {
+                              "type": "string",
+                              "description": "Number of successor routes (best next-hops)."
+                            },
+                            "interface": {
+                              "type": "string",
+                              "description": "Interface used to reach the network."
+                            },
+                            "via": {
+                              "type": "string",
+                              "description": "How the route was learned (Connected or via neighbor with metric info)."
+                            },
+                            "ip": {
+                              "type": "string",
+                              "description": "Destination network and prefix."
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "EIGRP"],
+        "hw_tags": {
+          "is_access_point": false
+        },
+        "name": "EIGRP"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200EiGe": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/eigrp_general_options_multi"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200EiGeMulti": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/eigrp_general_options_multi"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "eigrp_general_options": {
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "enabled": "0",
+            "debug": "1",
+            "as": "1",
+            "router_id": "192.168.0.1",
+            "network": "string",
+            "redistribute": "string",
+            "neighbor": "string"
+          }
+        },
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "description": "Toggles EIGRP network ON or OFF.",
+            "enum": ["0", "1"]
+          },
+          "debug": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Enable logging",
+              "input-type": "switch"
+            },
+            "description": "Enable logging of EIGRP.",
+            "enum": ["1", "0"]
+          },
+          "as": {
+            "type": "string",
+            "x-web": {
+              "pretty": "AS",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            },
+            "description": "EIGRP uses this number so that it makes sure it only talks to other EIGRP speakers that are in the same AS. For instance, if you have two routers, one with 'router eigrp 1' and one with 'router eigrp 2,' then they would not form an adjacency.",
+            "format": "irange(1, 65535)"
+          },
+          "router_id": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Router ID",
+              "input-type": "input"
+            },
+            "description": "EIGRP Router-ID in IP address format.",
+            "format": "ipv4"
+          },
+          "network": {
+            "x-web": {
+              "pretty": "Network",
+              "input-type": "input"
+            },
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Add the announcement network.",
+            "format": "ipmask4"
+          },
+          "redistribute": {
+            "x-web": {
+              "pretty": "Redistribution options",
+              "input-type": "input"
+            },
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Redistribute information from another routing protocol."
+          },
+          "neighbor": {
+            "x-web": {
+              "pretty": "Neighbors",
+              "input-type": "input"
+            },
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Add neighbor IP addresses.",
+            "format": "ipmask4"
+          }
+        }
+      },
+      "eigrp_general_options_multi": {
+        "title": "eigrp_general_options_multi",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "x-web": {
+                  "pretty": "Configuration ID",
+                  "input-type": "input"
+                },
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/eigrp_general_options"
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "version": "1.0",
+    "title": "EIGRP Global Settings",
+    "description": "EIGRP global settings api documentation"
+  },
+  "tags": [
+    {
+      "name": "Global Settings"
+    }
+  ]
+}

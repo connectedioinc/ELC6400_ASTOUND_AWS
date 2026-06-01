@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/azure_iothub/Makefile
+
+Package: azure_iothub
+Version: 2026-02-11-1
+Depends: +libc +libuci +libubus +libblobmsg-json +libtlt-logger +libubox +libazure-iot-sdk-c +libmnfinfo +liblua +libtlt_uci +libapi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Azure IoT Hub client
+Maintainer: 
+Require-User: azure=537:azure=537
+Source: azure_iothub-3.8-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Azure IoT Hub client
+Description: 	Azure IoT Hub is a utility meant to interact with
+	Microsoft Azure IoT Hub cloud platform.
+
+@@
+
+

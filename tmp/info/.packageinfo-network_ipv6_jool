@@ -1,0 +1,51 @@
+Source-Makefile: package/network/ipv6/jool/Makefile
+Build-Depends: !USE_GLIBC:argp-standalone
+
+Package: jool
+Version: 4.1.12-1
+Depends: +libc +libnl +libxtables +kmod-jool
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Jool userspace control programs
+Maintainer: 
+CPE-ID: cpe:/a:jool:jool
+Require-User: jool:jool
+FileAttributes: /usr/bin/jool::::cap_net_admin=ep
+Source: jool-4.1.12.tar.gz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Jool userspace control programs
+Description:     Jool is an Open Source SIIT and NAT64 for Linux.
+https://www.jool.mx
+
+@@
+
+Package: kmod-jool
+Submenu: Network Support
+Version: <LINUX_VERSION>+4.1.12-1
+Depends: @IPV6 +kmod-crypto-md5 +kmod-nf-conntrack +kmod-nf-conntrack6 +kmod-nf-ipt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Jool kernel module
+Maintainer: 
+CPE-ID: cpe:/a:jool:jool
+Source: jool-4.1.12.tar.gz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Jool kernel module
+Description:     Jool is an Open Source SIIT and NAT64 for Linux.
+
+  This package provides the kernel module for Jool.
+
+@@
+
+

@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/quota_limit/Makefile
+
+Package: quota_limit
+Version: 2025-07-09-1
+Depends: +libc +libuci +libtlt_uci +libgsm +libtlt-logger +!CUSTOM_DATA_LIMIT:kmod-nft-netdev +libmdcollect +libnftnl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: quota_limit
+Maintainer: 
+Require-User: quota_limit:quota_limit
+FileAttributes: /usr/bin/quota_limit::::cap_net_admin=ep
+Source: quota_limit-7.21-2025-07-09.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: quota_limit
+Description: 	3G data counter
+
+@@
+
+

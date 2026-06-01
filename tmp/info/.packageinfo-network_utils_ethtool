@@ -1,0 +1,73 @@
+Source-Makefile: package/network/utils/ethtool/Makefile
+
+Package: ethtool
+Version: 6.15-3
+Depends: +libc +libmnl
+Conflicts: ethtool-tiny
+Menu-Depends: 
+Provides: 
+Build-Variant: full
+Section: net
+Category: Network
+Repository: base
+Title: Display or change ethernet card settings
+Maintainer: Felix Fietkau <nbd@nbd.name>
+CPE-ID: cpe:/a:kernel:ethtool
+Source: ethtool-6.15.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Display or change ethernet card settings
+Description:  ethtool is a small utility for examining and tuning your ethernet-based
+ network interface
+http://www.kernel.org/pub/software/network/ethtool/
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+	config ETHTOOL_NETLINK
+		depends on PACKAGE_ethtool
+		bool "Enable netlink interface"
+		default y
+
+	config ETHTOOL_PRETTY_DUMP
+		depends on PACKAGE_ethtool
+		bool "Enable pretty printing"
+		default n
+@@
+
+Package: ethtool-tiny
+Version: 6.15-3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Build-Variant: tiny
+Section: net
+Category: Network
+Repository: base
+Title: Display or change ethernet card settings
+Maintainer: Felix Fietkau <nbd@nbd.name>
+CPE-ID: cpe:/a:kernel:ethtool
+Source: ethtool-6.15.tar.xz
+License: GPL-2.0-only
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: Display or change ethernet card settings
+Description:  ethtool is even smaller utility for examining and tuning your ethernet-based
+ network interface
+http://www.kernel.org/pub/software/network/ethtool/
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+	config ETHTOOL_NETLINK
+		depends on PACKAGE_ethtool-tiny
+		bool "Enable netlink interface"
+		default n
+
+	config ETHTOOL_PRETTY_DUMP
+		depends on PACKAGE_ethtool-tiny
+		bool "Enable pretty printing"
+		default n
+@@
+
+

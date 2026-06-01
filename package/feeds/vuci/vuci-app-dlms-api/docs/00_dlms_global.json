@@ -1,0 +1,246 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "DLMS global settings"
+    }
+  ],
+  "paths": {
+    "/dlms/global": {
+      "get": {
+        "tags": [
+          "DLMS global settings"
+        ],
+        "summary": "Returns all DLMS global settings configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200dlmsGlobal"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "DLMS global settings"
+        ],
+        "summary": "Updates specified DLMS global settings configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200dlmsGlobal"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/dlms_global_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "DLMS",
+        "menu": [
+          "Services",
+          "DLMS",
+          "DLMS"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/dlms/database/entries/status": {
+      "get": {
+        "tags": [
+          "DLMS global settings"
+        ],
+        "summary": "Returns all DLMS database entries",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200dlmsDatabaseEntries"
+          }
+        },
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Limit number of items returned"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number"
+            },
+            "description": "Number of items to skip from the beginning"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by ID"
+          },
+          {
+            "name": "group_name",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by group name"
+          },
+          {
+            "name": "group_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by group ID"
+          }
+        ]
+      },
+      "x-web": {
+        "name": "DLMS",
+        "menu": [
+          "Services",
+          "DLMS",
+          "DLMS"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200dlmsGlobal": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/dlms_global_single_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200dlmsDatabaseEntries": {
+        "description": "Database entries result",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/dlms_database_entry"
+                  }
+                },
+                "metadata": {
+                  "type": "object",
+                  "required": ["total"],
+                  "properties": {
+                    "total": {
+                      "type": "string",
+                      "format": "uinteger"
+                    },
+                    "limit": {
+                      "type": "string",
+                      "format": "uinteger"
+                    },
+                    "offset": {
+                      "type": "string",
+                      "format": "uinteger"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "dlms_global_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enables/disables DLMS functionality.",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ]
+          }
+        }
+      },
+      "dlms_database_entry": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uinteger"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "uinteger"
+          },
+          "group_name": {
+            "type": "string"
+          },
+          "group_id": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

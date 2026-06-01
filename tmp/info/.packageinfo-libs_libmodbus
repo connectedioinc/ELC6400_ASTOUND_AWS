@@ -1,0 +1,26 @@
+Source-Makefile: package/libs/libmodbus/Makefile
+Build-Depends: libgpg-error
+
+Package: libmodbus
+Version: 2026-02-09
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: libmodbus
+Maintainer: 
+CPE-ID: cpe:/a:libmodbus:libmodbus
+Source: libmodbus-2026-02-09-v3.1.6.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSE COPYING.LESSER
+Type: ipkg
+Detail-Description: libmodbus
+Description:   A Modbus library for Linux, Mac OS X, FreeBSD, QNX and Win32.
+http://www.libmodbus.org
+
+@@
+
+

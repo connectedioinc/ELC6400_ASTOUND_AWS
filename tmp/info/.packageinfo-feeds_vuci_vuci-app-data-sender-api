@@ -1,0 +1,446 @@
+Source-Makefile: package/feeds/vuci/vuci-app-data-sender-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-data-sender-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for Data Sender
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for Data Sender
+Description: VuCI API Support for Data Sender
+
+@@
+
+Package: vuci-app-data-sender-api-mod-format-custom
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-format-custom
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Format Custom module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Format Custom module
+Description: Vuci Data Sender API Format Custom module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-lua_format
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-lua_format
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Lua Format module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Lua Format module
+Description: Vuci Data Sender API Lua Format module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-mqtt-in
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-mqtt-in
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API MQTT Input module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API MQTT Input module
+Description: Vuci Data Sender API MQTT Input module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-mqtt-out
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-mqtt-out
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API MQTT Output module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API MQTT Output module
+Description: Vuci Data Sender API MQTT Output module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-http
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-http
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API HTTP module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API HTTP module
+Description: Vuci Data Sender API HTTP module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-ubus
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-ubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API UBUS module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API UBUS module
+Description: Vuci Data Sender API UBUS module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-bluetooth
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-bluetooth
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Bluetooth module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Bluetooth module
+Description: Vuci Data Sender API Bluetooth module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-mbus
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-mbus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Mbus module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Mbus module
+Description: Vuci Data Sender API Mbus module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-lua-in
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-lua-in
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Lua Script Input module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Lua Script Input module
+Description: Vuci Data Sender API Lua Script Input module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-gsm
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-gsm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API GSM module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API GSM module
+Description: Vuci Data Sender API GSM module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-mdcollect
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-mdcollect
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Mobile Usage module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Mobile Usage module
+Description: Vuci Data Sender API Mobile Usage module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-modbus-alarm
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-modbus-alarm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Modbus Alarm module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Modbus Alarm module
+Description: Vuci Data Sender API Modbus Alarm module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-modbus
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-modbus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Modbus module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Modbus module
+Description: Vuci Data Sender API Modbus module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-iec60870
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-iec60870
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API IEC 60870 5 module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API IEC 60870 5 module
+Description: Vuci Data Sender API IEC 60870 5 module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-dnp3
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-dnp3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API DNP3 module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API DNP3 module
+Description: Vuci Data Sender API DNP3 module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-opcua
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-opcua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API OPCUA module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API OPCUA module
+Description: Vuci Data Sender API OPCUA module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-impulse_counter
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-impulse_counter
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Impulse Counter module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Impulse Counter module
+Description: Vuci Data Sender API Impulse Counter module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-dlms
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-dlms
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Dlms module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Dlms module
+Description: Vuci Data Sender API Dlms module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-wifiscan
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-wifiscan
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API WifiScan module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API WifiScan module
+Description: Vuci Data Sender API WifiScan module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-azure
+Submenu: Applications/API
+Version: 1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Data Sender API Azure module
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Data Sender API Azure module
+Description: Vuci Data Sender API Azure module
+
+@@
+
+Package: vuci-app-data-sender-api-mod-advanced
+Submenu: Applications/API
+Version: 1
+Depends: +libc +data-sender-mod-ftp +data-sender-mod-lua-out +data-sender-mod-smtp +data-sender-mod-socket +MOBILE_SUPPORT:data-sender-mod-sms-in +MOBILE_SUPPORT:data-sender-mod-sms-out +GPS_SUPPORT:data-sender-mod-gps +IO_SUPPORT:data-sender-mod-io
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: Vuci Advanced Data to Server API modules
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Vuci Advanced Data to Server API modules
+Description: 	Includes advanced modules for data exchange between the router and external systems.
+	Supports data input via SMS, and I/O. Data output via FTP, SMTP, sockets, Lua scripts and SMS.
+	Optional modules enabled based on platform capabilities (e.g., SMS, GPS, I/O).
+
+@@
+
+

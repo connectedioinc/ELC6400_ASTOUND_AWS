@@ -1,0 +1,553 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AWS IoT Core jobs",
+    "description": "AWS IoT Core jobs API documentation",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [],
+  "tags": [
+    {
+      "name": "Jobs"
+    }
+  ],
+  "paths": {
+    "/aws/jobs/config": {
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "AWS", "Jobs"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "AWS"
+      },
+      "get": {
+        "summary": "Returns all AWS IoT Core job configurations",
+        "tags": ["Jobs"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/aws_jobs_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates a new AWS IoT Core job configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/aws_jobs_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_aws_jobs_one"
+              }
+            }
+          }
+        },
+        "tags": ["Jobs"]
+      },
+      "put": {
+        "summary": "Updates the selected AWS IoT Core job configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/aws_jobs_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_aws_jobs_multi"
+              }
+            }
+          }
+        },
+        "tags": ["Jobs"]
+      },
+      "delete": {
+        "summary": "Deletes the selected AWS IoT Core job configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "tags": ["Jobs"]
+      }
+    },
+    "/aws/jobs/config/{id}": {
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "AWS", "Jobs"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "AWS"
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected AWS IoT Core job configuration",
+        "tags": ["Jobs"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/aws_jobs_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates the selected AWS IoT Core job configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/aws_jobs_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_aws_jobs_one"
+              }
+            }
+          }
+        },
+        "tags": ["Jobs"]
+      },
+      "delete": {
+        "summary": "Deletes the selected AWS IoT Core job configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Jobs"]
+      },
+      "post": {
+        "summary": "Uploads AWS IoT Core job files",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["Jobs"],
+        "description": "",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "enum": ["cafile", "certfile", "keyfile"]
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                },
+                "required": ["option", "file"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aws/jobs/status": {
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "AWS", "Jobs"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "AWS"
+      },
+      "get": {
+        "tags": ["Jobs"],
+        "summary": "Returns the status of AWS IoT Core jobs",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_aws_jobs_status"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "aws_job_status": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Job configuration ID"
+          },
+          "state": {
+            "type": "string",
+            "description": "Job status",
+            "enum": ["Not connected", "Connecting", "Connected"]
+          },
+          "state_id": {
+            "type": "integer",
+            "description": "Job status ID",
+            "enum": [0, 1, 2]
+          }
+        },
+        "required": ["id", "status", "state_id"]
+      },
+      "aws_jobs": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "description": "Turns the job on or off",
+            "type": "string",
+            "format": "is_bool",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "thing_name": {
+            "description": "Thing's name on AWS IoT Core platform",
+            "type": "string",
+            "format": "uciname",
+            "x-web": {
+              "pretty": "Thing's name",
+              "input-type": "input",
+              "unique": true,
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "endpoint": {
+            "description": "AWS IoT Core platform endpoint used to determine AWS account to connect to",
+            "type": "string",
+            "format": "hostname",
+            "x-web": {
+              "pretty": "Endpoint",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "cafile": {
+            "type": "string",
+            "description": "AWS CA certificate obtained from AWS IoT Core platform",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/aws/jobs/config/{id}",
+              "pretty": "CA file",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "cafile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "aws_provisioning_id": {
+            "type": "string",
+            "enum": ["0"],
+            "description": "AWS provisioning configuration to use. It can be configured in /aws/provisiong/config endpoint. If basic provisioning is used (value \"0\"), Thing's certificate and private key must be uploaded.",
+            "x-web": {
+              "pretty": "Provisioning",
+              "input-type": "select",
+              "enum-pretty": {
+                "0": "Basic Provisioning"
+              }
+            }
+          },
+          "certfile": {
+            "type": "string",
+            "description": "Thing's certificate obtained from AWS IoT Core platform",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/aws/jobs/config/{id}",
+              "pretty": "Thing's certificate",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1",
+                  "aws_provisioning_id": "0"
+                }
+              ],
+              "depends": [
+                {
+                  "aws_provisioning_id": "0"
+                }
+              ]
+            }
+          },
+          "certfile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "keyfile": {
+            "type": "string",
+            "description": "Thing's private key obtained from AWS IoT Core platform",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/aws/jobs/config/{id}",
+              "pretty": "Thing's private key",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1",
+                  "aws_provisioning_id": "0"
+                }
+              ],
+              "depends": [
+                {
+                  "aws_provisioning_id": "0"
+                }
+              ]
+            }
+          },
+          "keyfile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mqtt_port": {
+            "type": "string",
+            "description": "MQTT port number",
+            "format": "port",
+            "default": "8883",
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input"
+            }
+          },
+          "mqtt_qos": {
+            "type": "string",
+            "description": "MQTT Quality of Service. Allowed values: 0 - when we prefer that the message will not arrive at all rather than arrive twice, 1 - when we want the message to arrive at least once but don't care if it arrives twice or more.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "QoS",
+              "input-type": "select"
+            }
+          },
+          "mqtt_keepalive": {
+            "type": "string",
+            "description": "MQTT keepalive time in seconds",
+            "format": "irange(30,65535)",
+            "default": "120",
+            "x-web": {
+              "pretty": "Keepalive",
+              "input-type": "input"
+            }
+          },
+          "mqtt_max_loops": {
+            "type": "string",
+            "description": "MQTT max loops - during initial subscription to topics the service has to wait for a successful subscription acknowledgement. The service checks it while running loops. This option determines how many loops are performed while waiting for subscription acknowledgement.",
+            "format": "irange(10,200)",
+            "default": "50",
+            "x-web": {
+              "pretty": "Max loops",
+              "input-type": "input"
+            }
+          }
+        }
+      },
+      "req_body_aws_jobs_one": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/aws_jobs"
+          }
+        },
+        "required": ["data"]
+      },
+      "req_body_aws_jobs_multi": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/components/schemas/aws_jobs"
+                }
+              ],
+              "required": ["id"]
+            }
+          }
+        },
+        "required": ["data"]
+      }
+    },
+    "responses": {
+      "200_aws_jobs_status": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "$ref": "#/components/schemas/aws_job_status"
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "aws_jobs_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "$ref": "#/components/schemas/aws_jobs"
+                    }
+                  ],
+                  "required": ["id"]
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "aws_jobs_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      {
+                        "$ref": "#/components/schemas/aws_jobs"
+                      }
+                    ],
+                    "required": ["id"]
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

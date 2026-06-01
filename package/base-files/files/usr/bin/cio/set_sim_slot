@@ -1,0 +1,40 @@
+#!/bin/sh
+#Cron for identifying active SIM slot
+get_sim_state() {
+	ubus call network.interface.2_1 status 2>/dev/null | grep -q '"up": true' && echo "READY" || echo "NOT READY"
+}
+
+get_pin_state() {
+	at.sh AT+CPIN? 2>/dev/null | grep -q 'READY' && echo "READY" || echo "NOT READY"
+}
+
+get_sim_slot() {
+	# Run AT command to check the active SIM slot
+	SIM_SLOT=$(at.sh AT+QUIMSLOT? 2>/dev/null)
+	# Check for slot 1
+	if echo "$SIM_SLOT" | grep -q '1'; then
+		echo 1
+	# Check for slot 2
+	elif echo "$SIM_SLOT" | grep -q '2'; then
+		echo 2
+	# If neither slot 1 nor slot 2 is detected
+	else
+		echo 0
+	fi
+}
+
+main() {
+	slot_state=$(get_sim_state)
+	pin_state=$(get_pin_state)
+	if [ "$slot_state" = "NOT READY" ]; then
+		at.sh AT+QUIMSLOT=1
+		sleep 3
+		pin_state=$(get_pin_state)
+		if [ "$pin_state" = "NOT READY" ]; then
+			at.sh AT+QUIMSLOT=2
+		fi
+	else
+		logger "SIM present"    		     	
+	fi
+}
+main

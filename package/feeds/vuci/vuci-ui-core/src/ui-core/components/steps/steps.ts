@@ -1,0 +1,5 @@
+export { default as Root } from './StepRoot.vue'
+export { default as List } from './StepList.vue'
+export { default as Prev } from './StepPrev.vue'
+export { default as Next } from './StepNext.vue'
+export { default as Content } from './StepContent.vue'

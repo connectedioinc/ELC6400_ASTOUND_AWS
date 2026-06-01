@@ -1,0 +1,29 @@
+Source-Makefile: package/network/services/miniupnpd/Makefile
+
+Package: miniupnpd
+Submenu: Firewall
+Version: 2.3.4-5
+Depends: +libc +iptables +libip4tc +IPV6:libip6tc +IPV6:ip6tables +libuuid
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Lightweight UPnP IGD, NAT-PMP & PCP daemon
+Maintainer: 
+CPE-ID: cpe:/a:miniupnp_project:miniupnpd
+Require-User: upnpd=544:upnpd=544
+FileAttributes: /usr/sbin/miniupnpd::::cap_net_broadcast,cap_net_admin,cap_net_raw,cap_net_bind_service=ep
+Source: miniupnpd-2.3.4.tar.gz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: Lightweight UPnP IGD, NAT-PMP & PCP daemon
+Description: 	UPnP (Universal Plug and Play) is a service that allows clients in
+	the local network to automatically configure some devices and services.
+https://miniupnp.tuxfamily.org/
+
+@@
+
+

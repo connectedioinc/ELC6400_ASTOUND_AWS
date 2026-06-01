@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-pamd-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-pamd-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +pam +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for PAM authentication
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for PAM authentication
+Description: VuCI API Support for PAM authentication
+
+@@
+
+

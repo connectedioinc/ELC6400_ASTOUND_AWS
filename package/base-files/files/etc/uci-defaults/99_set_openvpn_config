@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#OpenVPN setting
+uci set openvpn.vpnclient=openvpn
+uci set openvpn.vpnclient.enabled='0'
+uci set openvpn.vpnclient.config='/etc/openvpn/client.ovpn'
+
+uci commit openvpn
+
+exit 0

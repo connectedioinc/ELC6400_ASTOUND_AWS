@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-troubleshoot-ui/Makefile
+
+Package: vuci-app-troubleshoot-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-troubleshoot-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Troubleshoot
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Troubleshoot
+Description: VuCI UI Support for Troubleshoot
+
+@@
+
+

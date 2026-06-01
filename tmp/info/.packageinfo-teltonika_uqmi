@@ -1,0 +1,25 @@
+Source-Makefile: package/teltonika/uqmi/Makefile
+
+Package: uqmi
+Submenu: WWAN
+Version: 56cb2d4056fef132ccf78dfb6f3074ae5d109992-2
+Depends: +libc +libubox +libblobmsg-json +kmod-usb-net +kmod-usb-net-qmi-wwan +wwan
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Control utility for mobile broadband modems
+Maintainer: 
+Source: uqmi-56cb2d4056fef132ccf78dfb6f3074ae5d109992-56cb2d4056fef132ccf78dfb6f3074ae5d109992.tar.xz
+License: GPL-2.0-only
+LicenseFiles: LICENSES
+Type: ipkg
+Detail-Description: Control utility for mobile broadband modems
+Description: 	uqmi is a command line tool for controlling mobile broadband modems using
+	the QMI-protocol.
+
+@@
+
+

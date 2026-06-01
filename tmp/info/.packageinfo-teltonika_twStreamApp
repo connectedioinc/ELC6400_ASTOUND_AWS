@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/twStreamApp/Makefile
+
+Package: twStreamApp
+Version: 2026-02-11-1
+Depends: +libc +libtwCSdk +MOBILE_SUPPORT:libgsm +libtlt_uci +libuci +libopenssl +libubus +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: ThingWorx Stream application.
+Maintainer: 
+Require-User: tws=517:tws=517
+Source: twStreamApp-1.13-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: ThingWorx Stream application.
+Description: 	Thingworx is a package meant for interaction with
+	industrial innovation platform ThingWorx.
+
+@@
+
+

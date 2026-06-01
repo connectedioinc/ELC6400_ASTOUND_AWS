@@ -1,0 +1,160 @@
+Source-Makefile: package/system/rpcd/Makefile
+
+Package: rpcd
+Menu: 1
+Version: 2025-12-10-1
+Depends: +libc +libubus +libubox +libcap +libtlt-logger +libuci +libblobmsg-json +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: OpenWrt ubus RPC backend server
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Require-User: rpcd:rpcd
+FileAttributes: /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+Source: rpcd-ccb75178cf6a726896729c6904bd623636aa0b29-2025-12-10.tar.xz
+License: ISC
+LicenseFiles: main.c
+Type: ipkg
+Detail-Description: OpenWrt ubus RPC backend server
+Description:  This package provides the UBUS RPC backend server to expose various
+ functionality to frontend programs via JSON-RPC.
+Jo-Philipp Wich <jo@mein.io>
+@@
+Config:
+  source "package/system/rpcd/Config.in"
+@@
+
+Package: session
+Version: 2025-12-10-1
+Depends: +libc +libubox +libubus +libuci +libblobmsg-json +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Session Daemon
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Source: rpcd-ccb75178cf6a726896729c6904bd623636aa0b29-2025-12-10.tar.xz
+License: ISC
+LicenseFiles: main.c
+Type: ipkg
+Detail-Description: Session Daemon
+Description:   A standalone session management daemon with token and ACL support.
+Jo-Philipp Wich <jo@mein.io>
+@@
+
+Package: rpcd-mod-file
+Version: 2025-12-10-1
+Depends: +libc +libubus +libubox +libcap +libtlt-logger rpcd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: OpenWrt ubus RPC backend server (file plugin)
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Require-User: rpcd:rpcd
+FileAttributes: /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+Source: rpcd-ccb75178cf6a726896729c6904bd623636aa0b29-2025-12-10.tar.xz
+License: ISC
+LicenseFiles: main.c
+Type: ipkg
+Detail-Description: OpenWrt ubus RPC backend server (file plugin)
+Description:     Provides ubus calls for file and directory operations.
+Jo-Philipp Wich <jo@mein.io>
+@@
+
+Package: rpcd-mod-rpcsys
+Version: 2025-12-10-1
+Depends: +libc +libubus +libubox +libcap +libtlt-logger rpcd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: OpenWrt ubus RPC backend server (rpcsys plugin)
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Require-User: rpcd:rpcd
+FileAttributes: /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+Source: rpcd-ccb75178cf6a726896729c6904bd623636aa0b29-2025-12-10.tar.xz
+License: ISC
+LicenseFiles: main.c
+Type: ipkg
+Detail-Description: OpenWrt ubus RPC backend server (rpcsys plugin)
+Description:     Provides ubus calls for sysupgrade and password changing.
+Jo-Philipp Wich <jo@mein.io>
+@@
+
+Package: rpcd-mod-iwinfo
+Version: 2025-12-10-1
+Depends: +libc +libubus +libubox +libcap +libtlt-logger rpcd +libiwinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: OpenWrt ubus RPC backend server (iwinfo plugin)
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Require-User: rpcd:rpcd
+FileAttributes: /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+Source: rpcd-ccb75178cf6a726896729c6904bd623636aa0b29-2025-12-10.tar.xz
+License: ISC
+LicenseFiles: main.c
+Type: ipkg
+Detail-Description: OpenWrt ubus RPC backend server (iwinfo plugin)
+Description:     Provides ubus calls for accessing iwinfo data.
+Jo-Philipp Wich <jo@mein.io>
+@@
+
+Package: rpcd-mod-uci
+Version: 2025-12-10-1
+Depends: +libc +libubus +libubox +libcap +libtlt-logger rpcd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: OpenWrt ubus RPC backend server (uci plugin)
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Require-User: rpcd:rpcd
+FileAttributes: /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+Source: rpcd-ccb75178cf6a726896729c6904bd623636aa0b29-2025-12-10.tar.xz
+License: ISC
+LicenseFiles: main.c
+Type: ipkg
+Detail-Description: OpenWrt ubus RPC backend server (uci plugin)
+Description:     Provides ubus calls for uci operations.
+Jo-Philipp Wich <jo@mein.io>
+@@
+
+Package: rpcd-mod-rc
+Version: 2025-12-10-1
+Depends: +libc +libubus +libubox +libcap +libtlt-logger rpcd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: OpenWrt ubus RPC backend server (rc plugin)
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Require-User: rpcd:rpcd
+FileAttributes: /sbin/rpcd::::cap_setuid,cap_net_admin,cap_setgid,cap_sys_boot,cap_sys_admin,cap_dac_override=p
+Source: rpcd-ccb75178cf6a726896729c6904bd623636aa0b29-2025-12-10.tar.xz
+License: ISC
+LicenseFiles: main.c
+Type: ipkg
+Detail-Description: OpenWrt ubus RPC backend server (rc plugin)
+Description:     Provides ubus calls for init operations.
+Jo-Philipp Wich <jo@mein.io>
+@@
+
+

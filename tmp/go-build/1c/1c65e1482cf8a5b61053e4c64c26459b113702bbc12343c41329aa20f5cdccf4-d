@@ -1,0 +1,6 @@
+./32b_32bit.go
+./aligned_32bit_unsafe.go
+./atomicbitops_32bit_state_autogen.go
+./atomicbitops_32bit_unsafe_state_autogen.go
+./atomicbitops_float64.go
+./atomicbitops_noasm.go

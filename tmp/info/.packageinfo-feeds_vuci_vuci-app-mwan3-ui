@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-mwan3-ui/Makefile
+
+Package: vuci-app-mwan3-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-mwan3-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for the MWAN3 multiwan by teltonika
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for the MWAN3 multiwan by teltonika
+Description: VuCI UI Support for the MWAN3 multiwan by teltonika
+
+@@
+
+

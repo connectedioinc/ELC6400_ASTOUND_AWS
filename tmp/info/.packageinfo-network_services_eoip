@@ -1,0 +1,25 @@
+Source-Makefile: package/network/services/eoip/Makefile
+
+Package: eoip
+Submenu: VPN
+Version: 1.0-8
+Depends: +libc +kmod-tun
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Ethernet over IP tunnel (Mikrotik compatible)
+Maintainer: 
+Require-User: eoip:eoip
+FileAttributes: /usr/sbin/eoip::::cap_net_admin,cap_net_raw+ep
+Source: eoip-1.0.tar.gz
+License: MIT
+Type: ipkg
+Detail-Description: Ethernet over IP tunnel (Mikrotik compatible)
+Description: Ethernet over IP tunnel (Mikrotik compatible)
+
+@@
+
+

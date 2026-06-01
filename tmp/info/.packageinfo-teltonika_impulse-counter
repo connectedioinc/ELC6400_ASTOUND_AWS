@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/impulse-counter/Makefile
+
+Package: impulse-counter
+Version: 2025-10-16
+Depends: +libc +libubox +libuci +libtlt_uci +libubus +libblobmsg-json +lsqlite3 +libtlt-logger +iomand
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Impulse counter
+Maintainer: 
+Require-User: icounter=592:icounter=592
+Source: impulse-counter-2025-10-16-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Impulse counter
+Description: 	Impulse counter application is used to count impulse signals and store them in a database.
+
+@@
+
+

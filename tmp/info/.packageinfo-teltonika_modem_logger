@@ -1,0 +1,79 @@
+Source-Makefile: package/teltonika/modem_logger/Makefile
+
+Package: modem_logger-offline
+Version: 7.20
+Depends: +libc +libusb-1.0 +libstdcpp +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem logging tool by Teltonika, all file included
+Maintainer: 
+Source: modem_logger-7.20-7.20.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem logging tool by Teltonika, all file included
+Description: 	Modem firmware logging tool by Teltonika, all files included
+
+@@
+
+Package: modem_logger
+Version: 7.20
+Depends: +libc +libusb-1.0 +libstdcpp +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem logging tool by Teltonika, required files are downloaded automatically
+Maintainer: 
+Source: modem_logger-7.20-7.20.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem logging tool by Teltonika, required files are downloaded automatically
+Description: 	Modem firmware logging tool by Teltonika, required files are downloaded automatically
+
+@@
+
+Package: qlog
+Version: 7.20
+Depends: +libc +libusb-1.0 +libstdcpp +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem logging tool for Quectel and Meiglink modems
+Maintainer: 
+Source: modem_logger-7.20-7.20.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem logging tool for Quectel and Meiglink modems
+Description: 	Modem firmware logging tool for Quectel and Meiglink modems
+
+@@
+
+Package: qc_trace_collector
+Version: 7.20
+Depends: +libc +libusb-1.0 +libstdcpp +libpthread
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Modem logging tool for Telit modems
+Maintainer: 
+Source: modem_logger-7.20-7.20.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modem logging tool for Telit modems
+Description: 	Modem firmware logging tool fo Telit modems
+
+@@
+
+

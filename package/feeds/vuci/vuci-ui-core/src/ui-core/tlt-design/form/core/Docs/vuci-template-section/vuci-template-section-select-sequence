@@ -1,0 +1,26 @@
+sequenceDiagram
+    autonumber
+    actor User
+    User->>Page: openModal(templates=)
+    Page->>VuciTemplateSection: openModal(templates=)
+    VuciTemplateSection-->>User: templates modal opened
+    opt templates.length > 0
+        opt template selection
+            User->>TltTemplateCard: selectTemplate(template=)
+            TltTemplateCard-->>User: template selected
+        end
+        opt save templates
+            User->>VuciTemplateSection: save(templates=)
+            VuciTemplateSection-->>User: templates saved
+        end
+        opt edit template
+            Note over User,TltTemplateCard: EditTemplateSequence
+        end
+        opt delete template
+            Note over User,TltTemplateCard: DeleteTemplateSequence
+        end
+    end
+    opt create new template
+        Note over User,TltTemplateCard: CreateTemplateSequence
+    end
+

@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/libs/libexif/Makefile
+
+Package: libexif
+Version: 0.6.22-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: library for jpeg files with exif tags
+Maintainer: W. Michael Petullo <mike@flyn.org>
+CPE-ID: cpe:/a:libexif:libexif
+Source: libexif-0.6.22.tar.xz
+License: LGPL-2.1
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: library for jpeg files with exif tags
+Description:   libexif is a library for parsing, editing, and saving EXIF data. It is
+  intended to replace lots of redundant implementations in command-line
+  utilities and programs with GUIs.
+https://libexif.github.io/
+W. Michael Petullo <mike@flyn.org>
+@@
+
+

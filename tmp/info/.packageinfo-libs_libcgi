@@ -1,0 +1,23 @@
+Source-Makefile: package/libs/libcgi/Makefile
+
+Package: libcgi
+Version: 1.3.0-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: C library to build CGI applications
+Maintainer: 
+Source: libcgi-1.3.0-v1.3.0.tar.xz
+License: LGPL-2.1-or-later
+LicenseFiles: LICENSES/LGPL-2.1.txt
+Type: ipkg
+Detail-Description: C library to build CGI applications
+Description: 	LibCGI is a simple to use yet powerful library written from scratch to assist in the making of CGI appliactions in C
+
+@@
+
+

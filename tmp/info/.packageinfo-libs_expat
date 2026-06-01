@@ -1,0 +1,25 @@
+Source-Makefile: package/libs/expat/Makefile
+
+Package: libexpat
+Version: 2.7.2-0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: An XML parsing library
+Maintainer: Ted Hess <thess@kitschensync.net>
+CPE-ID: cpe:/a:libexpat:libexpat
+Source: expat-2.7.2.tar.gz
+License: MIT
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: An XML parsing library
+Description:  A fast, non-validating, stream-oriented XML parsing library.
+https://libexpat.github.io/
+Ted Hess <thess@kitschensync.net>
+@@
+
+

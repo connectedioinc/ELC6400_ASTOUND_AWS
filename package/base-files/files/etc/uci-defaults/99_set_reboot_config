@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#Ping Reboot
+uci set ping_reboot.@ping_reboot[0].enable='1'
+uci set ping_reboot.@ping_reboot[0].time='15'
+
+#Periodic reboot 
+uci -q delete periodic_reboot.@reboot_instance[0]
+uci add periodic_reboot reboot_instance
+
+uci set periodic_reboot.@reboot_instance[0].action='1'
+uci set periodic_reboot.@reboot_instance[0].period='month'
+uci set periodic_reboot.@reboot_instance[0].force_last='0'
+uci set periodic_reboot.@reboot_instance[0].time='04:00'
+uci set periodic_reboot.@reboot_instance[0].enable='1'
+uci set periodic_reboot.@reboot_instance[0].months='1,2,3,4,5,6,7,8,9,10,11,12'
+uci set periodic_reboot.@reboot_instance[0].month_day='25'
+
+exit 0

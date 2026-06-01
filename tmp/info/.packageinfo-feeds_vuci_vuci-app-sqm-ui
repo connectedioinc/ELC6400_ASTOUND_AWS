@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-sqm-ui/Makefile
+
+Package: vuci-app-sqm-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-sqm-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for SQM
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for SQM
+Description: VuCI UI Support for SQM
+
+@@
+
+

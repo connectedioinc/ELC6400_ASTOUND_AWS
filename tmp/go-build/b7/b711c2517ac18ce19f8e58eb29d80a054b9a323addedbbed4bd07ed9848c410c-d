@@ -1,0 +1,4 @@
+./pathutil.go
+./readonlydir.go
+./stat.go
+./xml.go

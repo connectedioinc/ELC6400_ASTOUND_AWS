@@ -1,0 +1,549 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "TCP Server Register"
+    }
+  ],
+  "paths": {
+    "/modbus/server/tcp/registers/config": {
+      "get": {
+        "tags": [
+          "TCP Server Register"
+        ],
+        "summary": "Returns all Modbus TCP Server Register configurations.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ModbusServerRegisterMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "TCP Server Register"
+        ],
+        "summary": "Creates a Modbus TCP Server Register configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200ModbusServerRegister"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/modbus_server_register_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "TCP Server Register"
+        ],
+        "summary": "Updates specified Modbus TCP Server Register configurations. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ModbusServerRegisterMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/modbus_server_register_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TCP Server Register"
+        ],
+        "summary": "Deletes specified Modbus TCP Server Register configurations.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Modbus",
+          "TCP Server",
+          "Data Sources"
+        ],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    },
+    "/modbus/server/tcp/registers/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Modbus Server Register Configuration identifier (ID)"
+        }
+      ],
+      "get": {
+        "tags": [
+          "TCP Server Register"
+        ],
+        "summary": "Returns the specified Modbus TCP Server Register configuration.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ModbusServerRegisterGet"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "TCP Server Register"
+        ],
+        "summary": "Updates the specified Modbus TCP Server Register configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ModbusServerRegister"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/modbus_server_register_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "TCP Server Register"
+        ],
+        "summary": "Deletes specified Modbus TCP Server Register configuration.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Modbus Server Register Configuration identifier (ID)"
+          }
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Modbus",
+          "TCP Server",
+          "Data Sources"
+        ],
+        "hw_tags": {
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200ModbusServerRegister": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/modbus_server_register_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200ModbusServerRegisterGet": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/modbus_server_register_get_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200ModbusServerRegisterMulti": {
+        "description": "Returns configurations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/modbus_server_register_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "modbus_server_register_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable/disable Modbus TCP Server Register.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "tag_name": {
+            "type": "string",
+            "description": "Display name of configuration.",
+            "format": "uciname",
+            "maxLength": 128,
+            "x-web": {
+              "pretty": "Register name",
+              "input-type": "input",
+              "unique": true,
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_source": {
+            "type": "string",
+            "description": "Client service name.",
+            "enum": [
+              "mbus_client",
+              "modbus_client",
+              "dnp3_client"
+            ],
+            "x-web": {
+              "pretty": "Register source",
+              "input-type": "select",
+              "enum-pretty": {
+                "mbus_client": "M-Bus",
+                "modbus_client": "Modbus Client",
+                "dnp3_client": "DNP3 Client"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_id": {
+            "type": "string",
+            "description": "Value which will be written or read.",
+            "x-web": {
+              "pretty": "Register value",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_type": {
+            "type": "string",
+            "description": "Value data type.",
+            "enum": [
+              "string",
+              "binary",
+              "bool",
+              "int8",
+              "uint8",
+              "int16",
+              "uint16",
+              "int32",
+              "uint32",
+              "int64",
+              "uint64",
+              "float32",
+              "float64"
+            ],
+            "x-web": {
+              "pretty": "Register type",
+              "input-type": "select",
+              "enum-pretty": {
+                "string": "String",
+                "binary": "Binary",
+                "bool": "Bool",
+                "int8": "INT8",
+                "uint8": "UINT8",
+                "int16": "INT16",
+                "uint16": "UINT16",
+                "int32": "INT32",
+                "uint32": "UINT32",
+                "int64": "INT64",
+                "uint64": "UINT64",
+                "float32": "FLOAT32",
+                "float64": "FLOAT64"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_size": {
+            "type": "string",
+            "description": "Value size in bytes.",
+            "format": "uinteger",
+            "x-web": {
+              "pretty": "Register size",
+              "input-type": "input",
+              "depends": [
+                {
+                  "tag_type": "string"
+                },
+                {
+                  "tag_type": "binary"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_permissions": {
+            "type": "string",
+            "description": "Register read/write permissions",
+            "enum": [
+              "r",
+              "w",
+              "rw"
+            ],
+            "readOnly": true,
+            "x-web": {
+              "pretty": "Register permissions",
+              "input-type": "input",
+              "enum-pretty": {
+                "r": "Read-Only",
+                "w": "Write-Only",
+                "rw": "Read-Write"
+              }
+            }
+          },
+          "tag_start": {
+            "type": "string",
+            "description": "Value subset start index.",
+            "format": "irange(0, 65535)",
+            "x-web": {
+              "pretty": "Value start index",
+              "input-type": "input"
+            }
+          },
+          "tag_count": {
+            "type": "string",
+            "description": "Value subset count.",
+            "format": "irange(1, 65536)",
+            "x-web": {
+              "pretty": "Value subset count",
+              "input-type": "input"
+            }
+          },
+          "modbus_type": {
+            "type": "string",
+            "description": "Modbus function type.",
+            "enum": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "x-web": {
+              "pretty": "Modbus data type",
+              "input-type": "select",
+              "enum-pretty": {
+                "1": "Coils (1)",
+                "2": "Input coils (2)",
+                "3": "Holding registers (3)",
+                "4": "Input registers (4)"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "modbus_reg_num": {
+            "type": "string",
+            "description": "Start register number.",
+            "x-web": {
+              "pretty": "Modbus register number",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "modbus_server_register_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Modbus TCP server Register Configuration identifier (ID)."
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/modbus_server_register_single_options"
+          }
+        ]
+      },
+      "modbus_server_register_get_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Modbus Server Register Configuration identifier (ID)."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/modbus_server_register_single_options"
+          }
+        ]
+      }
+    }
+  }
+}

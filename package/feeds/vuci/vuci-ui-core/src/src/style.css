@@ -1,0 +1,255 @@
+@layer theme, base, components, utilities;
+
+/*
+  Theme in a separate file to prevent all components using @reference from being
+  rebuilt during HMR update. https://github.com/tailwindlabs/tailwindcss/pull/17836
+*/
+@import './theme.css' source('../');
+@import 'tailwindcss/preflight' layer(base) source('../');
+@import 'tailwindcss/utilities' layer(utilities) source('../');
+@import './styles/field.css';
+@import './styles/form.css';
+@source '../../../applications';
+
+@custom-variant hocus {
+  &:hover,
+  &:focus {
+    @slot;
+  }
+}
+
+@utility focus-token {
+  @apply outline-none ring-offset-1 ring-2 ring-theme-border-primary;
+}
+
+@utility grid-cols-fill-* {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, calc(var(--spacing) * --value(integer))), 1fr));
+}
+@utility grid-cols-fit-* {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, calc(var(--spacing) * --value(integer))), 1fr));
+}
+
+@layer base {
+  body {
+    @apply font-sans text-theme-text-base text-caption;
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-theme-border-base, currentColor);
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
+  * {
+    scrollbar-color: var(--color-theme-bg-secondary-1) inherit;
+    scrollbar-width: thin;
+  }
+  a {
+    @apply visited:text-[VisitedText] active:text-[ActiveText] text-[LinkText] underline;
+  }
+  img {
+    @apply inline;
+  }
+
+  .tlt-link {
+    @apply font-semibold text-theme-text-primary! no-underline;
+  }
+
+  /* CORE INPUT STYLES START*/
+  /* autofill fix - https://stackoverflow.com/questions/2781549/removing-input-background-colour-for-chrome-autocomplete */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+    box-shadow: inset 0 0 20px 20px transparent;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  /* remove default password icon on IE and Edge*/
+  /* https://stackoverflow.com/questions/47854041/how-to-add-see-password-icon-just-for-chrome-and-firefox */
+  input::-ms-reveal {
+    display: none;
+  }
+}
+
+@layer components {
+  .tlt-input-wrapper {
+    @apply relative font-sans text-body-secondary w-full border border-theme-border-strong rounded-lg max-w-xs min-h-8 flex items-center gap-1;
+  }
+  .tlt-input-wrapper {
+    max-width: 311px;
+  }
+  table .x-input-wrapper {
+    @apply min-w-0;
+  }
+  @media (min-width: theme(--breakpoint-md)) {
+    .tlt-input-wrapper {
+      max-width: 20rem;
+    }
+  }
+  .tlt-input-before {
+    @apply text-theme-text-subtle ml-3;
+  }
+  .tlt-input-after {
+    @apply text-theme-text-subtle mr-3;
+  }
+  .tlt-input-field {
+    @apply placeholder:text-theme-text-subtle/50 outline-0 flex-1 min-h-7.5 min-w-0 w-full py-1.25 first:pl-3 last:pr-3;
+  }
+  :not(.tlt-input-before) + .tlt-input-field {
+    @apply pl-3;
+  }
+  .tlt-input-field:has(+ :not(.tlt-input-after)) {
+    @apply pr-3;
+  }
+
+  .tlt-input-wrapper:has(.tlt-input-field:is([disabled='true'], [aria-disabled='true'], [aria-readonly='true'])),
+  .tlt-input-wrapper:has(input:is([type='text'], [type='password']):read-only) {
+    @apply bg-theme-bg-secondary-subtle border-transparent! text-theme-text-secondary-subtle cursor-not-allowed *:cursor-not-allowed;
+  }
+
+  .tlt-input-wrapper:has(.tlt-input-field[data-state='error']) {
+    @apply border-theme-border-danger;
+  }
+  .tlt-input-wrapper:has(.tlt-input-field[data-state='warning']) {
+    @apply border-theme-border-warning;
+  }
+  .file-name[data-state='warning'] {
+    @apply text-theme-text-warning;
+  }
+  .tlt-input-wrapper:focus-within:not([disabled], [aria-disabled='true']) {
+    @apply border-theme-border-primary-strong;
+  }
+  .tlt-input-wrapper:hover:not([disabled], [aria-disabled='true']) {
+    @apply border-theme-border-primary;
+  }
+  .tlt-input-placeholder {
+    @apply text-theme-text-secondary-subtle text-caption font-semibold text-left;
+  }
+  /* CORE INPUT STYLES END */
+  .flyout-box__to-left {
+    @apply translate-x-2;
+  }
+  .flyout-box__to-right {
+    @apply -translate-x-2;
+  }
+  .flyout-box__to-top {
+    @apply translate-y-2;
+  }
+  .flyout-box__to-bottom {
+    @apply -translate-y-2;
+  }
+  .flyout-box__to-bottom-left {
+    @apply -translate-y-2 translate-x-2;
+  }
+  .flyout-box__to-bottom-right {
+    @apply -translate-y-2 -translate-x-2;
+  }
+  .flyout-box__to-top-left {
+    @apply translate-y-2 translate-x-2;
+  }
+  .flyout-box__to-top-right {
+    @apply translate-y-2 -translate-x-2;
+  }
+  .flyout-box {
+    opacity: 0;
+    visibility: hidden;
+    transition-property: opacity, transform, visibility;
+    transition-duration: 200ms;
+  }
+  .flyout-box.active {
+    @apply translate-x-0 translate-y-0 visible opacity-100;
+  }
+
+  .btn {
+    border: 1px solid var(--color-theme-border-primary);
+    border-radius: 7px;
+    padding: 0.2em 1em;
+    background-color: var(--color-surface);
+    font-family: var(--font-sans);
+    font-size: 1em;
+    text-transform: uppercase !important;
+    color: var(--color-theme-text-primary);
+    cursor: pointer;
+  }
+
+  .overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border: 1px solid var(--color-theme-border-primary);
+    border-radius: 7px;
+    padding: 50px;
+    max-width: calc(100vw - 50px);
+    font-family: var(--font-sans);
+    font-size: 1.167em;
+    text-transform: uppercase;
+    color: var(--color-theme-text-secondary-subtle);
+  }
+}
+
+.success {
+  color: var(--color-theme-text-success);
+}
+.error {
+  color: var(--color-theme-text-danger);
+}
+.pending {
+  color: var(--color-theme-text-info);
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/OpenSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0 !important;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateY(-0.5rem);
+}
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+.list-leave-active {
+  position: absolute !important;
+}

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-stunnel-ui/Makefile
+
+Package: vuci-app-stunnel-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-stunnel-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for STunnel
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for STunnel
+Description: VuCI UI Support for STunnel
+
+@@
+
+

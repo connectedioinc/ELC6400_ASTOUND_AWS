@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/applications/vuci-app-https-dns-proxy-ui/Makefile
+
+Package: vuci-app-https-dns-proxy-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-https-dns-proxy-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for DNS Over HTTPS Proxy
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for DNS Over HTTPS Proxy
+Description: VuCI UI Support for DNS Over HTTPS Proxy
+
+@@
+
+

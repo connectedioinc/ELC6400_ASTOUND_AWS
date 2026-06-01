@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/libs/libtag/Makefile
+
+Package: libtag
+Version: 2026-01-26-2
+Depends: +libc +libubox +libubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Tag handling library.
+Maintainer: 
+Source: libtag-2026-01-26-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Tag handling library.
+Description: 	Tag handling library.
+
+@@
+
+

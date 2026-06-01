@@ -1,0 +1,750 @@
+{
+  "openapi": "3.0.0",
+  "tags": [],
+  "paths": {
+    "/azure/iot_hub/config": {
+      "get": {
+        "tags": ["General"],
+        "summary": "Returns all Azure IoT Hub section configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_azure_multi_get"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": ["General"],
+        "summary": "Created Azure IoT Hub configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_azure_single_get"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_azure_single_section"
+        }
+      },
+      "put": {
+        "tags": ["General"],
+        "summary": "Updates Azure IoT Hub configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_azure_multi_get"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_azure_multi_section"
+        }
+      },
+      "delete": {
+        "tags": ["General"],
+        "summary": "Deletes Azure IoT Hub configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "Azure IoT Hub"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "Azure IoT Hub"
+      }
+    },
+    "/azure/iot_hub/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "tags": ["General"],
+        "summary": "Returns Azure IoT Hub configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_azure_single_get"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": ["General"],
+        "summary": "Uploads Azure IoT Hub files",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_azure_upload_file"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_upload_azure_pnp_files"
+        }
+      },
+      "put": {
+        "tags": ["General"],
+        "summary": "Updates Azure IoT Hub configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_azure_single_get"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_azure_single_section"
+        }
+      },
+      "delete": {
+        "tags": ["General"],
+        "summary": "Deletes Azure IoT Hub configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "Azure IoT Hub"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "Azure IoT Hub"
+      }
+    },
+    "/azure/iot_hub/status": {
+      "get": {
+        "tags": ["Status"],
+        "summary": "Returns all Azure IoT Hub section configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_azure_multi_status"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "Azure IoT Hub"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "Azure IoT Hub"
+      }
+    },
+    "/azure/iot_hub/status/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "tags": ["Status"],
+        "summary": "Returns all Azure IoT Hub section configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_azure_single_status"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "Azure IoT Hub"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "Azure IoT Hub"
+      }
+    },
+    "/azure/iot_hub/actions/merge/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Configuration ID"
+        }
+      ],
+      "post": {
+        "tags": ["General"],
+        "summary": "Merge the Azure IoT Hub configurations that were used in the Data to Server configuration with the currently provided section ID and the data presented.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_azure_merge"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_azure_merge_action"
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Cloud Solutions", "Azure IoT Hub"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "Azure IoT Hub"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200_azure_single_get": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/azure_iothub_pnp_single_section_with_id"
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_azure_merge": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/azure_iothub_merge_action_options"
+                },
+                "messages": {
+                  "type": "array",
+                  "description": "Array of messages",
+                  "items": {
+                    "$ref": "#/components/schemas/azure_merge_success_message"
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_azure_multi_get": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "$ref": "#/components/schemas/azure_iothub_pnp_single_section_with_id"
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_azure_upload_file": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status."
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "description": "Path of the uploaded file"
+                    }
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_azure_single_status": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/azure_iothub_pnp_status"
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_azure_multi_status": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "$ref": "#/components/schemas/azure_iothub_pnp_status"
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "req_azure_merge_action": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/azure_iothub_merge_action_options"
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "req_azure_single_section": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/azure_iothub_pnp_single_section"
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "req_azure_multi_section": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/azure_iothub_pnp_single_section_with_id"
+                  }
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "req_upload_azure_pnp_files": {
+        "description": "",
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "option": {
+                  "type": "string",
+                  "description": "Parameter to upload the file to.",
+                  "enum": ["x509certificate", "x509privatekey"]
+                },
+                "file": {
+                  "type": "string",
+                  "format": "binary",
+                  "description": "Certificate or Private Key file."
+                }
+              },
+              "required": ["option", "file"]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "azure_iothub_pnp_single_section": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "description": "Enable Azure IoT Hub monitoring",
+                "type": "string",
+                "enum": ["0", "1"],
+                "format": "is_bool",
+                "x-web": {
+                  "pretty": "Enable Azure IoT Hub monitoring",
+                  "input-type": "switch"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/azure_iothub_merge_action_options"
+          }
+        ]
+      },
+      "azure_iothub_merge_action_options": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Azure IoT Hub section name.",
+            "format": "uciname",
+            "maxLength": 256,
+            "x-web": {
+              "pretty": "Name",
+              "input-type": "input",
+              "unique": true
+            }
+          },
+          "direct_methods_enabled": {
+            "description": "Enable Direct Method feature set.",
+            "type": "string",
+            "enum": ["0", "1"],
+            "format": "is_bool",
+            "x-web": {
+              "pretty": "Enable Direct Methods",
+              "input-type": "switch"
+            }
+          },
+          "model_id": {
+            "type": "string",
+            "description": "Model ID of the Digital Twins Definition Language.",
+            "maxLength": 256,
+            "x-web": {
+              "pretty": "Plug and Play device model ID",
+              "input-type": "input",
+              "depends": [
+                {
+                  "direct_methods_enabled": "1"
+                }
+              ]
+            }
+          },
+          "connection_type": {
+            "type": "string",
+            "description": "Connection type to an existing IoT Hub.",
+            "enum": ["iothub", "provisioning"],
+            "x-web": {
+              "pretty": "Attestation method",
+              "input-type": "select",
+              "enum-pretty": {
+                "iothub": "Shared Access Signature (SAS) key",
+                "provisioning": "Device Provisioning Service (DPS)"
+              }
+            }
+          },
+          "connection_string": {
+            "type": "string",
+            "maxLength": 4096,
+            "description": "Connection string based on primary key used in API calls which allows device to communicate with IoT Hub.",
+            "x-web": {
+              "pretty": "Connection String",
+              "input-type": "input",
+              "depends": [
+                {
+                  "connection_type": "iothub"
+                }
+              ]
+            }
+          },
+          "attestation_mechanism": {
+            "type": "string",
+            "description": "Method used to confirm a device's identity in Device Provisioning Service.",
+            "enum": ["x509_certificate", "symmetric_key"],
+            "x-web": {
+              "pretty": "DPS attestation method",
+              "input-type": "select",
+              "enum-pretty": {
+                "x509_certificate": "X.509 certificates",
+                "symmetric_key": "Symmetric Key"
+              },
+              "depends": [
+                {
+                  "connection_type": "provisioning"
+                }
+              ]
+            }
+          },
+          "id_scope": {
+            "type": "string",
+            "description": "Unique identifier that is assigned to an Azure IoT Hub during its creation and is used to uniquely identify the specific provisioning service the device will register through.",
+            "maxLength": 100,
+            "x-web": {
+              "pretty": "ID Scope",
+              "input-type": "input",
+              "depends": [
+                {
+                  "connection_type": "provisioning",
+                  "attestation_mechanism": "x509_certificate"
+                },
+                {
+                  "connection_type": "provisioning",
+                  "attestation_mechanism": "symmetric_key"
+                }
+              ]
+            }
+          },
+          "registration_id": {
+            "type": "string",
+            "description": "The registration ID is used to uniquely identify a device registration with the Device Provisioning Service.",
+            "maxLength": 128,
+            "x-web": {
+              "pretty": "Registration ID",
+              "input-type": "input",
+              "depends": [
+                {
+                  "connection_type": "provisioning",
+                  "attestation_mechanism": "x509_certificate"
+                },
+                {
+                  "connection_type": "provisioning",
+                  "attestation_mechanism": "symmetric_key"
+                }
+              ]
+            }
+          },
+          "symmetric_key": {
+            "type": "string",
+            "description": "The derived device key from the DPS Primary Key.",
+            "maxLength": 128,
+            "x-web": {
+              "pretty": "Symmetric Key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "connection_type": "provisioning",
+                  "attestation_mechanism": "symmetric_key"
+                }
+              ]
+            }
+          },
+          "x509certificate": {
+            "type": "string",
+            "description": "Upload the 'leaf' certificate file.",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/azure/iot_hub/config/{id}",
+              "pretty": "X.509 Certificate",
+              "input-type": "input",
+              "depends": [
+                {
+                  "connection_type": "provisioning",
+                  "attestation_mechanism": "x509_certificate"
+                }
+              ]
+            }
+          },
+          "x509certificate:file_size": {
+            "description": "Uploaded 'x509certificate' file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "x509privatekey": {
+            "type": "string",
+            "description": "Upload the 'leaf' key file.",
+            "format": "file_validation",
+            "x-web": {
+              "upload_endpoint": "/azure/iot_hub/config/{id}",
+              "pretty": "X.509 Private Key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "connection_type": "provisioning",
+                  "attestation_mechanism": "x509_certificate"
+                }
+              ]
+            }
+          },
+          "x509privatekey:file_size": {
+            "description": "Uploaded 'x509privatekey' file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "global_prov_uri": {
+            "type": "string",
+            "description": "Destination for messages sent by IoT devices to the Azure IoT Hub (will default to global.azure-devices-provisioning.net if not set).",
+            "x-web": {
+              "pretty": "Global Device Endpoint",
+              "input-type": "input",
+              "depends": [
+                {
+                  "connection_type": "provisioning",
+                  "attestation_mechanism": "x509_certificate"
+                },
+                {
+                  "connection_type": "provisioning",
+                  "attestation_mechanism": "symmetric_key"
+                }
+              ]
+            }
+          }
+        },
+        "required": ["name"]
+      },
+      "azure_iothub_pnp_single_section_with_id": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Azure Iot Hub Configuration identifier (ID)."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/azure_iothub_pnp_single_section"
+          }
+        ],
+        "required": ["id"]
+      },
+      "azure_iothub_pnp_status": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Azure Iot Hub Configuration identifier (ID)."
+          },
+          "name": {
+            "type": "string",
+            "description": "Azure IoT Hub section name."
+          },
+          "connection_status": {
+            "type": "string",
+            "enum": ["n/a", "disabled", "authenticated", "unauthenticated"]
+          },
+          "connection_status_reason": {
+            "enum": ["n/a", "ok", "expired sas token", "device disabled", "bad credentials", "retry expired", "no network", "communication error", "no ping response", "quota exceeded"],
+            "type": "string"
+          }
+        }
+      },
+      "azure_merge_success_message": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "number",
+            "description": "Message code"
+          },
+          "source": {
+            "type": "string",
+            "description": "Message source"
+          },
+          "message": {
+            "type": "string",
+            "description": "Message text"
+          }
+        },
+        "required": ["code", "message", "source"]
+      }
+    }
+  }
+}

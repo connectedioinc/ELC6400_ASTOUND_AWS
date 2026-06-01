@@ -1,0 +1,26 @@
+Source-Makefile: package/libs/libasio/Makefile
+
+Package: libasio
+Version: 1.16.0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Asio C++ library
+Maintainer: 
+Source: libasio-1.16.0-asio-1-16-0.tar.xz
+License: BSL-1.0
+LicenseFiles: LICENSE_1_0.txt COPYING
+Type: ipkg
+Detail-Description: Asio C++ library
+Description: 	Asio is a cross-platform C++ library for network and low-level I/O programming.
+	It provides developers with a consistent asynchronous model using a modern C++ approach.
+	It is widely used in various applications, including networking, file I/O, and more.
+https://think-async.com/Asio/
+
+@@
+
+

@@ -1,0 +1,8 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "opcua-server": {
+      "methods": [ "status" ]
+    }
+  }
+}

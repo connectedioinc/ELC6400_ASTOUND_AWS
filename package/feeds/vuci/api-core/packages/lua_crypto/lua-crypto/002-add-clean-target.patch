@@ -1,0 +1,9 @@
+--- a/Makefile	2024-11-08 13:38:44.703189689 +0200
++++ b/Makefile	2024-11-08 13:38:20.000374046 +0200
+@@ -12,3 +12,6 @@
+ 
+ $(LIBNAME): $(LIBNL_OBJ)
+ 	$(CC) -Wall -lssl -lcrypto -llua5.1 -shared -fPIC -DLUA_USE_POSIX -DLUA_USE_DLOPEN -o $@ $^ -I/usr/include/lua5.1
++
++clean:
++	rm -rf *.o *.so

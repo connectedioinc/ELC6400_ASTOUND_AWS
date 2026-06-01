@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-dlms-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-dlms-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +dlms_client +vuci-app-data-sender-api-mod-dlms +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI Support for DLMS
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI Support for DLMS
+Description: VuCI Support for DLMS
+
+@@
+
+

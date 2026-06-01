@@ -1,0 +1,13 @@
+{
+  "status/starlink": {
+    "description": "Starlink configuration",
+    "read": {
+      "api": {
+        "/starlink/*": ["*"]
+      }
+    },
+    "write": {
+      "api": ["/starlink/*"]
+    }
+  }
+}

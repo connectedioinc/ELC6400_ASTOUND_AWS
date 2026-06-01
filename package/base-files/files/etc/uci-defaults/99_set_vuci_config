@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#Setting for avoiding forceful password change
+uci set vuci.main.firstlogin='0'
+uci set vuci.main.advanced='1'
+
+uci commit vuci
+
+exit 0

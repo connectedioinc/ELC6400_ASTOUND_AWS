@@ -1,0 +1,42 @@
+Source-Makefile: package/teltonika/mdcollect/Makefile
+
+Package: mdcollectd
+Version: 2025-10-08-1
+Depends: +libc +lsqlite3 +libuci +libtlt_uci +libmdcollect +libubus +libubox +libtlt-logger +libnftnl +MOBILE_SUPPORT:libgsm
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: mdcollectd
+Maintainer: 
+Require-User: mdcollectd:mdcollectd
+Source: mdcollect-7.21-2025-10-08.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: mdcollectd
+Description: mdcollectd
+
+@@
+
+Package: libmdcollect
+Version: 2025-10-08-1
+Depends: +libc +lsqlite3 +libjson-c +libubus +libubox +libblobmsg-json
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library for mdcollectd
+Maintainer: 
+Source: mdcollect-7.21-2025-10-08.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A library for mdcollectd
+Description: A library for mdcollectd
+
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/applications/vuci-app-modbus-client-ui/Makefile
+
+Package: vuci-app-modbus-client-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-app-universal-gateway-api +vuci-ui-core +vuci-app-modbus-client-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Modbus
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Modbus
+Description: VuCI UI Support for Modbus
+
+@@
+
+

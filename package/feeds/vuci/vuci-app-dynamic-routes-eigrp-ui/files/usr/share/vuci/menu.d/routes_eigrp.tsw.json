@@ -1,0 +1,33 @@
+{
+  "network/dynamic_routes": {
+    "title": "Dynamic Routes",
+    "index": 80
+  },
+  "network/dynamic_routes/proto_eigrp": {
+    "title": "EIGRP",
+    "index": 40,
+    "view": "network/ProtoEigrp",
+    "acls": ["network/dynamic_routes/proto_eigrp"],
+    "main_page": true,
+    "depends": {
+      "packages": {
+        "anyOf": ["frr-eigrpd"]
+      }
+    }
+  },
+  "status/network/dynamic": {
+    "title": "Dynamic Routes",
+    "index": 20
+  },
+  "status/network/dynamic/eigrp": {
+    "title": "EIGRP",
+    "index": 40,
+    "view": "status/ProtoEigrp",
+    "acls": ["status/network/dynamic/eigrp"],
+    "depends": {
+      "packages": {
+        "anyOf": ["frr-eigrpd"]
+      }
+    }
+  }
+}

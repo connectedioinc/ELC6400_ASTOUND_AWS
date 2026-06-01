@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/scep/Makefile
+
+Package: scep
+Version: 2025-05-12-1
+Depends: +libc strongswan +strongswan-libtls +strongswan-mod-pkcs7 +strongswan-mod-curl +strongswan-pki +strongswan-mod-kdf
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: opt
+Category: Utilities
+Repository: base
+Title: Meta package for SCEP packages
+Maintainer: 
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Meta package for SCEP packages
+Description: Meta package for SCEP packages
+
+@@
+
+

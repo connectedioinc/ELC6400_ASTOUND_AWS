@@ -1,0 +1,6 @@
+./cmdname.go
+./cmp.go
+./print.go
+./prop.go
+./race_off.go
+./version.go

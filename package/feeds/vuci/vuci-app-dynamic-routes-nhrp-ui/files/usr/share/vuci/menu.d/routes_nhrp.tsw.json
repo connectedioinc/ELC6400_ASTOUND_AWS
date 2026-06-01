@@ -1,0 +1,33 @@
+{
+  "network/routes/dynamic_routes": {
+    "title": "Dynamic Routes",
+    "index": 80
+  },
+  "network/dynamic_routes/proto_nhrp": {
+    "title": "NHRP",
+    "index": 50,
+    "view": "network/ProtoNhrp",
+    "acls": ["network/dynamic_routes/proto_nhrp"],
+    "main_page": true,
+    "depends": {
+      "packages": {
+        "anyOf": ["frr-nhrp"]
+      }
+    }
+  },
+  "status/network/dynamic": {
+    "title": "Dynamic",
+    "index": 20
+  },
+  "status/network/dynamic/nhrp": {
+    "title": "NHRP",
+    "index": 50,
+    "view": "status/ProtoNhrp",
+    "acls": ["status/network/dynamic/nhrp"],
+    "depends": {
+      "packages": {
+        "anyOf": ["frr-nhrp"]
+      }
+    }
+  }
+}

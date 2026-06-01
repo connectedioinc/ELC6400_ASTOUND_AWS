@@ -1,0 +1,14 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "dlna": {
+      "methods": ["get_status"]
+    },
+    "network.wireless": {
+      "methods": ["status"]
+    },
+    "network.device": {
+      "methods": ["status"]
+    }
+  }
+}

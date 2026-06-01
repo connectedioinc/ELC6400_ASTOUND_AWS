@@ -1,0 +1,6 @@
+./sgtty.go
+./sgtty_unix.go
+./termios.go
+./termios_linux.go
+./var_linux.go
+./var_unix.go

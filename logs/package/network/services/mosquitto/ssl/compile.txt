@@ -1,0 +1,5 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/services/mosquitto'
+echo "mosquitto-ssl" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/mosquitto.ssl.install
+echo "libmosquitto-ssl" >> /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo/mosquitto.ssl.install
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/network/services/mosquitto'
+time: package/network/services/mosquitto/ssl/compile#0.11#0.16#0.25

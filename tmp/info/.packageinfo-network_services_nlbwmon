@@ -1,0 +1,25 @@
+Source-Makefile: package/network/services/nlbwmon/Makefile
+
+Package: nlbwmon
+Version: 2026-01-13-1
+Depends: +libc +libubox +libnl-tiny +zlib +kmod-nf-conntrack-netlink +libsqlite3 +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OpenWrt Traffic Usage Monitor
+Maintainer: Jo-Philipp Wich <jo@mein.io>
+Require-User: nlbwmon=546:nlbwmon=546
+FileAttributes: /usr/sbin/nlbwmon::::cap_net_admin=ep
+Source: nlbwmon-c7616bcfaaef440848152f4dc738c990b2d0b90b.tar.gz
+License: ISC
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: OpenWrt Traffic Usage Monitor
+Description: OpenWrt Traffic Usage Monitor
+Jo-Philipp Wich <jo@mein.io>
+@@
+
+

@@ -1,0 +1,158 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "IPsec Global",
+    "description": "IPsec global API documentation",
+    "version": "1.0",
+    "contact": {}
+  },
+  "servers": [],
+  "paths": {
+    "/ipsec/global": {
+      "get": {
+        "summary": "Returns IPsec global section",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ipsec_global"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "tags": [
+          "Global"
+        ]
+      },
+      "put": {
+        "summary": "Updates IPsec global configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ipsec_global"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/ipsec_global_options"
+                  }
+                }
+              },
+              "examples": {
+                "example-1": {
+                  "value": {
+                    "data": {
+                      "debug": "1",
+                      "make_before_break": "0",
+                      "rtinstall_enabled": "0"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        },
+        "tags": [
+          "Global"
+        ]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": [
+          "Services",
+          "VPN",
+          "IPsec"
+        ],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200ipsec_global": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/ipsec_global_options"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "ipsec_global_options": {
+        "type": "object",
+        "properties": {
+          "rtinstall_enabled": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Install IPsec routes",
+              "input-type": "switch"
+            },
+            "description": "Toggle IPsec route install",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ]
+          },
+          "make_before_break": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Use make before break scheme",
+              "input-type": "switch"
+            },
+            "description": "Initiate IKEv2 reauthentication with a make-before-break instead of a break-before-make scheme",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ]
+          },
+          "debug": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Debug level",
+              "input-type": "select"
+            },
+            "description": "Debug Level (0-4)",
+            "enum": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Global"
+    }
+  ]
+}

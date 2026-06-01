@@ -1,0 +1,191 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Impulse counter Documentation",
+    "version": "1.0",
+    "contact": {},
+    "description": "Impulse counter Api documentation"
+  },
+  "tags": [
+    {
+      "name": "General"
+    }
+  ],
+  "paths": {
+    "/impulse_counter/global": {
+      "get": {
+        "summary": "Get Impulse counter global configuration",
+        "tags": [
+          "General"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200impulse_counter_global"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Update Impulse counter global configuration",
+        "tags": [
+          "General"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200impulse_counter_global"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/impulse_counter_global_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "Impulse counter",
+        "hw_tags": {
+          "ios": true
+        },
+        "menu": [
+          "Services",
+          "Input/Output",
+          "Impulse Counter"
+        ]
+      }
+    },
+    "/impulse_counter/status": {
+      "get": {
+        "summary": "Get Impulse counter General function status",
+        "tags": [
+          "General"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200impulse_counter_status"
+          }
+        }
+      },
+      "x-web": {
+        "name": "Impulse counter",
+        "hw_tags": {
+          "ios": true
+        },
+        "menu": [
+          "Services",
+          "Input/Output",
+          "Impulse Counter"
+        ]
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200impulse_counter_global": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/impulse_counter_global_options"
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200impulse_counter_status": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "string",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/impulse_counter_status_options"
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "impulse_counter_global_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Turns the Impulse counter service on or off. This field has to be enabled in order to use any Impulse counter related functions.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Enabled",
+              "input-type": "switch"
+            }
+          },
+          "count_store_duration": {
+            "type": "string",
+            "description": "Set the count store duration to define how many days the impulse counts are retained before being reset or archived.",
+            "format": "irange(3600, 3456000)",
+            "x-web": {
+              "pretty": "Count store duration",
+              "input-type": "input"
+            }
+          }
+        },
+        "required": [
+          "enabled",
+          "count_store_duration",
+          "flash_storage_period"
+        ]
+      },
+      "impulse_counter_status_options": {
+        "description": "Impulse counter status",
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "boolean",
+            "description": "Impulse counter application state"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-event-juggler-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-event-juggler-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for Event Juggler
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for Event Juggler
+Description: VuCI API Support for Event Juggler
+
+@@
+
+

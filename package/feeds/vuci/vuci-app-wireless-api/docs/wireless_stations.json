@@ -1,0 +1,353 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Wireless stations",
+    "version": "1.0",
+    "contact": {},
+    "description": "Wireless stations API documentation"
+  },
+  "tags": [
+    {
+      "name": "Station"
+    }
+  ],
+  "paths": {
+    "/wireless/stations/config": {
+      "get": {
+        "tags": ["Station"],
+        "summary": "Returns all wireless stations",
+        "description": "Returns a list of all configured wireless stations.",
+        "responses": {
+          "200": {
+            "description": "A list of wireless stations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/wifi_station_id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Station"],
+        "summary": "Updates wireless stations",
+        "description": "Updates the wireless station configurations.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/wifi_station_id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Wireless stations updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/wifi_station_id"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Station"],
+        "summary": "Creates a wireless station configuration",
+        "description": "Creates a new wireless station configuration.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/wifi_station"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/wifi_station_id"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Station"],
+        "summary": "Deletes wireless station configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Section names of wireless stations to delete.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Network", "Wireless", "PPSK"],
+        "hw_tags": {
+          "wifi": true
+        },
+        "hidden_documentation_page": true
+      }
+    },
+    "/wireless/stations/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The ID of the WiFi station"
+        }
+      ],
+      "get": {
+        "tags": ["Station"],
+        "summary": "Return wireless station configuration",
+        "description": "Returns details of a specific WiFi station.",
+        "responses": {
+          "200": {
+            "description": "WiFi station details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/wifi_station_id"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates wireless station configuration",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/wifi_station_id"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/wifi_station"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Station"]
+      },
+      "delete": {
+        "summary": "Deletes wireless station configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["Station"]
+      },
+      "x-web": {
+        "menu": ["Network", "Wireless", "PPSK"],
+        "hw_tags": {
+          "wifi": true
+        },
+        "hidden_documentation_page": true
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "wifi_station": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "User name of the authenticating station. Used for easier identification.",
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input"
+            }
+          },
+          "mac": {
+            "type": "string",
+            "description": "MAC address to match authenticating stations against (defaults to any station using this key).",
+            "format": "macaddr",
+            "x-web": {
+              "pretty": "MAC address",
+              "input-type": "input"
+            }
+          },
+          "key": {
+            "type": "string",
+            "description": "PSK to match authenticating stations against.",
+            "x-web": {
+              "pretty": "Key",
+              "input-type": "input"
+            }
+          },
+          "vid": {
+            "type": "string",
+            "description": "VLAN ID to assign station to (defaults to no VLAN).",
+            "format": "irange(1,4094)",
+            "x-web": {
+              "pretty": "VLAN ID",
+              "input-type": "input",
+              "hw_tags": {
+                "is_access_point": true
+              }
+            }
+          },
+          "network": {
+            "type": "string",
+            "description": "Network that this station will be assigned to.",
+            "x-web": {
+              "pretty": "Network",
+              "input-type": "input",
+              "hw_tags": {
+                "is_access_point": false
+              }
+            }
+          },
+          "psk_group": {
+            "type": "string",
+            "description": "PSK group associated with the station. Must reference an existing group.",
+            "x-web": {
+              "pretty": "PSK group",
+              "input-type": "input"
+            }
+          }
+        },
+        "required": ["id", "key"]
+      },
+      "wifi_station_id": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "ID of the WiFi station"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/wifi_station"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+Source-Makefile: package/teltonika/smpp/Makefile
+Build-Depends: ustream-ssl
+
+Package: smpp
+Version: 2025-10-16
+Depends: +libc +libsmpp34 +libubox +libtlt-logger +libgsm +liburc +libubus +libboardjson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SMPP Transceiver
+Maintainer: 
+Require-User: smppd=520:smppd=520
+Source: smppd-1.12-2025-10-16.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SMPP Transceiver
+Description: 	SMPP package that provides SMPP protocol
+	services for flexible short message data transfer.
+
+@@
+
+

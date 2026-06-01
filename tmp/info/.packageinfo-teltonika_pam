@@ -1,0 +1,24 @@
+Source-Makefile: package/teltonika/pam/Makefile
+
+Package: pam
+Version: 2026-02-11-1
+Depends: +libc +rpcd +libubus +libubox +libpam +pam-radius +pam-tacacs +libpam-mod-deny +libpam-mod-permit +libpam-mod-umask +libpam-mod-unix
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: Teltonika PAM support
+Maintainer: 
+Require-User: pamd=524:pamd=524
+Source: pam-1.2-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Teltonika PAM support
+Description: 	Privileged access management (PAM) allows to manage access
+	for different services through TACACS+ or Radius server.
+
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-email-to-sms-ui/Makefile
+
+Package: vuci-app-email-to-sms-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-email-to-sms-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Email to SMS
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Email to SMS
+Description: VuCI UI Support for Email to SMS
+
+@@
+
+

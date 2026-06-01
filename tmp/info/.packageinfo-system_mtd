@@ -1,0 +1,23 @@
+Source-Makefile: package/system/mtd/Makefile
+
+Package: mtd
+Version: 27
+Depends: +libc +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Title: Update utility for trx firmware images
+Maintainer: 
+Source: 
+License: GPL-2.0-only
+LicenseFiles: mtd.c
+Type: ipkg
+Detail-Description: Update utility for trx firmware images
+Description:  This package contains an utility useful to upgrade from other firmware or 
+ older OpenWrt releases.
+
+@@
+
+

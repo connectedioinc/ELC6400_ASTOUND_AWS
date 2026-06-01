@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/libs/libparam/Makefile
+
+Package: libparam
+Version: 2026-02-11
+Depends: +libc +libubox +libtlt_uci +libubus +IO_SUPPORT:iomand +MOBILE_SUPPORT:libgsm +librms +libmnfinfo +GPS_SUPPORT:libgps +libapi
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library for decoding and replacing params in string.
+Maintainer: 
+Source: libparam-2026-02-11-1.17.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A library for decoding and replacing params in string.
+Description: 	A library for decoding and replacing params in string.
+
+@@
+
+

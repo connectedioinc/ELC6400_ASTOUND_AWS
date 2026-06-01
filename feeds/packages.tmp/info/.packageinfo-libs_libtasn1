@@ -1,0 +1,27 @@
+Source-Makefile: feeds/packages/libs/libtasn1/Makefile
+Build-Types: host
+
+Package: libtasn1
+Version: 4.16.0-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: An ASN.1 and DER structures manipulation library
+Maintainer: Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+CPE-ID: cpe:/a:gnu:libtasn1
+Source: libtasn1-4.16.0.tar.gz
+License: LGPL-2.1-or-later
+LicenseFiles: COPYING.LIB
+Type: ipkg
+Detail-Description: An ASN.1 and DER structures manipulation library
+Description:  This is a library for Abstract Syntax Notation One (ASN.1) and
+ Distinguish Encoding Rules (DER) manipulation.
+https://www.gnu.org/software/libtasn1/
+Nikos Mavrogiannopoulos <n.mavrogiannopoulos@gmail.com>
+@@
+
+

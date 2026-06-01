@@ -1,0 +1,1098 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Wireless devices"
+    }
+  ],
+  "paths": {
+    "/site_manager/wireless/devices/config": {
+      "get": {
+        "summary": "Returns all Site manager wireless device configurations",
+        "tags": [
+          "Wireless devices"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_wireless_device_multi"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager wireless device configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_wireless_device_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_wireless_device_multi"
+        },
+        "tags": [
+          "Wireless devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/wireless/devices/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected Site manager wireless device configuration",
+        "tags": [
+          "Wireless devices"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_wireless_device_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager wireless device configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_wireless_device_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_wireless_device_one"
+        },
+        "tags": [
+          "Wireless devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "devman_wireless_device_all": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "dm_device_id": {
+                "type": "string",
+                "description": "Device's ID for which this configuration will be applied to.",
+                "readOnly": true
+              }
+            },
+            "required": [
+              "dm_device_id"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/devman_wireless_device_shared_opts"
+          }
+        ]
+      },
+      "devman_wireless_device_shared_opts": {
+        "type": "object",
+        "properties": {
+          "radio_id": {
+            "type": "string",
+            "description": "Wireless device's ID.",
+            "readOnly": true
+          },
+          "enabled": {
+            "type": "string",
+            "description": "Toggle WiFi device on or off.",
+            "x-web": {
+              "pretty": "Enable",
+              "group": "General Setup",
+              "input-type": "switch"
+            }
+          },
+          "channel": {
+            "type": "string",
+            "description": "Specifies the wireless channel to use. “auto” defaults to the lowest available channel",
+            "x-web": {
+              "pretty": "Channel",
+              "group": "General Setup",
+              "input-type": "select",
+              "enum-depends": [
+                {
+                  "depends": {
+                    "hwmode": ""
+                  },
+                  "values": [
+                    "auto",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11"
+                  ]
+                },
+                {
+                  "depends": {
+                    "hwmode": "n"
+                  },
+                  "values": [
+                    "auto",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11"
+                  ]
+                },
+                {
+                  "depends": {
+                    "hwmode": "ac"
+                  },
+                  "values": [
+                    "auto",
+                    "36",
+                    "40",
+                    "44",
+                    "48",
+                    "52",
+                    "56",
+                    "60",
+                    "64",
+                    "100",
+                    "104",
+                    "108",
+                    "112",
+                    "116",
+                    "120",
+                    "124",
+                    "128",
+                    "132",
+                    "136",
+                    "140",
+                    "144",
+                    "149",
+                    "153",
+                    "157",
+                    "161",
+                    "165"
+                  ]
+                }
+              ],
+              "enum-pretty": {
+                "1": "1 (2412 Mhz)",
+                "2": "2 (2417 Mhz)",
+                "3": "3 (2422 Mhz)",
+                "4": "4 (2427 Mhz)",
+                "5": "5 (2432 Mhz)",
+                "6": "6 (2437 Mhz)",
+                "7": "7 (2442 Mhz)",
+                "8": "8 (2447 Mhz)",
+                "9": "9 (2452 Mhz)",
+                "10": "10 (2457 Mhz)",
+                "11": "11 (2462 Mhz)",
+                "36": "36 (5180 Mhz)",
+                "40": "40 (5200 Mhz)",
+                "44": "44 (5220 Mhz)",
+                "48": "48 (5240 Mhz)",
+                "52": "52 (5260 Mhz)",
+                "56": "56 (5280 Mhz)",
+                "60": "60 (5300 Mhz)",
+                "64": "64 (5320 Mhz)",
+                "100": "100 (5500 Mhz)",
+                "104": "104 (5520 Mhz)",
+                "108": "108 (5540 Mhz)",
+                "112": "112 (5560 Mhz)",
+                "116": "116 (5580 Mhz)",
+                "120": "120 (5600 Mhz)",
+                "124": "124 (5620 Mhz)",
+                "128": "128 (5640 Mhz)",
+                "132": "132 (5660 Mhz)",
+                "136": "136 (5680 Mhz)",
+                "140": "140 (5700 Mhz)",
+                "144": "144 (5720 Mhz)",
+                "149": "149 (5745 Mhz)",
+                "153": "153 (5765 Mhz)",
+                "157": "157 (5785 Mhz)",
+                "161": "161 (5805 Mhz)",
+                "165": "165 (5825 Mhz)",
+                "auto": "Auto"
+              }
+            }
+          },
+          "htmode": {
+            "type": "string",
+            "description": "Width. The Wi-Fi channel width is the range of frequencies i.e. how broad the signal is for transferring data.",
+            "x-web": {
+              "pretty": "Width",
+              "group": "General Setup",
+              "input-type": "select",
+              "enum-pretty": {
+                "HT20": "20 Mhz",
+                "HT40": "40 Mhz",
+                "VHT20": "20 Mhz",
+                "VHT40": "40 Mhz",
+                "VHT80": "80 Mhz",
+                "VHT160": "160 Mhz"
+              },
+              "enum-depends": [
+                {
+                  "depends": {
+                    "hwmode": "n"
+                  },
+                  "values": [
+                    "HT20",
+                    "HT40"
+                  ]
+                },
+                {
+                  "depends": {
+                    "hwmode": "ac"
+                  },
+                  "values": [
+                    "VHT20",
+                    "VHT40",
+                    "VHT80",
+                    "VHT160"
+                  ]
+                }
+              ]
+            }
+          },
+          "hwmode": {
+            "type": "string",
+            "description": "Mode. Selects the wireless protocol to use. Available values depending on the wireless device: '' - Legacy, 'n' - N, 'ac' - AC",
+            "enum": [
+              "",
+              "n",
+              "ac"
+            ],
+            "x-web": {
+              "pretty": "Mode",
+              "group": "General Setup",
+              "input-type": "select",
+              "enum-pretty": {
+                "": "Legacy",
+                "n": "N",
+                "ac": "AC"
+              }
+            }
+          },
+          "country": {
+            "type": "string",
+            "description": "Country Code. Use ISO/IEC 3166 alpha2 country codes.",
+            "enum": [
+              "00",
+              "AD",
+              "AE",
+              "AF",
+              "AG",
+              "AI",
+              "AL",
+              "AM",
+              "AN",
+              "AO",
+              "AQ",
+              "AR",
+              "AS",
+              "AT",
+              "AU",
+              "AW",
+              "AX",
+              "AZ",
+              "BA",
+              "BB",
+              "BD",
+              "BE",
+              "BF",
+              "BG",
+              "BH",
+              "BI",
+              "BJ",
+              "BL",
+              "BM",
+              "BN",
+              "BO",
+              "BR",
+              "BS",
+              "BT",
+              "BV",
+              "BW",
+              "BY",
+              "BZ",
+              "CA",
+              "CC",
+              "CD",
+              "CF",
+              "CG",
+              "CH",
+              "CI",
+              "CK",
+              "CL",
+              "CM",
+              "CN",
+              "CO",
+              "CR",
+              "CU",
+              "CV",
+              "CX",
+              "CY",
+              "CZ",
+              "DE",
+              "DJ",
+              "DK",
+              "DM",
+              "DO",
+              "DZ",
+              "EC",
+              "EE",
+              "EG",
+              "EH",
+              "ER",
+              "ES",
+              "ET",
+              "FI",
+              "FJ",
+              "FK",
+              "FM",
+              "FO",
+              "FR",
+              "GA",
+              "GB",
+              "GD",
+              "GE",
+              "GF",
+              "GG",
+              "GH",
+              "GI",
+              "GL",
+              "GM",
+              "GN",
+              "GP",
+              "GQ",
+              "GR",
+              "GS",
+              "GT",
+              "GU",
+              "GW",
+              "GY",
+              "HK",
+              "HM",
+              "HN",
+              "HR",
+              "HT",
+              "HU",
+              "ID",
+              "IE",
+              "IL",
+              "IM",
+              "IN",
+              "IO",
+              "IQ",
+              "IR",
+              "IS",
+              "IT",
+              "JE",
+              "JM",
+              "JO",
+              "JP",
+              "KE",
+              "KG",
+              "KH",
+              "KI",
+              "KM",
+              "KN",
+              "KP",
+              "KR",
+              "KW",
+              "KY",
+              "KZ",
+              "LA",
+              "LB",
+              "LC",
+              "LI",
+              "LK",
+              "LR",
+              "LS",
+              "LT",
+              "LU",
+              "LV",
+              "LY",
+              "MA",
+              "MC",
+              "MD",
+              "ME",
+              "MF",
+              "MG",
+              "MH",
+              "MK",
+              "ML",
+              "MM",
+              "MN",
+              "MO",
+              "MP",
+              "MQ",
+              "MR",
+              "MS",
+              "MT",
+              "MU",
+              "MV",
+              "MW",
+              "MX",
+              "MY",
+              "MZ",
+              "NA",
+              "NC",
+              "NE",
+              "NF",
+              "NG",
+              "NI",
+              "NL",
+              "NO",
+              "NP",
+              "NR",
+              "NU",
+              "NZ",
+              "OM",
+              "PA",
+              "PE",
+              "PF",
+              "PG",
+              "PH",
+              "PK",
+              "PL",
+              "PM",
+              "PN",
+              "PR",
+              "PS",
+              "PT",
+              "PW",
+              "PY",
+              "QA",
+              "RE",
+              "RO",
+              "RS",
+              "RU",
+              "RW",
+              "SA",
+              "SB",
+              "SC",
+              "SD",
+              "SE",
+              "SG",
+              "SH",
+              "SI",
+              "SJ",
+              "SK",
+              "SL",
+              "SM",
+              "SN",
+              "SO",
+              "SR",
+              "ST",
+              "SV",
+              "SY",
+              "SZ",
+              "TC",
+              "TD",
+              "TF",
+              "TG",
+              "TH",
+              "TJ",
+              "TK",
+              "TL",
+              "TM",
+              "TN",
+              "TO",
+              "TR",
+              "TT",
+              "TV",
+              "TW",
+              "TZ",
+              "UA",
+              "UG",
+              "UM",
+              "US",
+              "UY",
+              "UZ",
+              "VA",
+              "VC",
+              "VE",
+              "VG",
+              "VI",
+              "VN",
+              "VU",
+              "WF",
+              "WS",
+              "YE",
+              "YT",
+              "ZA",
+              "ZM",
+              "ZW"
+            ],
+            "x-web": {
+              "pretty": "Country Code",
+              "group": "General Setup",
+              "input-type": "select",
+              "enum-pretty": {
+                "00": "World",
+                "AD": "Andorra",
+                "AE": "United Arab Emirates",
+                "AF": "Afghanistan",
+                "AG": "Antigua and Barbuda",
+                "AI": "Anguilla",
+                "AL": "Albania",
+                "AM": "Armenia",
+                "AN": "Netherlands Antilles",
+                "AO": "Angola",
+                "AQ": "Antarctica",
+                "AR": "Argentina",
+                "AS": "American Samoa",
+                "AT": "Austria",
+                "AU": "Australia",
+                "AW": "Aruba",
+                "AX": "Aland Islands",
+                "AZ": "Azerbaijan",
+                "BA": "Bosnia and Herzegovina",
+                "BB": "Barbados",
+                "BD": "Bangladesh",
+                "BE": "Belgium",
+                "BF": "Burkina Faso",
+                "BG": "Bulgaria",
+                "BH": "Bahrain",
+                "BI": "Burundi",
+                "BJ": "Benin",
+                "BL": "Saint Barthelemy",
+                "BM": "Bermuda",
+                "BN": "Brunei Darussalam",
+                "BO": "Bolivia",
+                "BR": "Brazil",
+                "BS": "Bahamas",
+                "BT": "Bhutan",
+                "BV": "Bouvet Island",
+                "BW": "Botswana",
+                "BY": "Belarus",
+                "BZ": "Belize",
+                "CA": "Canada",
+                "CC": "Cocos (Keeling) Islands",
+                "CD": "Congo",
+                "CF": "Central African Republic",
+                "CG": "Congo",
+                "CH": "Switzerland",
+                "CI": "Cote d'Ivoire",
+                "CK": "Cook Islands",
+                "CL": "Chile",
+                "CM": "Cameroon",
+                "CN": "China",
+                "CO": "Colombia",
+                "CR": "Costa Rica",
+                "CU": "Cuba",
+                "CV": "Cape Verde",
+                "CX": "Christmas Island",
+                "CY": "Cyprus",
+                "CZ": "Czech Republic",
+                "DE": "Germany",
+                "DJ": "Djibouti",
+                "DK": "Denmark",
+                "DM": "Dominica",
+                "DO": "Dominican Republic",
+                "DZ": "Algeria",
+                "EC": "Ecuador",
+                "EE": "Estonia",
+                "EG": "Egypt",
+                "EH": "Western Sahara",
+                "ER": "Eritrea",
+                "ES": "Spain",
+                "ET": "Ethiopia",
+                "FI": "Finland",
+                "FJ": "Fiji",
+                "FK": "Falkland Islands",
+                "FM": "Micronesia",
+                "FO": "Faroe Islands",
+                "FR": "France",
+                "GA": "Gabon",
+                "GB": "United Kingdom",
+                "GD": "Grenada",
+                "GE": "Georgia",
+                "GF": "French Guiana",
+                "GG": "Guernsey",
+                "GH": "Ghana",
+                "GI": "Gibraltar",
+                "GL": "Greenland",
+                "GM": "Gambia",
+                "GN": "Guinea",
+                "GP": "Guadeloupe",
+                "GQ": "Equatorial Guinea",
+                "GR": "Greece",
+                "GS": "South Georgia",
+                "GT": "Guatemala",
+                "GU": "Guam",
+                "GW": "Guinea-Bissau",
+                "GY": "Guyana",
+                "HK": "Hong Kong",
+                "HM": "Heard and McDonald Islands",
+                "HN": "Honduras",
+                "HR": "Croatia",
+                "HT": "Haiti",
+                "HU": "Hungary",
+                "ID": "Indonesia",
+                "IE": "Ireland",
+                "IL": "Israel",
+                "IM": "Isle of Man",
+                "IN": "India",
+                "IO": "Chagos Islands",
+                "IQ": "Iraq",
+                "IR": "Iran",
+                "IS": "Iceland",
+                "IT": "Italy",
+                "JE": "Jersey",
+                "JM": "Jamaica",
+                "JO": "Jordan",
+                "JP": "Japan",
+                "KE": "Kenya",
+                "KG": "Kyrgyzstan",
+                "KH": "Cambodia",
+                "KI": "Kiribati",
+                "KM": "Comoros",
+                "KN": "Saint Kitts and Nevis",
+                "KP": "North Korea",
+                "KR": "South Korea",
+                "KW": "Kuwait",
+                "KY": "Cayman Islands",
+                "KZ": "Kazakhstan",
+                "LA": "Laos",
+                "LB": "Lebanon",
+                "LC": "Saint Lucia",
+                "LI": "Liechtenstein",
+                "LK": "Sri Lanka",
+                "LR": "Liberia",
+                "LS": "Lesotho",
+                "LT": "Lithuania",
+                "LU": "Luxembourg",
+                "LV": "Latvia",
+                "LY": "Libyan Arab Jamahiriya",
+                "MA": "Morocco",
+                "MC": "Monaco",
+                "MD": "Moldova",
+                "ME": "Montenegro",
+                "MF": "Saint Martin (French part)",
+                "MG": "Madagascar",
+                "MH": "Marshall Islands",
+                "MK": "Macedonia",
+                "ML": "Mali",
+                "MM": "Myanmar",
+                "MN": "Mongolia",
+                "MO": "Macao",
+                "MP": "Northern Mariana Islands",
+                "MQ": "Martinique",
+                "MR": "Mauritania",
+                "MS": "Montserrat",
+                "MT": "Malta",
+                "MU": "Mauritius",
+                "MV": "Maldives",
+                "MW": "Malawi",
+                "MX": "Mexico",
+                "MY": "Malaysia",
+                "MZ": "Mozambique",
+                "NA": "Namibia",
+                "NC": "New Caledonia",
+                "NE": "Niger",
+                "NF": "Norfolk Island",
+                "NG": "Nigeria",
+                "NI": "Nicaragua",
+                "NL": "Netherlands",
+                "NO": "Norway",
+                "NP": "Nepal",
+                "NR": "Nauru",
+                "NU": "Niue",
+                "NZ": "New Zealand",
+                "OM": "Oman",
+                "PA": "Panama",
+                "PE": "Peru",
+                "PF": "French Polynesia",
+                "PG": "Papua New Guinea",
+                "PH": "Philippines",
+                "PK": "Pakistan",
+                "PL": "Poland",
+                "PM": "Saint Pierre and Miquelon",
+                "PN": "Pitcairn",
+                "PR": "Puerto Rico",
+                "PS": "Palestinian Territory",
+                "PT": "Portugal",
+                "PW": "Palau",
+                "PY": "Paraguay",
+                "QA": "Qatar",
+                "RE": "Reunion",
+                "RO": "Romania",
+                "RS": "Serbia",
+                "RU": "Russian Federation",
+                "RW": "Rwanda",
+                "SA": "Saudi Arabia",
+                "SB": "Solomon Islands",
+                "SC": "Seychelles",
+                "SD": "Sudan",
+                "SE": "Sweden",
+                "SG": "Singapore",
+                "SH": "St. Helena and Dependencies",
+                "SI": "Slovenia",
+                "SJ": "Svalbard and Jan Mayen",
+                "SK": "Slovakia",
+                "SL": "Sierra Leone",
+                "SM": "San Marino",
+                "SN": "Senegal",
+                "SO": "Somalia",
+                "SR": "Suriname",
+                "ST": "Sao Tome and Principe",
+                "SV": "El Salvador",
+                "SY": "Syrian Arab Republic",
+                "SZ": "Swaziland",
+                "TC": "Turks and Caicos Islands",
+                "TD": "Chad",
+                "TF": "French Southern Territories",
+                "TG": "Togo",
+                "TH": "Thailand",
+                "TJ": "Tajikistan",
+                "TK": "Tokelau",
+                "TL": "Timor-Leste",
+                "TM": "Turkmenistan",
+                "TN": "Tunisia",
+                "TO": "Tonga",
+                "TR": "Turkey",
+                "TT": "Trinidad and Tobago",
+                "TV": "Tuvalu",
+                "TW": "Taiwan",
+                "TZ": "Tanzania",
+                "UA": "Ukraine",
+                "UG": "Uganda",
+                "UM": "U.S. Minor Outlying Islands",
+                "US": "United States",
+                "UY": "Uruguay",
+                "UZ": "Uzbekistan",
+                "VA": "Vatican City State",
+                "VC": "St. Vincent and Grenadines",
+                "VE": "Venezuela",
+                "VG": "Virgin Islands, British",
+                "VI": "Virgin Islands, U.S.",
+                "VN": "Viet Nam",
+                "VU": "Vanuatu",
+                "WF": "Wallis and Futuna",
+                "WS": "Samoa",
+                "YE": "Yemen",
+                "YT": "Mayotte",
+                "ZA": "South Africa",
+                "ZM": "Zambia",
+                "ZW": "Zimbabwe"
+              }
+            }
+          },
+          "use_global_settings": {
+            "type": "string",
+            "description": "Use global settings. If enabled, the device will use global settings.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Use global settings",
+              "group": "General Setup",
+              "input-type": "switch"
+            }
+          },
+          "txpower": {
+            "type": "string",
+            "description": "Transmit Power. The transmit power of an access point radio is proportional to its effective range – the higher the transmit power, the farther the signal can travel and/or the more physical materials it can effectively penetrate and still have data successfully resolved data at the receiver. Available values can be checked in the wireless devices status_full endpoint (options.txpwrlist.dbm values).",
+            "x-web": {
+              "pretty": "Transmit Power",
+              "group": "General Setup",
+              "input-type": "select",
+              "enum-pretty": {
+                "12.5": "12.5%",
+                "25": "25%",
+                "37.5": "37.5%",
+                "50": "50%",
+                "62.5": "62.5%",
+                "75": "75%",
+                "87.5": "87.5%",
+                "100": "100%"
+              }
+            }
+          },
+          "legacy_rates": {
+            "type": "string",
+            "description": "Allow legacy 802.11b rates. Choose either to allow or not connections that uses legacy 802.11b standard",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "default": "1",
+            "x-web": {
+              "pretty": "Allow legacy 802.11b rates",
+              "group": "Advanced Settings",
+              "input-type": "switch"
+            }
+          },
+          "distance": {
+            "type": "string",
+            "description": "Distance Optimization. Distance to farthest network member in meters.",
+            "x-web": {
+              "pretty": "Distance Optimization",
+              "group": "Advanced Settings",
+              "input-type": "input"
+            }
+          },
+          "frag": {
+            "type": "string",
+            "description": "Fragmentation Threshold. The smallest packet size that can be fragmented and transmitted by multiple frames. In areas where interference is a problem, setting a lower fragment threshold might help reduce the probability of unsuccessful packet transfers and increase speed",
+            "x-web": {
+              "pretty": "Fragmentation Threshold",
+              "group": "Advanced Settings",
+              "input-type": "input"
+            }
+          },
+          "rts": {
+            "type": "string",
+            "description": "RTS/CTS Threshold. RTS/CTS (Request to Send/Clear to Send) are mechanisms used to reduce frame collisions introduced by the hidden node problem. It can help resolve problems that arise when several access points are in the same area and contend with each other",
+            "x-web": {
+              "pretty": "RTS/CTS Threshold",
+              "group": "Advanced Settings",
+              "input-type": "input"
+            }
+          },
+          "noscan": {
+            "type": "string",
+            "description": "Force 40MHz mode. Always use 40MHz channels even if the secondary channel overlaps. Using this option does not comply with IEEE 802.11n",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Force 40MHz mode",
+              "group": "Advanced Settings",
+              "input-type": "switch"
+            }
+          },
+          "beacon_int": {
+            "type": "string",
+            "description": "Beacon Interval. Beacon signal interval in seconds",
+            "x-web": {
+              "pretty": "Beacon Interval",
+              "group": "Advanced Settings",
+              "input-type": "input"
+            }
+          },
+          "acs_exclude_dfs": {
+            "type": "string",
+            "description": "ACS exclude DFS. Exclude DFS channels from automatic channel selection",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "ACS exclude DFS",
+              "group": "Advanced Settings",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "hwmode": "ac"
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "radio_id"
+        ]
+      }
+    },
+    "responses": {
+      "200_siteman_wireless_device_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_wireless_device_all"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_wireless_device_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_wireless_device_all"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "req_body_siteman_wireless_device_one": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/devman_wireless_device_all"
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "req_body_siteman_wireless_device_multi": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_wireless_device_all"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

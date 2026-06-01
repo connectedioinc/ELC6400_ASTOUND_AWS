@@ -1,0 +1,2097 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Devices"
+    }
+  ],
+  "paths": {
+    "/site_manager/devices/config": {
+      "get": {
+        "summary": "Returns all paired device configurations",
+        "tags": [
+          "Devices"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_devices_config_multi"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected paired device configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_devices_config_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_siteman_devices_config_multi"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected paired device configuration",
+        "tags": [
+          "Devices"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_devices_config_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected paired device configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_devices_config_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_siteman_devices_config_one"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/status": {
+      "get": {
+        "summary": "Returns the status of all devices",
+        "tags": [
+          "Devices"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_devices_status_multi"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/exclude_fw_status_param"
+        }
+      ],
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/status/{id_or_mac}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/devman_id_or_mac"
+        },
+        {
+          "$ref": "#/components/parameters/exclude_fw_status_param"
+        }
+      ],
+      "get": {
+        "summary": "Returns the status of the selected device",
+        "tags": [
+          "Devices"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_devices_status_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/status_full": {
+      "get": {
+        "summary": "Returns the full status of all devices",
+        "description": "Returns the full status of all devices. Takes longer than simple status because requests are made to the devices to collect needed data.",
+        "tags": [
+          "Devices"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_devices_status_full_multi"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/events_log_query_param"
+        },
+        {
+          "$ref": "#/components/parameters/devman_status_data_param"
+        },
+        {
+          "$ref": "#/components/parameters/exclude_fw_status_param"
+        }
+      ],
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/status_full/{id_or_mac}": {
+      "parameters": [
+        {
+          "$ref": "#/components/parameters/devman_id_or_mac"
+        },
+        {
+          "$ref": "#/components/parameters/events_log_query_param"
+        },
+        {
+          "$ref": "#/components/parameters/devman_status_data_param"
+        },
+        {
+          "$ref": "#/components/parameters/exclude_fw_status_param"
+        }
+      ],
+      "get": {
+        "summary": "Returns the full status of the selected device",
+        "description": "Returns the full status of the selected device. Takes longer than simple status because requests are made to the devices to collect needed data.",
+        "tags": [
+          "Devices"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_devices_status_full_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/actions/pair": {
+      "post": {
+        "summary": "Pairs the selected device",
+        "description": "Pairs the selected device. **Warning**: make sure that you have setup a password in global Site manager settings. If this password is not set when pairing the device, a random password will be generated and you will no longer be able to reach the device.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_devices_status_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404_siteman_device_cant_reach"
+          },
+          "422": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status",
+                      "default": false
+                    },
+                    "errors": {
+                      "type": "array",
+                      "items": {
+                        "oneOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "number",
+                                "description": "Error code.",
+                                "enum": [
+                                  12
+                                ]
+                              },
+                              "source": {
+                                "type": "string",
+                                "description": "Error source.",
+                                "enum": [
+                                  "authorization"
+                                ]
+                              },
+                              "error": {
+                                "type": "string",
+                                "description": "Error message.",
+                                "enum": [
+                                  "Device returned authorization error."
+                                ]
+                              }
+                            },
+                            "required": [
+                              "code",
+                              "source",
+                              "error"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "number",
+                                "description": "Error code.",
+                                "enum": [
+                                  14
+                                ]
+                              },
+                              "error": {
+                                "type": "string",
+                                "description": "Error message.",
+                                "enum": [
+                                  "Device request failed. (Device info request)."
+                                ]
+                              }
+                            },
+                            "required": [
+                              "code",
+                              "error"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "code": {
+                                "type": "number",
+                                "description": "Error code.",
+                                "enum": [
+                                  15
+                                ]
+                              },
+                              "error": {
+                                "type": "string",
+                                "description": "Error message.",
+                                "enum": [
+                                  "Device's firmware doesn't support groups. Please pair the device without adding it to a group and update it's firmware."
+                                ]
+                              },
+                              "source": {
+                                "type": "string",
+                                "description": "Error source.",
+                                "enum": [
+                                  "group"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "code",
+                              "error",
+                              "source"
+                            ]
+                          },
+                          {
+                            "$ref": "#/components/schemas/default_error"
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "errors"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/req_body_siteman_devices_pair"
+              }
+            }
+          }
+        },
+        "tags": [
+          "Devices"
+        ]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/actions/unpair": {
+      "post": {
+        "summary": "Unpairs the selected device",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "mac": {
+                          "type": "string",
+                          "description": "Device's MAC address."
+                        }
+                      },
+                      "required": [
+                        "mac"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "data"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404_siteman_device_not_paired"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "Unpairs the selected device. If device is online it is firstbooted. **Warning**: device will be unreachable if unpaired while offline, when the general password is not set.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "mac": {
+                        "type": "string",
+                        "format": "macaddr",
+                        "description": "MAC address of the device to be unpaired."
+                      }
+                    },
+                    "required": [
+                      "mac"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "tags": [
+          "Devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/actions/download": {
+      "post": {
+        "summary": "Downloads a file from the selected device",
+        "responses": {
+          "200": {
+            "description": "File download response.",
+            "content": {
+              "application/x-targz": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404_siteman_device_not_paired"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "mac": {
+                        "type": "string",
+                        "format": "macaddr",
+                        "description": "MAC address of the device."
+                      },
+                      "id": {
+                        "type": "string",
+                        "format": "uinteger",
+                        "description": "ID of the device."
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "troubleshoot"
+                        ],
+                        "description": "Type of file to download."
+                      }
+                    },
+                    "required": [
+                      "type"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "tags": [
+          "Devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/actions/reboot": {
+      "post": {
+        "summary": "Reboots the selected device",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "mac": {
+                          "type": "string",
+                          "description": "Device's MAC address."
+                        }
+                      },
+                      "required": [
+                        "mac"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "success",
+                    "data"
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404_siteman_device_not_paired"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "mac": {
+                        "type": "string",
+                        "format": "macaddr",
+                        "description": "MAC address of the device to be rebooted."
+                      }
+                    },
+                    "required": [
+                      "mac"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "tags": [
+          "Devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/actions/api": {
+      "post": {
+        "summary": "Proxy API request to the device",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "mac": {
+                        "type": "string",
+                        "format": "macaddr",
+                        "description": "MAC address of the device."
+                      },
+                      "endpoint": {
+                        "type": "string",
+                        "description": "API endpoint to call on the device."
+                      },
+                      "method": {
+                        "type": "string",
+                        "enum": [
+                          "GET",
+                          "POST",
+                          "PUT",
+                          "DELETE"
+                        ],
+                        "description": "HTTP method to use."
+                      },
+                      "timeout": {
+                        "type": "integer",
+                        "description": "Request timeout in seconds."
+                      },
+                      "data": {
+                        "type": "object",
+                        "description": "Data payload for the request (required for PUT).",
+                        "additionalProperties": true
+                      }
+                    },
+                    "required": [
+                      "mac",
+                      "endpoint",
+                      "method"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "tags": [
+          "Devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/actions/upgrade_fota": {
+      "post": {
+        "summary": "Upgrades firmware for the selected devices",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "Starts firmware upgrade for the selected devices. Upgrade status can be checked using the status endpoint.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "mac": {
+                        "type": "array",
+                        "description": "MAC addresses of the devices to be upgraded.",
+                        "items": {
+                          "type": "string",
+                          "format": "macaddr"
+                        }
+                      },
+                      "id": {
+                        "type": "array",
+                        "description": "IDs of devices to be upgraded.",
+                        "items": {
+                          "type": "string",
+                          "format": "uinteger"
+                        }
+                      },
+                      "group": {
+                        "description": "ID of group to be upgraded.",
+                        "type": "string",
+                        "format": "uinteger"
+                      }
+                    }
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "tags": [
+          "Devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/devices/actions/clear_errors": {
+      "post": {
+        "summary": "Clears device's errors which happened during synchronization",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "object",
+                    "properties": {
+                      "mac": {
+                        "type": "array",
+                        "description": "MAC addresses of the devices to clear errors.",
+                        "items": {
+                          "type": "string",
+                          "format": "macaddr"
+                        }
+                      }
+                    },
+                    "required": [
+                      "mac"
+                    ]
+                  }
+                },
+                "required": [
+                  "data"
+                ]
+              }
+            }
+          }
+        },
+        "tags": [
+          "Devices"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "devman_devices_config": {
+        "type": "object",
+        "properties": {
+          "custom_name": {
+            "type": "string",
+            "format": "string",
+            "maxLength": 200,
+            "description": "Device's custom name for easier management",
+            "x-web": {
+              "pretty": "Custom name",
+              "input-type": "input",
+              "unique": true
+            }
+          },
+          "sync_ntp": {
+            "type": "string",
+            "description": "Synchronize device's NTP settings with the controller.",
+            "format": "is_bool",
+            "x-web": {
+              "pretty": "Sync NTP",
+              "input-type": "switch"
+            }
+          },
+          "group_id": {
+            "$ref": "#/components/schemas/devman_group_id"
+          },
+          "group_name": {
+            "$ref": "#/components/schemas/devman_group_name"
+          },
+          "mac": {
+            "readOnly": true,
+            "type": "string",
+            "description": "MAC address of the device."
+          },
+          "devicename": {
+            "x-web": {
+              "pretty": "Device name",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Specifies device name, it will be seen in Status page."
+          },
+          "hostname": {
+            "x-web": {
+              "pretty": "Hostname",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Specifies how device will be seen by other devices.",
+            "format": "host"
+          }
+        },
+        "required": [
+          "custom_name"
+        ]
+      },
+      "devman_devices_status": {
+        "type": "object",
+        "properties": {
+          "group_id": {
+            "$ref": "#/components/schemas/devman_group_id"
+          },
+          "group_name": {
+            "$ref": "#/components/schemas/devman_group_name"
+          },
+          "mac": {
+            "type": "string",
+            "description": "Device's MAC address."
+          },
+          "online": {
+            "type": "boolean",
+            "description": "Is device online."
+          },
+          "paired": {
+            "type": "boolean",
+            "description": "Is device paired."
+          },
+          "api_version": {
+            "type": "string",
+            "description": "Device's API version."
+          },
+          "device_type": {
+            "type": "string",
+            "description": "Device's type. e.g. (TAP100)"
+          },
+          "id": {
+            "type": "string",
+            "description": "Configuration ID. Returned only if device is paired."
+          },
+          "custom_name": {
+            "type": "string",
+            "description": "Device's custom name. Returned only if device is paired."
+          },
+          "hostname": {
+            "type": "string",
+            "description": "Device's hostname. Returned only if device is paired."
+          },
+          "devicename": {
+            "type": "string",
+            "description": "Device's name, it is seen in status page. Returned only if device is paired."
+          },
+          "firmware_version": {
+            "type": "string",
+            "description": "Device's firmware version. Returned only if device is paired."
+          },
+          "firmware_status": {
+            "type": "number",
+            "description": "Device's firmware status. Returned only if device is paired and controller device has internet access."
+          },
+          "firmware_status_str": {
+            "type": "string",
+            "description": "Device's firmware status string. Returned only if device is paired and controller device has internet access."
+          },
+          "firmware_download_percentage": {
+            "type": "string",
+            "description": "Firmware's download progress in percentage. Only present if firmware upgrade was started."
+          },
+          "latest_available_firmware": {
+            "type": "string",
+            "description": "Device's latest available firmware version to update to."
+          },
+          "syncing": {
+            "type": "boolean",
+            "description": "Device configuration changes are currently being synchronized."
+          },
+          "sync_retry_count": {
+            "type": "integer",
+            "description": "How many times the configuration synchronization retry was attempted."
+          },
+          "sync_retry_max": {
+            "type": "integer",
+            "description": "How many times total the configuration synchronization retry will be attempted."
+          },
+          "sync_next_retry": {
+            "type": "integer",
+            "description": "How many seconds until the next synchronization retry."
+          },
+          "pair_status": {
+            "type": "integer",
+            "description": "Pairing status code."
+          },
+          "pair_status_message": {
+            "type": "string",
+            "description": "Pairing status message."
+          },
+          "errors": {
+            "type": "array",
+            "description": "Contains errors (if they exist) which happened during configuration synchronization with the device.",
+            "items": {
+              "$ref": "#/components/schemas/devman_sync_error"
+            }
+          },
+          "device_status": {
+            "type": "object",
+            "description": "Device status information.",
+            "additionalProperties": true
+          },
+          "port_status": {
+            "type": "array",
+            "description": "Port status information.",
+            "items": {
+              "type": "object",
+              "additionalProperties": true
+            }
+          },
+          "topology": {
+            "type": "object",
+            "description": "Network topology information.",
+            "additionalProperties": true
+          }
+        }
+      },
+      "devman_group_id": {
+        "readOnly": true,
+        "type": "string",
+        "description": "The ID of the group to which the device belongs."
+      },
+      "devman_group_name": {
+        "readOnly": true,
+        "type": "string",
+        "description": "The name of the group to which the device belongs."
+      },
+      "devman_devices_status_full": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "wireless_devices_status": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/wireless_device_status_basic"
+                }
+              },
+              "wireless_interfaces_status": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/wireless_interface_status"
+                }
+              },
+              "device_info": {
+                "$ref": "#/components/schemas/device_info_data"
+              },
+              "interfaces_status": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/network_interface_status"
+                }
+              },
+              "rms_status": {
+                "$ref": "#/components/schemas/rms_status_options"
+              },
+              "events_log": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/events_log_options"
+                }
+              },
+              "device_status": {
+                "type": "object",
+                "description": "Device status information.",
+                "additionalProperties": true
+              },
+              "port_status": {
+                "type": "array",
+                "description": "Port status information.",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              },
+              "topology": {
+                "type": "object",
+                "description": "Network topology information.",
+                "additionalProperties": true
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/devman_devices_status"
+          }
+        ]
+      },
+      "devman_devices_pair": {
+        "type": "object",
+        "properties": {
+          "mac": {
+            "type": "string",
+            "format": "macaddr",
+            "description": "MAC address of the device to be paired."
+          },
+          "username": {
+            "type": "string",
+            "format": "string",
+            "description": "Username to use for pairing.",
+            "default": "admin"
+          },
+          "password": {
+            "type": "string",
+            "format": "string",
+            "description": "Password to use for pairing.",
+            "default": "admin01"
+          },
+          "custom_name": {
+            "type": "string",
+            "format": "string",
+            "maxLength": 200,
+            "description": "Device's custom name for easier management."
+          },
+          "expiration_time": {
+            "type": "string",
+            "format": "string",
+            "description": "Expiration time in seconds. Device will need to be paired again after this time. Default is unlimited."
+          },
+          "group": {
+            "type": "string",
+            "format": "string",
+            "description": "ID of the group to which the device will be added."
+          }
+        },
+        "required": [
+          "mac"
+        ]
+      },
+      "device_info_data": {
+        "type": "object",
+        "properties": {
+          "mnfinfo": {
+            "type": "object",
+            "properties": {
+              "macEth": {
+                "type": "string",
+                "description": "Ethernet WAN MAC address."
+              },
+              "name": {
+                "type": "string",
+                "description": "Product code."
+              },
+              "hwver": {
+                "type": "string",
+                "description": "Hardware revision."
+              },
+              "batch": {
+                "type": "string",
+                "description": "Batch number."
+              },
+              "serial": {
+                "type": "string",
+                "description": "Serial number."
+              },
+              "mac": {
+                "type": "string",
+                "description": "Ethernet LAN MAC address."
+              },
+              "blver": {
+                "type": "string",
+                "description": "Bootloader version."
+              }
+            }
+          },
+          "static": {
+            "type": "object",
+            "properties": {
+              "fw_version": {
+                "type": "string",
+                "description": "Firmware version."
+              },
+              "kernel": {
+                "type": "string",
+                "description": "Kernel version."
+              },
+              "system": {
+                "type": "string",
+                "description": "Processor name."
+              },
+              "device_name": {
+                "type": "string",
+                "description": "Device name."
+              },
+              "hostname": {
+                "type": "string",
+                "description": "Hostname of router."
+              },
+              "cpu_count": {
+                "type": "number",
+                "description": "Number of CPU cores."
+              },
+              "release": {
+                "type": "object",
+                "properties": {
+                  "distribution": {
+                    "type": "string",
+                    "description": "Distribution name."
+                  },
+                  "revision": {
+                    "type": "string",
+                    "description": "Revision."
+                  },
+                  "version": {
+                    "type": "string",
+                    "description": "Version of release."
+                  },
+                  "target": {
+                    "type": "string",
+                    "description": "Target of device."
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Description of release."
+                  }
+                }
+              },
+              "fw_build_date": {
+                "type": "string",
+                "description": "Firmware build date."
+              },
+              "model": {
+                "type": "string",
+                "description": "Model name."
+              },
+              "board_name": {
+                "type": "string",
+                "description": "Board name."
+              }
+            }
+          },
+          "features": {
+            "type": "object",
+            "properties": {
+              "ipv6": {
+                "type": "boolean",
+                "description": "IPv6 support."
+              }
+            }
+          },
+          "board": {
+            "type": "object",
+            "properties": {
+              "modems": {
+                "type": "array",
+                "uniqueItems": true,
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "gps": {
+                      "type": "string",
+                      "description": "GPS support."
+                    },
+                    "num": {
+                      "type": "string",
+                      "description": "Modem number."
+                    },
+                    "service_modes": {
+                      "type": "object",
+                      "properties": {
+                        "4G": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "description": "4G bandwidth support"
+                          }
+                        },
+                        "3G": {
+                          "type": "array",
+                          "items": {
+                            "type": "string",
+                            "description": "3G bandwidth support"
+                          }
+                        }
+                      }
+                    },
+                    "id": {
+                      "type": "string",
+                      "description": "Modem ID."
+                    },
+                    "revision": {
+                      "type": "string",
+                      "description": "Modem revision."
+                    },
+                    "builtin": {
+                      "type": "boolean",
+                      "description": "Modem built-in."
+                    },
+                    "product": {
+                      "type": "string",
+                      "description": "Modem product code."
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "Modem type."
+                    },
+                    "desc": {
+                      "type": "string",
+                      "description": "Modem description."
+                    },
+                    "control": {
+                      "type": "string",
+                      "description": "Modem control."
+                    },
+                    "boudrate": {
+                      "type": "string",
+                      "description": "Modem boudrate."
+                    },
+                    "simcount": {
+                      "type": "number",
+                      "description": "Modem SIM count."
+                    },
+                    "stop_bits": {
+                      "type": "string",
+                      "description": "Modem stop bits."
+                    },
+                    "vendor": {
+                      "type": "string",
+                      "description": "Modem vendor."
+                    }
+                  }
+                }
+              },
+              "network": {
+                "type": "object",
+                "properties": {
+                  "wan": {
+                    "type": "object",
+                    "properties": {
+                      "proto": {
+                        "type": "string",
+                        "description": "WAN protocol."
+                      },
+                      "device": {
+                        "type": "string",
+                        "description": "WAN device name.",
+                        "x-web": {
+                          "pretty": "WAN device name",
+                          "hw_tags": {
+                            "dsa": false
+                          }
+                        }
+                      },
+                      "ports": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "WAN port names.",
+                        "x-web": {
+                          "pretty": "WAN port names",
+                          "hw_tags": {
+                            "dsa": true
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "lan": {
+                    "type": "object",
+                    "properties": {
+                      "proto": {
+                        "type": "string",
+                        "description": "LAN protocol."
+                      },
+                      "device": {
+                        "type": "string",
+                        "description": "LAN device name.",
+                        "x-web": {
+                          "pretty": "LAN device name",
+                          "hw_tags": {
+                            "dsa": false
+                          }
+                        }
+                      },
+                      "ports": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "LAN port names.",
+                        "x-web": {
+                          "pretty": "LAN port names",
+                          "hw_tags": {
+                            "dsa": true
+                          }
+                        }
+                      },
+                      "default_ip": {
+                        "type": "string",
+                        "description": "LAN default IP."
+                      }
+                    }
+                  }
+                }
+              },
+              "model": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "description": "Model ID."
+                  },
+                  "platform": {
+                    "type": "string",
+                    "description": "Model platform."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Model name."
+                  }
+                }
+              },
+              "switch": {
+                "type": "object",
+                "properties": {
+                  "switch0": {
+                    "type": "object",
+                    "properties": {
+                      "enable": {
+                        "type": "boolean"
+                      },
+                      "roles": {
+                        "type": "array",
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "ports": {
+                              "type": "string",
+                              "description": "Switch ports."
+                            },
+                            "role": {
+                              "type": "string",
+                              "description": "Switch role."
+                            },
+                            "device": {
+                              "type": "string",
+                              "description": "Switch device."
+                            }
+                          }
+                        }
+                      },
+                      "ports": {
+                        "type": "array",
+                        "uniqueItems": true,
+                        "minItems": 1,
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "device": {
+                              "type": "string",
+                              "description": "Switch port device."
+                            },
+                            "num": {
+                              "type": "number",
+                              "description": "Switch port number."
+                            },
+                            "want_untag": {
+                              "type": "boolean",
+                              "description": "Switch port want untag."
+                            },
+                            "need_tag": {
+                              "type": "boolean",
+                              "description": "Switch port need tag."
+                            },
+                            "role": {
+                              "type": "string",
+                              "description": "Switch port role."
+                            },
+                            "index": {
+                              "type": "number",
+                              "description": "Switch port index."
+                            }
+                          }
+                        }
+                      },
+                      "reset": {
+                        "type": "boolean",
+                        "description": "Switch reset."
+                      }
+                    }
+                  }
+                }
+              },
+              "hwinfo": {
+                "type": "object",
+                "properties": {
+                  "wps": {
+                    "type": "boolean",
+                    "description": "WPS support"
+                  },
+                  "rs232": {
+                    "type": "boolean",
+                    "description": "RS232 support"
+                  },
+                  "nat_offloading": {
+                    "type": "boolean",
+                    "description": "NAT Offloading support"
+                  },
+                  "dual_sim": {
+                    "type": "boolean",
+                    "description": "Dual SIM support"
+                  },
+                  "bluetooth": {
+                    "type": "boolean",
+                    "description": "Bluetooth support"
+                  },
+                  "soft_port_mirror": {
+                    "type": "boolean",
+                    "description": "Software Port Mirroring support"
+                  },
+                  "vcert": {
+                    "type": "boolean",
+                    "description": "VCert support"
+                  },
+                  "micro_usb": {
+                    "type": "boolean",
+                    "description": "Micro USB support"
+                  },
+                  "wifi": {
+                    "type": "boolean",
+                    "description": "WiFi support"
+                  },
+                  "sd_card": {
+                    "type": "boolean",
+                    "description": "SD Card support"
+                  },
+                  "multi_tag": {
+                    "type": "boolean",
+                    "description": "Multi Tag support."
+                  },
+                  "dual_modem": {
+                    "type": "boolean",
+                    "description": "Dual Modem support"
+                  },
+                  "sfp_switch": {
+                    "type": "boolean",
+                    "description": "SFP switch support"
+                  },
+                  "dsa": {
+                    "type": "boolean",
+                    "description": "DSA support"
+                  },
+                  "hw_nat": {
+                    "type": "boolean",
+                    "description": "HW NAT support"
+                  },
+                  "sw_rst_on_init": {
+                    "type": "boolean",
+                    "description": "SW RST on init support"
+                  },
+                  "at_sim": {
+                    "type": "boolean",
+                    "description": "AT SIM support"
+                  },
+                  "port_link": {
+                    "type": "boolean",
+                    "description": "Port link support"
+                  },
+                  "ios": {
+                    "type": "boolean",
+                    "description": "iOS support"
+                  },
+                  "usb": {
+                    "type": "boolean",
+                    "description": "USB support"
+                  },
+                  "console": {
+                    "type": "boolean",
+                    "description": "Console support"
+                  },
+                  "dual_band_ssid": {
+                    "type": "boolean",
+                    "description": "Dual band SSID support"
+                  },
+                  "gps": {
+                    "type": "boolean",
+                    "description": "GPS support"
+                  },
+                  "ethernet": {
+                    "type": "boolean",
+                    "description": "Ethernet support"
+                  },
+                  "sfp_port": {
+                    "type": "boolean",
+                    "description": "SFP port support"
+                  },
+                  "rs485": {
+                    "type": "boolean",
+                    "description": "RS485 support"
+                  },
+                  "mobile": {
+                    "type": "boolean",
+                    "description": "Mobile support"
+                  },
+                  "poe": {
+                    "type": "boolean",
+                    "description": "POE support"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "devman_sync_error": {
+        "type": "object",
+        "properties": {
+          "err": {
+            "type": "number",
+            "description": "Error code.",
+            "default": 3
+          },
+          "err_msg": {
+            "type": "string",
+            "description": "Error message.",
+            "default": "API Error"
+          },
+          "name": {
+            "type": "string",
+            "description": "Failed configuration name.",
+            "enum": [
+              "API",
+              "siteman_periodic_reboot",
+              "siteman_ping_reboot",
+              "siteman_network",
+              "ntp",
+              "system",
+              "siteman_wireless",
+              "password",
+              "access_control",
+              "fota_upgrade"
+            ]
+          },
+          "timestamp": {
+            "type": "number",
+            "description": "Error code.",
+            "default": 3
+          }
+        }
+      },
+      "req_body_siteman_devices_pair": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/devman_devices_pair"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "req_body_siteman_devices_config_one": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/devman_devices_config"
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "req_body_siteman_devices_config_multi": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Configuration ID"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "$ref": "#/components/schemas/devman_devices_config"
+                }
+              ]
+            }
+          }
+        },
+        "required": [
+          "data"
+        ]
+      },
+      "devman_device_cant_reach_error": {
+        "description": "Returned when device with the provided MAC can not be reached.",
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Operation status",
+            "enum": [
+              false
+            ],
+            "default": false
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "number",
+                  "description": "Error code.",
+                  "enum": [
+                    5
+                  ]
+                },
+                "source": {
+                  "type": "string",
+                  "description": "Error source.",
+                  "enum": [
+                    "mac"
+                  ]
+                },
+                "error": {
+                  "type": "string",
+                  "description": "Error message.",
+                  "enum": [
+                    "Device is unreachable or doesn't exist."
+                  ]
+                }
+              },
+              "required": [
+                "code",
+                "source",
+                "error"
+              ]
+            }
+          }
+        },
+        "required": [
+          "success",
+          "errors"
+        ]
+      },
+      "devman_device_not_paired_error": {
+        "description": "Returned when device with the provided MAC is not paired.",
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Operation status",
+            "enum": [
+              false
+            ],
+            "default": false
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "number",
+                  "description": "Error code.",
+                  "enum": [
+                    6
+                  ]
+                },
+                "source": {
+                  "type": "string",
+                  "description": "Error source.",
+                  "enum": [
+                    "mac"
+                  ]
+                },
+                "value": {
+                  "type": "string",
+                  "description": "Error source value.",
+                  "example": "00:1E:42:FF:75:4D"
+                },
+                "error": {
+                  "type": "string",
+                  "description": "Error message.",
+                  "enum": [
+                    "Device is not paired."
+                  ]
+                }
+              },
+              "required": [
+                "code",
+                "source",
+                "error",
+                "value"
+              ]
+            }
+          }
+        },
+        "required": [
+          "success",
+          "errors"
+        ]
+      }
+    },
+    "responses": {
+      "200_siteman_devices_config_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_devices_config"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_devices_config_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_devices_config"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_devices_status_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/devman_devices_status"
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_devices_status_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "$ref": "#/components/schemas/devman_devices_status"
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_devices_status_full_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/devman_devices_status_full"
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_devices_status_full_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "$ref": "#/components/schemas/devman_devices_status_full"
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "404_siteman_device_not_paired": {
+        "description": "Returned when device with the provided MAC or ID is not paired.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/devman_device_not_paired_error"
+            }
+          }
+        }
+      },
+      "404_siteman_device_cant_reach": {
+        "description": "Returned when device with the provided MAC or ID can not be reached.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/devman_device_cant_reach_error"
+            }
+          }
+        }
+      }
+    },
+    "parameters": {
+      "events_log_query_param": {
+        "name": "events_log_limit",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "number",
+          "default": 5
+        },
+        "description": "Limit number of events log entries returned."
+      },
+      "exclude_fw_status_param": {
+        "name": "exclude_firmware_status",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "number",
+          "default": 0,
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "description": "If set to 1 excludes firmware status from the request. Should be used whenever possible to reduce load on the RUT FOTA server and to receive the response faster."
+      },
+      "devman_id_or_mac": {
+        "schema": {
+          "type": "string"
+        },
+        "name": "id_or_mac",
+        "in": "path",
+        "required": true,
+        "description": "Device's ID or MAC address"
+      },
+      "devman_status_data_param": {
+        "name": "data",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "type": "string",
+          "example": "wireless_devices_status,wireless_interfaces_status,device_info,interfaces_status,rms_status,events_log,device_status"
+        },
+        "description": "Can be used to select which data to request from the device. Used for faster response time if not all data is needed."
+      }
+    }
+  }
+}

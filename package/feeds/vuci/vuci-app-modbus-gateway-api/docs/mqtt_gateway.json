@@ -1,0 +1,707 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "MQTT Modbus Gateway"
+    }
+  ],
+  "paths": {
+    "/modbus/gateway/config": {
+      "get": {
+        "tags": [
+          "MQTT Modbus Gateway"
+        ],
+        "summary": "Returns all MQTT Modbus Gateway configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200MqttModbusGatewayMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "MQTT Modbus Gateway"
+        ],
+        "summary": "Updates specified MQTT Modbus Gateway configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200MqttModbusGatewayMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/mqtt_modbus_gateway_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Modbus",
+          "MQTT TCP Gateway"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/modbus/gateway/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "MQTT Modbus Gateway configuration identifier (ID)"
+        }
+      ],
+      "get": {
+        "tags": [
+          "MQTT Modbus Gateway"
+        ],
+        "summary": "Returns the specified MQTT Modbus Gateway configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200MqttModbusGateway"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "MQTT Modbus Gateway"
+        ],
+        "summary": "Updates the specified MQTT Modbus Gateway configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200MqttModbusGateway"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/mqtt_modbus_gateway_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Uploads the specified MQTT Modbus Gateway certificate files",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/file_upload_mqtt"
+        },
+        "tags": [
+          "MQTT Modbus Gateway"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Modbus",
+          "MQTT TCP Gateway"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/modbus/gateway/status": {
+      "get": {
+        "tags": [
+          "MQTT Modbus Gateway"
+        ],
+        "summary": "Returns MQTT Modbus Gateway status",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200MqttModbusGatewayStatus"
+          }
+        }
+      },
+      "x-web": {
+        "menu": [
+          "Services",
+          "Modbus",
+          "MQTT TCP Gateway"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "requestBodies": {
+      "file_upload_mqtt": {
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "option": {
+                  "type": "string",
+                  "description": "Parameter to upload the file to.",
+                  "enum": [
+                    "cafile",
+                    "certfile",
+                    "keyfile"
+                  ]
+                },
+                "file": {
+                  "type": "string",
+                  "format": "binary",
+                  "description": "File to upload."
+                }
+              },
+              "required": [
+                "option",
+                "file"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200MqttModbusGateway": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/mqtt_modbus_gateway_get_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200MqttModbusGatewayMulti": {
+        "description": "Returns configurations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/mqtt_modbus_gateway_get_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200MqttModbusGatewayStatus": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/mqtt_modbus_gateway_status_options"
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "mqtt_modbus_gateway_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "MQTT Modbus Gateway configuration identifier (ID)."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/mqtt_modbus_gateway_single_options"
+          }
+        ]
+      },
+      "mqtt_modbus_gateway_get_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "pass:set": {
+                "type": "string",
+                "description": "Value displayed when user doesn't have permissions to see sensitive information.",
+                "enum": ["0", "1"],
+                "readOnly": true
+              },
+              "psk:set": {
+                "type": "string",
+                "description": "Value displayed when user doesn't have permissions to see sensitive information.",
+                "enum": ["0", "1"],
+                "readOnly": true
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/mqtt_modbus_gateway_options"
+          }
+        ]
+      },
+      "mqtt_modbus_gateway_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable/Disable MQTT Modbus Gateway configuration",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "host": {
+            "type": "string",
+            "description": "MQTT broker hostname or IP",
+            "format": "host",
+            "x-web": {
+              "pretty": "Host",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "port": {
+            "type": "string",
+            "description": "MQTT broker port number",
+            "format": "port",
+            "default": "1883",
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "message_type": {
+            "type": "string",
+            "description": "Format in which requests and responses will be sent to MQTT broker",
+            "enum": [
+              "ascii",
+              "json"
+            ],
+            "default": "ascii",
+            "x-web": {
+              "pretty": "Message type",
+              "input-type": "select",
+              "enum-pretty": {
+                "ascii": "ASCII",
+                "json": "JSON"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "request": {
+            "type": "string",
+            "description": "Resquest topic (alphanumerical characters or allowed constants only) Constants: Serial number: $$SERIAL Mac address: $$MAC Device name: $$NAME",
+            "default": "request",
+            "x-web": {
+              "pretty": "Request topic",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "response": {
+            "type": "string",
+            "description": "Response topic (alphanumerical characters or allowed constants only) Constants: Serial number: $$SERIAL Mac address: $$MAC Device name: $$NAME",
+            "default": "response",
+            "x-web": {
+              "pretty": "Response topic",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "qos": {
+            "type": "string",
+            "description": "Quality of service",
+            "enum": [
+              "0",
+              "1",
+              "2"
+            ],
+            "x-web": {
+              "pretty": "QoS",
+              "enum-pretty": {
+                "0": "At most once (0)",
+                "1": "At least once (1)",
+                "2": "Exactly once (2)"
+              },
+              "input-type": "select",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "user": {
+            "type": "string",
+            "description": "MQTT client username (leave empty if anonymous)",
+            "format": "credentials_validate",
+            "maxLength": 512,
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input"
+            }
+          },
+          "pass": {
+            "type": "string",
+            "description": "MQTT client password (leave empty if anonymous)",
+            "format": "credentials_validate",
+            "maxLength": 512,
+            "writeOnly": true,
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input"
+            }
+          },
+          "client_id": {
+            "type": "string",
+            "description": "Client ID for MQTT broker",
+            "format": "regex",
+            "pattern": "^[a-zA-Z0-9!@#:%$%%&%*%+%-/=%?%^_`%[%]{|}~%.]+$",
+            "maxLength": 64,
+            "x-web": {
+              "pretty": "Client ID",
+              "input-type": "input"
+            }
+          },
+          "keepalive": {
+            "type": "string",
+            "description": "Keepalive message to MQTT broker (seconds)",
+            "format": "uinteger",
+            "x-web": {
+              "pretty": "Keepalive",
+              "input-type": "input"
+            }
+          },
+          "tls": {
+            "type": "string",
+            "description": "Turns TLS support on or off",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Use TLS/SSL",
+              "input-type": "switch"
+            }
+          },
+          "tls_type": {
+            "type": "string",
+            "description": "Selects the type of TLS encryption",
+            "enum": [
+              "cert",
+              "psk"
+            ],
+            "x-web": {
+              "pretty": "TLS type",
+              "enum-pretty": {
+                "cert": "Certificate based",
+                "psk": "Pre-Shared-Key based"
+              },
+              "input-type": "select",
+              "depends": [
+                {
+                  "tls": "1"
+                }
+              ],
+              "require-depends": [
+                {
+                  "tls": "1"
+                }
+              ]
+            }
+          },
+          "psk": {
+            "type": "string",
+            "description": "Sets PSK key",
+            "format": "credentials_validate",
+            "maxLength": 512,
+            "x-web": {
+              "pretty": "PSK",
+              "input-type": "input",
+              "depends": [
+                {
+                  "tls": "1",
+                  "tls_type": "psk"
+                }
+              ]
+            }
+          },
+          "identity": {
+            "type": "string",
+            "description": "Sets identity",
+            "format": "uciname",
+            "maxLength": 255,
+            "x-web": {
+              "pretty": "Identity",
+              "input-type": "input",
+              "depends": [
+                {
+                  "tls": "1",
+                  "tls_type": "psk"
+                }
+              ]
+            }
+          },
+          "tls_insecure": {
+            "type": "string",
+            "description": "Disables TLS security",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "TLS insecure",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "tls": "1",
+                  "tls_type": "cert"
+                }
+              ]
+            }
+          },
+          "cafile": {
+            "type": "string",
+            "description": "Upload CA file",
+            "x-web": {
+              "pretty": "CA file",
+              "input-type": "input",
+              "upload_endpoint": "/modbus/gateway/config/{id}",
+              "depends": [
+                {
+                  "tls": "1",
+                  "tls_type": "cert"
+                }
+              ],
+              "require-depends": [
+                {
+                  "tls_type": "cert"
+                }
+              ]
+            },
+            "format": "path"
+          },
+          "certfile": {
+            "type": "string",
+            "description": "Upload certificate file",
+            "x-web": {
+              "pretty": "Certificate file",
+              "input-type": "input",
+              "upload_endpoint": "/modbus/gateway/config/{id}",
+              "depends": [
+                {
+                  "tls": "1",
+                  "tls_type": "cert"
+                }
+              ]
+            },
+            "format": "path"
+          },
+          "keyfile": {
+            "type": "string",
+            "description": "Upload key file",
+            "x-web": {
+              "pretty": "Key file",
+              "input-type": "input",
+              "upload_endpoint": "/modbus/gateway/config/{id}",
+              "depends": [
+                {
+                  "tls": "1",
+                  "tls_type": "cert"
+                }
+              ]
+            },
+            "format": "path"
+          }
+        }
+      },
+      "mqtt_modbus_gateway_status_options": {
+        "title": "mqtt_modbus_gateway_status_options",
+        "type": "object",
+        "properties": {
+          "serial_gateways": {
+            "type": "array",
+            "description": "Array of serial status objects",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "MQTT Modbus Serial Gateway configuration identifier (ID)."
+                },
+                "successful_request_count": {
+                  "type": "integer",
+                  "description": "Number of successful requests"
+                },
+                "failed_request_count": {
+                  "type": "integer",
+                  "description": "Number of failed requests"
+                },
+                "open": {
+                  "type": "boolean",
+                  "description": "Serial port open"
+                }
+              },
+              "required": [
+                "id",
+                "successful_request_count",
+                "failed_request_count"
+              ]
+            }
+          },
+          "uptime": {
+            "type": "integer",
+            "description": "Uptime of the application",
+            "x-web": {
+              "pretty": "Uptime"
+            }
+          },
+          "successful_request_count": {
+            "type": "integer",
+            "description": "Number of successful requests",
+            "x-web": {
+              "pretty": "Successful requests"
+            }
+          },
+          "failed_request_count": {
+            "type": "integer",
+            "description": "Number of failed requests",
+            "x-web": {
+              "pretty": "Failed requests"
+            }
+          },
+          "tcp_connection_count": {
+            "type": "integer",
+            "description": "Number of open TCP connections",
+            "x-web": {
+              "pretty": "TCP connections"
+            }
+          }
+        },
+        "required": [
+          "serial_gateways",
+          "uptime",
+          "successful_request_count",
+          "failed_request_count",
+          "tcp_connection_count"
+        ]
+      }
+    }
+  }
+}

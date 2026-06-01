@@ -1,0 +1,494 @@
+{
+  "openapi": "3.0.0",
+  "tags": [],
+  "paths": {
+    "/dns/https_proxy/global": {
+      "get": {
+        "summary": "Returns HTTPS DNS Proxy Global Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200Global"
+          }
+        },
+        "tags": [
+          "HTTPS Proxy Global"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates HTTPS DNS Proxy Global Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200Global"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/global_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "HTTPS Proxy Global"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Network",
+          "DNS",
+          "HTTPS DNS Proxy"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        },
+        "name": "DNS"
+      }
+    },
+    "/dns/https_proxy/config": {
+      "get": {
+        "summary": "Returns HTTPS DNS Proxy configurations",
+        "description": "Returns all configurations with their parameters",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ProxyMulti"
+          }
+        },
+        "tags": [
+          "HTTPS Proxy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates HTTPS DNS Proxy configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200ProxyMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of configuration objects",
+                    "items": {
+                      "$ref": "#/components/schemas/proxy_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "HTTPS Proxy"
+        ]
+      },
+      "post": {
+        "summary": "Creates HTTPS DNS Proxy configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200Proxy"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/proxy_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "HTTPS Proxy"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes HTTPS DNS Proxy configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of configuration objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Configuration ID"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "HTTPS Proxy"
+        ]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": [
+          "Network",
+          "DNS",
+          "HTTPS DNS Proxy"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        },
+        "name": "DNS"
+      }
+    },
+    "/dns/https_proxy/config/{id}": {
+      "get": {
+        "summary": "Returns HTTPS DNS Proxy configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200Proxy"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the HTTPS DNS proxy configuration"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "tags": [
+          "HTTPS Proxy"
+        ]
+      },
+      "put": {
+        "summary": "Updates HTTPS DNS Proxy configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200Proxy"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the HTTPS DNS proxy configuration"
+          }
+        ],
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/proxy_options_single_put"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "HTTPS Proxy"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes HTTPS DNS Proxy configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the HTTPS DNS proxy configuration"
+          }
+        ],
+        "tags": [
+          "HTTPS Proxy"
+        ]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "The ID of the HTTPS DNS proxy configuration"
+        }
+      ],
+      "x-web": {
+        "menu": [
+          "Network",
+          "DNS",
+          "HTTPS DNS Proxy"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        },
+        "name": "DNS"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200Global": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/global_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200Proxy": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/proxy_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200ProxyMulti": {
+        "description": "Returns configurations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of configuration objects",
+                  "items": {
+                    "$ref": "#/components/schemas/proxy_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "global_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "format": "is_bool"
+          }
+        }
+      },
+      "proxy_options": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the HTTPS DNS Proxy configuration",
+            "x-web": {
+              "pretty": "Configuration ID",
+              "input-type": "input"
+            }
+          },
+          "priority": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Priority",
+              "input-type": "input"
+            },
+            "format": "uinteger"
+          },
+          "bootstrap_dns": {
+            "type": "array",
+            "description": "This DNS is used for the initial \"Resolver URL\" resolve",
+            "items": {
+              "type": "string"
+            },
+            "x-web": {
+              "pretty": "Bootstrap DNS",
+              "input-type": "input"
+            },
+            "format": "ip4addr"
+          },
+          "resolver_url": {
+            "type": "string",
+            "description": "URL to DNS over HTTPS resolver",
+            "x-web": {
+              "pretty": "Resolver URL",
+              "input-type": "input"
+            },
+            "format": "protourl"
+          },
+          "listen_port": {
+            "type": "string",
+            "description": "Internal port used for this resolver. Change only if it collides with existing ports on this device",
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input"
+            },
+            "format": "port"
+          }
+        }
+      },
+      "proxy_options_single_put": {
+        "type": "object",
+        "properties": {
+          "priority": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Priority",
+              "input-type": "input"
+            },
+            "format": "uinteger"
+          },
+          "bootstrap_dns": {
+            "type": "array",
+            "description": "This DNS is used for the initial \"Resolver URL\" resolve",
+            "items": {
+              "type": "string"
+            },
+            "x-web": {
+              "pretty": "Bootstrap DNS",
+              "input-type": "input"
+            },
+            "format": "ip4addr"
+          },
+          "resolver_url": {
+            "type": "string",
+            "description": "URL to DNS over HTTPS resolver",
+            "x-web": {
+              "pretty": "Resolver URL",
+              "input-type": "input"
+            },
+            "format": "protourl"
+          },
+          "listen_port": {
+            "type": "string",
+            "description": "Internal port used for this resolver. Change only if it collides with existing ports on this device",
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input"
+            },
+            "format": "port"
+          }
+        }
+      }
+    }
+  }
+}

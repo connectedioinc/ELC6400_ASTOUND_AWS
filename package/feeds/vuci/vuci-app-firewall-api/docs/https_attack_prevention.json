@@ -1,0 +1,308 @@
+{
+  "openapi": "3.0.0",
+  "tags": [],
+  "paths": {
+    "/attack_prevention/https/config": {
+      "get": {
+        "summary": "Returns Firewall HTTPS Attack Prevention Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200HttpsAtPrMulti"
+          }
+        },
+        "tags": [
+          "HTTPS"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates Firewall HTTPS Attack Prevention Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200HttpsAtPrMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of configuration objects",
+                    "items": {
+                      "$ref": "#/components/schemas/https_attack_prevention_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "HTTPS"
+        ]
+      },
+      "x-web": {
+        "name": "Attack Prevention",
+        "menu": [
+          "Network",
+          "Firewall",
+          "Attack Prevention"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/attack_prevention/https/config/{id}": {
+      "get": {
+        "summary": "Returns Firewall HTTPS Attack Prevention Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200HttpsAtPr"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the HTTPS configuration"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "tags": [
+          "HTTPS"
+        ]
+      },
+      "put": {
+        "summary": "Updates Firewall HTTPS Attack Prevention Settings",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200HttpsAtPr"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/https_attack_prevention_options_single_put"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID of the HTTPS configuration"
+          }
+        ],
+        "tags": [
+          "HTTPS"
+        ]
+      },
+      "x-web": {
+        "name": "Attack Prevention",
+        "menu": [
+          "Network",
+          "Firewall",
+          "Attack Prevention"
+        ],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200HttpsAtPr": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/https_attack_prevention_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200HttpsAtPrMulti": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/https_attack_prevention_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "https_attack_prevention_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Configuration ID.",
+                "x-web": {
+                  "unique": true,
+                  "pretty": "Configuration ID",
+                  "group": "General Setup",
+                  "input-type": "input"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/https_attack_prevention_options_single_put"
+          }
+        ]
+      },
+      "https_attack_prevention_options_single_put": {
+        "type": "object",
+        "properties": {
+          "https_limit": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "description": "Enable new connection throttle for the HTTPS flood to prevent flood attacks from WAN zone. It uses token bucket algorithm.",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "period": {
+            "type": "string",
+            "enum": [
+              "second",
+              "minute",
+              "hour",
+              "day"
+            ],
+            "description": "Period for limit",
+            "x-web": {
+              "pretty": "Limit period",
+              "input-type": "select",
+              "enum-pretty": {
+                "second": "Second",
+                "minute": "Minute",
+                "hour": "Hour",
+                "day": "Day"
+              },
+              "depends": [
+                {
+                  "https_limit": "1"
+                }
+              ]
+            }
+          },
+          "limit": {
+            "type": "string",
+            "description": "The maximum theoretical rate. It represents how quickly the burst refills.",
+            "x-web": {
+              "pretty": "Limit",
+              "input-type": "input",
+              "depends": [
+                {
+                  "https_limit": "1"
+                }
+              ]
+            }
+          },
+          "limit_burst": {
+            "type": "string",
+            "description": "The maximum number of new connections that can occur in a short time. This is the token bucket, which is depleted with each new connection. It refills at the rate defined by the limit, and if empty, new connections are blocked.",
+            "x-web": {
+              "pretty": "Burst",
+              "input-type": "input",
+              "depends": [
+                {
+                  "https_limit": "1"
+                }
+              ]
+            }
+          },
+          "limit_log_overlimit": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "description": "Enable logging of dropped packets when limit gets exceeded",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          }
+        },
+        "required": ["limit", "limit_burst", "period"]
+      }
+    }
+  }
+}

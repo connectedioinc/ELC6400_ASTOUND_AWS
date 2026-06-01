@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-routes-ui/Makefile
+
+Package: vuci-app-routes-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-routes-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support Static routes application
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support Static routes application
+Description: VuCI UI Support Static routes application
+
+@@
+
+

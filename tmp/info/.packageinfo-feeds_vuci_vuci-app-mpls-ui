@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-mpls-ui/Makefile
+
+Package: vuci-app-mpls-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-mpls-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for MPLS
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for MPLS
+Description: VuCI UI Support for MPLS
+
+@@
+
+

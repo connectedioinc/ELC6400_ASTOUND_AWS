@@ -1,0 +1,70 @@
+Source-Makefile: package/teltonika/site_manager/Makefile
+
+Package: libtdp
+Version: 7.21-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: libtdp
+Section: libs
+Category: Libraries
+Repository: base
+Title: TDP (Teltonika Device Discovery) protocol library
+Maintainer: 
+Source: site_manager-7.21-1-7.21-1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: TDP (Teltonika Device Discovery) protocol library
+Description: TDP (Teltonika Device Discovery) protocol library
+
+@@
+
+Package: siteman
+Version: 7.21-1
+Depends: +libc +libuci +libubus +libblobmsg-json +libtlt-logger +libubox +libuuid +libmnfinfo +libtdp +libcfg +libmosquitto-ssl +mosquitto-ssl
+Conflicts: 
+Menu-Depends: 
+Provides: site_manager
+Section: base
+Category: Base system
+Repository: base
+Title: Teltonika Site Manager
+Maintainer: 
+Require-User: siteman=654:siteman=654
+FileAttributes: /usr/bin/siteman::::cap_net_bind_service=ep
+Source: site_manager-7.21-1-7.21-1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Teltonika Site Manager
+Description: Teltonika Site Manager
+
+@@
+Config:
+	source "package/teltonika/site_manager/Config_siteman.in"
+@@
+
+Package: siteman_client
+Version: 7.21-1
+Depends: +libc +libuci +libcfg +libubox +libtlt-logger +libtdp +libmnfinfo +libubus +libblobmsg-json +libuuid +libmosquitto-ssl +SITEMANC_DISCOVERY_CUSTOM:libcurl
+Conflicts: 
+Menu-Depends: 
+Provides: sitemanc
+Section: base
+Category: Base system
+Repository: base
+Title: Teltonika Site Manager client service
+Maintainer: 
+Require-User: sitemanc=655:sitemanc=655
+FileAttributes: /usr/bin/sitemanc::::cap_net_bind_service,cap_sys_time=ep
+Source: site_manager-7.21-1-7.21-1.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Teltonika Site Manager client service
+Description: Teltonika Site Manager client service
+
+@@
+Config:
+	source "package/teltonika/site_manager/Config.in"
+@@
+
+

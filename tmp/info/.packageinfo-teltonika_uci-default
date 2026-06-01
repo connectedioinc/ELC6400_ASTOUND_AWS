@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/uci-default/Makefile
+
+Package: uci-default
+Version: 2024-08-05-11
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Base system
+Repository: base
+Title: Upgrade UCI configurations by firmware version
+Maintainer: 
+Source: 
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: Upgrade UCI configurations by firmware version
+Description: Upgrade UCI configurations by firmware version
+
+@@
+
+

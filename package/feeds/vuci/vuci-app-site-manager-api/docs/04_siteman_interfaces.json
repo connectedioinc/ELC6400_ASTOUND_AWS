@@ -1,0 +1,414 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Network interfaces"
+    }
+  ],
+  "paths": {
+    "/site_manager/interfaces/config": {
+      "get": {
+        "summary": "Returns all Site manager network interface configurations",
+        "tags": [
+          "Network interfaces"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_network_interfaces_multi"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager network interface configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_network_interfaces_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_network_interfaces_multi"
+        },
+        "tags": [
+          "Network interfaces"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/interfaces/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected Site manager network interface configuration",
+        "tags": [
+          "Network interfaces"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_network_interfaces_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager network interface configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_network_interfaces_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_network_interfaces_one"
+        },
+        "tags": [
+          "Network interfaces"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Devices",
+          "Devices"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "devman_network_interfaces": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "dm_device_id": {
+                "type": "string",
+                "description": "Device's ID for which this configuration will be applied to.",
+                "readOnly": true
+              }
+            },
+            "required": [
+              "dm_device_id"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "interface_id": {
+                "type": "string",
+                "description": "Network interface's ID.",
+                "readOnly": true
+              },
+              "mode": {
+                "enum": [
+                  "static",
+                  "dhcp",
+                  "static+dhcp"
+                ],
+                "x-web": {
+                  "input-type": "select",
+                  "pretty": "Mode",
+                  "enum-pretty": {
+                    "static": "Static",
+                    "dhcp": "DHCP",
+                    "static+dhcp": "Static + DHCP"
+                  }
+                },
+                "type": "string",
+                "description": "Network mode on which the device will operate"
+              },
+              "ipaddr": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "IPv4 address",
+                  "depends": [
+                    {
+                      "mode": [
+                        "static",
+                        "static+dhcp"
+                      ]
+                    }
+                  ]
+                },
+                "type": "string",
+                "format": "ipv4",
+                "description": "IPv4 address. Device's address on the network"
+              },
+              "netmask": {
+                "x-web": {
+                  "input-type": "select",
+                  "pretty": "IPv4 netmask",
+                  "depends": [
+                    {
+                      "mode": [
+                        "static",
+                        "static+dhcp"
+                      ]
+                    }
+                  ]
+                },
+                "type": "string",
+                "format": "ipv4",
+                "description": "IPv4 netmask. Netmask defines how 'large' a network is"
+              },
+              "gateway": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "IPv4 gateway",
+                  "depends": [
+                    {
+                      "mode": [
+                        "static",
+                        "static+dhcp"
+                      ]
+                    }
+                  ]
+                },
+                "type": "string",
+                "description": "IPv4 gateway. The address where the device will send all the outgoing traffic"
+              },
+              "ip6addr": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "IPv6 address",
+                  "depends": [
+                    {
+                      "mode": [
+                        "static",
+                        "static+dhcp"
+                      ]
+                    }
+                  ]
+                },
+                "type": "string",
+                "description": "IPv6 address. Assigns an IPv6 address for this interface. CIDR notation: address/prefix"
+              },
+              "ip6gw": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "IPv6 gateway",
+                  "depends": [
+                    {
+                      "mode": [
+                        "static",
+                        "static+dhcp"
+                      ]
+                    }
+                  ]
+                },
+                "type": "string",
+                "description": "IPv6 default gateway."
+              },
+              "dns": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "Use custom DNS servers",
+                  "depends": [
+                    {
+                      "mode": [
+                        "static",
+                        "static+dhcp"
+                      ]
+                    }
+                  ]
+                },
+                "type": "array",
+                "description": "Use custom DNS servers",
+                "items": {
+                  "type": "string",
+                  "description": "Server IP"
+                }
+              },
+              "man_vlan": {
+                "x-web": {
+                  "input-type": "input",
+                  "pretty": "Management VLAN"
+                },
+                "type": "string",
+                "description": "Management VLAN"
+              }
+            },
+            "required": [
+              "interface_id"
+            ]
+          }
+        ]
+      }
+    },
+    "responses": {
+      "200_siteman_network_interfaces_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_network_interfaces"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_network_interfaces_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_network_interfaces"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "req_body_siteman_network_interfaces_one": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/devman_network_interfaces"
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "req_body_siteman_network_interfaces_multi": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_network_interfaces"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

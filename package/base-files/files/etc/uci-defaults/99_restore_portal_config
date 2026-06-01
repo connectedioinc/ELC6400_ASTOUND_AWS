@@ -1,0 +1,14 @@
+#!/bin/sh
+
+KEEP_FILE="/log/keepconfig/uci_backup.conf"
+KEEP_DIR="/log/keepconfig/"
+
+[ -f "$KEEP_FILE" ] || exit 0
+
+uci import < "$KEEP_FILE"
+uci commit
+
+# Cleanup
+rm -R "$KEEP_DIR"
+
+exit 0

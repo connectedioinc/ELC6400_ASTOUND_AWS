@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/iec60870_client/Makefile
+
+Package: iec60870_client
+Version: 7.21-1
+Depends: +libc +libubus +libuci +libsqlite3 +lib60870 +libtlt_uci +libubox +libcfgx +libtlt-logger +libblobmsg-json +rpcd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: IEC 60870-5 Client by Teltonika
+Maintainer: 
+Require-User: iec60870_client=651:iec60870_client=651
+Source: iec60870_client-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: IEC 60870-5 Client by Teltonika
+Description: 	IEC 60870-5 client service for data acquisition
+
+@@
+
+

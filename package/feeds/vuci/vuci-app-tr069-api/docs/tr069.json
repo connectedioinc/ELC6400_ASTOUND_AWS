@@ -1,0 +1,396 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/tr069/config": {
+      "get": {
+        "tags": ["General"],
+        "summary": "Returns the TR-069 configuration in an array",
+        "description": "",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200tr069Multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": ["General"],
+        "summary": "Updates the TR-069 configuration in an array",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200tr069"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "uniqueItems": true,
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/components/schemas/tr069_options"
+                    }
+                  }
+                },
+                "required": ["data"]
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "TR-069", "TR-069"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "TR-069"
+      }
+    },
+    "/tr069/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "tags": ["General"],
+        "summary": "Returns the TR-069 configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200tr069"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": ["General"],
+        "summary": "Uploads necessary files for TR-069 configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "Parameter to upload the file to.",
+                    "enum": ["ssl_cacert", "ssl_cert", "ssl_key"]
+                  },
+                  "file": {
+                    "type": "string",
+                    "format": "binary",
+                    "description": "file"
+                  }
+                },
+                "required": ["option", "file"]
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["General"],
+        "summary": "Updates the TR-069 configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200tr069"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/tr069_single_options"
+                  }
+                },
+                "required": ["data"]
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "TR-069", "TR-069"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "name": "TR-069"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200tr069": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/tr069_options"
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200tr069Multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "$ref": "#/components/schemas/tr069_options"
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "tr069_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enables TR-069 client.",
+            "format": "is_bool",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "periodic_enable": {
+            "type": "string",
+            "description": "Enables TR-069 client periodic data transmission to TR-069 server.",
+            "format": "is_bool",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Periodic enable",
+              "input-type": "switch"
+            }
+          },
+          "allow_ra": {
+            "type": "string",
+            "description": "Accept server request.",
+            "format": "is_bool",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Accept server request",
+              "input-type": "switch"
+            }
+          },
+          "periodic_interval": {
+            "type": "string",
+            "description": "Periodic data transmission interval.",
+            "format": "irange(60, 9999999)",
+            "default": "3600",
+            "x-web": {
+              "pretty": "Sending interval",
+              "input-type": "input"
+            }
+          },
+          "username": {
+            "type": "string",
+            "description": "User name for authentication on TR-069 server. Allowed characters (a-zA-Z0-9!@#$%&*+-/=?^_`{|}~. ).",
+            "format": "regex",
+            "pattern": "^[a-zA-Z0-9!@#$%&*+/=?^_`{|}~. -]+$",
+            "maxLength": 64,
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input"
+            }
+          },
+          "password": {
+            "type": "string",
+            "description": "Password for authentication on TR-069 server.",
+            "format": "credentials_validate",
+            "maxLength": 64,
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input"
+            }
+          },
+          "url": {
+            "type": "string",
+            "description": "TR-069 server's URL to send data to.",
+            "format": "protourl",
+            "maxLength": 128,
+            "default": "http://192.168.1.110:8080/openacs/acs",
+            "x-web": {
+              "pretty": "URL",
+              "input-type": "input"
+            }
+          },
+          "ssl_verify": {
+            "type": "string",
+            "description": "Enable TLS for a secure connection. Requires certificate files.",
+            "format": "is_bool",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Use secure connection",
+              "input-type": "switch"
+            }
+          },
+          "device_files": {
+            "type": "string",
+            "format": "is_bool",
+            "enum": ["0", "1"],
+            "description": "Enable to use certificate files stored on the device.",
+            "x-web": {
+              "pretty": "Use certificate files from device",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "ssl_verify": "1"
+                }
+              ]
+            }
+          },
+          "ssl_cacert": {
+            "type": "string",
+            "format": "file_validation",
+            "description": "Certificate Authority (CA). Required for server certificate verification.",
+            "x-web": {
+              "pretty": "Certificate authority file",
+              "input-type": "input",
+              "upload_endpoint": "/tr069/config/{id}",
+              "depends": [
+                {
+                  "ssl_verify": "1"
+                }
+              ],
+              "require-depends": [
+                {
+                  "ssl_verify": "1"
+                }
+              ]
+            }
+          },
+          "ssl_cacert:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "ssl_cert": {
+            "type": "string",
+            "format": "file_validation",
+            "description": "Client certificate. Used for client authentication by the server.",
+            "x-web": {
+              "pretty": "Client certificate",
+              "input-type": "input",
+              "upload_endpoint": "/tr069/config/{id}",
+              "depends": [
+                {
+                  "ssl_verify": "1"
+                }
+              ]
+            }
+          },
+          "ssl_cert:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "ssl_key": {
+            "type": "string",
+            "format": "file_validation",
+            "description": "Client private key. Used with the client certificate for authentication.",
+            "x-web": {
+              "pretty": "Client private keyfile",
+              "input-type": "input",
+              "upload_endpoint": "/tr069/config/{id}",
+              "depends": [
+                {
+                  "ssl_verify": "1"
+                }
+              ]
+            }
+          },
+          "ssl_key:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          }
+        }
+      },
+      "tr069_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Configuration ID"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/tr069_single_options"
+          }
+        ],
+        "required": ["id"]
+      }
+    }
+  }
+}

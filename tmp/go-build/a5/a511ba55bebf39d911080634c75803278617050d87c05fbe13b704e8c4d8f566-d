@@ -1,0 +1,3 @@
+./safesocket.go
+./safesocket_ps.go
+./unixsocket.go

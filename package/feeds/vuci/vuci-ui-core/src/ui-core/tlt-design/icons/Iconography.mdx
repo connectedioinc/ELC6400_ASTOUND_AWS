@@ -1,0 +1,58 @@
+import { Meta, Story, Controls, IconGallery, IconItem } from '@storybook/addon-docs/blocks'
+import { useState, useDeferredValue } from 'react'
+
+import * as TltIconStories from './TltIcon.stories'
+
+export const icons = Object.entries(import.meta.glob('@ui-core/tlt-design/icons/Icon*.vue', {
+  eager: true,
+  import: 'default'
+})).map(([path, icon]) => [
+  path
+    .split('/')
+    .pop()
+    .replace('Icon', '')
+    .replace('.vue', '')
+    .replace(/([A-Z])/g, ' $1')
+    .slice(1),
+  icon
+])
+
+export const Icons = () => {
+  const [search, setSearch] = useState('')
+  const deferredSearch = useDeferredValue(search)
+
+  const filteredIcons = icons.filter(([name]) => name.toLowerCase().includes(deferredSearch.toLowerCase()))
+
+  return (
+    <div className="flex flex-col gap-4">
+      <input
+        className="border w-full rounded-sm p-1"
+        placeholder="Search..."
+        value={search}
+        onInput={event => setSearch(event.target.value)}
+      />
+      <IconGallery>
+        {filteredIcons.map(([name, icon]) => {
+          const IconComponent = icon
+          return (
+            <IconItem
+              key={name}
+              name={name}
+            >
+              <IconComponent className="size-5" />
+            </IconItem>
+          )
+        })}
+      </IconGallery>
+    </div>
+  )
+}
+
+<Meta
+  title="Iconography"
+  of={TltIconStories}
+/>
+
+# Iconography
+
+<Icons />

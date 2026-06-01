@@ -1,0 +1,814 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "VXLAN",
+    "version": "1.0",
+    "description": "VXLAN API documentation.",
+    "contact": {}
+  },
+  "tags": [
+    {
+      "name": "VXLAN"
+    }
+  ],
+  "paths": {
+    "/network/devices/vxlan/config": {
+      "get": {
+        "summary": "Returns VXLAN network device configurations",
+        "operationId": "get-network-devices-vxlan",
+        "tags": ["VXLAN"],
+        "responses": {
+          "200": {
+            "description": "Returns VXLAN network devices configurations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_devices_vxlan_options_identifier"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "summary": "Creates VXLAN network device configuration",
+        "operationId": "post-network-device-vxlan",
+        "responses": {
+          "201": {
+            "description": "Returns created VXLAN network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_vxlan_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/network_devices_vxlan_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["VXLAN"]
+      },
+      "put": {
+        "summary": "Updates VXLAN network device configurations",
+        "operationId": "put-network-devices-vxlan",
+        "responses": {
+          "200": {
+            "description": "Returns updated VXLAN network device configurations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/network_devices_vxlan_options_identifier"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/network_devices_vxlan_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["VXLAN"]
+      },
+      "delete": {
+        "summary": "Deletes VXLAN network device configurations",
+        "operationId": "delete-network-devices-vxlan",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["VXLAN"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "IDs of network devices to delete.",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    },
+    "/network/devices/vxlan/config/{id}": {
+      "get": {
+        "summary": "Returns VXLAN network device configuration",
+        "tags": ["VXLAN"],
+        "responses": {
+          "200": {
+            "description": "Returns specified VXLAN network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_vxlan_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "operationId": "get-network-device-vxlan-id",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "The ID of the device configuration"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates VXLAN network device configuration",
+        "operationId": "put-network-device-vxlan-id",
+        "responses": {
+          "200": {
+            "description": "Returns updated VXLAN network device configuration",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/network_devices_vxlan_options_identifier"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "",
+        "tags": ["VXLAN"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/network_devices_vxlan_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes VXLAN network device configuration",
+        "operationId": "delete-network-device-vxlan-id",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["VXLAN"]
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "The ID of the device configuration"
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    },
+    "/network/devices/vxlan/status": {
+      "get": {
+        "summary": "Returns VXLAN network devices status",
+        "tags": ["VXLAN"],
+        "responses": {
+          "200": {
+            "description": "Returns VXLAN network devices status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/vxlan_status"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-network-vxlan-device-status"
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    },
+    "/network/devices/vxlan/status/{id}": {
+      "get": {
+        "summary": "Returns specified VXLAN network device status",
+        "tags": ["VXLAN"],
+        "responses": {
+          "200": {
+            "description": "Returns specified VXLAN network device status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/vxlan_status"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "operationId": "get-network-vxlan-device-status-id"
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "device name"
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Devices", "Devices"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false,
+          "is_consumer_access_point": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {},
+    "schemas": {
+      "network_devices_vxlan_options": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Name",
+              "group": "General"
+            },
+            "type": "string",
+            "description": "Name of the device."
+          },
+          "macaddr": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "MAC address",
+              "group": "General"
+            },
+            "type": "string",
+            "format": "macaddr",
+            "description": "MAC address overriding the default one for this device."
+          },
+          "mtu": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "MTU",
+              "group": "General"
+            },
+            "type": "string",
+            "format": "irange(98,9000)",
+            "description": "Sets the maximum transmission unit (MTU) size. It is the largest size of a protocol data unit (PDU) that can be transmitted in a single network layer transaction."
+          },
+          "type": {
+            "type": "string",
+            "description": "If set to bridge, creates a bridge of the given name using L2 devices listed in ports.",
+            "readOnly": true
+          },
+          "vni": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "VNI",
+              "group": "General"
+            },
+            "type": "string",
+            "format": "irange(1,16777215)",
+            "description": "VXLAN network identifier."
+          },
+          "port": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Port",
+              "group": "General"
+            },
+            "type": "string",
+            "format": "irange(1,65535)",
+            "description": "Specifies the UDP destination port to communicate to the remote VXLAN tunnel endpoint."
+          },
+          "local": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Local address",
+              "group": "General"
+            },
+            "type": "string",
+            "format": "ipaddr",
+            "description": "Sets the local source IP address for VXLAN tunneling."
+          },
+          "remote": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Remote address",
+              "group": "General"
+            },
+            "type": "string",
+            "format": "ipaddr",
+            "description": "Specifies the multicast group or remote IP address used for VXLAN tunneling."
+          },
+          "ageing": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Ageing",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "format": "irange(1,4294967295)",
+            "description": "Specifies the lifetime in seconds of FDB entries learnt by the kernel."
+          },
+          "maxaddress": {
+            "x-web": {
+              "input-type": "input",
+              "pretty": "Max FDB entries",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "format": "irange(1,4294967295)",
+            "description": "Specifies the maximum number of FDB entries."
+          },
+          "udpcsum": {
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "IPv4 checksum",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "enum": ["1", "0"],
+            "description": "Specifies if UDP checksum is calculated for transmitted packets over IPv4."
+          },
+          "learning": {
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "Learning",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "enum": ["1", "0"],
+            "description": "Enables or disables MAC learning for VXLAN."
+          },
+          "proxy": {
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "Proxy",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "enum": ["1", "0"],
+            "description": "Enables or disables ARP proxy for VXLAN."
+          },
+          "rsc": {
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "RSC",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "enum": ["1", "0"],
+            "description": "Specifies if route short circuit is turned on."
+          },
+          "l2miss": {
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "L2miss",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "enum": ["1", "0"],
+            "description": "Specifies if netlink LLADDR miss notifications are generated."
+          },
+          "l3miss": {
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "L3miss",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "enum": ["1", "0"],
+            "description": "Specifies if netlink IP ADDR miss notifications are generated."
+          },
+          "udp6zerocsumtx": {
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "IPv6 TX checksum",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "enum": ["1", "0"],
+            "description": "Enables or disables UDP checksum calculation for transmitted packets over IPv6."
+          },
+          "udp6zerocsumrx": {
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "IPv6 RX checksum",
+              "group": "Advanced"
+            },
+            "type": "string",
+            "enum": ["1", "0"],
+            "description": "Allow incoming UDP packets over IPv6 with zero checksum field."
+          }
+        },
+        "required": ["vni", "port", "remote"]
+      },
+      "network_devices_vxlan_options_identifier": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The ID of the device configuration."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/network_devices_vxlan_options"
+          }
+        ]
+      },
+      "vxlan_status": {
+        "description": "VXLAN status",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "drop_unsolicited_na": {
+            "type": "boolean"
+          },
+          "mtu": {
+            "type": "number"
+          },
+          "external": {
+            "type": "boolean"
+          },
+          "igmpversion": {
+            "type": "number"
+          },
+          "ip6segmentrouting": {
+            "type": "boolean"
+          },
+          "drop_v4_unicast_in_l2_multicast": {
+            "type": "boolean"
+          },
+          "speed": {
+            "type": "string",
+            "minLength": 1
+          },
+          "virtual": {
+            "type": "boolean"
+          },
+          "drop_gratuitous_arp": {
+            "type": "boolean"
+          },
+          "mldversion": {
+            "type": "number"
+          },
+          "neigh6reachabletime": {
+            "type": "number"
+          },
+          "up": {
+            "type": "boolean"
+          },
+          "autoneg": {
+            "type": "boolean"
+          },
+          "arp_accept": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "carrier": {
+            "type": "boolean"
+          },
+          "macaddr": {
+            "type": "string",
+            "minLength": 1
+          },
+          "present": {
+            "type": "boolean"
+          },
+          "mtu6": {
+            "type": "number"
+          },
+          "neigh6gcstaletime": {
+            "type": "number"
+          },
+          "dadtransmits": {
+            "type": "number"
+          },
+          "link-supported": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "acceptlocal": {
+            "type": "boolean"
+          },
+          "ipv6": {
+            "type": "boolean"
+          },
+          "promisc": {
+            "type": "boolean"
+          },
+          "statistics": {
+            "type": "object",
+            "properties": {
+              "rx_frame_errors": {
+                "type": "number"
+              },
+              "rx_crc_errors": {
+                "type": "number"
+              },
+              "tx_heartbeat_errors": {
+                "type": "number"
+              },
+              "rx_over_errors": {
+                "type": "number"
+              },
+              "rx_errors": {
+                "type": "number"
+              },
+              "tx_packets": {
+                "type": "number"
+              },
+              "tx_carrier_errors": {
+                "type": "number"
+              },
+              "rx_packets": {
+                "type": "number"
+              },
+              "rx_length_errors": {
+                "type": "number"
+              },
+              "tx_errors": {
+                "type": "number"
+              },
+              "tx_aborted_errors": {
+                "type": "number"
+              },
+              "tx_window_errors": {
+                "type": "number"
+              },
+              "tx_bytes": {
+                "type": "number"
+              },
+              "collisions": {
+                "type": "number"
+              },
+              "rx_bytes": {
+                "type": "number"
+              },
+              "rx_fifo_errors": {
+                "type": "number"
+              },
+              "rx_dropped": {
+                "type": "number"
+              },
+              "tx_fifo_errors": {
+                "type": "number"
+              },
+              "rx_compressed": {
+                "type": "number"
+              },
+              "multicast": {
+                "type": "number"
+              },
+              "tx_compressed": {
+                "type": "number"
+              },
+              "rx_missed_errors": {
+                "type": "number"
+              },
+              "tx_dropped": {
+                "type": "number"
+              }
+            }
+          },
+          "link-partner-advertising": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            }
+          },
+          "rpfilter": {
+            "type": "number"
+          },
+          "txqueuelen": {
+            "type": "number"
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "multicast": {
+            "type": "boolean"
+          },
+          "drop_v6_unicast_in_l2_multicast": {
+            "type": "boolean"
+          },
+          "auth_status": {
+            "type": "boolean"
+          },
+          "neigh4locktime": {
+            "type": "number"
+          },
+          "neigh4gcstaletime": {
+            "type": "number"
+          },
+          "sendredirects": {
+            "type": "boolean"
+          },
+          "neigh4reachabletime": {
+            "type": "number"
+          },
+          "link-advertising": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

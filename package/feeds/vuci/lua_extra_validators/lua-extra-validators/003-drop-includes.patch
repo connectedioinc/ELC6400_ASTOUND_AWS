@@ -1,0 +1,23 @@
+--- a/Makefile	2024-12-16 07:59:15.413806512 +0200
++++ b/Makefile	2024-12-16 07:59:40.206887351 +0200
+@@ -1,10 +1,9 @@
+ WFLAGS=-Wall -Wextra -Wno-unused-parameter
+-INCLUDES=-I$(STAGING_DIR)/usr/include/lua5.1 -I/usr/include/lua5.1 -I$(STAGING_DIR)/usr/include
+ LLUA=-llua5.1
+ 
+ LIBNAME=lua_extra_validators.so
+ 
+-O_COMPILE=$(CC) $(WFLAGS) -fPIC $(DEFINES) -c -o $@ $(INCLUDES) $(CFLAGS) $<
++O_COMPILE=$(CC) $(WFLAGS) -fPIC -c -o $@ $(CFLAGS) $<
+ 
+ all: $(LIBNAME)
+ 
+@@ -12,7 +11,7 @@
+ 	$(O_COMPILE)
+ 
+ $(LIBNAME): lua_extra_validators.o
+-	$(CC) -Wall $(LLUA) -shared -fPIC $(DEFINES) $(LDFLAGS) -o $@ $^ $(INCLUDES)
++	$(CC) -Wall $(LLUA) -shared -fPIC $(LDFLAGS) -o $@ $^
+ 
+ clean:
+ 	$(RM) ./*.o

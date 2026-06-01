@@ -1,0 +1,31 @@
+sequenceDiagram
+    autonumber
+    opt multiActions.length > 0
+        Page->>+TltTable: populateRecords(multiActions=)
+        activate Page
+        TltTable->>+TltMultiActions: populateRecords(multiActions=)
+        TltMultiActions-->>TltTable: populated records
+        TltTable-->>Page: populated records
+        opt action select is clicked
+            Page->>TltTable: onClick()
+            TltTable->>TltMultiActions: openItemList()
+            TltMultiActions-->>TltTable: item list
+            TltTable-->>Page: item list
+            opt option is selected
+                Page->>TltTable: handleClick(option=)
+                TltTable->>TltMultiActions: handleClick(option=)
+                TltMultiActions->>TltMultiActions: option.action()
+                TltMultiActions-->>TltTable: action result
+                TltTable-->>Page: action result
+            end
+            opt clicked outside of action list
+                Page->>TltTable: onDocumentClick()
+                TltTable->>TltMultiActions: hideOptionList()
+                TltMultiActions-->>-TltTable: option list hidden
+                TltTable-->>-Page: option list hidden
+                deactivate Page
+            end
+        end
+    end
+
+

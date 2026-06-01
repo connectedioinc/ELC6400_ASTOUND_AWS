@@ -1,0 +1,333 @@
+{
+  "openapi": "3.0.0",
+  "tags": [],
+  "paths": {
+    "/rms/proxy/config": {
+      "get": {
+        "summary": "Returns RMS proxy configuration in an array",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200rms_proxy_multi"
+          }
+        },
+        "tags": [
+          "Proxy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates RMS proxy configuration in an array",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200rms_proxy_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/rms_proxy_request_options_with_id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Proxy"
+        ]
+      },
+      "x-web": {
+        "menu-depends": [
+          {
+            "hw_tags": {
+              "is_access_point": false
+            },
+            "values": [
+              "Services",
+              "Cloud Solutions",
+              "RMS"
+            ]
+          },
+          {
+            "hw_tags": {
+              "is_access_point": true
+            },
+            "values": [
+              "System",
+              "RMS",
+              "RMS"
+            ]
+          }
+        ],
+        "name": "RMS"
+      }
+    },
+    "/rms/proxy/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns RMS proxy configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200rms_proxy"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": [
+          "Proxy"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates RMS proxy configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200rms_proxy"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/rms_proxy_request_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Proxy"
+        ]
+      },
+      "x-web": {
+        "menu-depends": [
+          {
+            "hw_tags": {
+              "is_access_point": false
+            },
+            "values": [
+              "Services",
+              "Cloud Solutions",
+              "RMS"
+            ]
+          },
+          {
+            "hw_tags": {
+              "is_access_point": true
+            },
+            "values": [
+              "System",
+              "RMS",
+              "RMS"
+            ]
+          }
+        ],
+        "name": "RMS"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200rms_proxy": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/rms_proxy_response_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200rms_proxy_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "$ref": "#/components/schemas/rms_proxy_response_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "rms_proxy_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable RMS connection through proxy",
+            "enum": ["0", "1"],
+            "format": "is_bool",
+            "x-web": {
+              "pretty": "Enable proxy",
+              "input-type": "switch"
+            }
+          },
+          "ip": {
+            "type": "string",
+            "description": "Specify proxy address",
+            "format": "host",
+            "x-web": {
+              "pretty": "Proxy address",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "socks5_port": {
+            "type": "string",
+            "description": "SOCKS5 proxy server port",
+            "format": "port",
+            "default": "1080",
+            "x-web": {
+              "pretty": "Proxy SOCKS5 port",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "socks5_username": {
+            "type": "string",
+            "description": "Specify username for SOCKS5 proxy connection. If socks5_password is present then socks5_username is required.",
+            "format": "string",
+            "x-web": {
+              "pretty": "SOCKS5 username",
+              "input-type": "input"
+            }
+          }
+        }
+      },
+      "rms_proxy_request_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "socks5_password": {
+                "type": "string",
+                "description": "Specify password for SOCKS5 proxy connection. If socks5_username is present then socks5_password is required.",
+                "format": "string",
+                "x-web": {
+                  "pretty": "SOCKS5 password",
+                  "input-type": "input"
+                }
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/rms_proxy_options"
+          }
+        ]
+      },
+      "rms_proxy_request_options_with_id": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Configuration ID"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/rms_proxy_request_options"
+          }
+        ],
+        "required": ["id"]
+      },
+      "rms_proxy_response_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Configuration ID"
+              },
+              "socks5_password:set": {
+                "type": "string",
+                "description": "Value displayed when user doesn't have permissions to see sensitive information.",
+            "enum": ["0", "1"],
+            "readOnly": true
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/rms_proxy_options"
+          }
+        ],
+        "required": ["id"]
+      }
+    }
+  }
+}

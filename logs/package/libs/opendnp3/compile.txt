@@ -1,0 +1,834 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/opendnp3'
+opendnp3-43728627-4372862728851f559a01edcd88bc15ce6ce7f350.tar.xz: Download from https://github.com/dnp3/opendnp3.git failed
+opendnp3-43728627-4372862728851f559a01edcd88bc15ce6ce7f350.tar.xz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'opendnp3-43728627-4372862728851f559a01edcd88bc15ce6ce7f350'...
+Note: switching to '4372862728851f559a01edcd88bc15ce6ce7f350'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 437286272 Fix PrintingSOEHandler octet string size printing.
+Packing checkout...
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.prepared_a0b681f6ac6f854c360ca168bbeb9c0d_6664517399ebbbc92a37c5bb081b5c53_check
+
+Applying ./patches/000_tlt.patch using plaintext: 
+patching file .gitignore
+patching file cpp/examples/outstation/main.cpp
+patching file cpp/lib/include/opendnp3/app/MeasurementInfo.h
+patching file cpp/lib/include/opendnp3/gen/Parity.h
+patching file cpp/lib/include/opendnp3/outstation/MeasurementConfig.h
+patching file cpp/lib/src/channel/ASIOSerialHelpers.cpp
+patching file cpp/lib/src/outstation/StaticDataCell.h
+patching file cpp/lib/src/outstation/StaticDataMap.h
+patching file deps/asio.cmake
+patching file deps/catch.cmake
+patching file deps/exe4cpp.cmake
+patching file deps/ser4cpp.cmake
+patching file deps/serial_port_base.hpp.patch
+patching file deps/serial_port_base.ipp.patch
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.prepared_a0b681f6ac6f854c360ca168bbeb9c0d_6664517399ebbbc92a37c5bb081b5c53
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.configured_*
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.opendnp3_installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627; CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627=opendnp3-43728627 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -DRUTX_PLATFORM=1 -DTLT_PLATFORM_NAME=RUTX" CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627=opendnp3-43728627 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " cmake -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_VERSION=1 -DCMAKE_SYSTEM_PROCESSOR=arm -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_FLAGS_RELEASE="-DNDEBUG" -DCMAKE_CXX_FLAGS_RELEASE="-DNDEBUG" -DCMAKE_C_COMPILER_LAUNCHER="" -DCMAKE_C_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc" -DCMAKE_CXX_COMPILER_LAUNCHER="" -DCMAKE_CXX_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-g++" -DCMAKE_ASM_COMPILER_LAUNCHER="" -DCMAKE_ASM_COMPILER="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc" -DCMAKE_EXE_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro" -DCMAKE_MODULE_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro -Wl,-Bsymbolic-functions" -DCMAKE_SHARED_LINKER_FLAGS:STRING="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro -Wl,-Bsymbolic-functions" -DCMAKE_AR="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-ar" -DCMAKE_NM="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-nm" -DCMAKE_RANLIB="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc-ranlib" -DCMAKE_FIND_ROOT_PATH="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr;/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi" -DCMAKE_FIND_ROOT_PATH_MODE_PROGRAM=BOTH -DCMAKE_FIND_ROOT_PATH_MODE_LIBRARY=ONLY -DCMAKE_FIND_ROOT_PATH_MODE_INCLUDE=ONLY -DCMAKE_STRIP=: -DCMAKE_INSTALL_PREFIX=/usr -DDL_LIBRARY=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi -DCMAKE_PREFIX_PATH=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi -DCMAKE_SKIP_RPATH=TRUE -DCMAKE_EXPORT_PACKAGE_REGISTRY=FALSE -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=TRUE -DCMAKE_FIND_USE_PACKAGE_REGISTRY=FALSE -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=TRUE -DCMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY=FALSE -DCMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY=TRUE -DCMAKE_POLICY_DEFAULT_CMP0054=NEW -DDL_DIR=/media/home/FIRMWARES1/RUTX11/sdk2/dl /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627 )
+-- The C compiler identification is GNU 8.4.0
+-- The CXX compiler identification is GNU 8.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-gcc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin/arm-openwrt-linux-muslgnueabi-g++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- clang-format not found
+-- clang-tidy not found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Configuring done
+-- Generating done
+[33mCMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_ASM_COMPILER
+    CMAKE_ASM_COMPILER_LAUNCHER
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_EXPORT_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY
+    CMAKE_FIND_PACKAGE_NO_SYSTEM_PACKAGE_REGISTRY
+    CMAKE_FIND_ROOT_PATH_MODE_LIBRARY
+    CMAKE_MODULE_LINKER_FLAGS
+    CMAKE_POLICY_DEFAULT_CMP0054
+    DL_DIR
+    DL_LIBRARY
+
+[0m
+-- Build files have been written to: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.configured_68b329da9893e34099c7d8ad5cb9c940
+rm -f /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.built_check
+printf "%s\n" "• opendnp3 is rebuilt"
+• opendnp3 is rebuilt
+[ -w "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt" ] && echo "opendnp3" >> "/media/home/FIRMWARES1/RUTX11/sdk2/tmp/.pkg-rebuilt"|| true
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627=opendnp3-43728627 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627=opendnp3-43728627 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627=opendnp3-43728627 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" CMAKE_COMMAND='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/cmake' CMAKE_DISABLE_cmake_check_build_system=1 ; 
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+[  0%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/ConsoleLogger.cpp.o[0m
+[  0%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/DNP3Manager.cpp.o[0m
+[  1%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/DNP3ManagerImpl.cpp.o[0m
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:69,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/CommandSet.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/ICommandProcessor.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/IMasterOperations.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/IMaster.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/channel/IChannel.h:27,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/DNP3ManagerImpl.h:27,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/DNP3ManagerImpl.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry&}; _Tp = asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry; _Alloc = std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry>]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:413:7: note: parameter passing for argument of type 'std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> >::iterator' {aka '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >'} changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:64,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/CommandSet.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/ICommandProcessor.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/IMasterOperations.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/IMaster.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/channel/IChannel.h:27,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/DNP3ManagerImpl.h:27,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/DNP3ManagerImpl.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h: In member function 'void asio::detail::epoll_reactor::schedule_timer(asio::detail::timer_queue<Time_Traits>&, const typename Time_Traits::time_type&, typename asio::detail::timer_queue<Time_Traits>::per_timer_data&, asio::detail::wait_op*) [with Time_Traits = asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> >]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h:1085:4: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >' changed in GCC 7.1
+    _M_realloc_insert(end(), __x);
+    ^~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:69,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/CommandSet.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/ICommandProcessor.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/IMasterOperations.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/IMaster.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/channel/IChannel.h:27,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/DNP3ManagerImpl.h:27,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/DNP3ManagerImpl.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry&}; _Tp = asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry; _Alloc = std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry>]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:413:7: note: parameter passing for argument of type 'std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry> >::iterator' {aka '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry> > >'} changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:64,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/CommandSet.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/ICommandProcessor.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/IMasterOperations.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/IMaster.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/channel/IChannel.h:27,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/DNP3ManagerImpl.h:27,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/DNP3ManagerImpl.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h: In member function 'void asio::detail::epoll_reactor::schedule_timer(asio::detail::timer_queue<Time_Traits>&, const typename Time_Traits::time_type&, typename asio::detail::timer_queue<Time_Traits>::per_timer_data&, asio::detail::wait_op*) [with Time_Traits = asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> >]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h:1085:4: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry> > >' changed in GCC 7.1
+    _M_realloc_insert(end(), __x);
+    ^~~~~~~~~~~~~~~~~
+[  1%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/ResourceManager.cpp.o[0m
+[  2%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/AnalogCommandEvent.cpp.o[0m
+[  2%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/AnalogOutput.cpp.o[0m
+[  3%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/APDUBuilders.cpp.o[0m
+[  3%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/APDUHeader.cpp.o[0m
+[  4%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/APDULogging.cpp.o[0m
+[  4%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/APDURequest.cpp.o[0m
+[  5%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/APDUResponse.cpp.o[0m
+[  5%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/APDUWrapper.cpp.o[0m
+[  6%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/AppControlField.cpp.o[0m
+[  6%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/BinaryCommandEvent.cpp.o[0m
+[  6%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/ClassField.cpp.o[0m
+[  7%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/ControlRelayOutputBlock.cpp.o[0m
+[  7%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/EventTriggers.cpp.o[0m
+[  8%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/Functions.cpp.o[0m
+[  8%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/GroupVariationRecord.cpp.o[0m
+[  9%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/HeaderWriter.cpp.o[0m
+[  9%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/IINField.cpp.o[0m
+[ 10%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/MeasurementInfo.cpp.o[0m
+[ 10%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/MeasurementTypes.cpp.o[0m
+[ 11%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/OctetData.cpp.o[0m
+[ 11%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/QualityFlags.cpp.o[0m
+[ 12%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/parsing/APDUHeaderParser.cpp.o[0m
+[ 12%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/parsing/APDUParser.cpp.o[0m
+[ 12%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/parsing/BitReader.cpp.o[0m
+[ 13%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/parsing/CountIndexParser.cpp.o[0m
+[ 13%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/parsing/CountParser.cpp.o[0m
+[ 14%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/parsing/IAPDUHandler.cpp.o[0m
+[ 14%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/parsing/NumParser.cpp.o[0m
+[ 15%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/parsing/ObjectHeaderParser.cpp.o[0m
+[ 15%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/app/parsing/RangeParser.cpp.o[0m
+[ 16%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/ASIOSerialHelpers.cpp.o[0m
+[ 16%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/ChannelRetry.cpp.o[0m
+[ 17%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/DNP3Channel.cpp.o[0m
+[ 17%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/IOHandler.cpp.o[0m
+[ 18%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/IOpenDelayStrategy.cpp.o[0m
+[ 18%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/IPEndpointsList.cpp.o[0m
+[ 18%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/SerialChannel.cpp.o[0m
+[ 19%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/SerialIOHandler.cpp.o[0m
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:69,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IAsyncChannel.h:29,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/SerialIOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/SerialIOHandler.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry&}; _Tp = asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry; _Alloc = std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry>]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:413:7: note: parameter passing for argument of type 'std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> >::iterator' {aka '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >'} changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:64,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IAsyncChannel.h:29,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/SerialIOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/SerialIOHandler.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h: In member function 'void asio::detail::epoll_reactor::schedule_timer(asio::detail::timer_queue<Time_Traits>&, const typename Time_Traits::time_type&, typename asio::detail::timer_queue<Time_Traits>::per_timer_data&, asio::detail::wait_op*) [with Time_Traits = asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> >]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h:1085:4: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >' changed in GCC 7.1
+    _M_realloc_insert(end(), __x);
+    ^~~~~~~~~~~~~~~~~
+[ 19%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/TCPClient.cpp.o[0m
+[ 20%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/TCPClientIOHandler.cpp.o[0m
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:69,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IAsyncChannel.h:29,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/TCPClientIOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/TCPClientIOHandler.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry&}; _Tp = asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry; _Alloc = std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry>]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:413:7: note: parameter passing for argument of type 'std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> >::iterator' {aka '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >'} changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:64,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IAsyncChannel.h:29,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/TCPClientIOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/TCPClientIOHandler.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h: In member function 'void asio::detail::epoll_reactor::schedule_timer(asio::detail::timer_queue<Time_Traits>&, const typename Time_Traits::time_type&, typename asio::detail::timer_queue<Time_Traits>::per_timer_data&, asio::detail::wait_op*) [with Time_Traits = asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> >]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h:1085:4: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >' changed in GCC 7.1
+    _M_realloc_insert(end(), __x);
+    ^~~~~~~~~~~~~~~~~
+[ 20%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/TCPServer.cpp.o[0m
+[ 21%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/TCPServerIOHandler.cpp.o[0m
+[ 21%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/TCPSocketChannel.cpp.o[0m
+[ 22%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/UDPClient.cpp.o[0m
+[ 22%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/UDPClientIOHandler.cpp.o[0m
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:69,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IAsyncChannel.h:29,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/UDPClientIOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/UDPClientIOHandler.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry&}; _Tp = asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry; _Alloc = std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry>]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:413:7: note: parameter passing for argument of type 'std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> >::iterator' {aka '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >'} changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:64,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IAsyncChannel.h:29,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/UDPClientIOHandler.h:23,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/UDPClientIOHandler.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h: In member function 'void asio::detail::epoll_reactor::schedule_timer(asio::detail::timer_queue<Time_Traits>&, const typename Time_Traits::time_type&, typename asio::detail::timer_queue<Time_Traits>::per_timer_data&, asio::detail::wait_op*) [with Time_Traits = asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> >]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h:1085:4: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >' changed in GCC 7.1
+    _M_realloc_insert(end(), __x);
+    ^~~~~~~~~~~~~~~~~
+[ 23%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/channel/UDPSocketChannel.cpp.o[0m
+[ 23%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/decoder/Decoder.cpp.o[0m
+[ 24%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/decoder/DecoderImpl.cpp.o[0m
+[ 24%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/decoder/LoggingHandler.cpp.o[0m
+[ 25%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/AnalogOutputStatusQuality.cpp.o[0m
+[ 25%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/AnalogQuality.cpp.o[0m
+[ 25%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/AssignClassType.cpp.o[0m
+[ 26%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/Attributes.cpp.o[0m
+[ 26%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/BinaryOutputStatusQuality.cpp.o[0m
+[ 27%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/BinaryQuality.cpp.o[0m
+[ 27%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/ChannelState.cpp.o[0m
+[ 28%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/CommandPointState.cpp.o[0m
+[ 28%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/CommandStatus.cpp.o[0m
+[ 29%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/CounterQuality.cpp.o[0m
+[ 29%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/DoubleBit.cpp.o[0m
+[ 30%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/DoubleBitBinaryQuality.cpp.o[0m
+[ 30%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/EventAnalogOutputStatusVariation.cpp.o[0m
+[ 31%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/EventAnalogVariation.cpp.o[0m
+[ 31%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/EventBinaryOutputStatusVariation.cpp.o[0m
+[ 31%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/EventBinaryVariation.cpp.o[0m
+[ 32%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/EventCounterVariation.cpp.o[0m
+[ 32%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/EventDoubleBinaryVariation.cpp.o[0m
+[ 33%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/EventFrozenCounterVariation.cpp.o[0m
+[ 33%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/EventMode.cpp.o[0m
+[ 34%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/EventOctetStringVariation.cpp.o[0m
+[ 34%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/FlagsType.cpp.o[0m
+[ 35%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/FlowControl.cpp.o[0m
+[ 35%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/FrozenCounterQuality.cpp.o[0m
+[ 36%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/FunctionCode.cpp.o[0m
+[ 36%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/GroupVariation.cpp.o[0m
+[ 37%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/IndexQualifierMode.cpp.o[0m
+[ 37%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/IntervalUnits.cpp.o[0m
+[ 37%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/LinkFunction.cpp.o[0m
+[ 38%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/LinkStatus.cpp.o[0m
+[ 38%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/MasterTaskType.cpp.o[0m
+[ 39%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/OperateType.cpp.o[0m
+[ 39%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/OperationType.cpp.o[0m
+[ 40%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/Parity.cpp.o[0m
+[ 40%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/PointClass.cpp.o[0m
+[ 41%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/QualifierCode.cpp.o[0m
+[ 41%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/RestartMode.cpp.o[0m
+[ 42%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/RestartType.cpp.o[0m
+[ 42%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/ServerAcceptMode.cpp.o[0m
+[ 43%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticAnalogOutputStatusVariation.cpp.o[0m
+[ 43%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticAnalogVariation.cpp.o[0m
+[ 43%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticBinaryOutputStatusVariation.cpp.o[0m
+[ 44%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticBinaryVariation.cpp.o[0m
+[ 44%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticCounterVariation.cpp.o[0m
+[ 45%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticDoubleBinaryVariation.cpp.o[0m
+[ 45%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticFrozenCounterVariation.cpp.o[0m
+[ 46%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticOctetStringVariation.cpp.o[0m
+[ 46%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticTimeAndIntervalVariation.cpp.o[0m
+[ 47%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StaticTypeBitmask.cpp.o[0m
+[ 47%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/StopBits.cpp.o[0m
+[ 48%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/TaskCompletion.cpp.o[0m
+[ 48%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/TimestampQuality.cpp.o[0m
+[ 49%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/TimeSyncMode.cpp.o[0m
+[ 49%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/TripCloseCode.cpp.o[0m
+[ 50%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group1.cpp.o[0m
+[ 50%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group2.cpp.o[0m
+[ 50%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group3.cpp.o[0m
+[ 51%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group4.cpp.o[0m
+[ 51%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group10.cpp.o[0m
+[ 52%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group11.cpp.o[0m
+[ 52%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group12.cpp.o[0m
+[ 53%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group13.cpp.o[0m
+[ 53%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group20.cpp.o[0m
+[ 54%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group21.cpp.o[0m
+[ 54%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group22.cpp.o[0m
+[ 55%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group23.cpp.o[0m
+[ 55%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group30.cpp.o[0m
+[ 56%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group32.cpp.o[0m
+[ 56%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group40.cpp.o[0m
+[ 56%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group41.cpp.o[0m
+[ 57%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group42.cpp.o[0m
+[ 57%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group43.cpp.o[0m
+[ 58%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group50.cpp.o[0m
+[ 58%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group51.cpp.o[0m
+[ 59%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/gen/objects/Group52.cpp.o[0m
+[ 59%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/Addresses.cpp.o[0m
+[ 60%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/CRC.cpp.o[0m
+[ 60%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/LinkContext.cpp.o[0m
+[ 61%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/LinkFrame.cpp.o[0m
+[ 61%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/LinkHeader.cpp.o[0m
+[ 62%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/LinkHeaderFields.cpp.o[0m
+[ 62%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/LinkLayer.cpp.o[0m
+[ 62%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/LinkLayerParser.cpp.o[0m
+[ 63%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/LinkSession.cpp.o[0m
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:69,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IAsyncChannel.h:29,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/link/LinkSession.h:25,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/link/LinkSession.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry&}; _Tp = asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry; _Alloc = std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry>]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:413:7: note: parameter passing for argument of type 'std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> >::iterator' {aka '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >'} changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:64,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/IAsyncChannel.h:29,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/link/LinkSession.h:25,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/link/LinkSession.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h: In member function 'void asio::detail::epoll_reactor::schedule_timer(asio::detail::timer_queue<Time_Traits>&, const typename Time_Traits::time_type&, typename asio::detail::timer_queue<Time_Traits>::per_timer_data&, asio::detail::wait_op*) [with Time_Traits = asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> >]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h:1085:4: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >' changed in GCC 7.1
+    _M_realloc_insert(end(), __x);
+    ^~~~~~~~~~~~~~~~~
+[ 63%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/PriLinkLayerStates.cpp.o[0m
+[ 64%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/SecLinkLayerStates.cpp.o[0m
+[ 64%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/link/ShiftableBuffer.cpp.o[0m
+[ 65%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/logging/LogLevels.cpp.o[0m
+[ 65%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/AssignClassTask.cpp.o[0m
+[ 66%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/ClearRestartTask.cpp.o[0m
+[ 66%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/CommandSet.cpp.o[0m
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:69,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/opendnp3/master/CommandSet.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/master/CommandSet.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record}; _Tp = opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record; _Alloc = std::allocator<opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record>]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:413:7: note: parameter passing for argument of type 'std::vector<opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record, std::allocator<opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record> >::iterator' {aka '__gnu_cxx::__normal_iterator<opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record*, std::vector<opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record, std::allocator<opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record> > >'} changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'opendnp3::ICommandCollection<T>& opendnp3::TypedCommandHeader<T>::Add(const T&, uint16_t) [with T = opendnp3::AnalogOutputDouble64]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:109:4: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record*, std::vector<opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record, std::allocator<opendnp3::TypedCommandHeader<opendnp3::AnalogOutputDouble64>::Record> > >' changed in GCC 7.1
+    _M_realloc_insert(end(), std::forward<_Args>(__args)...);
+    ^~~~~~~~~~~~~~~~~
+[ 67%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/CommandSetOps.cpp.o[0m
+[ 67%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/CommandTask.cpp.o[0m
+[ 68%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/CommandTaskResult.cpp.o[0m
+[ 68%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/DefaultListenCallbacks.cpp.o[0m
+[ 68%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/DefaultMasterApplication.cpp.o[0m
+[ 69%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/DisableUnsolicitedTask.cpp.o[0m
+[ 69%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/EmptyResponseTask.cpp.o[0m
+[ 70%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/EnableUnsolicitedTask.cpp.o[0m
+[ 70%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/EventScanTask.cpp.o[0m
+[ 71%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/HeaderConversions.cpp.o[0m
+[ 71%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/HeaderTypes.cpp.o[0m
+[ 72%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/IMasterTask.cpp.o[0m
+[ 72%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/LANTimeSyncTask.cpp.o[0m
+[ 73%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/MasterContext.cpp.o[0m
+[ 73%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/MasterScan.cpp.o[0m
+[ 74%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/MasterSchedulerBackend.cpp.o[0m
+[ 74%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/MasterSessionStack.cpp.o[0m
+[ 75%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/MasterStack.cpp.o[0m
+[ 75%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/MasterTasks.cpp.o[0m
+[ 75%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/MasterTCPServer.cpp.o[0m
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:69,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/TCPServer.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/master/MasterTCPServer.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/master/MasterTCPServer.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry&}; _Tp = asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry; _Alloc = std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry>]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:413:7: note: parameter passing for argument of type 'std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> >::iterator' {aka '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >'} changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:64,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/TCPServer.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/master/MasterTCPServer.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/master/MasterTCPServer.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h: In member function 'void asio::detail::epoll_reactor::schedule_timer(asio::detail::timer_queue<Time_Traits>&, const typename Time_Traits::time_type&, typename asio::detail::timer_queue<Time_Traits>::per_timer_data&, asio::detail::wait_op*) [with Time_Traits = asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> >]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h:1085:4: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::steady_clock, asio::wait_traits<std::chrono::_V2::steady_clock> > >::heap_entry> > >' changed in GCC 7.1
+    _M_realloc_insert(end(), __x);
+    ^~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:69,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/TCPServer.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/master/MasterTCPServer.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/master/MasterTCPServer.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc: In member function 'void std::vector<_Tp, _Alloc>::_M_realloc_insert(std::vector<_Tp, _Alloc>::iterator, _Args&& ...) [with _Args = {const asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry&}; _Tp = asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry; _Alloc = std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry>]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/vector.tcc:413:7: note: parameter passing for argument of type 'std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry> >::iterator' {aka '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry> > >'} changed in GCC 7.1
+       vector<_Tp, _Alloc>::
+       ^~~~~~~~~~~~~~~~~~~
+In file included from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/vector:64,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/impl/service_registry.ipp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/service_registry.hpp:161,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/execution_context.hpp:20,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/execution_context.hpp:407,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/detail/scheduler.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_context.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/impl/system_executor.hpp:22,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/system_executor.hpp:127,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio/associated_executor.hpp:21,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/asio.hpp:19,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/AsioExecutor.h:30,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/exe4cpp/asio/StrandExecutor.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/channel/TCPServer.h:28,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/master/MasterTCPServer.h:24,
+                 from /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/src/master/MasterTCPServer.cpp:21:
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h: In member function 'void asio::detail::epoll_reactor::schedule_timer(asio::detail::timer_queue<Time_Traits>&, const typename Time_Traits::time_type&, typename asio::detail::timer_queue<Time_Traits>::per_timer_data&, asio::detail::wait_op*) [with Time_Traits = asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> >]':
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/arm-openwrt-linux-muslgnueabi/include/c++/8.4.0/bits/stl_vector.h:1085:4: note: parameter passing for argument of type '__gnu_cxx::__normal_iterator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry*, std::vector<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry, std::allocator<asio::detail::timer_queue<asio::detail::chrono_time_traits<std::chrono::_V2::system_clock, asio::wait_traits<std::chrono::_V2::system_clock> > >::heap_entry> > >' changed in GCC 7.1
+    _M_realloc_insert(end(), __x);
+    ^~~~~~~~~~~~~~~~~
+[ 76%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/MeasurementHandler.cpp.o[0m
+[ 76%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/PollTaskBase.cpp.o[0m
+[ 77%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/PrintingCommandResultCallback.cpp.o[0m
+[ 77%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/PrintingSOEHandler.cpp.o[0m
+[ 78%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/RestartOperationTask.cpp.o[0m
+[ 78%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/SerialTimeSyncTask.cpp.o[0m
+[ 79%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/StartupIntegrityPoll.cpp.o[0m
+[ 79%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/TaskBehavior.cpp.o[0m
+[ 80%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/TaskContext.cpp.o[0m
+[ 80%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/master/UserPollTask.cpp.o[0m
+[ 81%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/ApplicationIIN.cpp.o[0m
+[ 81%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/AssignClassHandler.cpp.o[0m
+[ 81%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/ClassBasedRequestHandler.cpp.o[0m
+[ 82%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/CommandActionAdapter.cpp.o[0m
+[ 82%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/CommandResponseHandler.cpp.o[0m
+[ 83%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/Database.cpp.o[0m
+[ 83%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/DatabaseConfig.cpp.o[0m
+[ 84%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/DefaultOutstationApplication.cpp.o[0m
+[ 84%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/DeferredRequest.cpp.o[0m
+[ 85%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/EventBufferConfig.cpp.o[0m
+[ 85%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/FreezeRequestHandler.cpp.o[0m
+[ 86%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/IINHelpers.cpp.o[0m
+[ 86%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/IOutstationApplication.cpp.o[0m
+[ 87%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/NumRetries.cpp.o[0m
+[ 87%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/OctetStringSerializer.cpp.o[0m
+[ 87%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/OutstationContext.cpp.o[0m
+[ 88%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/OutstationStack.cpp.o[0m
+[ 88%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/OutstationStates.cpp.o[0m
+[ 89%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/ReadHandler.cpp.o[0m
+[ 89%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/RequestHistory.cpp.o[0m
+[ 90%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/ResponseContext.cpp.o[0m
+[ 90%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/SimpleCommandHandler.cpp.o[0m
+[ 91%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/StaticDataMap.cpp.o[0m
+[ 91%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/StaticWriters.cpp.o[0m
+[ 92%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/UpdateBuilder.cpp.o[0m
+[ 92%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/WriteHandler.cpp.o[0m
+[ 93%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/event/ASDUEventWriteHandler.cpp.o[0m
+[ 93%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/event/EventBuffer.cpp.o[0m
+[ 93%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/event/EventLists.cpp.o[0m
+[ 94%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/event/EventRecord.cpp.o[0m
+[ 94%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/event/EventSelection.cpp.o[0m
+[ 95%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/event/EventStorage.cpp.o[0m
+[ 95%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/event/EventWriters.cpp.o[0m
+[ 96%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/outstation/event/EventWriting.cpp.o[0m
+[ 96%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/transport/TransportHeader.cpp.o[0m
+[ 97%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/transport/TransportLayer.cpp.o[0m
+[ 97%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/transport/TransportRx.cpp.o[0m
+[ 98%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/transport/TransportStack.cpp.o[0m
+[ 98%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/transport/TransportTx.cpp.o[0m
+[ 99%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/util/TimeDuration.cpp.o[0m
+[ 99%] [32mBuilding CXX object cpp/lib/CMakeFiles/opendnp3.dir/src/util/Timestamp.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library libopendnp3.so[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+[100%] Built target opendnp3
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+CFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627=opendnp3-43728627 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " CXXFLAGS="-Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627=opendnp3-43728627 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro  -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include/fortify -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/include -DRUTX_PLATFORM -DDEVICE_MODEM_VENDORS=""Quectel,Meiglink"" -DDEVICE_MODEM_LIST=""EG06,EG060K,EG060W,EG12,RG501Q,RG520N,SLM828"" -DMOBILE_SUPPORT -DDUAL_SIM_SUPPORT -DGPS_SUPPORT -DBLUETOOTH_SUPPORT -DWIFI_SUPPORT -DIO_SUPPORT -DUSB_SUPPORT_EXTERNAL -DPROD_IMAGE " LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/usr/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -Wl,-rpath-link,/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/lib -DPIC -fpic -specs=/media/home/FIRMWARES1/RUTX11/sdk2/include/hardened-ld-pie.specs -znow -zrelro " make -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/. AR="arm-openwrt-linux-muslgnueabi-gcc-ar" AS="arm-openwrt-linux-muslgnueabi-gcc -c -Os -pipe -fno-caller-saves -fno-plt -fhonour-copts -Wno-error=unused-but-set-variable -Wno-error=unused-result -mfloat-abi=hard -fmacro-prefix-map=/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627=opendnp3-43728627 -Wformat -Werror=format-security -DPIC -fpic -fstack-protector -D_FORTIFY_SOURCE=1 -Wl,-z,now -Wl,-z,relro" LD=arm-openwrt-linux-muslgnueabi-ld NM="arm-openwrt-linux-muslgnueabi-gcc-nm" CC="arm-openwrt-linux-muslgnueabi-gcc" GCOV="arm-openwrt-linux-muslgnueabi-gcc" GCC="arm-openwrt-linux-muslgnueabi-gcc" CXX="arm-openwrt-linux-muslgnueabi-g++" RANLIB="arm-openwrt-linux-muslgnueabi-gcc-ranlib" STRIP=arm-openwrt-linux-muslgnueabi-strip OBJCOPY=arm-openwrt-linux-muslgnueabi-objcopy OBJDUMP=arm-openwrt-linux-muslgnueabi-objdump SIZE=arm-openwrt-linux-muslgnueabi-size CROSS="arm-openwrt-linux-muslgnueabi-" ARCH="arm" CMAKE_COMMAND='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/cmake' CMAKE_DISABLE_cmake_check_build_system=1 DESTDIR="/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install"  install;
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+make[6]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+[35m[1mConsolidate compiler generated dependencies of target opendnp3[0m
+make[6]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+[100%] Built target opendnp3
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+[36mInstall the project...[0m
+-- Install configuration: "Release"
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/lib/libopendnp3.so
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/lib/cmake/opendnp3-export.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/lib/cmake/opendnp3-export-release.cmake
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/ConsoleLogger.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/logging
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/logging/ILogHandler.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/logging/LogLevels.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/logging/Logger.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/StackStatistics.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/DNP3Manager.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/IResource.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/IStack.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/util
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/util/UTCTimestamp.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/util/Buffer.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/util/StaticOnly.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/util/Timestamp.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/util/TimeDuration.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/util/Uncopyable.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel/IPEndpoint.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel/IListener.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel/PrintingChannelListener.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel/IChannelListener.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel/IOpenDelayStrategy.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel/SerialSettings.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel/TLSConfig.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel/IChannel.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/channel/ChannelRetry.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/FlowControl.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/PointClass.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StopBits.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventSecurityStatVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/TaskCompletion.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/DoubleBitBinaryQuality.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/AssignClassType.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/IndexQualifierMode.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/DoubleBit.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/RestartType.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/FunctionCode.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventMode.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/BinaryOutputStatusQuality.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticTypeBitmask.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventAnalogOutputStatusVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/RestartMode.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticCounterVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticBinaryVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventCounterVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventBinaryOutputStatusVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticDoubleBinaryVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventBinaryVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventFrozenCounterVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/ChannelState.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/GroupVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/CommandPointState.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/CounterQuality.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/TripCloseCode.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/BinaryQuality.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/MasterTaskType.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/ServerAcceptMode.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/TimestampQuality.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticOctetStringVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/LinkStatus.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/FrozenCounterQuality.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticAnalogOutputStatusVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/CommandStatus.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/Parity.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/OperationType.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticBinaryOutputStatusVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/TimeSyncMode.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventDoubleBinaryVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventOctetStringVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/IntervalUnits.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/OperateType.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticSecurityStatVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/LinkFunction.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/QualifierCode.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/FlagsType.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/Attributes.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticTimeAndIntervalVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/AnalogQuality.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/EventAnalogVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/AnalogOutputStatusQuality.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticAnalogVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/gen/StaticFrozenCounterVariation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/TaskConfig.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/ICommandTaskResult.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/IMasterApplication.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/HeaderInfo.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/TaskId.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/CommandResultCallbackT.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/ISessionAcceptor.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/ISOEHandler.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/ICommandCollection.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/ResponseInfo.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/HeaderTypes.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/PrintingCommandResultCallback.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/IMaster.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/MasterStackConfig.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/IUTCTimeSource.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/ICommandProcessor.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/PrintingSOEHandler.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/IListenCallbacks.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/ITaskCallback.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/IMasterScan.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/CommandSet.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/IMasterOperations.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/TaskInfo.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/RestartOperationResult.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/X509Info.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/DefaultListenCallbacks.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/CommandPointResult.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/DefaultMasterApplication.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/MasterParams.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/master/IMasterSession.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/ErrorCodes.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/link
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/link/LinkHeaderFields.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/link/Addresses.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/link/LinkConfig.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/link/ILinkListener.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/link/LinkStatistics.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/decoder
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/decoder/IDecoderCallbacks.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/decoder/Decoder.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/OctetData.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/GroupVariationID.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/AnalogOutput.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/DNPTime.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/EventCells.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/BaseMeasurementTypes.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/IINField.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/MeasurementTypes.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/BinaryCommandEvent.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/EventTriggers.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/EventType.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/ClassField.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/AnalogCommandEvent.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/ControlRelayOutputBlock.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/OctetString.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/MeasurementInfo.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/Flags.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/Indexed.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/AppConstants.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/parsing
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/app/parsing/ICollection.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/StaticTypeBitfield.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/NumRetries.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/ApplicationIIN.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/DefaultOutstationApplication.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/DatabaseConfig.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/IDnpTimeSource.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/OutstationStackConfig.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/ICommandHandler.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/OutstationParams.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/Updates.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/UpdateBuilder.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/EventBufferConfig.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/IOutstationApplication.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/IUpdateHandler.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/IOutstation.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/MeasurementConfig.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/OutstationConfig.h
+-- Installing: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/include/opendnp3/outstation/SimpleCommandHandler.h
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.built
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.pkgdir/opendnp3.installed /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.pkgdir/opendnp3
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.pkgdir/opendnp3
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.pkgdir/opendnp3/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/lib/libopendnp3.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.pkgdir/opendnp3/usr/lib/
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.pkgdir/opendnp3.installed
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp
+SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.root-copy.flock -c 'cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/.pkgdir/opendnp3/. /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/root-ipq40xx/stamp/.opendnp3_installed
+removed '/media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/opendnp3_43728627_arm_cortex-a7_neon-vfpv4.ipk'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/bin/targets/ipq40xx/generic/packages /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-arm_cortex-a7_neon-vfpv4/opendnp3/CONTROL /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/pkginfo
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-arm_cortex-a7_neon-vfpv4/opendnp3/usr/lib
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-install/usr/lib/libopendnp3.so /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-arm_cortex-a7_neon-vfpv4/opendnp3/usr/lib/
+find /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-arm_cortex-a7_neon-vfpv4/opendnp3 -name 'CVS' -o -name '.svn' -o -name '.#*' -o -name '*~'| xargs -r rm -rf
+export CROSS="arm-openwrt-linux-muslgnueabi-"  NO_RENAME=1 ; NM="arm-openwrt-linux-muslgnueabi-nm" STRIP="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sstrip -z" STRIP_KMOD="/media/home/FIRMWARES1/RUTX11/sdk2/scripts/strip-kmod.sh" PATCHELF="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/patchelf" /media/home/FIRMWARES1/RUTX11/sdk2/scripts/rstrip.sh /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-arm_cortex-a7_neon-vfpv4/opendnp3
+rstrip.sh: /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-arm_cortex-a7_neon-vfpv4/opendnp3/usr/lib/libopendnp3.so: shared object
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-arm_cortex-a7_neon-vfpv4/opendnp3/CONTROL; ( echo "$CONTROL"; printf "Description: "; echo "$DESCRIPTION" | sed -e 's,^[[:space:]]*, ,g'; ) > control; chmod 644 control; ( echo "#!/bin/sh"; echo "[ \"\${IPKG_NO_SCRIPT}\" = \"1\" ] && exit 0"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_postinst \$0 \$@"; ) > postinst; ( echo "#!/bin/sh"; echo "[ -s "\${IPKG_INSTROOT}/lib/functions.sh" ] || exit 0"; echo ". \${IPKG_INSTROOT}/lib/functions.sh"; echo "default_prerm \$0 \$@"; ) > prerm; chmod 0755 postinst prerm;  )
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/fakeroot /media/home/FIRMWARES1/RUTX11/sdk2/scripts/ipkg-build -m "" /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-arm_cortex-a7_neon-vfpv4/opendnp3 /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base
+Packaged contents of /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/ipkg-arm_cortex-a7_neon-vfpv4/opendnp3 into /media/home/FIRMWARES1/RUTX11/sdk2/bin/packages/arm_cortex-a7_neon-vfpv4/base/opendnp3_43728627_arm_cortex-a7_neon-vfpv4.ipk
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3/host /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3/usr/lib /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3/usr/include/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/*.so /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/lib/
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/opendnp3-43728627/cpp/lib/include/* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/usr/include/
+find /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3 -name '*.la' | xargs -r rm -f; 
+if [ -f /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/opendnp3.list ]; then /media/home/FIRMWARES1/RUTX11/sdk2/scripts/clean-package.sh "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/opendnp3.list" "/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi"; fi
+if [ -d /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3 ]; then (cd /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3; find ./ > /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3.files); 	SHELL= flock /media/home/FIRMWARES1/RUTX11/sdk2/tmp/.staging-dir.flock -c ' mv /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3.files /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/packages/opendnp3.list && cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3/* /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/ '; fi
+rm -rf /media/home/FIRMWARES1/RUTX11/sdk2/tmp/stage-opendnp3
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/stamp/.opendnp3_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/opendnp3'
+time: package/libs/opendnp3/compile#152.66#18.39#178.39

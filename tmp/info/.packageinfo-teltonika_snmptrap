@@ -1,0 +1,28 @@
+Source-Makefile: package/teltonika/snmptrap/Makefile
+
+Package: snmptrap
+Menu: 1
+Version: 2026-02-11-1
+Depends: +libc +libuci +libtlt-logger +libubox +libubus +libnetsnmp +libmnfinfo +SNMPTRAP_GSM:libgsm +SNMPTRAP_GSM:liburc +SNMPTRAP_IO:iomand
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Teltonika SNMP trap sender
+Maintainer: Darius Joksas <darius.joksas@teltonika.lt>
+Require-User: snmptrap=500:snmptrap=500
+Groups: snmptrap:snmpd
+Source: snmptrap-1.9-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Teltonika SNMP trap sender
+Description: 	Teltonika SNMP trap implementation (notification sender)
+Darius Joksas <darius.joksas@teltonika.lt>
+@@
+Config:
+	source "package/teltonika/snmptrap/Config.in"
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-setup-wizard-ui/Makefile
+
+Package: vuci-app-setup-wizard-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-app-ntp-ui +vuci-ui-core +vuci-app-setup-wizard-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Setup Wizard
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Setup Wizard
+Description: VuCI UI Support for Setup Wizard
+
+@@
+
+

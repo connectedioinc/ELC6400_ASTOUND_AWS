@@ -1,0 +1,1028 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Reboot Scheduler"
+    },
+    {
+      "name": "Ping/Wget Reboot"
+    }
+  ],
+  "servers": [],
+  "paths": {
+    "/site_manager/auto_reboot/scheduler/config": {
+      "get": {
+        "summary": "Returns all Site manager Reboot Scheduler configurations",
+        "tags": [
+          "Reboot Scheduler"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_periodic_reboot_multi"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a new Site manager Reboot Scheduler configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_siteman_periodic_reboot_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_periodic_reboot_one"
+        },
+        "tags": [
+          "Reboot Scheduler"
+        ]
+      },
+      "put": {
+        "summary": "Updates the selected Site manager Reboot Scheduler configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_periodic_reboot_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_periodic_reboot_multi"
+        },
+        "tags": [
+          "Reboot Scheduler"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager Reboot Scheduler configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "tags": [
+          "Reboot Scheduler"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Auto Reboot",
+          "Reboot Scheduler"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/auto_reboot/scheduler/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected Site manager Reboot Scheduler configuration",
+        "tags": [
+          "Reboot Scheduler"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_periodic_reboot_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager Reboot Scheduler configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_periodic_reboot_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_periodic_reboot_one"
+        },
+        "tags": [
+          "Reboot Scheduler"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager Reboot Scheduler configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": [
+          "Reboot Scheduler"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Auto Reboot",
+          "Reboot Scheduler"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/auto_reboot/ping_wget/config": {
+      "get": {
+        "summary": "Returns all Site manager Ping/Wget Reboot configurations",
+        "tags": [
+          "Ping/Wget Reboot"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_ping_reboot_multi"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a new Site manager Ping/Wget Reboot configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_siteman_ping_reboot_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_ping_reboot_one"
+        },
+        "tags": [
+          "Ping/Wget Reboot"
+        ]
+      },
+      "put": {
+        "summary": "Updates the selected Site manager Ping/Wget Reboot configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_ping_reboot_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_ping_reboot_multi"
+        },
+        "tags": [
+          "Ping/Wget Reboot"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager Ping/Wget Reboot configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "tags": [
+          "Ping/Wget Reboot"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Auto Reboot",
+          "Ping/Wget Reboot"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/auto_reboot/ping_wget/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected Site manager Ping/Wget Reboot configuration",
+        "tags": [
+          "Ping/Wget Reboot"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_ping_reboot_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager Ping/Wget Reboot configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_ping_reboot_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_ping_reboot_one"
+        },
+        "tags": [
+          "Ping/Wget Reboot"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager Ping/Wget Reboot configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": [
+          "Ping/Wget Reboot"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Auto Reboot",
+          "Ping/Wget Reboot"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "devman_group_options": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/devman_dm_group_id_opt"
+          },
+          {
+            "$ref": "#/components/schemas/devman_dm_device_id_arr_opt"
+          }
+        ]
+      },
+      "devman_dm_group_id_opt": {
+        "type": "object",
+        "properties": {
+          "dm_group_id": {
+            "type": "string",
+            "description": "Group's ID for which this configuration will be applied to. Either 'dm_group_id' or 'dm_device_id' must be present (but not together).",
+            "x-web": {
+              "pretty": "Group",
+              "input-type": "select"
+            }
+          }
+        },
+        "required": [
+          "dm_group_id"
+        ]
+      },
+      "devman_dm_device_id_arr_opt": {
+        "type": "object",
+        "properties": {
+          "dm_device_id": {
+            "type": "array",
+            "description": "List of devices (device IDs) for which this configuration will be applied to. Either 'dm_group_id' or 'dm_device_id' must be present (but not together).",
+            "items": {
+              "type": "string"
+            },
+            "x-web": {
+              "pretty": "Devices",
+              "input-type": "multiselect"
+            }
+          }
+        },
+        "required": [
+          "dm_device_id"
+        ]
+      },
+      "devman_periodic_reboot": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/devman_group_options"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "enable": {
+                "type": "string",
+                "description": "Enable/Disable periodic reboot.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Enable",
+                  "input-type": "switch"
+                }
+              },
+              "action": {
+                "type": "string",
+                "description": "Action to perform.",
+                "enum": [
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Action",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "1": "Reboot"
+                  }
+                }
+              },
+              "period": {
+                "type": "string",
+                "description": "Reboot period.",
+                "enum": [
+                  "week",
+                  "month"
+                ],
+                "x-web": {
+                  "pretty": "Period",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "week": "Week",
+                    "month": "Month"
+                  }
+                }
+              },
+              "days": {
+                "type": "array",
+                "description": "Days of the week.",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "mon",
+                    "tue",
+                    "wed",
+                    "thu",
+                    "fri",
+                    "sat",
+                    "sun"
+                  ]
+                },
+                "x-web": {
+                  "pretty": "Days",
+                  "input-type": "multiselect",
+                  "enum-pretty": {
+                    "mon": "Monday",
+                    "tue": "Tuesday",
+                    "wed": "Wednesday",
+                    "thu": "Thursday",
+                    "fri": "Friday",
+                    "sat": "Saturday",
+                    "sun": "Sunday"
+                  },
+                  "depends": [
+                    {
+                      "period": "week"
+                    }
+                  ]
+                }
+              },
+              "months": {
+                "type": "array",
+                "description": "Months.",
+                "items": {
+                  "type": "string"
+                },
+                "x-web": {
+                  "pretty": "Months",
+                  "input-type": "multiselect",
+                  "depends": [
+                    {
+                      "period": "month"
+                    }
+                  ],
+                  "enum-pretty": {
+                    "1": "January",
+                    "2": "February",
+                    "3": "March",
+                    "4": "April",
+                    "5": "May",
+                    "6": "June",
+                    "7": "July",
+                    "8": "August",
+                    "9": "September",
+                    "10": "October",
+                    "11": "November",
+                    "12": "December"
+                  }
+                }
+              },
+              "month_day": {
+                "type": "array",
+                "description": "Day of the month.",
+                "items": {
+                  "type": "string"
+                },
+                "x-web": {
+                  "pretty": "Day",
+                  "input-type": "multiselect",
+                  "depends": [
+                    {
+                      "period": "month"
+                    }
+                  ]
+                }
+              },
+              "time": {
+                "type": "array",
+                "description": "Time to reboot.",
+                "items": {
+                  "type": "string"
+                },
+                "x-web": {
+                  "pretty": "Time",
+                  "input-type": "multiselect"
+                }
+              },
+              "force_last": {
+                "type": "string",
+                "description": "Force last day of the month.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Force last day",
+                  "input-type": "switch",
+                  "depends": [
+                    {
+                      "period": "month"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "devman_ping_reboot": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/devman_group_options"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "enable": {
+                "type": "string",
+                "description": "Enable/Disable ping reboot.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Enable",
+                  "input-type": "switch"
+                }
+              },
+              "type": {
+                "type": "string",
+                "description": "Type of check.",
+                "enum": [
+                  "ping",
+                  "wget",
+                  "port"
+                ],
+                "x-web": {
+                  "pretty": "Type",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "ping": "Ping",
+                    "wget": "Wget",
+                    "port": "Port"
+                  }
+                }
+              },
+              "action": {
+                "type": "string",
+                "description": "Action to perform on failure.",
+                "enum": [
+                  "1",
+                  "3",
+                  "7"
+                ],
+                "x-web": {
+                  "pretty": "Action",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "1": "Reboot",
+                    "3": "None",
+                    "7": "Restart port"
+                  }
+                }
+              },
+              "time": {
+                "type": "string",
+                "description": "Interval between checks (minutes).",
+                "enum": [
+                  "1",
+                  "2",
+                  "3",
+                  "4",
+                  "5",
+                  "15",
+                  "30",
+                  "60",
+                  "120"
+                ],
+                "x-web": {
+                  "pretty": "Interval",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "1": "1 min",
+                    "2": "2 min",
+                    "3": "3 min",
+                    "4": "4 min",
+                    "5": "5 min",
+                    "15": "15 min",
+                    "30": "30 min",
+                    "60": "1 hour",
+                    "120": "2 hours"
+                  }
+                }
+              },
+              "time_out": {
+                "type": "string",
+                "description": "Timeout for response (seconds).",
+                "x-web": {
+                  "pretty": "Timeout",
+                  "input-type": "input"
+                }
+              },
+              "packet_size": {
+                "type": "string",
+                "description": "Packet size (bytes).",
+                "x-web": {
+                  "pretty": "Packet size",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "type": "ping"
+                    }
+                  ]
+                }
+              },
+              "retry": {
+                "type": "string",
+                "description": "Number of retries.",
+                "x-web": {
+                  "pretty": "Retries",
+                  "input-type": "input"
+                }
+              },
+              "interface": {
+                "type": "string",
+                "description": "Interface to use.",
+                "enum": [
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Interface",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "1": "Auto"
+                  }
+                }
+              },
+              "ip_type": {
+                "type": "string",
+                "description": "IP version.",
+                "enum": [
+                  "ipv4",
+                  "ipv6"
+                ],
+                "x-web": {
+                  "pretty": "IP Version",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "ipv4": "IPv4",
+                    "ipv6": "IPv6"
+                  }
+                }
+              },
+              "host": {
+                "type": "string",
+                "description": "Host to ping.",
+                "x-web": {
+                  "pretty": "Host",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "type": "ping"
+                    },
+                    {
+                      "type": "port"
+                    }
+                  ]
+                }
+              },
+              "url": {
+                "type": "string",
+                "description": "URL to check.",
+                "x-web": {
+                  "pretty": "URL",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "type": "wget"
+                    }
+                  ]
+                }
+              },
+              "stop_action": {
+                "type": "string",
+                "description": "Stop action if mobile data is active.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Stop action",
+                  "input-type": "switch"
+                }
+              },
+              "ping_port_type": {
+                "type": "string",
+                "description": "Ping port type.",
+                "enum": [
+                  "ping_ip",
+                  "ping_port"
+                ],
+                "x-web": {
+                  "pretty": "Ping Port Type",
+                  "input-type": "select",
+                  "depends": [
+                    {
+                      "type": "port"
+                    }
+                  ],
+                  "enum-pretty": {
+                    "ping_ip": "Ping IP",
+                    "ping_port": "Ping Port"
+                  }
+                }
+              },
+              "port_host": {
+                "type": "array",
+                "description": "Port host configuration.",
+                "items": {
+                  "type": "string"
+                },
+                "x-web": {
+                  "pretty": "Port Host",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "type": "port"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "responses": {
+      "200_siteman_periodic_reboot_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_periodic_reboot"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_periodic_reboot_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_periodic_reboot"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_ping_reboot_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_ping_reboot"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_ping_reboot_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_ping_reboot"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "req_body_siteman_periodic_reboot_one": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/devman_periodic_reboot"
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "req_body_siteman_ping_reboot_one": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/devman_ping_reboot"
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "req_body_siteman_periodic_reboot_multi": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_periodic_reboot"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "req_body_siteman_ping_reboot_multi": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_ping_reboot"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

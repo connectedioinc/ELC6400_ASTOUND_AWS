@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-opcua-server-ui/Makefile
+
+Package: vuci-app-opcua-server-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-app-universal-gateway-api +vuci-ui-core +vuci-app-opcua-server-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for OPC UA server
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for OPC UA server
+Description: VuCI UI Support for OPC UA server
+
+@@
+
+

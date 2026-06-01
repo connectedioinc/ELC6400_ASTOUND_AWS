@@ -1,0 +1,136 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Global settings"
+    }
+  ],
+  "paths": {
+    "/site_manager/global": {
+      "get": {
+        "summary": "Returns Site manager global configuration",
+        "tags": [
+          "Global settings"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_global"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates Site manager global configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_global"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_global"
+        },
+        "tags": [
+          "Global settings"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "General settings",
+          "General settings"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "siteman_global": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable or disable Site manager service. The service enables itself automatically when needed (for example when trying to pair a device).",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "input-type": "switch",
+              "pretty": "Enable"
+            }
+          },
+          "password": {
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Change global password. All devices will use this password. **Warning**: if this password is not set when pairing a device, a random password will be used and you will no longer be able to reach the device. Returns 'set' or 'unset'.",
+            "format": "root_password"
+          },
+          "password_confirm": {
+            "x-web": {
+              "pretty": "Confirm password",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Confirm password change.",
+            "format": "root_password",
+            "writeOnly": true
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_siteman_global": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/siteman_global"
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "req_body_siteman_global": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/siteman_global"
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

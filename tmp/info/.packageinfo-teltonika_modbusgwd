@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/modbusgwd/Makefile
+
+Package: modbusgwd
+Version: 2025-08-14
+Depends: +libc +kmod-usb-serial +libuci +libtlt_uci +libtlt_termios +libubus +libubox +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Modbus RTU to TCP gateway by Teltonika
+Maintainer: 
+FileAttributes: /usr/sbin/modbusgwd::::cap_net_bind_service=ep
+Source: modbusgwd-2025-08-14-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modbus RTU to TCP gateway by Teltonika
+Description: 	MODBUS RTU to TCP gateway designed to receive MODBUS TCP message, convert to MODBUS RTU and send it to MODBUS RTU device.
+
+@@
+
+

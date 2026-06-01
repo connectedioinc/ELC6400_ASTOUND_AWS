@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-ulog-ui/Makefile
+
+Package: vuci-app-ulog-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-ulog-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Traffic Logging
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Traffic Logging
+Description: VuCI UI Support for Traffic Logging
+
+@@
+
+

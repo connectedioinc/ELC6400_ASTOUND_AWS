@@ -1,0 +1,8 @@
+export { default as UploadRoot } from './UploadRoot.vue'
+export { default as UploadItem } from './UploadItem.vue'
+export { default as UploadItemName } from './UploadItemName.vue'
+export { default as UploadItemSizeText } from './UploadItemSizeText.vue'
+export { default as UploadItemDeleteTrigger } from './UploadItemDeleteTrigger.vue'
+export { default as UploadTrigger } from './UploadTrigger.vue'
+export { default as UploadDropzone } from './UploadDropzone.vue'
+export { default as UploadProgressBar } from './UploadProgressBar.vue'

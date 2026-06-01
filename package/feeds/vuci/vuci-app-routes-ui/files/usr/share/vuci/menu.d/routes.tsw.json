@@ -1,0 +1,14 @@
+{
+  "network/static_routes": {
+    "title": "Static routes",
+    "index": 80,
+    "view": "network/StaticRoutes",
+    "acls": ["network/static_routes"]
+  },
+  "status/network/routes": {
+    "title": "Routes",
+    "index": 50,
+    "view": "status/GeneralRoutes",
+    "acls": ["status/network/routes"]
+  }
+}

@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/web_filter/Makefile
+
+Package: web_filter
+Version: 2021-02-11-1
+Depends: +libc +host_block +privoxy
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: opt
+Category: Base system
+Repository: base
+Title: Meta package for Web filter packages
+Maintainer: 
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Meta package for Web filter packages
+Description: 	Web Filter package provides you with the possibility to set up
+	lists of wanted or unwanted websites (Blacklists or Whitelists).
+
+@@
+
+

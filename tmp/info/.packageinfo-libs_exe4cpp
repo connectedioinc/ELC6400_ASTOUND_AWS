@@ -1,0 +1,24 @@
+Source-Makefile: package/libs/exe4cpp/Makefile
+
+Package: exe4cpp
+Version: 1.12.2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Executor abstractions for C++ with implementations for ASIO
+Maintainer: 
+Source: exe4cpp-1.12.2-fb878a4de598ba9d6e4338afebf83f96e03af1b8.tar.xz
+License: BSD-3-Clause
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: Executor abstractions for C++ with implementations for ASIO
+Description: 	exe4cpp is a header-only library that provides executor abstractions for C++ with implementations for ASIO.
+https://github.com/automatak/exe4cpp/
+
+@@
+
+

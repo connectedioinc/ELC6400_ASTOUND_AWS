@@ -1,0 +1,25 @@
+Source-Makefile: package/teltonika/cypress-serial/Makefile
+
+Package: kmod-cypress-serial
+Submenu: Other modules
+Version: <LINUX_VERSION>+1.1.1-
+Depends: +kmod-usb-serial
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: kernel
+Category: Kernel modules
+Title: Cypress CY7C65213 USB to Serial chip driver with flow control support
+Maintainer: 
+Source: cypress-serial-1.1.1-1.1.1.tar.xz
+License: GPL-2.0-only
+Type: ipkg
+Detail-Description: Cypress CY7C65213 USB to Serial chip driver with flow control support
+Description: Cypress CY7C65213 USB to Serial chip driver with flow control support
+
+@@
+Config:
+	source "package/teltonika/cypress-serial/Config.in"
+@@
+
+

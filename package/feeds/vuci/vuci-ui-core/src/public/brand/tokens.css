@@ -1,0 +1,135 @@
+:root {
+  /* --- Base Backgrounds --- */
+  --theme-bg-page: white;
+  --theme-bg-surface: var(--theme-bg-page);
+  --theme-bg-floating: var(--theme-bg-page);
+  --theme-bg-hover: var(--blue-100);
+  --theme-bg-active: var(--blue-100);
+  --theme-bg-subtle-hover: var(--gray-100);
+  --theme-bg-subtle-active: var(--gray-100);
+
+  /* --- Base Text --- */
+  --theme-text-base: var(--gray-800);
+  --theme-text-subtle: var(--gray-600);
+
+  /* --- Base Borders --- */
+  --theme-border-base: var(--gray-300);
+  --theme-border-subtle: var(--gray-200);
+  --theme-border-strong: var(--gray-500);
+
+  /* --- Brand Tokens --- */
+  --theme-bg-primary-1: var(--blue-700);
+  --theme-bg-primary-2: var(--blue-800);
+  --theme-bg-primary-3: var(--blue-900);
+  --theme-bg-primary-hover: var(--blue-800);
+  --theme-bg-primary-active: var(--blue-800);
+  --theme-bg-primary-subtle: var(--blue-100);
+  --theme-bg-primary-subtle-hover: var(--blue-200);
+  --theme-bg-primary-subtle-active: var(--blue-200);
+  --theme-border-primary: var(--blue-700);
+  --theme-border-primary-strong: var(--blue-600);
+  --theme-text-primary: var(--blue-700);
+  --theme-text-primary-hover: var(--blue-800);
+  --theme-text-primary-active: var(--blue-800);
+  --theme-text-primary-subtle: var(--blue-600);
+  --theme-text-on-primary: white;
+
+  --theme-bg-secondary-1: var(--gray-500);
+  --theme-bg-secondary-2: var(--gray-600);
+  --theme-bg-secondary-3: var(--gray-700);
+  --theme-bg-secondary-hover: var(--gray-800);
+  --theme-bg-secondary-active: var(--gray-800);
+  --theme-bg-secondary-subtle: var(--gray-100);
+  --theme-bg-secondary-subtle-hover: var(--gray-200);
+  --theme-bg-secondary-subtle-active: var(--gray-200);
+  --theme-bg-secondary-strong: var(--gray-900);
+  --theme-border-secondary: var(--gray-700);
+  --theme-text-secondary: var(--gray-700);
+  --theme-text-secondary-hover: var(--gray-800);
+  --theme-text-secondary-active: var(--gray-800);
+  --theme-text-secondary-subtle: var(--gray-600);
+  --theme-text-on-secondary: white;
+  --theme-text-on-secondary-subtle: black;
+
+  /* --- Danger Tokens --- */
+  --theme-bg-danger: var(--red-700);
+  --theme-bg-danger-hover: var(--red-900);
+  --theme-bg-danger-active: var(--red-900);
+  --theme-bg-danger-subtle: var(--red-100);
+  --theme-border-danger: var(--red-700);
+  --theme-border-danger-subtle: var(--red-300);
+  --theme-text-danger: var(--red-700);
+  --theme-text-on-danger: white;
+  --theme-text-danger-subtle: var(--red-500);
+  --theme-text-on-danger-subtle: black;
+
+  /* --- Success Tokens --- */
+  --theme-bg-success: var(--green-300);
+  --theme-bg-success-hover: var(--lime-300);
+  --theme-bg-success-active: var(--lime-300);
+  --theme-bg-success-subtle: var(--green-100);
+  --theme-border-success: var(--green-300);
+  --theme-text-success: var(--green-300);
+  --theme-text-on-success: white;
+  --theme-text-success-subtle: var(--lime-300);
+  --theme-text-on-success-subtle: black;
+
+  /* --- Warning Tokens --- */
+  --theme-bg-warning: var(--orange-400);
+  --theme-bg-warning-hover: var(--orange-500);
+  --theme-bg-warning-active: var(--orange-500);
+  --theme-bg-warning-subtle: var(--yellow-100);
+  --theme-border-warning: var(--orange-400);
+  --theme-border-warning-subtle: var(--orange-100);
+  --theme-text-warning: var(--orange-400);
+  --theme-text-on-warning: white;
+  --theme-text-warning-subtle: var(--orange-500);
+  --theme-text-on-warning-subtle: black;
+
+  /* --- Info Tokens --- */
+  --theme-bg-info: var(--blue-700);
+  --theme-bg-info-hover: var(--blue-800);
+  --theme-bg-info-active: var(--blue-800);
+  --theme-bg-info-subtle: var(--blue-100);
+  --theme-border-info: var(--blue-300);
+  --theme-text-info: var(--blue-700);
+  --theme-text-on-info: white;
+  --theme-text-info-subtle: var(--blue-500);
+  --theme-text-on-info-subtle: black;
+
+  /* --- Status Tokens --- */
+  --theme-bg-status-good: var(--green-300);
+  --theme-text-on-status-good: white;
+  --theme-bg-status-good-subtle: var(--green-100);
+  --theme-text-on-status-good-subtle: black;
+  --theme-border-status-good: var(--green-200);
+  --theme-text-status-good: var(--green-300);
+
+  --theme-bg-status-positive: var(--yellow-300);
+  --theme-text-on-status-positive: white;
+  --theme-bg-status-positive-subtle: var(--yellow-100);
+  --theme-text-on-status-positive-subtle: black;
+  --theme-border-status-positive: var(--yellow-200);
+  --theme-text-status-positive: var(--yellow-300);
+
+  --theme-bg-status-fair: var(--orange-300);
+  --theme-text-on-status-fair: white;
+  --theme-bg-status-fair-subtle: var(--orange-100);
+  --theme-text-on-status-fair-subtle: black;
+  --theme-border-status-fair: var(--orange-200);
+  --theme-text-status-fair: var(--orange-300);
+
+  --theme-bg-status-poor: var(--red-500);
+  --theme-text-on-status-poor: white;
+  --theme-bg-status-poor-subtle: var(--red-100);
+  --theme-text-on-status-poor-subtle: black;
+  --theme-border-status-poor: var(--red-400);
+  --theme-text-status-poor: var(--red-500);
+
+  --theme-bg-status-bad: var(--red-700);
+  --theme-text-on-status-bad: white;
+  --theme-bg-status-bad-subtle: var(--red-200);
+  --theme-text-on-status-bad-subtle: black;
+  --theme-border-status-bad: var(--red-500);
+  --theme-text-status-bad: var(--red-700);
+}

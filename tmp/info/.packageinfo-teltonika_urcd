@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/urcd/Makefile
+
+Package: urcd
+Menu: 1
+Version: 1.10
+Depends: +libc +libubus +libubox +libgsm +liburc +libuci +libtlt-logger +libboardjson +liblog +libcfg
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: GSM URC manager
+Maintainer: 
+Source: urcd-1.10-1.10.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: GSM URC manager
+Description: GSM URC manager
+
+@@
+
+

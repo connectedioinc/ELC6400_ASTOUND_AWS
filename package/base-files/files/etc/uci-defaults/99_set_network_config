@@ -1,0 +1,24 @@
+#!/bin/sh
+#LAN interface address
+uci set network.lan.ipaddr='192.168.71.1'
+#Interface for Wireless
+uci set network.wifi=interface
+uci set network.wifi.type='bridge'
+uci set network.wifi.proto='static'
+uci set network.wifi.ipaddr='10.0.1.1'
+uci set network.wifi.netmask='255.255.255.0'
+
+#Interface for OpenVPN
+uci set network.vpnclient=interface
+uci set network.vpnclient.device='tun_+'
+uci set network.vpnclient.proto='none'
+
+#Interface for Remote access VPN
+uci set network.remoteaccessvpn=interface
+uci set network.remoteaccessvpn.device='tun0'
+uci set network.remoteaccessvpn.proto='none'
+uci set network.remoteaccessvpn.area_type='wan'
+
+uci commit network
+
+exit 0

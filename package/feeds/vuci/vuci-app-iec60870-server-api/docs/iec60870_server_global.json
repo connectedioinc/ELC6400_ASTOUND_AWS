@@ -1,0 +1,208 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "IEC 60870-5 Server"
+    }
+  ],
+  "paths": {
+    "/iec60870/server/global": {
+      "x-web": {
+        "menu": [
+          "Services",
+          "IEC 60870-5 Server",
+          "IEC 60870-5 Server"
+        ],
+        "name": "IEC 60870-5 Server"
+      },
+      "get": {
+        "summary": "Get IEC 60870-5 Server global configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_server_global_options"
+          }
+        },
+        "tags": [
+          "Global"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/iec60870_server_global_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_server_global_options"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "summary": "Update IEC 60870-5 Server global configuration",
+        "tags": [
+          "Global"
+        ]
+      }
+    },
+    "/iec60870/server/status": {
+      "x-web": {
+        "menu": [
+          "Services",
+          "IEC 60870-5 Server",
+          "IEC 60870-5 Server"
+        ],
+        "name": "IEC 60870-5 Server"
+      },
+      "get": {
+        "summary": "Get IEC 60870-5 Server service status",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_server_status"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": [
+          "Global"
+        ]
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "iec60870_server_global_options": {
+        "description": "Global service options",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/iec60870_server_global_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "iec60870_server_status": {
+        "description": "Service status",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/iec60870_server_status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "iec60870_server_global_options": {
+        "type": "object",
+        "required": ["enabled"],
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable/disable IEC 60870-5 server service.",
+            "format": "is_bool",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "enum": [
+              "0",
+              "1"
+            ]
+          }
+        }
+      },
+      "iec60870_server_status": {
+        "type": "object",
+        "required": ["uptime"],
+        "properties": {
+          "uptime": {
+            "format": "uinteger",
+            "type": "string"
+          },
+          "instances": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "connection_type": {
+                  "type": "string",
+                  "enum": [
+                    "iec104"
+                  ],
+                  "x-web": {
+                    "pretty": "Connection type",
+                    "enum-depends": [
+                      {
+                        "hw_tags": {
+                          "serial": true
+                        },
+                        "values": [
+                          "iec104",
+                          "iec101"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "link_layer_state": {
+                  "type": "string",
+                  "enum": [
+                    "0",
+                    "1",
+                    "2",
+                    "3"
+                  ]
+                },
+                "connected_clients": {
+                  "type": "string",
+                  "format": "uinteger"
+                },
+                "error": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+Source-Makefile: package/feeds/vuci/vuci-app-access-control-api/Makefile
+Build-Depends: VUCI_MINIFY_LUA:luasrcdiet/host
+
+Package: vuci-app-access-control-api
+Submenu: Applications/API
+Version: 1
+Depends: +libc +ip_blockd +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI API Support for Access Control
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI API Support for Access Control
+Description: VuCI API Support for Access Control
+
+@@
+
+

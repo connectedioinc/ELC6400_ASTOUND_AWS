@@ -1,0 +1,4 @@
+./cert.go
+./debugderp.go
+./localapi.go
+./pprof.go

@@ -1,0 +1,8 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "rpc-sys-ext": {
+      "methods": ["ethtool"]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/mqtt-modbus-gateway/Makefile
+
+Package: mqtt-modbus-gateway
+Version: 2025-10-01
+Depends: +libc +libmosquitto +libmodbus +libmnfinfo +libtlt_uci +libtlt_termios +libuci +libubox +libubus +libblobmsg-json +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: MQTT Modbus Gateway
+Maintainer: 
+Require-User: mqtt_modbus_gateway=515:mqtt_modbus_gateway=515
+Source: mqtt-modbus-gateway-2025-10-01-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: MQTT Modbus Gateway
+Description: 	MQTT-Modbus Gateway is a service meant to read/write MODBUS TCP/RTU servers via MQTT messages.
+
+@@
+
+

@@ -1,0 +1,6 @@
+./interfaces_linux.go
+./loghelper.go
+./netmon.go
+./netmon_linux.go
+./polling.go
+./state.go

@@ -1,0 +1,1550 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/data_to_server/collections/{collection_id}/servers/config/{id}": {
+      "parameters": [
+        {
+          "name": "collection_id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Collection configuration ID.",
+          "x-web": {
+            "pretty": "Collection configuration ID",
+            "parameter_endpoint": "/data_to_server/collections/config",
+            "parameter_filter": "$.http_body.data[*].id"
+          }
+        },
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Server Plugin configuration ID."
+        }
+      ],
+      "get": {
+        "tags": ["Server Plugins"],
+        "summary": "Returns the specified Data to Server Server Plugin configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_servers_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Server Plugins"],
+        "summary": "Uploads the Server Plugin necessary files",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "Path of the uploaded file"
+                        }
+                      }
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_output_upload"
+        }
+      },
+      "put": {
+        "tags": ["Server Plugins"],
+        "summary": "Updates the specified Data to Server Server Plugin configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_servers_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_servers_single"
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Server Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "hidden": true,
+        "hidden_documentation_page": true
+      }
+    },
+    "/data_to_server/collections/{id}/servers/config": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Collection configuration ID.",
+          "x-web": {
+            "pretty": "Collection configuration ID",
+            "parameter_endpoint": "/data_to_server/collections/config",
+            "parameter_filter": "$.http_body.data[*].id"
+          }
+        }
+      ],
+      "get": {
+        "tags": ["Server Plugins"],
+        "summary": "Returns all Data to Server Server Plugins configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_servers_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": ["Server Plugins"],
+        "summary": "Updates the selected Data to Server Server Plugins configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_servers_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_servers_multi"
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Server Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        },
+        "hidden": true,
+        "hidden_documentation_page": true
+      }
+    },
+    "/data_to_server/servers/options": {
+      "get": {
+        "summary": "Returns Data to Server all available Server Plugin names, description and tags",
+        "tags": ["Server Plugins"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_sender_available_plugin_names"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Server Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/data_to_server/servers/config": {
+      "get": {
+        "tags": ["Server Plugins"],
+        "summary": "Returns all Data to Server Server Plugins configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_servers_multi"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": ["Server Plugins"],
+        "summary": "Updates the selected Data to Server Server Plugins configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_servers_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_servers_multi"
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Server Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/data_to_server/servers/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Server Plugin configuration ID."
+        }
+      ],
+      "get": {
+        "tags": ["Server Plugins"],
+        "summary": "Returns the specified Data to Server Server Plugin configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_servers_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Server Plugins"],
+        "summary": "Uploads the Server Plugin necessary files",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status."
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string",
+                          "description": "Path of the uploaded file"
+                        }
+                      }
+                    }
+                  },
+                  "required": ["success", "data"]
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_output_upload"
+        }
+      },
+      "put": {
+        "tags": ["Server Plugins"],
+        "summary": "Updates the specified Data to Server Server Plugin configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_to_server_servers_single"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_data_to_server_servers_single"
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Server Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/data_to_server/servers/actions/download_example_output_lua": {
+      "post": {
+        "summary": "Downloads Lua output script example file",
+        "tags": ["Server Plugins"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_example_lua"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Server Plugins"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "requestBodies": {
+      "req_data_to_server_servers_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/data_sender_output_multi_options"
+                  }
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "req_data_to_server_servers_single": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/data_sender_output_single_options"
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "req_data_to_server_output_upload":{
+        "description": "",
+        "content": {
+          "multipart/form-data": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "option": {
+                  "type": "string",
+                  "description": "Parameter to upload the file to.",
+                  "enum": ["http_cafile", "http_certfile", "http_keyfile", "mqtt_cafile", "mqtt_certfile", "mqtt_keyfile", "azure_x509certificate", "azure_x509privatekey"]
+                },
+                "file": {
+                  "type": "string",
+                  "format": "binary",
+                  "description": "The config file"
+                }
+              },
+              "required": ["option", "file"]
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_data_to_server_servers_single": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/data_sender_output_multi_options"
+                },
+                "messages": {
+                  "$ref": "#/components/schemas/data_to_server_servers_message_array"
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_data_to_server_servers_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "",
+                  "items": {
+                    "$ref": "#/components/schemas/data_sender_output_multi_options"
+                  }
+                },
+                "messages": {
+                  "$ref": "#/components/schemas/data_to_server_servers_message_array"
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "data_sender_output_multi_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Name of the configuration."
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/data_sender_output_single_options"
+          }
+        ],
+        "required": ["id"]
+      },
+      "data_to_server_servers_message_array": {
+        "type": "array",
+        "description": "Array of messages",
+        "items": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "number",
+              "description": "Message code",
+              "enum": [1, 2, 3]
+            },
+            "source": {
+              "type": "string",
+              "description": "Message source",
+              "example": "conf_id:option"
+            },
+            "message": {
+              "type": "string",
+              "description": "Message text",
+              "enum": [
+                "It's recommended to use a minimum RSA key length of 2048 bits for the certificate.",
+                "It's recommended to use a minimum ECC key length of 256 bits for the certificate.",
+                "It's recommended to use a minimum key length of 2048 bits for the certificate."
+              ]
+            }
+          },
+          "required": ["code", "message", "source"]
+        }
+      },
+      "data_sender_output_single_options": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Plugin name.",
+            "readOnly": true,
+            "x-web": {
+              "pretty": "Name",
+              "unique": true
+            }
+          },
+          "plugin": {
+            "type": "string",
+            "description": "Plugin type.",
+            "enum": ["azure", "http", "mqtt", "ftp", "lua", "sms", "smtp", "socket"],
+            "x-web": {
+              "pretty": "Plugin type",
+              "input-type": "select",
+              "enum-pretty": {
+                "azure": "Azure",
+                "http": "HTTP",
+                "mqtt": "MQTT",
+                "ftp": "FTP",
+                "lua": "Lua",
+                "sms": "SMS",
+                "smtp": "SMTP",
+                "socket": "Socket"
+              }
+            }
+          },
+          "http_host": {
+            "type": "string",
+            "description": "Server address.",
+            "format": "url",
+            "x-web": {
+              "pretty": "Server address",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "http"
+                }
+              ]
+            }
+          },
+          "http_header": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "string"
+            },
+            "description": "Allows to add custom headers to the HTTP requests.",
+            "x-web": {
+              "pretty": "HTTP headers",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "http"
+                }
+              ]
+            }
+          },
+          "http_tls": {
+            "type": "string",
+            "description": "Enable secure connection.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Enable secure connection",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "http"
+                }
+              ]
+            }
+          },
+          "http_device_files": {
+            "type": "string",
+            "description": "Use certificate files from device"
+          },
+          "http_cafile": {
+            "type": "string",
+            "description": "Certificate authority file.",
+            "format": "path",
+            "x-web": {
+              "upload_endpoint": "/data_to_server/servers/config/{id}",
+              "pretty": "Certificate authority file'",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "http",
+                  "http_tls": "1"
+                }
+              ]
+            }
+          },
+          "http_cafile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "http_certfile": {
+            "type": "string",
+            "description": "Client certificate.",
+            "format": "path",
+            "x-web": {
+              "upload_endpoint": "/data_to_server/servers/config/{id}",
+              "pretty": "Client certificate",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "http",
+                  "http_tls": "1"
+                }
+              ]
+            }
+          },
+          "http_certfile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "http_keyfile": {
+            "type": "string",
+            "description": "Client private keyfile.",
+            "format": "path",
+            "x-web": {
+              "upload_endpoint": "/data_to_server/servers/config/{id}",
+              "pretty": "Client private keyfile",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "http",
+                  "http_tls": "1"
+                }
+              ]
+            }
+          },
+          "http_keyfile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mqtt_host": {
+            "type": "string",
+            "description": "Hostname or ip address of the broker to connect to.",
+            "format": "host",
+            "x-web": {
+              "pretty": "Server address",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_port": {
+            "type": "string",
+            "description": "Port number.",
+            "format": "port",
+            "default": 1883,
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_keepalive": {
+            "type": "string",
+            "description": "MQTT keepalive time in seconds.",
+            "format": "irange(1,640)",
+            "default": "60",
+            "x-web": {
+              "pretty": "Keepalive",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_topic": {
+            "type": "string",
+            "description": "MQTT topic to be used for publishing the data.",
+            "format": "fieldvalidation('^[a-zA-Z0-9!@#:%$%%&%*%+%-/=%?%^_`%[%]{|}~%.]+$',0)",
+            "maxLength": 65535,
+            "x-web": {
+              "pretty": "Topic",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_client_id": {
+            "type": "string",
+            "description": "Client ID to send with the data.",
+            "format": "fieldvalidation('^[a-zA-Z0-9!@#:%$%%&%*%+%-/=%?%^_`%[%]{|}~%.]+$',0)",
+            "maxLength": 64,
+            "x-web": {
+              "pretty": "Client ID",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_qos": {
+            "type": "string",
+            "description": "MQTT Quality of Service. Allowed values: 0 - when we prefer that the message will not arrive at all rather than arrive twice, 1 - when we want the message to arrive at least once but don't care if it arrives twice or more, 2 - when we want the message to arrive exactly once. A higher QoS value means a slower transfer.",
+            "enum": ["0", "1", "2"],
+            "x-web": {
+              "pretty": "QoS",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_tls": {
+            "type": "string",
+            "description": "Enable TLS connections.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Use TLS",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_insecure": {
+            "type": "string",
+            "description": "Enable TLS connection",
+            "x-web": {
+              "pretty": "Allow insecure connection",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_tls": "1",
+                  "mqtt_tls_type": "cert"
+                }
+              ]
+            }
+          },
+          "mqtt_tls_type": {
+            "type": "string",
+            "description": "Choose TLS type.",
+            "enum": ["cert", "psk"],
+            "x-web": {
+              "pretty": "TLS type",
+              "input-type": "select",
+              "depends": [
+                {
+                  "mqtt_tls": "1",
+                  "plugin": "mqtt"
+                }
+              ],
+              "enum-pretty": {
+                "cert": "Certificate based",
+                "psk": "Pre-Shared-Key based"
+              }
+            }
+          },
+          "mqtt_device_files": {
+            "type": "string",
+            "description": "Use certificate files from device"
+          },
+          "mqtt_cafile": {
+            "type": "string",
+            "description": "Certificate authority file.",
+            "format": "path",
+            "x-web": {
+              "upload_endpoint": "/data_to_server/servers/config/{id}",
+              "pretty": "CA file",
+              "input-type": "input",
+              "depends": [
+                {
+                  "mqtt_tls": "1",
+                  "plugin": "mqtt",
+                  "mqtt_tls_type": "cert"
+                }
+              ]
+            }
+          },
+          "mqtt_cafile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mqtt_certfile": {
+            "type": "string",
+            "description": "Client certificate.",
+            "format": "path",
+            "x-web": {
+              "upload_endpoint": "/data_to_server/servers/config/{id}",
+              "pretty": "Client certificate",
+              "input-type": "input",
+              "depends": [
+                {
+                  "mqtt_tls": "1",
+                  "plugin": "mqtt",
+                  "mqtt_tls_type": "cert"
+                }
+              ]
+            }
+          },
+          "mqtt_certfile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mqtt_keyfile": {
+            "type": "string",
+            "description": "Client private keyfile.",
+            "format": "path",
+            "x-web": {
+              "upload_endpoint": "/data_to_server/servers/config/{id}",
+              "pretty": "Private key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "mqtt_tls": "1",
+                  "plugin": "mqtt",
+                  "mqtt_tls_type": "cert"
+                }
+              ]
+            }
+          },
+          "mqtt_keyfile:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "mqtt_psk": {
+            "type": "string",
+            "description": "The pre-shared-key in hex format with no leading “0x”.",
+            "format": "['no_prefix(\"0x\")', 'hexstring']",
+            "maxLength": 128,
+            "x-web": {
+              "pretty": "Pre-Shared-Key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "mqtt_tls": "1",
+                  "plugin": "mqtt",
+                  "mqtt_tls_type": "psk"
+                }
+              ]
+            }
+          },
+          "mqtt_psk:set": {
+            "type": "string",
+            "description": "Indicates if 'mqtt_psk' option is set.",
+            "enum": ["0", "1"],
+            "readOnly": true
+          },
+          "mqtt_identity": {
+            "type": "string",
+            "description": "The identity of this client.",
+            "maxLength": 128,
+            "format": "uciname",
+            "x-web": {
+              "pretty": "Identity",
+              "input-type": "input",
+              "depends": [
+                {
+                  "mqtt_tls": "1",
+                  "plugin": "mqtt",
+                  "mqtt_tls_type": "psk"
+                }
+              ]
+            }
+          },
+          "mqtt_use_credentials": {
+            "type": "string",
+            "description": "Enables use of username and password for authentication.",
+            "enum": ["0", "1"],
+            "x-web": {
+              "pretty": "Use credentials",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "mqtt_username": {
+            "type": "string",
+            "description": "Username for MQTT authentication.",
+            "format": "credentials_validate(512, 'allow-space')",
+            "maxLength": 512,
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_use_credentials": "1"
+                }
+              ]
+            }
+          },
+          "mqtt_password": {
+            "type": "string",
+            "description": "Password for MQTT authentication.",
+            "format": "credentials_validate(512, 'allow-space')",
+            "maxLength": 512,
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt",
+                  "mqtt_use_credentials": "1"
+                }
+              ]
+            }
+          },
+          "mqtt_password:set": {
+            "type": "string",
+            "description": "Indicates if 'mqtt_password' option is set.",
+            "enum": ["0", "1"],
+            "readOnly": true
+          },
+          "mqtt_msg_count": {
+            "type": "string",
+            "description": "How many MQTT messages should fail before reinitializing connection with broker. Value '0' does not count failed messages.",
+            "format": "irange(0,2147483647)",
+            "default": 0,
+            "x-web": {
+              "pretty": "Failed message count",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "mqtt"
+                }
+              ]
+            }
+          },
+          "azure_configuration_type": {
+            "type": "string",
+            "enum": ["unique", "existing"],
+            "default": "unique",
+            "x-web": {
+              "pretty": "Configuration type",
+              "input-type": "select",
+              "enum-pretty": {
+                "unique": "Unique Azure Iot Hub configuration",
+                "existing": "Existing Azure Iot Hub configuration"
+              },
+              "depends": [
+                {
+                  "plugin": "azure"
+                }
+              ]
+            }
+          },
+          "azure_section_name": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Azure IoT Hub instance",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "existing"
+                }
+              ]
+            }
+          },
+          "azure_connection_type": {
+            "type": "string",
+            "description": "Connection type to an existing IoT Hub.",
+            "enum": ["iothub", "provisioning"],
+            "x-web": {
+              "pretty": "Connection type",
+              "input-type": "select",
+              "enum-pretty": {
+                "iothub": "Shared Access Signature (SAS) key",
+                "provisioning": "Device Provisioning Service (DPS)"
+              },
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "unique"
+                }
+              ]
+            }
+          },
+          "azure_connection_string": {
+            "type": "string",
+            "description": "Connection string based on primary key used in API calls which allows device to communicate with IoT Hub.",
+            "format": "string",
+            "maxLength": 4096,
+            "x-web": {
+              "pretty": "Connection string",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "unique",
+                  "azure_connection_type": "iothub"
+                }
+              ]
+            }
+          },
+          "azure_id_scope": {
+            "type": "string",
+            "description": "Unique identifier that is assigned to an Azure IoT Hub during its creation and is used to uniquely identify the specific provisioning service the device will register through",
+            "format": "string",
+            "maxLength": 100,
+            "x-web": {
+              "pretty": "ID Scope",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "unique",
+                  "azure_connection_type": "provisioning"
+                }
+              ]
+            }
+          },
+          "azure_registration_id": {
+            "type": "string",
+            "description": "The registration ID is used to uniquely identify a device registration with the Device Provisioning Service. Registration ID is the X.509 certificate common name (CN) field of the individual device's certificate",
+            "format": "string",
+            "maxLength": 64,
+            "x-web": {
+              "pretty": "Registration ID",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "unique",
+                  "azure_connection_type": "provisioning"
+                }
+              ]
+            }
+          },
+          "azure_global_prov_uri": {
+            "type": "string",
+            "description": "Destination for messages sent by IoT devices to the Azure IoT Hub (will default to global.azure-devices-provisioning.net if not set)",
+            "format": "url",
+            "x-web": {
+              "pretty": "Global Device Endpoint",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "unique",
+                  "azure_connection_type": "provisioning"
+                }
+              ]
+            }
+          },
+          "azure_attestation_mechanism": {
+            "type": "string",
+            "description": "Method used to confirm a device's identity in Device Provisioning Service.",
+            "enum": ["x509_certificate", "symmetric_key"],
+            "default": "x509_certificate",
+            "x-web": {
+              "pretty": "Attestation mechanism",
+              "input-type": "select",
+              "enum-pretty": {
+                "x509_certificate": "X.509 Certificates",
+                "symmetric_key": "Symmetric Key"
+              },
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "unique",
+                  "azure_connection_type": "provisioning"
+                }
+              ]
+            }
+          },
+          "azure_symmetric_key": {
+            "type": "string",
+            "description": "The derived device key from the DPS Primary Key.",
+            "maxLength": 128,
+            "x-web": {
+              "pretty": "Symmetric Key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "unique",
+                  "azure_connection_type": "provisioning",
+                  "azure_attestation_mechanism": "symmetric_key"
+                }
+              ]
+            }
+          },
+          "azure_x509certificate": {
+            "type": "string",
+            "description": "Upload the 'leaf' certificate file.",
+            "format": "path",
+            "x-web": {
+              "upload_endpoint": "/data_to_server/servers/config/{id}",
+              "pretty": "X.509 Certificate",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "unique",
+                  "azure_connection_type": "provisioning",
+                  "azure_attestation_mechanism": "x509_certificate"
+                }
+              ]
+            }
+          },
+          "azure_x509certificate:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "azure_x509privatekey": {
+            "type": "string",
+            "description": "Upload the 'leaf' key file.",
+            "format": "path",
+            "x-web": {
+              "upload_endpoint": "/data_to_server/servers/config/{id}",
+              "pretty": "X.509 Private Key",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "azure",
+                  "azure_configuration_type": "unique",
+                  "azure_connection_type": "provisioning",
+                  "azure_attestation_mechanism": "x509_certificate"
+                }
+              ]
+            }
+          },
+          "azure_x509privatekey:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "ftp_host": {
+            "type": "string",
+            "format": "host",
+            "description": "The domain name or IP address of the server",
+            "x-web": {
+              "pretty": "Host",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "ftp_username": {
+            "type": "string",
+            "description": "The username of the FTP server",
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "ftp_password": {
+            "type": "string",
+            "description": "The password of the FTP server",
+            "format": "credentials_validate",
+            "maxLength": 512,
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "ftp_port": {
+            "type": "string",
+            "description": "The TCP/IP port of the server",
+            "format": "port",
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "ftp_file_name": {
+            "type": "string",
+            "description": "Extra information to be added to file name",
+            "x-web": {
+              "pretty": "Extra prefix to file name",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "ftp_dir": {
+            "type": "string",
+            "description": "Remote FTP directory to upload file to",
+            "x-web": {
+              "pretty": "The directory of the file",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "ftp_buff_size": {
+            "type": "string",
+            "description": "The size of the buffer to be used for uploading to FTP server",
+            "format": "irange(1,10485760)",
+            "x-web": {
+              "pretty": "Buffer size",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "ftp_overflow": {
+            "type": "string",
+            "description": "Upload file to FTP server if buffer overflowed",
+            "format": "is_bool",
+            "x-web": {
+              "pretty": "Overflow",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "ftp_mode": {
+            "type": "string",
+            "enum": ["interval", "fixed"],
+            "description": "The schedule mode to be used for uploading to FTP server",
+            "x-web": {
+              "pretty": "Mode",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "ftp_interval": {
+            "type": "string",
+            "description": "Upload files to server every x seconds",
+            "format": "irange(1,3600)",
+            "x-web": {
+              "pretty": "Interval",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp",
+                  "ftp_mode": "interval"
+                }
+              ]
+            }
+          },
+          "ftp_hour": {
+            "type": "string",
+            "description": "Uploading will be performed on this specific hour",
+            "format": "irange(-1,23)",
+            "x-web": {
+              "pretty": "Hour",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp",
+                  "ftp_mode": "fixed"
+                }
+              ]
+            }
+          },
+          "ftp_minute": {
+            "type": "string",
+            "description": "Uploading will be performed on this specific minute",
+            "format": "irange(1,3600)",
+            "x-web": {
+              "pretty": "Minute",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp",
+                  "ftp_mode": "fixed"
+                }
+              ]
+            }
+          },
+          "ftp_day": {
+            "type": "string",
+            "description": "Uploading will be performed on this day only",
+            "format": "irange(1, 31) or -1",
+            "x-web": {
+              "pretty": "Day",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "ftp",
+                  "ftp_mode": "fixed"
+                }
+              ]
+            }
+          },
+          "ftp_cwd": {
+            "type": "string",
+            "enum": ["nocwd", "cwd", "multicwd"],
+            "description": "Directory traversing method for FTP (multicwd, nocwd, cwd)",
+            "x-web": {
+              "pretty": "Directory traversing method",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "ftp"
+                }
+              ]
+            }
+          },
+          "lua_out_script": {
+            "type": "string",
+            "format": "file_validation",
+            "description": "Path to the lua script",
+            "x-web": {
+              "pretty": "Lua script",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "lua"
+                }
+              ]
+            }
+          },
+          "lua_out_script:file_size": {
+            "description": "Uploaded file size in bytes.",
+            "type": "number",
+            "readOnly": true
+          },
+          "sms_recipient_format": {
+            "type": "string",
+            "enum": ["single", "group"],
+            "description": "You can choose to add a single number or use a phone group list",
+            "x-web": {
+              "pretty": "Recipients",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "sms"
+                }
+              ]
+            }
+          },
+          "sms_phone": {
+            "type": "string",
+            "description": "To whom the message will be sent",
+            "format": "phonedigit",
+            "x-web": {
+              "pretty": "Recipient's phone number",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "sms",
+                  "sms_recipient_format": "single"
+                }
+              ]
+            }
+          },
+          "sms_group": {
+            "type": "string",
+            "description": "You can choose to add a single number or use a phone group list",
+            "x-web": {
+              "pretty": "Phone group",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "sms",
+                  "sms_recipient_format": "group"
+                }
+              ]
+            }
+          },
+          "sms_modem_id": {
+            "type": "string",
+            "description": "Specifies the modem id for sms sending",
+            "x-web": {
+              "pretty": "Modem",
+              "input-type": "select",
+              "hw_tags": {
+                "dual_modem": true
+              },
+              "depends": [
+                {
+                  "plugin": "sms"
+                }
+              ],
+              "enum-pretty": {
+                "$ref": "#/x-schemas/modem_names"
+              },
+              "enum-depends": {
+                "$ref": "#/x-schemas/modem_select"
+              }
+            }
+          },
+          "smtp_recipients": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "email"
+            },
+            "description": "Recipient's email address",
+            "x-web": {
+              "pretty": "Email address of recipient.",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "smtp"
+                }
+              ]
+            }
+          },
+          "smtp_subject": {
+            "type": "string",
+            "format": "subject_rule",
+            "description": "Subject of an email",
+            "x-web": {
+              "pretty": "Subject",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "smtp"
+                }
+              ]
+            }
+          },
+          "smtp_account": {
+            "type": "string",
+            "description": "Email account for email sending",
+            "x-web": {
+              "pretty": "Email account",
+              "input-type": "select",
+              "depends": [
+                {
+                  "plugin": "smtp"
+                }
+              ]
+            }
+          },
+          "soc_address": {
+            "type": "string",
+            "format": "host",
+            "description": "Socket's server address",
+            "x-web": {
+              "pretty": "Server address",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "socket"
+                }
+              ]
+            }
+          },
+          "soc_port": {
+            "type": "string",
+            "format": "port",
+            "description": "Socket's server port",
+            "x-web": {
+              "pretty": "Server port",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "socket"
+                }
+              ]
+            }
+          },
+          "soc_udp": {
+            "type": "string",
+            "format": "is_bool",
+            "description": "Use UDP as the protocol",
+            "x-web": {
+              "pretty": "UDP",
+              "input-type": "switch",
+              "depends": [
+                {
+                  "plugin": "socket"
+                }
+              ]
+            }
+          },
+          "soc_timeout": {
+            "type": "string",
+            "format": "irange(0,120)",
+            "description": "Specifies the receiving or sending data timeout",
+            "x-web": {
+              "pretty": "Timeout",
+              "input-type": "input",
+              "depends": [
+                {
+                  "plugin": "socket"
+                }
+              ]
+            }
+          }
+        },
+        "required": ["name"]
+      }
+    }
+  }
+}

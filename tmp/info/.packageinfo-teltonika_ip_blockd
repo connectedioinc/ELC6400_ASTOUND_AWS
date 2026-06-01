@@ -1,0 +1,28 @@
+Source-Makefile: package/teltonika/ip_blockd/Makefile
+
+Package: ip_blockd
+Menu: 1
+Version: 2025-12-08-1
+Depends: +libc +ipset +iptables +libubus +libubox +libuci +libtlt-logger +libip4tc +libip6tc +libipset +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: IP Block Daemon
+Maintainer: 
+Require-User: ip_blockd:ip_blockd
+FileAttributes: /usr/bin/ip_blockd::::cap_net_raw,cap_net_admin=ep
+Source: ip_blockd-2025-12-08-1.22.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: IP Block Daemon
+Description: 	IP block daemon
+
+@@
+Config:
+  source "package/teltonika/ip_blockd/Config.in"
+@@
+
+

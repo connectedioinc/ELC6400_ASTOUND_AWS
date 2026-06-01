@@ -1,0 +1,213 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "IPTables"
+    }
+  ],
+  "paths": {
+    "/firewall/iptables/ipv4/status": {
+      "get": {
+        "summary": "Returns all parsed chains and their rules from `iptables` command",
+        "tags": ["IPTables"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200GetForIptables"
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Firewall"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/firewall/iptables/ipv6/status": {
+      "get": {
+        "summary": "Returns all parsed chains and their rules from `ip6tables` command",
+        "tags": ["IPTables"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200GetForIptables"
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Firewall"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/firewall/iptables/ipv4/actions/reset": {
+      "post": {
+        "summary": "Resets `iptables` chains counters",
+        "tags": ["IPTables"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PostForIptables"
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Firewall", "IPv4"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/firewall/iptables/ipv6/actions/reset": {
+      "post": {
+        "summary": "Resets `ip6tables` chains counters",
+        "tags": ["IPTables"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200PostForIptables"
+          }
+        }
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Network", "Firewall", "IPv6"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200GetForIptables": {
+        "description": "Returns parsed iptables",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/iptables_values"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200PostForIptables": {
+        "description": "Resets iptables chains counters",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "iptables_values": {
+        "type": "object",
+        "properties": {
+          "table": {
+            "type": "string",
+            "description": "Name of the table."
+          },
+          "chains": {
+            "type": "array",
+            "description": "List of chains.",
+            "items": {
+              "type": "object",
+              "properties": {
+                "chain": {
+                  "type": "string",
+                  "description": "Name of the chain."
+                },
+                "pkts": {
+                  "type": "string",
+                  "description": "Count of packets that were matched to the chain."
+                },
+                "bytes": {
+                  "type": "string",
+                  "description": "Size of traffic that was matched to the chain."
+                },
+                "policy": {
+                  "type": "string",
+                  "description": "Default policy for the chain."
+                },
+                "rules": {
+                  "type": "array",
+                  "description": "Table chain rules.",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "pkts": {
+                        "type": "string",
+                        "description": "Count of packets that were matched to the rule."
+                      },
+                      "bytes": {
+                        "type": "string",
+                        "description": "Size of traffic that was matched to the rule."
+                      },
+                      "target": {
+                        "type": "string",
+                        "description": "Name of the rule."
+                      },
+                      "prot": {
+                        "type": "string",
+                        "description": "Filters by Internet protocol."
+                      },
+                      "in": {
+                        "type": "string",
+                        "description": "Filters by inbound interface."
+                      },
+                      "out": {
+                        "type": "string",
+                        "description": "Filters by outbound interface."
+                      },
+                      "source": {
+                        "type": "string",
+                        "description": "Filters by source address."
+                      },
+                      "destination": {
+                        "type": "string",
+                        "description": "Filters by destination address."
+                      },
+                      "options": {
+                        "type": "string",
+                        "description": "Additional iptables options."
+                      },
+                      "comment": {
+                        "type": "string",
+                        "description": "Optional rule comment."
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

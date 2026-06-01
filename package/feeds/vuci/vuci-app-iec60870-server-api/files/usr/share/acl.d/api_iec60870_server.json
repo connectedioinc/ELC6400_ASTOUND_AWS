@@ -1,0 +1,11 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "iec60870_server": {
+      "methods": [
+        "status"
+      ]
+    }
+  }
+}
+

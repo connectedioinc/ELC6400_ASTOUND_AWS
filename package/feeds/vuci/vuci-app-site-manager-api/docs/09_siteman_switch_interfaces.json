@@ -1,0 +1,447 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Switch Interfaces"
+    }
+  ],
+  "paths": {
+    "/site_manager/switch/interfaces/config": {
+      "get": {
+        "summary": "Returns all Site manager switch interface configurations",
+        "tags": [
+          "Switch Interfaces"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_switch_interfaces_multi"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a new Site manager switch interface configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_siteman_switch_interfaces_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_switch_interfaces_one"
+        },
+        "tags": [
+          "Switch Interfaces"
+        ]
+      },
+      "put": {
+        "summary": "Updates the selected Site manager switch interface configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_switch_interfaces_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_switch_interfaces_multi"
+        },
+        "tags": [
+          "Switch Interfaces"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager switch interface configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "tags": [
+          "Switch Interfaces"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Network",
+          "Interfaces"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/switch/interfaces/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected Site manager switch interface configuration",
+        "tags": [
+          "Switch Interfaces"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_switch_interfaces_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager switch interface configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_switch_interfaces_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_switch_interfaces_one"
+        },
+        "tags": [
+          "Switch Interfaces"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager switch interface configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": [
+          "Switch Interfaces"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Network",
+          "Interfaces"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+
+      "devman_switch_interface": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/devman_group_options"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "string",
+                "description": "Enable/Disable interface.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Enable",
+                  "input-type": "switch"
+                }
+              },
+              "vlan_id": {
+                "type": "string",
+                "description": "VLAN ID.",
+                "x-web": {
+                  "pretty": "VLAN ID",
+                  "input-type": "select"
+                }
+              },
+              "proto": {
+                "type": "string",
+                "description": "Protocol.",
+                "enum": [
+                  "static",
+                  "dhcp",
+                  "dhcpv6"
+                ],
+                "x-web": {
+                  "pretty": "Protocol",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "static": "Static",
+                    "dhcp": "DHCP",
+                    "dhcpv6": "DHCPv6"
+                  }
+                }
+              },
+              "ipaddr": {
+                "type": "string",
+                "format": "ipv4",
+                "description": "IPv4 address.",
+                "x-web": {
+                  "pretty": "IPv4 address",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "proto": "static"
+                    }
+                  ]
+                }
+              },
+              "netmask": {
+                "type": "string",
+                "format": "ipv4",
+                "description": "IPv4 netmask.",
+                "x-web": {
+                  "pretty": "IPv4 netmask",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "proto": "static"
+                    }
+                  ]
+                }
+              },
+              "gateway": {
+                "type": "string",
+                "format": "ipv4",
+                "description": "IPv4 gateway.",
+                "x-web": {
+                  "pretty": "IPv4 gateway",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "proto": "static"
+                    }
+                  ]
+                }
+              },
+              "ip6addr": {
+                "type": "string",
+                "description": "IPv6 address.",
+                "x-web": {
+                  "pretty": "IPv6 address",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "proto": "static"
+                    }
+                  ]
+                }
+              },
+              "ip6gw": {
+                "type": "string",
+                "description": "IPv6 gateway.",
+                "x-web": {
+                  "pretty": "IPv6 gateway",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "proto": "static"
+                    }
+                  ]
+                }
+              },
+              "dns": {
+                "type": "array",
+                "description": "DNS servers.",
+                "items": {
+                  "type": "string"
+                },
+                "x-web": {
+                  "pretty": "DNS servers",
+                  "input-type": "multiselect",
+                  "depends": [
+                    {
+                      "proto": "static"
+                    }
+                  ]
+                }
+              },
+              "metric": {
+                "type": "string",
+                "description": "Metric.",
+                "x-web": {
+                  "pretty": "Metric",
+                  "input-type": "input"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "responses": {
+      "200_siteman_switch_interfaces_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_switch_interface"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_switch_interfaces_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_switch_interface"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "req_body_siteman_switch_interfaces_one": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/devman_switch_interface"
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "req_body_siteman_switch_interfaces_multi": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_switch_interface"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

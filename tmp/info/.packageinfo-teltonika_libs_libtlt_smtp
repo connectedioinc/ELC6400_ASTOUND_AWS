@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/libs/libtlt_smtp/Makefile
+
+Package: libtlt_smtp
+Menu: 1
+Version: 1.11
+Depends: +libc +libcurl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: SMTP library by Teltonika
+Maintainer: 
+Source: libtlt_smtp-1.11-1.11.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SMTP library by Teltonika
+Description: 	SMTP library. Created by Teltonika
+
+@@
+
+

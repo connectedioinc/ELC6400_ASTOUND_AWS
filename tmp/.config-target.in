@@ -1,0 +1,2226 @@
+config DEFAULT_TARGET_ipq40xx_generic
+	bool
+	depends on TARGET_PER_DEVICE_ROOTFS
+	default y if TARGET_ipq40xx_generic
+	select DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+choice
+	prompt "Target System"
+	default TARGET_mdm9x07
+	reset if !DEVEL
+
+config TARGET_ipq40xx
+	bool "Qualcomm Atheros IPQ40XX"
+	select HAS_SUBTARGETS
+
+
+endchoice
+
+choice
+	prompt "Subtarget" if HAS_SUBTARGETS
+
+config TARGET_ipq40xx_generic
+	bool "Generic"
+	select LINUX_6_6 if !TESTING_KERNEL
+	select LINUX_6_6 if TESTING_KERNEL
+	depends on TARGET_ipq40xx
+	select arm_v7
+	select USES_DEVICETREE
+	select HAS_FPU
+	select GPIO_SUPPORT
+	select NAND_SUPPORT
+	select PCI_SUPPORT
+	select PCIE_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select RTC_SUPPORT
+	select SMP_SUPPORT
+	select USES_SQUASHFS
+	select USB_SUPPORT
+	select arm
+	select HAS_DEVICES
+	help
+	  Build firmware images for generic Atheros IPQ40XX based boards.
+
+
+endchoice
+
+config USE_MULTI_PROFILE
+	bool
+
+choice
+	prompt "Target Profile"
+	default TARGET_MULTI_PROFILE if BUILDBOT || USE_MULTI_PROFILE
+
+	default TARGET_ipq40xx_generic_DEVICE_teltonika_rutx if TARGET_ipq40xx_generic && !BUILDBOT
+
+config TARGET_MULTI_PROFILE
+	bool "Multiple devices"
+	depends on HAS_DEVICES
+	help
+	Instead of only building a single image, or all images, this allows you
+	to select images to be built for multiple devices in one build.
+
+config TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08
+	bool "TELTONIKA RUTX08"
+	depends on TARGET_ipq40xx_generic && !USE_MULTI_PROFILE
+	select DEFAULT_ath10k-firmware-qca4019
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_ca-bundle
+	select DEFAULT_dnsmasq
+	select DEFAULT_dropbear
+	select DEFAULT_firewall
+	select DEFAULT_fstools
+	select DEFAULT_fwcert
+	select DEFAULT_ip6tables
+	select DEFAULT_ipq-wifi-teltonika_rutx
+	select DEFAULT_iptables
+	select DEFAULT_kmod-ath10k_66
+	select DEFAULT_kmod-cypress-serial
+	select DEFAULT_kmod-gpio-button-hotplug
+	select DEFAULT_kmod-ipt-offload
+	select DEFAULT_kmod-leds-gpio
+	select DEFAULT_kmod-r2ec
+	select DEFAULT_kmod-usb-dwc3
+	select DEFAULT_kmod-usb-dwc3-qcom
+	select DEFAULT_kmod-usb-uhci
+	select DEFAULT_kmod-usb3
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_libustream-openssl
+	select DEFAULT_logd
+	select DEFAULT_mnfinfo
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_odhcp6c
+	select DEFAULT_openssh-sftp-server
+	select DEFAULT_opkg
+	select DEFAULT_stm32flasher
+	select DEFAULT_swconfig
+	select DEFAULT_sysupgrade-helper
+	select DEFAULT_troubleshoot
+	select DEFAULT_uboot-ipq40xx
+	select DEFAULT_uci
+	select DEFAULT_uci-default
+	select DEFAULT_uclient-fetch
+	select DEFAULT_urandom-seed
+	select DEFAULT_urngd
+	select USE_MUSL
+	select USB_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+	help
+	  Build firmware images for TELTONIKA RUTX08
+	  
+config TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09
+	bool "TELTONIKA RUTX09"
+	depends on TARGET_ipq40xx_generic && !USE_MULTI_PROFILE
+	select DEFAULT_ath10k-firmware-qca4019
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_ca-bundle
+	select DEFAULT_dnsmasq
+	select DEFAULT_dropbear
+	select DEFAULT_firewall
+	select DEFAULT_fstools
+	select DEFAULT_fwcert
+	select DEFAULT_ip6tables
+	select DEFAULT_ipq-wifi-teltonika_rutx
+	select DEFAULT_iptables
+	select DEFAULT_kmod-ath10k_66
+	select DEFAULT_kmod-cypress-serial
+	select DEFAULT_kmod-gpio-button-hotplug
+	select DEFAULT_kmod-ipt-offload
+	select DEFAULT_kmod-leds-gpio
+	select DEFAULT_kmod-r2ec
+	select DEFAULT_kmod-usb-dwc3
+	select DEFAULT_kmod-usb-dwc3-qcom
+	select DEFAULT_kmod-usb-uhci
+	select DEFAULT_kmod-usb3
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_libustream-openssl
+	select DEFAULT_logd
+	select DEFAULT_mnfinfo
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_odhcp6c
+	select DEFAULT_openssh-sftp-server
+	select DEFAULT_opkg
+	select DEFAULT_stm32flasher
+	select DEFAULT_swconfig
+	select DEFAULT_sysupgrade-helper
+	select DEFAULT_troubleshoot
+	select DEFAULT_uboot-ipq40xx
+	select DEFAULT_uci
+	select DEFAULT_uci-default
+	select DEFAULT_uclient-fetch
+	select DEFAULT_urandom-seed
+	select DEFAULT_urngd
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+	help
+	  Build firmware images for TELTONIKA RUTX09
+	  
+config TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10
+	bool "TELTONIKA RUTX10"
+	depends on TARGET_ipq40xx_generic && !USE_MULTI_PROFILE
+	select DEFAULT_ath10k-firmware-qca4019
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_ca-bundle
+	select DEFAULT_dnsmasq
+	select DEFAULT_dropbear
+	select DEFAULT_firewall
+	select DEFAULT_fstools
+	select DEFAULT_fwcert
+	select DEFAULT_ip6tables
+	select DEFAULT_ipq-wifi-teltonika_rutx
+	select DEFAULT_iptables
+	select DEFAULT_kmod-ath10k_66
+	select DEFAULT_kmod-cypress-serial
+	select DEFAULT_kmod-gpio-button-hotplug
+	select DEFAULT_kmod-ipt-offload
+	select DEFAULT_kmod-leds-gpio
+	select DEFAULT_kmod-r2ec
+	select DEFAULT_kmod-usb-dwc3
+	select DEFAULT_kmod-usb-dwc3-qcom
+	select DEFAULT_kmod-usb-uhci
+	select DEFAULT_kmod-usb3
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_libustream-openssl
+	select DEFAULT_logd
+	select DEFAULT_mnfinfo
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_odhcp6c
+	select DEFAULT_openssh-sftp-server
+	select DEFAULT_opkg
+	select DEFAULT_stm32flasher
+	select DEFAULT_swconfig
+	select DEFAULT_sysupgrade-helper
+	select DEFAULT_troubleshoot
+	select DEFAULT_uboot-ipq40xx
+	select DEFAULT_uci
+	select DEFAULT_uci-default
+	select DEFAULT_uclient-fetch
+	select DEFAULT_urandom-seed
+	select DEFAULT_urngd
+	select USE_MUSL
+	select BLUETOOTH_SUPPORT
+	select USB_SUPPORT
+	select WIFI_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+	help
+	  Build firmware images for TELTONIKA RUTX10
+	  
+config TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11
+	bool "TELTONIKA RUTX11"
+	depends on TARGET_ipq40xx_generic && !USE_MULTI_PROFILE
+	select DEFAULT_ath10k-firmware-qca4019
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_ca-bundle
+	select DEFAULT_dnsmasq
+	select DEFAULT_dropbear
+	select DEFAULT_firewall
+	select DEFAULT_fstools
+	select DEFAULT_fwcert
+	select DEFAULT_ip6tables
+	select DEFAULT_ipq-wifi-teltonika_rutx
+	select DEFAULT_iptables
+	select DEFAULT_kmod-ath10k_66
+	select DEFAULT_kmod-cypress-serial
+	select DEFAULT_kmod-gpio-button-hotplug
+	select DEFAULT_kmod-ipt-offload
+	select DEFAULT_kmod-leds-gpio
+	select DEFAULT_kmod-r2ec
+	select DEFAULT_kmod-usb-dwc3
+	select DEFAULT_kmod-usb-dwc3-qcom
+	select DEFAULT_kmod-usb-uhci
+	select DEFAULT_kmod-usb3
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_libustream-openssl
+	select DEFAULT_logd
+	select DEFAULT_mnfinfo
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_odhcp6c
+	select DEFAULT_openssh-sftp-server
+	select DEFAULT_opkg
+	select DEFAULT_stm32flasher
+	select DEFAULT_swconfig
+	select DEFAULT_sysupgrade-helper
+	select DEFAULT_troubleshoot
+	select DEFAULT_uboot-ipq40xx
+	select DEFAULT_uci
+	select DEFAULT_uci-default
+	select DEFAULT_uclient-fetch
+	select DEFAULT_urandom-seed
+	select DEFAULT_urngd
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select BLUETOOTH_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+	help
+	  Build firmware images for TELTONIKA RUTX11
+	  
+config TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12
+	bool "TELTONIKA RUTX12"
+	depends on TARGET_ipq40xx_generic && !USE_MULTI_PROFILE
+	select DEFAULT_ath10k-firmware-qca4019
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_ca-bundle
+	select DEFAULT_dnsmasq
+	select DEFAULT_dropbear
+	select DEFAULT_firewall
+	select DEFAULT_fstools
+	select DEFAULT_fwcert
+	select DEFAULT_ip6tables
+	select DEFAULT_ipq-wifi-teltonika_rutx
+	select DEFAULT_iptables
+	select DEFAULT_kmod-ath10k_66
+	select DEFAULT_kmod-cypress-serial
+	select DEFAULT_kmod-gpio-button-hotplug
+	select DEFAULT_kmod-ipt-offload
+	select DEFAULT_kmod-leds-gpio
+	select DEFAULT_kmod-r2ec
+	select DEFAULT_kmod-usb-dwc3
+	select DEFAULT_kmod-usb-dwc3-qcom
+	select DEFAULT_kmod-usb-uhci
+	select DEFAULT_kmod-usb3
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_libustream-openssl
+	select DEFAULT_logd
+	select DEFAULT_mnfinfo
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_odhcp6c
+	select DEFAULT_openssh-sftp-server
+	select DEFAULT_opkg
+	select DEFAULT_stm32flasher
+	select DEFAULT_swconfig
+	select DEFAULT_sysupgrade-helper
+	select DEFAULT_troubleshoot
+	select DEFAULT_uboot-ipq40xx
+	select DEFAULT_uci
+	select DEFAULT_uci-default
+	select DEFAULT_uclient-fetch
+	select DEFAULT_urandom-seed
+	select DEFAULT_urngd
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select BLUETOOTH_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+	help
+	  Build firmware images for TELTONIKA RUTX12
+	  
+config TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14
+	bool "TELTONIKA RUTX14"
+	depends on TARGET_ipq40xx_generic && !USE_MULTI_PROFILE
+	select DEFAULT_ath10k-firmware-qca4019
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_ca-bundle
+	select DEFAULT_dnsmasq
+	select DEFAULT_dropbear
+	select DEFAULT_firewall
+	select DEFAULT_fstools
+	select DEFAULT_fwcert
+	select DEFAULT_ip6tables
+	select DEFAULT_ipq-wifi-teltonika_rutx
+	select DEFAULT_iptables
+	select DEFAULT_kmod-ath10k_66
+	select DEFAULT_kmod-cypress-serial
+	select DEFAULT_kmod-gpio-button-hotplug
+	select DEFAULT_kmod-ipt-offload
+	select DEFAULT_kmod-leds-gpio
+	select DEFAULT_kmod-r2ec
+	select DEFAULT_kmod-usb-dwc3
+	select DEFAULT_kmod-usb-dwc3-qcom
+	select DEFAULT_kmod-usb-uhci
+	select DEFAULT_kmod-usb3
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_libustream-openssl
+	select DEFAULT_logd
+	select DEFAULT_mnfinfo
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_odhcp6c
+	select DEFAULT_openssh-sftp-server
+	select DEFAULT_opkg
+	select DEFAULT_stm32flasher
+	select DEFAULT_swconfig
+	select DEFAULT_sysupgrade-helper
+	select DEFAULT_troubleshoot
+	select DEFAULT_uboot-ipq40xx
+	select DEFAULT_uci
+	select DEFAULT_uci-default
+	select DEFAULT_uclient-fetch
+	select DEFAULT_urandom-seed
+	select DEFAULT_urngd
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select BLUETOOTH_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+	help
+	  Build firmware images for TELTONIKA RUTX14
+	  
+config TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50
+	bool "TELTONIKA RUTX50"
+	depends on TARGET_ipq40xx_generic && !USE_MULTI_PROFILE
+	select DEFAULT_ath10k-firmware-qca4019
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_ca-bundle
+	select DEFAULT_dnsmasq
+	select DEFAULT_dropbear
+	select DEFAULT_firewall
+	select DEFAULT_fstools
+	select DEFAULT_fwcert
+	select DEFAULT_ip6tables
+	select DEFAULT_ipq-wifi-teltonika_rutx
+	select DEFAULT_iptables
+	select DEFAULT_kmod-ath10k_66
+	select DEFAULT_kmod-cypress-serial
+	select DEFAULT_kmod-gpio-button-hotplug
+	select DEFAULT_kmod-ipt-offload
+	select DEFAULT_kmod-leds-gpio
+	select DEFAULT_kmod-r2ec
+	select DEFAULT_kmod-usb-dwc3
+	select DEFAULT_kmod-usb-dwc3-qcom
+	select DEFAULT_kmod-usb-uhci
+	select DEFAULT_kmod-usb3
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_libustream-openssl
+	select DEFAULT_logd
+	select DEFAULT_mnfinfo
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_odhcp6c
+	select DEFAULT_openssh-sftp-server
+	select DEFAULT_opkg
+	select DEFAULT_stm32flasher
+	select DEFAULT_swconfig
+	select DEFAULT_sysupgrade-helper
+	select DEFAULT_troubleshoot
+	select DEFAULT_uboot-ipq40xx
+	select DEFAULT_uci
+	select DEFAULT_uci-default
+	select DEFAULT_uclient-fetch
+	select DEFAULT_urandom-seed
+	select DEFAULT_urngd
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+	help
+	  Build firmware images for TELTONIKA RUTX50
+	  
+config TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1
+	bool "TELTONIKA RUTXR1"
+	depends on TARGET_ipq40xx_generic && !USE_MULTI_PROFILE
+	select DEFAULT_ath10k-firmware-qca4019
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_ca-bundle
+	select DEFAULT_dnsmasq
+	select DEFAULT_dropbear
+	select DEFAULT_firewall
+	select DEFAULT_fstools
+	select DEFAULT_fwcert
+	select DEFAULT_ip6tables
+	select DEFAULT_ipq-wifi-teltonika_rutx
+	select DEFAULT_iptables
+	select DEFAULT_kmod-ath10k_66
+	select DEFAULT_kmod-cypress-serial
+	select DEFAULT_kmod-gpio-button-hotplug
+	select DEFAULT_kmod-ipt-offload
+	select DEFAULT_kmod-leds-gpio
+	select DEFAULT_kmod-r2ec
+	select DEFAULT_kmod-usb-dwc3
+	select DEFAULT_kmod-usb-dwc3-qcom
+	select DEFAULT_kmod-usb-uhci
+	select DEFAULT_kmod-usb3
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_libustream-openssl
+	select DEFAULT_logd
+	select DEFAULT_mnfinfo
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_odhcp6c
+	select DEFAULT_openssh-sftp-server
+	select DEFAULT_opkg
+	select DEFAULT_stm32flasher
+	select DEFAULT_swconfig
+	select DEFAULT_sysupgrade-helper
+	select DEFAULT_troubleshoot
+	select DEFAULT_uboot-ipq40xx
+	select DEFAULT_uci
+	select DEFAULT_uci-default
+	select DEFAULT_uclient-fetch
+	select DEFAULT_urandom-seed
+	select DEFAULT_urngd
+	select USE_MUSL
+	select USB_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+	help
+	  Build firmware images for TELTONIKA RUTXR1
+	  
+config TARGET_ipq40xx_generic_DEVICE_teltonika_rutx
+	bool "TELTONIKA RUTX"
+	depends on TARGET_ipq40xx_generic && !USE_MULTI_PROFILE
+	select DEFAULT_ath10k-firmware-qca4019
+	select DEFAULT_base-files
+	select DEFAULT_busybox
+	select DEFAULT_ca-bundle
+	select DEFAULT_dnsmasq
+	select DEFAULT_dropbear
+	select DEFAULT_firewall
+	select DEFAULT_fstools
+	select DEFAULT_fwcert
+	select DEFAULT_ip6tables
+	select DEFAULT_ipq-wifi-teltonika_rutx
+	select DEFAULT_iptables
+	select DEFAULT_kmod-ath10k_66
+	select DEFAULT_kmod-cypress-serial
+	select DEFAULT_kmod-gpio-button-hotplug
+	select DEFAULT_kmod-ipt-offload
+	select DEFAULT_kmod-leds-gpio
+	select DEFAULT_kmod-r2ec
+	select DEFAULT_kmod-usb-dwc3
+	select DEFAULT_kmod-usb-dwc3-qcom
+	select DEFAULT_kmod-usb-uhci
+	select DEFAULT_kmod-usb3
+	select DEFAULT_libc
+	select DEFAULT_libgcc
+	select DEFAULT_libustream-openssl
+	select DEFAULT_logd
+	select DEFAULT_mnfinfo
+	select DEFAULT_mtd
+	select DEFAULT_netifd
+	select DEFAULT_odhcp6c
+	select DEFAULT_openssh-sftp-server
+	select DEFAULT_opkg
+	select DEFAULT_stm32flasher
+	select DEFAULT_swconfig
+	select DEFAULT_sysupgrade-helper
+	select DEFAULT_troubleshoot
+	select DEFAULT_uboot-ipq40xx
+	select DEFAULT_uci
+	select DEFAULT_uci-default
+	select DEFAULT_uclient-fetch
+	select DEFAULT_urandom-seed
+	select DEFAULT_urngd
+	select USE_MUSL
+	select USB_SUPPORT_EXTERNAL
+	select GPS_SUPPORT
+	select HAS_MODBUS
+	select HAS_IO
+	select WIFI_SUPPORT
+	select BLUETOOTH_SUPPORT
+	select DUAL_SIM_SUPPORT
+	select HAS_PORT_MIRRORING
+	select MOBILE_SUPPORT
+	select HAS_DOT1X_CLIENT
+	select PORT_LINK
+	select SW_OFFLOAD
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_NCM_SUPPORT
+	help
+	  Build firmware images for TELTONIKA RUTX
+	  
+endchoice
+
+menu "Target Devices"
+	depends on TARGET_MULTI_PROFILE
+
+	config TARGET_ALL_PROFILES
+		bool "Enable all profiles by default"
+		default BUILDBOT
+
+	config TARGET_PER_DEVICE_ROOTFS
+		bool "Use a per-device root filesystem that adds profile packages"
+		default BUILDBOT
+		help
+		When disabled, all device packages from all selected devices
+		will be included in all images by default. (Marked as <*>) You will
+		still be able to manually deselect any/all packages.
+		When enabled, each device builds it's own image, including only the
+		profile packages for that device.  (Marked as {M}) You will be able
+		to change a package to included in all images by marking as {*}, but
+		will not be able to disable a profile package completely.
+
+		To get the most use of this setting, you must set in a .config stub
+		before calling "make defconfig".  Selecting TARGET_MULTI_PROFILE and
+		then manually selecting (via menuconfig for instance) this option
+		will have pre-defaulted all profile packages to included, making this
+		option appear to have had no effect.
+
+menuconfig TARGET_DEVICE_ipq40xx_generic_DEVICE_teltonika_rutx
+	bool "TELTONIKA RUTX"
+	depends on TARGET_ipq40xx_generic
+	default y if TARGET_ALL_PROFILES
+	select DEFAULT_ath10k-firmware-qca4019 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_base-files if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ipq-wifi-teltonika_rutx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ipq-wifi-teltonika_rutx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-cypress-serial if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-cypress-serial if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-r2ec if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-r2ec if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-uhci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-uhci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_stm32flasher if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_stm32flasher if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_sysupgrade-helper if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_sysupgrade-helper if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uboot-ipq40xx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uboot-ipq40xx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select USE_MUSL
+	select USB_SUPPORT_EXTERNAL
+	select GPS_SUPPORT
+	select HAS_MODBUS
+	select HAS_IO
+	select WIFI_SUPPORT
+	select BLUETOOTH_SUPPORT
+	select DUAL_SIM_SUPPORT
+	select HAS_PORT_MIRRORING
+	select MOBILE_SUPPORT
+	select HAS_DOT1X_CLIENT
+	select PORT_LINK
+	select SW_OFFLOAD
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_NCM_SUPPORT
+
+
+	config TARGET_DEVICE_PACKAGES_ipq40xx_generic_DEVICE_teltonika_rutx
+		string "TELTONIKA RUTX additional packages"
+		default ""
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on TARGET_DEVICE_ipq40xx_generic_DEVICE_teltonika_rutx
+
+menuconfig TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08
+	bool "TELTONIKA RUTX08"
+	depends on TARGET_ipq40xx_generic
+	default n
+	select DEFAULT_ath10k-firmware-qca4019 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_base-files if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ipq-wifi-teltonika_rutx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ipq-wifi-teltonika_rutx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-cypress-serial if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-cypress-serial if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-r2ec if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-r2ec if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-uhci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-uhci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_stm32flasher if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_stm32flasher if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_sysupgrade-helper if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_sysupgrade-helper if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uboot-ipq40xx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uboot-ipq40xx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select USE_MUSL
+	select USB_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+
+
+	config TARGET_DEVICE_PACKAGES_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08
+		string "TELTONIKA RUTX08 additional packages"
+		default ""
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08
+
+menuconfig TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09
+	bool "TELTONIKA RUTX09"
+	depends on TARGET_ipq40xx_generic
+	default n
+	select DEFAULT_ath10k-firmware-qca4019 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_base-files if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ipq-wifi-teltonika_rutx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ipq-wifi-teltonika_rutx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-cypress-serial if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-cypress-serial if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-r2ec if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-r2ec if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-uhci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-uhci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_stm32flasher if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_stm32flasher if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_sysupgrade-helper if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_sysupgrade-helper if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uboot-ipq40xx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uboot-ipq40xx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+
+
+	config TARGET_DEVICE_PACKAGES_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09
+		string "TELTONIKA RUTX09 additional packages"
+		default ""
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09
+
+menuconfig TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10
+	bool "TELTONIKA RUTX10"
+	depends on TARGET_ipq40xx_generic
+	default n
+	select DEFAULT_ath10k-firmware-qca4019 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_base-files if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ipq-wifi-teltonika_rutx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ipq-wifi-teltonika_rutx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-cypress-serial if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-cypress-serial if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-r2ec if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-r2ec if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-uhci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-uhci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_stm32flasher if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_stm32flasher if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_sysupgrade-helper if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_sysupgrade-helper if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uboot-ipq40xx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uboot-ipq40xx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select USE_MUSL
+	select BLUETOOTH_SUPPORT
+	select USB_SUPPORT
+	select WIFI_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+
+
+	config TARGET_DEVICE_PACKAGES_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10
+		string "TELTONIKA RUTX10 additional packages"
+		default ""
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10
+
+menuconfig TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11
+	bool "TELTONIKA RUTX11"
+	depends on TARGET_ipq40xx_generic
+	default n
+	select DEFAULT_ath10k-firmware-qca4019 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_base-files if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ipq-wifi-teltonika_rutx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ipq-wifi-teltonika_rutx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-cypress-serial if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-cypress-serial if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-r2ec if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-r2ec if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-uhci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-uhci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_stm32flasher if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_stm32flasher if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_sysupgrade-helper if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_sysupgrade-helper if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uboot-ipq40xx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uboot-ipq40xx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select BLUETOOTH_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+
+
+	config TARGET_DEVICE_PACKAGES_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11
+		string "TELTONIKA RUTX11 additional packages"
+		default ""
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11
+
+menuconfig TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12
+	bool "TELTONIKA RUTX12"
+	depends on TARGET_ipq40xx_generic
+	default n
+	select DEFAULT_ath10k-firmware-qca4019 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_base-files if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ipq-wifi-teltonika_rutx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ipq-wifi-teltonika_rutx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-cypress-serial if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-cypress-serial if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-r2ec if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-r2ec if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-uhci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-uhci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_stm32flasher if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_stm32flasher if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_sysupgrade-helper if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_sysupgrade-helper if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uboot-ipq40xx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uboot-ipq40xx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select BLUETOOTH_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+
+
+	config TARGET_DEVICE_PACKAGES_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12
+		string "TELTONIKA RUTX12 additional packages"
+		default ""
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12
+
+menuconfig TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14
+	bool "TELTONIKA RUTX14"
+	depends on TARGET_ipq40xx_generic
+	default n
+	select DEFAULT_ath10k-firmware-qca4019 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_base-files if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ipq-wifi-teltonika_rutx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ipq-wifi-teltonika_rutx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-cypress-serial if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-cypress-serial if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-r2ec if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-r2ec if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-uhci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-uhci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_stm32flasher if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_stm32flasher if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_sysupgrade-helper if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_sysupgrade-helper if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uboot-ipq40xx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uboot-ipq40xx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select BLUETOOTH_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+
+
+	config TARGET_DEVICE_PACKAGES_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14
+		string "TELTONIKA RUTX14 additional packages"
+		default ""
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14
+
+menuconfig TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50
+	bool "TELTONIKA RUTX50"
+	depends on TARGET_ipq40xx_generic
+	default n
+	select DEFAULT_ath10k-firmware-qca4019 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_base-files if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ipq-wifi-teltonika_rutx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ipq-wifi-teltonika_rutx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-cypress-serial if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-cypress-serial if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-r2ec if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-r2ec if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-uhci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-uhci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_stm32flasher if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_stm32flasher if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_sysupgrade-helper if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_sysupgrade-helper if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uboot-ipq40xx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uboot-ipq40xx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select USE_MUSL
+	select USB_SUPPORT
+	select GPS_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select HAS_IO
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+
+
+	config TARGET_DEVICE_PACKAGES_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50
+		string "TELTONIKA RUTX50 additional packages"
+		default ""
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50
+
+menuconfig TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1
+	bool "TELTONIKA RUTXR1"
+	depends on TARGET_ipq40xx_generic
+	default n
+	select DEFAULT_ath10k-firmware-qca4019 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ath10k-firmware-qca4019 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_base-files if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_base-files if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_busybox if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_busybox if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ca-bundle if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ca-bundle if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dnsmasq if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dnsmasq if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_dropbear if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_dropbear if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_firewall if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_firewall if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fstools if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fstools if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_fwcert if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_fwcert if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ip6tables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ip6tables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_ipq-wifi-teltonika_rutx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_ipq-wifi-teltonika_rutx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_iptables if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_iptables if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ath10k_66 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ath10k_66 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-cypress-serial if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-cypress-serial if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-gpio-button-hotplug if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-gpio-button-hotplug if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-ipt-offload if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-ipt-offload if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-leds-gpio if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-leds-gpio if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-r2ec if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-r2ec if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-dwc3-qcom if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-dwc3-qcom if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb-uhci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb-uhci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_kmod-usb3 if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_kmod-usb3 if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libgcc if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libgcc if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_libustream-openssl if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_libustream-openssl if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_logd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_logd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mnfinfo if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mnfinfo if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_mtd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_mtd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_netifd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_netifd if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_odhcp6c if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_odhcp6c if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_openssh-sftp-server if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_openssh-sftp-server if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_opkg if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_opkg if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_stm32flasher if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_stm32flasher if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_swconfig if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_swconfig if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_sysupgrade-helper if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_sysupgrade-helper if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_troubleshoot if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_troubleshoot if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uboot-ipq40xx if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uboot-ipq40xx if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uci-default if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uci-default if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_uclient-fetch if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_uclient-fetch if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urandom-seed if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urandom-seed if TARGET_PER_DEVICE_ROOTFS
+	select DEFAULT_urngd if !TARGET_PER_DEVICE_ROOTFS
+	select MODULE_DEFAULT_urngd if TARGET_PER_DEVICE_ROOTFS
+	select USE_MUSL
+	select USB_SUPPORT
+	select MOBILE_SUPPORT
+	select WIFI_SUPPORT
+	select PORT_LINK
+	select XFRM_OFFLOAD
+	select TPM_SUPPORT
+	select RESET_BUTTON_SUPPORT
+	select USB_SUPPORT_EXTERNAL
+	select HAS_MODBUS
+	select HAS_DOT1X_CLIENT
+	select HAS_PORT_MIRRORING
+
+
+	config TARGET_DEVICE_PACKAGES_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1
+		string "TELTONIKA RUTXR1 additional packages"
+		default ""
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1
+
+config TARGET_MULTI_PROFILE_NAME
+	string
+	depends on TARGET_ALL_PROFILES
+
+
+endmenu
+
+config HAS_SUBTARGETS
+	bool
+
+config HAS_DEVICES
+	bool
+
+config TARGET_BOARD
+	string
+
+		default "ipq40xx" if TARGET_ipq40xx
+config TARGET_SUBTARGET
+	string
+	default "generic" if !HAS_SUBTARGETS
+
+		default "generic" if TARGET_ipq40xx_generic
+config TARGET_PROFILE
+	string
+	default "DEVICE_TEMPLATE_teltonika_rutx08" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08
+	default "DEVICE_TEMPLATE_teltonika_rutx09" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09
+	default "DEVICE_TEMPLATE_teltonika_rutx10" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10
+	default "DEVICE_TEMPLATE_teltonika_rutx11" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11
+	default "DEVICE_TEMPLATE_teltonika_rutx12" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12
+	default "DEVICE_TEMPLATE_teltonika_rutx14" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14
+	default "DEVICE_TEMPLATE_teltonika_rutx50" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50
+	default "DEVICE_TEMPLATE_teltonika_rutxr1" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1
+	default "DEVICE_teltonika_rutx" if TARGET_ipq40xx_generic_DEVICE_teltonika_rutx
+
+config TARGET_GPL_PREFIX
+	string
+	default "GPL" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08
+	default "GPL" if TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08
+	default "GPL" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09
+	default "GPL" if TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09
+	default "GPL" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10
+	default "GPL" if TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10
+	default "GPL" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11
+	default "GPL" if TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11
+	default "GPL" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12
+	default "GPL" if TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12
+	default "GPL" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14
+	default "GPL" if TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14
+	default "GPL" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50
+	default "GPL" if TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50
+	default "GPL" if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1
+	default "GPL" if TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1
+	default "GPL" if TARGET_ipq40xx_generic_DEVICE_teltonika_rutx
+	default "GPL" if TARGET_DEVICE_ipq40xx_generic_DEVICE_teltonika_rutx
+	default "SDK"
+
+config TARGET_BOOT_NAME
+	string
+
+config INITIAL_SUPPORT_VERSION
+	string
+	default 2.3.1 if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12
+	default 2.6.1 if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14
+	default 7.2.8 if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50
+	default 2.3.1 if TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1
+
+config DEVICE_MTD_LOG_PARTNAME
+	string
+
+config DEVICE_MODEM_VENDORS
+	string
+	default "Quectel Meiglink" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08)
+	default "Quectel Meiglink" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09)
+	default "Quectel Meiglink" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10)
+	default "Quectel Meiglink" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11)
+	default "Quectel Meiglink" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12)
+	default "Quectel Meiglink" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14)
+	default "Quectel Meiglink" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50)
+	default "Quectel Meiglink" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1)
+	default "Quectel Meiglink" if (TARGET_ipq40xx_generic_DEVICE_teltonika_rutx || TARGET_DEVICE_ipq40xx_generic_DEVICE_teltonika_rutx)
+
+config DEVICE_MODEM_LIST
+	string
+	default "EG06 EG060K EG060W EG12 RG501Q RG520N SLM828" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08)
+	default "EG06 EG060K EG060W EG12 RG501Q RG520N SLM828" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09)
+	default "EG06 EG060K EG060W EG12 RG501Q RG520N SLM828" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10)
+	default "EG06 EG060K EG060W EG12 RG501Q RG520N SLM828" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11)
+	default "EG06 EG060K EG060W EG12 RG501Q RG520N SLM828" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12)
+	default "EG06 EG060K EG060W EG12 RG501Q RG520N SLM828" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14)
+	default "EG06 EG060K EG060W EG12 RG501Q RG520N SLM828" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50)
+	default "EG06 EG060K EG060W EG12 RG501Q RG520N SLM828" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1)
+	default "EG06 EG060K EG060W EG12 RG501Q RG520N SLM828" if (TARGET_ipq40xx_generic_DEVICE_teltonika_rutx || TARGET_DEVICE_ipq40xx_generic_DEVICE_teltonika_rutx)
+
+config INCLUDED_DEVICES
+	string
+	default "TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx08)
+	default "TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx09)
+	default "TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx10)
+	default "TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx11)
+	default "TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx12)
+	default "TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx14)
+	default "TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutx50)
+	default "TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1" if (TARGET_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1 || TARGET_DEVICE_ipq40xx_generic_DEVICE_TEMPLATE_teltonika_rutxr1)
+	default "TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1" if (TARGET_ipq40xx_generic_DEVICE_teltonika_rutx || TARGET_DEVICE_ipq40xx_generic_DEVICE_teltonika_rutx)
+
+config TARGET_ARCH_PACKAGES
+	string
+
+		default "arm_cortex-a7_neon-vfpv4" if TARGET_ipq40xx_generic
+
+config DEFAULT_TARGET_OPTIMIZATION
+	string
+	default "-Os -pipe" if TARGET_ipq40xx_generic
+	default "-Os -pipe -funit-at-a-time"
+
+config CPU_TYPE
+	string
+	default "cortex-a7+neon-vfpv4" if TARGET_ipq40xx_generic
+	default ""
+
+config LINUX_6_6
+	bool
+
+	config DEFAULT_ath10k-firmware-qca4019
+		bool
+
+	config MODULE_DEFAULT_ath10k-firmware-qca4019
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_ath10k-firmware-qca4019
+		select PACKAGE_ath10k-firmware-qca4019
+
+	config DEFAULT_base-files
+		bool
+
+	config MODULE_DEFAULT_base-files
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_base-files
+		select PACKAGE_base-files
+
+	config DEFAULT_busybox
+		bool
+
+	config MODULE_DEFAULT_busybox
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_busybox
+		select PACKAGE_busybox
+
+	config DEFAULT_ca-bundle
+		bool
+
+	config MODULE_DEFAULT_ca-bundle
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_ca-bundle
+		select PACKAGE_ca-bundle
+
+	config DEFAULT_dnsmasq
+		bool
+
+	config MODULE_DEFAULT_dnsmasq
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_dnsmasq
+		select PACKAGE_dnsmasq
+
+	config DEFAULT_dropbear
+		bool
+
+	config MODULE_DEFAULT_dropbear
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_dropbear
+		select PACKAGE_dropbear
+
+	config DEFAULT_firewall
+		bool
+
+	config MODULE_DEFAULT_firewall
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_firewall
+		select PACKAGE_firewall
+
+	config DEFAULT_fstools
+		bool
+
+	config MODULE_DEFAULT_fstools
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_fstools
+		select PACKAGE_fstools
+
+	config DEFAULT_fwcert
+		bool
+
+	config MODULE_DEFAULT_fwcert
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_fwcert
+		select PACKAGE_fwcert
+
+	config DEFAULT_ip6tables
+		bool
+
+	config MODULE_DEFAULT_ip6tables
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_ip6tables
+		select PACKAGE_ip6tables
+
+	config DEFAULT_ipq-wifi-teltonika_rutx
+		bool
+
+	config MODULE_DEFAULT_ipq-wifi-teltonika_rutx
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_ipq-wifi-teltonika_rutx
+		select PACKAGE_ipq-wifi-teltonika_rutx
+
+	config DEFAULT_iptables
+		bool
+
+	config MODULE_DEFAULT_iptables
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_iptables
+		select PACKAGE_iptables
+
+	config DEFAULT_kmod-ath10k_66
+		bool
+
+	config MODULE_DEFAULT_kmod-ath10k_66
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-ath10k_66
+		select PACKAGE_kmod-ath10k_66
+
+	config DEFAULT_kmod-cypress-serial
+		bool
+
+	config MODULE_DEFAULT_kmod-cypress-serial
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-cypress-serial
+		select PACKAGE_kmod-cypress-serial
+
+	config DEFAULT_kmod-gpio-button-hotplug
+		bool
+
+	config MODULE_DEFAULT_kmod-gpio-button-hotplug
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-gpio-button-hotplug
+		select PACKAGE_kmod-gpio-button-hotplug
+
+	config DEFAULT_kmod-ipt-offload
+		bool
+
+	config MODULE_DEFAULT_kmod-ipt-offload
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-ipt-offload
+		select PACKAGE_kmod-ipt-offload
+
+	config DEFAULT_kmod-leds-gpio
+		bool
+
+	config MODULE_DEFAULT_kmod-leds-gpio
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-leds-gpio
+		select PACKAGE_kmod-leds-gpio
+
+	config DEFAULT_kmod-r2ec
+		bool
+
+	config MODULE_DEFAULT_kmod-r2ec
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-r2ec
+		select PACKAGE_kmod-r2ec
+
+	config DEFAULT_kmod-usb-dwc3
+		bool
+
+	config MODULE_DEFAULT_kmod-usb-dwc3
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-usb-dwc3
+		select PACKAGE_kmod-usb-dwc3
+
+	config DEFAULT_kmod-usb-dwc3-qcom
+		bool
+
+	config MODULE_DEFAULT_kmod-usb-dwc3-qcom
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-usb-dwc3-qcom
+		select PACKAGE_kmod-usb-dwc3-qcom
+
+	config DEFAULT_kmod-usb-uhci
+		bool
+
+	config MODULE_DEFAULT_kmod-usb-uhci
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-usb-uhci
+		select PACKAGE_kmod-usb-uhci
+
+	config DEFAULT_kmod-usb3
+		bool
+
+	config MODULE_DEFAULT_kmod-usb3
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_kmod-usb3
+		select PACKAGE_kmod-usb3
+
+	config DEFAULT_libc
+		bool
+
+	config MODULE_DEFAULT_libc
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_libc
+		select PACKAGE_libc
+
+	config DEFAULT_libgcc
+		bool
+
+	config MODULE_DEFAULT_libgcc
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_libgcc
+		select PACKAGE_libgcc
+
+	config DEFAULT_libustream-openssl
+		bool
+
+	config MODULE_DEFAULT_libustream-openssl
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_libustream-openssl
+		select PACKAGE_libustream-openssl
+
+	config DEFAULT_logd
+		bool
+
+	config MODULE_DEFAULT_logd
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_logd
+		select PACKAGE_logd
+
+	config DEFAULT_mnfinfo
+		bool
+
+	config MODULE_DEFAULT_mnfinfo
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_mnfinfo
+		select PACKAGE_mnfinfo
+
+	config DEFAULT_mtd
+		bool
+
+	config MODULE_DEFAULT_mtd
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_mtd
+		select PACKAGE_mtd
+
+	config DEFAULT_netifd
+		bool
+
+	config MODULE_DEFAULT_netifd
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_netifd
+		select PACKAGE_netifd
+
+	config DEFAULT_odhcp6c
+		bool
+
+	config MODULE_DEFAULT_odhcp6c
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_odhcp6c
+		select PACKAGE_odhcp6c
+
+	config DEFAULT_openssh-sftp-server
+		bool
+
+	config MODULE_DEFAULT_openssh-sftp-server
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_openssh-sftp-server
+		select PACKAGE_openssh-sftp-server
+
+	config DEFAULT_opkg
+		bool
+
+	config MODULE_DEFAULT_opkg
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_opkg
+		select PACKAGE_opkg
+
+	config DEFAULT_stm32flasher
+		bool
+
+	config MODULE_DEFAULT_stm32flasher
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_stm32flasher
+		select PACKAGE_stm32flasher
+
+	config DEFAULT_swconfig
+		bool
+
+	config MODULE_DEFAULT_swconfig
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_swconfig
+		select PACKAGE_swconfig
+
+	config DEFAULT_sysupgrade-helper
+		bool
+
+	config MODULE_DEFAULT_sysupgrade-helper
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_sysupgrade-helper
+		select PACKAGE_sysupgrade-helper
+
+	config DEFAULT_troubleshoot
+		bool
+
+	config MODULE_DEFAULT_troubleshoot
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_troubleshoot
+		select PACKAGE_troubleshoot
+
+	config DEFAULT_uboot-ipq40xx
+		bool
+
+	config MODULE_DEFAULT_uboot-ipq40xx
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_uboot-ipq40xx
+		select PACKAGE_uboot-ipq40xx
+
+	config DEFAULT_uci
+		bool
+
+	config MODULE_DEFAULT_uci
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_uci
+		select PACKAGE_uci
+
+	config DEFAULT_uci-default
+		bool
+
+	config MODULE_DEFAULT_uci-default
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_uci-default
+		select PACKAGE_uci-default
+
+	config DEFAULT_uclient-fetch
+		bool
+
+	config MODULE_DEFAULT_uclient-fetch
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_uclient-fetch
+		select PACKAGE_uclient-fetch
+
+	config DEFAULT_urandom-seed
+		bool
+
+	config MODULE_DEFAULT_urandom-seed
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_urandom-seed
+		select PACKAGE_urandom-seed
+
+	config DEFAULT_urngd
+		bool
+
+	config MODULE_DEFAULT_urngd
+		tristate
+		depends on TARGET_PER_DEVICE_ROOTFS
+		depends on m
+		default m if DEFAULT_urngd
+		select PACKAGE_urngd
+

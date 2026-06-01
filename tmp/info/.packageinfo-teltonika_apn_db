@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/apn_db/Makefile
+
+Package: apn_db
+Version: 7.21
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: One APN database for all projects
+Maintainer: 
+Source: apn_db-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: One APN database for all projects
+Description: 	One APN database for all projects
+
+@@
+
+

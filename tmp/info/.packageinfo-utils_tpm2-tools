@@ -1,0 +1,25 @@
+Source-Makefile: package/utils/tpm2-tools/Makefile
+
+Package: tpm2-tools
+Submenu: TPM2
+Version: 5.7-4
+Depends: +libc +tpm2-tss +libopenssl +libcurl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: TPM2-TOOLS
+Maintainer: 
+Source: tpm2-tools-5.7-5.7.tar.xz
+License: BSD-3-Clause
+LicenseFiles: docs/LICENSE
+Type: ipkg
+Detail-Description: TPM2-TOOLS
+Description:   TPM (Trusted Platform Module) 2 tools
+https://github.com/tpm2-software/tpm2-tools
+
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/package_restore/Makefile
+
+Package: package_restore
+Version: 2026-02-11-1
+Depends: +libc +vuci-app-package-manager-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Auto package restore
+Maintainer: 
+Require-User: opkg=624:opkg=624
+Source: package_restore-3.16.1-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Auto package restore
+Description: Auto package restore
+
+@@
+
+

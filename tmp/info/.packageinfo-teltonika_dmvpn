@@ -1,0 +1,27 @@
+Source-Makefile: package/teltonika/dmvpn/Makefile
+
+Package: dmvpn
+Submenu: VPN
+Version: 2021-02-11-7
+Depends: +libc +kmod-gre +IPV6:kmod-gre6 +resolveip +libpthread +ip +kmod-crypto-authenc +kmod-ipsec +kmod-ipsec4 +IPV6:kmod-ipsec6 +kmod-ipt-ipsec +iptables-mod-ipsec +frr-nhrp +frr
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Dynamic multipoint VPN using NHRP GRE and IPsec
+Maintainer: 
+Require-User: dmvpn:dmvpn
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Dynamic multipoint VPN using NHRP GRE and IPsec
+Description: 	Dynamic Multipoint VPN (DMVPN) is a method of building scalable IPsec VPNs.
+	DMVPN is configured as a hub-and-spoke network, where tunnels between spokes
+	are built dynamically; therefore, no change in configuration is required on
+	the hub in order to connect new spokes.
+
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/tlt_hotspot_theme_bus/Makefile
+
+Package: hs_theme_bus
+Submenu: Landing page themes
+Version: 2022-07-27
+Depends: +libc +vuci-app-landingpage
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: webui
+Category: WebUI
+Repository: vuci
+Title: Bus theme
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: Bus theme
+Description: 	Hotspot landing page Bus theme.
+
+@@
+
+

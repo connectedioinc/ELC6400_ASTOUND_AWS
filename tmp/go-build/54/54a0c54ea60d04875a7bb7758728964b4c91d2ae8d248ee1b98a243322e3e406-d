@@ -1,0 +1,10 @@
+./detector.go
+./fake.go
+./fake_netfilter.go
+./helpers.go
+./iptables_for_svcs.go
+./iptables_runner.go
+./linuxfw.go
+./linuxfw_unsupported.go
+./nftables_for_svcs.go
+./nftables_runner.go

@@ -1,0 +1,74 @@
+Source-Makefile: package/libs/ncurses/Makefile
+Build-Depends: ncurses/host
+Build-Types: host
+
+Package: terminfo
+Version: 6.5-1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Terminal Info Database (ncurses)
+Maintainer: 
+CPE-ID: cpe:/a:gnu:ncurses
+Upstream: @GNU/ncurses
+Source: ncurses-6.5.tar.gz
+License: MIT
+LicenseFiles: README
+Type: ipkg
+Detail-Description: Terminal Info Database (ncurses)
+Description: Terminal Info Database (ncurses)
+http://www.gnu.org/software/ncurses/
+
+@@
+
+Package: libncurses
+Version: 6.5-1
+Depends: +libc +terminfo
+Conflicts: 
+Menu-Depends: 
+Provides: libncursesw
+Section: libs
+Category: Libraries
+Repository: base
+Title: Terminal handling library (Unicode)
+Maintainer: 
+CPE-ID: cpe:/a:gnu:ncurses
+Upstream: @GNU/ncurses
+Source: ncurses-6.5.tar.gz
+License: MIT
+LicenseFiles: README
+Type: ipkg
+Detail-Description: Terminal handling library (Unicode)
+Description: Terminal handling library (Unicode)
+http://www.gnu.org/software/ncurses/
+
+@@
+
+Package: libncurses-dev
+Submenu: Libraries
+Version: 6.5-1
+Depends: +libc zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: devel
+Category: Development
+Repository: base
+Title: Development files for the ncurses library
+Maintainer: 
+CPE-ID: cpe:/a:gnu:ncurses
+Upstream: @GNU/ncurses
+Source: ncurses-6.5.tar.gz
+License: MIT
+LicenseFiles: README
+Type: ipkg
+Detail-Description: Development files for the ncurses library
+Description: Development files for the ncurses library
+
+@@
+
+

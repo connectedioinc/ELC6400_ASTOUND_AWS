@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-multiusers-ui/Makefile
+
+Package: vuci-app-multiusers-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-multiusers-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Multiusers Package
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Multiusers Package
+Description: VuCI UI Multiusers Package
+
+@@
+
+

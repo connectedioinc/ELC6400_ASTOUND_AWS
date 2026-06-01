@@ -1,0 +1,28 @@
+Source-Makefile: package/network/services/tinc/Makefile
+
+Package: tinc
+Submenu: VPN
+Version: 1.0.36-9
+Depends: +libc +liblzo +libopenssl +kmod-tun +zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: VPN tunneling daemon
+Maintainer: Saverio Proto <zioproto@gmail.com>
+CPE-ID: cpe:/a:tinc-vpn:tinc
+Require-User: tinc:tinc
+Source: tinc-1.0.36.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: VPN tunneling daemon
+Description:   Tinc is a Virtual Private Network (VPN) daemon that uses tunnelling and
+  encryption to create a secure private network between hosts on the Internet.
+http://www.tinc-vpn.org/
+Saverio Proto <zioproto@gmail.com>
+@@
+
+

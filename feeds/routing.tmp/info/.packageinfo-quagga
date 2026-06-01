@@ -1,0 +1,260 @@
+Source-Makefile: feeds/routing/quagga/Makefile
+
+Package: quagga
+Menu: 1
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc +librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: The Quagga Software Routing Suite
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: The Quagga Software Routing Suite
+Description:   A routing software package that provides TCP/IP based routing services
+  with routing protocols support such as RIPv1, RIPv2, RIPng, OSPFv2,
+  OSPFv3, BGP-4, and BGP-4+
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-libzebra
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc quagga
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: zebra library
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: zebra library
+Description: zebra library
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-libospf
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libzebra
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OSPF library
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: OSPF library
+Description: OSPF library
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-watchquagga
+Submenu: Routing and Redirection
+Default: y if PACKAGE_quagga
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libzebra
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Quagga watchdog
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: Quagga watchdog
+Description: Quagga watchdog
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-zebra
+Submenu: Routing and Redirection
+Default: y if PACKAGE_quagga
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libzebra
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Zebra daemon
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: Zebra daemon
+Description: Zebra daemon
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-bgpd
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libzebra
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: BGPv4, BGPv4+, BGPv4- routing engine
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: BGPv4, BGPv4+, BGPv4- routing engine
+Description: BGPv4, BGPv4+, BGPv4- routing engine
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-isisd
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libzebra
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: IS-IS routing engine
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: IS-IS routing engine
+Description: IS-IS routing engine
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-ospfd
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libospf
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OSPFv2 routing engine
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: OSPFv2 routing engine
+Description: OSPFv2 routing engine
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-ospf6d
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libospf @IPV6
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OSPFv3 routing engine
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: OSPFv3 routing engine
+Description: OSPFv3 routing engine
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-ripd
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libzebra
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: RIP routing engine
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: RIP routing engine
+Description: RIP routing engine
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-ripngd
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libzebra @IPV6
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: RIPNG routing engine
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: RIPNG routing engine
+Description: RIPNG routing engine
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+Package: quagga-vtysh
+Submenu: Routing and Redirection
+Version: 1.2.4-2
+Depends: +libc quagga +quagga-libzebra +libreadline +libncurses
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: integrated shell for Quagga routing software
+Maintainer: Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+Source: quagga-1.2.4.tar.gz
+License: GPL-2.0
+Type: ipkg
+Detail-Description: integrated shell for Quagga routing software
+Description: integrated shell for Quagga routing software
+http://www.quagga.net
+Vasilis Tsiligiannis <acinonyx@openwrt.gr>
+@@
+
+

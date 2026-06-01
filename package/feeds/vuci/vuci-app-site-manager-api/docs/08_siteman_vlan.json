@@ -1,0 +1,435 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "VLAN"
+    }
+  ],
+  "paths": {
+    "/site_manager/switch/vlan/config": {
+      "get": {
+        "summary": "Returns all Site manager VLAN configurations",
+        "tags": [
+          "VLAN"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_vlan_multi"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a new Site manager VLAN configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_siteman_vlan_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_vlan_one"
+        },
+        "tags": [
+          "VLAN"
+        ]
+      },
+      "put": {
+        "summary": "Updates the selected Site manager VLAN configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_vlan_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_vlan_multi"
+        },
+        "tags": [
+          "VLAN"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager VLAN configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "tags": [
+          "VLAN"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Network",
+          "VLAN"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/switch/vlan/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected Site manager VLAN configuration",
+        "tags": [
+          "VLAN"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_vlan_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager VLAN configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_vlan_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_vlan_one"
+        },
+        "tags": [
+          "VLAN"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager VLAN configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": [
+          "VLAN"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Network",
+          "VLAN"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+
+      "devman_vlan": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/devman_group_options"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "VLAN name.",
+                "x-web": {
+                  "pretty": "Name",
+                  "input-type": "input"
+                }
+              },
+              "vlan": {
+                "type": "string",
+                "description": "VLAN ID.",
+                "x-web": {
+                  "pretty": "VLAN ID",
+                  "input-type": "input"
+                }
+              },
+              "port1": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port2": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port3": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port4": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port5": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port6": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port7": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port8": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port9": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port10": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port11": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port12": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port13": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port14": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port15": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port16": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port17": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port18": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port19": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port20": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port21": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port22": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port23": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "port24": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "sfp1": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "sfp2": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "sfp3": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              },
+              "sfp4": {
+                "$ref": "#/components/schemas/vlan_port_option"
+              }
+            }
+          }
+        ]
+      },
+      "vlan_port_option": {
+        "type": "string",
+        "description": "Port mode.",
+        "enum": [
+          "off",
+          "u",
+          "t"
+        ],
+        "x-web": {
+          "pretty": "Port",
+          "input-type": "select",
+          "enum-pretty": {
+            "off": "Off",
+            "u": "Untagged",
+            "t": "Tagged"
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_siteman_vlan_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_vlan"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_vlan_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_vlan"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "req_body_siteman_vlan_one": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/devman_vlan"
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "req_body_siteman_vlan_multi": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_vlan"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

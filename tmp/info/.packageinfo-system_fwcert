@@ -1,0 +1,22 @@
+Source-Makefile: package/system/fwcert/Makefile
+
+Package: fwcert
+Version: 1.0
+Depends: +libc +usign
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Firmware certificate verification utility
+Maintainer: 
+Source: fwcert-1.0-1.0.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Firmware certificate verification utility
+Description: Firmware certificate verification utility
+
+@@
+
+

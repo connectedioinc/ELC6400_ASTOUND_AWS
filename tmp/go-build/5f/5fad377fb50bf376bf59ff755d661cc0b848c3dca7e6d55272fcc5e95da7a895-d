@@ -1,0 +1,6 @@
+./dirfs.go
+./mkdir.go
+./openfile.go
+./removeall.go
+./rename.go
+./stat.go

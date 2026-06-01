@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-tinc-ui/Makefile
+
+Package: vuci-app-tinc-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-tinc-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Tinc VPN
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Tinc VPN
+Description: VuCI UI Support for Tinc VPN
+
+@@
+
+

@@ -1,0 +1,10 @@
+{
+    "user": "uhttpd",
+    "access": {
+        "sms_limit": {
+            "methods": [
+                "reset"
+            ]
+        }
+    }
+}

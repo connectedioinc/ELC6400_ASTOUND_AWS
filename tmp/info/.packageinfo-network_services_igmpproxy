@@ -1,0 +1,28 @@
+Source-Makefile: package/network/services/igmpproxy/Makefile
+
+Package: igmpproxy
+Submenu: Routing and Redirection
+Version: 0.2.1-7
+Depends: +libc +USE_GLIBC:librt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Multicast Routing Daemon
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Require-User: igmpproxy:igmpproxy
+FileAttributes: /usr/sbin/igmpproxy::::cap_net_raw=ep
+Source: igmpproxy-0.2.1.tar.gz
+License: GPL-2.0-or-later
+Type: ipkg
+Detail-Description: Multicast Routing Daemon
+Description: 	IGMPproxy is a simple dynamic Multicast Routing Daemon
+	which enables the ability for the router to learn multicast group membership information
+	and forward multicast packets
+http://sourceforge.net/projects/igmpproxy
+Felix Fietkau <nbd@nbd.name>
+@@
+
+

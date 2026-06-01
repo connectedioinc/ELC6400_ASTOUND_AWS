@@ -1,0 +1,11 @@
+--- a/Makefile	2024-11-08 13:56:38.587850047 +0200
++++ b/Makefile	2024-11-08 13:56:46.827699659 +0200
+@@ -12,7 +12,7 @@
+ 	$(O_COMPILE)
+ 
+ $(LIBNAME): lua_extra_validators.o
+-	$(CC) -Wall $(LLUA) -shared -fPIC $(DEFINES) -o $@ $^ $(INCLUDES)
++	$(CC) -Wall $(LLUA) -shared -fPIC $(DEFINES) $(LDFLAGS) -o $@ $^ $(INCLUDES)
+ 
+ clean:
+ 	$(RM) ./*.o

@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-apn-database-ui/Makefile
+
+Package: vuci-app-apn-database-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-apn-database-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for APN database
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for APN database
+Description: 	Package for additional WebUI page to manage APN database values.
+
+@@
+
+

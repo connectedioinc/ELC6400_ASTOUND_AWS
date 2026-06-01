@@ -1,0 +1,609 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "IEC 60870-5 Client"
+    }
+  ],
+  "paths": {
+    "/iec60870/client/global": {
+      "x-web": {
+        "menu": [
+          "Services",
+          "IEC 60870-5 Client",
+          "IEC 60870-5 Client"
+        ],
+        "name": "IEC 60870-5 Client"
+      },
+      "get": {
+        "summary": "Get IEC 60870-5 Client global configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_client_global_options"
+          }
+        },
+        "tags": [
+          "Global"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/iec60870_client_global_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_client_global_options"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "summary": "Update IEC 60870-5 Client global configuration",
+        "tags": [
+          "Global"
+        ]
+      }
+    },
+    "/iec60870/client/status": {
+      "x-web": {
+        "menu": [
+          "Services",
+          "IEC 60870-5 Client",
+          "IEC 60870-5 Client"
+        ],
+        "name": "IEC 60870-5 Client"
+      },
+      "get": {
+        "summary": "Get IEC 60870-5 Client service status",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_client_status"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": [
+          "Global"
+        ]
+      }
+    },
+    "/iec60870/client/actions/test_information_objects": {
+      "x-web": {
+        "hidden": true,
+        "menu": [
+          "Services",
+          "IEC 60870-5 Client",
+          "IEC 60870-5 Client"
+        ],
+        "name": "IEC 60870-5 Client"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/iec60870_client_test_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "description": "Operation status",
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/iec60870_test_io_result"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "summary": "Try reading the specified information objects from an IEC 60870-5 server",
+        "tags": [
+          "Global"
+        ]
+      }
+    },
+    "/iec60870/client/actions/list_information_objects": {
+      "x-web": {
+        "hidden": true,
+        "menu": [
+          "Services",
+          "IEC 60870-5 Client",
+          "IEC 60870-5 Client"
+        ],
+        "name": "IEC 60870-5 Client"
+      },
+      "post": {
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/iec60870_client_list_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "description": "Operation status",
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/iec60870_list_io_result"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "summary": "List available information objects on IEC 60870-5 server",
+        "tags": [
+          "Global"
+        ]
+      }
+    },
+    "/iec60870/client/database/entries/status": {
+      "x-web": {
+        "menu": [
+          "Services",
+          "IEC 60870-5 Client",
+          "IEC 60870-5 Client"
+        ],
+        "name": "IEC 60870-5 Client"
+      },
+      "parameters": [
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "number"
+          },
+          "description": "Limit number of items returned"
+        },
+        {
+          "name": "offset",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "number"
+          },
+          "description": "Number of items to skip from the beginning"
+        },
+        {
+          "name": "id",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by ID"
+        },
+        {
+          "name": "client_id",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by client ID"
+        },
+        {
+          "name": "information_object_address",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by information object address"
+        },
+        {
+          "name": "common_address",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by common address"
+        },
+        {
+          "name": "data_type",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by data type"
+        },
+        {
+          "name": "cause_of_transmission",
+          "in": "query",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Filter by cause of transmission"
+        }
+      ],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Database entries result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/iec60870_client_database_entry"
+                      }
+                    },
+                    "metadata": {
+                      "type": "object",
+                      "required": ["total"],
+                      "properties": {
+                        "total": {
+                          "type": "string",
+                          "format": "uinteger"
+                        },
+                        "limit": {
+                          "type": "string",
+                          "format": "uinteger"
+                        },
+                        "offset": {
+                          "type": "string",
+                          "format": "uinteger"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "summary": "Returns all IEC 60870-5 client service database entries",
+        "tags": [
+          "Global"
+        ]
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "iec60870_client_global_options": {
+        "description": "Global service options",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/iec60870_client_global_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "iec60870_client_status": {
+        "description": "Service status",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/iec60870_client_status"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "iec60870_client_global_options": {
+        "type": "object",
+        "required": ["enabled"],
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable/disable IEC 60870-5 client service.",
+            "format": "is_bool",
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "enum": [
+              "0",
+              "1"
+            ]
+          }
+        }
+      },
+      "iec60870_client_status": {
+        "type": "object",
+        "required": ["uptime"],
+        "properties": {
+          "uptime": {
+            "format": "uinteger",
+            "type": "string"
+          },
+          "instances": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "iec60870_client_test_options": {
+        "type": "object",
+        "properties": {
+          "connection_type": {
+            "type": "string",
+            "enum": [
+              "iec104"
+            ]
+          },
+          "information_objects_selection": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1"
+            ]
+          },
+          "information_objects": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "common_addresses": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "irange(1,65534)"
+            }
+          },
+          "timeout": {
+            "type": "string",
+            "format": "irange(1, 60)"
+          },
+          "ip": {
+            "type": "string",
+            "format": "ip4addr"
+          },
+          "port": {
+            "type": "string",
+            "format": "port"
+          }
+        }
+      },
+      "iec60870_client_list_options": {
+        "type": "object",
+        "properties": {
+          "connection_type": {
+            "type": "string",
+            "enum": [
+              "iec104"
+            ]
+          },
+          "common_address": {
+            "type": "string",
+            "format": "irange(1,65534)"
+          },
+          "ip": {
+            "type": "string",
+            "format": "ip4addr"
+          },
+          "port": {
+            "type": "string",
+            "format": "port"
+          }
+        }
+      },
+      "iec60870_client_database_entry": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "timestamp": {
+            "type": "number"
+          },
+          "client_id": {
+            "type": "string"
+          },
+          "common_address": {
+            "type": "number"
+          },
+          "information_object_address": {
+            "type": "number"
+          },
+          "data_type": {
+            "type": "string"
+          },
+          "cause_of_transmission": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object",
+            "properties": {}
+          }
+        }
+      },
+      "iec60870_test_io_result": {
+        "type": "object",
+        "properties": {
+          "information_objects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "common_address": {
+                  "type": "number"
+                },
+                "cause_of_transmission": {
+                  "type": "string"
+                },
+                "information_object_address": {
+                  "type": "number"
+                },
+                "data_type": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "data_type": {
+                  "type": "string"
+                },
+                "common_address": {
+                  "type": "number"
+                },
+                "cause_of_transmission": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "iec60870_list_io_result": {
+        "type": "object",
+        "properties": {
+          "information_objects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "common_address": {
+                  "type": "number"
+                },
+                "cause_of_transmission": {
+                  "type": "string"
+                },
+                "information_object_address": {
+                  "type": "number"
+                },
+                "data_type": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "data_type": {
+                  "type": "string"
+                },
+                "common_address": {
+                  "type": "number"
+                },
+                "cause_of_transmission": {
+                  "type": "string",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

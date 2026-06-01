@@ -1,0 +1,102 @@
+Source-Makefile: package/teltonika/gps/Makefile
+
+Package: libgps
+Version: 2025-11-27-1
+Depends: +libc +libubus +libsqlite3
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Library for communication with the gpsd daemon.
+Maintainer: 
+Source: gps-7.21-2025-11-27.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Library for communication with the gpsd daemon.
+Description: Library for communication with the gpsd daemon.
+
+@@
+
+Package: gpsd
+Version: 2025-11-27-1
+Depends: +libc +libsqlite3 +libpthread +libuci +libtlt_uci +liblog +libubus +liburc +libgsm +zlib +libcurl +libboardjson +IO_SUPPORT:iomand +libmnfinfo +libgps +libtlt_termios
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Deamon providing gps related functionality.
+Maintainer: 
+Require-User: gps=576:gps=576
+Source: gps-7.21-2025-11-27.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Deamon providing gps related functionality.
+Description: Deamon providing gps related functionality.
+
+@@
+
+Package: gpsctl
+Version: 2025-11-27-1
+Depends: +libc +libgps +gpsd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Console line interface for gpsd daemon.
+Maintainer: 
+Source: gps-7.21-2025-11-27.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Console line interface for gpsd daemon.
+Description: Console line interface for gpsd daemon.
+
+@@
+
+Package: ntp_gps
+Version: 2025-11-27-1
+Depends: +libc +libgps +gpsd +libuci
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Daemon meant for syncing system time with GPS data.
+Maintainer: 
+Require-User: ntp_gps=634:ntp_gps=634
+FileAttributes: /usr/sbin/ntp_gps::::cap_sys_time=ep
+Source: gps-7.21-2025-11-27.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Daemon meant for syncing system time with GPS data.
+Description: Daemon meant for syncing system time with GPS data.
+
+@@
+
+Package: avl
+Version: 2025-11-27-1
+Depends: +libc +libpthread +libuci +liblog +libubus +libgsm +zlib +libgps +iomand +libtlt_uci +libmnfinfo
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Daemon for sending data to AVL server.
+Maintainer: 
+Require-User: avl=635:avl=635
+Source: gps-7.21-2025-11-27.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Daemon for sending data to AVL server.
+Description: Daemon for sending data to AVL server.
+
+@@
+
+

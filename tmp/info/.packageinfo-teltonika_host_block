@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/host_block/Makefile
+
+Package: host_block
+Version: 2025-10-14-1
+Depends: +libc +dnsmasq
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Host Block
+Maintainer: 
+Require-User: hostblock=505:hostblock=505
+Source: host_block-1.11.1-2025-10-14.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Host Block
+Description: Host Block
+
+@@
+
+

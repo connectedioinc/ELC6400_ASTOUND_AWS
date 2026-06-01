@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/opcua_client/Makefile
+
+Package: opcua_client
+Version: 2026-01-22
+Depends: +libc +libuci +libtlt_uci +libubox +libubus +libsqlite3 +open62541 +rpcd +libcfgx
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: OPC UA client by Teltonika
+Maintainer: 
+Require-User: opcua_client=501:opcua_client=501
+Source: opcua_client-2026-01-22-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: OPC UA client by Teltonika
+Description: 	OPC UA client designed for reading data from OPC UA servers and storing read data in local database.
+
+@@
+
+

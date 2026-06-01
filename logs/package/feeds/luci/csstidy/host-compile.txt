@@ -1,0 +1,85 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/luci/contrib/package/csstidy'
+Hash of the local file csstidy-2021-06-13-707feaec-707feaec556c40c999514a598b1a1ea5b50826c6.tar.xz does not match (file: 8b160f070c09097f2ff6988da0cd46cf86dbbbcd8627c764caf8b6af7e936e2e, requested: a6db35de692d1b94561e725634ce410b75f5f7e26dc6f3fc92931813c0721ded) - deleting and re-downloading.
++ curl -f --connect-timeout 20 --retry 5 --location --insecure https://sources.cdn.openwrt.org/csstidy-2021-06-13-707feaec-707feaec556c40c999514a598b1a1ea5b50826c6.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 20 --retry 5 --location --insecure https://sources.openwrt.org/csstidy-2021-06-13-707feaec-707feaec556c40c999514a598b1a1ea5b50826c6.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 20 --retry 5 --location --insecure https://mirror2.openwrt.org/sources/csstidy-2021-06-13-707feaec-707feaec556c40c999514a598b1a1ea5b50826c6.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0   153    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
+No more mirrors to try - giving up.
+csstidy-2021-06-13-707feaec-707feaec556c40c999514a598b1a1ea5b50826c6.tar.xz: Download from https://github.com/jow-/csstidy-cpp.git failed
+csstidy-2021-06-13-707feaec-707feaec556c40c999514a598b1a1ea5b50826c6.tar.xz: Wrong hash (probably caused by .gitattributes), expecting a6db35de692d1b94561e725634ce410b75f5f7e26dc6f3fc92931813c0721ded, got 8c5cbe515c545ba93ed9996065766cfea3dc61868d26f9425270200f39bec575
+Checking out files from the git repository...
+Cloning into 'csstidy-2021-06-13-707feaec-707feaec556c40c999514a598b1a1ea5b50826c6'...
+Note: switching to '707feaec556c40c999514a598b1a1ea5b50826c6'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 707feae parse_css: do not omit white space in url() property values
+Packing checkout...
+. /media/home/FIRMWARES1/RUTX11/sdk2/include/shell.sh; xzcat /media/home/FIRMWARES1/RUTX11/sdk2/dl/csstidy-2021-06-13-707feaec-707feaec556c40c999514a598b1a1ea5b50826c6.tar.xz | tar -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec/ --strip-components=1 -xf -
+[ ! -d ./src/ ] || cp -fpR ./src/* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec/.prepared812561c1ac7f7ba3966d1e60bc2fc4eb_6664517399ebbbc92a37c5bb081b5c53
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec/; if [ -x configure ]; then cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.{guess,sub} /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec// && CC="gcc" CFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" CXX="g++" CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/lib" CONFIG_SHELL="/usr/bin/env bash"  bash ./configure --target=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --program-prefix="" --program-suffix="" --prefix=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg --exec-prefix=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg --sysconfdir=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/etc --localstatedir=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/var --sbindir=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin ; fi )
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec/.configured
+CFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" CXXFLAGS="" LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/lib" make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec  
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec'
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/background.o csstidy/background.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/conversions.o csstidy/conversions.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/cssopt.o csstidy/cssopt.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/csspp_globals.o csstidy/csspp_globals.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/csstidy.o csstidy/csstidy.cpp
+In file included from csstidy/csspp_globals.hpp:34,
+                 from csstidy/csstidy.cpp:20:
+csstidy/umap.hpp: In member function 'valT& umap<keyT, valT>::at(int) [with keyT = std::__cxx11::basic_string<char>; valT = std::__cxx11::basic_string<char>]':
+csstidy/umap.hpp:125:17: warning: control reaches end of non-void function [-Wreturn-type]
+  125 |                 }
+      |                 ^
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/file_functions.o csstidy/file_functions.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/important.o csstidy/important.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/main.o csstidy/main.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/misc.o csstidy/misc.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/parse_css.o csstidy/parse_css.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/prepare.o csstidy/prepare.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/print_css.o csstidy/print_css.cpp
+csstidy/print_css.cpp: In member function 'int csstidy::_seeknocomment(int, int)':
+csstidy/print_css.cpp:76:1: warning: control reaches end of non-void function [-Wreturn-type]
+   76 | }
+      | ^
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/trim.o csstidy/trim.cpp
+g++ -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -c -o csstidy/umap.o csstidy/umap.cpp
+g++ -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/lib -o csstidy/csstidy csstidy/background.o csstidy/conversions.o csstidy/cssopt.o csstidy/csspp_globals.o csstidy/csstidy.o csstidy/file_functions.o csstidy/important.o csstidy/main.o csstidy/misc.o csstidy/parse_css.o csstidy/prepare.o csstidy/print_css.o csstidy/trim.o csstidy/umap.o
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec/.built
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin/
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec/csstidy/csstidy /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin/
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/stamp
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/csstidy-2021-06-13-707feaec/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/stamp/.csstidy_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/luci/contrib/package/csstidy'
+time: package/feeds/luci/csstidy/host-compile#16.62#1.57#33.21

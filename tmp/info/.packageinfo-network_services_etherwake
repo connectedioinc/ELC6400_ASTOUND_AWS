@@ -1,0 +1,30 @@
+Source-Makefile: package/network/services/etherwake/Makefile
+
+Package: etherwake
+Version: 1.09-10
+Depends: +libc +libcap
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: WoL client for magic packets via ethernet frames
+Maintainer: Peter Wagner <tripolar@gmx.at>
+Require-User: etherwake:etherwake
+FileAttributes: /usr/bin/etherwake:etherwake:::cap_net_raw=ep
+Source: etherwake_1.09.orig.tar.gz
+License: GPL-2.0-only
+LicenseFiles: ether-wake.c
+Type: ipkg
+Detail-Description: WoL client for magic packets via ethernet frames
+Description: 	You can wake up WOL compliant Computers which have been powered down to
+	sleep mode or start WOL compliant Computers with a BIOS feature.
+	WOL is an abbreviation for Wake-on-LAN. It is a standard that allows you
+	to turn on a computer from another location over a network connection.
+	ether-wake also supports WOL passwords.
+http://ftp.debian.org/debian/pool/main/e/etherwake
+Peter Wagner <tripolar@gmx.at>
+@@
+
+

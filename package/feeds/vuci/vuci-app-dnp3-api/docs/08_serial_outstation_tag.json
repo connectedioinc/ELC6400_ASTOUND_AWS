@@ -1,0 +1,579 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Serial Outstation Object"
+    }
+  ],
+  "paths": {
+    "/dnp3/serial_outstation/objects/config": {
+      "get": {
+        "tags": [
+          "Serial Outstation Object"
+        ],
+        "summary": "Returns all Serial Outstation Object configurations. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200DNP3SerialOutstationObjectMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Serial Outstation Object"
+        ],
+        "summary": "Creates a Serial Outstation Object configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200DNP3SerialOutstationObject"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/dnp3_serial_outstation_object_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Serial Outstation Object"
+        ],
+        "summary": "Updates specified Serial Outstation Object configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200DNP3SerialOutstationObjectMulti"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter configuration",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/dnp3_serial_outstation_object_multi_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Serial Outstation Object"
+        ],
+        "summary": "Deletes specified Serial Outstation Object configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "DNP3",
+        "menu": [
+          "Services",
+          "DNP3",
+          "DNP3",
+          "Data Sources"
+        ],
+        "hw_tags": {
+          "serial_usb": true
+        }
+      }
+    },
+    "/dnp3/serial_outstation/objects/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Serial Outstation Object Configuration identifier (ID)"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Serial Outstation Object"
+        ],
+        "summary": "Returns Serial Outstation Object configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200DNP3SerialOutstationObject"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Serial Outstation Object"
+        ],
+        "summary": "Updates specified Serial Outstation Object configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200DNP3SerialOutstationObject"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter configuration",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/dnp3_serial_outstation_object_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Serial Outstation Object"
+        ],
+        "summary": "Deletes specified Serial Outstation Object configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Serial Outstation Object Configuration identifier (ID)"
+          }
+        ]
+      },
+      "x-web": {
+        "name": "DNP3",
+        "menu": [
+          "Services",
+          "DNP3",
+          "DNP3",
+          "Data Sources"
+        ],
+        "hw_tags": {
+          "serial_usb": true
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200DNP3SerialOutstationObject": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/dnp3_serial_outstation_object_multi_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200DNP3SerialOutstationObjectMulti": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/dnp3_serial_outstation_object_multi_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "dnp3_serial_outstation_object_multi_options": {
+        "title": "DNP3_serial_outstation_object_multi_options",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "x-web": {
+                  "pretty": "ID",
+                  "input-type": "input"
+                },
+                "description": "Serial Outstation Object configuration identifier (ID)"
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/dnp3_serial_outstation_object_options"
+          }
+        ]
+      },
+      "dnp3_serial_outstation_object_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable/disable DNP3 Serial Outstation Object.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "tag_name": {
+            "type": "string",
+            "description": "Display name of configuration.",
+            "format": "uciname",
+            "maxLength": 128,
+            "x-web": {
+              "pretty": "Object name",
+              "input-type": "input",
+              "unique": true,
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_source": {
+            "type": "string",
+            "description": "Client service name.",
+            "enum": [
+              "modbus_client",
+              "dnp3_client"
+            ],
+            "x-web": {
+              "pretty": "Object source",
+              "input-type": "select",
+              "enum-pretty": {
+                "modbus_client": "Modbus Client",
+                "dnp3_client": "DNP3 Client"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_id": {
+            "type": "string",
+            "description": "Value which will be written or read.",
+            "x-web": {
+              "pretty": "Object value",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_type": {
+            "type": "string",
+            "description": "Value data type.",
+            "enum": [
+              "string",
+              "binary",
+              "bool",
+              "int8",
+              "uint8",
+              "int16",
+              "uint16",
+              "int32",
+              "uint32",
+              "int64",
+              "uint64",
+              "float32",
+              "float64"
+            ],
+            "x-web": {
+              "pretty": "Object type",
+              "input-type": "select",
+              "enum-pretty": {
+                "string": "String",
+                "binary": "Binary",
+                "bool": "Bool",
+                "int8": "INT8",
+                "uint8": "UINT8",
+                "int16": "INT16",
+                "uint16": "UINT16",
+                "int32": "INT32",
+                "uint32": "UINT32",
+                "int64": "INT64",
+                "uint64": "UINT64",
+                "float32": "FLOAT32",
+                "float64": "FLOAT64"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "tag_permissions": {
+            "type": "string",
+            "description": "Object read/write permissions",
+            "enum": [
+              "r",
+              "w",
+              "rw"
+            ],
+            "readOnly": true,
+            "x-web": {
+              "pretty": "Object permissions",
+              "input-type": "input",
+              "enum-pretty": {
+                "r": "Read-Only",
+                "w": "Write-Only",
+                "rw": "Read-Write"
+              }
+            }
+          },
+          "tag_start": {
+            "type": "string",
+            "description": "Value subset start index.",
+            "format": "irange(0, 65535)",
+            "x-web": {
+              "pretty": "Value start index",
+              "input-type": "input"
+            }
+          },
+          "tag_count": {
+            "type": "string",
+            "description": "Value subset count.",
+            "format": "irange(1, 65536)",
+            "x-web": {
+              "pretty": "Value subset count",
+              "input-type": "input"
+            }
+          },
+          "dnp3_index": {
+            "type": "string",
+            "description": "Start index of the range",
+            "x-web": {
+              "pretty": "Start index of the range",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "dnp3_group": {
+            "type": "string",
+            "description": "DNP3 data type",
+            "enum": [
+              "1",
+              "3",
+              "20",
+              "30",
+              "110",
+              "40",
+              "10"
+            ],
+            "x-web": {
+              "pretty": "DNP3 data type",
+              "input-type": "select",
+              "enum-pretty": {
+                "1": "Binary",
+                "3": "Double Binary",
+                "20": "Counter",
+                "30": "Analog",
+                "110": "Octet String",
+                "40": "Analog Output",
+                "10": "Binary Output"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "dnp3_variation": {
+            "type": "string",
+            "description": "DNP3 variation",
+            "enum": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6"
+            ],
+            "x-web": {
+              "pretty": "DNP3 variation",
+              "input-type": "select",
+              "enum-depends": [
+                {
+                  "depends": {
+                    "dnp3_group": "1"
+                  },
+                  "values": ["0"]
+                },
+                {
+                  "depends": {
+                    "dnp3_group": "3"
+                  },
+                  "values": ["0"]
+                },
+                {
+                  "depends": {
+                    "dnp3_group": "20"
+                  },
+                  "values": ["0"]
+                },
+                {
+                  "depends": {
+                    "dnp3_group": "30"
+                  },
+                  "values": ["1", "2", "3", "4", "5", "6"]
+                },
+                {
+                  "depends": {
+                    "dnp3_group": "110"
+                  },
+                  "values": ["0"]
+                },
+                {
+                  "depends": {
+                    "dnp3_group": "40"
+                  },
+                  "values": ["1", "2", "3", "4"]
+                },
+                {
+                  "depends": {
+                    "dnp3_group": "10"
+                  },
+                  "values": ["0"]
+                }
+              ],
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "outstation_dev_id": {
+            "type": "string",
+            "description": "Serial Outstation Configuration identifier (ID).",
+            "x-web": {
+              "pretty": "DNP3 serial oustation",
+              "input-type": "input"
+            }
+          }
+        },
+        "required": [
+          "outstation_dev_id"
+        ]
+      }
+    }
+  }
+}

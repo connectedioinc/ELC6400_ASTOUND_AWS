@@ -1,0 +1,4 @@
+config section logupload
+	option url 'http://cloudapi.connectedio.com/portal/v1/diagnosis/logger/add'
+	option filepath '/tmp/log'
+	option userId '6709'

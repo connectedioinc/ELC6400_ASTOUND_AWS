@@ -1,0 +1,68 @@
+Source-Makefile: feeds/packages/net/lksctp-tools/Makefile
+
+Package: libsctp
+Submenu: Networking
+Version: 1.0.18-1
+Depends: +libc +kmod-sctp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: SCTP user-land library
+Maintainer: 
+Source: lksctp-tools-1.0.18.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: SCTP user-land library
+Description: SCTP user-land library
+https://github.com/sctp/lksctp-tools
+
+@@
+
+Package: sctp
+Version: 1.0.18-1
+Depends: +libc +libsctp +sctp-tools
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: SCTP user-land (meta)
+Maintainer: 
+Source: lksctp-tools-1.0.18.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+Type: ipkg
+Build-Only: 1
+Detail-Description: SCTP user-land (meta)
+Description: SCTP user-land (meta)
+https://github.com/sctp/lksctp-tools
+
+@@
+
+Package: sctp-tools
+Version: 1.0.18-1
+Depends: +libc +libsctp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: SCTP user-land tools
+Maintainer: 
+Source: lksctp-tools-1.0.18.tar.gz
+License: GPL-2.0
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: SCTP user-land tools
+Description: SCTP user-land tools
+https://github.com/sctp/lksctp-tools
+
+@@
+
+

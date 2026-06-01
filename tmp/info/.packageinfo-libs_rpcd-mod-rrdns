@@ -1,0 +1,22 @@
+Source-Makefile: package/libs/rpcd-mod-rrdns/Makefile
+
+Package: rpcd-mod-rrdns
+Version: 2025-03-25
+Depends: +libc +rpcd +libubox +libubus
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Rapid reverse DNS rpcd module
+Maintainer: 
+Source: 
+License: ISC
+Type: ipkg
+Detail-Description: Rapid reverse DNS rpcd module
+Description: 	Provides rapid mass reverse DNS lookup functionality.
+
+@@
+
+

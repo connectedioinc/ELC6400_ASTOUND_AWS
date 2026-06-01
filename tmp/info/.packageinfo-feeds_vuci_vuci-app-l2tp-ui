@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-l2tp-ui/Makefile
+
+Package: vuci-app-l2tp-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-ui-core +vuci-app-l2tp-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for L2TP
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for L2TP
+Description: VuCI UI Support for L2TP
+
+@@
+
+

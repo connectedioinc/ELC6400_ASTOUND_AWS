@@ -1,0 +1,84 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/data_to_server/format/options": {
+      "get": {
+        "summary": "Returns Data to Server all available format plugin names",
+        "tags": ["Format"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_data_sender_available_format_plugin_names"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Format"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    },
+    "/data_to_server/format/actions/download_example_format_lua": {
+      "post": {
+        "summary": "Downloads Lua format script example file",
+        "tags": ["Format"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_example_lua"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "Data to Server", "Format"],
+        "hw_tags": {
+          "is_access_point": false,
+          "is_switch": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200_data_sender_available_format_plugin_names": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "enum": ["json", "custom", "lua"]
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "200_example_lua": {
+        "description": "Success",
+        "content": {
+          "application/octet-stream": {
+            "schema": {
+              "type": "string",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    }
+  }
+}

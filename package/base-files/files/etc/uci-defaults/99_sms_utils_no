@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Loop from 0 to 20
+i=0
+while [ $i -le 29 ]; do
+    uci set sms_utils.@rule[$i].allowed_phone='+18174427714'
+    i=$((i + 1))
+done
+
+uci commit sms_utils
+
+exit 0

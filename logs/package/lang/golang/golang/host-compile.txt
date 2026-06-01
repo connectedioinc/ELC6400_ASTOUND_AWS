@@ -1,0 +1,11 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/lang/golang/golang'
+Makefile:221: warning: overriding recipe for target '/media/home/FIRMWARES1/RUTX11/sdk2/dl'
+Makefile:203: warning: ignoring old recipe for target '/media/home/FIRMWARES1/RUTX11/sdk2/dl'
+Makefile:238: warning: overriding recipe for target '/media/home/FIRMWARES1/RUTX11/sdk2/dl'
+Makefile:221: warning: ignoring old recipe for target '/media/home/FIRMWARES1/RUTX11/sdk2/dl'
+Makefile:255: warning: overriding recipe for target '/media/home/FIRMWARES1/RUTX11/sdk2/dl'
+Makefile:238: warning: ignoring old recipe for target '/media/home/FIRMWARES1/RUTX11/sdk2/dl'
+Makefile:459: warning: overriding recipe for target '/media/home/FIRMWARES1/RUTX11/sdk2/dl'
+Makefile:255: warning: ignoring old recipe for target '/media/home/FIRMWARES1/RUTX11/sdk2/dl'
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/lang/golang/golang'
+time: package/lang/golang/golang/host-compile#0.68#0.52#0.90

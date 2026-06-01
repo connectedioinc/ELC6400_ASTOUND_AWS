@@ -1,0 +1,25 @@
+Source-Makefile: package/teltonika/mqtt_pub/Makefile
+
+Package: mqtt_pub
+Version: 2026-02-11
+Depends: +libc +libuci +libtlt_uci +libmosquitto-ssl +libubus +libjson-c +libubox +libblobmsg-json +mosquitto-ssl +IO_SUPPORT:iomand +MOBILE_SUPPORT:libgsm +libmnfinfo +TPM_SUPPORT:libtpm2_importer
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: MQTT client for device monitoring
+Maintainer: 
+Require-User: mqtt_pub=512:mqtt_pub=512
+Source: mqtt_pub-2.17-2026-02-11.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: MQTT client for device monitoring
+Description: 	MQTT protocol services' bundle. With this package it is
+	possible to set up MQTT Broker and MQTT Bridge for data transferring
+	and custom Teltonika MQTT Client for data retrieval.
+
+@@
+
+

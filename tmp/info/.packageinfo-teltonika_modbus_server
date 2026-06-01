@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/modbus_server/Makefile
+
+Package: modbus_server
+Version: 7.21-1
+Depends: +libc +libuci +libtlt_uci +libtlt_termios +libubus +libubox +libjson-c +libblobmsg-json +libmnfinfo +libmodbus +libboardjson +MOBILE_SUPPORT:libmdcollect +MOBILE_SUPPORT:libgsm +IO_SUPPORT:iomand +libtag
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Modbus server daemon by Teltonika
+Maintainer: 
+FileAttributes: /usr/sbin/modbus_server::::cap_net_bind_service=ep
+Source: modbus_server-.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Modbus server daemon by Teltonika
+Description: 	MODBUS TCP/Serial server designed for MODBUS clients to read and write device data.
+
+@@
+
+

@@ -1,0 +1,9 @@
+{
+    "packages": [
+        "dlna.tar.gz"
+    ],
+    "excludedDevices": [
+        "RUT950",
+        "RUT951"
+    ]
+}

@@ -1,0 +1,23 @@
+Source-Makefile: package/system/letsencrypt/Makefile
+
+Package: letsencrypt
+Version: 2024-11-26-2
+Depends: +libc +openssl-util +curl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Letsencrypt (ACME) script
+Maintainer: 
+Source: letsencrypt-2024-11-26-7cc12390f8d291e2d573906d795feadd1dfdeebd.tar.xz
+License: GPL-2.0-only
+LicenseFiles: LICENCE
+Type: ipkg
+Detail-Description: Letsencrypt (ACME) script
+Description:  This package contains Certificate Manager Let's Encrypt support.
+
+@@
+
+

@@ -1,0 +1,8 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "modbus_server*": {
+      "methods": [ "status" ]
+    }
+  }
+}

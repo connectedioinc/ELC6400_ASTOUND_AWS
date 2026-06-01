@@ -1,0 +1,7 @@
+0 */4 * * * /usr/bin/flock -n /var/run/coap_watchdog.lock /usr/bin/coap_watchdog >/dev/null 2>&1
+# Restart client at random time between 2-3 AM
+0 2 * * * /usr/bin/cio/random_restart.sh
+# Restart client at random time between 2-3 PM
+0 14 * * * /usr/bin/cio/random_restart.sh
+# Monthly reboot of device - on every 25 th of month between 4 and 5 AM - sets time at 3 AM(24 th of the month)
+0 3 24 * * /usr/bin/cio/set_reboot_time.sh

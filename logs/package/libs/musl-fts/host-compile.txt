@@ -1,0 +1,221 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/musl-fts'
+musl-fts-1.2.7.tar.xz: Download from https://github.com/pullmoll/musl-fts.git failed
+musl-fts-1.2.7.tar.xz: Requires sha256sum for verification
+Checking out files from the git repository...
+Cloning into 'musl-fts-1.2.7-0bde52df588e8969879a2cae51c3a4774ec62472'...
+Note: switching to '0bde52df588e8969879a2cae51c3a4774ec62472'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 0bde52d Version 1.2.7: fix build system to honor user vars
+Packing checkout...
+. /media/home/FIRMWARES1/RUTX11/sdk2/include/shell.sh; xzcat /media/home/FIRMWARES1/RUTX11/sdk2/dl/musl-fts-1.2.7.tar.xz | tar -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7/ --strip-components=1 -xf -
+[ ! -d ./src/ ] || cp -fpR ./src/* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7/.preparedf3216a6a7169cbc142e4c1334db0ffd7_6664517399ebbbc92a37c5bb081b5c53
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7; rm -f autogen.sh; if [ -f ./configure.ac ] || [ -f ./configure.in ]; then [ -d ./autom4te.cache ] && rm -rf ./autom4te.cache; [ -e ./config.rpath ] || ln -s /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.rpath ./config.rpath; touch NEWS AUTHORS COPYING ABOUT-NLS ChangeLog; AUTOM4TE=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autom4te AUTOCONF=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoconf AUTOMAKE=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/automake ACLOCAL=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/aclocal AUTOHEADER=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoheader LIBTOOLIZE=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/libtoolize LIBTOOL=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/libtool M4=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/m4 AUTOPOINT=true GTKDOCIZE=true LIBTOOLIZE='/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/libtoolize --install' /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoreconf -v -f -i -s -B /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/share/aclocal -I m4 -I . . || true; fi; );
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/aclocal -I m4 -I . --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/libtoolize --install --force
+OpenWrt-libtoolize: putting auxiliary files in `.'.
+OpenWrt-libtoolize: linking file `./config.guess'
+OpenWrt-libtoolize: linking file `./config.sub'
+OpenWrt-libtoolize: linking file `./install-sh'
+OpenWrt-libtoolize: linking file `./ltmain.sh'
+OpenWrt-libtoolize: putting macros in `m4'.
+OpenWrt-libtoolize: linking file `m4/libtool.m4'
+OpenWrt-libtoolize: linking file `m4/ltoptions.m4'
+OpenWrt-libtoolize: linking file `m4/ltsugar.m4'
+OpenWrt-libtoolize: linking file `m4/ltversion.m4'
+OpenWrt-libtoolize: linking file `m4/lt~obsolete.m4'
+OpenWrt-libtoolize: Consider adding `AC_CONFIG_MACRO_DIR([m4])' to configure.ac and
+OpenWrt-libtoolize: rerunning libtoolize, to keep the correct libtool macros in-tree.
+autoreconf: running: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoconf --include=m4 --include=. --prepend-include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/share/aclocal --force
+autoreconf: running: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/autoheader --include=m4 --include=. --prepend-include=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/share/aclocal --force
+autoreconf: running: /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/automake --add-missing --force-missing
+configure.ac:9: installing './compile'
+configure.ac:5: installing './missing'
+Makefile.am: installing './INSTALL'
+Makefile.am: installing './depcomp'
+autoreconf: Leaving directory `.'
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7/; if [ -x configure ]; then cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.{guess,sub} /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7// && CC="gcc" CFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" CXX="g++" CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/lib" CONFIG_SHELL="/usr/bin/env bash"  bash ./configure --target=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --program-prefix="" --program-suffix="" --prefix=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg --exec-prefix=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg --sysconfdir=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/etc --localstatedir=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/var --sbindir=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin --disable-shared --with-pic ; fi )
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking for x86_64-pc-linux-gnu-gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/sed
+checking for grep that handles long lines and -e... /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/grep
+checking for egrep... /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/grep -E
+checking for fgrep... /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin/grep -F
+checking for ld used by gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for x86_64-pc-linux-gnu-objdump... no
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-pc-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-pc-linux-gnu-ar... no
+checking for ar... ar
+checking for archiver @FILE support... @
+checking for x86_64-pc-linux-gnu-strip... no
+checking for strip... strip
+checking for x86_64-pc-linux-gnu-ranlib... no
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for sysroot... no
+checking for x86_64-pc-linux-gnu-mt... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking how to run the C preprocessor... gcc -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking assert.h usability... yes
+checking assert.h presence... yes
+checking for assert.h... yes
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking errno.h usability... yes
+checking errno.h presence... yes
+checking for errno.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking sys/param.h usability... yes
+checking sys/param.h presence... yes
+checking for sys/param.h... yes
+checking for sys/stat.h... (cached) yes
+checking whether MAX is declared... yes
+checking whether UINTMAX_MAX is declared... no
+checking for dirfd... yes
+checking for DIR.dd_fd... no
+checking for DIR.d_fd... no
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating musl-fts.pc
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7/.configured
+CFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" CXXFLAGS="" LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/lib" make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7  
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7'
+make  all-am
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7'
+/usr/bin/env bash ./libtool  --tag=CC   --mode=compile gcc -DHAVE_CONFIG_H -I.   -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include  -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -MT fts.lo -MD -MP -MF .deps/fts.Tpo -c -o fts.lo fts.c
+OpenWrt-libtool: compile:  gcc -DHAVE_CONFIG_H -I. -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include -MT fts.lo -MD -MP -MF .deps/fts.Tpo -c fts.c  -fPIC -DPIC -o fts.o
+mv -f .deps/fts.Tpo .deps/fts.Plo
+/usr/bin/env bash ./libtool  --tag=CC   --mode=link gcc  -O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include  -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/lib -o libfts.la -rpath /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib fts.lo  
+OpenWrt-libtool: link: ar cru .libs/libfts.a  fts.o
+ar: `u' modifier ignored since `D' is the default (see `U')
+OpenWrt-libtool: link: ranlib .libs/libfts.a
+OpenWrt-libtool: link: ( cd ".libs" && rm -f "libfts.la" && ln -s "../libfts.la" "libfts.la" )
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7'
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7'
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7/.built
+CFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" CXXFLAGS="" LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/lib" make -j1 -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7  install
+make[4]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7'
+make[5]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7'
+ /usr/bin/mkdir -p '/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib'
+ /usr/bin/env bash ./libtool   --mode=install /usr/bin/install -c   libfts.la '/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib'
+OpenWrt-libtool: install: /usr/bin/install -c .libs/libfts.lai /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib/libfts.la
+OpenWrt-libtool: install: /usr/bin/install -c .libs/libfts.a /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib/libfts.a
+OpenWrt-libtool: install: chmod 644 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib/libfts.a
+OpenWrt-libtool: install: ranlib /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib/libfts.a
+OpenWrt-libtool: finish: PATH="/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/bin:/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin:/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin:/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/toolchain-arm_cortex-a7+neon-vfpv4_gcc-8.4.0_musl_eabi/bin:/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin:/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/sbin" ldconfig -n /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the `-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the `LD_RUN_PATH' environment variable
+     during linking
+   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+ /usr/bin/mkdir -p '/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include'
+ /usr/bin/install -c -m 644 fts.h '/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include'
+ /usr/bin/mkdir -p '/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib/pkgconfig'
+ /usr/bin/install -c -m 644 musl-fts.pc '/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib/pkgconfig'
+make[5]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7'
+make[4]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7'
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/stamp
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/musl-fts-1.2.7/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/stamp/.musl-fts_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/package/libs/musl-fts'
+time: package/libs/musl-fts/host-compile#9.52#2.46#14.15

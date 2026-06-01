@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-modbus-serial-ui/Makefile
+
+Package: vuci-app-modbus-serial-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-app-universal-gateway-api +vuci-ui-core +vuci-app-modbus-serial-api
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for Modbus
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for Modbus
+Description: VuCI UI Support for Modbus
+
+@@
+
+

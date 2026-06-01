@@ -1,0 +1,252 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Banner",
+    "description": "Administration Banner API documentation",
+    "version": "1.0"
+  },
+  "tags": [
+    {
+      "name": "Banner"
+    }
+  ],
+  "paths": {
+    "/system/banner/config": {
+      "get": {
+        "tags": ["Banner"],
+        "summary": "Returns all banner configuration sections",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200AdminBannerMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": ["Banner"],
+        "summary": "Updates banner configuration sections",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200AdminBannerMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "$ref": "#/components/schemas/administration_banner_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["System", "Administration", "General"]
+      }
+    },
+    "/system/banner/config/{id}": {
+      "get": {
+        "tags": ["Banner"],
+        "summary": "Returns the specified banner configuration section",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200AdminBanner"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configuration ID"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": ["Banner"],
+        "summary": "Updates the specified banner configuration section",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200AdminBanner"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configuration ID"
+          }
+        ],
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/administration_banner_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "menu": ["System", "Administration", "General"]
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200AdminBanner": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/administration_banner_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200AdminBannerMulti": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/administration_banner_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "administration_banner_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "type": "string",
+            "format": "is_bool",
+            "enum": ["1", "0"],
+            "description": "Enable/disable banner."
+          },
+          "title": {
+            "x-web": {
+              "pretty": "Title",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            },
+            "maxLength": 64,
+            "type": "string",
+            "description": "Title of the banner."
+          },
+          "message": {
+            "x-web": {
+              "pretty": "Message",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            },
+            "maxLength": 512,
+            "type": "string",
+            "description": "Contents of the banner."
+          }
+        }
+      },
+      "administration_banner_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "x-web": {
+                  "pretty": "Configuration ID",
+                  "input-type": "input"
+                },
+                "type": "string",
+                "description": "Banner Configuration identifier (ID)."
+              }
+            },
+            "required": ["id"]
+          },
+          {
+            "$ref": "#/components/schemas/administration_banner_single_options"
+          }
+        ]
+      }
+    }
+  }
+}

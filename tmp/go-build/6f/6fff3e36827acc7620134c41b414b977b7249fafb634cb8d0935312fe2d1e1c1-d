@@ -1,0 +1,6 @@
+./decoder.go
+./doc.go
+./entrypoint.go
+./stream_linux.go
+./stream_memory.go
+./structure.go

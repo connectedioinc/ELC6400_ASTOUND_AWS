@@ -1,0 +1,13 @@
+{
+  "services/io/general": {
+    "description": "input/output status configuration",
+    "read": {
+      "api": {
+        "/io/*": ["*"]
+      }
+    },
+    "write": {
+      "api": ["/io/*"]
+    }
+  }
+}

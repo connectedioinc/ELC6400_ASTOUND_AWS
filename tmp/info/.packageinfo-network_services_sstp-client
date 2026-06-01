@@ -1,0 +1,27 @@
+Source-Makefile: package/network/services/sstp-client/Makefile
+
+Package: sstp-client
+Submenu: VPN
+Version: 1.0.19-5
+Depends: +libc +libevent2 +libopenssl +ppp +resolveip
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: SSTP-Client is a SSTP client for Linux.
+Maintainer: Federico Di Marco <fededim@gmail.com>
+Require-User: sstpc:sstpc
+Source: sstp-client-1.0.19.tar.gz
+License: GPL-2.0-or-later
+LicenseFiles: COPYING
+Type: ipkg
+Detail-Description: SSTP-Client is a SSTP client for Linux.
+Description: 	Secure Socket Tunneling Protocol (SSTP) is a VPN protocol
+	designed to transport PPP traffic via a secure SSL/TLS channel.
+http://sstp-client.sourceforge.net/
+Federico Di Marco <fededim@gmail.com>
+@@
+
+

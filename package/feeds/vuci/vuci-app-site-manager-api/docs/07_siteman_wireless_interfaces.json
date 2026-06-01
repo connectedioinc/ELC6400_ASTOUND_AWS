@@ -1,0 +1,1055 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Wireless interfaces"
+    }
+  ],
+  "paths": {
+    "/site_manager/wireless/interfaces/config": {
+      "get": {
+        "summary": "Returns all Site manager wireless interface configurations",
+        "tags": [
+          "Wireless interfaces"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_wireless_interface_multi"
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a new Site manager wireless interface configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200_siteman_wireless_interface_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_wireless_interface_one"
+        },
+        "tags": [
+          "Wireless interfaces"
+        ]
+      },
+      "put": {
+        "summary": "Updates the selected Site manager wireless interface configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_wireless_interface_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_wireless_interface_multi"
+        },
+        "tags": [
+          "Wireless interfaces"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager wireless interface configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/delete_multi"
+        },
+        "tags": [
+          "Wireless interfaces"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Wireless",
+          "Wireless"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    },
+    "/site_manager/wireless/interfaces/config/{id}": {
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configuration ID"
+        }
+      ],
+      "get": {
+        "summary": "Returns the selected Site manager wireless interface configuration",
+        "tags": [
+          "Wireless interfaces"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_wireless_interface_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Updates the selected Site manager wireless interface configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_siteman_wireless_interface_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/req_body_siteman_wireless_interface_one"
+        },
+        "tags": [
+          "Wireless interfaces"
+        ]
+      },
+      "delete": {
+        "summary": "Deletes the selected Site manager wireless interface configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": [
+          "Wireless interfaces"
+        ]
+      },
+      "x-web": {
+        "menu": [
+          "Site manager",
+          "Wireless",
+          "Wireless"
+        ],
+        "hw_tags": {
+          "has_siteman": true
+        },
+        "name": "Site manager"
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+
+      "devman_wireless_interface": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/devman_group_options"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "string",
+                "description": "Toggle WiFi interface on or off.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Enable",
+                  "group": "General Setup",
+                  "input-type": "switch"
+                }
+              },
+              "device": {
+                "type": "array",
+                "description": "SSID will use these radios. Use one of them if you want seperate SSIDs for each radio or use all of them if you want combined SSID",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "radio0",
+                    "radio1"
+                  ]
+                },
+                "x-web": {
+                  "pretty": "Radios",
+                  "input-type": "multiselect",
+                  "enum-pretty": {
+                    "radio0": "2.4 GHz",
+                    "radio1": "5 GHz"
+                  }
+                }
+              },
+              "ssid": {
+                "type": "string",
+                "description": "SSID of the wifi network (required if no 'bssid' is provided)",
+                "x-web": {
+                  "pretty": "SSID",
+                  "input-type": "input"
+                }
+              },
+              "network": {
+                "type": "string",
+                "description": "The network you want to attach to this wireless interface.",
+                "x-web": {
+                  "pretty": "Network",
+                  "group": "General Setup",
+                  "input-type": "input"
+                }
+              },
+              "vlan_id": {
+                "type": "string",
+                "description": "VLAN ID",
+                "x-web": {
+                  "pretty": "VLAN ID",
+                  "input-type": "input"
+                }
+              },
+              "hidden": {
+                "type": "string",
+                "description": "Hide ESSID. Hide extended Service Set Identifier",
+                "x-web": {
+                  "pretty": "Hide ESSID",
+                  "group": "General Setup",
+                  "input-type": "switch",
+                  "depends": [
+                    {
+                      "mode": "ap"
+                    },
+                    {
+                      "mode": ""
+                    }
+                  ]
+                }
+              },
+              "mesh_rssi_threshold": {
+                "type": "string",
+                "description": "Mesh RSSI threshold",
+                "x-web": {
+                  "pretty": "Mesh RSSI threshold",
+                  "input-type": "input"
+                }
+              },
+              "wmm": {
+                "type": "string",
+                "description": "Wi-Fi Multimedia (WMM), previously known as Wireless Multimedia Extensions (WME), is a subset of the 802.11e wireless LAN (WLAN) specification that enhances quality of service (QoS) on a network by prioritizing data packets according to four categories.",
+                "x-web": {
+                  "pretty": "WMM Mode",
+                  "group": "General Setup",
+                  "input-type": "switch",
+                  "depends": [
+                    {
+                      "mode": "ap"
+                    },
+                    {
+                      "mode": ""
+                    }
+                  ]
+                }
+              },
+              "encryption": {
+                "type": "string",
+                "description": "Encryption. The type of WiFi encryption used.",
+                "enum": [
+                  "none",
+                  "psk",
+                  "psk2",
+                  "psk-mixed",
+                  "sae",
+                  "sae-mixed",
+                  "wpa",
+                  "wpa2",
+                  "owe",
+                  "wpa3-mixed",
+                  "wpa3"
+                ],
+                "x-web": {
+                  "pretty": "Encryption",
+                  "group": "Wireless Security",
+                  "input-type": "select",
+                  "depends": [
+                    {
+                      "mode": "ap"
+                    },
+                    {
+                      "mode": "sta"
+                    },
+                    {
+                      "mode": "mesh"
+                    },
+                    {
+                      "mode": ""
+                    }
+                  ],
+                  "enum-pretty": {
+                    "none": "No encryption",
+                    "psk": "WPA-PSK",
+                    "psk2": "WPA2-PSK",
+                    "psk-mixed": "WPA-PSK/WPA2-PSK Mixed Mode",
+                    "sae": "WPA3-SAE",
+                    "sae-mixed": "WPA2-PSK/WPA3-SAE Mixed Mode",
+                    "wpa": "WPA-EAP",
+                    "wpa2": "WPA2-EAP",
+                    "owe": "OWE",
+                    "wpa3-mixed": "WPA2-EAP/WPA3-EAP Mixed Mode",
+                    "wpa3": "WPA3-EAP"
+                  }
+                }
+              },
+              "mesh_id": {
+                "type": "string",
+                "description": "Mesh ID",
+                "x-web": {
+                  "pretty": "Mesh ID",
+                  "input-type": "input"
+                }
+              },
+              "mode": {
+                "type": "string",
+                "description": "Mode",
+                "enum": [
+                  "ap",
+                  "mesh"
+                ],
+                "x-web": {
+                  "pretty": "Mode",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "ap": "Access Point",
+                    "mesh": "Mesh"
+                  }
+                }
+              },
+              "bss_transition": {
+                "type": "string",
+                "description": "BSS Transition",
+                "x-web": {
+                  "pretty": "BSS Transition",
+                  "input-type": "switch"
+                }
+              },
+              "mesh_fwding": {
+                "type": "string",
+                "description": "Mesh Forwarding",
+                "x-web": {
+                  "pretty": "Mesh Forwarding",
+                  "input-type": "switch"
+                }
+              },
+              "wds": {
+                "type": "string",
+                "description": "WDS",
+                "x-web": {
+                  "pretty": "WDS",
+                  "input-type": "switch"
+                }
+              },
+              "ieee80211k": {
+                "type": "string",
+                "description": "802.11k",
+                "x-web": {
+                  "pretty": "802.11k",
+                  "input-type": "switch"
+                }
+              },
+              "cipher": {
+                "type": "string",
+                "description": "Cipher. An algorithm for performing encryption or decryption.",
+                "enum": [
+                  "auto",
+                  "ccmp",
+                  "tkip",
+                  "tkip+ccmp"
+                ],
+                "x-web": {
+                  "pretty": "Cipher",
+                  "group": "Wireless Security",
+                  "input-type": "select",
+                  "depends": [
+                    {
+                      "encryption": "psk"
+                    },
+                    {
+                      "encryption": "psk2"
+                    },
+                    {
+                      "encryption": "psk-mixed"
+                    },
+                    {
+                      "encryption": "wpa"
+                    },
+                    {
+                      "encryption": "wpa2"
+                    },
+                    {
+                      "encryption": "wpa3"
+                    }
+                  ],
+                  "enum-pretty": {
+                    "auto": "Auto",
+                    "ccmp": "Force CCMP (AES)",
+                    "tkip": "Force TKIP",
+                    "tkip+ccmp": "Force TKIP and CCMP (AES)"
+                  }
+                }
+              },
+              "key": {
+                "type": "string",
+                "minLength": 8,
+                "maxLength": 64,
+                "description": "Password. Custom passphrase used for authentication (at least 8 characters long).",
+                "x-web": {
+                  "pretty": "Password",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "encryption": [
+                        "psk",
+                        "psk2",
+                        "psk+psk2",
+                        "psk-mixed",
+                        "sae",
+                        "sae-mixed"
+                      ],
+                      "mode": ""
+                    },
+                    {
+                      "encryption": [
+                        "psk",
+                        "psk2",
+                        "psk+psk2",
+                        "psk-mixed",
+                        "sae",
+                        "sae-mixed"
+                      ],
+                      "mode": "ap"
+                    },
+                    {
+                      "encryption": [
+                        "psk",
+                        "psk2",
+                        "psk+psk2",
+                        "psk-mixed",
+                        "sae",
+                        "sae-mixed"
+                      ],
+                      "mode": "sta"
+                    },
+                    {
+                      "encryption": [
+                        "psk",
+                        "psk2",
+                        "psk+psk2",
+                        "psk-mixed",
+                        "sae",
+                        "sae-mixed"
+                      ],
+                      "mode": "mesh"
+                    }
+                  ]
+                }
+              },
+              "auth_server": {
+                "type": "string",
+                "description": "Radius-Authentication-Server. Ip address of the authentification server.",
+                "x-web": {
+                  "pretty": "Radius-Authentication-Server",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "mode": "",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "auth_port": {
+                "type": "string",
+                "description": "Radius-Authentication-Port. Default port for the server is 1812.",
+                "x-web": {
+                  "pretty": "Radius-Authentication-Port",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "mode": "",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "auth_secret": {
+                "type": "string",
+                "description": "Radius-Authentication-Secret. Server's shared secret.",
+                "x-web": {
+                  "pretty": "Radius-Authentication-Secret",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "mode": "",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "acct_server": {
+                "type": "string",
+                "description": "Radius-Accounting-Server. Ip address of the accounting server.",
+                "x-web": {
+                  "pretty": "Radius-Accounting-Server",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa"
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa2"
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa3"
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa3-mixed"
+                    }
+                  ]
+                }
+              },
+              "acct_port": {
+                "type": "string",
+                "description": "Radius-Accounting-Port. Default port for the server is 1813",
+                "x-web": {
+                  "pretty": "Radius-Accounting-Port",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa"
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa2"
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa3"
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa3-mixed"
+                    }
+                  ]
+                }
+              },
+              "acct_secret": {
+                "type": "string",
+                "description": "Radius-Accounting-Secret. Server's shared secret",
+                "x-web": {
+                  "pretty": "Radius-Accounting-Secret",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa"
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa2"
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa3"
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": "wpa3-mixed"
+                    }
+                  ]
+                }
+              },
+              "ieee80211r": {
+                "type": "string",
+                "description": "802.11r Fast Transition. Enables fast roaming among access points that belong to the same Mobility Domain",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "802.11r Fast Transition",
+                  "group": "General Setup",
+                  "input-type": "switch",
+                  "depends": [
+                    {
+                      "mode": "",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    },
+                    {
+                      "mode": "ap",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "nasid": {
+                "type": "string",
+                "description": "NAS ID",
+                "x-web": {
+                  "pretty": "NAS id",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "mode": "",
+                      "ieee80211r": "1",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    },
+                    {
+                      "mode": "ap",
+                      "ieee80211r": "1",
+                      "encryption": [
+                        "wpa",
+                        "wpa2",
+                        "wpa3",
+                        "wpa3-mixed"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "mobility_domain": {
+                "type": "string",
+                "description": "Mobility Domain. 4-character hexadecimal ID",
+                "x-web": {
+                  "pretty": "Mobility Domain",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "ieee80211r": "1"
+                    }
+                  ]
+                }
+              },
+              "reassociation_deadline": {
+                "type": "string",
+                "description": "Reassociation Deadline. Time units (TUs / 1.024 ms) [1000-65535]",
+                "x-web": {
+                  "pretty": "Reassociation Deadline",
+                  "group": "Wireless Security",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "ieee80211r": "1"
+                    }
+                  ]
+                }
+              },
+              "ft_over_ds": {
+                "type": "string",
+                "description": "FT protocol",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "FT protocol",
+                  "enum-pretty": {
+                    "0": "FT over the Air",
+                    "1": "FT over DS"
+                  },
+                  "group": "Wireless Security",
+                  "input-type": "select",
+                  "depends": [
+                    {
+                      "ieee80211r": "1"
+                    }
+                  ]
+                }
+              },
+              "password": {
+                "type": "string",
+                "description": "Password of the wifi network.",
+                "x-web": {
+                  "group": "Wireless Security",
+                  "pretty": "Password",
+                  "input-type": "input"
+                }
+              },
+              "macfilter": {
+                "type": "string",
+                "description": "MAC-Address Filter. 'allow' - only allows devices with MAC addresses specified in the MAC list to connect to your WiFi network. 'deny' - blocks devices with MAC addresses specified in the MAC list from connecting to your WiFi network",
+                "enum": [
+                  "allow",
+                  "deny",
+                  ""
+                ],
+                "x-web": {
+                  "pretty": "MAC-Address Filter",
+                  "group": "MAC-Filter",
+                  "input-type": "select",
+                  "enum-pretty": {
+                    "allow": "Allow listed only",
+                    "deny": "Allow all except listed",
+                    "": "Disable"
+                  },
+                  "depends": [
+                    {
+                      "mode": "ap"
+                    },
+                    {
+                      "mode": ""
+                    }
+                  ]
+                }
+              },
+              "maclist": {
+                "type": "array",
+                "description": "MAC-List. List of MAC addresses to be included or excluded from connecting to your WiFi network.",
+                "x-web": {
+                  "pretty": "MAC-List",
+                  "group": "MAC-Filter",
+                  "input-type": "input",
+                  "depends": [
+                    {
+                      "macfilter": "allow"
+                    },
+                    {
+                      "macfilter": "deny"
+                    }
+                  ]
+                },
+                "items": {
+                  "type": "string"
+                }
+              },
+              "isolate": {
+                "type": "string",
+                "description": "Isolate Clients. Prevents client-to-client communication",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Isolate Clients",
+                  "group": "Advanced Settings",
+                  "input-type": "switch",
+                  "depends": [
+                    {
+                      "mode": "ap"
+                    },
+                    {
+                      "mode": ""
+                    }
+                  ]
+                }
+              },
+              "short_preamble": {
+                "type": "string",
+                "description": "Uses Short Preamble, it uses shorter data strings that adds less data to transmit the error redundancy check which means that it is much faster.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "default": "1",
+                "x-web": {
+                  "pretty": "Short Preamble",
+                  "group": "Advanced Settings",
+                  "input-type": "switch"
+                }
+              },
+              "dtim_period": {
+                "type": "string",
+                "description": "DTIM Interval. Delivery Traffic Indication Message Interval",
+                "x-web": {
+                  "pretty": "DTIM Interval",
+                  "group": "Advanced Settings",
+                  "input-type": "input"
+                }
+              },
+              "wpa_group_rekey": {
+                "type": "string",
+                "description": "Time interval for rekeying GTK. Period of time in between automatic changes of the group key, which all devices on the network share.",
+                "x-web": {
+                  "pretty": "Time interval for rekeying GTK",
+                  "group": "Advanced Settings",
+                  "input-type": "input"
+                }
+              },
+              "skip_inactivity_poll": {
+                "type": "string",
+                "description": "Disable Inactivity Polling. Inactivity polling can be disabled to disconnect stations based on inactivity timeout so that idle stations are more likely to be disconnected even if they are still in range of the AP.",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "x-web": {
+                  "pretty": "Disable Inactivity Polling",
+                  "group": "Advanced Settings",
+                  "input-type": "switch"
+                }
+              },
+              "max_inactivity": {
+                "type": "string",
+                "description": "Station inactivity limit. Station inactivity limit in seconds: If a station/client does not send anything in a set time frame, an empty data frame is sent to it in order to verify whether it is still in range. If this frame is not acknowledged, the station will be disassociated and then deauthenticated.",
+                "x-web": {
+                  "pretty": "Station inactivity limit",
+                  "group": "Advanced Settings",
+                  "input-type": "input"
+                }
+              },
+              "max_listen_interval": {
+                "type": "string",
+                "description": "Maximum allowed Listen Interval. Association will be refused if a client/station attempts to associate with a listen interval greater than this value.",
+                "x-web": {
+                  "pretty": "Maximum allowed Listen Interval",
+                  "group": "Advanced Settings",
+                  "input-type": "input"
+                }
+              },
+              "disassoc_low_ack": {
+                "type": "string",
+                "description": "Disassociate On Low Acknowledgement. Allow AP mode to disconnect STAs based on low ACK condition",
+                "enum": [
+                  "0",
+                  "1"
+                ],
+                "default": "1",
+                "x-web": {
+                  "pretty": "Disassociate On Low Acknowledgement",
+                  "group": "Advanced Settings",
+                  "input-type": "switch"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "responses": {
+      "200_siteman_wireless_interface_one": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "description": "Configuration ID"
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "$ref": "#/components/schemas/devman_wireless_interface"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "200_siteman_wireless_interface_multi": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_wireless_interface"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "success",
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "req_body_siteman_wireless_interface_one": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/devman_wireless_interface"
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      },
+      "req_body_siteman_wireless_interface_multi": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Configuration ID"
+                          }
+                        },
+                        "required": [
+                          "id"
+                        ]
+                      },
+                      {
+                        "$ref": "#/components/schemas/devman_wireless_interface"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "data"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

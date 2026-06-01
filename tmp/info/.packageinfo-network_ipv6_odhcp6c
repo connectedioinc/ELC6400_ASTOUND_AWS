@@ -1,0 +1,30 @@
+Source-Makefile: package/network/ipv6/odhcp6c/Makefile
+
+Package: odhcp6c
+Version: 2021-01-09-53f07e90b7f1da6977143a488dd5cb73a33b233b-16
+Depends: +libc @IPV6 +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Embedded DHCPv6-client for OpenWrt
+Maintainer: Hans Dedecker <dedeckeh@gmail.com>
+Require-User: odhcp6c:odhcp6c
+FileAttributes: /usr/sbin/odhcp6c::::cap_net_raw,cap_net_bind_service,cap_net_admin=ep
+Source: odhcp6c-2021-01-09-53f07e90b7f1da6977143a488dd5cb73a33b233b-53f07e90b7f1da6977143a488dd5cb73a33b233b.tar.xz
+License: GPL-2.0-only
+Type: ipkg
+Detail-Description: Embedded DHCPv6-client for OpenWrt
+Description: Embedded DHCPv6-client for OpenWrt
+Hans Dedecker <dedeckeh@gmail.com>
+@@
+Config:
+  config PACKAGE_odhcp6c_ext_cer_id
+    int "CER-ID Extension ID (0 = disabled)"
+    depends on PACKAGE_odhcp6c
+    default 0
+@@
+
+

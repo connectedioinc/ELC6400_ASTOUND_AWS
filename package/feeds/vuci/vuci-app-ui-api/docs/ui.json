@@ -1,0 +1,2501 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "WebUI",
+    "description": "WebUI API documentation",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "servers": [],
+  "tags": [
+    {
+      "name": "WebUI info"
+    }
+  ],
+  "paths": {
+    "/ui/config/menu": {
+      "get": {
+        "summary": "Returns WebUI menu",
+        "tags": ["WebUI info"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "description": "",
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "menu": {
+                          "type": "array",
+                          "description": "WebUI menu entries",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "path": {
+                                "type": "string",
+                                "description": "WebUI page URL"
+                              },
+                              "index": {
+                                "type": "number",
+                                "description": "Entry position"
+                              },
+                              "redirect": {
+                                "type": "string",
+                                "description": "Redirect path for root path"
+                              },
+                              "read_access": {
+                                "type": "boolean",
+                                "description": "Is the path available to be read"
+                              },
+                              "write_access": {
+                                "type": "boolean",
+                                "description": "Is the path available to be written to"
+                              },
+                              "title": {
+                                "type": "string",
+                                "description": "Pretty title of the path"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-system-ui-menu"
+      },
+      "x-web": {
+        "hidden": true,
+        "hidden_documentation_page": true,
+        "menu": ["Status", "System", "System"]
+      }
+    },
+    "/ui/config/acls": {
+      "get": {
+        "summary": "Returns acls",
+        "tags": ["WebUI info"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "description": "Operation status"
+                    },
+                    "data": {
+                      "type": "array",
+                      "description": "Array of acls (access control lists)",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "url": {
+                            "type": "object",
+                            "properties": {
+                              "read": {
+                                "type": "object",
+                                "properties": {
+                                  "api": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              },
+                              "description": {
+                                "type": "string",
+                                "description": "short url description"
+                              },
+                              "write": {
+                                "type": "object",
+                                "properties": {
+                                  "api": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "success": true,
+                      "data": [
+                        {
+                          "services/auto_reboot/ping_reboot": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["ping_reboot"]
+                            },
+                            "description": "ping reboot configuration",
+                            "write": {
+                              "uci": ["ping_reboot"]
+                            }
+                          }
+                        },
+                        {
+                          "services/auto_reboot/reboot_scheduler": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["periodic_reboot"]
+                            },
+                            "description": "reboot scheduler configuration",
+                            "write": {
+                              "uci": ["periodic_reboot"]
+                            }
+                          }
+                        },
+                        {
+                          "system/backup": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system.firmware": ["user_defaults"],
+                                "vuci.system.backup": ["default_configuration_date", "get_checksums"]
+                              }
+                            },
+                            "description": "backup configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.system.firmware": ["factory_reset"],
+                                "vuci.system.backup": ["default_configuration", "generate_backup", "validate_backup", "remove_backup", "apply_backup"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "system/reset": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system.firmware": ["user_defaults"],
+                                "vuci.system.reset": ["default_configuration_date", "get_checksums"]
+                              }
+                            },
+                            "description": "reset configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.system.firmware": ["factory_reset"],
+                                "vuci.system.reset": ["default_configuration", "generate_backup", "validate_backup", "remove_backup", "apply_backup"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "services/bluetooth": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.bluetooth": ["get_device_info", "get_available_devices", "get_paired_devices"]
+                              },
+                              "uci": ["blesem", "ble_devices"]
+                            },
+                            "description": "bluetooth configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.bluetooth": ["restart_bluetooth", "start_scan", "check_scanning", "pair_devices", "unpair_devices"]
+                              },
+                              "uci": ["blesem", "ble_devices"]
+                            }
+                          }
+                        },
+                        {
+                          "system/cli": {
+                            "description": "Command Line Interface",
+                            "read": {
+                              "uci": []
+                            }
+                          }
+                        },
+                        {
+                          "services/cloud_solutions/rms": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.rms": ["rms_status"]
+                              },
+                              "uci": ["rms_connect_mqtt"]
+                            },
+                            "description": "cloud solutions configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.rms": ["set_rms_values"]
+                              },
+                              "uci": ["rms_connect_mqtt"]
+                            }
+                          }
+                        },
+                        {
+                          "services/data_sender": {
+                            "read": {
+                              "file": {
+                                "/usr/lib/opkg/info/modbus_client.control": ["list"],
+                                "/usr/lib/opkg/info/modbus_serial_client.control": ["list"],
+                                "/usr/lib/opkg/info/wifi_scanner.control": ["list"],
+                                "/usr/lib/opkg/info/azure_iothub.control": ["list"],
+                                "/usr/lib/opkg/info/dnp3.control": ["list"]
+                              },
+                              "ubus": {
+                                "vuci.system.certificates": ["get_ca_files", "get_keys", "get_only_certificates"],
+                                "file": ["stat"]
+                              },
+                              "uci": ["modbus_data_sender", "dnp3_client", "azure_iothub"]
+                            },
+                            "description": "Data Sender configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.datasender": ["data_sender_create"]
+                              },
+                              "uci": ["modbus_data_sender", "dnp3_client", "azure_iothub"]
+                            }
+                          }
+                        },
+                        {
+                          "services/ddns": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.ddns": ["get_ddns_services", "get_env_info", "get_service_providers"]
+                              },
+                              "uci": ["ddns", "dhcp", "network"]
+                            },
+                            "description": "ddns configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.ddns": ["check_time"]
+                              },
+                              "uci": ["ddns", "dhcp", "network"]
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/dmvpn": {
+                            "read": {
+                              "file": {
+                                "/usr/lib/opkg/info/frr-nhrp.control": ["list"]
+                              },
+                              "uci": ["dmvpn", "ipsec", "frr", "network", "firewall"],
+                              "api": ["/services/dmvpn/*"]
+                            },
+                            "description": "dmvpn configuration",
+                            "write": {
+                              "uci": ["dmvpn", "ipsec", "frr", "network", "firewall"],
+                              "api": ["/services/dmvpn/*"]
+                            }
+                          }
+                        },
+                        {
+                          "network/dns": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.network": ["interfaces_status"]
+                              },
+                              "uci": ["dhcp"]
+                            },
+                            "description": "dns configuration",
+                            "write": {
+                              "uci": ["dhcp"]
+                            }
+                          }
+                        },
+                        {
+                          "services/events_reporting": {
+                            "read": {
+                              "file": {
+                                "/usr/lib/opkg/info/mwan3.control": ["list"],
+                                "/usr/lib/opkg/info/snmpd.control": ["list"],
+                                "/usr/lib/opkg/info/ddns-scripts.control": ["list"]
+                              },
+                              "ubus": {
+                                "network.interface": ["dump"],
+                                "network.device": ["status"],
+                                "sim": ["get"],
+                                "vuci.network.network": ["get_devices", "network_netlist"],
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["events_reporting", "user_groups"]
+                            },
+                            "description": "events reporting configuration",
+                            "write": {
+                              "uci": ["events_reporting", "user_groups"]
+                            }
+                          }
+                        },
+                        {
+                          "network/firewall/rules": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.firewall": ["get_ipv4_hints", "get_proto", "get_ip_info"],
+                                "vuci.network.network": ["mac_hints"]
+                              },
+                              "uci": ["firewall"]
+                            },
+                            "description": "firewall traffic rules configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.network.firewall": ["open_port", "new_forward"]
+                              },
+                              "uci": ["firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "network/firewall/forwards": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.firewall": ["get_ipv4_hints"],
+                                "vuci.network.network": ["mac_hints"]
+                              },
+                              "uci": ["firewall"]
+                            },
+                            "description": "firewall forwards configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.network.firewall": ["forward_create"]
+                              },
+                              "uci": ["firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "network/firewall/attack_prevention": {
+                            "read": {
+                              "uci": ["firewall"]
+                            },
+                            "description": "firewall attack prevention configuration",
+                            "write": {
+                              "uci": ["firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "network/firewall/custom": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.firewall": ["get_custom_rules"]
+                              }
+                            },
+                            "description": "firewall custom scripts",
+                            "write": {
+                              "ubus": {
+                                "vuci.network.firewall": ["modify_custom_rules"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "network/firewall/zones": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.network": ["network_netlist"],
+                                "vuci.system": ["file_stats"]
+                              },
+                              "uci": ["firewall"]
+                            },
+                            "description": "firewall zones configuration",
+                            "write": {
+                              "uci": ["firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "network/firewall/nat_rules": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.firewall": ["get_ip_addrs", "get_ipv4_hints"]
+                              },
+                              "uci": ["firewall"]
+                            },
+                            "description": "firewall nat rules configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.network.firewall": ["source_nat_create"]
+                              },
+                              "uci": ["firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "services/gps/map": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.gps": ["get_coordinates"],
+                                "gpsd": ["position"]
+                              },
+                              "uci": ["system"]
+                            },
+                            "description": "gps map configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.gps": ["get_coordinates"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "services/gps/geofencing": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.gps": ["get_coordinates"]
+                              },
+                              "uci": ["gps"]
+                            },
+                            "description": "gps geofencing configuration",
+                            "write": {
+                              "uci": ["gps"]
+                            }
+                          }
+                        },
+                        {
+                          "services/gps/nmea": {
+                            "read": {
+                              "uci": ["gps"]
+                            },
+                            "description": "gps nmea configuration",
+                            "write": {
+                              "uci": ["gps"]
+                            }
+                          }
+                        },
+                        {
+                          "services/gps/input": {
+                            "read": {
+                              "uci": ["avl"]
+                            },
+                            "description": "gps io configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.gps": ["avl_input_create"]
+                              },
+                              "uci": ["avl"]
+                            }
+                          }
+                        },
+                        {
+                          "services/gps/general": {
+                            "read": {
+                              "uci": ["gps", "system", "ntpclient"]
+                            },
+                            "description": "gps general configuration",
+                            "write": {
+                              "uci": ["gps", "ntpclient"]
+                            }
+                          }
+                        },
+                        {
+                          "services/gps/https": {
+                            "read": {
+                              "uci": ["gps"]
+                            },
+                            "description": "gps https configuration",
+                            "write": {
+                              "uci": ["gps"]
+                            }
+                          }
+                        },
+                        {
+                          "services/gps/avl": {
+                            "read": {
+                              "uci": ["avl"]
+                            },
+                            "description": "gps avl configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.gps": ["avl_rule_create"]
+                              },
+                              "uci": ["avl"]
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/gre": {
+                            "read": {
+                              "uci": ["network"],
+                              "ubus": {
+                                "network.interface.*": ["status"]
+                              },
+                              "api": ["/services/gre/*", "/network/network/*"]
+                            },
+                            "description": "gre configuration",
+                            "write": {
+                              "uci": ["network"],
+                              "ubus": {
+                                "vuci.services.gre": ["gre_create", "gre_remove", "gre_save", "route_create", "validate_netmask"]
+                              },
+                              "api": ["/services/gre/*"]
+                            }
+                          }
+                        },
+                        {
+                          "status/logs/hotspot": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.hotspot": ["log"]
+                              }
+                            },
+                            "description": "hotspot logs",
+                            "write": {
+                              "uci": [" "]
+                            }
+                          }
+                        },
+                        {
+                          "services/hotspot/groups": {
+                            "read": {
+                              "uci": ["chilli"]
+                            },
+                            "description": "hotspot groups configuration",
+                            "write": {
+                              "uci": ["chilli"]
+                            }
+                          }
+                        },
+                        {
+                          "services/hotspot/users": {
+                            "read": {
+                              "uci": ["chilli"]
+                            },
+                            "description": "hotspot users configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.hotspot": ["add_user", "save_user_password"]
+                              },
+                              "uci": ["chilli"]
+                            }
+                          }
+                        },
+                        {
+                          "services/hotspot/landing": {
+                            "read": {
+                              "file": {
+                                "/etc/chilli/hotspotlogin/themes/*": ["list", "read"],
+                                "/etc/chilli/hotspotlogin/cgi-bin/themes/*": ["read"]
+                              },
+                              "ubus": {
+                                "file": ["list", "read"]
+                              },
+                              "uci": ["landingpage"]
+                            },
+                            "description": "hotspot landing page configuration",
+                            "write": {
+                              "file": {
+                                "/etc/chilli/hotspotlogin/themes/*": ["remove", "write"],
+                                "/etc/chilli/hotspotlogin/cgi-bin/themes/*": ["remove", "write"],
+                                "/usr/lib/opkg/info/tlt_custom_pkg_hs_theme_*control": ["list", "read"]
+                              },
+                              "ubus": {
+                                "file": ["stat", "remove", "write"]
+                              },
+                              "uci": ["landingpage"]
+                            }
+                          }
+                        },
+                        {
+                          "services/hotspot/general": {
+                            "write": {
+                              "file": {
+                                "/etc/chilli/conup_*": ["write"],
+                                "/etc/chilli/uamdomainfile_*": ["write"],
+                                "/etc/chilli/usersignup_*": ["write"],
+                                "/etc/chilli/condown_*": ["write"]
+                              },
+                              "ubus": {
+                                "vuci.services.hotspot": ["change_profile"],
+                                "file": ["write"]
+                              },
+                              "uci": ["chilli", "network", "wireless", "dhcp", "uhttpd"]
+                            },
+                            "read": {
+                              "file": {
+                                "/etc/chilli/conup_*": ["read"],
+                                "/etc/chilli/uamdomainfile_*": ["read"],
+                                "/etc/chilli/usersignup_*": ["read"],
+                                "/etc/chilli/condown_*": ["read"],
+                                "/etc/version": ["read"]
+                              },
+                              "ubus": {
+                                "vuci.system.certificates": ["get_certificates"],
+                                "vuci.services.hotspot": ["configuration_profiles", "change_profile"],
+                                "file": ["read"],
+                                "system": ["board"]
+                              },
+                              "uci": ["chilli", "network", "wireless", "dhcp", "uhttpd"]
+                            }
+                          }
+                        },
+                        {
+                          "services/hotspot/user_management": {
+                            "read": {
+                              "ubus": {
+                                "chilli": ["list"]
+                              }
+                            },
+                            "description": "hotspot users management",
+                            "write": {
+                              "ubus": {
+                                "chilli": ["logout"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "services/hotspot2": {
+                            "read": {
+                              "ubus": {
+                                "iwinfo": ["info"]
+                              },
+                              "uci": ["wireless"]
+                            },
+                            "description": "hotspot 2.0 configuration",
+                            "write": {
+                              "uci": ["wireless"]
+                            }
+                          }
+                        },
+                        {
+                          "services/io/juggler/condition": {
+                            "read": {
+                              "uci": ["iojuggler"]
+                            },
+                            "description": "input.output juggler conditions configuration",
+                            "write": {
+                              "uci": ["iojuggler"]
+                            }
+                          }
+                        },
+                        {
+                          "services/io/general": {
+                            "read": {
+                              "ubus": {
+                                "ioman.*.*": ["status"]
+                              }
+                            },
+                            "description": "input/output status configuration",
+                            "write": {
+                              "ubus": {
+                                "ioman.*.*": ["update"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "services/io/scheduler": {
+                            "read": {
+                              "uci": ["ioman"]
+                            },
+                            "description": "input.output scheduler configuration",
+                            "write": {
+                              "uci": ["ioman"]
+                            }
+                          }
+                        },
+                        {
+                          "services/io/juggler/action": {
+                            "read": {
+                              "ubus": {
+                                "network.interface": ["dump"],
+                                "vuci.network.network": ["get_devices", "network_netlist"],
+                                "network.device": ["status"],
+                                "sim": ["get"],
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["iojuggler", "user_groups", "profiles", "simcard"]
+                            },
+                            "description": "input.output juggler actions configuration",
+                            "write": {
+                              "uci": ["iojuggler"]
+                            }
+                          }
+                        },
+                        {
+                          "services/io/juggler/input": {
+                            "read": {
+                              "uci": ["iojuggler"]
+                            },
+                            "description": "input.output juggler configuration",
+                            "write": {
+                              "uci": ["iojuggler"]
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/ipsec": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system.certificates": ["get_keys", "get_ca_files", "get_only_certificates"]
+                              },
+                              "uci": ["ipsec", "network", "xl2tpd"]
+                            },
+                            "description": "ipsec configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.ipsec": ["save_vpn_firewall", "multiple_secrets"]
+                              },
+                              "uci": ["ipsec", "network", "xl2tpd"]
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/l2tp/l2tp": {
+                            "read": {
+                              "uci": ["xl2tpd", "network", "firewall"]
+                            },
+                            "description": "l2tp configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.l2tp": ["l2tp_save", "l2tp_create", "l2tp_remove", "l2tp_enable"]
+                              },
+                              "uci": ["xl2tpd", "network", "firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/l2tp/l2tpv3": {
+                            "read": {
+                              "uci": ["xl2tpdv3", "network", "firewall"]
+                            },
+                            "description": "l2tpv3 configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.l2tp": ["l2tpv3_save", "l2tpv3_create", "l2tpv3_remove", "l2tpv3_enable", "l2tpv3_bridge"]
+                              },
+                              "uci": ["xl2tpdv3", "network", "firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "services/sd_usb_tools/memory_expansion": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.memory_expansion": ["get_info"]
+                              }
+                            },
+                            "description": "memory expansion",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["reboot"],
+                                "vuci.services.memory_expansion": ["change", "check_status", "get_info"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "network/mobile/general": {
+                            "read": {
+                              "ubus": {
+                                "gsmd": ["reinit_modems"]
+                              },
+                              "uci": ["simcard", "operctl", "overview"]
+                            },
+                            "write": {
+                              "uci": ["simcard", "overview", "operctl"]
+                            },
+                            "description": "mobile general configuration"
+                          }
+                        },
+                        {
+                          "network/mobile/operators/list": {
+                            "read": {
+                              "uci": ["operctl", "simcard"]
+                            },
+                            "write": {
+                              "ubus": {
+                                "gsmd": ["reinit_modems"]
+                              },
+                              "uci": ["operctl", "simcard"]
+                            },
+                            "description": "mobile operators configuration"
+                          }
+                        },
+                        {
+                          "network/mobile/sim_switch": {
+                            "read": {
+                              "ubus": {
+                                "sim": ["get"],
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["sim_switch", "simcard"]
+                            },
+                            "description": "mobile sim switch configuration",
+                            "write": {
+                              "uci": ["sim_switch", "simcard"]
+                            }
+                          }
+                        },
+                        {
+                          "network/mobile/operators/scan": {
+                            "read": {
+                              "ubus": {
+                                "sim": ["get"],
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["simcard"]
+                            },
+                            "description": "mobile operators configuration",
+                            "write": {
+                              "ubus": {
+                                "gsmd": ["reinit_modems"]
+                              },
+                              "uci": ["simcard"]
+                            }
+                          }
+                        },
+                        {
+                          "services/mobile_utilities/sms_gateway/auto_reply": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["sms_gateway", "user_groups"]
+                            },
+                            "description": "auto reply configuration",
+                            "write": {
+                              "uci": ["sms_gateway", "user_groups"]
+                            }
+                          }
+                        },
+                        {
+                          "services/mobile_utilities/call_utilities": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["call_utils", "user_groups"]
+                            },
+                            "description": "call utilities configuration",
+                            "write": {
+                              "uci": ["call_utils", "user_groups"]
+                            }
+                          }
+                        },
+                        {
+                          "services/mobile_utilities/sms_utilities": {
+                            "read": {
+                              "ubus": {
+                                "sim": ["get"],
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["sms_utils", "user_groups"]
+                            },
+                            "description": "mobile utilities configuration",
+                            "write": {
+                              "uci": ["sms_utils"]
+                            }
+                          }
+                        },
+                        {
+                          "services/mobile_utilities/sms_gateway/sms_forwarding": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["sms_gateway", "user_groups"]
+                            },
+                            "description": "sms forwarding configuration",
+                            "write": {
+                              "uci": ["sms_gateway", "user_groups"]
+                            }
+                          }
+                        },
+                        {
+                          "services/mobile_utilities/sms_messages/storage": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["sms_gateway"]
+                            },
+                            "description": "sms storage configuration",
+                            "write": {
+                              "uci": ["sms_gateway"]
+                            }
+                          }
+                        },
+                        {
+                          "services/mobile_utilities/sms_messages/send": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              }
+                            },
+                            "description": "send messages configuration",
+                            "write": {
+                              "uci": [" "]
+                            }
+                          }
+                        },
+                        {
+                          "services/mobile_utilities/sms_gateway/email_to_sms": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["email_to_sms"]
+                            },
+                            "description": "email to sms configuration",
+                            "write": {
+                              "uci": ["email_to_sms"]
+                            }
+                          }
+                        },
+                        {
+                          "services/mobile_utilities/sms_messages/read": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              }
+                            },
+                            "description": "read messages configuration",
+                            "write": {}
+                          }
+                        },
+                        {
+                          "services/modbus/modbus_client": {
+                            "read": {
+                              "uci": ["modbus_client", "modbus_client_alarms"]
+                            },
+                            "description": "modbus tcl client configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.modbus": ["tcp_create", "alarm_enable", "alarm_remove", "test_request", "test_serial_request", "alarm_create", "alarm_save", "server_create"]
+                              },
+                              "uci": ["modbus_client", "modbus_client_alarms"]
+                            }
+                          }
+                        },
+                        {
+                          "services/modbus/gateway": {
+                            "read": {
+                              "uci": ["modbusgateway"]
+                            },
+                            "description": "modbus gateway configuration",
+                            "write": {
+                              "uci": ["modbusgateway"]
+                            }
+                          }
+                        },
+                        {
+                          "services/modbus/modbus_server": {
+                            "read": {
+                              "uci": ["modbus", "firewall"]
+                            },
+                            "description": "modbus tcp server configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.modbusserver": ["enableRA"]
+                              },
+                              "uci": ["modbus", "firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "services/mqtt/broker": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system.certificates": ["get_keys", "get_ca_files", "get_only_certificates"]
+                              },
+                              "uci": ["mosquitto", "firewall"]
+                            },
+                            "description": "mqtt broker configuration",
+                            "write": {
+                              "uci": ["mosquitto", "firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "services/mqtt/publisher": {
+                            "write": {
+                              "api": [
+                                "/services/mqtt/publisher/*"
+                              ]
+                            },
+                            "read": {
+                              "api": [
+                                "/services/mqtt/publisher/*"
+                              ]
+                            }
+                          }
+                        },
+                        {
+                          "system/multiusers/users_configuration": {
+                            "read": {
+                              "uci": ["rpcd"]
+                            },
+                            "description": "multiusers configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.system.users": ["create_user", "delete_user", "update_acl"]
+                              },
+                              "uci": ["rpcd"]
+                            }
+                          }
+                        },
+                        {
+                          "system/multiusers/change_password": {
+                            "read": {
+                              "uci": ["rpcd"]
+                            },
+                            "description": "change password page",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["change_password_firstlogin"],
+                                "vuci.system.users": ["change_password"]
+                              },
+                              "uci": ["rpcd"]
+                            }
+                          }
+                        },
+                        {
+                          "network/mwan": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mwan": ["get_type", "get_status"]
+                              },
+                              "uci": ["mwan3", "default_rule"]
+                            },
+                            "description": "MultiWan configuration",
+                            "write": {
+                              "vuci.network.mwan": ["set_metrics"],
+                              "uci": ["mwan3", "default_rule"]
+                            }
+                          }
+                        },
+                        {
+                          "network/interfaces": {
+                            "read": {
+                              "api": ["/network/interfaces/*", "/network/devices/*"],
+                              "file": {
+                                "/usr/lib/opkg/info/udprelay.control": ["list"],
+                                "/usr/lib/opkg/info/relayd.control": ["list"]
+                              },
+                              "ubus": {
+                                "network.interface": ["dump"],
+                                "network.interface.*": ["status"],
+                                "sim": ["get"],
+                                "network.interface.*_4": ["status"],
+                                "vuci.network.network": ["has_ipv6", "full_interfaces_status", "get_devices", "network_netlist"],
+                                "network.device": ["status"],
+                                "file": ["list"],
+                                "network.interface.*_6": ["status"],
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["network", "wireless", "quota_limit", "overview", "mwan3", "dhcp", "firewall", "simcard", "system", "udprelay", "openvpn"]
+                            },
+                            "description": "",
+                            "write": {
+                              "api": ["/network/interfaces/*", "/network/devices/*"],
+                              "file": {
+                                "/sbin/ifup *": ["exec"]
+                              },
+                              "ubus": {
+                                "vuci.network.mwan": ["set_metrics"],
+                                "gsmd": ["reinit_modems"],
+                                "file": ["exec"],
+                                "vuci.network.network": ["clear_data_limit", "add_mwan", "delete_mwan", "set_fiber_priority"]
+                              },
+                              "uci": ["network", "wireless", "quota_limit", "overview", "mwan3", "dhcp", "firewall", "simcard", "system", "udprelay"]
+                            }
+                          }
+                        },
+                        {
+                          "network/lan": {
+                            "write": {
+                              "api": ["/network/lan/*"],
+                              "file": {
+                                "/sbin/ifup *": ["exec"]
+                              },
+                              "ubus": {
+                                "vuci.network.mwan": ["set_metrics"],
+                                "file": ["exec"],
+                                "vuci.network.network": ["clear_data_limit", "lan_to_wan", "wan_as_lan"]
+                              },
+                              "uci": ["network", "wireless", "quota_limit", "mwan3", "dhcp", "firewall", "simcard", "system", "udprelay"]
+                            },
+                            "file": {
+                              "/usr/lib/opkg/info/udprelay.control": ["list"],
+                              "/usr/lib/opkg/info/relayd.control": ["list"]
+                            },
+                            "description": "",
+                            "read": {
+                              "ubus": {
+                                "network.interface": ["dump"],
+                                "api": ["/network/lan/*"],
+                                "network.interface.*": ["status"],
+                                "sim": ["get"],
+                                "network.interface.*_4": ["status"],
+                                "vuci.network.network": ["has_ipv6", "full_interfaces_status", "get_devices", "network_netlist"],
+                                "network.device": ["status"],
+                                "network.interface.*_6": ["status"],
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["network", "wireless", "quota_limit", "mwan3", "dhcp", "firewall", "simcard", "system", "udprelay"]
+                            }
+                          }
+                        },
+                        {
+                          "network/network": {
+                            "read": {
+                              "api": ["/network/network/*"],
+                              "file": {
+                                "/usr/lib/opkg/info/udprelay.control": ["list"],
+                                "/usr/lib/opkg/info/relayd.control": ["list"]
+                              },
+                              "ubus": {
+                                "network.interface": ["dump"],
+                                "network.interface.*": ["status"],
+                                "sim": ["get"],
+                                "network.interface.*_4": ["status"],
+                                "vuci.network.network": ["has_ipv6", "full_interfaces_status", "get_devices", "network_netlist"],
+                                "network.device": ["status"],
+                                "file": ["stat"],
+                                "network.interface.*_6": ["status"],
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["network", "wireless", "quota_limit", "mwan3", "dhcp", "firewall", "simcard", "system", "udprelay"]
+                            },
+                            "description": "",
+                            "write": {
+                              "api": ["/network/network/*"],
+                              "file": {
+                                "/sbin/ifup *": ["exec"]
+                              },
+                              "ubus": {
+                                "vuci.network.mwan": ["set_metrics"],
+                                "file": ["exec"],
+                                "vuci.network.network": ["clear_data_limit", "wan_to_lan"]
+                              },
+                              "uci": ["network", "wireless", "quota_limit", "mwan3", "dhcp", "firewall", "simcard", "system", "udprelay"]
+                            }
+                          }
+                        },
+                        {
+                          "services/ntpc/general": {
+                            "read": {
+                              "uci": ["ntpclient", "gps", "system"],
+                              "ubus": {
+                                "vuci.system": ["clock_status"]
+                              },
+                              "api": ["/services/ntp/*"]
+                            },
+                            "description": "ntp general configuration",
+                            "write": {
+                              "uci": ["ntpclient", "gps", "system"],
+                              "ubus": {
+                                "vuci.services.ntp": ["update_TZ"],
+                                "vuci.system": ["clock_status"]
+                              },
+                              "api": ["/services/ntp/*"]
+                            }
+                          }
+                        },
+                        {
+                          "services/ntpc/ntp": {
+                            "write": {
+                              "uci": ["ntpclient", "ntpd", "ntpserver"],
+                              "api": ["/services/ntp/*"]
+                            },
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["ntpclient", "ntpd", "ntpserver"]
+                            },
+                            "description": "ntp configuration",
+                            "api": ["/services/ntp/*"]
+                          }
+                        },
+                        {
+                          "services/ntpc/ntpd": {
+                            "read": {
+                              "uci": ["ntpd", "ntpserver"],
+                              "api": ["/services/ntpd/*"]
+                            },
+                            "description": "NTPD time synchronisation configuration module",
+                            "write": {
+                              "uci": ["ntpd", "ntpserver"],
+                              "api": ["/services/ntpd/*"]
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/openvpn": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system.certificates": ["get_ca_files", "get_dh_params", "get_client_files", "get_server_files"],
+                                "vuci.network.network": ["interfaces_status"]
+                              },
+                              "uci": ["openvpn", "firewall"]
+                            },
+                            "description": "openvpn configuration",
+                            "write": {
+                              "uci": ["openvpn", "firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "services/sd_usb_tools/p910nd": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.p910nd": ["get_devices"]
+                              },
+                              "uci": ["p910nd"]
+                            },
+                            "description": "printer service configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.p910nd": ["commit_info"]
+                              },
+                              "uci": ["p910nd"]
+                            }
+                          }
+                        },
+                        {
+                          "services/packages/packages": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.packages": [
+                                  "get_pending_packages",
+                                  "get_package_info",
+                                  "get_package_installed",
+                                  "get_remaining_flash",
+                                  "check_size",
+                                  "get_package_info_server",
+                                  "check_packages"
+                                ]
+                              },
+                              "uci": ["rut_fota"]
+                            },
+                            "description": "Package Manager",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["reboot"],
+                                "vuci.services.packages": ["remove_package", "remove_pending_package", "download_package", "verify_package", "install_package", "upgrade_package"]
+                              },
+                              "uci": ["rut_fota"]
+                            }
+                          }
+                        },
+                        {
+                          "services/packages/upload": {
+                            "read": {
+                              "uci": [" "]
+                            },
+                            "description": "package manager upload",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["reboot"],
+                                "vuci.services.packages": ["check_uploaded_package", "verify_package", "install_package", "clean_package"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/pptp": {
+                            "read": {
+                              "uci": ["pptpd", "network", "firewall"]
+                            },
+                            "description": "pptp configuration",
+                            "write": {
+                              "uci": ["pptpd", "network", "firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "system/profiles/scheduler": {
+                            "write": {
+                              "ubus": {
+                                "vuci.system.profiles": ["create_scheduler_instance", "validate_scheduler_instance"]
+                              },
+                              "uci": ["profiles"]
+                            },
+                            "read": {
+                              "uci": ["profiles", "system"]
+                            }
+                          }
+                        },
+                        {
+                          "system/profiles/config": {
+                            "write": {
+                              "ubus": {
+                                "vuci.system.profiles": ["create_profile", "apply_profile", "remove_profile"]
+                              },
+                              "uci": ["profiles", "system"]
+                            },
+                            "read": {
+                              "uci": ["profiles"]
+                            }
+                          }
+                        },
+                        {
+                          "status/routes/dynamic/ospf": {
+                            "description": "ospf routes",
+                            "read": {
+                              "ubus": {
+                                "vuci.network.routes": ["get_ospf_info"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "network/routes/dynamic_routes/proto_nhrp": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.network": ["get_interfaces"]
+                              },
+                              "uci": ["frr", "ipsec"]
+                            },
+                            "description": "dynamic nhrp routes configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.dmvpn": ["dmvpn_remove"],
+                                "vuci.network.routes": ["save_nhrp", "nhrp_save"]
+                              },
+                              "uci": ["frr", "ipsec"]
+                            }
+                          }
+                        },
+                        {
+                          "network/routes/dynamic_routes/proto_bgp": {
+                            "read": {
+                              "uci": ["frr"]
+                            },
+                            "description": "dynamic routes bgp configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.network.routes": ["save_bgp"]
+                              },
+                              "uci": ["frr"]
+                            }
+                          }
+                        },
+                        {
+                          "network/routes/dynamic_routes/proto_rip": {
+                            "read": {
+                              "ubus": {
+                                "network.interface.*": ["status"]
+                              },
+                              "uci": ["frr", "network"]
+                            },
+                            "description": "dynamic rip routes configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.network.routes": ["save_rip"]
+                              },
+                              "uci": ["frr", "network"]
+                            }
+                          }
+                        },
+                        {
+                          "status/routes/dynamic/nhrp": {
+                            "description": "nhrp routes",
+                            "read": {
+                              "ubus": {
+                                "vuci.network.routes": ["get_nhrp_info"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/routes/general": {
+                            "description": "general routes",
+                            "read": {
+                              "ubus": {
+                                "vuci.network.routes": ["get_routes_tables", "arp_table", "routes", "routes6", "routes6_neighbors"]
+                              },
+                              "uci": ["network"]
+                            }
+                          }
+                        },
+                        {
+                          "network/routes/advanced_routing": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.routes": ["has_ipv6"]
+                              },
+                              "uci": ["network", "xl2tpd", "pptpd"]
+                            },
+                            "description": "advanced static routes configuration",
+                            "write": {
+                              "uci": ["network", "xl2tpd", "pptpd"]
+                            }
+                          }
+                        },
+                        {
+                          "network/routes/dynamic_routes/proto_ospf": {
+                            "read": {
+                              "ubus": {
+                                "network.interface.*": ["status"],
+                                "vuci.network.network": ["get_interfaces"]
+                              },
+                              "uci": ["frr", "network"]
+                            },
+                            "description": "dynamic ospf routes configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.network.routes": ["save_ospf"]
+                              },
+                              "uci": ["frr", "network"]
+                            }
+                          }
+                        },
+                        {
+                          "status/routes/dynamic/eigrp": {
+                            "description": "eigrp routes",
+                            "read": {
+                              "ubus": {
+                                "vuci.network.routes": ["get_eigrp_info"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/routes/dynamic/bgp": {
+                            "description": "bgp routes",
+                            "read": {
+                              "ubus": {
+                                "vuci.network.routes": ["get_bgp_info"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "network/routes/dynamic_routes/proto_eigrp": {
+                            "read": {
+                              "uci": ["frr"]
+                            },
+                            "description": "dynamic eigrp routes configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.network.routes": ["save_eigrp"]
+                              },
+                              "uci": ["frr"]
+                            }
+                          }
+                        },
+                        {
+                          "status/routes/dynamic/rip": {
+                            "description": "rip routes",
+                            "read": {
+                              "ubus": {
+                                "vuci.network.routes": ["get_rip_info"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "network/routes/static_routes": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.routes": ["has_ipv6"]
+                              },
+                              "uci": ["network", "xl2tpd", "pptpd"]
+                            },
+                            "description": "static routes configuration",
+                            "write": {
+                              "uci": ["network", "xl2tpd", "pptpd"]
+                            }
+                          }
+                        },
+                        {
+                          "services/sd_usb_tools/samba/general": {
+                            "description": "network share general",
+                            "read": {
+                              "api": ["/services/samba/*", "/services/samba_share/*", "/services/samba_template/*"]
+                            },
+                            "write": {
+                              "api": ["/services/samba/*", "/services/samba_share/*", "/services/samba_template/*"]
+                            }
+                          }
+                        },
+                        {
+                          "services/sd_usb_tools/samba/users": {
+                            "description": "network share users",
+                            "read": {
+                              "api": ["/services/samba_users/*"]
+                            },
+                            "write": {
+                              "api": ["/services/samba_users/*"]
+                            }
+                          }
+                        },
+                        {
+                          "services/snmp/snmp_settings": {
+                            "read": {
+                              "uci": ["snmpd", "firewall"]
+                            },
+                            "description": "snmp settings",
+                            "write": {
+                              "uci": ["snmpd", "firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "services/snmp/snmpv3": {
+                            "read": {
+                              "uci": ["snmpd"]
+                            },
+                            "description": "snmp v3 users",
+                            "write": {
+                              "uci": ["snmpd"]
+                            }
+                          }
+                        },
+                        {
+                          "services/snmp/traps": {
+                            "read": {
+                              "ubus": {
+                                "sim": ["get"],
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["snmptrap"]
+                            },
+                            "description": "trap settings",
+                            "write": {
+                              "uci": ["snmptrap"]
+                            }
+                          }
+                        },
+                        {
+                          "services/snmp/community": {
+                            "read": {
+                              "uci": ["snmpd"]
+                            },
+                            "description": "snmp communities",
+                            "write": {
+                              "uci": ["snmpd"]
+                            }
+                          }
+                        },
+                        {
+                          "services/sd_usb_tools/usb_to_serial": {
+                            "read": {
+                              "file": {
+                                "/usr/lib/opkg/info/dnp3.control": ["list"]
+                              },
+                              "ubus": {
+                                "vuci.services.rs": ["get_usb_serial_adapters", "check_if_available", "create_ip_filter", "remove_usb_section"]
+                              },
+                              "uci": ["rs", "network", "firewall"]
+                            },
+                            "description": "USB to serial configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.rs": ["on_apply", "create_ip_filter", "remove_usb_section"],
+                                "file": ["stat"]
+                              },
+                              "uci": ["rs", "network", "firewall"]
+                            }
+                          }
+                        },
+                        {
+                          "services/speed_test": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.speedtest": ["getServers"]
+                              }
+                            },
+                            "description": "speed test",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.speedtest": ["startSpeedTest", "getJSON", "getIP"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "services/traffic_shaping/sqm": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.sqm": ["get_cakes", "get_interfaces"]
+                              },
+                              "uci": ["sqm"]
+                            },
+                            "description": "sqm configuration",
+                            "write": {
+                              "uci": ["sqm"]
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/sstp": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system.certificates": ["get_ca_files"]
+                              },
+                              "uci": ["network"]
+                            },
+                            "description": "sstp configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.sstp": ["sstp_create", "sstp_remove", "sstp_save"]
+                              },
+                              "uci": ["network"]
+                            }
+                          }
+                        },
+                        {
+                          "status/wireless": {
+                            "description": "realtime wireless status",
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["lucibwc"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/mobile_usage/total": {
+                            "description": "mobile usage total",
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["lucibwc"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/mobile_usage/day": {
+                            "description": "mobile usage day",
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["lucibwc"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/logs/eventlog/system": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["events"]
+                              }
+                            },
+                            "description": "system events",
+                            "write": {
+                              "uci": [" "]
+                            }
+                          }
+                        },
+                        {
+                          "status/connections": {
+                            "description": "realtime connections status",
+                            "read": {
+                              "ubus": {
+                                "vuci.network.network": ["conntrack_table"],
+                                "network.rrdns": ["lookup"],
+                                "vuci.system": ["lucibwc"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/bandwidth": {
+                            "description": "realtime bandwidth status",
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["lucibwc"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/wireless/interfaces": {
+                            "description": "wireless network status",
+                            "read": {
+                              "ubus": {
+                                "vuci.network.wireless": ["wifi_interface_status"]
+                              },
+                              "uci": ["wireless"]
+                            }
+                          }
+                        },
+                        {
+                          "status/logs/eventlog/all": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["events"]
+                              }
+                            },
+                            "description": "all events",
+                            "write": {
+                              "uci": [" "]
+                            }
+                          }
+                        },
+                        {
+                          "status/mobile": {
+                            "description": "mobile signal status",
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["lucibwc"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/mobile_usage/month": {
+                            "description": "mobile usage month",
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["lucibwc"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/logs/eventlog/network": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["events"]
+                              }
+                            },
+                            "description": "network events",
+                            "write": {
+                              "uci": [" "]
+                            }
+                          }
+                        },
+                        {
+                          "status/logs/eventlog/general": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["events"]
+                              }
+                            },
+                            "description": "general events",
+                            "write": {
+                              "uci": [" "]
+                            }
+                          }
+                        },
+                        {
+                          "status/network/mobile": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              }
+                            },
+                            "description": "mobile network status",
+                            "write": {}
+                          }
+                        },
+                        {
+                          "status/logs/eventlog/connections": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["events"]
+                              }
+                            },
+                            "description": "connections events",
+                            "write": {
+                              "uci": [" "]
+                            }
+                          }
+                        },
+                        {
+                          "status/mobile_usage/week": {
+                            "description": "mobile usage week",
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["lucibwc"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/load": {
+                            "description": "realtime load status",
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["lucibwc"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/system": {
+                            "description": "system status",
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["version", "df", "get_networks_devices"],
+                                "mnfinfo": ["get"],
+                                "gsmd": ["get_modems"],
+                                "system": ["info", "board"]
+                              },
+                              "uci": ["system"]
+                            }
+                          }
+                        },
+                        {
+                          "status/overview": {
+                            "read": {
+                              "file": {
+                                "/usr/lib/opkg/info/coova-chilli.control": ["list"],
+                                "/usr/lib/opkg/info/vrrpd.control": ["list"]
+                              },
+                              "ubus": {
+                                "file": ["stat"],
+                                "vuci.system": ["system_status", "events"],
+                                "vuci.network.network": ["hotspot_status", "interfaces_status", "vrrp_status", "access_control"],
+                                "vuci.services.rms": ["rms_status"],
+                                "vuci.network.wireless": ["wifi_interface_status"],
+                                "vuci.network.mobile": ["data_limit_status", "sms_limit_status"]
+                              },
+                              "uci": ["overview", "vrrpd", "network", "openvpn", "quota_limit", "wireless", "simcard"]
+                            },
+                            "description": "overview page",
+                            "write": {
+                              "uci": ["overview"]
+                            }
+                          }
+                        },
+                        {
+                          "status/network/lan": {
+                            "description": "lan network status",
+                            "read": {
+                              "ubus": {
+                                "vuci.network.network": ["lan_info"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "status/network/ports": {
+                            "description": "port network status",
+                            "read": {
+                              "ubus": {
+                                "port_events": ["show"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/stunnel": {
+                            "read": {
+                              "uci": ["stunnel", "network"]
+                            },
+                            "description": "stunnel configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.stunnel": ["stunnel_create", "stunnel_remove", "stunnel_save"]
+                              },
+                              "uci": ["stunnel", "network"]
+                            }
+                          }
+                        },
+                        {
+                          "superuser": {
+                            "read": {
+                              "file": {
+                                "*": ["read", "write", "exec"]
+                              },
+                              "ubus": {
+                                "*": ["*"]
+                              },
+                              "uci": ["*"]
+                            },
+                            "description": "Super user access role",
+                            "write": {
+                              "ubus": {
+                                "*": ["*"]
+                              },
+                              "uci": ["*"]
+                            }
+                          }
+                        },
+                        {
+                          "system/admin/certificates/manager": {
+                            "read": {
+                              "api": ["/system/certificates/*"]
+                            },
+                            "description": "certificate manager",
+                            "write": {
+                              "api": ["/system/certificates/*"]
+                            }
+                          }
+                        },
+                        {
+                          "system/admin/certificates/generation": {
+                            "read": {
+                              "api": ["/system/certificates/*"]
+                            },
+                            "description": "certificates generation",
+                            "write": {
+                              "api": ["/system/certificates/*"]
+                            }
+                          }
+                        },
+                        {
+                          "system/admin/troubleshoot": {
+                            "read": {
+                              "file": {
+                                "/usr/lib/opkg/info/tcpdump.control": ["list"]
+                              },
+                              "ubus": {
+                                "file": ["stat"],
+                                "vuci.network.network": ["get_interfaces", "ping", "ping6", "traceroute", "traceroute6", "nslookup"],
+                                "vuci.system": ["get_log", "get_mounts"]
+                              },
+                              "uci": ["system"]
+                            },
+                            "description": "troubleshoot",
+                            "write": {
+                              "uci": ["system"]
+                            }
+                          }
+                        },
+                        {
+                          "system/license": {
+                            "description": "License",
+                            "read": {
+                              "uci": [" "]
+                            }
+                          }
+                        },
+                        {
+                          "system/wizard/step_rms": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.rms": ["rms_status"]
+                              },
+                              "uci": ["rms_connect_mqtt"]
+                            },
+                            "description": "setup wizard rms",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.rms": ["set_rms_values"]
+                              },
+                              "uci": ["rms_connect_mqtt"]
+                            }
+                          }
+                        },
+                        {
+                          "system/flashops/general": {
+                            "write": {
+                              "ubus": {
+                                "rut_fota": ["get_process"],
+                                "rpc-sys": ["upgrade_clean"],
+                                "vuci.system.firmware": [
+                                  "prepare_modem_upgrade",
+                                  "validate_firmware",
+                                  "validate_modem_firmware",
+                                  "download_device_fw",
+                                  "download_module_fw",
+                                  "continue_download",
+                                  "check_modem_fw_install_status",
+                                  "remove_fw",
+                                  "upgrade_firmware",
+                                  "modem_upgrade_trb14",
+                                  "modem_upgrade"
+                                ],
+                                "vuci.system": ["reboot"]
+                              },
+                              "api": ["/system/firmware/*"]
+                            },
+                            "read": {
+                              "ubus": {
+                                "vuci.system.firmware": ["get_current_info", "check_fw", "get_fw_info"]
+                              },
+                              "api": ["/system/firmware/*"]
+                            }
+                          }
+                        },
+                        {
+                          "system/admin/certificates/root_ca": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system.certificates": ["get_ca_files"],
+                                "vuci.system": ["get_ca", "modify_ca", "select_root_ca"]
+                              }
+                            },
+                            "description": "certificates root ca",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["get_ca", "select_root_ca"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "system/wizard/step_wifi": {
+                            "read": {
+                              "uci": ["wireless"]
+                            },
+                            "description": "setup wizard wifi",
+                            "write": {
+                              "uci": ["wireless"]
+                            }
+                          }
+                        },
+                        {
+                          "system/admin/access_control/general": {
+                            "read": {
+                              "uci": ["dropbear", "firewall", "uhttpd", "cli", "telnetd", "rpcd", "pam"],
+                              "file": {
+                                "/usr/lib/opkg/info/pam.control": ["list"]
+                              }
+                            },
+                            "description": "access control general",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["firewall_access", "cli_access", "telnet_access"]
+                              },
+                              "uci": ["dropbear", "firewall", "uhttpd", "cli", "telnetd", "rpcd", "pam"]
+                            }
+                          }
+                        },
+                        {
+                          "system/wizard/step_wan": {
+                            "read": {
+                              "ubus": {
+                                "network.interface.*": ["status"]
+                              },
+                              "uci": ["network", "simcard"]
+                            },
+                            "description": "setup wizard wan",
+                            "write": {
+                              "uci": ["network", "simcard"]
+                            }
+                          }
+                        },
+                        {
+                          "system/wizard/step_lan": {
+                            "read": {
+                              "ubus": {
+                                "vuci.network.mobile": ["get_all_modems"]
+                              },
+                              "uci": ["network", "dhcp"]
+                            },
+                            "description": "setup wizard lan",
+                            "write": {
+                              "uci": ["network", "dhcp"]
+                            }
+                          }
+                        },
+                        {
+                          "system/wizard/step_pwd": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["clock_status"]
+                              },
+                              "uci": ["system", "vuci", "firewall", "ntpclient"]
+                            },
+                            "description": "setup wizard general",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.ntp": ["update_TZ"]
+                              },
+                              "uci": ["system", "vuci", "ntpclient"]
+                            }
+                          }
+                        },
+                        {
+                          "system/admin/access_control/safety": {
+                            "read": {
+                              "uci": ["ip_blockd"]
+                            },
+                            "description": "access control security",
+                            "write": {
+                              "ubus": {
+                                "ip_block": ["unblock", "reload"]
+                              },
+                              "uci": ["ip_blockd"]
+                            }
+                          }
+                        },
+                        {
+                          "system/flashops/fota": {
+                            "write": {
+                              "uci": ["rut_fota"]
+                            },
+                            "read": {
+                              "uci": ["rut_fota"]
+                            }
+                          }
+                        },
+                        {
+                          "system/admin/group/phone": {
+                            "read": {
+                              "uci": ["user_groups"]
+                            },
+                            "description": "phone groups",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["phone_group_create", "phone_group_name_save"]
+                              },
+                              "uci": ["user_groups"]
+                            }
+                          }
+                        },
+                        {
+                          "system/admin/group/email": {
+                            "read": {
+                              "uci": ["user_groups"]
+                            },
+                            "description": "email groups",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["email_account_create", "update_events_rules"]
+                              },
+                              "uci": ["user_groups"]
+                            }
+                          }
+                        },
+                        {
+                          "system/uscripts": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.uscripts": ["get_script"]
+                              }
+                            },
+                            "description": "custom scripts",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.uscripts": ["save_script"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "system/admin/admin": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.packages": ["get_available_language_packages", "install_package", "remove_pending_package"],
+                                "vuci.system.firmware": ["user_defaults"],
+                                "vuci.system": ["check_config"]
+                              },
+                              "uci": ["system", "vuci", "buttons"]
+                            },
+                            "description": "administration general",
+                            "write": {
+                              "vuci.system.firmware": ["factory_reset"],
+                              "uci": ["system", "vuci", "buttons"]
+                            }
+                          }
+                        },
+                        {
+                          "system/info": {
+                            "read": {
+                              "api": ["/system/info/*", "/system/status/*"]
+                            },
+                            "description": "device info",
+                            "write": {
+                              "api": ["/system/info/*", "/system/status/*"]
+                            }
+                          }
+                        },
+                        {
+                          "system/ui": {
+                            "read": {
+                              "api": ["/ui/*"]
+                            },
+                            "description": "webui menu info",
+                            "write": {
+                              "api": ["/ui/*"]
+                            }
+                          }
+                        },
+                        {
+                          "services/logging": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.ulog": ["get_networks"]
+                              },
+                              "uci": ["ulogd"]
+                            },
+                            "description": "Traffic Logging",
+                            "write": {
+                              "uci": ["ulogd"]
+                            }
+                          }
+                        },
+                        {
+                          "status/logs/traffic": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.ulog": ["log"]
+                              }
+                            },
+                            "description": "traffic logs",
+                            "write": {
+                              "uci": [" "]
+                            }
+                          }
+                        },
+                        {
+                          "unauthenticated": {
+                            "description": "Access controls for unauthenticated requests",
+                            "read": {
+                              "ubus": {
+                                "session": ["access", "login"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "services/upnp": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.upnp": ["act_status"]
+                              },
+                              "uci": ["upnpd"]
+                            },
+                            "description": "UPnP",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.upnp": ["act_delete"]
+                              },
+                              "uci": ["upnpd"]
+                            }
+                          }
+                        },
+                        {
+                          "services/sd_usb_tools/general": {
+                            "read": {
+                              "ubus": {
+                                "vuci.system": ["get_mounts"]
+                              },
+                              "uci": ["fstab"]
+                            },
+                            "description": "sd & usb tools configuration",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["reboot"],
+                                "vuci.services.usb_tools": ["safe_remove"]
+                              },
+                              "uci": ["fstab"]
+                            }
+                          }
+                        },
+                        {
+                          "network/vlan/port_based": {
+                            "read": {
+                              "ubus": {
+                                "network.device": ["status"],
+                                "network.interface": ["dump"],
+                                "vuci.network.vlan": ["get_topologies"],
+                                "vuci.network.network": ["get_devices", "network_netlist"]
+                              },
+                              "uci": ["network"]
+                            },
+                            "description": "vlan configuration",
+                            "write": {
+                              "uci": ["network"]
+                            }
+                          }
+                        },
+                        {
+                          "network/vlan/interface_based": {
+                            "read": {
+                              "uci": ["network"]
+                            },
+                            "description": "vlan configuration",
+                            "write": {
+                              "uci": ["network"]
+                            }
+                          }
+                        },
+                        {
+                          "services/vrrp": {
+                            "read": {
+                              "ubus": {
+                                "vuci.services.vrrp": ["vrrp_state"]
+                              },
+                              "uci": ["vrrpd", "firewall", "network"]
+                            },
+                            "description": "vrrp configuration",
+                            "write": {
+                              "uci": ["vrrpd", "firewall", "network"]
+                            }
+                          }
+                        },
+                        {
+                          "core": {
+                            "read": {
+                              "ubus": {
+                                "vuci.ui": ["*"],
+                                "network.interface": ["dump"],
+                                "uci": ["get"],
+                                "network.wireless": ["status"],
+                                "sim": ["get"],
+                                "system": ["reboot", "board"],
+                                "vuci.network.wireless": ["wifi_interface_status"],
+                                "vuci.network.network": ["get_devices", "network_netlist"],
+                                "vuci.system": ["get_board", "file_stats", "get_switch_topologies"],
+                                "network.device": ["status"],
+                                "iwinfo": ["devices", "assoclist", "info"],
+                                "session": ["access", "destroy", "get", "login"],
+                                "vuci.network.mobile": ["get_all_modems", "modem_update_state"]
+                              },
+                              "uci": ["vuci", "simcard", "sim_switch", "system", "profiles", "widget"]
+                            },
+                            "description": "Core functions for VuCI",
+                            "write": {
+                              "ubus": {
+                                "vuci.system": ["remove_vuci_uploads", "diskfree"],
+                                "vuci.system.profiles": ["update_profile"],
+                                "uci": ["set", "order", "delete", "add", "apply"]
+                              },
+                              "uci": ["vuci", "widget"]
+                            }
+                          }
+                        },
+                        {
+                          "unauthenticated": {
+                            "description": "Functions allowed for unauthenticated requests",
+                            "read": {
+                              "ubus": {
+                                "vuci.ui": ["lang"],
+                                "session": ["access", "login"],
+                                "vuci.system": ["get_routername"]
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "services/webfilter/site": {
+                            "read": {
+                              "uci": ["hostblock"]
+                            },
+                            "description": "Web Filter site blocking",
+                            "write": {
+                              "ubus": {
+                                "vuci.services.webfilter": ["parse_hosts"]
+                              },
+                              "uci": ["hostblock"]
+                            }
+                          }
+                        },
+                        {
+                          "services/webfilter/proxy": {
+                            "read": {
+                              "uci": ["privoxy"]
+                            },
+                            "description": "proxy based content blocker",
+                            "write": {
+                              "uci": ["privoxy"]
+                            }
+                          }
+                        },
+                        {
+                          "services/vpn/wireguard": {
+                            "write": {
+                              "api": ["/services/wireguard/*"]
+                            },
+                            "read": {
+                              "api": ["/services/wireguard/*"]
+                            }
+                          }
+                        },
+                        {
+                          "network/wireless": {
+                            "read": {
+                              "uci": ["wireless", "network", "mwan3", "dhcp", "wifi_scanner", "multi_wifi", "firewall"],
+                              "file": {
+                                "/usr/lib/opkg/info/wifi_scanner.control": ["list"]
+                              },
+                              "ubus": {
+                                "vuci.system.certificates": ["get_certificates"],
+                                "file": ["stat"],
+                                "vuci.network.network": ["mac_hints"],
+                                "vuci.network.wireless": ["wifi_interface_status", "wifi_device_status", "wifi_features", "wifi_options"]
+                              },
+                              "api": ["/network/wireless/*"]
+                            },
+                            "description": "wireless config",
+                            "write": {
+                              "uci": ["wireless", "network", "dhcp", "wifi_scanner", "multi_wifi", "firewall", "mwan3"],
+                              "file": {
+                                "/etc/init.d/network reload": ["exec"],
+                                "/sbin/ifup *": ["exec"],
+                                "/sbin/wifi up *": ["exec"],
+                                "/usr/sbin/iw reg set *": ["exec"]
+                              },
+                              "ubus": {
+                                "iwinfo": ["freqlist"],
+                                "file": ["exec"],
+                                "vuci.network.wireless": ["add_wifi_interface", "delete_wifi_interface", "save_password", "create_multi_ap", "parse_ap_file"]
+                              },
+                              "api": ["/network/wireless/*"]
+                            }
+                          }
+                        },
+                        {
+                          "network/wireless/scan": {
+                            "write": {
+                              "uci": ["network", "wireless", "firewall", "wifi_scanner"],
+                              "ubus": {
+                                "vuci.network.network": ["add_mwan"],
+                                "iwinfo": ["scan"]
+                              },
+                              "api": ["/network/wireless/*"]
+                            },
+                            "read": {
+                              "uci": ["network", "wireless", "firewall", "wifi_scanner"],
+                              "api": ["/network/wireless/*"]
+                            }
+                          }
+                        },
+                        {
+                          "services/wol": {
+                            "read": {
+                              "uci": ["etherwake"]
+                            },
+                            "description": "Wake on Lan",
+                            "write": {
+                              "file": {
+                                "/etc/init.d/etherwake": ["exec"]
+                              },
+                              "ubus": {
+                                "file": ["exec"]
+                              },
+                              "uci": ["etherwake"]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-system-ui-acls",
+        "description": ""
+      },
+      "x-web": {
+        "hidden": true,
+        "hidden_documentation_page": true,
+        "menu": ["Status", "System", "System"]
+      }
+    }
+  },
+  "components": {
+    "responses": {},
+    "schemas": {}
+  }
+}

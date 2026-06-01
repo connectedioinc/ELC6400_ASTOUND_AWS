@@ -1,0 +1,98 @@
+Source-Makefile: feeds/packages/net/ovn/Makefile
+Build-Depends: python3/host python-six/host
+
+Package: openvswitch-libovn
+Submenu: Open vSwitch
+Version: 20.09.0-1
+Depends: +libc +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Open vSwitch (libovn.so)
+Maintainer: Yousong Zhou <yszhou4tech@gmail.com>
+CPE-ID: cpe:/a:openvswitch:openvswitch
+Source: ovn-20.09.0-v20.09.0.tar.xz
+License: Apache-2.0
+LicenseFiles: LICENSE
+Type: ipkg
+Hidden: 1
+Detail-Description: Open vSwitch (libovn.so)
+Description: Open vSwitch (libovn.so)
+https://www.openvswitch.org
+Yousong Zhou <yszhou4tech@gmail.com>
+@@
+
+Package: openvswitch-ovn-common
+Submenu: Open vSwitch
+Version: 20.09.0-1
+Depends: +libc +openvswitch-common +openvswitch-libopenvswitch +openvswitch-libovn +openvswitch-libovsdb +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Open Virtual Network (common files)
+Maintainer: Yousong Zhou <yszhou4tech@gmail.com>
+CPE-ID: cpe:/a:openvswitch:openvswitch
+Source: ovn-20.09.0-v20.09.0.tar.xz
+License: Apache-2.0
+LicenseFiles: LICENSE
+Type: ipkg
+Hidden: 1
+Detail-Description: Open Virtual Network (common files)
+Description: Open Virtual Network (common files)
+https://www.openvswitch.org
+Yousong Zhou <yszhou4tech@gmail.com>
+@@
+
+Package: openvswitch-ovn-north
+Submenu: Open vSwitch
+Version: 20.09.0-1
+Depends: +libc +openvswitch-ovsdb +openvswitch-ovn-common +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Open Virtual Network (north package)
+Maintainer: Yousong Zhou <yszhou4tech@gmail.com>
+CPE-ID: cpe:/a:openvswitch:openvswitch
+Source: ovn-20.09.0-v20.09.0.tar.xz
+License: Apache-2.0
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: Open Virtual Network (north package)
+Description: Open Virtual Network (north package)
+https://www.openvswitch.org
+Yousong Zhou <yszhou4tech@gmail.com>
+@@
+
+Package: openvswitch-ovn-host
+Submenu: Open vSwitch
+Version: 20.09.0-1
+Depends: +libc +openvswitch +openvswitch-ovn-common +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Open Virtual Network (chassis package)
+Maintainer: Yousong Zhou <yszhou4tech@gmail.com>
+CPE-ID: cpe:/a:openvswitch:openvswitch
+Source: ovn-20.09.0-v20.09.0.tar.xz
+License: Apache-2.0
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: Open Virtual Network (chassis package)
+Description: Open Virtual Network (chassis package)
+https://www.openvswitch.org
+Yousong Zhou <yszhou4tech@gmail.com>
+@@
+
+

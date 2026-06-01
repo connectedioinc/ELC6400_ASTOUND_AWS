@@ -1,0 +1,432 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "IEC 60870-5 Client"
+    }
+  ],
+  "paths": {
+    "/iec60870/client/instances/config": {
+      "x-web": {
+        "menu": [
+          "Services",
+          "IEC 60870-5 Client",
+          "IEC 60870-5 Client"
+        ],
+        "name": "IEC 60870-5 Client"
+      },
+      "delete": {
+        "summary": "Delete IEC 60870-5 Client instances",
+        "tags": [
+          "Instances"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/delete_multi"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update IEC 60870-5 Client instances",
+        "tags": [
+          "Instances"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/iec60870_client_instances"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_client_instances"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create IEC 60870-5 Client instance",
+        "tags": [
+          "Instances"
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/iec60870_client_instance_options"
+        },
+        "responses": {
+          "422": {
+            "$ref": "#/components/responses/422response"
+          },
+          "201": {
+            "$ref": "#/components/responses/iec60870_client_instance"
+          }
+        }
+      },
+      "get": {
+        "summary": "Read IEC 60870-5 Client instances",
+        "tags": [
+          "Instances"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_client_instances"
+          }
+        }
+      }
+    },
+    "/iec60870/client/instances/config/{id}": {
+      "x-web": {
+        "menu": [
+          "Services",
+          "IEC 60870-5 Client",
+          "IEC 60870-5 Client"
+        ],
+        "name": "IEC 60870-5 Client"
+      },
+      "parameters": [
+        {
+          "in": "path",
+          "description": "Instance identifier (ID)",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "name": "id"
+        }
+      ],
+      "delete": {
+        "summary": "Delete IEC 60870-5 Client instance",
+        "tags": [
+          "Instances"
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update IEC 60870-5 Client instance",
+        "tags": [
+          "Instances"
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/iec60870_client_instance_options"
+        },
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_client_instance"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        }
+      },
+      "get": {
+        "summary": "Read IEC 60870-5 Client instance",
+        "tags": [
+          "Instances"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/iec60870_client_instance"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "requestBodies": {
+      "iec60870_client_instance_options": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "$ref": "#/components/schemas/iec60870_client_instance_options"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "iec60870_client_instances": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/iec60870_client_instances"
+                }
+              }
+            }
+          }
+        }
+      },
+      "iec60870_client_instance": {
+        "description": "OK",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "description": "Operation status",
+                  "type": "boolean"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/iec60870_client_instance"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "iec60870_client_instance_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "format": "is_bool",
+            "type": "string",
+            "description": "Check to enable this configuration.",
+            "x-web": {
+              "pretty": "Enabled",
+              "input-type": "switch",
+              "group": "General"
+            }
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the client. Used for easier device management purposes only.",
+            "x-web": {
+              "pretty": "Name",
+              "input-type": "input",
+              "group": "General"
+            }
+          },
+          "period": {
+            "type": "string",
+            "format": "irange(1, 86400)",
+            "description": "Interval in seconds for sending requests to server.",
+            "x-web": {
+              "pretty": "Period",
+              "input-type": "input",
+              "group": "General",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "originator_address": {
+            "type": "string",
+            "format": "irange(0,100)",
+            "description": "Address used to identify the source of the request within the IEC 60870-5 system.",
+            "x-web": {
+              "pretty": "Originator address",
+              "input-type": "input",
+              "group": "General",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "timeout": {
+            "type": "string",
+            "format": "irange(1,60)",
+            "description": "Time in seconds that the client waits for a response to an interrogation request.",
+            "x-web": {
+              "pretty": "Timeout",
+              "input-type": "input",
+              "group": "General",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "connection_type": {
+            "type": "string",
+            "enum": [
+              "iec104"
+            ],
+            "description": "Client connection type",
+            "x-web": {
+              "pretty": "Connection type",
+              "input-type": "select",
+              "enum-pretty": {
+                "iec104": "IEC 104 (TCP)"
+              },
+              "group": "Connection",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "ip": {
+            "type": "string",
+            "format": "ip4addr",
+            "description": "IP address of server",
+            "x-web": {
+              "pretty": "Connection type",
+              "input-type": "input",
+              "group": "Connection",
+              "require-depends": [
+                {
+                  "connection_type": "iec104"
+                }
+              ]
+            }
+          },
+          "port": {
+            "type": "string",
+            "format": "port",
+            "description": "Specify port number the server is listening on.",
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input",
+              "group": "Connection",
+              "require-depends": [
+                {
+                  "connection_type": "iec104"
+                }
+              ]
+            }
+          },
+          "information_objects_selection": {
+            "type": "string",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "description": "Should all information objects that are visible be saved.",
+            "x-web": {
+              "pretty": "Information object selection",
+              "input-type": "select",
+              "enum-pretty": {
+                "0": "Custom",
+                "1": "All"
+              },
+              "group": "Connection"
+            }
+          },
+          "information_objects": {
+            "type": "array",
+            "description": "List of information objects which will be monitored.",
+            "items": {
+              "type": "string"
+            },
+            "x-web": {
+              "pretty": "Selected information objects",
+              "require-depends": [
+                {
+                  "information_objects_selection": "0"
+                }
+              ]
+            }
+          },
+          "common_addresses": {
+            "type": "array",
+            "description": "List of common addresses from which information objects will be read.",
+            "items": {
+              "type": "string",
+              "format": "irange(1,65534)"
+            },
+            "x-web": {
+              "pretty": "Common address",
+              "require-depends": [
+                {
+                  "information_objects_selection": "1"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "iec60870_client_instance": {
+        "allOf": [
+          {
+            "properties": {
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id"
+            ],
+            "type": "object"
+          },
+          {
+            "$ref": "#/components/schemas/iec60870_client_instance_options"
+          }
+        ]
+      },
+      "iec60870_client_instances": {
+        "items": {
+          "$ref": "#/components/schemas/iec60870_client_instance"
+        },
+        "type": "array"
+      }
+    }
+  }
+}

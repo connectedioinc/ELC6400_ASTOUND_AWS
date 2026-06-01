@@ -1,0 +1,749 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/openconnect/client/config": {
+      "post": {
+        "summary": "Creates OpenConnect client section",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/openconnect_client_one"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "operationId": "post-openconnect",
+        "tags": ["General"],
+        "description": "Creates OpenConnect client configuration",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/openconnect_client_options_id"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "summary": "Returns all OpenConnect configuration sections",
+        "description": "Returns all sections with their parameters from OpenConnect configuration",
+        "operationId": "get-openconnect",
+        "tags": ["General"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/openconnect_client_multi"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletes specified OpenConnect configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/delete_multi_openconnect"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "delete-openconnect",
+        "tags": ["General"],
+        "description": "Deletes OpenConnect client configuration"
+      },
+      "put": {
+        "summary": "Updates the specified OpenConnect configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/openconnect_client_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "$ref": "#/components/schemas/openconnect_client_options_id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "put-openconnect",
+        "tags": ["General"],
+        "description": "Updates OpenConnect client configurations"
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenConnect"],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false,
+          "flash16mb": false
+        },
+        "name": "OpenConnect"
+      }
+    },
+    "/openconnect/client/config/{id}": {
+      "get": {
+        "summary": "Returns the specified OpenConnect client section",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/openconnect_client_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "operationId": "get-openconnect-cfg",
+        "description": "Get OpenConnect client configuartion",
+        "tags": ["General"],
+        "parameters": []
+      },
+      "delete": {
+        "summary": "Deletes the specified OpenConnect configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/delete_one_openconnect"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "operationId": "delete-openconnect-cfg",
+        "tags": ["General"],
+        "description": "Deletes OpenConnect client configuration"
+      },
+      "put": {
+        "tags": ["General"],
+        "summary": "Updates the specified OpenConnect configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/openconnect_client_one"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "operationId": "put-openconnect-cfg",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/openconnect_client_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "Updates OpenConnect client configuration"
+      },
+      "post": {
+        "summary": "Uploads OpenConnect client certificates",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/file_response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "tags": ["General"],
+        "operationId": "post-openconnect-cfg-upload",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "option": {
+                    "type": "string",
+                    "description": "Parameter to upload the file to.",
+                    "enum": ["user_key", "user_cert", "ca_cert"]
+                  },
+                  "file": {
+                    "type": "string",
+                    "description": "File to upload.",
+                    "format": "binary"
+                  }
+                },
+                "required": ["option", "file"]
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Uci configuration OpenConnect section identifier"
+        }
+      ],
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenConnect"],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false,
+          "flash16mb": false
+        },
+        "name": "OpenConnect"
+      }
+    },
+    "/openconnect/client/status": {
+      "get": {
+        "summary": "Returns status of OpenConnect instances",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "instance name": {
+                          "$ref": "#/components/schemas/openconnect_status"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "success": true,
+                      "data": {
+                        "test3": {
+                          "ipv6-address": "fda9:4efe:7e3b:84ed:7960:92fa:f28e:8849/128"
+                        },
+                        "test2": {
+                          "ipv4-address": "192.168.100.1"
+                        },
+                        "test1": {
+                          "ipv4-address": "192.168.100.1",
+                          "ipv6-address": "fda9:4efe:7e3b:84ed:7960:92fa:f28e:8849/128"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "operationId": "get-openconnect-client-status"
+      },
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenConnect"],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false,
+          "flash16mb": false
+        },
+        "name": "OpenConnect"
+      }
+    },
+    "/openconnect/client/status/{id}": {
+      "get": {
+        "summary": "Returns status of OpenConnect instance",
+        "tags": ["General"],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    },
+                    "data": {
+                      "$ref": "#/components/schemas/openconnect_status"
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "success": true,
+                      "data": {
+                        "test1": {
+                          "ipv4-address": "192.168.100.1"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-openconnect-client-status-id"
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenConnect"],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false,
+          "flash16mb": false
+        },
+        "name": "OpenConnect"
+      }
+    },
+    "/openconnect/client/actions/check_fingerprint": {
+      "post": {
+        "summary": "",
+        "operationId": "post-openconnect-actions-check_fingerprint",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/openconnect_action"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "description": "Checks servers SSL certificate and generates a fingerprint from it's public key",
+        "tags": ["General"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "server": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "port": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "description": "Server address and port to check for fingerprint"
+        }
+      },
+      "x-web": {
+        "menu": ["Services", "VPN", "OpenConnect"],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false,
+          "flash16mb": false
+        },
+        "name": "OpenConnect"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "openconnect_client_one": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        }
+                      },
+                      "required": ["id"]
+                    },
+                    {
+                      "$ref": "#/components/schemas/openconnect_client_options"
+                    }
+                  ]
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "openconnect_client_multi": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "allOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          }
+                        },
+                        "required": ["id"]
+                      },
+                      {
+                        "$ref": "#/components/schemas/openconnect_client_options"
+                      }
+                    ]
+                  }
+                }
+              },
+              "required": ["data"]
+            }
+          }
+        }
+      },
+      "delete_multi_openconnect": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": ["id"]
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "delete_one_openconnect": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "object",
+                  "required": ["id"],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "required": ["success", "data"]
+            }
+          }
+        }
+      },
+      "openconnect_action": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "fingerprint": {
+                      "type": "string",
+                      "description": "Servers fingerprint"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "openconnect_client_options": {
+        "type": "object",
+        "description": "OpenConnect configuration section",
+        "title": "",
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch",
+              "group": "Main settings"
+            },
+            "type": "string",
+            "description": "Turns the OpenConnect instance on or off.",
+            "enum": ["0", "1"]
+          },
+          "server": {
+            "x-web": {
+              "pretty": "Server address",
+              "input-type": "input",
+              "group": "Main settings"
+            },
+            "type": "string",
+            "description": "Server IP address"
+          },
+          "vpn_protocol": {
+            "type": "string",
+            "description": "Servers VPN protocol, available choices: anyconnect, nc, gp, pulse, f5, fortinet, array",
+            "x-web": {
+              "pretty": "VPN protocol",
+              "input-type": "input",
+              "group": "Main settings"
+            }
+          },
+          "serverhash": {
+            "x-web": {
+              "pretty": "Fingerprint",
+              "input-type": "switch",
+              "group": "Main settings"
+            },
+            "type": "string",
+            "description": "Specify servers public key fingerprint to trust"
+          },
+          "port": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Port",
+              "input-type": "input",
+              "group": "Main settings"
+            },
+            "description": "TCP port on which server is listening for connections"
+          },
+          "username": {
+            "x-web": {
+              "pretty": "Username",
+              "input-type": "input",
+              "group": "Main settings"
+            },
+            "type": "string",
+            "description": "Username used for authentication to the server"
+          },
+          "password": {
+            "x-web": {
+              "pretty": "Password",
+              "input-type": "input",
+              "group": "Main settings"
+            },
+            "type": "string",
+            "description": "Password used for authentication to the server"
+          },
+          "ca_cert": {
+            "x-web": {
+              "upload_endpoint": "/openconnect/client/config/{id}",
+              "pretty": "CA certificate",
+              "input-type": "input",
+              "group": "Main settings"
+            },
+            "type": "string",
+            "description": "CA certificate used to verify the server certificate"
+          },
+          "user_cert": {
+            "x-web": {
+              "upload_endpoint": "/openconnect/client/config/{id}",
+              "pretty": "User certificate",
+              "input-type": "input",
+              "group": "Main settings"
+            },
+            "type": "string",
+            "description": "User certificate used to authenticate to the server"
+          },
+          "use_tpm": {
+            "type": "string",
+            "x-web": {
+              "pretty": "Store keys in TPM",
+              "input-type": "switch",
+              "hw_tags": {
+                "has_tpm": true
+              }
+            },
+            "format": "is_bool",
+            "description": "If enabled, the private key will be stored in TPM2 secure storage, if space is available",
+            "default": 1
+          },
+          "user_key": {
+            "x-web": {
+              "upload_endpoint": "/openconnect/client/config/{id}",
+              "pretty": "User private key",
+              "input-type": "input",
+              "group": "Main settings"
+            },
+            "type": "string",
+            "description": "User private key used to authenticate to the server"
+          }
+        }
+      },
+      "openconnect_client_options_id": {
+        "description": "OpenConnect configuration section",
+        "title": "",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "x-web": {
+                  "pretty": "Configuration name",
+                  "unique": true,
+                  "input-type": "input"
+                },
+                "type": "string",
+                "description": "Section name"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/openconnect_client_options"
+          }
+        ],
+        "x-examples": {
+          "example-1": {
+            "id": "string",
+            "enabled": "0",
+            "ipaddr_tunlink": "string",
+            "peeraddr": "string",
+            "mtu": "string",
+            "okey": "string",
+            "ikey": "string",
+            "df": "string",
+            "ttl": "string",
+            "keep_alive": "string",
+            "keep_alive_interval": "string",
+            "keep_alive_retries": "string",
+            "tun_ipaddr": "string",
+            "tun_netmask": "string",
+            "service": "string"
+          }
+        }
+      },
+      "openconnect_status": {
+        "title": "openconnect_status",
+        "type": "object",
+        "properties": {
+          "ipv4-address": {
+            "type": "string",
+            "description": "Tunnel IPv4 address"
+          },
+          "ipv6-address": {
+            "type": "string",
+            "description": "Tunnel IPv6 address"
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Is the OpenConnect instance active"
+          }
+        }
+      }
+    }
+  },
+  "info": {
+    "version": "1.0",
+    "title": "OpenConnect",
+    "description": "OpenConnect api documentation"
+  },
+  "tags": [
+    {
+      "name": "General"
+    }
+  ]
+}

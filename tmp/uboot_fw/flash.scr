@@ -1,0 +1,174 @@
+if test "x$verbose" = "x"; then
+failedmsg='[failed]'
+else
+failedmsg='######################################## Failed'
+fi
+if test "$machid" = "8010000"; then
+
+sf probe || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+echo \\c'Flashing ubi:                           '
+setenv stdout nulldev
+else
+echo '######################################## Flashing ubi: Started'
+fi
+imxtract $imgaddr ubi-05412e4364b2730e03df083e6d972a37e399ffa5 || setenv stdout serial && echo "$failedmsg" && exit 1
+nand device 1 && nand erase 0x00000000 0x08000000 || setenv stdout serial && echo "$failedmsg" && exit 1
+nand write $fileaddr 0x00000000 0x01a20000 || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+setenv stdout serial
+echo '[ done ]'
+setenv stdout nulldev
+setenv stdout serial
+else
+echo '######################################## Flashing ubi: Done'
+fi
+if test "x$verbose" = "x"; then
+echo \\c'Flashing ubi_1:                         '
+setenv stdout nulldev
+else
+echo '######################################## Flashing ubi_1: Started'
+fi
+imxtract $imgaddr ubi-05412e4364b2730e03df083e6d972a37e399ffa5 || setenv stdout serial && echo "$failedmsg" && exit 1
+nand device 1 && nand erase 0x08000000 0x08000000 || setenv stdout serial && echo "$failedmsg" && exit 1
+nand write $fileaddr 0x08000000 0x01a20000 || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+setenv stdout serial
+echo '[ done ]'
+setenv stdout nulldev
+setenv stdout serial
+else
+echo '######################################## Flashing ubi_1: Done'
+fi
+if test "x$verbose" = "x"; then
+echo \\c'Flashing u-boot:                        '
+setenv stdout nulldev
+else
+echo '######################################## Flashing u-boot: Started'
+fi
+imxtract $imgaddr u-boot-e6d2ec537b2bc7d17fc20b8619d322530d76217b || setenv stdout serial && echo "$failedmsg" && exit 1
+sf erase 0x001a0000 +0x000a0000 || setenv stdout serial && echo "$failedmsg" && exit 1
+sf write $fileaddr 0x001a0000 0x0008ae94 || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+setenv stdout serial
+echo '[ done ]'
+setenv stdout nulldev
+setenv stdout serial
+else
+echo '######################################## Flashing u-boot: Done'
+fi
+if test "x$verbose" = "x"; then
+echo \\c'Flashing u-boot_1:                      '
+setenv stdout nulldev
+else
+echo '######################################## Flashing u-boot_1: Started'
+fi
+imxtract $imgaddr u-boot-e6d2ec537b2bc7d17fc20b8619d322530d76217b || setenv stdout serial && echo "$failedmsg" && exit 1
+sf erase 0x00240000 +0x000a0000 || setenv stdout serial && echo "$failedmsg" && exit 1
+sf write $fileaddr 0x00240000 0x0008ae94 || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+setenv stdout serial
+echo '[ done ]'
+setenv stdout nulldev
+setenv stdout serial
+else
+echo '######################################## Flashing u-boot_1: Done'
+fi
+echo Erasing events_log partition ... 
+setenv stdout nulldev
+sf probe; sf erase 0x00310000 +0x0090000
+setenv stdout serial
+echo [ done ]
+setenv stdout nulldev
+env default -f; env save
+exit 0
+
+fi
+
+if test "x$verbose" = "x"; then
+failedmsg='[failed]'
+else
+failedmsg='######################################## Failed'
+fi
+if test "$machid" = "8010100"; then
+
+sf probe || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+echo \\c'Flashing ubi:                           '
+setenv stdout nulldev
+else
+echo '######################################## Flashing ubi: Started'
+fi
+imxtract $imgaddr ubi-05412e4364b2730e03df083e6d972a37e399ffa5 || setenv stdout serial && echo "$failedmsg" && exit 1
+nand device 1 && nand erase 0x00000000 0x08000000 || setenv stdout serial && echo "$failedmsg" && exit 1
+nand write $fileaddr 0x00000000 0x01a20000 || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+setenv stdout serial
+echo '[ done ]'
+setenv stdout nulldev
+setenv stdout serial
+else
+echo '######################################## Flashing ubi: Done'
+fi
+if test "x$verbose" = "x"; then
+echo \\c'Flashing ubi_1:                         '
+setenv stdout nulldev
+else
+echo '######################################## Flashing ubi_1: Started'
+fi
+imxtract $imgaddr ubi-05412e4364b2730e03df083e6d972a37e399ffa5 || setenv stdout serial && echo "$failedmsg" && exit 1
+nand device 1 && nand erase 0x08000000 0x08000000 || setenv stdout serial && echo "$failedmsg" && exit 1
+nand write $fileaddr 0x08000000 0x01a20000 || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+setenv stdout serial
+echo '[ done ]'
+setenv stdout nulldev
+setenv stdout serial
+else
+echo '######################################## Flashing ubi_1: Done'
+fi
+if test "x$verbose" = "x"; then
+echo \\c'Flashing u-boot:                        '
+setenv stdout nulldev
+else
+echo '######################################## Flashing u-boot: Started'
+fi
+imxtract $imgaddr u-boot-e6d2ec537b2bc7d17fc20b8619d322530d76217b || setenv stdout serial && echo "$failedmsg" && exit 1
+sf erase 0x001a0000 +0x000a0000 || setenv stdout serial && echo "$failedmsg" && exit 1
+sf write $fileaddr 0x001a0000 0x0008ae94 || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+setenv stdout serial
+echo '[ done ]'
+setenv stdout nulldev
+setenv stdout serial
+else
+echo '######################################## Flashing u-boot: Done'
+fi
+if test "x$verbose" = "x"; then
+echo \\c'Flashing u-boot_1:                      '
+setenv stdout nulldev
+else
+echo '######################################## Flashing u-boot_1: Started'
+fi
+imxtract $imgaddr u-boot-e6d2ec537b2bc7d17fc20b8619d322530d76217b || setenv stdout serial && echo "$failedmsg" && exit 1
+sf erase 0x00240000 +0x000a0000 || setenv stdout serial && echo "$failedmsg" && exit 1
+sf write $fileaddr 0x00240000 0x0008ae94 || setenv stdout serial && echo "$failedmsg" && exit 1
+if test "x$verbose" = "x"; then
+setenv stdout serial
+echo '[ done ]'
+setenv stdout nulldev
+setenv stdout serial
+else
+echo '######################################## Flashing u-boot_1: Done'
+fi
+echo Erasing events_log partition ... 
+setenv stdout nulldev
+sf probe; sf erase 0x00310000 +0x0090000
+setenv stdout serial
+echo [ done ]
+setenv stdout nulldev
+env default -f; env save
+exit 0
+
+fi
+

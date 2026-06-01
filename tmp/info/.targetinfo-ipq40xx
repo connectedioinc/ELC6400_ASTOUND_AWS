@@ -1,0 +1,1177 @@
+Source-Makefile: target/linux/ipq40xx/Makefile
+Target: ipq40xx
+Target-Board: ipq40xx
+Target-Name: Qualcomm Atheros IPQ40XX
+Target-Arch: arm
+Target-Arch-Packages: arm_cortex-a7_neon-vfpv4
+Target-Features: arm_v7 dt fpu gpio nand pci pcie reset_button rtc smp squashfs usb
+Target-Depends: 
+Target-Optimization: -Os -pipe
+CPU-Type: cortex-a7+neon-vfpv4
+Linux-Version: 6.6.119
+Linux-Release: 1
+Linux-Kernel-Arch: arm
+Target-Description:
+
+@@
+Default-Packages: base-files fstools libc libgcc netifd uci mnfinfo busybox ca-bundle dropbear openssh-sftp-server libustream-openssl logd mtd opkg uclient-fetch urandom-seed urngd dnsmasq fwcert uci-default troubleshoot kmod-gpio-button-hotplug firewall ip6tables iptables kmod-ipt-offload odhcp6c kmod-usb-dwc3-qcom kmod-leds-gpio swconfig kmod-ath10k_66 kmod-usb3 kmod-usb-dwc3 ath10k-firmware-qca4019  ca-bundle dropbear openssh-sftp-server libustream-openssl logd mtd opkg uclient-fetch urandom-seed urngd dnsmasq fwcert uci-default troubleshoot kmod-gpio-button-hotplug
+Target: ipq40xx/generic
+Target-Board: ipq40xx
+Target-Name: Generic
+Target-Arch: arm
+Target-Arch-Packages: arm_cortex-a7_neon-vfpv4
+Target-Features: arm_v7 dt fpu gpio nand pci pcie reset_button rtc smp squashfs usb
+Target-Depends: 
+Target-Optimization: -Os -pipe
+CPU-Type: cortex-a7+neon-vfpv4
+Linux-Version: 6.6.119
+Linux-Release: 1
+Linux-Kernel-Arch: arm
+Target-Description:
+	Build firmware images for generic Atheros IPQ40XX based boards.
+@@
+Default-Packages: base-files fstools libc libgcc netifd uci mnfinfo busybox ca-bundle dropbear openssh-sftp-server libustream-openssl logd mtd opkg uclient-fetch urandom-seed urngd dnsmasq fwcert uci-default troubleshoot kmod-gpio-button-hotplug firewall ip6tables iptables kmod-ipt-offload odhcp6c kmod-usb-dwc3-qcom kmod-leds-gpio swconfig kmod-ath10k_66 kmod-usb3 kmod-usb-dwc3 ath10k-firmware-qca4019  ca-bundle dropbear openssh-sftp-server libustream-openssl logd mtd opkg uclient-fetch urandom-seed urngd dnsmasq fwcert uci-default troubleshoot kmod-gpio-button-hotplug
+Target-Profile: DEVICE_TEMPLATE_teltonika_rutx08
+Target-Profile-Name: TELTONIKA RUTX08
+Target-Profile-Libc: musl
+Target-Profile-Packages: sysupgrade-helper uboot-ipq40xx kmod-cypress-serial ipq-wifi-teltonika_rutx kmod-usb-uhci kmod-r2ec stm32flasher
+Target-Profile-Features: usb ethernet ios nat_offloading multi_tag port_link gigabit_port xfrm-offload tpm reset_button usb-port modbus dot1x-client port-mirror
+Target-Profile-InitialSupportVersion: 
+Target-Profile-DefaultLogPartition: 
+Target-Profile-ModemVendor: Quectel Meiglink
+Target-Profile-ModemList: EG06 EG060K EG060W EG12 RG501Q RG520N SLM828
+Target-Profile-MultiProfileName: 
+Target-Profile-hasImageMetadata: 1
+Target-Profile-GPLPrefix: GPL
+Target-Profile-SupportedDevices: TEMPLATE,teltonika,rutx08 elleconet,elc6400
+Target-Profile-BootName: 
+Target-Profile-IncludedDevices: TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1
+Target-Profile-CheckPath: 
+Target-Profile-USBJackPath: /usb1/1-1/
+Target-Profile-USBJackPathLowSpeed: 
+Target-Profile-WLANBssidLimit: wlan0 16, wlan1 16
+Target-Profile-LANInterfaceOpt: eth0
+Target-Profile-WANInterfaceOpt: eth1
+Target-Profile-SwitchConfig: "switch0" "0u@eth0" "2:lan:1" "3:lan:2" "4:lan:3" "0u@eth1" "5:wan"
+Target-Profile-InterfaceConfig: lan default_ip 192.168.1.1
+Target-Profile-NetworkConfig: vlans          128, max_mtu        9000, readonly_vlans 2
+Target-Profile-PoeConfig: 
+Target-Profile-PoeChip: 
+Target-Profile-SerialCapabilities: 
+Target-Profile-Dot1xServerCapabilities: 
+Target-Profile-EOL: 
+
+
+Target-Profile-HARDWARE-Mobile-Module: 
+ Target-Profile-HARDWARE-Mobile-3GPP_Release: 
+ Target-Profile-HARDWARE-Mobile-3GPP_Release-Tooltip: 
+ Target-Profile-HARDWARE-Mobile-eSIM: 
+ Target-Profile-HARDWARE-Mobile-eSIM-Tooltip: 
+ Target-Profile-HARDWARE-Wireless-Wireless_Mode: 
+ Target-Profile-HARDWARE-Wireless-Wi\-Fi_Users: 
+ Target-Profile-HARDWARE-Bluetooth-Bluetooth_4.0: 
+ Target-Profile-HARDWARE-Ethernet-Port: 
+ Target-Profile-HARDWARE-Ethernet-Speed: 
+ Target-Profile-HARDWARE-Ethernet-Standard: 
+ Target-Profile-HARDWARE-WAN-Port: 1 x WAN port
+ Target-Profile-HARDWARE-WAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-WAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-LAN-Port: 3 x LAN ports
+ Target-Profile-HARDWARE-LAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-LAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-Fibre-Port: 
+ Target-Profile-HARDWARE-Serial-RS232: 
+ Target-Profile-HARDWARE-Serial-RS485: 
+ Target-Profile-HARDWARE-Serial-Serial_Functions: 
+ Target-Profile-HARDWARE-SD_card-Physical_Size: 
+ Target-Profile-HARDWARE-SD_card-Applications: 
+ Target-Profile-HARDWARE-SD_card-Capacity: 
+ Target-Profile-HARDWARE-SD_card-Storage_Formats: 
+ Target-Profile-HARDWARE-USB-Data_Rate: USB 2.0
+ Target-Profile-HARDWARE-USB-Applications: Samba share, USB-to-serial
+ Target-Profile-HARDWARE-USB-External_Devices: Possibility to connect external HDD, flash drive, printer, USB-serial adapter
+ Target-Profile-HARDWARE-USB-Storage_Formats: FAT, FAT32, exFAT, NTFS (read-only), ext2, ext3, ext4
+ Target-Profile-HARDWARE-System_Characteristics-CPU: Quad-core ARM Cortex A7, 717 MHz
+ Target-Profile-HARDWARE-System_Characteristics-RAM: 256 MB, DDR3
+ Target-Profile-HARDWARE-System_Characteristics-Flash_Storage: 256 MB, SPI Flash
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-Power-Connector: 4-pin industrial DC power socket
+ Target-Profile-TECHNICAL-Power-Input_Voltage_Range: 9 - 50 VDC, reverse polarity protection, voltage surge/transient protection
+ Target-Profile-TECHNICAL-Power-PoE_Standards: Possibility to power up through LAN1 port, not compatible with IEEE802.3af, 802.3at and 802.3bt standards, Mode B, 9-50 VDC
+ Target-Profile-TECHNICAL-Power-Power_Consumption: 6 W Max
+ Target-Profile-TECHNICAL-Input_Output-Input: 1 x Digital Input, 0-6 V detected as logic low, 8-30 V detected as logic high
+ Target-Profile-TECHNICAL-Input_Output-Output: 1 x Digital Output, Open collector output, max output 30 V, 300 mA
+ Target-Profile-TECHNICAL-Input_Output-Configurable_IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Ethernet: 4 x RJ45 ports, 10/100/1000 Mbps
+ Target-Profile-TECHNICAL-Physical_Interfaces-IO: 1 x Digital Input, 1 x Digital Output on 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power_Control: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Status_Leds: 8 x LAN status LEDs, 1 x Power LED
+ Target-Profile-TECHNICAL-Physical_Interfaces-SIM: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power: 1 x 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Input_Output: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas_Specifications: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-USB: 1 x USB A port for external devices
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS232: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS485: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Button: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Fibre: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-1_Wire: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-M_Bus: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WiFi: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WPS: 
+ Target-Profile-TECHNICAL-Physical_Specification-Casing_Material: Aluminium housing
+ Target-Profile-TECHNICAL-Physical_Specification-Dimensions: 115 x 32.2 x 95.2 mm
+ Target-Profile-TECHNICAL-Physical_Specification-Weight: 345 g
+ Target-Profile-TECHNICAL-Physical_Specification-Mounting_Options: DIN rail, wall mount, flat surface (all require additional kit)
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Temperature: -40 °C to 75 °C
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Humidity: 10% to 90% non-condensing
+ Target-Profile-TECHNICAL-Operating_Environment-Ingress_Protection_Rating: IP30
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Regulatory: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Operator: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Standards: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-ESD: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Radiated_Immunity: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-EFT: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Surge_Immunity_(AC_Mains_Power_Port): 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-CS: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-DIP: 
+ Target-Profile-REGULATORY-RF-Standards: 
+ Target-Profile-REGULATORY-Safety-Standards: 
+ Target-Profile-REGULATORY-Safety_(Ordinary_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Hazardous_Environments: 
+
+Target-Profile-Description:
+Build firmware images for TELTONIKA RUTX08
+
+
+
+@@
+
+Target-Profile: DEVICE_TEMPLATE_teltonika_rutx09
+Target-Profile-Name: TELTONIKA RUTX09
+Target-Profile-Libc: musl
+Target-Profile-Packages: sysupgrade-helper uboot-ipq40xx kmod-cypress-serial ipq-wifi-teltonika_rutx kmod-usb-uhci kmod-r2ec stm32flasher
+Target-Profile-Features: dual_sim usb gps mobile ethernet ios nat_offloading multi_tag port_link gigabit_port xfrm-offload tpm reset_button usb-port modbus dot1x-client port-mirror
+Target-Profile-InitialSupportVersion: 
+Target-Profile-DefaultLogPartition: 
+Target-Profile-ModemVendor: Quectel Meiglink
+Target-Profile-ModemList: EG06 EG060K EG060W EG12 RG501Q RG520N SLM828
+Target-Profile-MultiProfileName: 
+Target-Profile-hasImageMetadata: 1
+Target-Profile-GPLPrefix: GPL
+Target-Profile-SupportedDevices: TEMPLATE,teltonika,rutx09 elleconet,elc6400
+Target-Profile-BootName: 
+Target-Profile-IncludedDevices: TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1
+Target-Profile-CheckPath: 
+Target-Profile-USBJackPath: /usb1/1-1/
+Target-Profile-USBJackPathLowSpeed: 
+Target-Profile-WLANBssidLimit: wlan0 16, wlan1 16
+Target-Profile-LANInterfaceOpt: eth0
+Target-Profile-WANInterfaceOpt: eth1
+Target-Profile-SwitchConfig: "switch0" "0u@eth0" "2:lan:1" "3:lan:2" "4:lan:3" "0u@eth1" "5:wan"
+Target-Profile-InterfaceConfig: lan default_ip 192.168.1.1
+Target-Profile-NetworkConfig: vlans          128, max_mtu        9000, readonly_vlans 2
+Target-Profile-PoeConfig: 
+Target-Profile-PoeChip: 
+Target-Profile-SerialCapabilities: 
+Target-Profile-Dot1xServerCapabilities: 
+Target-Profile-EOL: 
+
+
+Target-Profile-HARDWARE-Mobile-Module: 4G LTE Cat 6 up to 300 DL/ 50 UL Mbps; 3G up to 42 DL/ 5.76 UL Mbps
+ Target-Profile-HARDWARE-Mobile-3GPP_Release: Release 12
+ Target-Profile-HARDWARE-Mobile-3GPP_Release-Tooltip: 
+ Target-Profile-HARDWARE-Mobile-eSIM: 
+ Target-Profile-HARDWARE-Mobile-eSIM-Tooltip: 
+ Target-Profile-HARDWARE-Wireless-Wireless_Mode: 
+ Target-Profile-HARDWARE-Wireless-Wi\-Fi_Users: 
+ Target-Profile-HARDWARE-Bluetooth-Bluetooth_4.0: 
+ Target-Profile-HARDWARE-Ethernet-Port: 
+ Target-Profile-HARDWARE-Ethernet-Speed: 
+ Target-Profile-HARDWARE-Ethernet-Standard: 
+ Target-Profile-HARDWARE-WAN-Port: 1 x WAN port
+ Target-Profile-HARDWARE-WAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-WAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-LAN-Port: 3 x LAN ports
+ Target-Profile-HARDWARE-LAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-LAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-Fibre-Port: 
+ Target-Profile-HARDWARE-Serial-RS232: 
+ Target-Profile-HARDWARE-Serial-RS485: 
+ Target-Profile-HARDWARE-Serial-Serial_Functions: 
+ Target-Profile-HARDWARE-SD_card-Physical_Size: 
+ Target-Profile-HARDWARE-SD_card-Applications: 
+ Target-Profile-HARDWARE-SD_card-Capacity: 
+ Target-Profile-HARDWARE-SD_card-Storage_Formats: 
+ Target-Profile-HARDWARE-USB-Data_Rate: USB 2.0
+ Target-Profile-HARDWARE-USB-Applications: Samba share, USB-to-serial
+ Target-Profile-HARDWARE-USB-External_Devices: Possibility to connect external HDD, flash drive, printer, USB-serial adapter
+ Target-Profile-HARDWARE-USB-Storage_Formats: FAT, FAT32, exFAT, NTFS (read-only), ext2, ext3, ext4
+ Target-Profile-HARDWARE-System_Characteristics-CPU: Quad-core ARM Cortex A7, 717 MHz
+ Target-Profile-HARDWARE-System_Characteristics-RAM: 256 MB, DDR3
+ Target-Profile-HARDWARE-System_Characteristics-Flash_Storage: 256 MB, SPI Flash
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-Power-Connector: 4-pin industrial DC power socket
+ Target-Profile-TECHNICAL-Power-Input_Voltage_Range: 9 - 50 VDC, reverse polarity protection, voltage surge/transient protection
+ Target-Profile-TECHNICAL-Power-PoE_Standards: Possibility to power up through LAN1 port, not compatible with IEEE802.3af, 802.3at and 802.3bt standards, Mode B, 9-50 VDC
+ Target-Profile-TECHNICAL-Power-Power_Consumption: 9 W Max
+ Target-Profile-TECHNICAL-Input_Output-Input: 1 x Digital Input, 0-6 V detected as logic low, 8-30 V detected as logic high
+ Target-Profile-TECHNICAL-Input_Output-Output: 1 x Digital Output, Open collector output, max output 30 V, 300 mA
+ Target-Profile-TECHNICAL-Input_Output-Configurable_IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Ethernet: 4 x RJ45 ports, 10/100/1000 Mbps
+ Target-Profile-TECHNICAL-Physical_Interfaces-IO: 1 x Digital Input, 1 x Digital Output on 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power_Control: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Status_Leds: 3 x WAN type, 2 x Mobile connection type, 5 x Mobile connection strength, 8 x LAN status, 3 x WAN status, 1x Power
+ Target-Profile-TECHNICAL-Physical_Interfaces-SIM: 2 x SIM slots (Mini SIM - 2FF), 1.8 V/3 V, external SIM holders
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power: 1 x 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Input_Output: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas: 2 x SMA for LTE, 1 x SMA for GNNS
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas_Specifications: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-USB: 1 x USB A port for external devices
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS232: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS485: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Button: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Fibre: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-1_Wire: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-M_Bus: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WiFi: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WPS: 
+ Target-Profile-TECHNICAL-Physical_Specification-Casing_Material: Aluminium housing
+ Target-Profile-TECHNICAL-Physical_Specification-Dimensions: 115 x 44.2 x 95.1 mm
+ Target-Profile-TECHNICAL-Physical_Specification-Weight: 455 g
+ Target-Profile-TECHNICAL-Physical_Specification-Mounting_Options: DIN rail, wall mount, flat surface (all require additional kit)
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Temperature: -40 °C to 75 °C
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Humidity: 10% to 90% non-condensing
+ Target-Profile-TECHNICAL-Operating_Environment-Ingress_Protection_Rating: IP30
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Regulatory: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Operator: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Standards: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-ESD: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Radiated_Immunity: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-EFT: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Surge_Immunity_(AC_Mains_Power_Port): 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-CS: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-DIP: 
+ Target-Profile-REGULATORY-RF-Standards: 
+ Target-Profile-REGULATORY-Safety-Standards: 
+ Target-Profile-REGULATORY-Safety_(Ordinary_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Hazardous_Environments: 
+
+Target-Profile-Description:
+Build firmware images for TELTONIKA RUTX09
+
+
+
+@@
+
+Target-Profile: DEVICE_TEMPLATE_teltonika_rutx10
+Target-Profile-Name: TELTONIKA RUTX10
+Target-Profile-Libc: musl
+Target-Profile-Packages: sysupgrade-helper uboot-ipq40xx kmod-cypress-serial ipq-wifi-teltonika_rutx kmod-usb-uhci kmod-r2ec stm32flasher
+Target-Profile-Features: bluetooth usb wifi dual_band_ssid ethernet ios nat_offloading multi_tag port_link gigabit_port xfrm-offload tpm reset_button usb-port modbus dot1x-client port-mirror
+Target-Profile-InitialSupportVersion: 
+Target-Profile-DefaultLogPartition: 
+Target-Profile-ModemVendor: Quectel Meiglink
+Target-Profile-ModemList: EG06 EG060K EG060W EG12 RG501Q RG520N SLM828
+Target-Profile-MultiProfileName: 
+Target-Profile-hasImageMetadata: 1
+Target-Profile-GPLPrefix: GPL
+Target-Profile-SupportedDevices: TEMPLATE,teltonika,rutx10 elleconet,elc6400
+Target-Profile-BootName: 
+Target-Profile-IncludedDevices: TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1
+Target-Profile-CheckPath: bt_check /sys/bus/usb/drivers/usb/1-1.4/ reboot 13.0-
+Target-Profile-USBJackPath: /usb1/1-1/
+Target-Profile-USBJackPathLowSpeed: 
+Target-Profile-WLANBssidLimit: wlan0 16, wlan1 16
+Target-Profile-LANInterfaceOpt: eth0
+Target-Profile-WANInterfaceOpt: eth1
+Target-Profile-SwitchConfig: "switch0" "0u@eth0" "2:lan:1" "3:lan:2" "4:lan:3" "0u@eth1" "5:wan"
+Target-Profile-InterfaceConfig: lan default_ip 192.168.1.1
+Target-Profile-NetworkConfig: vlans          128, max_mtu        9000, readonly_vlans 2
+Target-Profile-PoeConfig: 
+Target-Profile-PoeChip: 
+Target-Profile-SerialCapabilities: 
+Target-Profile-Dot1xServerCapabilities: 
+Target-Profile-EOL: 
+
+
+Target-Profile-HARDWARE-Mobile-Module: 
+ Target-Profile-HARDWARE-Mobile-3GPP_Release: 
+ Target-Profile-HARDWARE-Mobile-3GPP_Release-Tooltip: 
+ Target-Profile-HARDWARE-Mobile-eSIM: 
+ Target-Profile-HARDWARE-Mobile-eSIM-Tooltip: 
+ Target-Profile-HARDWARE-Wireless-Wireless_Mode: 802.11b/g/n/ac Wave 2 (WiFi 5)
+ Target-Profile-HARDWARE-Wireless-Wi\-Fi_Users: Up to 150 simultaneous connections
+ Target-Profile-HARDWARE-Bluetooth-Bluetooth_4.0: Bluetooth low energy (LE) for short range communication
+ Target-Profile-HARDWARE-Ethernet-Port: 
+ Target-Profile-HARDWARE-Ethernet-Speed: 
+ Target-Profile-HARDWARE-Ethernet-Standard: 
+ Target-Profile-HARDWARE-WAN-Port: 1 x WAN port
+ Target-Profile-HARDWARE-WAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-WAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-LAN-Port: 3 x LAN ports
+ Target-Profile-HARDWARE-LAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-LAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-Fibre-Port: 
+ Target-Profile-HARDWARE-Serial-RS232: 
+ Target-Profile-HARDWARE-Serial-RS485: 
+ Target-Profile-HARDWARE-Serial-Serial_Functions: 
+ Target-Profile-HARDWARE-SD_card-Physical_Size: 
+ Target-Profile-HARDWARE-SD_card-Applications: 
+ Target-Profile-HARDWARE-SD_card-Capacity: 
+ Target-Profile-HARDWARE-SD_card-Storage_Formats: 
+ Target-Profile-HARDWARE-USB-Data_Rate: USB 2.0
+ Target-Profile-HARDWARE-USB-Applications: Samba share, USB-to-serial
+ Target-Profile-HARDWARE-USB-External_Devices: Possibility to connect external HDD, flash drive, printer, USB-serial adapter
+ Target-Profile-HARDWARE-USB-Storage_Formats: FAT, FAT32, exFAT, NTFS (read-only), ext2, ext3, ext4
+ Target-Profile-HARDWARE-System_Characteristics-CPU: Quad-core ARM Cortex A7, 717 MHz
+ Target-Profile-HARDWARE-System_Characteristics-RAM: 256 MB, DDR3
+ Target-Profile-HARDWARE-System_Characteristics-Flash_Storage: 256 MB, SPI Flash
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-Power-Connector: 4-pin industrial DC power socket
+ Target-Profile-TECHNICAL-Power-Input_Voltage_Range: 9 - 50 VDC, reverse polarity protection, voltage surge/transient protection
+ Target-Profile-TECHNICAL-Power-PoE_Standards: Possibility to power up through LAN1 port, not compatible with IEEE802.3af, 802.3at and 802.3bt standards, Mode B, 9-50 VDC
+ Target-Profile-TECHNICAL-Power-Power_Consumption: 9 W Max
+ Target-Profile-TECHNICAL-Input_Output-Input: 1 x Digital Input, 0-6 V detected as logic low, 8-30 V detected as logic high
+ Target-Profile-TECHNICAL-Input_Output-Output: 1 x Digital Output, Open collector output, max output 30 V, 300 mA
+ Target-Profile-TECHNICAL-Input_Output-Configurable_IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Ethernet: 4 x RJ45 ports, 10/100/1000 Mbps
+ Target-Profile-TECHNICAL-Physical_Interfaces-IO: 1 x Digital Input, 1 x Digital Output on 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power_Control: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Status_Leds: 8 x LAN status LEDs, 1 x Power LED, 2 x 2.4G and 5G Wi-Fi LEDs
+ Target-Profile-TECHNICAL-Physical_Interfaces-SIM: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power: 1 x 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Input_Output: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas: 2 x RP-SMA for Wi-Fi, 1 x RP-SMA for Bluetooth
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas_Specifications: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-USB: 1 x USB A port for external devices
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS232: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS485: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Button: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Fibre: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-1_Wire: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-M_Bus: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WiFi: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WPS: 
+ Target-Profile-TECHNICAL-Physical_Specification-Casing_Material: Aluminium housing
+ Target-Profile-TECHNICAL-Physical_Specification-Dimensions: 115 x 32.2 x 95.2 mm
+ Target-Profile-TECHNICAL-Physical_Specification-Weight: 355 g
+ Target-Profile-TECHNICAL-Physical_Specification-Mounting_Options: DIN rail, wall mount, flat surface (all require additional kit)
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Temperature: -40 °C to 75 °C
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Humidity: 10% to 90% non-condensing
+ Target-Profile-TECHNICAL-Operating_Environment-Ingress_Protection_Rating: IP30
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Regulatory: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Operator: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Standards: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-ESD: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Radiated_Immunity: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-EFT: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Surge_Immunity_(AC_Mains_Power_Port): 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-CS: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-DIP: 
+ Target-Profile-REGULATORY-RF-Standards: 
+ Target-Profile-REGULATORY-Safety-Standards: 
+ Target-Profile-REGULATORY-Safety_(Ordinary_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Hazardous_Environments: 
+
+Target-Profile-Description:
+Build firmware images for TELTONIKA RUTX10
+
+
+
+@@
+
+Target-Profile: DEVICE_TEMPLATE_teltonika_rutx11
+Target-Profile-Name: TELTONIKA RUTX11
+Target-Profile-Libc: musl
+Target-Profile-Packages: sysupgrade-helper uboot-ipq40xx kmod-cypress-serial ipq-wifi-teltonika_rutx kmod-usb-uhci kmod-r2ec stm32flasher
+Target-Profile-Features: dual_sim usb gps mobile wifi dual_band_ssid bluetooth ethernet ios nat_offloading multi_tag port_link gigabit_port xfrm-offload tpm reset_button usb-port modbus dot1x-client port-mirror
+Target-Profile-InitialSupportVersion: 
+Target-Profile-DefaultLogPartition: 
+Target-Profile-ModemVendor: Quectel Meiglink
+Target-Profile-ModemList: EG06 EG060K EG060W EG12 RG501Q RG520N SLM828
+Target-Profile-MultiProfileName: 
+Target-Profile-hasImageMetadata: 1
+Target-Profile-GPLPrefix: GPL
+Target-Profile-SupportedDevices: TEMPLATE,teltonika,rutx11 elleconet,elc6400
+Target-Profile-BootName: 
+Target-Profile-IncludedDevices: TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1
+Target-Profile-CheckPath: bt_check /sys/bus/usb/drivers/usb/1-1.4/ reboot 13.0-
+Target-Profile-USBJackPath: /usb1/1-1/
+Target-Profile-USBJackPathLowSpeed: 
+Target-Profile-WLANBssidLimit: wlan0 16, wlan1 16
+Target-Profile-LANInterfaceOpt: eth0
+Target-Profile-WANInterfaceOpt: eth1
+Target-Profile-SwitchConfig: "switch0" "0u@eth0" "2:lan:1" "3:lan:2" "4:lan:3" "0u@eth1" "5:wan"
+Target-Profile-InterfaceConfig: lan default_ip 192.168.1.1
+Target-Profile-NetworkConfig: vlans          128, max_mtu        9000, readonly_vlans 2
+Target-Profile-PoeConfig: 
+Target-Profile-PoeChip: 
+Target-Profile-SerialCapabilities: 
+Target-Profile-Dot1xServerCapabilities: 
+Target-Profile-EOL: 
+
+
+Target-Profile-HARDWARE-Mobile-Module: 4G LTE Cat 6 up to 300 DL/ 50 UL Mbps; 3G up to 42 DL/ 5.76 UL Mbps
+ Target-Profile-HARDWARE-Mobile-3GPP_Release: Release 12
+ Target-Profile-HARDWARE-Mobile-3GPP_Release-Tooltip: 
+ Target-Profile-HARDWARE-Mobile-eSIM: 
+ Target-Profile-HARDWARE-Mobile-eSIM-Tooltip: 
+ Target-Profile-HARDWARE-Wireless-Wireless_Mode: 802.11b/g/n/ac Wave 2 (WiFi 5)
+ Target-Profile-HARDWARE-Wireless-Wi\-Fi_Users: Up to 150 simultaneous connections
+ Target-Profile-HARDWARE-Bluetooth-Bluetooth_4.0: Bluetooth low energy (LE) for short range communication
+ Target-Profile-HARDWARE-Ethernet-Port: 
+ Target-Profile-HARDWARE-Ethernet-Speed: 
+ Target-Profile-HARDWARE-Ethernet-Standard: 
+ Target-Profile-HARDWARE-WAN-Port: 1 x WAN port
+ Target-Profile-HARDWARE-WAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-WAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-LAN-Port: 3 x LAN ports
+ Target-Profile-HARDWARE-LAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-LAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-Fibre-Port: 
+ Target-Profile-HARDWARE-Serial-RS232: 
+ Target-Profile-HARDWARE-Serial-RS485: 
+ Target-Profile-HARDWARE-Serial-Serial_Functions: 
+ Target-Profile-HARDWARE-SD_card-Physical_Size: 
+ Target-Profile-HARDWARE-SD_card-Applications: 
+ Target-Profile-HARDWARE-SD_card-Capacity: 
+ Target-Profile-HARDWARE-SD_card-Storage_Formats: 
+ Target-Profile-HARDWARE-USB-Data_Rate: USB 2.0
+ Target-Profile-HARDWARE-USB-Applications: Samba share, USB-to-serial
+ Target-Profile-HARDWARE-USB-External_Devices: Possibility to connect external HDD, flash drive, printer, USB-serial adapter
+ Target-Profile-HARDWARE-USB-Storage_Formats: FAT, FAT32, exFAT, NTFS (read-only), ext2, ext3, ext4
+ Target-Profile-HARDWARE-System_Characteristics-CPU: Quad-core ARM Cortex A7, 717 MHz
+ Target-Profile-HARDWARE-System_Characteristics-RAM: 256 MB, DDR3
+ Target-Profile-HARDWARE-System_Characteristics-Flash_Storage: 256 MB, SPI Flash
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-Power-Connector: 4-pin industrial DC power socket
+ Target-Profile-TECHNICAL-Power-Input_Voltage_Range: 9 - 50 VDC, reverse polarity protection, voltage surge/transient protection; 24 - 36 VDC for railway version of the code RUTX11 020G00
+ Target-Profile-TECHNICAL-Power-PoE_Standards: Possibility to power up through LAN1 port, not compatible with IEEE802.3af, 802.3at and 802.3bt standards, Mode B, 9-50 VDC
+ Target-Profile-TECHNICAL-Power-Power_Consumption: 16 W Max
+ Target-Profile-TECHNICAL-Input_Output-Input: 1 x Digital Input, 0-6 V detected as logic low, 8-30 V detected as logic high
+ Target-Profile-TECHNICAL-Input_Output-Output: 1 x Digital Output, Open collector output, max output 30 V, 300 mA
+ Target-Profile-TECHNICAL-Input_Output-Configurable_IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Ethernet: 4 x RJ45 ports, 10/100/1000 Mbps
+ Target-Profile-TECHNICAL-Physical_Interfaces-IO: 1 x Digital Input, 1 x Digital Output on 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power_Control: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Status_Leds: 4 x WAN type LEDs, 2 x Mobile connection type, 5 x Mobile connection strength, 8 x LAN status, 1 x Power, 2 x 2.4G and 5G Wi-Fi
+ Target-Profile-TECHNICAL-Physical_Interfaces-SIM: 2 x SIM slots (Mini SIM - 2FF), 1.8 V/3 V, external SIM holders
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power: 1 x 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Input_Output: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas: 2 x SMA for Mobile, 2 x RP-SMA for Wi-Fi, 1 x RP-SMA for Bluetooth, 1 x SMA for GNSS
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas_Specifications: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-USB: 1 x USB A port for external devices
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS232: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS485: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Button: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Fibre: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-1_Wire: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-M_Bus: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WiFi: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WPS: 
+ Target-Profile-TECHNICAL-Physical_Specification-Casing_Material: Aluminium housing
+ Target-Profile-TECHNICAL-Physical_Specification-Dimensions: 115 x 44.2 x 95.1 mm
+ Target-Profile-TECHNICAL-Physical_Specification-Weight: 456 g
+ Target-Profile-TECHNICAL-Physical_Specification-Mounting_Options: DIN rail, wall mount, flat surface (all require additional kit)
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Temperature: -40 °C to 75 °C
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Humidity: 10% to 90% non-condensing
+ Target-Profile-TECHNICAL-Operating_Environment-Ingress_Protection_Rating: IP30
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Regulatory: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Operator: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Standards: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-ESD: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Radiated_Immunity: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-EFT: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Surge_Immunity_(AC_Mains_Power_Port): 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-CS: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-DIP: 
+ Target-Profile-REGULATORY-RF-Standards: 
+ Target-Profile-REGULATORY-Safety-Standards: 
+ Target-Profile-REGULATORY-Safety_(Ordinary_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Hazardous_Environments: 
+
+Target-Profile-Description:
+Build firmware images for TELTONIKA RUTX11
+
+
+
+@@
+
+Target-Profile: DEVICE_TEMPLATE_teltonika_rutx12
+Target-Profile-Name: TELTONIKA RUTX12
+Target-Profile-Libc: musl
+Target-Profile-Packages: sysupgrade-helper uboot-ipq40xx kmod-cypress-serial ipq-wifi-teltonika_rutx kmod-usb-uhci kmod-r2ec stm32flasher
+Target-Profile-Features: usb gps mobile wifi dual_band_ssid bluetooth ethernet ios dual_modem nat_offloading multi_tag port_link gigabit_port xfrm-offload tpm reset_button usb-port modbus dot1x-client port-mirror
+Target-Profile-InitialSupportVersion: 2.3.1
+Target-Profile-DefaultLogPartition: 
+Target-Profile-ModemVendor: Quectel Meiglink
+Target-Profile-ModemList: EG06 EG060K EG060W EG12 RG501Q RG520N SLM828
+Target-Profile-MultiProfileName: 
+Target-Profile-hasImageMetadata: 1
+Target-Profile-GPLPrefix: GPL
+Target-Profile-SupportedDevices: TEMPLATE,teltonika,rutx12 elleconet,elc6400
+Target-Profile-BootName: 
+Target-Profile-IncludedDevices: TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1
+Target-Profile-CheckPath: bt_check /sys/bus/usb/drivers/usb/1-1.4/ reboot 7.0-
+Target-Profile-USBJackPath: /usb1/1-1/1-1.3/
+Target-Profile-USBJackPathLowSpeed: 
+Target-Profile-WLANBssidLimit: wlan0 16, wlan1 16
+Target-Profile-LANInterfaceOpt: eth0
+Target-Profile-WANInterfaceOpt: eth1
+Target-Profile-SwitchConfig: "switch0" "0u@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "0u@eth1" "5:wan"
+Target-Profile-InterfaceConfig: lan default_ip 192.168.1.1
+Target-Profile-NetworkConfig: vlans          128, max_mtu        9000, readonly_vlans 2
+Target-Profile-PoeConfig: 
+Target-Profile-PoeChip: 
+Target-Profile-SerialCapabilities: 
+Target-Profile-Dot1xServerCapabilities: 
+Target-Profile-EOL: 
+
+
+Target-Profile-HARDWARE-Mobile-Module: 2 x 4G LTE Cat 6 up to 300 DL/50 UL Mbps; 3G up to 42 DL/ 5.76 UL Mbps
+ Target-Profile-HARDWARE-Mobile-3GPP_Release: Release 12
+ Target-Profile-HARDWARE-Mobile-3GPP_Release-Tooltip: 
+ Target-Profile-HARDWARE-Mobile-eSIM: 
+ Target-Profile-HARDWARE-Mobile-eSIM-Tooltip: 
+ Target-Profile-HARDWARE-Wireless-Wireless_Mode: 802.11b/g/n/ac Wave 2 (WiFi 5)
+ Target-Profile-HARDWARE-Wireless-Wi\-Fi_Users: Up to 150 simultaneous connections
+ Target-Profile-HARDWARE-Bluetooth-Bluetooth_4.0: Bluetooth low energy (LE) for short range communication
+ Target-Profile-HARDWARE-Ethernet-Port: 
+ Target-Profile-HARDWARE-Ethernet-Speed: 
+ Target-Profile-HARDWARE-Ethernet-Standard: 
+ Target-Profile-HARDWARE-WAN-Port: 1 x WAN port
+ Target-Profile-HARDWARE-WAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-WAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-LAN-Port: 4 x LAN ports
+ Target-Profile-HARDWARE-LAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-LAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-Fibre-Port: 
+ Target-Profile-HARDWARE-Serial-RS232: 
+ Target-Profile-HARDWARE-Serial-RS485: 
+ Target-Profile-HARDWARE-Serial-Serial_Functions: 
+ Target-Profile-HARDWARE-SD_card-Physical_Size: 
+ Target-Profile-HARDWARE-SD_card-Applications: 
+ Target-Profile-HARDWARE-SD_card-Capacity: 
+ Target-Profile-HARDWARE-SD_card-Storage_Formats: 
+ Target-Profile-HARDWARE-USB-Data_Rate: USB 2.0
+ Target-Profile-HARDWARE-USB-Applications: Samba share, USB-to-serial
+ Target-Profile-HARDWARE-USB-External_Devices: Possibility to connect external HDD, flash drive, printer, USB-serial adapter
+ Target-Profile-HARDWARE-USB-Storage_Formats: FAT, FAT32, exFAT, NTFS (read-only), ext2, ext3, ext4
+ Target-Profile-HARDWARE-System_Characteristics-CPU: Quad-core ARM Cortex A7, 717 MHz
+ Target-Profile-HARDWARE-System_Characteristics-RAM: 256 MB, DDR3
+ Target-Profile-HARDWARE-System_Characteristics-Flash_Storage: 256 MB, SPI Flash
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-Power-Connector: 4-pin industrial DC power socket
+ Target-Profile-TECHNICAL-Power-Input_Voltage_Range: 9 - 50 VDC, reverse polarity protection, voltage surge/transient protection
+ Target-Profile-TECHNICAL-Power-PoE_Standards: Possibility to power up through LAN1 port, not compatible with IEEE802.3af, 802.3at and 802.3bt standards, Mode B, 9-50 VDC
+ Target-Profile-TECHNICAL-Power-Power_Consumption: Idle < 4 W, Max < 22 W
+ Target-Profile-TECHNICAL-Input_Output-Input: 1 x Digital Input, 0-6 V detected as logic low, 8-30 V detected as logic high
+ Target-Profile-TECHNICAL-Input_Output-Output: 1 x Digital Output, Open collector output, max output 30 V, 300 mA
+ Target-Profile-TECHNICAL-Input_Output-Configurable_IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Ethernet: 5 x RJ45 ports, 10/100/1000 Mbps
+ Target-Profile-TECHNICAL-Physical_Interfaces-IO: 1 x Digital Input, 1 x Digital Output on 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power_Control: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Status_Leds: 4 x connection status LEDs, 6 x connection strength LEDs, 10 x Ethernet port status LEDs, 4 x WAN status LEDs, 1 x Power LED, 2 x 2.4G and 5G Wi-Fi LEDs
+ Target-Profile-TECHNICAL-Physical_Interfaces-SIM: 2 x SIM slots (Mini SIM - 2FF), 1.8 V/3 V, external SIM holders
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power: 1 x 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Input_Output: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas: 4 x SMA for LTE, 2 x RP-SMA for WiFi, 1 x RP-SMA for Bluetooth, 1 x SMA for GNNS
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas_Specifications: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-USB: 1 x USB A port for external devices
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS232: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS485: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Button: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Fibre: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-1_Wire: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-M_Bus: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WiFi: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WPS: 
+ Target-Profile-TECHNICAL-Physical_Specification-Casing_Material: Aluminium housing
+ Target-Profile-TECHNICAL-Physical_Specification-Dimensions: 132 x 44.2 x 95.1 mm
+ Target-Profile-TECHNICAL-Physical_Specification-Weight: 540 g
+ Target-Profile-TECHNICAL-Physical_Specification-Mounting_Options: DIN rail, wall mount, flat surface (all require additional kit)
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Temperature: -40 °C to 75 °C
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Humidity: 10% to 90% non-condensing
+ Target-Profile-TECHNICAL-Operating_Environment-Ingress_Protection_Rating: IP30
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Regulatory: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Operator: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Standards: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-ESD: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Radiated_Immunity: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-EFT: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Surge_Immunity_(AC_Mains_Power_Port): 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-CS: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-DIP: 
+ Target-Profile-REGULATORY-RF-Standards: 
+ Target-Profile-REGULATORY-Safety-Standards: 
+ Target-Profile-REGULATORY-Safety_(Ordinary_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Hazardous_Environments: 
+
+Target-Profile-Description:
+Build firmware images for TELTONIKA RUTX12
+
+
+
+@@
+
+Target-Profile: DEVICE_TEMPLATE_teltonika_rutx14
+Target-Profile-Name: TELTONIKA RUTX14
+Target-Profile-Libc: musl
+Target-Profile-Packages: sysupgrade-helper uboot-ipq40xx kmod-cypress-serial ipq-wifi-teltonika_rutx kmod-usb-uhci kmod-r2ec stm32flasher
+Target-Profile-Features: usb gps dual_sim mobile wifi dual_band_ssid bluetooth ethernet ios at_sim nat_offloading multi_tag port_link gigabit_port xfrm-offload tpm reset_button usb-port modbus dot1x-client port-mirror
+Target-Profile-InitialSupportVersion: 2.6.1
+Target-Profile-DefaultLogPartition: 
+Target-Profile-ModemVendor: Quectel Meiglink
+Target-Profile-ModemList: EG06 EG060K EG060W EG12 RG501Q RG520N SLM828
+Target-Profile-MultiProfileName: 
+Target-Profile-hasImageMetadata: 1
+Target-Profile-GPLPrefix: GPL
+Target-Profile-SupportedDevices: TEMPLATE,teltonika,rutx14 elleconet,elc6400
+Target-Profile-BootName: 
+Target-Profile-IncludedDevices: TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1
+Target-Profile-CheckPath: 
+Target-Profile-USBJackPath: /usb3/3-1/
+Target-Profile-USBJackPathLowSpeed: 
+Target-Profile-WLANBssidLimit: wlan0 16, wlan1 16
+Target-Profile-LANInterfaceOpt: eth0
+Target-Profile-WANInterfaceOpt: eth1
+Target-Profile-SwitchConfig: "switch0" "0u@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "0u@eth1" "5:wan"
+Target-Profile-InterfaceConfig: lan default_ip 192.168.1.1
+Target-Profile-NetworkConfig: vlans          128, max_mtu        9000, readonly_vlans 2
+Target-Profile-PoeConfig: 
+Target-Profile-PoeChip: 
+Target-Profile-SerialCapabilities: 
+Target-Profile-Dot1xServerCapabilities: 
+Target-Profile-EOL: 
+
+
+Target-Profile-HARDWARE-Mobile-Module: 4G LTE Cat 12 up to 600 DL/150 UL Mbps; 3G to to 42 DL/ 11.2 UL Mbps
+ Target-Profile-HARDWARE-Mobile-3GPP_Release: Release 12
+ Target-Profile-HARDWARE-Mobile-3GPP_Release-Tooltip: 
+ Target-Profile-HARDWARE-Mobile-eSIM: 
+ Target-Profile-HARDWARE-Mobile-eSIM-Tooltip: 
+ Target-Profile-HARDWARE-Wireless-Wireless_Mode: 802.11b/g/n/ac Wave 2 (WiFi 5)
+ Target-Profile-HARDWARE-Wireless-Wi\-Fi_Users: Up to 150 simultaneous connections
+ Target-Profile-HARDWARE-Bluetooth-Bluetooth_4.0: Bluetooth low energy (LE) for short range communication
+ Target-Profile-HARDWARE-Ethernet-Port: 
+ Target-Profile-HARDWARE-Ethernet-Speed: 
+ Target-Profile-HARDWARE-Ethernet-Standard: 
+ Target-Profile-HARDWARE-WAN-Port: 1 x WAN port
+ Target-Profile-HARDWARE-WAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-WAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-LAN-Port: 4 x LAN ports
+ Target-Profile-HARDWARE-LAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-LAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-Fibre-Port: 
+ Target-Profile-HARDWARE-Serial-RS232: 
+ Target-Profile-HARDWARE-Serial-RS485: 
+ Target-Profile-HARDWARE-Serial-Serial_Functions: 
+ Target-Profile-HARDWARE-SD_card-Physical_Size: 
+ Target-Profile-HARDWARE-SD_card-Applications: 
+ Target-Profile-HARDWARE-SD_card-Capacity: 
+ Target-Profile-HARDWARE-SD_card-Storage_Formats: 
+ Target-Profile-HARDWARE-USB-Data_Rate: USB 2.0
+ Target-Profile-HARDWARE-USB-Applications: Samba share, USB-to-serial
+ Target-Profile-HARDWARE-USB-External_Devices: Possibility to connect external HDD, flash drive, printer, USB-serial adapter
+ Target-Profile-HARDWARE-USB-Storage_Formats: FAT, FAT32, exFAT, NTFS (read-only), ext2, ext3, ext4
+ Target-Profile-HARDWARE-System_Characteristics-CPU: Quad-core ARM Cortex A7, 717 MHz
+ Target-Profile-HARDWARE-System_Characteristics-RAM: 256 MB, DDR3
+ Target-Profile-HARDWARE-System_Characteristics-Flash_Storage: 256 MB, SPI Flash
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-Power-Connector: 4-pin industrial DC power socket
+ Target-Profile-TECHNICAL-Power-Input_Voltage_Range: 9 - 50 VDC, reverse polarity protection, voltage surge/transient protection
+ Target-Profile-TECHNICAL-Power-PoE_Standards: Possibility to power up through LAN1 port, not compatible with IEEE802.3af, 802.3at and 802.3bt standards, Mode B, 9-50 VDC
+ Target-Profile-TECHNICAL-Power-Power_Consumption: Idle < 4 W, Max < 22 W
+ Target-Profile-TECHNICAL-Input_Output-Input: 1 x Digital Input, 0-6 V detected as logic low, 8-30 V detected as logic high
+ Target-Profile-TECHNICAL-Input_Output-Output: 1 x Digital Output, Open collector output, max output 30 V, 300 mA
+ Target-Profile-TECHNICAL-Input_Output-Configurable_IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Ethernet: 5 x RJ45 ports, 10/100/1000 Mbps
+ Target-Profile-TECHNICAL-Physical_Interfaces-IO: 1 x Digital Input, 1 x Digital Output on 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power_Control: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Status_Leds: 2 x connection status LEDs, 3 x connection strength LEDs, 10 x Ethernet port status LEDs, 4 x WAN status LEDs, 1 x Power LED, 2 x 2.4G and 5G Wi-Fi LEDs
+ Target-Profile-TECHNICAL-Physical_Interfaces-SIM: 2 x SIM slots (Mini SIM - 2FF), 1.8 V/3 V, external SIM holders
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power: 1 x 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Input_Output: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas: 4 x SMA for LTE, 2 x RP-SMA for WiFi, 1 x RP-SMA for Bluetooth, 1 x SMA for GNNS
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas_Specifications: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-USB: 1 x USB A port for external devices
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS232: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS485: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Button: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Fibre: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-1_Wire: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-M_Bus: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WiFi: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WPS: 
+ Target-Profile-TECHNICAL-Physical_Specification-Casing_Material: Aluminium housing
+ Target-Profile-TECHNICAL-Physical_Specification-Dimensions: 132 x 44 x 95 mm
+ Target-Profile-TECHNICAL-Physical_Specification-Weight: 515 g
+ Target-Profile-TECHNICAL-Physical_Specification-Mounting_Options: DIN rail, wall mount, flat surface (all require additional kit)
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Temperature: -40 °C to 75 °C
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Humidity: 10% to 90% non-condensing
+ Target-Profile-TECHNICAL-Operating_Environment-Ingress_Protection_Rating: IP30
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Regulatory: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Operator: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Standards: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-ESD: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Radiated_Immunity: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-EFT: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Surge_Immunity_(AC_Mains_Power_Port): 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-CS: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-DIP: 
+ Target-Profile-REGULATORY-RF-Standards: 
+ Target-Profile-REGULATORY-Safety-Standards: 
+ Target-Profile-REGULATORY-Safety_(Ordinary_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Hazardous_Environments: 
+
+Target-Profile-Description:
+Build firmware images for TELTONIKA RUTX14
+
+
+
+@@
+
+Target-Profile: DEVICE_TEMPLATE_teltonika_rutx50
+Target-Profile-Name: TELTONIKA RUTX50
+Target-Profile-Libc: musl
+Target-Profile-Packages: sysupgrade-helper uboot-ipq40xx kmod-cypress-serial ipq-wifi-teltonika_rutx kmod-usb-uhci kmod-r2ec stm32flasher
+Target-Profile-Features: dual_sim usb gps mobile wifi dual_band_ssid ethernet ios at_sim nat_offloading multi_tag port_link gigabit_port xfrm-offload tpm reset_button usb-port modbus dot1x-client port-mirror
+Target-Profile-InitialSupportVersion: 7.2.8
+Target-Profile-DefaultLogPartition: 
+Target-Profile-ModemVendor: Quectel Meiglink
+Target-Profile-ModemList: EG06 EG060K EG060W EG12 RG501Q RG520N SLM828
+Target-Profile-MultiProfileName: 
+Target-Profile-hasImageMetadata: 1
+Target-Profile-GPLPrefix: GPL
+Target-Profile-SupportedDevices: TEMPLATE,teltonika,rutx50 elleconet,elc6400
+Target-Profile-BootName: 
+Target-Profile-IncludedDevices: TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1
+Target-Profile-CheckPath: 
+Target-Profile-USBJackPath: /usb3/3-1/
+Target-Profile-USBJackPathLowSpeed: 
+Target-Profile-WLANBssidLimit: wlan0 16, wlan1 16
+Target-Profile-LANInterfaceOpt: eth0
+Target-Profile-WANInterfaceOpt: eth1
+Target-Profile-SwitchConfig: "switch0" "0u@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "0u@eth1" "5:wan"
+Target-Profile-InterfaceConfig: lan default_ip 192.168.1.1
+Target-Profile-NetworkConfig: vlans          128, max_mtu        9000, readonly_vlans 2
+Target-Profile-PoeConfig: 
+Target-Profile-PoeChip: 
+Target-Profile-SerialCapabilities: 
+Target-Profile-Dot1xServerCapabilities: 
+Target-Profile-EOL: 
+
+
+Target-Profile-HARDWARE-Mobile-Module: 5G Sub-6Ghz SA/NSA 2.1/3.3Gbps DL (4x4 MIMO), 900/600 Mbps UL (2x2); 4G LTE Cat 20 up to 2.0 Gbps DL/ 200M Mbps UL; 3G up to 42 DL/ 5.76 UL Mbps
+ Target-Profile-HARDWARE-Mobile-3GPP_Release: Release 15/16
+ Target-Profile-HARDWARE-Mobile-3GPP_Release-Tooltip: Depends on order code
+ Target-Profile-HARDWARE-Mobile-eSIM: 
+ Target-Profile-HARDWARE-Mobile-eSIM-Tooltip: 
+ Target-Profile-HARDWARE-Wireless-Wireless_Mode: 802.11b/g/n/ac Wave 2 (WiFi 5)
+ Target-Profile-HARDWARE-Wireless-Wi\-Fi_Users: Up to 150 simultaneous connections
+ Target-Profile-HARDWARE-Bluetooth-Bluetooth_4.0: 
+ Target-Profile-HARDWARE-Ethernet-Port: 
+ Target-Profile-HARDWARE-Ethernet-Speed: 
+ Target-Profile-HARDWARE-Ethernet-Standard: 
+ Target-Profile-HARDWARE-WAN-Port: 1 x WAN port
+ Target-Profile-HARDWARE-WAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-WAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-LAN-Port: 4 x LAN ports
+ Target-Profile-HARDWARE-LAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-LAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-Fibre-Port: 
+ Target-Profile-HARDWARE-Serial-RS232: 
+ Target-Profile-HARDWARE-Serial-RS485: 
+ Target-Profile-HARDWARE-Serial-Serial_Functions: 
+ Target-Profile-HARDWARE-SD_card-Physical_Size: 
+ Target-Profile-HARDWARE-SD_card-Applications: 
+ Target-Profile-HARDWARE-SD_card-Capacity: 
+ Target-Profile-HARDWARE-SD_card-Storage_Formats: 
+ Target-Profile-HARDWARE-USB-Data_Rate: USB 2.0
+ Target-Profile-HARDWARE-USB-Applications: Samba share, USB-to-serial
+ Target-Profile-HARDWARE-USB-External_Devices: Possibility to connect external HDD, flash drive, printer, USB-serial adapter
+ Target-Profile-HARDWARE-USB-Storage_Formats: FAT, FAT32, exFAT, NTFS (read-only), ext2, ext3, ext4
+ Target-Profile-HARDWARE-System_Characteristics-CPU: Quad-core ARM Cortex A7, 717 MHz
+ Target-Profile-HARDWARE-System_Characteristics-RAM: 256 MB (100 MB available for userspace)
+ Target-Profile-HARDWARE-System_Characteristics-Flash_Storage: 256 MB (80 MB available for userspace)
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-Power-Connector: 4-pin industrial DC power socket
+ Target-Profile-TECHNICAL-Power-Input_Voltage_Range: 9-50 VDC, reverse polarity protection, surge protection >51 VDC 10us max
+ Target-Profile-TECHNICAL-Power-PoE_Standards: Possibility to power up through LAN1 port, not compatible with IEEE802.3af, 802.3at and 802.3bt standards, Mode B, 9-50 VDC
+ Target-Profile-TECHNICAL-Power-Power_Consumption: Idle < 4 W, Max < 18 W
+ Target-Profile-TECHNICAL-Input_Output-Input: 1 x Digital Input, 0-6 V detected as logic low, 8-30 V detected as logic high
+ Target-Profile-TECHNICAL-Input_Output-Output: 1 x Digital Output, Open collector output, max output 30 V, 300 mA
+ Target-Profile-TECHNICAL-Input_Output-Configurable_IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Ethernet: 5 x RJ45 ports, 10/100/1000 Mbps
+ Target-Profile-TECHNICAL-Physical_Interfaces-IO: 1 x Digital Input, 1 x Digital Output on 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power_Control: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Status_Leds: 3 x connection status LEDs, 3 x connection strength LEDs, 10 x Ethernet port status LEDs, 4 x WAN status LEDs, 1 x Power LED, 2 x 2.4G and 5G Wi-Fi LEDs
+ Target-Profile-TECHNICAL-Physical_Interfaces-SIM: 2 x SIM slots (Mini SIM - 2FF), 1.8 V/3 V, external SIM holders
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power: 1 x 4-pin power connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Input_Output: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas: 4 x SMA for Mobile, 2 x RP-SMA for Wi-Fi, 1 x SMA for GNNS
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas_Specifications: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-USB: 1 x USB A port for external devices
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS232: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS485: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Button: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Fibre: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-1_Wire: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-M_Bus: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WiFi: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WPS: 
+ Target-Profile-TECHNICAL-Physical_Specification-Casing_Material: Aluminium housing
+ Target-Profile-TECHNICAL-Physical_Specification-Dimensions: 132 x 44.2 x 95.1 mm
+ Target-Profile-TECHNICAL-Physical_Specification-Weight: 533 g
+ Target-Profile-TECHNICAL-Physical_Specification-Mounting_Options: DIN rail, wall mount, flat surface (all require additional kit)
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Temperature: -40 °C to 75 °C
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Humidity: 10% to 90% non-condensing
+ Target-Profile-TECHNICAL-Operating_Environment-Ingress_Protection_Rating: IP30
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Regulatory: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Operator: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Standards: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-ESD: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Radiated_Immunity: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-EFT: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Surge_Immunity_(AC_Mains_Power_Port): 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-CS: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-DIP: 
+ Target-Profile-REGULATORY-RF-Standards: 
+ Target-Profile-REGULATORY-Safety-Standards: 
+ Target-Profile-REGULATORY-Safety_(Ordinary_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Hazardous_Environments: 
+
+Target-Profile-Description:
+Build firmware images for TELTONIKA RUTX50
+
+
+
+@@
+
+Target-Profile: DEVICE_TEMPLATE_teltonika_rutxr1
+Target-Profile-Name: TELTONIKA RUTXR1
+Target-Profile-Libc: musl
+Target-Profile-Packages: sysupgrade-helper uboot-ipq40xx kmod-cypress-serial ipq-wifi-teltonika_rutx kmod-usb-uhci kmod-r2ec stm32flasher
+Target-Profile-Features: dual_sim usb mobile wifi dual_band_ssid ethernet sfp_port sfp_switch console nat_offloading multi_tag port_link gigabit_port xfrm-offload tpm reset_button usb-port modbus dot1x-client port-mirror
+Target-Profile-InitialSupportVersion: 2.3.1
+Target-Profile-DefaultLogPartition: 
+Target-Profile-ModemVendor: Quectel Meiglink
+Target-Profile-ModemList: EG06 EG060K EG060W EG12 RG501Q RG520N SLM828
+Target-Profile-MultiProfileName: 
+Target-Profile-hasImageMetadata: 1
+Target-Profile-GPLPrefix: GPL
+Target-Profile-SupportedDevices: TEMPLATE,teltonika,rutxr1 elleconet,elc6400
+Target-Profile-BootName: 
+Target-Profile-IncludedDevices: TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1
+Target-Profile-CheckPath: 
+Target-Profile-USBJackPath: /usb1/1-1/1-1.2/
+Target-Profile-USBJackPathLowSpeed: 
+Target-Profile-WLANBssidLimit: wlan0 16, wlan1 16
+Target-Profile-LANInterfaceOpt: eth0
+Target-Profile-WANInterfaceOpt: eth1
+Target-Profile-SwitchConfig: "switch0" "0u@eth0" "1:lan" "2:lan" "3:lan" "4:lan" "0u@eth1" "5:wan#s"
+Target-Profile-InterfaceConfig: lan default_ip 192.168.1.1
+Target-Profile-NetworkConfig: vlans          128, max_mtu        9000, readonly_vlans 2
+Target-Profile-PoeConfig: 
+Target-Profile-PoeChip: 
+Target-Profile-SerialCapabilities: "rsconsole" "300 600 1200 2400 4800 9600 19200 38400 57600 115200" "7 8" "rts/cts xon/xoff none" "1 2" "even odd mark space none" "none" "/usb1/1-1/1-1.3/"
+Target-Profile-Dot1xServerCapabilities: 
+Target-Profile-EOL: 
+
+
+Target-Profile-HARDWARE-Mobile-Module: 4G LTE Cat 6 up to 300 DL/ 50 UL Mbps; 3G up to 42 DL/ 5.76 UL Mbps
+ Target-Profile-HARDWARE-Mobile-3GPP_Release: Release 11
+ Target-Profile-HARDWARE-Mobile-3GPP_Release-Tooltip: 
+ Target-Profile-HARDWARE-Mobile-eSIM: 
+ Target-Profile-HARDWARE-Mobile-eSIM-Tooltip: 
+ Target-Profile-HARDWARE-Wireless-Wireless_Mode: 802.11b/g/n/ac Wave 2 (WiFi 5)
+ Target-Profile-HARDWARE-Wireless-Wi\-Fi_Users: Up to 150 simultaneous connections
+ Target-Profile-HARDWARE-Bluetooth-Bluetooth_4.0: 
+ Target-Profile-HARDWARE-Ethernet-Port: 
+ Target-Profile-HARDWARE-Ethernet-Speed: 
+ Target-Profile-HARDWARE-Ethernet-Standard: 
+ Target-Profile-HARDWARE-WAN-Port: 1 x WAN port
+ Target-Profile-HARDWARE-WAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-WAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-LAN-Port: 4 x LAN ports
+ Target-Profile-HARDWARE-LAN-Speed: 10/100/1000 Mbps
+ Target-Profile-HARDWARE-LAN-Standard: Compliance with IEEE 802.3, IEEE 802.3u, 802.3az standards, supports auto MDI/MDIX crossover
+ Target-Profile-HARDWARE-Fibre-Port: 1 x SFP port (cannot work simultaneously with Ethernet WAN port)
+ Target-Profile-HARDWARE-Serial-RS232: 
+ Target-Profile-HARDWARE-Serial-RS485: 
+ Target-Profile-HARDWARE-Serial-Serial_Functions: 
+ Target-Profile-HARDWARE-SD_card-Physical_Size: 
+ Target-Profile-HARDWARE-SD_card-Applications: 
+ Target-Profile-HARDWARE-SD_card-Capacity: 
+ Target-Profile-HARDWARE-SD_card-Storage_Formats: 
+ Target-Profile-HARDWARE-USB-Data_Rate: USB 2.0
+ Target-Profile-HARDWARE-USB-Applications: Samba share, USB-to-serial
+ Target-Profile-HARDWARE-USB-External_Devices: Possibility to connect external HDD, flash drive, printer, USB-serial adapter
+ Target-Profile-HARDWARE-USB-Storage_Formats: FAT, FAT32, exFAT, NTFS (read-only), ext2, ext3, ext4
+ Target-Profile-HARDWARE-System_Characteristics-CPU: Quad-core ARM Cortex A7, 717 MHz
+ Target-Profile-HARDWARE-System_Characteristics-RAM: 256 MB, DDR3
+ Target-Profile-HARDWARE-System_Characteristics-Flash_Storage: 256 MB, SPI Flash
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-Power-Connector: 2 x 4-pin industrial DC power sockets for main and redundancy power source
+ Target-Profile-TECHNICAL-Power-Input_Voltage_Range: 9 - 50 VDC, reverse polarity protection, voltage surge/transient protection
+ Target-Profile-TECHNICAL-Power-PoE_Standards: 
+ Target-Profile-TECHNICAL-Power-Power_Consumption: Idle < 3 W, Max < 18 W
+ Target-Profile-TECHNICAL-Input_Output-Input: 
+ Target-Profile-TECHNICAL-Input_Output-Output: 
+ Target-Profile-TECHNICAL-Input_Output-Configurable_IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Ethernet: 5 x RJ45 ports, 10/100/1000 Mbps
+ Target-Profile-TECHNICAL-Physical_Interfaces-IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power_Control: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Status_Leds: 2 x WAN type, 2 x Mobile connection type, 3 x Mobile signal strength, 2 x active SIM, 10 x Ethernet status, 2 x Console status, 2 x Power
+ Target-Profile-TECHNICAL-Physical_Interfaces-SIM: 2 x SIM slots (Mini SIM - 2FF), 1.8 V/3 V, external SIM holders
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power: 2 x 4-pin DC connector
+ Target-Profile-TECHNICAL-Physical_Interfaces-Input_Output: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas: 2 x SMA for LTE, 2 x RP-SMA for Wi-Fi
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas_Specifications: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-USB: 1 x USB A port for external devices
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS232: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS485: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Button: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Fibre: 1 x SFP port
+ Target-Profile-TECHNICAL-Physical_Interfaces-1_Wire: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-M_Bus: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WiFi: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WPS: 
+ Target-Profile-TECHNICAL-Physical_Specification-Casing_Material: Full steel housing
+ Target-Profile-TECHNICAL-Physical_Specification-Dimensions: 272 x 42.6 x 122.6 mm
+ Target-Profile-TECHNICAL-Physical_Specification-Weight: 1093 g
+ Target-Profile-TECHNICAL-Physical_Specification-Mounting_Options: Rack mounting kit
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Temperature: -40 °C to 75 °C
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Humidity: 10% to 90% non-condensing
+ Target-Profile-TECHNICAL-Operating_Environment-Ingress_Protection_Rating: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Regulatory: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Operator: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Standards: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-ESD: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Radiated_Immunity: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-EFT: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Surge_Immunity_(AC_Mains_Power_Port): 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-CS: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-DIP: 
+ Target-Profile-REGULATORY-RF-Standards: 
+ Target-Profile-REGULATORY-Safety-Standards: 
+ Target-Profile-REGULATORY-Safety_(Ordinary_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Hazardous_Environments: 
+
+Target-Profile-Description:
+Build firmware images for TELTONIKA RUTXR1
+
+
+
+@@
+
+Target-Profile: DEVICE_teltonika_rutx
+Target-Profile-Name: TELTONIKA RUTX
+Target-Profile-Libc: musl
+Target-Profile-Packages: sysupgrade-helper uboot-ipq40xx kmod-cypress-serial ipq-wifi-teltonika_rutx kmod-usb-uhci kmod-r2ec stm32flasher
+Target-Profile-Features: usb-port gps modbus ios wifi bluetooth dualsim port-mirror mobile dot1x-client port_link sw-offload xfrm-offload tpm reset_button ncm
+Target-Profile-InitialSupportVersion: 
+Target-Profile-DefaultLogPartition: 
+Target-Profile-ModemVendor: Quectel Meiglink
+Target-Profile-ModemList: EG06 EG060K EG060W EG12 RG501Q RG520N SLM828
+Target-Profile-MultiProfileName: 
+Target-Profile-hasImageMetadata: 1
+Target-Profile-GPLPrefix: GPL
+Target-Profile-SupportedDevices: teltonika,rutx elleconet,elc6400
+Target-Profile-BootName: 
+Target-Profile-IncludedDevices: TEMPLATE_teltonika_rutx08 TEMPLATE_teltonika_rutx09 TEMPLATE_teltonika_rutx10 TEMPLATE_teltonika_rutx11 TEMPLATE_teltonika_rutx12 TEMPLATE_teltonika_rutx14 TEMPLATE_teltonika_rutx50 TEMPLATE_teltonika_rutxr1
+Target-Profile-CheckPath: 
+Target-Profile-USBJackPath: 
+Target-Profile-USBJackPathLowSpeed: 
+Target-Profile-WLANBssidLimit: 
+Target-Profile-LANInterfaceOpt: 
+Target-Profile-WANInterfaceOpt: 
+Target-Profile-SwitchConfig: 
+Target-Profile-InterfaceConfig: 
+Target-Profile-NetworkConfig: 
+Target-Profile-PoeConfig: 
+Target-Profile-PoeChip: 
+Target-Profile-SerialCapabilities: 
+Target-Profile-Dot1xServerCapabilities: 
+Target-Profile-EOL: 
+
+
+Target-Profile-HARDWARE-Mobile-Module: 
+ Target-Profile-HARDWARE-Mobile-3GPP_Release: 
+ Target-Profile-HARDWARE-Mobile-3GPP_Release-Tooltip: 
+ Target-Profile-HARDWARE-Mobile-eSIM: 
+ Target-Profile-HARDWARE-Mobile-eSIM-Tooltip: 
+ Target-Profile-HARDWARE-Wireless-Wireless_Mode: 
+ Target-Profile-HARDWARE-Wireless-Wi\-Fi_Users: 
+ Target-Profile-HARDWARE-Bluetooth-Bluetooth_4.0: 
+ Target-Profile-HARDWARE-Ethernet-Port: 
+ Target-Profile-HARDWARE-Ethernet-Speed: 
+ Target-Profile-HARDWARE-Ethernet-Standard: 
+ Target-Profile-HARDWARE-WAN-Port: 
+ Target-Profile-HARDWARE-WAN-Speed: 
+ Target-Profile-HARDWARE-WAN-Standard: 
+ Target-Profile-HARDWARE-LAN-Port: 
+ Target-Profile-HARDWARE-LAN-Speed: 
+ Target-Profile-HARDWARE-LAN-Standard: 
+ Target-Profile-HARDWARE-Fibre-Port: 
+ Target-Profile-HARDWARE-Serial-RS232: 
+ Target-Profile-HARDWARE-Serial-RS485: 
+ Target-Profile-HARDWARE-Serial-Serial_Functions: 
+ Target-Profile-HARDWARE-SD_card-Physical_Size: 
+ Target-Profile-HARDWARE-SD_card-Applications: 
+ Target-Profile-HARDWARE-SD_card-Capacity: 
+ Target-Profile-HARDWARE-SD_card-Storage_Formats: 
+ Target-Profile-HARDWARE-USB-Data_Rate: 
+ Target-Profile-HARDWARE-USB-Applications: 
+ Target-Profile-HARDWARE-USB-External_Devices: 
+ Target-Profile-HARDWARE-USB-Storage_Formats: 
+ Target-Profile-HARDWARE-System_Characteristics-CPU: 
+ Target-Profile-HARDWARE-System_Characteristics-RAM: 
+ Target-Profile-HARDWARE-System_Characteristics-Flash_Storage: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out_(Optional)-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_In-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Ports: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Standards: 
+ Target-Profile-TECHNICAL-PoE_Out-PoE_Max_Power_per_Port_(at_PSE): 
+ Target-Profile-TECHNICAL-Power-Connector: 
+ Target-Profile-TECHNICAL-Power-Input_Voltage_Range: 
+ Target-Profile-TECHNICAL-Power-PoE_Standards: 
+ Target-Profile-TECHNICAL-Power-Power_Consumption: 
+ Target-Profile-TECHNICAL-Input_Output-Input: 
+ Target-Profile-TECHNICAL-Input_Output-Output: 
+ Target-Profile-TECHNICAL-Input_Output-Configurable_IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Ethernet: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-IO: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power_Control: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Status_Leds: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-SIM: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Power: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Input_Output: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Antennas_Specifications: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-USB: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS232: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-RS485: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Button: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-Fibre: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-1_Wire: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-M_Bus: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WiFi: 
+ Target-Profile-TECHNICAL-Physical_Interfaces-WPS: 
+ Target-Profile-TECHNICAL-Physical_Specification-Casing_Material: 
+ Target-Profile-TECHNICAL-Physical_Specification-Dimensions: 
+ Target-Profile-TECHNICAL-Physical_Specification-Weight: 
+ Target-Profile-TECHNICAL-Physical_Specification-Mounting_Options: 
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Temperature: 
+ Target-Profile-TECHNICAL-Operating_Environment-Operating_Humidity: 
+ Target-Profile-TECHNICAL-Operating_Environment-Ingress_Protection_Rating: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Regulatory: 
+ Target-Profile-REGULATORY-Regulatory_&_Type_Approvals-Operator: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Standards: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-ESD: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Radiated_Immunity: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-EFT: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-Surge_Immunity_(AC_Mains_Power_Port): 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-CS: 
+ Target-Profile-REGULATORY-EMC_Emissions_&_Immunity-DIP: 
+ Target-Profile-REGULATORY-RF-Standards: 
+ Target-Profile-REGULATORY-Safety-Standards: 
+ Target-Profile-REGULATORY-Safety_(Ordinary_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Standards: 
+ Target-Profile-REGULATORY-Safety_(Hazardous_Locations)-Hazardous_Environments: 
+
+Target-Profile-Description:
+Build firmware images for TELTONIKA RUTX
+
+
+
+@@
+
+

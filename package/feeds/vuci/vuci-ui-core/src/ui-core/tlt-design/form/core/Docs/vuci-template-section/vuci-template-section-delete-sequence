@@ -1,0 +1,28 @@
+sequenceDiagram
+    autonumber
+    actor User
+    User->>TltTemplateCard: delSection(sid=)
+    activate User
+    TltTemplateCard->>VuciFormEditDelete: delSection(sid=)
+    activate TltTemplateCard
+    VuciFormEditDelete->>VuciTemplateSection: delSection(sid=)
+    alt on delete
+        VuciTemplateSection->>Prompt: onOk()
+        activate VuciTemplateSection
+        activate Prompt
+        Prompt->>Prompt: close()
+        Prompt->>VuciTemplateSection: back()
+        VuciTemplateSection->>TltTemplateCard: back()
+        TltTemplateCard-->>User: template deleted
+    else on cancel
+        VuciTemplateSection->>Prompt: onCancel()
+        Prompt->>Prompt: close()
+        Prompt->>VuciTemplateSection: back()
+        deactivate Prompt
+        VuciTemplateSection->>TltTemplateCard: back()
+        deactivate VuciTemplateSection
+        deactivate TltTemplateCard
+        TltTemplateCard-->>User: template delete canceled
+        deactivate User
+    end
+

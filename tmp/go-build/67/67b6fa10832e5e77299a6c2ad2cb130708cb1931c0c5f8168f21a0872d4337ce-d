@@ -1,0 +1,7 @@
+./checksum.go
+./checksum_generic.go
+./errors.go
+./offload.go
+./offload_linux.go
+./tun.go
+./tun_linux.go

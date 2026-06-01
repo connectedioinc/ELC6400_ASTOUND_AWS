@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/fmt-usb-msd/Makefile
+
+Package: fmt-usb-msd
+Submenu: Filesystem
+Version: 2025-05-15-1
+Depends: +libc +fstools +libubox +e2fsprogs
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: USB Mass Storage Device formatting utility
+Maintainer: 
+Source: 
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: USB Mass Storage Device formatting utility
+Description: 	Formats USB Mass Storage Devices to exFat or journal-less EXT4
+
+@@
+
+

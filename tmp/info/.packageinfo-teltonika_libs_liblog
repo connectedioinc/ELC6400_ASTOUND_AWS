@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/libs/liblog/Makefile
+
+Package: liblog
+Version: 2024-09-30
+Depends: +libc +libubus +libubox
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library for logd DB management. Select, insert etc.
+Maintainer: 
+Source: liblog-1.4-2024-09-30.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A library for logd DB management. Select, insert etc.
+Description: 	A simple lib with ubus to manage logd.
+
+@@
+
+

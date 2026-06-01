@@ -1,0 +1,23 @@
+Source-Makefile: package/teltonika/sim_switch/Makefile
+
+Package: sim_switch
+Version: 2026-01-13-1
+Depends: +libc +libubus +libubox +libblobmsg-json +libuci +libgsm +liblog +libboardjson
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: SIM Switch management daemon
+Maintainer: 
+Require-User: sim_switch=502:sim_switch=502
+Source: sim_switch-7.21-2026-01-13.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: SIM Switch management daemon
+Description: 	Package enables automated SIM switching based on specified criteria.
+
+@@
+
+

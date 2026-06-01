@@ -1,0 +1,547 @@
+{
+  "openapi": "3.0.0",
+  "tags": [
+    {
+      "name": "Server nodes"
+    }
+  ],
+  "paths": {
+    "/opcua/destination_server/nodes/config": {
+      "get": {
+        "tags": [
+          "Server nodes"
+        ],
+        "summary": "Returns all OPC UA server node configurations.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpcuaServerNodeMulti"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Server nodes"
+        ],
+        "summary": "Creates a OPC UA server node configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200OpcuaServerNode"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/opcua_node_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Server nodes"
+        ],
+        "summary": "Updates specified OPC UA server node configurations. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpcuaServerNodeMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/opcua_node_options"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Server nodes"
+        ],
+        "summary": "Deletes specified OPC UA server node configurations.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-web": {
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Server",
+          "Data Sources"
+        ],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    },
+    "/opcua/destination_server/nodes/config/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "OPC UA server node Configuration identifier (ID)"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Server nodes"
+        ],
+        "summary": "Returns the specified OPC UA server node configuration.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpcuaServerNode"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Server nodes"
+        ],
+        "summary": "Updates the specified OPC UA server node configuration. Data sources can be found using /universal_gateway/options endpoint",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200OpcuaServerNode"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/opcua_node_single_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Server nodes"
+        ],
+        "summary": "Deletes specified OPC UA server node configuration.",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "OPC UA server node Configuration identifier (ID)"
+          }
+        ]
+      },
+      "x-web": {
+        "name": "OPC UA",
+        "menu": [
+          "Services",
+          "OPC UA",
+          "Server",
+          "Data Sources"
+        ],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200OpcuaServerNode": {
+        "description": "Returns configuration",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "$ref": "#/components/schemas/opcua_node_options"
+                }
+              }
+            }
+          }
+        }
+      },
+      "200OpcuaServerNodeMulti": {
+        "description": "Returns configurations",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/opcua_node_options"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "opcua_node_single_options": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "string",
+            "description": "Enable/disable OPC UA server node.",
+            "format": "is_bool",
+            "enum": [
+              "0",
+              "1"
+            ],
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            }
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of configuration.",
+            "maxLength": 128,
+            "x-web": {
+              "pretty": "Name",
+              "input-type": "input"
+            }
+          },
+          "node_id_type": {
+            "type": "string",
+            "description": "Node ID type.",
+            "enum": [
+              "numeric",
+              "string",
+              "guid",
+              "bytestring"
+            ],
+            "x-web": {
+              "pretty": "Node ID type",
+              "input-type": "select",
+              "enum-pretty": {
+                "numeric": "Numeric",
+                "string": "String",
+                "guid": "GUID",
+                "bytestring": "Byte string"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "node_id": {
+            "type": "string",
+            "description": "Node ID. Format depends on the selected Node ID type, which can be an integer (2-2147483647), string, GUID or BASE64.",
+            "x-web": {
+              "pretty": "Node ID",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "source": {
+            "type": "string",
+            "description": "Source service name.",
+            "enum": [
+              "mbus_client",
+              "modbus_client",
+              "dnp3_client",
+              "opcua_server"
+            ],
+            "x-web": {
+              "pretty": "Source",
+              "input-type": "select",
+              "enum-pretty": {
+                "mbus_client": "M-Bus",
+                "modbus_client": "Modbus Client",
+                "dnp3_client": "DNP3 Client",
+                "opcua_server": "OPC UA Server"
+              },
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "source_value_id": {
+            "type": "string",
+            "description": "Value from source.",
+            "x-web": {
+              "pretty": "Value from source",
+              "input-type": "input",
+              "require-depends": [
+                {
+                  "enabled": "1"
+                }
+              ]
+            }
+          },
+          "source_value_type": {
+            "type": "string",
+            "description": "Value data type. Provide if source value is of 'unknown' type",
+            "enum": [
+              "string",
+              "binary",
+              "bool",
+              "int8",
+              "uint8",
+              "int16",
+              "uint16",
+              "int32",
+              "uint32",
+              "int64",
+              "uint64",
+              "float32",
+              "float64"
+            ],
+            "x-web": {
+              "pretty": "Value data type",
+              "input-type": "select",
+              "enum-pretty": {
+                "string": "String",
+                "binary": "Binary",
+                "bool": "Bool",
+                "int8": "INT8",
+                "uint8": "UINT8",
+                "int16": "INT16",
+                "uint16": "UINT16",
+                "int32": "INT32",
+                "uint32": "UINT32",
+                "int64": "INT64",
+                "uint64": "UINT64",
+                "float32": "FLOAT32",
+                "float64": "FLOAT64"
+              }
+            }
+          },
+          "io_type": {
+            "type": "string",
+            "description": "I/O type.",
+            "enum": [
+              "din",
+              "dout",
+              "dio",
+              "relay",
+              "adc"
+            ],
+            "x-web": {
+              "pretty": "I/O type",
+              "input-type": "select",
+              "enum-pretty": {
+                "din": "Digital input",
+                "dout": "Digital output",
+                "dio": "Digital input/output",
+                "relay": "Relay",
+                "adc": "Analog input"
+              },
+              "enum-depends": [
+                { "hw_tags": { "din1": true, "din2": true }, "values": ["din"] },
+                { "hw_tags": { "din1": true, "din2": false }, "values": ["din"] },
+                { "hw_tags": { "din1": false, "din2": true }, "values": ["din"] },
+                { "hw_tags": { "dout1": true, "dout2": true }, "values": ["dout"] },
+                { "hw_tags": { "dout1": true, "dout2": false }, "values": ["dout"] },
+                { "hw_tags": { "dout1": false, "dout2": true }, "values": ["dout"] },
+                { "hw_tags": { "dio0": true, "dio1": true, "dio2": true }, "values": ["dio"] },
+                { "hw_tags": { "dio0": true, "dio1": true, "dio2": false }, "values": ["dio"] },
+                { "hw_tags": { "dio0": true, "dio1": false, "dio2": true }, "values": ["dio"] },
+                { "hw_tags": { "dio0": true, "dio1": false, "dio2": false }, "values": ["dio"] },
+                { "hw_tags": { "dio0": false, "dio1": true, "dio2": true }, "values": ["dio"] },
+                { "hw_tags": { "dio0": false, "dio1": true, "dio2": false }, "values": ["dio"] },
+                { "hw_tags": { "dio0": false, "dio1": false, "dio2": true }, "values": ["dio"] },
+                { "hw_tags": { "relay0": true, "relay1": true }, "values": ["relay"] },
+                { "hw_tags": { "relay0": true, "relay1": false }, "values": ["relay"] },
+                { "hw_tags": { "relay0": false, "relay1": true }, "values": ["relay"] },
+                { "hw_tags": { "adc0": true }, "values": ["adc"] }
+              ],
+              "hw_tags": {
+                "ios": true
+              },
+              "depends": [
+                {
+                  "source": "opcua_server",
+                  "source_value_id": "io"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enabled": "1",
+                  "source": "opcua_server",
+                  "source_value_id": "io"
+                }
+              ]
+            }
+          },
+          "io_field": {
+            "type": "string",
+            "description": "I/O field.",
+            "enum": [
+              "high",
+              "input",
+              "closed",
+              "value"
+            ],
+            "x-web": {
+              "pretty": "I/O field",
+              "input-type": "select",
+              "enum-pretty": {
+                "high": "High",
+                "input": "Direction",
+                "closed": "Closed",
+                "value": "Value"
+              },
+              "enum-depends": [
+                { "depends": { "io_type": "din" }, "values": [ "high" ] },
+                { "depends": { "io_type": "dout" }, "values": [ "high" ] },
+                { "depends": { "io_type": "dio" }, "values": [ "high", "input" ] },
+                { "depends": { "io_type": "relay" }, "values": [ "closed" ] },
+                { "depends": { "io_type": "adc" }, "values": [ "value" ] }
+              ],
+              "hw_tags": {
+                "ios": true
+              },
+              "depends": [
+                {
+                  "source": "opcua_server",
+                  "source_value_id": "io"
+                }
+              ],
+              "require-depends": [
+                {
+                  "enabled": "1",
+                  "source": "opcua_server",
+                  "source_value_id": "io"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "opcua_node_options": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "OPC UA server node Configuration identifier (ID)."
+              }
+            },
+            "required": [
+              "id"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/opcua_node_single_options"
+          }
+        ]
+      }
+    }
+  }
+}

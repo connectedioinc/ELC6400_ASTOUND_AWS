@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/libs/libnetifd/Makefile
+
+Package: libnetifd
+Version: 2024-06-18-1
+Depends: +libc +libubus +libuci +libblobmsg-json +libjson-c +netifd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A library meant for handling interfaces via netifd ubus object
+Maintainer: 
+Source: libnetifd-7.8-2024-06-18.tar.gz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: A library meant for handling interfaces via netifd ubus object
+Description: 	Library meant for handling interface information from netifd ubus object.
+
+@@
+
+

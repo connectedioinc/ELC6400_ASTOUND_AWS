@@ -1,0 +1,21 @@
+Source-Makefile: package/utils/cio_watchdog/Makefile
+
+Package: cio_watchdog
+Version: 1
+Depends: +libc +libopenssl +libpthread libcurl mosquitto libmosquitto mosquitto-ssl libmosquitto-ssl libjson-c zlib
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: cioClient emergency channel
+Maintainer: 
+Source: 
+Type: ipkg
+Detail-Description: cioClient emergency channel
+Description: cioClient emergency channel
+
+@@
+
+

@@ -1,0 +1,437 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Networkmap",
+    "version": "1.0",
+    "description": "Networkmap API documentation",
+    "contact": {}
+  },
+  "servers": [],
+  "paths": {
+    "/topology/status": {
+      "get": {
+        "summary": "Get interfaces information for devices scanning",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_networkmap_interfaces"
+          }
+        },
+        "operationId": "get-status-networkmap-interfaces",
+        "description": "Interfaces information for devices scanning",
+        "tags": ["General"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Topology"],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    },
+    "/topology/scan/status": {
+      "get": {
+        "summary": "Get history of started scans",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_networkmap_results"
+          }
+        },
+        "description": "Scan history",
+        "tags": ["General"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Topology"],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    },
+    "/topology/actions/start_scan": {
+      "post": {
+        "summary": "Start topology scan",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_networkmap_scan"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/start_scan"
+        },
+        "description": "Start topology scan",
+        "tags": ["General"]
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Topology"],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    },
+    "/topology/actions/devices_scan": {
+      "post": {
+        "summary": "Get devices information",
+        "operationId": "post-topology-devices_scan",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200_networkmap_devices"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "$ref": "#/components/requestBodies/devices_scan"
+        },
+        "description": "Get devices information",
+        "tags": ["General"],
+        "deprecated": true
+      },
+      "parameters": [],
+      "x-web": {
+        "menu": ["Status", "Network", "Topology"],
+        "hw_tags": {
+          "is_access_point": false
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "networkmap_devices": {
+        "description": "",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "mac": "00:1e:42:41:cd:c8",
+            "type": "wan",
+            "hostname": "",
+            "interface": "wan",
+            "vendor": "Teltonika",
+            "ip": "192.168.81.114",
+            "name": "wan_1"
+          }
+        },
+        "properties": {
+          "mac": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "hostname": {
+            "type": "string"
+          },
+          "interface": {
+            "type": "string"
+          },
+          "vendor": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "port": {
+            "type": "string"
+          }
+        }
+      },
+      "networkmap_interface": {
+        "description": "",
+        "type": "object",
+        "x-examples": {
+          "example-1": {
+            "proto": "static",
+            "disabled": "0",
+            "ip": "192.168.1.1/24",
+            "status": "true",
+            "device": "br-lan",
+            "type": "lan",
+            "interface": "lan",
+            "name": "lan_1"
+          }
+        },
+        "properties": {
+          "proto": {
+            "type": "string"
+          },
+          "disabled": {
+            "type": "string"
+          },
+          "ip": {
+            "type": "string"
+          },
+          "ipv6": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "device": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "interface": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "networkmap_results": {
+        "description": "",
+        "type": "object",
+        "properties": {
+          "ip_ranges": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "start": {
+            "type": "string"
+          },
+          "stop": {
+            "type": "string"
+          },
+          "devices": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/networkmap_devices"
+            }
+          }
+        }
+      }
+    },
+    "responses": {
+      "200_networkmap_scan": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "started": {
+                      "type": "boolean",
+                      "description": "Indicates if scan was started"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_networkmap_devices": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "x-examples": {
+                "example-1": {
+                  "success": true,
+                  "data": {
+                    "devices": [
+                      {
+                        "mac": "00:1e:42:41:cd:c8",
+                        "type": "wan",
+                        "hostname": "",
+                        "interface": "wan",
+                        "vendor": "Teltonika",
+                        "ip": "192.168.81.114"
+                      }
+                    ]
+                  }
+                }
+              },
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "devices": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/networkmap_devices"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_networkmap_interfaces": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "interfaces": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/networkmap_interface"
+                      }
+                    }
+                  }
+                }
+              },
+              "x-examples": {
+                "example-1": {
+                  "success": true,
+                  "data": {
+                    "interfaces": [
+                      {
+                        "proto": "static",
+                        "disabled": "0",
+                        "ip": "192.168.1.1/24",
+                        "status": "true",
+                        "device": "br-lan",
+                        "type": "lan",
+                        "interface": "lan",
+                        "name": "lan_1"
+                      },
+                      {
+                        "proto": "dhcp",
+                        "disabled": "0",
+                        "ip": "192.168.81.160/24",
+                        "status": "true",
+                        "device": "eth1",
+                        "type": "wan",
+                        "interface": "wan",
+                        "name": "wan_1"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "200_networkmap_results": {
+        "description": "Example response",
+        "content": {
+          "application/json": {
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/networkmap_results"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "devices_scan": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "scan_type": {
+                      "type": "string",
+                      "description": "Scan type can be 'lan', 'wan' or 'all'",
+                      "x-web": {
+                        "pretty": "Scan type",
+                        "input-type": "input"
+                      }
+                    }
+                  },
+                  "required": ["scan_type"]
+                }
+              }
+            }
+          }
+        }
+      },
+      "start_scan": {
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "device": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "items": {
+                        "type": "string"
+                      },
+                      "description": "Device name with IPv4 address and netmask is accepted. E.g. br-lan:192.168.1.0/24",
+                      "x-web": {
+                        "pretty": "Device",
+                        "input-type": "input"
+                      }
+                    }
+                  },
+                  "required": ["device"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "General"
+    }
+  ]
+}

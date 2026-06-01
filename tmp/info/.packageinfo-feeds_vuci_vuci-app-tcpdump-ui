@@ -1,0 +1,23 @@
+Source-Makefile: package/feeds/vuci/vuci-app-tcpdump-ui/Makefile
+
+Package: vuci-app-tcpdump-ui
+Submenu: Applications/UI
+Version: 1
+Depends: +libc +vuci-app-troubleshoot-ui +tcpdump +vuci-ui-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: vuci
+Category: VuCI
+Repository: vuci
+Title: VuCI UI Support for tcpdump
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: VuCI UI Support for tcpdump
+Description: 	TCP dump is used to capture packets moving through network interfaces.
+
+@@
+
+

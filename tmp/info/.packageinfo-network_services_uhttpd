@@ -1,0 +1,77 @@
+Source-Makefile: package/network/services/uhttpd/Makefile
+Build-Depends: ustream-ssl
+
+Package: uhttpd
+Submenu: Web Servers/Proxies
+Version: 2021-03-21-15346de8d3ba422002496526ee24c62a3601ab8c-16
+Depends: +libc +libubox +libblobmsg-json +libjson-script +libjson-c +libubus +liblua +libcap +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: uHTTPd - tiny, single threaded HTTP server
+Maintainer: Felix Fietkau <nbd@nbd.name>
+FileAttributes: /usr/sbin/uhttpd::::cap_net_bind_service,cap_net_admin,cap_net_raw=ep;/usr/lib/uhttpd_ubus.so:uhttpd:::;/usr/lib/uhttpd_lua.so:uhttpd:::
+Source: uhttpd-2021-03-21-15346de8d3ba422002496526ee24c62a3601ab8c-15346de8d3ba422002496526ee24c62a3601ab8c.tar.xz
+License: ISC
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: uHTTPd - tiny, single threaded HTTP server
+Description:  uHTTPd is a tiny single threaded HTTP server with TLS, CGI and Lua
+ support. It is intended as a drop-in replacement for the Busybox
+ HTTP daemon.
+Felix Fietkau <nbd@nbd.name>
+@@
+Config:
+  config uhttpd_lua
+    depends on PACKAGE_uhttpd-mod-lua
+    bool "Enable Integrated Lua interpreter"
+	default y
+@@
+
+Package: uhttpd-mod-lua
+Submenu: Web Servers/Proxies
+Version: 2021-03-21-15346de8d3ba422002496526ee24c62a3601ab8c-16
+Depends: +libc uhttpd +liblua
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: uHTTPd - tiny, single threaded HTTP server (Lua plugin)
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: uhttpd-2021-03-21-15346de8d3ba422002496526ee24c62a3601ab8c-15346de8d3ba422002496526ee24c62a3601ab8c.tar.xz
+License: ISC
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: uHTTPd - tiny, single threaded HTTP server (Lua plugin)
+Description:  The Lua plugin adds a CGI-like Lua runtime interface to uHTTPd.
+Felix Fietkau <nbd@nbd.name>
+@@
+
+Package: uhttpd-mod-ubus
+Submenu: Web Servers/Proxies
+Version: 2021-03-21-15346de8d3ba422002496526ee24c62a3601ab8c-16
+Depends: +libc uhttpd +libubus +libblobmsg-json
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: uHTTPd - tiny, single threaded HTTP server (ubus plugin)
+Maintainer: Felix Fietkau <nbd@nbd.name>
+Source: uhttpd-2021-03-21-15346de8d3ba422002496526ee24c62a3601ab8c-15346de8d3ba422002496526ee24c62a3601ab8c.tar.xz
+License: ISC
+LicenseFiles: LICENSE
+Type: ipkg
+Detail-Description: uHTTPd - tiny, single threaded HTTP server (ubus plugin)
+Description:  The ubus plugin adds a HTTP/JSON RPC proxy for ubus and publishes the
+ session.* namespace and procedures.
+Felix Fietkau <nbd@nbd.name>
+@@
+
+

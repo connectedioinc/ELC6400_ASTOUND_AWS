@@ -1,0 +1,112 @@
+Source-Makefile: package/system/fstools/Makefile
+Build-Depends: util-linux
+
+Package: fstools
+Menu: 1
+Version: 2022-05-03-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4-0
+Depends: +libc +ubox +NAND_SUPPORT:ubi-utils
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Title: OpenWrt filesystem tools
+Maintainer: John Crispin <john@phrozen.org>
+Require-User: mount:mount
+Source: fstools-2022-05-03-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4.tar.xz
+License: LGPL-2.1-only
+LicenseFiles: block.c
+Type: ipkg
+Detail-Description: OpenWrt filesystem tools
+Description: OpenWrt filesystem tools
+John Crispin <john@phrozen.org>
+@@
+Config:
+	config FSTOOLS_UBIFS_EXTROOT
+		depends on PACKAGE_fstools
+		depends on NAND_SUPPORT
+		bool "Support extroot functionality with UBIFS"
+		default y
+		help
+			This option makes it possible to use extroot functionality if the root filesystem resides on an UBIFS partition
+
+	config FSTOOLS_OVL_MOUNT_FULL_ACCESS_TIME
+		depends on PACKAGE_fstools
+		bool "Full access time accounting"
+		default n
+		help
+			This option enables the full access time accounting (warning: it will increase the flash writes).
+
+	config FSTOOLS_OVL_MOUNT_COMPRESS_ZLIB
+		depends on PACKAGE_fstools
+		bool "Compress using zlib"
+		default n
+		help
+			This option enables the compression using zlib on the storage device.
+
+	config FSTOOLS_FS_ROOTFS_READONLY
+		depends on PACKAGE_fstools
+		bool "Mount rootfs in read-only mode"
+		default y
+		help
+			This option enables mouting rootfs in read-only mode.
+@@
+
+Package: snapshot-tool
+Version: 2022-05-03-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4-0
+Depends: +libc +libubox +fstools
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Title: rootfs snapshoting tool
+Maintainer: John Crispin <john@phrozen.org>
+Source: fstools-2022-05-03-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4.tar.xz
+License: LGPL-2.1-only
+LicenseFiles: block.c
+Type: ipkg
+Detail-Description: rootfs snapshoting tool
+Description: rootfs snapshoting tool
+John Crispin <john@phrozen.org>
+@@
+
+Package: block-mount
+Version: 2022-05-03-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4-0
+Depends: +libc +ubox +libubox +libuci +libblobmsg-json +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Title: Block device mounting and checking
+Maintainer: John Crispin <john@phrozen.org>
+Source: fstools-2022-05-03-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4.tar.xz
+License: LGPL-2.1-only
+LicenseFiles: block.c
+Type: ipkg
+Detail-Description: Block device mounting and checking
+Description: Block device mounting and checking
+John Crispin <john@phrozen.org>
+@@
+
+Package: blockd
+Version: 2022-05-03-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4-0
+Depends: +libc +block-mount +fstools +libubus +kmod-fs-autofs4 +libblobmsg-json +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Title: Block device automounting
+Maintainer: John Crispin <john@phrozen.org>
+Source: fstools-2022-05-03-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4-9e11b3723ce30b9b8c94ad7d15072a10cf13c0b4.tar.xz
+License: LGPL-2.1-only
+LicenseFiles: block.c
+Type: ipkg
+Detail-Description: Block device automounting
+Description: Block device automounting
+John Crispin <john@phrozen.org>
+@@
+
+

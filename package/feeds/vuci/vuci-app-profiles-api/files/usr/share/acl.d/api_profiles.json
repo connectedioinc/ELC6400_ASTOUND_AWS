@@ -1,0 +1,8 @@
+{
+  "user": "uhttpd",
+  "access": {
+    "rpc-profile": {
+      "methods": ["create", "change", "remove"]
+    }
+  }
+}

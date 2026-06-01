@@ -1,0 +1,42 @@
+Source-Makefile: package/teltonika/modbus_client/Makefile
+
+Package: libmodbus_client
+Version: 2026-02-03-1
+Depends: +libc +libmodbus +libtag +libtlt_termios +libtlt_uci +libuci +libubus +libtlt_smtp +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Library for Modbus client and its rpcd plug-in
+Maintainer: 
+Source: modbus_client-2026-02-03-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Library for Modbus client and its rpcd plug-in
+Description: Library for Modbus client and its rpcd plug-in
+
+@@
+
+Package: modbus_client
+Version: 2026-02-03-1
+Depends: +libc +libuci +libtlt_uci +libtlt_termios +libsqlite3 +libmodbus +IO_SUPPORT:iomand +MOBILE_SUPPORT:libgsm +libparam +libmosquitto +libtlt_smtp +libcurl +libtag +libmodbus_client +libticket_mutex +libtlt-logger +libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: MODBUS TCP/Serial client daemon by Teltonika
+Maintainer: 
+Require-User: modbus_client=577:modbus_client=577
+Source: modbus_client-2026-02-03-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: MODBUS TCP/Serial client daemon by Teltonika
+Description: 	MODBUS TCP/Serial client designed for reading/writing data from MODBUS servers and storing read data in local database.
+
+@@
+
+

@@ -1,0 +1,42 @@
+Source-Makefile: package/teltonika/rut_fota/Makefile
+
+Package: librut_fota
+Version: 2.24
+Depends: +libc +libubus +libubox +libblobmsg-json +libjson-c
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Library for handling rut_fota information
+Maintainer: 
+Source: rut_fota-2.24-2.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Library for handling rut_fota information
+Description: Library for handling rut_fota information
+
+@@
+
+Package: rut_fota
+Version: 2.24
+Depends: +libc +libuci +libmnfinfo +MOBILE_SUPPORT:libgsm +libubus +libubox +libopenssl +libblobmsg-json +libjson-c +librut_fota +liblog
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: base
+Category: Base system
+Repository: base
+Title: Firmware Over The Air Utility
+Maintainer: 
+Require-User: rut_fota:rut_fota
+Source: rut_fota-2.24-2.24.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Firmware Over The Air Utility
+Description: Firmware Over The Air Utility
+
+@@
+
+

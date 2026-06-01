@@ -1,0 +1,25 @@
+Source-Makefile: package/feeds/vuci/vuci-ui-core/Makefile
+
+Package: vuci-ui-core
+Version: 2026-02-23-4f4044c88cc-3
+Depends: +libc +api-core
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: webui
+Category: WebUI
+Repository: vuci
+Title: vuci ui core
+Maintainer: 
+Source: 
+License: Teltonika-nda-source
+Type: ipkg
+Detail-Description: vuci ui core
+Description: 	Provides core ui for VuCI
+
+@@
+Config:
+	source "package/feeds/vuci/vuci-ui-core/Config.in"
+@@
+
+

@@ -1,0 +1,22 @@
+Source-Makefile: package/teltonika/libs/libcfgx/Makefile
+
+Package: libcfgx
+Version: 7.21
+Depends: +libc +libubox +libuci +libtlt_uci +libtlt-logger
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: Configuration parsing library by Teltonika
+Maintainer: 
+Source: libcfgx-7.21-7.21.tar.xz
+License: Teltonika-closed
+Type: ipkg
+Detail-Description: Configuration parsing library by Teltonika
+Description: 	An abstraction over UCI and blobmsg to allow deduplication of configuration parsing logic.
+
+@@
+
+

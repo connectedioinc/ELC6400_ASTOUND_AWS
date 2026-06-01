@@ -1,0 +1,59 @@
+make[3]: Entering directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/packages/lang/luasrcdiet'
+Hash of the local file luasrcdiet-1.0.0-f138fc9359821d9201cd6b57cfa2fcbed5b9af97.tar.xz does not match (file: ff6964f7aefc545ee2face1605285b03dfc4b9e3f46542dd209e9097dab8a60b, requested: d4e9c396312ef3d91d86ea192569f03875459432994bc822dbdbbd0a34e306c5) - deleting and re-downloading.
++ curl -f --connect-timeout 20 --retry 5 --location --insecure https://sources.cdn.openwrt.org/luasrcdiet-1.0.0-f138fc9359821d9201cd6b57cfa2fcbed5b9af97.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 20 --retry 5 --location --insecure https://sources.openwrt.org/luasrcdiet-1.0.0-f138fc9359821d9201cd6b57cfa2fcbed5b9af97.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 20 --retry 5 --location --insecure https://mirror2.openwrt.org/sources/luasrcdiet-1.0.0-f138fc9359821d9201cd6b57cfa2fcbed5b9af97.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0   153    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
+No more mirrors to try - giving up.
+luasrcdiet-1.0.0-f138fc9359821d9201cd6b57cfa2fcbed5b9af97.tar.xz: Download from https://github.com/jirutka/luasrcdiet.git failed
+luasrcdiet-1.0.0-f138fc9359821d9201cd6b57cfa2fcbed5b9af97.tar.xz: Wrong hash (probably caused by .gitattributes), expecting d4e9c396312ef3d91d86ea192569f03875459432994bc822dbdbbd0a34e306c5, got 03556c31f83953fe165f55c79497f682a8c0ea125fd5de68e5fe2980ed1d1ec6
+Checking out files from the git repository...
+Cloning into 'luasrcdiet-1.0.0-f138fc9359821d9201cd6b57cfa2fcbed5b9af97'...
+Note: switching to 'f138fc9359821d9201cd6b57cfa2fcbed5b9af97'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f138fc9 Release version 1.0.0
+Packing checkout...
+. /media/home/FIRMWARES1/RUTX11/sdk2/include/shell.sh; xzcat /media/home/FIRMWARES1/RUTX11/sdk2/dl/luasrcdiet-1.0.0-f138fc9359821d9201cd6b57cfa2fcbed5b9af97.tar.xz | tar -C /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0/ --strip-components=1 -xf -
+[ ! -d ./src/ ] || cp -fpR ./src/* /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0/.prepared9f68b608fda082a5712101f891dbe1d3_6664517399ebbbc92a37c5bb081b5c53
+(cd /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0/; if [ -x configure ]; then cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/scripts/config.{guess,sub} /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0// && CC="gcc" CFLAGS="-O2 -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" CXX="g++" CPPFLAGS="-I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/include -I/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/include" LDFLAGS="-L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/host/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib -L/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/target-arm_cortex-a7+neon-vfpv4_musl_eabi/host/lib" CONFIG_SHELL="/usr/bin/env bash"  bash ./configure --target=x86_64-pc-linux-gnu --host=x86_64-pc-linux-gnu --build=x86_64-pc-linux-gnu --program-prefix="" --program-suffix="" --prefix=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg --exec-prefix=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg --sysconfdir=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/etc --localstatedir=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/var --sbindir=/media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin ; fi )
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0/.configured
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0/.built
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin
+install -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0/bin/luasrcdiet /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/bin/
+install -d -m0755 /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib/lua/5.1
+cp -fpR /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0/luasrcdiet /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/lib/lua/5.1/
+mkdir -p /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/stamp
+touch /media/home/FIRMWARES1/RUTX11/sdk2/build_dir/hostpkg/luasrcdiet-1.0.0/.built
+touch /media/home/FIRMWARES1/RUTX11/sdk2/staging_dir/hostpkg/stamp/.luasrcdiet_installed
+make[3]: Leaving directory '/media/home/FIRMWARES1/RUTX11/sdk2/feeds/packages/lang/luasrcdiet'
+time: package/feeds/packages/luasrcdiet/host-compile#1.76#0.43#6.26

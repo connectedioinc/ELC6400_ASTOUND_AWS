@@ -1,0 +1,381 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/nhrp/interface/{id}/nhs/config/": {
+      "get": {
+        "summary": "Returns all NHRP NHS configurations",
+        "description": "",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200NhNhsMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configures NHRP interface identifier"
+          },
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ],
+        "tags": ["NHS Configuration"]
+      },
+      "post": {
+        "summary": "Creates NHRP NHS configuration",
+        "responses": {
+          "201": {
+            "$ref": "#/components/responses/200NhNhs"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configures NHRP interface identifier"
+          }
+        ],
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/nhrp_nhs_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["NHS Configuration"]
+      },
+      "put": {
+        "summary": "Updates specified NHRP NHS configurations",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200NhNhsMulti"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configures NHRP interface identifier"
+          }
+        ],
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "$ref": "#/components/schemas/nhrp_nhs_options_multi"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["NHS Configuration"]
+      },
+      "delete": {
+        "summary": "Deletes specified NHRP NHS configurations",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Configures NHRP interface identifier"
+          }
+        ],
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "array",
+                    "description": "Array of section objects",
+                    "items": {
+                      "type": "string",
+                      "description": "Section id"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["NHS Configuration"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted_multi"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "NHRP"],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false
+        }
+      }
+    },
+    "/nhrp/interface/{id}/nhs/config/{nhs_id}": {
+      "get": {
+        "summary": "Returns specified NHRP NHS configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200NhNhs"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        },
+        "tags": ["NHS Configuration"],
+        "description": "",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/all_options"
+          }
+        ]
+      },
+      "put": {
+        "summary": "Updates specified NHRP NHS configuration",
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200NhNhs"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          },
+          "422": {
+            "$ref": "#/components/responses/422response"
+          }
+        },
+        "requestBody": {
+          "description": "Parameter section",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "$ref": "#/components/schemas/nhrp_nhs_options"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tags": ["Mappings Configuration"]
+      },
+      "delete": {
+        "summary": "Deletes specified NHRP NHS configuration",
+        "tags": ["Mappings Configuration"],
+        "responses": {
+          "200": {
+            "$ref": "#/components/responses/200deleted"
+          },
+          "404": {
+            "$ref": "#/components/responses/404response"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Configures NHRP interface identifier"
+        },
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "nhs_id",
+          "in": "path",
+          "required": true
+        }
+      ],
+      "x-web": {
+        "menu": ["Network", "Routing", "Dynamic Routes", "NHRP"],
+        "hw_tags": {
+          "is_switch": false,
+          "is_access_point": false
+        },
+        "name": "NHRP"
+      }
+    }
+  },
+  "components": {
+    "responses": {
+      "200NhNhs": {
+        "description": "Returns section",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "allOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    {
+                      "$ref": "#/components/schemas/nhrp_nhs_options"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "200NhNhsMulti": {
+        "description": "Returns sections",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean",
+                  "description": "Operation status"
+                },
+                "data": {
+                  "type": "array",
+                  "description": "Array of section objects",
+                  "items": {
+                    "$ref": "#/components/schemas/nhrp_nhs_options_multi"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "nhrp_nhs_options": {
+        "type": "object",
+        "title": "",
+        "properties": {
+          "enabled": {
+            "x-web": {
+              "pretty": "Enable",
+              "input-type": "switch"
+            },
+            "type": "string"
+          },
+          "nhs_address": {
+            "x-web": {
+              "pretty": "IP Address",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "IP address of the NHS."
+          },
+          "nbma_address": {
+            "x-web": {
+              "pretty": "NBMA",
+              "input-type": "input"
+            },
+            "type": "string",
+            "description": "Non-Broadcast Multi-Access(NBMA) network IP address of the NHS"
+          }
+        }
+      },
+      "nhrp_nhs_options_multi": {
+        "title": "nhrp_nhs_options_multi",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "x-web": {
+                  "pretty": "Configuration name",
+                  "unique": true,
+                  "input-type": "input"
+                },
+                "type": "string"
+              }
+            }
+          },
+          {
+            "$ref": "#/components/schemas/nhrp_nhs_options"
+          }
+        ]
+      }
+    }
+  },
+  "info": {
+    "title": "NHRP NHS Configuration",
+    "version": "1.0",
+    "description": "NHRP NHS configuration api documentation"
+  }
+}

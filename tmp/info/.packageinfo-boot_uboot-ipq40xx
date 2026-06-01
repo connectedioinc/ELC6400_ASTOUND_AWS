@@ -1,0 +1,23 @@
+Source-Makefile: package/boot/uboot-ipq40xx/Makefile
+
+Package: uboot-ipq40xx
+Version: 3.3.2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: boot
+Category: Boot Loaders
+Repository: base
+Title: U-boot for ipq40xx based platforms
+Maintainer: 
+Source: uboot-3.3.2-3.3.2.tar.xz
+License: GPL-2.0-or-later
+Type: ipkg
+Detail-Description: U-boot for ipq40xx based platforms
+Description: U-boot for ipq40xx based platforms
+http://www.denx.de/wiki/U-Boot
+
+@@
+
+

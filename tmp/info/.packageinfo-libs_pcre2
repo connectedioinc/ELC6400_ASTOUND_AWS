@@ -1,0 +1,73 @@
+Source-Makefile: package/libs/pcre2/Makefile
+Build-Types: host
+
+Package: libpcre2
+Version: 10.37-0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A Perl Compatible Regular Expression library
+Maintainer: Shane Peelar <lookatyouhacker@gmail.com>
+CPE-ID: cpe:/a:pcre:pcre
+Source: pcre2-10.37.tar.bz2
+License: BSD-3-Clause
+LicenseFiles: LICENCE
+Type: ipkg
+Detail-Description: A Perl Compatible Regular Expression library
+Description: A Perl Compatible Regular Expression library
+https://www.pcre.org/
+Shane Peelar <lookatyouhacker@gmail.com>
+@@
+Config:
+  source "package/libs/pcre2/Config.in"
+@@
+
+Package: libpcre2-16
+Version: 10.37-0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A Perl Compatible Regular Expression library (16bit support)
+Maintainer: Shane Peelar <lookatyouhacker@gmail.com>
+CPE-ID: cpe:/a:pcre:pcre
+Source: pcre2-10.37.tar.bz2
+License: BSD-3-Clause
+LicenseFiles: LICENCE
+Type: ipkg
+Detail-Description: A Perl Compatible Regular Expression library (16bit support)
+Description: A Perl Compatible Regular Expression library (16bit support)
+https://www.pcre.org/
+Shane Peelar <lookatyouhacker@gmail.com>
+@@
+
+Package: libpcre2-32
+Version: 10.37-0
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: libs
+Category: Libraries
+Repository: base
+Title: A Perl Compatible Regular Expression library (32bit support)
+Maintainer: Shane Peelar <lookatyouhacker@gmail.com>
+CPE-ID: cpe:/a:pcre:pcre
+Source: pcre2-10.37.tar.bz2
+License: BSD-3-Clause
+LicenseFiles: LICENCE
+Type: ipkg
+Detail-Description: A Perl Compatible Regular Expression library (32bit support)
+Description: A Perl Compatible Regular Expression library (32bit support)
+https://www.pcre.org/
+Shane Peelar <lookatyouhacker@gmail.com>
+@@
+
+
