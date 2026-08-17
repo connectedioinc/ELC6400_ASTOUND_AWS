@@ -326,9 +326,11 @@ void publishInitJsons(MQTTContext_t *pMqttContext, const char *imei, const char 
 	char *jsonOut;
 	size_t jsonOutLen;
 	const char *lan_ip = get_lan_ip();
-	/*Build JSON after connection - Objects M,F and C - respectively*/
+	/*Build JSON after connection - Objects M,F ,C, T and R- respectively*/
 	pub_ObjectM(imei, pMqttContext, topic);
 	pub_ObjectF(imei, pMqttContext, topic);
-	buildStatusJson(pMqttContext, imei, topic);	
+	buildStatusJson(pMqttContext, imei, topic);
+	buildEthernetHostsJson(pMqttContext, imei, topic); 
+	buildWifiHostsJson(pMqttContext, imei, topic);	
 }
 

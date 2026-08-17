@@ -1,0 +1,29 @@
+#!/bin/sh
+# Labelling Teltonika - Elleco_Networks
+# 1. Replace Hotspot UI Labels
+CHILLI_DIR="/etc/chilli/hotspotlogin/cgi-bin/themes/default"
+if [ -d "$CHILLI_DIR" ]; then
+    find "$CHILLI_DIR" -type f -name "*.htm" | while read -r html_file; do
+        sed -i 's/Teltonika RutOS/Elleco_Networks/g' "$html_file"
+    done
+fi
+
+# 2. Patch OpenSSL Certificate Generation Scripts (/etc/siteman/cert_gen.sh)
+CERT_GEN="/etc/siteman/cert_gen.sh"
+if [ -f "$CERT_GEN" ]; then
+    # Replaces the inline Organization fallback string in both -subj lines
+    sed -i 's/O="${ORG:-Teltonika}"/O="${ORG:-Elleco_Networks}"/g' "$CERT_GEN"
+    # Replaces the config_get framework fallback default string
+    sed -i 's/defaults org "Teltonika"/defaults org "Elleco_Networks"/g' "$CERT_GEN"
+fi
+
+# 3. Patch SNMP MIB Generation Tools
+if [ -f "/etc/snmp/generate_MIBs.sh" ]; then
+    sed -i 's/name="Teltonika"/name="Elleco_Networks"/g' /etc/snmp/generate_MIBs.sh
+fi
+
+if [ -f "/etc/snmp/launch_generate_MIBs.sh" ]; then
+    sed -i 's/name="Teltonika"/name="Elleco_Networks"/g' /etc/snmp/launch_generate_MIBs.sh
+fi
+
+exit 0

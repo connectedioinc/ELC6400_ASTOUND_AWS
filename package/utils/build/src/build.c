@@ -8,7 +8,7 @@
 int main(int argc, char **argv)
 {
 //    char openwrt_version[512] = { 0 };
-    char openwrt_version[512] = "AR64E 07.21.1.5";
+    char openwrt_version[512] = "AR64E 07.21.2.1";
     FILE *fptr = NULL;
 
 //    if ((fptr = fopen("/etc/openwrt_version", "r")) != NULL) {

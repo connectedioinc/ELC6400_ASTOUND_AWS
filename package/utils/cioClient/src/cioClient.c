@@ -2004,8 +2004,14 @@ void *thread_universal_monitor(void *arg) {
                     log_message("INFO", "Publishing event-based updates...");
                     
                     if (g_triggers.status)   buildStatusJson(args->mqttContext, args->imei, args->topic);
-                    if (g_triggers.ethernet) buildEthernetHostsJson(args->mqttContext, args->imei, args->topic);
-                    if (g_triggers.wifi)     buildWifiHostsJson(args->mqttContext, args->imei, args->topic);
+                    if (g_triggers.ethernet) {
+                    	usleep(50000);
+                    	buildEthernetHostsJson(args->mqttContext, args->imei, args->topic);
+                    }
+                    if (g_triggers.wifi){
+                    	usleep(50000);     
+                    	buildWifiHostsJson(args->mqttContext, args->imei, args->topic);
+                    }
                     
                     last_fire_time = now_ms();
                 }

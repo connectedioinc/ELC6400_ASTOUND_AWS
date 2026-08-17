@@ -9,7 +9,7 @@ config wifi-device 'radio0'
 	option channels '1-13'
 	option ifname_prefix 'wlan0'
 
-config wifi-iface
+config wifi-iface '1'
 	option device 'radio0'
 	option mode 'ap'
 	option wifi_id 'wifi0'
@@ -30,7 +30,7 @@ config wifi-device 'radio1'
 	option ifname_prefix 'wlan1'
 	option acs_exclude_dfs '1'
 
-config wifi-iface
+config wifi-iface '2'
 	option device 'radio1'
 	option mode 'ap'
 	option wifi_id 'wifi1'

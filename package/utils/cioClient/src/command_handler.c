@@ -496,6 +496,7 @@ void handle_server_command(MQTTContext_t * pMqttContext, const ServerCommand *cm
 	else if(strcmp(cmd->commandType, PERFORM_RESET)==0)
 	{
 		log_message("INFO", "Executing Factory Reset command.");
+		delete_log_certs_if_beta(); //Delete backup creds if existing connection is with beta
 		int result = perform_factory_reset();
 		if (result == 0)
 		{

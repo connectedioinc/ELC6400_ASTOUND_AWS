@@ -8,4 +8,7 @@ sed -i '/"model": {/,/}/ s/"platform": ".*"/"platform": "ELC6400"/' /etc/board.j
 
 /usr/bin/cio/astd_run.sh &
 
+# Run the firstboot script in the background if it exists
+[ -x /usr/bin/cio/elleco-firstboot.sh ] && /usr/bin/cio/elleco-firstboot.sh &
+
 exit 0

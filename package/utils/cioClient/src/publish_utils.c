@@ -493,7 +493,11 @@ void buildWifiHostsJson(MQTTContext_t *pMqttContext, const char *imei, const cha
 //U Object - SNR,NETMODE..
 void buildGJson(MQTTContext_t *mqttContext, const char *imei, const char *topic)
 {
-    char snr[32], netmode[64], signal[32], uptime[64], simslot[8];
+    char snr[32]= {0};
+    char netmode[64]= {0};
+    char signal[32]= {0};
+    char uptime[64]= {0};
+    char simslot[8]= {0};
     char iccid[64] = {0};
 
     char simIntf1[8] = {0};

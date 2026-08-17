@@ -40,7 +40,7 @@ define Device/teltonika_rutx
 			port-mirror mobile dot1x-client port_link \
 			sw-offload xfrm-offload tpm reset_button ncm
 
-	SUPPORTED_DEVICES += elleconet,elc6400
+	SUPPORTED_DEVICES += elleconet,elc6400 elleconet,cr64na
 	
 	GPL_PREFIX := GPL
 	# Default common packages for RUTX series

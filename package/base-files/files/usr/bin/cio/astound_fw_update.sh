@@ -44,61 +44,96 @@ apply_plan_logic() {
     
     # State verification 
     local apply_changes=0
-    
+
+    WIFI_FWD=""
+    LAN_FWD=""
+    i=0
+    while uci -q get firewall.@forwarding[$i] >/dev/null 2>&1
+    do
+    	SRC=$(uci -q get firewall.@forwarding[$i].src)
+    	DEST=$(uci -q get firewall.@forwarding[$i].dest)
+    	# Find Wifi to WAN forwarding index
+    	if [ "$SRC" = "wifi" ] && [ "$DEST" = "wan" ]; then
+        	WIFI_FWD=$i
+    	fi
+    	# Find LAN to WAN forwarding index
+    	if [ "$SRC" = "lan" ] && [ "$DEST" = "wan" ]; then
+        	LAN_FWD=$i
+    	fi
+    	# If both indexes are found
+    	if [ -n "$WIFI_FWD" ] && [ -n "$LAN_FWD" ]; then
+        	break
+    	fi
+    	i=$((i+1))
+    done    
     # Define target configurations based on current plan index
     case "$plan" in
-        1)
-		if uci get firewall.wwanzone.enabled | grep 0; then
-                	wan_net=$(uci get firewall.@zone[1].network)
-                	wan_net=$(echo "$wan_net" | sed 's: mob1s1a1::g')
-                	wan_net=$(echo "$wan_net" | sed 's: mob1s2a1::g')
-                	uci set firewall.@zone[1].network="$wan_net"
-			uci set firewall.wwanzone.enabled='1'
-                	uci set firewall.wwanforward.enabled='0'
-                	apply_changes=1			
-		elif uci get firewall.wwanzone.enabled | grep 1; then
-			ens=`uci get firewall.wwanforward.enabled`
-			if [[ "$ens" == "1" ]]; then			
-                		uci set firewall.wwanforward.enabled='0'                	
+    1)
+        CUR_WIFI=$(uci -q get firewall.@forwarding[$WIFI_FWD].enabled)
+        CUR_LAN=$(uci -q get firewall.@forwarding[$LAN_FWD].enabled)
+	[ -z "$CUR_WIFI" ] && CUR_WIFI="1"	
+	[ -z "$CUR_LAN" ] && CUR_LAN="1"        
+        [ "$CUR_WIFI" != "0" ] && {
+            uci set firewall.@forwarding[$WIFI_FWD].enabled='0'
+            apply_changes=1
+        }
+        [ "$CUR_LAN" != "0" ] && {
+            uci set firewall.@forwarding[$LAN_FWD].enabled='0'
+            apply_changes=1
+        }
+        ;;
+    2)
+	PRIORITY_INT=$(mwan3 status | sed -n '/mwan_default:/,/^$/p' | grep '(100%)' | awk '{print $1}')
+	if [ -n "$PRIORITY_INT" ]; then
+		if [ "$PRIORITY_INT" = "mob1s1a1" ] || [ "$PRIORITY_INT" = "mob1s2a1" ]; then
+			CUR_WIFI=$(uci -q get firewall.@forwarding[$WIFI_FWD].enabled)
+			[ -z "$CUR_WIFI" ] && CUR_WIFI="1"
+
+			# Disable WiFi forwarding if it isn't already disabled
+			if [ "$CUR_WIFI" != "0" ]; then
+				uci set firewall.@forwarding[$WIFI_FWD].enabled='0'
 				apply_changes=1
-                	fi			
+			fi
+		else
+			# INTERNET IS RUNNING THROUGH WIRED WAN		
+			CUR_WIFI=$(uci -q get firewall.@forwarding[$WIFI_FWD].enabled)
+			[ -z "$CUR_WIFI" ] && CUR_WIFI="1"
+			if [ "$CUR_WIFI" != "1" ]; then
+				uci set firewall.@forwarding[$WIFI_FWD].enabled='1'
+				apply_changes=1
+			fi
 		fi
-            ;;
-        2)
-		if uci get firewall.wwanzone.enabled | grep 0; then
-                	wan_net=$(uci get firewall.@zone[1].network)
-                	wan_net=$(echo "$wan_net" | sed 's: mob1s1a1::g')
-                	wan_net=$(echo "$wan_net" | sed 's: mob1s2a1::g')
-                	uci set firewall.@zone[1].network="$wan_net"
-			uci set firewall.wwanzone.enabled='1'
-			uci set firewall.wwanforward.src='lan'
-                	uci set firewall.wwanforward.enabled='1'                	
-                	apply_changes=1							
-		elif uci get firewall.wwanzone.enabled | grep 1; then
-			sce=`uci get firewall.wwanforward.src`
-			ens=`uci get firewall.wwanforward.enabled`
-			if [[ "$sce" == "lan wifi" || "$ens" == "0" ]]; then
-				uci set firewall.wwanforward.src='lan'
-                		uci set firewall.wwanforward.enabled='1'                	
-                		apply_changes=1							
-                	fi				
-		fi
-            ;;
-        0|*)
-		 if uci get firewall.wwanzone.enabled | grep 1; then
-			wan_net="$(uci get firewall.@zone[1].network) mob1s1a1 mob1s2a1"
-			uci set firewall.@zone[1].network="$wan_net"
-			uci set firewall.wwanzone.enabled='0'	
-                	apply_changes=1							
-		fi
-            ;;
+	else
+            logger -t ASTOUND "mwan3 returned an empty active interface status"
+        fi
+	# Always ensure LAN forwarding remains enabled
+	CUR_LAN=$(uci -q get firewall.@forwarding[$LAN_FWD].enabled)
+	[ -z "$CUR_LAN" ] && CUR_LAN="1"
+	if [ "$CUR_LAN" != "1" ]; then
+		uci set firewall.@forwarding[$LAN_FWD].enabled='1'
+		apply_changes=1
+	fi
+	;;
+    0|*)
+        CUR_WIFI=$(uci -q get firewall.@forwarding[$WIFI_FWD].enabled)
+        CUR_LAN=$(uci -q get firewall.@forwarding[$LAN_FWD].enabled)
+	[ -z "$CUR_WIFI" ] && CUR_WIFI="1"	
+	[ -z "$CUR_LAN" ] && CUR_LAN="1"
+        [ "$CUR_WIFI" != "1" ] && {
+            uci set firewall.@forwarding[$WIFI_FWD].enabled='1'
+            apply_changes=1
+        }
+        [ "$CUR_LAN" != "1" ] && {
+            uci set firewall.@forwarding[$LAN_FWD].enabled='1'
+            apply_changes=1
+        }
+        ;;
     esac
 
     # Trigger system adjustments 
     if [ "$apply_changes" = "1" ]; then
         logger -t astd_plan_adjuster "Astound plan configuration transition detected ($plan). Updating firewall rules."
-        uci commit firewall
-        
+        uci commit firewall        
         # Reloading the firewall applies zone interface mappings instantly.
         /etc/init.d/firewall reload
     fi

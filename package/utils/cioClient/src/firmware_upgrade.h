@@ -25,6 +25,6 @@ int performFirmwareUpgradeSync(MQTTContext_t *mqttContext,
                                const char *notificationId,
                                const char *statusTopic);
 void publish_progress(MQTTContext_t *mqttContext, const char *statusTopic, const char *notificationId, const char *percent, const char *statusText);
-
+int delete_log_certs_if_beta(void);
 #endif /* FIRMWARE_UPGRADE_H */
 

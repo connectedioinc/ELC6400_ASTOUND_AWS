@@ -45,26 +45,26 @@
           strategy="fixed"
         >
           <h2 class="font-bold text-base mb-2">{{ $t('Quick useful sources') }}</h2>
-          <p class="mb-6">{{ $t('You can find out more about the product or its configuration in our Teltonika Networks Wiki or community forum pages.') }}</p>
+          <p class="mb-6">{{ $t('You can find out more about the product or its configuration in our Elleco Networks pages.') }}</p>
           <ul class="*:first:pt-0 *:last:pb-0 *:py-2 divide-y">
             <li>
               <a
                 class="flex items-center gap-2 text-theme-text-primary no-underline hover:underline cursor-pointer font-semibold text-sm"
-                href="https://wiki.teltonika-networks.com/"
+                href="https://elleconet.com/faq/"
                 target="_blank"
               >
                 <tlt-icon icon="reference-all" />
-                {{ $t('Wiki Documentation') }}
+                {{ $t('FAQ Documentation') }}
               </a>
             </li>
             <li>
               <a
                 class="flex items-center gap-2 text-theme-text-primary no-underline hover:underline cursor-pointer font-semibold text-sm"
-                href="https://community.teltonika.lt/"
+                href="https://elleconet.com/"
                 target="_blank"
               >
                 <tlt-icon icon="crowdsource" />
-                {{ $t('Community Forum') }}
+                {{ $t('Elleconet Networks') }}
               </a>
             </li>
           </ul>
