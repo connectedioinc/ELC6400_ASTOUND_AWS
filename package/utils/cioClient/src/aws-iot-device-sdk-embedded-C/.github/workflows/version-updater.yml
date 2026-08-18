@@ -1,0 +1,53 @@
+name: Source File Version Updater
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Target branch for raising PR'
+        required: true
+      new_version_number:
+        description: 'New version Number (Eg, v1.1.0)'
+        required: true
+      old_version_number:
+        description: 'Old version Number (Eg, v1.0.0)'
+        required: true
+
+jobs:
+  update-version:
+    name: Update Version in source files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+      - name: Configure git identity
+        run: |
+          git config --global user.name "Version Updater"
+      - name: Update source files with new version
+        env:
+          OLD_VERSION_NUMBER: ${{ github.event.inputs.old_version_number }}
+          NEW_VERSION_NUMBER: ${{ github.event.inputs.new_version_number }}
+        run: |
+          grep -ilr "$OLD_VERSION_NUMBER" . | grep -Ev ".git|CHANGELOG.md|README.md|CONTRIBUTING.md" |  xargs sed -i s/"$OLD_VERSION_NUMBER"/"$NEW_VERSION_NUMBER"/g
+      - name: Commit changes and Push to remote
+        env:
+          OLD_VERSION_NUMBER: ${{ github.event.inputs.old_version_number }}
+          NEW_VERSION_NUMBER: ${{ github.event.inputs.new_version_number }}
+        run: |
+          git checkout -b updater-job/update-to-"$NEW_VERSION_NUMBER"
+          git commit -am "Update versioning in file from "$OLD_VERSION_NUMBER" to $NEW_VERSION_NUMBER"
+          git push --set-upstream origin updater-job/update-to-"$NEW_VERSION_NUMBER"
+      - name: Raise a Pull-Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OLD_VERSION_NUMBER: ${{ github.event.inputs.old_version_number }}
+          NEW_VERSION_NUMBER: ${{ github.event.inputs.new_version_number }}
+          BRANCH: ${{ github.event.inputs.branch }}
+        run: |
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 23F3D4EA75716059
+          sudo apt-add-repository https://cli.github.com/packages
+          sudo apt update
+          sudo apt-get install gh
+          gh pr create --base "$BRANCH" --title "Update source file versioning to $NEW_VERSION_NUMBER" --body "Updater-Job: PR to update versioning in source files from $OLD_VERSION_NUMBER to $NEW_VERSION_NUMBER"
